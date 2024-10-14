@@ -73,6 +73,7 @@ def retrieve_async_method_call_fn(
                                                params,
                                                error_formatters,
                                                null_result_formatters)
+        assert "result" in result or "error" in result, (result, type(result))
         return apply_result_formatters(result_formatters, result)
     return caller
 
