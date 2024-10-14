@@ -403,6 +403,7 @@ class RequestManager:
         Coroutine for making a request using the provider
         """
         response = await self._coro_make_request(method, params)
+        assert "result" in response or "error" in response, (response, type(response))
         return self.formatted_response(
             response, params, error_formatters, null_result_formatters
         )
