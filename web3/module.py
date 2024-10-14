@@ -73,8 +73,10 @@ def retrieve_async_method_call_fn(
                                                params,
                                                error_formatters,
                                                null_result_formatters)
-        assert not (hasattr(result, '__contains__') and ("result" in result or "error" in result)), (result, type(result))
+        if hasattr(result, '__contains__') and not isinstance(result, bytes):
+            assert "result" not in result and "error" not in result, (result, type(result))
         return apply_result_formatters(result_formatters, result)
+
     return caller
 
 
