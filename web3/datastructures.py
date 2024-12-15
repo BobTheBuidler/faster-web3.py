@@ -138,14 +138,20 @@ def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValu
 
     ret = dict()
     for k, v in d.items():
-        if isinstance(v, (list, tuple)):
-            ret[k] = _to_tuple(v)
-        elif isinstance(v, Mapping):
-            ret[k] = tupleize_lists_nested(v)
-        elif not isinstance(v, Hashable):
-            raise TypeError(f"Found unhashable type '{type(v).__name__}': {v}")
-        else:
-            ret[k] = v
+        
+        try:
+            if isinstance(v, (list, tuple)):
+                ret[k] = _to_tuple(v)
+            elif isinstance(v, Mapping):
+                ret[k] = tupleize_lists_nested(v)
+            elif not isinstance(v, Hashable):
+                raise TypeError(f"Found unhashable type '{type(v).__name__}': {v}")
+            else:
+                ret[k] = v
+        except RecursionError as e:
+            e.args = *e.args, v, type(v)
+            raise
+
     return AttributeDict(ret)
 
 
