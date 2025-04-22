@@ -14,12 +14,14 @@ from typing import (
     Coroutine,
     Dict,
     Iterable,
+    Iterator,
     List,
     Mapping,
     Optional,
     Sequence,
     Tuple,
     Type,
+    TypeVar,
     Union,
     cast,
 )
@@ -104,6 +106,9 @@ if TYPE_CHECKING:
     from web3 import (  # noqa: F401
         AsyncWeb3,
     )
+
+
+_TValue = TypeVar("_TValue")
 
 
 def fallback_func_abi_exists(contract_abi: ABI) -> Sequence[ABIFallback]:
@@ -614,10 +619,12 @@ def map_abi_data(
         data,
         # 1. Decorating the data tree with types
         abi_data_tree(types),
+        IteratorProxy,
         # 2. Recursively mapping each of the normalizers to the data
         *map(data_tree_map, normalizers),
         # 3. Stripping the types back out of the tree
         strip_abi_types,
+        list,
     )
 
 
@@ -869,6 +876,21 @@ def abi_decoded_namedtuple_factory(
             return super().__new__(self, *args)
 
     return ABIDecodedNamedTuple
+
+
+class IteratorProxy(Iterable[_TValue]):
+    """Wraps an iterator to return when iterated upon."""
+
+    def __init__(self, iterator: Iterator[_TValue]):
+        self.__wrapped = iterator
+
+    def __iter__(self) -> Iterator[_TValue]:
+        try:
+            return self.__dict__.pop("_IteratorProxy__wrapped")
+        except KeyError as e:
+            raise RuntimeError(
+                f"{type(self).__name__} has already been consumed"
+            ) from e.__cause__
 
 
 # -- async -- #
