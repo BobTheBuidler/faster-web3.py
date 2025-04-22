@@ -1,14 +1,14 @@
-from collections.abc import (
-    Mapping,
-)
 from typing import (
     Any,
     Callable,
     Dict,
     Iterable,
+    Iterator,
+    Mapping,
     Optional,
     Tuple,
     TypeVar,
+    overload,
 )
 
 from eth_typing import (
@@ -38,6 +38,7 @@ from web3.types import (
 )
 
 TReturn = TypeVar("TReturn")
+TKey = TypeVar("TKey")
 TValue = TypeVar("TValue")
 
 
@@ -59,18 +60,73 @@ def apply_formatters_to_args(
     )
 
 
+@overload
+def map_collection(
+    func: Callable[[TValue], TReturn], mapping: Mapping[TKey, TValue]
+) -> Mapping[TKey, TReturn]:
+    """
+    Apply `func` to each value of a mapping.
+    If `collection` is not a collection, return it unmodified.
+    """
+
+
+@overload
+def map_collection(func: Callable[..., TReturn], collection: str) -> str:
+    """
+    Return `collection` unmodified, since it is not a collection.
+    """
+
+
+@overload
+def map_collection(
+    func: Callable[[TValue], TReturn], iterable: "map[TValue]"
+) -> "map[TReturn]":
+    """
+    Apply `func` to each element of a map.
+    """
+
+
+@overload
+def map_collection(
+    func: Callable[[TValue], TReturn], iterable: Iterator[TValue]
+) -> Iterator[TReturn]:
+    """
+    Apply `func` to each element of an iteratol.
+    """
+
+
+@overload
+def map_collection(
+    func: Callable[[TValue], TReturn], iterable: Iterable[TValue]
+) -> Iterable[TReturn]:
+    """
+    Apply `func` to each element of an iterable.
+    """
+
+
+@overload
+def map_collection(
+    func: Callable[[TValue], TReturn], collection: TValue
+) -> TValue:
+    """
+    Return `collection` unmodified, since it is not a collection.
+    """
+
+
+@overload
+def map_collection(func: Callable[..., TReturn], collection: Any) -> Any:
+    ...
+
+
 def map_collection(func: Callable[..., TReturn], collection: Any) -> Any:
     """
-    Apply func to each element of a collection, or value of a dictionary.
-    If the value is not a collection, return it unmodified
+    Apply `func` to each element of a collection, or value of a mapping.
+    If `collection` is not a collection, return it unmodified.
     """
-    datatype = type(collection)
     if isinstance(collection, Mapping):
-        return datatype((key, func(val)) for key, val in collection.items())
-    if is_string(collection):
-        return collection
-    elif isinstance(collection, Iterable):
-        return datatype(map(func, collection))
+        return type(collection)(zip(collection.keys(), map(func, collection.values())))  # type: ignore[call-arg]
+    elif not is_string(collection) and isinstance(collection, Iterable):
+        return type(collection)(map(func, collection))  # type: ignore[call-arg]
     else:
         return collection
 
