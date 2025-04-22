@@ -73,7 +73,6 @@ from eth_utils import (
 )
 from eth_utils.toolz import (
     curry,
-    partial,
     pipe,
 )
 
@@ -611,17 +610,19 @@ def map_abi_data(
     2. Recursively mapping each of the normalizers to the data
     3. Stripping the types back out of the tree
     """
-    pipeline = itertools.chain(
-        [abi_data_tree(types)],
-        map(data_tree_map, normalizers),
-        [partial(recursive_map, strip_abi_type)],
+    return pipe(
+        data,
+        # 1. Decorating the data tree with types
+        abi_data_tree(types),
+        # 2. Recursively mapping each of the normalizers to the data
+        *map(data_tree_map, normalizers),
+        # 3. Stripping the types back out of the tree
+        strip_abi_types,
     )
-
-    return pipe(data, *pipeline)
 
 
 @curry
-def abi_data_tree(types: Sequence[TypeStr], data: Sequence[Any]) -> List[Any]:
+def abi_data_tree(types: Sequence[TypeStr], data: Sequence[Any]) -> List["ABITypedData"]:
     """
     Decorate the data tree with pairs of (type, data). The pair tuple is actually an
     ABITypedData, but can be accessed as a tuple.
@@ -631,10 +632,7 @@ def abi_data_tree(types: Sequence[TypeStr], data: Sequence[Any]) -> List[Any]:
     >>> abi_data_tree(types=["bool[2]", "uint"], data=[[True, False], 0])
     [("bool[2]", [("bool", True), ("bool", False)]), ("uint256", 0)]
     """
-    return [
-        abi_sub_tree(data_type, data_value)
-        for data_type, data_value in zip(types, data)
-    ]
+    return list(map(abi_sub_tree, types, data))
 
 
 @curry
@@ -721,6 +719,10 @@ def strip_abi_type(elements: Any) -> Any:
         return elements.data
     else:
         return elements
+
+
+def strip_abi_types(elements: Any) -> Any:
+    return recursive_map(strip_abi_type, elements)
 
 
 def build_non_strict_registry() -> ABIRegistry:
