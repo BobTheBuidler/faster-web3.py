@@ -18,7 +18,7 @@ def insert_items(cls, size, keys, values):
 
 @pytest.mark.benchmark(group="SimpleCache-cache")
 @pytest.mark.parametrize("size", [10, 100, 1000])
-def test_web3_simplecache_cache(benchmark: BenchmarkFixture, size):
+def test_simplecache_cache(benchmark: BenchmarkFixture, size):
     keys = list(map(str, range(size)))
     values = list(range(size))
     benchmark(run_100, insert_items, web3.utils.caching.SimpleCache, size, keys, values)
@@ -40,7 +40,7 @@ def insert_and_evict(cls, size, keys, values):
 
 @pytest.mark.benchmark(group="SimpleCache-eviction")
 @pytest.mark.parametrize("size", [10, 100])
-def test_web3_simplecache_eviction(benchmark: BenchmarkFixture, size):
+def test_simplecache_eviction(benchmark: BenchmarkFixture, size):
     keys = list(map(str, range(size * 2)))
     values = list(range(size * 2))
     def insert_and_evict():
@@ -65,7 +65,7 @@ def retrieve_items(cache, keys):
 
 @pytest.mark.benchmark(group="SimpleCache-retrieval")
 @pytest.mark.parametrize("size", [10, 100])
-def test_web3_simplecache_retrieval(benchmark: BenchmarkFixture, size):
+def test_simplecache_retrieval(benchmark: BenchmarkFixture, size):
     cache = web3.utils.caching.SimpleCache(size=size)
     keys = list(map(str, range(size)))
     for k, v in zip(keys, range(size)):
@@ -92,7 +92,7 @@ def pop_items(cls, size, keys, values):
             
 @pytest.mark.benchmark(group="SimpleCache-pop")
 @pytest.mark.parametrize("size", [10, 100])
-def test_web3_simplecache_pop(benchmark: BenchmarkFixture, size):
+def test_simplecache_pop(benchmark: BenchmarkFixture, size):
     keys = list(map(str, range(size)))
     values = list(range(size))
     benchmark(run_100, pop_items, web3.utils.caching.SimpleCache, size, keys, values)
