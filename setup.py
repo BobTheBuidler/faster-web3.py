@@ -113,7 +113,7 @@ setup(
     ],
     python_requires=">=3.9, <4",
     extras_require=extras_require,
-    py_modules=["faster_web3", "ens"],
+    py_modules=["faster_web3", "faster_ens"],
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
