@@ -3,6 +3,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Dict,
+    Final,
     Optional,
     Sequence,
     TypeVar,
