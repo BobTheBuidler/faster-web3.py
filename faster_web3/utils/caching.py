@@ -84,6 +84,10 @@ class SimpleCache(Generic[T]):
     ) -> Tuple[str, Any]:
         start = time.time()
         end_time = start + timeout
+        try:
+            return self.popitem(last=last)
+        except KeyError:
+            pass
         while True:
             await asyncio.sleep(0)
             try:
