@@ -43,9 +43,8 @@ from faster_web3._utils.abi import (
 from faster_web3._utils.async_transactions import (
     async_fill_transaction_defaults,
 )
-from faster_web3._utils.compat import (
+from faster_web3._utils.batching import (
     BatchRequestInformation,
-    TypeAlias,
 )
 from faster_web3._utils.contracts import (
     prepare_transaction,
