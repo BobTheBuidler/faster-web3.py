@@ -13,8 +13,10 @@ import eth_keys
 from eth_tester.exceptions import (
     ValidationError,
 )
-from faster_eth_utils import (
+from eth_utils import (
     ValidationError as EthUtilsValidationError,
+)
+from faster_eth_utils import (
     is_hexstr,
     to_bytes,
     to_hex,
