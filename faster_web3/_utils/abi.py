@@ -28,7 +28,7 @@ from faster_eth_abi import (
     decoding,
     encoding,
 )
-from faster_eth_abi.base import (
+from faster_eth_abi.from_type_str import (
     parse_type_str,
 )
 from faster_eth_abi.exceptions import (
