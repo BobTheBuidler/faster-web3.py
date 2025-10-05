@@ -1,5 +1,3 @@
-import asyncio
-
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
@@ -105,39 +103,3 @@ def test_faster_simplecache_pop(benchmark: BenchmarkFixture, size):
     keys = list(map(str, range(size)))
     values = list(range(size))
     benchmark(run_100, pop_items, faster_web3.utils.caching.SimpleCache, size, keys, values)
-
-
-async def popitem_many(cache, size, last):
-    try:
-        for _ in range(size):
-            await cache.async_await_and_popitem(last=last, timeout=0.1)
-    except asyncio.TimeoutError:
-        return
-
-
-@pytest.mark.benchmark(group="SimpleCache-async_await_and_popitem")
-@pytest.mark.parametrize("size", [10, 100])
-@pytest.mark.parametrize("last", [True, False])
-def test_web3_simplecache_async_await_and_popitem(benchmark: BenchmarkFixture, size, last):
-    cache = web3.utils.caching.SimpleCache(size=size)
-    for i in range(size * 10_000):
-        cache.cache(str(i), i)
-    @benchmark
-    def run() -> None:
-        loop = asyncio.new_event_loop()
-        loop.run_until_complete(popitem_many(cache, size, last))
-        loop.close()
-
-
-@pytest.mark.benchmark(group="SimpleCache-async_await_and_popitem")
-@pytest.mark.parametrize("size", [10, 100])
-@pytest.mark.parametrize("last", [True, False])
-def test_faster_simplecache_async_await_and_popitem(benchmark: BenchmarkFixture, size, last):
-    cache = faster_web3.utils.caching.SimpleCache(size=size)
-    for i in range(size * 10_000):
-        cache.cache(str(i), i)
-    @benchmark
-    def run() -> None:
-        loop = asyncio.new_event_loop()
-        loop.run_until_complete(popitem_many(cache, size, last))
-        loop.close()
