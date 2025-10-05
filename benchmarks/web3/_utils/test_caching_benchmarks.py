@@ -104,7 +104,7 @@ def test_web3_simplecache_pop(benchmark: BenchmarkFixture, size):
 def test_faster_simplecache_pop(benchmark: BenchmarkFixture, size):
     keys = list(map(str, range(size)))
     values = list(range(size))
-    benchmark(run_100, pop_items, faster_web3.utils.caching.SimpleCache, size, keys, values))
+    benchmark(run_100, pop_items, faster_web3.utils.caching.SimpleCache, size, keys, values)
 
 
 async def popitem_many(cache, size, last):
