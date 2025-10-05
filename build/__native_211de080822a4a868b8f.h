@@ -64,12 +64,13 @@ typedef struct {
     int32_t ___mypyc_next_label__;
     double ___mypyc_generator_attribute__start;
     double ___mypyc_generator_attribute__end_time;
-    PyObject *___mypyc_temp__0;
-    tuple_T3OOO ___mypyc_temp__1;
+    tuple_T3OOO ___mypyc_temp__0;
+    PyObject *___mypyc_temp__1;
     tuple_T3OOO ___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
     double ___mypyc_generator_attribute__now;
-    PyObject *___mypyc_temp__3;
-    tuple_T3OOO ___mypyc_temp__4;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
 } faster_web3___utils___caching___async_await_and_popitem_SimpleCache_genObject;
 
 #endif
