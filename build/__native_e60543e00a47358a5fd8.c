@@ -459,9 +459,9 @@ char CPyDef_datatypes_____init___3_PropertyCheckingFactory_obj_____call__(PyObje
     char cpy_r_r5;
     cpy_r_r0 = (PyObject *)&PyType_Type;
     cpy_r_r1 = CPyStatics[9]; /* '__init__' */
-    PyObject *cpy_r_r2[4] = {cpy_r_r0, cpy_r_name, cpy_r_bases, cpy_r_namespace};
+    PyObject *cpy_r_r2[5] = {cpy_r_r0, cpy_r_cls, cpy_r_name, cpy_r_bases, cpy_r_namespace};
     cpy_r_r3 = (PyObject **)&cpy_r_r2;
-    cpy_r_r4 = PyObject_VectorcallMethod(cpy_r_r1, cpy_r_r3, 9223372036854775812ULL, 0);
+    cpy_r_r4 = PyObject_VectorcallMethod(cpy_r_r1, cpy_r_r3, 9223372036854775813ULL, 0);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/datatypes.py", "__init__", 46, CPyStatic_datatypes___globals);
         goto CPyL2;
