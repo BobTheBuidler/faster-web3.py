@@ -3,6 +3,7 @@ from setuptools import (
     find_packages,
     setup,
 )
+from mypyc.build import mypycify
 
 extras_require = {
     "tester": [
@@ -51,6 +52,14 @@ extras_require["test"] = extras_require["test"] + extras_require["tester"]
 with open("./README.md") as readme:
     long_description = readme.read()
 
+
+ext_modules = mypycify(
+    [
+        "web3/_utils/type_conversion.py",
+        "--strict",
+        "--pretty",
+    ]
+)
 
 setup(
     name="faster_web3",

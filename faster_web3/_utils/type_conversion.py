@@ -20,8 +20,10 @@ def to_hex_if_bytes(val: Union[HexStr, str, bytes, bytearray]) -> HexStr:
     Note: This method does not validate against all cases and is only
     meant to work with bytes and hex strings.
     """
-    if isinstance(val, str) and not val.startswith("0x"):
-        raise Web3ValueError(f"Expected a hex string. Got: {val!r}")
+    if isinstance(val, str):
+        if not val.startswith("0x"):
+            raise Web3ValueError(f"Expected a hex string. Got: {val!r}")
+        return to_hex(hexstr=val)
 
     return to_hex(val) if isinstance(val, (bytes, bytearray)) else to_hex(hexstr=val)
 
