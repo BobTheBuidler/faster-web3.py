@@ -1054,7 +1054,7 @@ def test_call_tuple_contract(tuple_contract, method_input, expected):
                     ),
                 ],
             ),
-            "<class 'web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
+            "<class 'faster_web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
             "ABIDecodedNamedTuple(a=123, b=[1, 2], c=[ABIDecodedNamedTuple(x=234, y=[True, False], z=['0x4AD7E79d88650B01EEA2B1f069f01EE9db343d5c', '0xfdF1946A9b40245224488F1a36f4A9ed4844a523', '0xfdF1946A9b40245224488F1a36f4A9ed4844a523']), ABIDecodedNamedTuple(x=345, y=[False, False], z=['0xefd1FF70c185A1C0b125939815225199079096Ee', '0xf35C0784794F3Cd935F5754d3a0EbcE95bEf851e'])])",  # noqa: E501
         ),
     ),
@@ -1208,7 +1208,7 @@ def test_call_nested_tuple_contract(nested_tuple_contract, method_input, expecte
                     ),
                 ],
             ),
-            "<class 'web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
+            "<class 'faster_web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
             "ABIDecodedNamedTuple(t=[ABIDecodedNamedTuple(u=[ABIDecodedNamedTuple(x=1, y=2), ABIDecodedNamedTuple(x=3, y=4), ABIDecodedNamedTuple(x=5, y=6)]), ABIDecodedNamedTuple(u=[ABIDecodedNamedTuple(x=7, y=8), ABIDecodedNamedTuple(x=9, y=10), ABIDecodedNamedTuple(x=11, y=12)])])",  # noqa: E501
         ),
     ),
@@ -2228,7 +2228,7 @@ async def test_async_call_tuple_contract(async_tuple_contract, method_input, exp
                     ),
                 ],
             ),
-            "<class 'web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
+            "<class 'faster_web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
             "ABIDecodedNamedTuple(a=123, b=[1, 2], c=[ABIDecodedNamedTuple(x=234, y=[True, False], z=['0x4AD7E79d88650B01EEA2B1f069f01EE9db343d5c', '0xfdF1946A9b40245224488F1a36f4A9ed4844a523', '0xfdF1946A9b40245224488F1a36f4A9ed4844a523']), ABIDecodedNamedTuple(x=345, y=[False, False], z=['0xefd1FF70c185A1C0b125939815225199079096Ee', '0xf35C0784794F3Cd935F5754d3a0EbcE95bEf851e'])])",  # noqa: E501
         ),
     ),
@@ -2388,7 +2388,7 @@ async def test_async_call_nested_tuple_contract(
                     ),
                 ],
             ),
-            "<class 'web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
+            "<class 'faster_web3._utils.abi.abi_decoded_namedtuple_factory.<locals>.ABIDecodedNamedTuple'>",  # noqa: E501
             "ABIDecodedNamedTuple(t=[ABIDecodedNamedTuple(u=[ABIDecodedNamedTuple(x=1, y=2), ABIDecodedNamedTuple(x=3, y=4), ABIDecodedNamedTuple(x=5, y=6)]), ABIDecodedNamedTuple(u=[ABIDecodedNamedTuple(x=7, y=8), ABIDecodedNamedTuple(x=9, y=10), ABIDecodedNamedTuple(x=11, y=12)])])",  # noqa: E501
         ),
     ),

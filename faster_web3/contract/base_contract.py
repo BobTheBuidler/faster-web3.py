@@ -469,7 +469,7 @@ class BaseContractEvents(Generic[TContractEvent]):
     .. code-block:: python
 
         >>> for e in mycontract.events: print(e)
-        <class 'web3._utils.datatypes.LogAnonymous'>
+        <class 'faster_web3._utils.datatypes.LogAnonymous'>
         ...
 
     """
