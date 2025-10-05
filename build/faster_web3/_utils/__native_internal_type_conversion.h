@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[25];
+extern PyObject *CPyStatics[29];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -19,9 +19,11 @@ extern CPyModule *CPyModule_faster_web3____utils___type_conversion;
 extern PyObject *CPyStatic_globals;
 extern CPyModule *CPyModule_builtins;
 extern CPyModule *CPyModule_typing;
-extern CPyModule *CPyModule_eth_typing;
 extern CPyModule *CPyModule_eth_utils;
+extern CPyModule *CPyModule_eth_typing;
 extern CPyModule *CPyModule_faster_web3___exceptions;
+extern PyObject *CPyStatic_to_bytes;
+extern PyObject *CPyStatic_to_hex;
 extern PyObject *CPyDef_to_hex_if_bytes(PyObject *cpy_r_val);
 extern PyObject *CPyPy_to_hex_if_bytes(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_to_bytes_if_hex(PyObject *cpy_r_val);
