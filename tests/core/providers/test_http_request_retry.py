@@ -10,21 +10,21 @@ from requests.exceptions import (
     TooManyRedirects,
 )
 
-from web3 import (
+from faster_web3 import (
     AsyncHTTPProvider,
     AsyncWeb3,
     Web3,
     WebSocketProvider,
 )
-from web3.providers import (
+from faster_web3.providers import (
     HTTPProvider,
     IPCProvider,
 )
-from web3.providers.rpc.utils import (
+from faster_web3.providers.rpc.utils import (
     ExceptionRetryConfiguration,
     check_if_retry_on_failure,
 )
-from web3.types import (
+from faster_web3.types import (
     RPCEndpoint,
 )
 

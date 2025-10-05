@@ -31,30 +31,30 @@ from ens.contract_data import (
 from ens.exceptions import (
     ENSTypeError,
 )
-from web3 import (
+from faster_web3 import (
     AsyncWeb3,
     Web3,
 )
-from web3._utils.contract_sources.contract_data.extended_resolver import (
+from faster_web3._utils.contract_sources.contract_data.extended_resolver import (
     EXTENDED_RESOLVER_ABI,
     EXTENDED_RESOLVER_BYTECODE,
     EXTENDED_RESOLVER_RUNTIME,
 )
-from web3._utils.contract_sources.contract_data.offchain_resolver import (
+from faster_web3._utils.contract_sources.contract_data.offchain_resolver import (
     OFFCHAIN_RESOLVER_ABI,
     OFFCHAIN_RESOLVER_BYTECODE,
     OFFCHAIN_RESOLVER_RUNTIME,
 )
-from web3._utils.contract_sources.contract_data.simple_resolver import (
+from faster_web3._utils.contract_sources.contract_data.simple_resolver import (
     SIMPLE_RESOLVER_ABI,
     SIMPLE_RESOLVER_BYTECODE,
     SIMPLE_RESOLVER_RUNTIME,
 )
-from web3.contract import (
+from faster_web3.contract import (
     AsyncContract,
     Contract,
 )
-from web3.providers.eth_tester import (
+from faster_web3.providers.eth_tester import (
     AsyncEthereumTesterProvider,
     EthereumTesterProvider,
 )

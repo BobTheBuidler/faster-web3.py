@@ -262,7 +262,7 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "web3",
+        "faster-web3",
         "web3.py Documentation",
         ["The Ethereum Foundation"],
         1,

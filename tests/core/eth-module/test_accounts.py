@@ -22,21 +22,21 @@ from hexbytes import (
     HexBytes,
 )
 
-from web3 import (
+from faster_web3 import (
     Account,
     AsyncWeb3,
     Web3,
 )
-from web3._utils.empty import (
+from faster_web3._utils.empty import (
     Empty,
 )
-from web3.eth import (
+from faster_web3.eth import (
     BaseEth,
 )
-from web3.providers.eth_tester import (
+from faster_web3.providers.eth_tester import (
     EthereumTesterProvider,
 )
-from web3.providers.eth_tester.main import (
+from faster_web3.providers.eth_tester.main import (
     AsyncEthereumTesterProvider,
 )
 

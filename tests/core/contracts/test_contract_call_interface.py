@@ -21,23 +21,23 @@ from tests.core.contracts.utils import (
     async_deploy,
     deploy,
 )
-from web3._utils.abi import (
+from faster_web3._utils.abi import (
     recursive_dict_to_namedtuple,
 )
-from web3._utils.contract_sources.contract_data.bytes_contracts import (
+from faster_web3._utils.contract_sources.contract_data.bytes_contracts import (
     BYTES32_CONTRACT_DATA,
     BYTES_CONTRACT_DATA,
 )
-from web3._utils.ens import (
+from faster_web3._utils.ens import (
     contract_ens_addresses,
 )
-from web3.contract.async_contract import (
+from faster_web3.contract.async_contract import (
     AsyncContractFunction,
 )
-from web3.contract.contract import (
+from faster_web3.contract.contract import (
     ContractFunction,
 )
-from web3.exceptions import (
+from faster_web3.exceptions import (
     ABIReceiveNotFound,
     BadFunctionCallOutput,
     BlockNumberOutOfRange,

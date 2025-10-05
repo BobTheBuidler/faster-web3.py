@@ -15,27 +15,27 @@ from websockets import (
     ConnectionClosedOK,
 )
 
-from web3 import (
+from faster_web3 import (
     AsyncWeb3,
 )
-from web3._utils.caching import (
+from faster_web3._utils.caching import (
     RequestInformation,
     generate_cache_key,
 )
-from web3._utils.module_testing.module_testing_utils import (
+from faster_web3._utils.module_testing.module_testing_utils import (
     WebSocketMessageStreamMock,
 )
-from web3.exceptions import (
+from faster_web3.exceptions import (
     TimeExhausted,
     Web3RPCError,
 )
-from web3.providers.persistent import (
+from faster_web3.providers.persistent import (
     WebSocketProvider,
 )
-from web3.types import (
+from faster_web3.types import (
     RPCEndpoint,
 )
-from web3.utils import (
+from faster_web3.utils import (
     EthSubscription,
 )
 

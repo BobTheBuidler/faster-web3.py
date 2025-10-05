@@ -6,13 +6,13 @@ from unittest.mock import (
 
 import pytest_asyncio
 
-from web3.datastructures import (
+from faster_web3.datastructures import (
     AttributeDict,
 )
-from web3.middleware import (
+from faster_web3.middleware import (
     StalecheckMiddlewareBuilder,
 )
-from web3.middleware.stalecheck import (
+from faster_web3.middleware.stalecheck import (
     StaleBlockchain,
     _is_fresh,
 )

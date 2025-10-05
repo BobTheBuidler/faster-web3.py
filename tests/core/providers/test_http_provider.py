@@ -11,33 +11,33 @@ from requests.adapters import (
     HTTPAdapter,
 )
 
-from web3 import (
+from faster_web3 import (
     Web3,
     __version__ as web3py_version,
 )
-from web3.eth import (
+from faster_web3.eth import (
     Eth,
 )
-from web3.exceptions import (
+from faster_web3.exceptions import (
     ProviderConnectionError,
     Web3RPCError,
 )
-from web3.geth import (
+from faster_web3.geth import (
     Geth,
     GethAdmin,
     GethTxPool,
 )
-from web3.middleware import (
+from faster_web3.middleware import (
     AttributeDictMiddleware,
     BufferedGasEstimateMiddleware,
     ENSNameToAddressMiddleware,
     GasPriceStrategyMiddleware,
     ValidationMiddleware,
 )
-from web3.net import (
+from faster_web3.net import (
     Net,
 )
-from web3.providers import (
+from faster_web3.providers import (
     HTTPProvider,
 )
 
