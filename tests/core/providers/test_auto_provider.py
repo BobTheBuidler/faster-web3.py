@@ -59,7 +59,12 @@ def test_load_provider_from_env(monkeypatch, uri, expected_type, expected_attrs)
 def test_get_dev_ipc_path(monkeypatch, tmp_path):
     # test default path (portable)
     path = get_dev_ipc_path()
-    assert path == os.path.join(tempfile.gettempdir(), "geth.ipc")
+    expected = (
+        "\\.\pipe\geth.ipc"
+        if sys.platform.startswith("win")
+        os.path.join(tempfile.gettempdir(), "geth.ipc")
+    )
+    assert path == expected
 
     uri = str(tmp_path) + "/geth.ipc"
 
