@@ -8,19 +8,13 @@ def run_1000(func, *args, **kwargs):
     for _ in range(1000):
         func(*args, **kwargs)
 
-cases = {
-    "web3": "web3",
-    "faster_web3": "faster_web3",
-    "custom": "custom_module",
-    "empty": "",
-}
+MODULE = "some_module"
+CLASS_NAME = "SomeClass"
 
 @pytest.mark.benchmark(group="construct_user_agent")
-@pytest.mark.parametrize("module", list(cases.values()), ids=list(cases))
-def test_web3_construct_user_agent(benchmark: BenchmarkFixture, module):
-    benchmark(run_1000, web3._utils.http.construct_user_agent, module)
+def test_web3_construct_user_agent(benchmark: BenchmarkFixture):
+    benchmark(run_1000, web3._utils.http.construct_user_agent, MODULE, CLASS_NAME)
 
 @pytest.mark.benchmark(group="construct_user_agent")
-@pytest.mark.parametrize("module", list(cases.values()), ids=list(cases))
-def test_faster_web3_construct_user_agent(benchmark: BenchmarkFixture, module):
-    benchmark(run_1000, faster_web3._utils.http.construct_user_agent, module)
+def test_faster_web3_construct_user_agent(benchmark: BenchmarkFixture):
+    benchmark(run_1000, faster_web3._utils.http.construct_user_agent, MODULE, CLASS_NAME)

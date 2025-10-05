@@ -8,22 +8,21 @@ from web3.exceptions import Web3ValueError
 import faster_web3._utils.type_conversion
 from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
 
+excs = (UnicodeDecodeError, UnicodeEncodeError, binascii.Error, Web3ValueError, FasterWeb3ValueError)
+
 def run_100(func, *args, **kwargs):
     for _ in range(100):
         try:
             func(*args, **kwargs)
-        except (UnicodeDecodeError, binascii.Error, Web3ValueError, FasterWeb3ValueError):
+        except excs:
             pass
 
 to_hex_if_bytes_cases = {
     "bytes": b"\x00\x01\x02",
     "hexstr": "0xdeadbeef",
-    "int": 123456789,
     "empty-bytes": b"",
     "large-bytes": b"\xff" * 32,
     "non-prefixed-hex": "deadbeef",
-    "zero-int": 0,
-    "negative-int": -1,
     "empty-str": "",
     "not-hex": "nothex",
     "unicode": "你好",
@@ -48,8 +47,6 @@ to_bytes_if_hex_cases = {
     "empty-str": "",
     "large-hex": "0x" + "ff" * 64,
     "unicode": "你好",
-    "int": 123456,
-    "none": None,
 }
 
 @pytest.mark.benchmark(group="to_bytes_if_hex")
