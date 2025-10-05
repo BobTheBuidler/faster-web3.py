@@ -5,7 +5,7 @@ from typing import (
 from eth_typing import (
     HexStr,
 )
-from eth_utils import (
+from faster_eth_utils import (
     to_bytes,
     to_hex,
 )
