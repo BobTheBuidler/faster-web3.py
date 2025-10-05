@@ -10,6 +10,9 @@ from typing import (
 
 import faster_eth_utils
 import faster_eth_utils.toolz
+from mypy_extensions import (
+    mypyc_attr,
+)
 
 from faster_web3.exceptions import (
     Web3AttributeError,
@@ -29,6 +32,7 @@ def verify_attr(class_name: str, key: str, namespace: Collection[str]) -> None:
         )
 
 
+@mypyc_attr(native_class=False)
 class PropertyCheckingFactory(type):
     def __init__(
         cls,
