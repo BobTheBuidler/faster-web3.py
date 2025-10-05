@@ -236,21 +236,19 @@ def test_faster_namedelementonion_inject(benchmark: BenchmarkFixture):
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
 def test_web3_namedelementonion_replace(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
-    to_replace = middlewares[0]
     def replace():
         onion = NamedElementOnion(middlewares)
         for i in range(10):
-            onion.replace(to_replace, make_callable(i + 10))
+            onion.replace(middlewares[i], make_callable(i + 10))
     benchmark(run_100, replace)
 
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
 def test_faster_namedelementonion_replace(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
-    to_replace = middlewares[0]
     def replace():
         onion = FasterNamedElementOnion(middlewares)
         for i in range(10):
-            onion.replace(to_replace, make_callable(i + 10))
+            onion.replace(middlewares[i], make_callable(i + 10))
     benchmark(run_100, replace)
 
 @pytest.mark.benchmark(group="NamedElementOnion-remove")
