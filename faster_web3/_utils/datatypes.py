@@ -2,21 +2,22 @@ from typing import (
     Any,
     Collection,
     Dict,
+    Final,
     Optional,
     Tuple,
     Type,
 )
 
-from eth_utils import (
-    apply_formatters_to_dict,
-)
-from eth_utils.toolz import (
-    concat,
-)
+import faster_eth_utils
+import faster_eth_utils.toolz
 
 from faster_web3.exceptions import (
     Web3AttributeError,
 )
+
+
+apply_formatters_to_dict: Final = faster_eth_utils.apply_formatters_to_dict
+concat: Final = faster_eth_utils.toolz.concat
 
 
 def verify_attr(class_name: str, key: str, namespace: Collection[str]) -> None:
