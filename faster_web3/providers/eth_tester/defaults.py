@@ -226,7 +226,7 @@ def create_new_account(eth_tester: "EthereumTester") -> HexAddress:
 
 
 API_ENDPOINTS = {
-    "faster_web3": {
+    "web3": {
         "clientVersion": client_version,
         "sha3": compose(
             encode_hex,
