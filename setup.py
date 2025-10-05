@@ -118,7 +118,8 @@ setup(
     zip_safe=False,
     keywords="ethereum",
     packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*"]),
-    package_data={"faster_web3": ["py.typed"]},
+    ext_modules=ext_modules,
+    package_data={"faster_web3": ["py.typed"], "faster_ens": ["py.typed"]},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
