@@ -1,18 +1,20 @@
 from typing import (
+    Final,
     Union,
 )
 
+import eth_utils
 from eth_typing import (
     HexStr,
-)
-from eth_utils import (
-    to_bytes,
-    to_hex,
 )
 
 from faster_web3.exceptions import (
     Web3ValueError,
 )
+
+
+to_bytes: Final = eth_utils.to_bytes
+to_hex: Final = eth_utils.to_hex
 
 
 def to_hex_if_bytes(val: Union[HexStr, str, bytes, bytearray]) -> HexStr:
