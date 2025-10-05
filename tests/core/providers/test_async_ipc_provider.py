@@ -158,8 +158,9 @@ def test_ipc_tilde_in_path():
 
 def test_get_endpoint_uri_or_ipc_path_returns_ipc_path():
     provider = AsyncIPCProvider(pathlib.Path("/path/to/file"))
+    expected = "D:\\path\\to\\file" if sys.platform.startswith("win") else "/path/to/file"
     assert (
-        provider.get_endpoint_uri_or_ipc_path() == "/path/to/file" == provider.ipc_path
+        provider.get_endpoint_uri_or_ipc_path() == expected == provider.ipc_path
     )
 
 
