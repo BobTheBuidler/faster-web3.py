@@ -13,6 +13,7 @@ from typing import (
     Collection,
     Coroutine,
     Dict,
+    Final,
     Iterable,
     List,
     Mapping,
@@ -22,6 +23,7 @@ from typing import (
     Type,
     Union,
     cast,
+    final,
 )
 
 from faster_eth_abi import (
@@ -196,17 +198,18 @@ def get_abi_element_signature(
     return f"{element_name}({argument_types})"
 
 
+@final
 class AddressEncoder(encoding.AddressEncoder):
     @classmethod
     def validate_value(cls, value: Any) -> None:
         if is_ens_name(value):
             return
 
-        super().validate_value(value)  # type: ignore[no-untyped-call]
+        super().validate_value(value)
 
 
 class AcceptsHexStrEncoder(encoding.BaseEncoder):
-    subencoder_cls: Type[encoding.BaseEncoder] = None
+    subencoder_cls: Optional[Type[encoding.BaseEncoder]] = None
     is_strict: Optional[bool] = None
     is_big_endian: bool = False
     data_byte_size: Optional[int] = None
@@ -217,7 +220,7 @@ class AcceptsHexStrEncoder(encoding.BaseEncoder):
         subencoder: encoding.BaseEncoder,
         **kwargs: Dict[str, Any],
     ) -> None:
-        super().__init__(**kwargs)  # type: ignore[no-untyped-call]
+        super().__init__(**kwargs)
         self.subencoder = subencoder
         self.is_dynamic = subencoder.is_dynamic
 
@@ -286,15 +289,16 @@ class AcceptsHexStrEncoder(encoding.BaseEncoder):
 
 
 class BytesEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.BytesEncoder
-    is_strict = False
+    subencoder_cls: Final = encoding.BytesEncoder
+    is_strict: Final = False
 
 
+@final
 class ExactLengthBytesEncoder(BytesEncoder):
-    is_strict = True
+    is_strict: Final = True
 
     def validate(self) -> None:
-        super().validate()  # type: ignore[no-untyped-call]
+        super().validate()
         if self.value_bit_size is None:
             raise Web3ValueError("`value_bit_size` may not be none")
         if self.data_byte_size is None:
@@ -330,16 +334,19 @@ class ExactLengthBytesEncoder(BytesEncoder):
         )
 
 
+@final
 class ByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.ByteStringEncoder
-    is_strict = False
+    subencoder_cls: Final = encoding.ByteStringEncoder
+    is_strict: Final = False
 
 
+@final
 class StrictByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.ByteStringEncoder
-    is_strict = True
+    subencoder_cls: Final = encoding.ByteStringEncoder
+    is_strict: Final = True
 
 
+@final
 class TextStringEncoder(encoding.TextStringEncoder):
     @classmethod
     def validate_value(cls, value: Any) -> None:
@@ -352,10 +359,10 @@ class TextStringEncoder(encoding.TextStringEncoder):
                     msg="not decodable as unicode string",
                 )
 
-        super().validate_value(value)  # type: ignore[no-untyped-call]
+        super().validate_value(value)
 
 
-TUPLE_TYPE_STR_RE = re.compile(r"^(tuple)((\[([1-9]\d*\b)?])*)??$")
+TUPLE_TYPE_STR_RE: Final = re.compile(r"^(tuple)((\[([1-9]\d*\b)?])*)??$")
 
 
 def get_tuple_type_str_parts(s: str) -> Optional[Tuple[str, Optional[str]]]:
@@ -441,15 +448,15 @@ def find_constructor_abi_element_by_type(contract_abi: ABI) -> ABIConstructor:
     return None
 
 
-DYNAMIC_TYPES = ["bytes", "string"]
+DYNAMIC_TYPES: Final = ["bytes", "string"]
 
-INT_SIZES = range(8, 257, 8)
-BYTES_SIZES = range(1, 33)
-UINT_TYPES = [f"uint{i}" for i in INT_SIZES]
-INT_TYPES = [f"int{i}" for i in INT_SIZES]
-BYTES_TYPES = [f"bytes{i}" for i in BYTES_SIZES] + ["bytes32.byte"]
+INT_SIZES: Final = range(8, 257, 8)
+BYTES_SIZES: Final = range(1, 33)
+UINT_TYPES: Final = [f"uint{i}" for i in INT_SIZES]
+INT_TYPES: Final = [f"int{i}" for i in INT_SIZES]
+BYTES_TYPES: Final = [f"bytes{i}" for i in BYTES_SIZES] + ["bytes32.byte"]
 
-STATIC_TYPES = list(
+STATIC_TYPES: Final = list(
     itertools.chain(
         ["address", "bool"],
         UINT_TYPES,
@@ -458,13 +465,13 @@ STATIC_TYPES = list(
     )
 )
 
-BASE_TYPE_REGEX = "|".join(
+BASE_TYPE_REGEX: Final = "|".join(
     _type + "(?![a-z0-9])" for _type in itertools.chain(STATIC_TYPES, DYNAMIC_TYPES)
 )
 
-SUB_TYPE_REGEX = r"\[" "[0-9]*" r"\]"
+SUB_TYPE_REGEX: Final = r"\[" "[0-9]*" r"\]"
 
-TYPE_REGEX = ("^" "(?:{base_type})" "(?:(?:{sub_type})*)?" "$").format(
+TYPE_REGEX: Final = ("^" "(?:{base_type})" "(?:(?:{sub_type})*)?" "$").format(
     base_type=BASE_TYPE_REGEX,
     sub_type=SUB_TYPE_REGEX,
 )
@@ -520,7 +527,7 @@ def size_of_type(abi_type: TypeStr) -> int:
     return int(re.sub(r"\D", "", abi_type))
 
 
-END_BRACKETS_OF_ARRAY_TYPE_REGEX = r"\[[^]]*\]$"
+END_BRACKETS_OF_ARRAY_TYPE_REGEX: Final = r"\[[^]]*\]$"
 
 
 def sub_type_of_array_type(abi_type: TypeStr) -> str:
@@ -543,17 +550,17 @@ def length_of_array_type(abi_type: TypeStr) -> int:
         return int(inner_brackets)
 
 
-ARRAY_REGEX = ("^" "[a-zA-Z0-9_]+" "({sub_type})+" "$").format(sub_type=SUB_TYPE_REGEX)
+ARRAY_REGEX: Final = ("^" "[a-zA-Z0-9_]+" "({sub_type})+" "$").format(sub_type=SUB_TYPE_REGEX)
 
 
 def is_array_type(abi_type: TypeStr) -> bool:
     return bool(re.match(ARRAY_REGEX, abi_type))
 
 
-NAME_REGEX = "[a-zA-Z_]" "[a-zA-Z0-9_]*"
+NAME_REGEX: Final = "[a-zA-Z_]" "[a-zA-Z0-9_]*"
 
 
-ENUM_REGEX = ("^" "{lib_name}" r"\." "{enum_name}" "$").format(
+ENUM_REGEX: Final = ("^" "{lib_name}" r"\." "{enum_name}" "$").format(
     lib_name=NAME_REGEX, enum_name=NAME_REGEX
 )
 
@@ -730,7 +737,7 @@ def strip_abi_types(elements: Any) -> Any:
 def build_non_strict_registry() -> ABIRegistry:
     # We make a copy here just to make sure that eth-abi's default registry is not
     # affected by our custom encoder subclasses
-    registry = default_registry.copy()  # type: ignore[no-untyped-call]
+    registry = default_registry.copy()
 
     registry.unregister("address")
     registry.unregister("bytes<M>")
@@ -738,25 +745,25 @@ def build_non_strict_registry() -> ABIRegistry:
     registry.unregister("string")
 
     registry.register(
-        BaseEquals("address"),  # type: ignore[no-untyped-call]
+        BaseEquals("address"),
         AddressEncoder,
         decoding.AddressDecoder,
         label="address",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=True),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=True),
         BytesEncoder,
         decoding.BytesDecoder,
         label="bytes<M>",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=False),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=False),
         ByteStringEncoder,
         decoding.ByteStringDecoder,
         label="bytes",
     )
     registry.register(
-        BaseEquals("string"),  # type: ignore[no-untyped-call]
+        BaseEquals("string"),
         TextStringEncoder,
         decoding.StringDecoder,
         label="string",
@@ -765,7 +772,7 @@ def build_non_strict_registry() -> ABIRegistry:
 
 
 def build_strict_registry() -> ABIRegistry:
-    registry = default_registry.copy()  # type: ignore[no-untyped-call]
+    registry = default_registry.copy()
 
     registry.unregister("address")
     registry.unregister("bytes<M>")
@@ -773,25 +780,25 @@ def build_strict_registry() -> ABIRegistry:
     registry.unregister("string")
 
     registry.register(
-        BaseEquals("address"),  # type: ignore[no-untyped-call]
+        BaseEquals("address"),
         AddressEncoder,
         decoding.AddressDecoder,
         label="address",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=True),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=True),
         ExactLengthBytesEncoder,
         decoding.BytesDecoder,
         label="bytes<M>",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=False),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=False),
         StrictByteStringEncoder,
         decoding.ByteStringDecoder,
         label="bytes",
     )
     registry.register(
-        BaseEquals("string"),  # type: ignore[no-untyped-call]
+        BaseEquals("string"),
         encoding.TextStringEncoder,
         decoding.StringDecoder,
         label="string",
