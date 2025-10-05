@@ -169,6 +169,7 @@ def serve_empty_result(simple_ipc_server):
         thd.join()
 
 
+@pytest.mark.skipif(sys.platform.startswith("win"), reason="AF_UNIX sockets are not available on Windows"
 def test_sync_waits_for_full_result(jsonrpc_ipc_pipe_path, serve_empty_result):
     provider = IPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path), timeout=3)
     result = provider.make_request("method", [])
