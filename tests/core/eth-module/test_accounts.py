@@ -566,7 +566,7 @@ def async_w3():
     return AsyncWeb3(AsyncEthereumTesterProvider())
 
 
-@patch("web3.eth.BaseEth.account", "wired via BaseEth")
+@patch("faster_web3.eth.BaseEth.account", "wired via BaseEth")
 def test_account_is_wired_via_base_eth_for_sync_and_async(w3, async_w3):
     # this gives us some comfort that all the `w3` tests would apply for `async_w3` as
     # well, since `Account` is static and not actually awaited

@@ -156,7 +156,7 @@ def ENSRegistryFactory(w3):
 
 @pytest.fixture
 def ens(ens_setup, mocker):
-    mocker.patch("web3.middleware.stalecheck._is_fresh", return_value=True)
+    mocker.patch("faster_web3.middleware.stalecheck._is_fresh", return_value=True)
     ens_setup.w3.eth.default_account = ens_setup.w3.eth.accounts[0]
     return ens_setup
 
@@ -657,7 +657,7 @@ async def async_ens_setup(async_w3):
 
 @pytest_asyncio.fixture
 async def async_ens(async_ens_setup, mocker):
-    mocker.patch("web3.middleware.stalecheck._is_fresh", return_value=True)
+    mocker.patch("faster_web3.middleware.stalecheck._is_fresh", return_value=True)
     accounts = await async_ens_setup.w3.eth.accounts
     async_ens_setup.w3.eth.default_account = accounts[0]
     return async_ens_setup
