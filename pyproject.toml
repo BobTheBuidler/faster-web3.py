@@ -1,3 +1,13 @@
+[build-system]
+requires = [
+    "setuptools", 
+    "wheel", 
+    "mypy[mypyc]==1.18.2",
+    "eth-typing>=5,<6",
+	"faster-eth-utils>=5.3.8,<5.4",
+	"faster-eth-abi>=5.2,<5.3",
+]
+
 [tool.autoflake]
 exclude = "__init__.py"
 remove_all_unused_imports = true
