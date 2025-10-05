@@ -4,8 +4,8 @@ from pytest_codspeed import BenchmarkFixture
 import web3._utils.utility_methods
 import faster_web3._utils.utility_methods
 
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
+def run_500(func, *args, **kwargs):
+    for _ in range(500):
         func(*args, **kwargs)
 
 dict_cases = [
