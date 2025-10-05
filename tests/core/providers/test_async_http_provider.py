@@ -109,13 +109,13 @@ def test_get_request_headers(provider):
     assert len(headers) == 2
     assert headers["Content-Type"] == "application/json"
     assert (
-        headers["User-Agent"] == f"web3.py/{web3py_version}/"
+        headers["User-Agent"] == f"faster_web3.py/{web3py_version}/"
         f"{AsyncHTTPProvider.__module__}.{AsyncHTTPProvider.__qualname__}"
     )
 
 
 @patch(
-    "web3._utils.http_session_manager.HTTPSessionManager.async_make_post_request",
+    "faster_web3._utils.http_session_manager.HTTPSessionManager.async_make_post_request",
     new_callable=AsyncMock,
 )
 @pytest.mark.asyncio
