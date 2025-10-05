@@ -9,4 +9,4 @@ def construct_user_agent(
         __version__ as web3_version,
     )
 
-    return f"web3.py/{web3_version}/{module}.{class_name}"
+    return f"faster_web3.py/{web3_version}/{module}.{class_name}"
