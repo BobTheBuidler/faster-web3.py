@@ -217,7 +217,7 @@ class LogsSubscription(EthSubscription[LogReceipt]):
             Union[Address, ChecksumAddress, List[Address], List[ChecksumAddress]]
         ] = None,
         topics: Optional[Sequence[TopicFilter]] = None,
-        handler: LogsSubscriptionHandler = None,
+        handler: Optional[LogsSubscriptionHandler] = None,
         handler_context: Optional[Dict[str, Any]] = None,
         label: Optional[str] = None,
         parallelize: Optional[bool] = None,

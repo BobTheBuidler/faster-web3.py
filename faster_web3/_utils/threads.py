@@ -109,7 +109,7 @@ class Timeout(Exception):
 class ThreadWithReturn(threading.Thread, Generic[TReturn]):
     def __init__(
         self,
-        target: Callable[..., TReturn] = None,
+        target: Optional[Callable[..., TReturn]] = None,
         args: Any = None,
         kwargs: Any = None,
     ) -> None:
