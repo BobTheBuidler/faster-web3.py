@@ -1,5 +1,8 @@
 import pytest
 
+from faster_eth_utils.exceptions import (
+    ValidationError,
+)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -112,7 +115,7 @@ def test_keccak_raise_if_primitive_and(kwargs):
 
 
 def test_keccak_raise_if_hexstr_and_text():
-    with pytest.raises(TypeError):
+    with pytest.raises(ValidationError):
         Web3.keccak(hexstr="0x", text="")
 
 
