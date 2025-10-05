@@ -35,15 +35,6 @@ typedef struct tuple_T3CIO {
 } tuple_T3CIO;
 #endif
 
-#ifndef MYPYC_DECLARED_tuple_T3OOI
-#define MYPYC_DECLARED_tuple_T3OOI
-typedef struct tuple_T3OOI {
-    PyObject *f0;
-    PyObject *f1;
-    CPyTagged f2;
-} tuple_T3OOI;
-#endif
-
 #ifndef MYPYC_DECLARED_tuple_T2OI
 #define MYPYC_DECLARED_tuple_T2OI
 typedef struct tuple_T2OI {
