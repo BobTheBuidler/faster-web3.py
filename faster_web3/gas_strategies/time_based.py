@@ -4,6 +4,7 @@ import operator
 from typing import (
     Final,
     Iterable,
+    Optional,
     Sequence,
     Tuple,
     cast,
@@ -218,7 +219,7 @@ def construct_time_based_gas_price_strategy(
         and 100 means 100%.
     """
 
-    def time_based_gas_price_strategy(w3: Web3, transaction_params: TxParams) -> Wei:
+    def time_based_gas_price_strategy(w3: Web3, transaction_params: Optional[TxParams]) -> Wei:
         # return gas price when no transactions available to sample
         if w3.eth.get_block("latest")["number"] == 0:
             return w3.eth.gas_price
