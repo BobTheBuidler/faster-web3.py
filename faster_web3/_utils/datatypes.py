@@ -43,7 +43,7 @@ class PropertyCheckingFactory(type):
     ) -> None:
         # see PEP487.  To accept kwargs in __new__, they need to be
         # filtered out here.
-        type.__init__(name, bases, namespace)
+        type.__init__(self, name, bases, namespace)
 
     # __new__ must return a class instance
     def __new__(
