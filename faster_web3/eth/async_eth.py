@@ -630,7 +630,7 @@ class AsyncEth(BaseEth):
         account: Union[Address, ChecksumAddress, ENS],
         data: Union[int, bytes] = None,
         hexstr: HexStr = None,
-        text: str = None,
+        text: Optional[str] = None,
     ) -> HexStr:
         return await self._sign(account, data, hexstr, text)
 

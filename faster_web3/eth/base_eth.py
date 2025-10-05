@@ -187,7 +187,7 @@ class BaseEth(Module):
         account: Union[Address, ChecksumAddress, ENS],
         data: Union[int, bytes] = None,
         hexstr: HexStr = None,
-        text: str = None,
+        text: Optional[str] = None,
     ) -> Tuple[Union[Address, ChecksumAddress, ENS], HexStr]:
         message_hex = to_hex(data, hexstr=hexstr, text=text)
         return (account, message_hex)
