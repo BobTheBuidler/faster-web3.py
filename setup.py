@@ -57,6 +57,7 @@ ext_modules = mypycify(
     [
         "faster_web3/_utils/type_conversion.py",
         "--pretty",
+        "--disable-error-code=unused-ignore"
     ]
 )
 

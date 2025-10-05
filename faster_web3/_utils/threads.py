@@ -38,7 +38,7 @@ class Timeout(Exception):
     def __init__(
         self,
         seconds: Optional[float] = None,
-        exception: Type[BaseException] = None,
+        exception: Optional[Type[BaseException]] = None,
         *args: Any,
         **kwargs: Any,
     ) -> None:

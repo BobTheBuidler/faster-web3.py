@@ -103,7 +103,7 @@ def handler_wrapper(
 
 class EthSubscription(Generic[TSubscriptionResult]):
     _id: Optional[HexStr] = None
-    manager: "SubscriptionManager" = None
+    manager: Optional["SubscriptionManager"] = None
 
     def __init__(
         self: TSubscription,

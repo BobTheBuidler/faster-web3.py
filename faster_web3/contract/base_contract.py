@@ -485,7 +485,7 @@ class BaseContractEvents(Generic[TContractEvent]):
         self.w3 = w3
         self.address = address
         self.contract_event_type = contract_event_type
-        _events: Sequence[ABIEvent] = None
+        _events: Optional[Sequence[ABIEvent]] = None
 
         if self.abi:
             _events = sorted(

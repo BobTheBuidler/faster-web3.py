@@ -1,3 +1,4 @@
+# mypy: disable-error-code="arg-type"
 from copy import (
     deepcopy,
 )
@@ -100,7 +101,7 @@ class AsyncENS(BaseENS):
 
     def __init__(
         self,
-        provider: "AsyncBaseProvider" = None,
+        provider: Optional["AsyncBaseProvider"] = None,
         addr: Optional[ChecksumAddress] = None,
         middleware: Optional[Sequence[Tuple["Middleware", str]]] = None,
     ) -> None:
