@@ -1,10 +1,10 @@
 import pytest
 import json
 import os
+import pathlib
 import socket
 import sys
 import tempfile
-from pathlib import Path
 from threading import (
     Thread,
 )
@@ -171,7 +171,7 @@ async def test_disconnect_cleanup(
     simple_ipc_server,
     jsonrpc_ipc_pipe_path,
 ):
-    w3 = await AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path)))
+    w3 = await AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path)))
     provider = w3.provider
 
     assert provider._message_listener_task is not None
@@ -205,14 +205,14 @@ async def _raise_connection_closed(*_args, **_kwargs):
 
 @pytest.mark.asyncio
 async def test_provider_is_connected(jsonrpc_ipc_pipe_path, serve_empty_result):
-    w3 = await AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path)))
+    w3 = await AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path)))
     await w3.provider.disconnect()
     assert await w3.is_connected() is False
 
 
 @pytest.mark.asyncio
 async def test_async_waits_for_full_result(jsonrpc_ipc_pipe_path, serve_empty_result):
-    async with AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))) as w3:
+    async with AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))) as w3:
         result = await w3.provider.make_request("method", [])
         assert result == {"id": 0, "result": {}}
         await w3.provider.disconnect()
@@ -220,7 +220,7 @@ async def test_async_waits_for_full_result(jsonrpc_ipc_pipe_path, serve_empty_re
 
 @pytest.mark.asyncio
 async def test_await_instantiation(jsonrpc_ipc_pipe_path, serve_empty_result):
-    w3 = await AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path)))
+    w3 = await AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path)))
     result = await w3.provider.make_request("method", [])
     assert result == {"id": 0, "result": {}}
     await w3.provider.disconnect()
@@ -228,7 +228,7 @@ async def test_await_instantiation(jsonrpc_ipc_pipe_path, serve_empty_result):
 
 @pytest.mark.asyncio
 async def test_await_connect(jsonrpc_ipc_pipe_path, serve_empty_result):
-    w3 = AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path)))
+    w3 = AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path)))
     await w3.provider.connect()
     result = await w3.provider.make_request("method", [])
     assert result == {"id": 0, "result": {}}
@@ -237,7 +237,7 @@ async def test_await_connect(jsonrpc_ipc_pipe_path, serve_empty_result):
 
 @pytest.mark.asyncio
 async def test_eth_subscription(jsonrpc_ipc_pipe_path, serve_subscription_result):
-    async with AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))) as w3:
+    async with AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))) as w3:
         subscribe_response = await w3.eth.subscribe("newHeads")
         subscription_id = "0xf13f7073ddef66a8c1b0c9c9f0e543c3"
         assert subscribe_response == subscription_id
@@ -267,7 +267,7 @@ async def test_async_iterator_pattern_exception_handling_for_requests(
     jsonrpc_ipc_pipe_path,
 ):
     exception_caught = False
-    async for w3 in AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))):
+    async for w3 in AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))):
         # patch the listener to raise `ConnectionClosed` on read
         w3.provider._reader.readline = _raise_connection_closed
         try:
@@ -290,7 +290,7 @@ async def test_async_iterator_pattern_exception_handling_for_subscriptions(
     jsonrpc_ipc_pipe_path,
 ):
     exception_caught = False
-    async for w3 in AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))):
+    async for w3 in AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))):
         # patch the listener to raise `ConnectionClosed` on read
         w3.provider._reader.readline = _raise_connection_closed
         try:
@@ -313,7 +313,7 @@ async def test_async_iterator_pattern_exception_handling_for_subscriptions(
 async def test_async_ipc_reader_can_read_20mb_message(
     jsonrpc_ipc_pipe_path, serve_20mb_response
 ):
-    async with AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))) as w3:
+    async with AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))) as w3:
         response = await w3.provider.make_request("method", [])
         assert len(response["result"]) == TWENTY_MB - len(SIZED_MSG_START) - len(
             SIZED_MSG_END
@@ -332,7 +332,7 @@ async def test_async_ipc_reader_raises_on_msg_over_20mb(
         ),
     ):
         async with AsyncWeb3(
-            AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))
+            AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))
         ) as w3:
             await w3.provider.make_request("method", [])
 
@@ -343,7 +343,7 @@ async def test_async_ipc_read_buffer_limit_is_configurable(
 ):
     async with AsyncWeb3(
         AsyncIPCProvider(
-            Path(jsonrpc_ipc_pipe_path), read_buffer_limit=TWENTY_MB + 1024
+            pathlib.Path(jsonrpc_ipc_pipe_path), read_buffer_limit=TWENTY_MB + 1024
         )
     ) as w3:
         response = await w3.provider.make_request("method", [])
@@ -358,7 +358,7 @@ async def test_async_ipc_provider_write_messages_end_with_new_line_delimiter(
     simple_ipc_server,
     jsonrpc_ipc_pipe_path,
 ):
-    async with AsyncWeb3(AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))) as w3:
+    async with AsyncWeb3(AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))) as w3:
         w3.provider._writer.write = Mock()
         w3.provider._reader.readline = AsyncMock(
             return_value=b'{"id": 0, "jsonrpc": "2.0", "result": {}}\n'
@@ -377,7 +377,7 @@ async def test_persistent_connection_provider_empty_batch_response(
 ):
     with pytest.raises(Web3RPCError, match="empty batch"):
         async with AsyncWeb3(
-            AsyncIPCProvider(Path(jsonrpc_ipc_pipe_path))
+            AsyncIPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path))
         ) as async_w3:
             async_w3.provider._reader.readline = AsyncMock(
                 return_value=(
