@@ -90,10 +90,15 @@ def generate_cache_key(value: Any) -> str:
         return md5(value).hexdigest()
     elif is_text(value):
         return generate_cache_key(to_bytes(text=value))
-    elif is_boolean(value) or is_null(value) or is_number(value):
+    # I separated the next 3 lines so the compiler can specialize the repr calls
+    elif is_boolean(value):
+        return generate_cache_key(repr(value))
+    elif is_null(value):
+        return generate_cache_key(repr(value))
+    elif is_number(value):
         return generate_cache_key(repr(value))
     elif is_dict(value):
-        return generate_cache_key((key, value[key]) for key in sorted(value.keys()))
+        return generate_cache_key([(key, value[key]) for key in sorted(value.keys())])
     elif is_list_like(value) or isinstance(value, Generator):
         return generate_cache_key("".join(generate_cache_key(item) for item in value))
     else:
