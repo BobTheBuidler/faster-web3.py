@@ -10,6 +10,9 @@ from typing import (
 
 import faster_eth_utils
 import faster_eth_utils.toolz
+from mypy_extensions import (
+    mypyc_attr,
+)
 
 from faster_web3.exceptions import (
     Web3AttributeError,
