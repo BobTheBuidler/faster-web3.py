@@ -1,5 +1,6 @@
 import pytest
 import os
+import sys
 import tempfile
 
 from faster_web3.providers import (
