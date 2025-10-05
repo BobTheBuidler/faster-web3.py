@@ -57,15 +57,15 @@ ext_modules = mypycify(
     [
         "faster_web3/_utils/type_conversion.py",
         "--pretty",
-        "--disable-error-code=return-value"
-        "--disable-error-code=arg-type"
-        "--disable-error-code=union-attr"
-        "--disable-error-code=truthy-function"
-        "--disable-error-code=assignment"
-        "--disable-error-code=index"
-        "--disable-error-code=operator"
-        "--disable-error-code=misc"
-        "--disable-error-code=unused-ignore"
+        "--disable-error-code=return-value",
+        "--disable-error-code=arg-type",
+        "--disable-error-code=union-attr",
+        "--disable-error-code=truthy-function",
+        "--disable-error-code=assignment",
+        "--disable-error-code=index",
+        "--disable-error-code=operator",
+        "--disable-error-code=misc",
+        "--disable-error-code=unused-ignore",
     ]
 )
 
