@@ -23,7 +23,7 @@ if TYPE_CHECKING:
         PersistentConnectionProvider,
     )
 
-UNCACHEABLE_BLOCK_IDS = {"finalized", "safe", "latest", "pending"}
+UNCACHEABLE_BLOCK_IDS: Final = frozenset({"finalized", "safe", "latest", "pending"})
 
 ASYNC_PROVIDER_TYPE = TypeVar("ASYNC_PROVIDER_TYPE", bound="AsyncBaseProvider")
 SYNC_PROVIDER_TYPE = TypeVar("SYNC_PROVIDER_TYPE", bound="BaseProvider")
