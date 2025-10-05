@@ -666,7 +666,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_358Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_363Object;
 
 typedef struct {
     PyObject_HEAD
@@ -708,7 +708,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_391Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_396Object;
 
 typedef struct {
     PyObject_HEAD
@@ -766,7 +766,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_417Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_422Object;
 
 typedef struct {
     PyObject_HEAD
