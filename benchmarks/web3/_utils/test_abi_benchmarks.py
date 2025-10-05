@@ -366,7 +366,7 @@ def test_abi_data_tree(benchmark: BenchmarkFixture):
 def test_faster_web3._utils.abi_data_tree(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
-    benchmark(run_100, faster_web3._utils.abi.abi_data_tree, types, data))
+    benchmark(run_100, faster_web3._utils.abi.abi_data_tree, types, data)
 
 @pytest.mark.benchmark(group="strip_abi_types")
 def test_strip_abi_types(benchmark: BenchmarkFixture):
