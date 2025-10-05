@@ -1,12 +1,19 @@
+import binascii
+
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
 import web3._utils.type_conversion
+from web3.exceptions import Web3ValueError
 import faster_web3._utils.type_conversion
+from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
 
 def run_100(func, *args, **kwargs):
     for _ in range(100):
-        func(*args, **kwargs)
+        try:
+            func(*args, **kwargs)
+        except (UnicodeDecodeError, binascii.Error, Web3ValueError, FasterWeb3ValueError):
+            pass
 
 to_hex_if_bytes_cases = {
     "bytes": b"\x00\x01\x02",
