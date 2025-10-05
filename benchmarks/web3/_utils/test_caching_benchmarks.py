@@ -120,12 +120,13 @@ async def popitem_many(cache, size, last):
 @pytest.mark.parametrize("last", [True, False])
 def test_web3_simplecache_async_await_and_popitem(benchmark: BenchmarkFixture, size, last):
     cache = web3.utils.caching.SimpleCache(size=size)
-    loop = asyncio.new_event_loop()
     for i in range(size * 10_000):
         cache.cache(str(i), i)
     @benchmark
     def run() -> None:
+        loop = asyncio.new_event_loop()
         loop.run_until_complete(popitem_many(cache, size, last))
+        loop.close()
 
 
 @pytest.mark.benchmark(group="SimpleCache-async_await_and_popitem")
@@ -133,9 +134,10 @@ def test_web3_simplecache_async_await_and_popitem(benchmark: BenchmarkFixture, s
 @pytest.mark.parametrize("last", [True, False])
 def test_faster_simplecache_async_await_and_popitem(benchmark: BenchmarkFixture, size, last):
     cache = faster_web3.utils.caching.SimpleCache(size=size)
-    loop = asyncio.new_event_loop()
     for i in range(size * 10_000):
         cache.cache(str(i), i)
     @benchmark
     def run() -> None:
+        loop = asyncio.new_event_loop()
         loop.run_until_complete(popitem_many(cache, size, last))
+        loop.close()
