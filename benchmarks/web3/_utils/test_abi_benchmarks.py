@@ -38,7 +38,7 @@ abi_type_ids = [
 
 @pytest.mark.benchmark(group="is_bool_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_bool_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_bool_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_bool_type, abi_type)
 
 @pytest.mark.benchmark(group="is_bool_type")
@@ -48,7 +48,7 @@ def test_faster_is_bool_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_uint_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_uint_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_uint_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_uint_type, abi_type)
 
 @pytest.mark.benchmark(group="is_uint_type")
@@ -58,7 +58,7 @@ def test_faster_is_uint_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_int_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_int_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_int_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_int_type, abi_type)
 
 @pytest.mark.benchmark(group="is_int_type")
@@ -68,7 +68,7 @@ def test_faster_is_int_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_address_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_address_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_address_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_address_type, abi_type)
 
 @pytest.mark.benchmark(group="is_address_type")
@@ -78,7 +78,7 @@ def test_faster_is_address_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_bytes_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_bytes_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_bytes_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_bytes_type, abi_type)
 
 @pytest.mark.benchmark(group="is_bytes_type")
@@ -88,7 +88,7 @@ def test_faster_is_bytes_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_string_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_string_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_string_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_string_type, abi_type)
 
 @pytest.mark.benchmark(group="is_string_type")
@@ -98,7 +98,7 @@ def test_faster_is_string_type(benchmark: BenchmarkFixture, abi_type):
 
 @pytest.mark.benchmark(group="is_array_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_array_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_array_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_array_type, abi_type)
 
 @pytest.mark.benchmark(group="is_array_type")
@@ -106,33 +106,28 @@ def test_web3_is_array_type(benchmark: BenchmarkFixture, abi_type):
 def test_faster_is_array_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, faster_abi.is_array_type, abi_type)
 
-@pytest.mark.benchmark(group="is_probably_enum")
-@pytest.mark.parametrize("abi_type", [
+probably_enum_cases =  [
     "MyEnum",
     "MyLib.MyEnum",
     "uint256",
     "address",
     "MyLib.",
     "",
-], ids=["enum", "lib-enum", "uint256", "address", "lib-dot", "empty"])
-def test_web3_is_probably_enum(benchmark: BenchmarkFixture, abi_type):
+]
+
+@pytest.mark.benchmark(group="is_probably_enum")
+@pytest.mark.parametrize("abi_type", probably_enum_cases, ids=["enum", "lib-enum", "uint256", "address", "lib-dot", "empty"])
+def test_is_probably_enum(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_probably_enum, abi_type)
 
 @pytest.mark.benchmark(group="is_probably_enum")
-@pytest.mark.parametrize("abi_type", [
-    "MyEnum",
-    "MyLib.MyEnum",
-    "uint256",
-    "address",
-    "MyLib.",
-    "",
-], ids=["enum", "lib-enum", "uint256", "address", "lib-dot", "empty"])
+@pytest.mark.parametrize("abi_type", probably_enum_cases, ids=["enum", "lib-enum", "uint256", "address", "lib-dot", "empty"])
 def test_faster_is_probably_enum(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, faster_abi.is_probably_enum, abi_type)
 
 @pytest.mark.benchmark(group="is_recognized_type")
 @pytest.mark.parametrize("abi_type", abi_type_cases, ids=abi_type_ids)
-def test_web3_is_recognized_type(benchmark: BenchmarkFixture, abi_type):
+def test_is_recognized_type(benchmark: BenchmarkFixture, abi_type):
     benchmark(run_100, web3_abi.is_recognized_type, abi_type)
 
 @pytest.mark.benchmark(group="is_recognized_type")
@@ -142,97 +137,85 @@ def test_faster_is_recognized_type(benchmark: BenchmarkFixture, abi_type):
 
 # --- Type Parsing ---
 
-@pytest.mark.benchmark(group="sub_type_of_array_type")
-@pytest.mark.parametrize("abi_type,expected", [
+array_subtype_cases = [
     ("uint256[]", "uint256"),
     ("address[10][5]", "address[10]"),
-], ids=["simple", "nested"])
-def test_web3_sub_type_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
+]
+
+@pytest.mark.benchmark(group="sub_type_of_array_type")
+@pytest.mark.parametrize("abi_type,expected", array_subtype_cases, ids=["simple", "nested"])
+def test_sub_type_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
     benchmark(run_100, web3_abi.sub_type_of_array_type, abi_type)
 
 @pytest.mark.benchmark(group="sub_type_of_array_type")
-@pytest.mark.parametrize("abi_type,expected", [
-    ("uint256[]", "uint256"),
-    ("address[10][5]", "address[10]"),
-], ids=["simple", "nested"])
+@pytest.mark.parametrize("abi_type,expected", array_subtype_cases, ids=["simple", "nested"])
 def test_faster_sub_type_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
     benchmark(run_100, faster_abi.sub_type_of_array_type, abi_type)
 
-@pytest.mark.benchmark(group="length_of_array_type")
-@pytest.mark.parametrize("abi_type,expected", [
+array_type_cases = [
     ("uint256[5]", 5),
     ("address[10][5]", 5),
     ("uint256[]", None),
-], ids=["fixed", "nested", "dynamic"])
-def test_web3_length_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
+]
+
+@pytest.mark.benchmark(group="length_of_array_type")
+@pytest.mark.parametrize("abi_type,expected", array_type_cases, ids=["fixed", "nested", "dynamic"])
+def test_length_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
     benchmark(run_100, web3_abi.length_of_array_type, abi_type)
 
 @pytest.mark.benchmark(group="length_of_array_type")
-@pytest.mark.parametrize("abi_type,expected", [
-    ("uint256[5]", 5),
-    ("address[10][5]", 5),
-    ("uint256[]", None),
-], ids=["fixed", "nested", "dynamic"])
+@pytest.mark.parametrize("abi_type,expected", array_type_cases, ids=["fixed", "nested", "dynamic"])
 def test_faster_length_of_array_type(benchmark: BenchmarkFixture, abi_type, expected):
     benchmark(run_100, faster_abi.length_of_array_type, abi_type)
 
-@pytest.mark.benchmark(group="get_tuple_type_str_parts")
-@pytest.mark.parametrize("s,expected", [
+tuple_type_str_cases = [
     ("tuple", ("tuple", None)),
     ("tuple[2]", ("tuple", "[2]")),
     ("tuple[2][3]", ("tuple", "[2][3]")),
     ("uint256", None),
-], ids=["plain", "one-dim", "two-dim", "not-tuple"])
-def test_web3_get_tuple_type_str_parts(benchmark: BenchmarkFixture, s, expected):
+]
+
+@pytest.mark.benchmark(group="get_tuple_type_str_parts")
+@pytest.mark.parametrize("s,expected", tuple_type_str_cases, ids=["plain", "one-dim", "two-dim", "not-tuple"])
+def test_get_tuple_type_str_parts(benchmark: BenchmarkFixture, s, expected):
     benchmark(run_100, web3_abi.get_tuple_type_str_parts, s)
 
 @pytest.mark.benchmark(group="get_tuple_type_str_parts")
-@pytest.mark.parametrize("s,expected", [
-    ("tuple", ("tuple", None)),
-    ("tuple[2]", ("tuple", "[2]")),
-    ("tuple[2][3]", ("tuple", "[2][3]")),
-    ("uint256", None),
-], ids=["plain", "one-dim", "two-dim", "not-tuple"])
+@pytest.mark.parametrize("s,expected", tuple_type_str_cases, ids=["plain", "one-dim", "two-dim", "not-tuple"])
 def test_faster_get_tuple_type_str_parts(benchmark: BenchmarkFixture, s, expected):
     benchmark(run_100, faster_abi.get_tuple_type_str_parts, s)
 
-@pytest.mark.benchmark(group="get_name_from_abi_element_identifier")
-@pytest.mark.parametrize("identifier,expected", [
+element_id_cases = [
     ("transfer(address,uint256)", "transfer"),
     ("fallback", "fallback"),
     ("receive", "receive"),
     ("myFunc(uint256)", "myFunc"),
-], ids=["func", "fallback", "receive", "custom"])
-def test_web3_get_name_from_abi_element_identifier(benchmark: BenchmarkFixture, identifier, expected):
+]
+
+@pytest.mark.benchmark(group="get_name_from_abi_element_identifier")
+@pytest.mark.parametrize("identifier,expected", element_id_cases, ids=["func", "fallback", "receive", "custom"])
+def test_get_name_from_abi_element_identifier(benchmark: BenchmarkFixture, identifier, expected):
     benchmark(run_100, web3_abi.get_name_from_abi_element_identifier, identifier)
 
 @pytest.mark.benchmark(group="get_name_from_abi_element_identifier")
-@pytest.mark.parametrize("identifier,expected", [
-    ("transfer(address,uint256)", "transfer"),
-    ("fallback", "fallback"),
-    ("receive", "receive"),
-    ("myFunc(uint256)", "myFunc"),
-], ids=["func", "fallback", "receive", "custom"])
+@pytest.mark.parametrize("identifier,expected", element_id_cases, ids=["func", "fallback", "receive", "custom"])
 def test_faster_get_name_from_abi_element_identifier(benchmark: BenchmarkFixture, identifier, expected):
     benchmark(run_100, faster_abi.get_name_from_abi_element_identifier, identifier)
 
-@pytest.mark.benchmark(group="get_abi_element_signature")
-@pytest.mark.parametrize("identifier,arg_types,expected", [
+element_sig_cases = [
     ("transfer", ["address", "uint256"], "transfer(address,uint256)"),
     ("fallback", [], "fallback"),
     ("receive", [], "receive"),
     ("myFunc", ["uint256"], "myFunc(uint256)"),
-], ids=["transfer", "fallback", "receive", "custom"])
-def test_web3_get_abi_element_signature(benchmark: BenchmarkFixture, identifier, arg_types, expected):
+]
+
+@pytest.mark.benchmark(group="get_abi_element_signature")
+@pytest.mark.parametrize("identifier,arg_types,expected", element_sig_cases, ids=["transfer", "fallback", "receive", "custom"])
+def test_get_abi_element_signature(benchmark: BenchmarkFixture, identifier, arg_types, expected):
     benchmark(run_100, web3_abi.get_abi_element_signature, identifier, arg_types)
 
 @pytest.mark.benchmark(group="get_abi_element_signature")
-@pytest.mark.parametrize("identifier,arg_types,expected", [
-    ("transfer", ["address", "uint256"], "transfer(address,uint256)"),
-    ("fallback", [], "fallback"),
-    ("receive", [], "receive"),
-    ("myFunc", ["uint256"], "myFunc(uint256)"),
-], ids=["transfer", "fallback", "receive", "custom"])
+@pytest.mark.parametrize("identifier,arg_types,expected", element_sig_cases, ids=["transfer", "fallback", "receive", "custom"])
 def test_faster_get_abi_element_signature(benchmark: BenchmarkFixture, identifier, arg_types, expected):
     benchmark(run_100, faster_abi.get_abi_element_signature, identifier, arg_types)
 
@@ -246,8 +229,16 @@ example_abi = [
     {"type": "receive"},
 ]
 
-@pytest.mark.benchmark(group="filter_by_types")
-@pytest.mark.parametrize("types,expected_count", [
+function_only_abi = [
+    {"type": "function", "name": "foo", "inputs": [{"name": "a", "type": "uint256"}]},
+    {"type": "function", "name": "bar", "inputs": [{"name": "d", "type": "int128"}]},
+    {"type": "function", "name": "blue", "inputs": [{"name": "b", "type": "int64[]"}]},
+    {"type": "function", "name": "car", "inputs": [{"name": "e", "type": "uint8[]"}]},
+    {"type": "function", "name": "flew", "inputs": [{"name": "c", "type": "bytes32"}]},
+    {"type": "function", "name": "mars", "inputs": [{"name": "f", "type": "address"}]},
+]
+
+by_types = [
     (["function"], 1),
     (["event"], 1),
     (["constructor"], 1),
@@ -255,87 +246,56 @@ example_abi = [
     (["receive"], 1),
     (["function", "event"], 2),
     (["notatype"], 0),
-], ids=["function", "event", "constructor", "fallback", "receive", "func+event", "none"])
-def test_web3_filter_by_types(benchmark: BenchmarkFixture, types, expected_count):
-    def call():
-        res = web3_abi.filter_by_types(types, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+]
 
 @pytest.mark.benchmark(group="filter_by_types")
-@pytest.mark.parametrize("types,expected_count", [
-    (["function"], 1),
-    (["event"], 1),
-    (["constructor"], 1),
-    (["fallback"], 1),
-    (["receive"], 1),
-    (["function", "event"], 2),
-    (["notatype"], 0),
-], ids=["function", "event", "constructor", "fallback", "receive", "func+event", "none"])
+@pytest.mark.parametrize("types,expected_count", by_types, ids=["function", "event", "constructor", "fallback", "receive", "func+event", "none"])
+def test_filter_by_types(benchmark: BenchmarkFixture, types, expected_count):
+    benchmark(run_100, web3_abi.filter_by_types, types, example_abi)
+
+@pytest.mark.benchmark(group="filter_by_types")
+@pytest.mark.parametrize("types,expected_count", by_types, ids=["function", "event", "constructor", "fallback", "receive", "func+event", "none"])
 def test_faster_filter_by_types(benchmark: BenchmarkFixture, types, expected_count):
-    def call():
-        res = faster_abi.filter_by_types(types, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+    benchmark(run_100, faster_abi.filter_by_types, types, example_abi)
 
-@pytest.mark.benchmark(group="filter_by_argument_name")
-@pytest.mark.parametrize("arg_names,expected_count", [
+by_arg_name = [
     (["a"], 1),
     (["b"], 1),
     (["c"], 1),
     (["notfound"], 0),
     (["a", "b"], 0),
-], ids=["a", "b", "c", "notfound", "a+b"])
-def test_web3_filter_by_argument_name(benchmark: BenchmarkFixture, arg_names, expected_count):
-    def call():
-        res = web3_abi.filter_by_argument_name(arg_names, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+]
 
 @pytest.mark.benchmark(group="filter_by_argument_name")
-@pytest.mark.parametrize("arg_names,expected_count", [
-    (["a"], 1),
-    (["b"], 1),
-    (["c"], 1),
-    (["notfound"], 0),
-    (["a", "b"], 0),
-], ids=["a", "b", "c", "notfound", "a+b"])
+@pytest.mark.parametrize("arg_names,expected_count", by_arg_name, ids=["a", "b", "c", "notfound", "a+b"])
+def test_filter_by_argument_name(benchmark: BenchmarkFixture, arg_names, expected_count):
+    benchmark(run_100, web3_abi.filter_by_argument_name, arg_names, function_only_abi)
+
+@pytest.mark.benchmark(group="filter_by_argument_name")
+@pytest.mark.parametrize("arg_names,expected_count", by_arg_name, ids=["a", "b", "c", "notfound", "a+b"])
 def test_faster_filter_by_argument_name(benchmark: BenchmarkFixture, arg_names, expected_count):
-    def call():
-        res = faster_abi.filter_by_argument_name(arg_names, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+    benchmark(run_100, faster_abi.filter_by_argument_name, arg_names, function_only_abi)
 
-@pytest.mark.benchmark(group="filter_by_argument_type")
-@pytest.mark.parametrize("arg_types,expected_count", [
+by_arg_type = [
     (["uint256"], 1),
     (["address"], 1),
     (["string"], 1),
     (["notatype"], 0),
     (["uint256", "address"], 0),
-], ids=["uint256", "address", "string", "notatype", "uint+address"])
-def test_web3_filter_by_argument_type(benchmark: BenchmarkFixture, arg_types, expected_count):
-    def call():
-        res = web3_abi.filter_by_argument_type(arg_types, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+]
 
 @pytest.mark.benchmark(group="filter_by_argument_type")
-@pytest.mark.parametrize("arg_types,expected_count", [
-    (["uint256"], 1),
-    (["address"], 1),
-    (["string"], 1),
-    (["notatype"], 0),
-    (["uint256", "address"], 0),
-], ids=["uint256", "address", "string", "notatype", "uint+address"])
+@pytest.mark.parametrize("arg_types,expected_count", by_arg_type, ids=["uint256", "address", "string", "notatype", "uint+address"])
+def test_filter_by_argument_type(benchmark: BenchmarkFixture, arg_types, expected_count):
+    benchmark(run_100, web3_abi.filter_by_argument_type, arg_types, example_abi)
+
+@pytest.mark.benchmark(group="filter_by_argument_type")
+@pytest.mark.parametrize("arg_types,expected_count", by_arg_type, ids=["uint256", "address", "string", "notatype", "uint+address"])
 def test_faster_filter_by_argument_type(benchmark: BenchmarkFixture, arg_types, expected_count):
-    def call():
-        res = faster_abi.filter_by_argument_type(arg_types, example_abi)
-        assert len(res) == expected_count
-    benchmark(run_100, call)
+    benchmark(run_100, faster_abi.filter_by_argument_type, arg_types, example_abi)
 
 @pytest.mark.benchmark(group="fallback_func_abi_exists")
-def test_web3_fallback_func_abi_exists(benchmark: BenchmarkFixture):
+def test_fallback_func_abi_exists(benchmark: BenchmarkFixture):
     benchmark(run_100, web3_abi.fallback_func_abi_exists, example_abi)
 
 @pytest.mark.benchmark(group="fallback_func_abi_exists")
@@ -343,7 +303,7 @@ def test_faster_fallback_func_abi_exists(benchmark: BenchmarkFixture):
     benchmark(run_100, faster_abi.fallback_func_abi_exists, example_abi)
 
 @pytest.mark.benchmark(group="receive_func_abi_exists")
-def test_web3_receive_func_abi_exists(benchmark: BenchmarkFixture):
+def test_receive_func_abi_exists(benchmark: BenchmarkFixture):
     benchmark(run_100, web3_abi.receive_func_abi_exists, example_abi)
 
 @pytest.mark.benchmark(group="receive_func_abi_exists")
@@ -351,7 +311,7 @@ def test_faster_receive_func_abi_exists(benchmark: BenchmarkFixture):
     benchmark(run_100, faster_abi.receive_func_abi_exists, example_abi)
 
 @pytest.mark.benchmark(group="find_constructor_abi_element_by_type")
-def test_web3_find_constructor_abi_element_by_type(benchmark: BenchmarkFixture):
+def test_find_constructor_abi_element_by_type(benchmark: BenchmarkFixture):
     benchmark(run_100, web3_abi.find_constructor_abi_element_by_type, example_abi)
 
 @pytest.mark.benchmark(group="find_constructor_abi_element_by_type")
@@ -372,7 +332,7 @@ event_abi = {
 event_inputs = event_abi["inputs"]
 
 @pytest.mark.benchmark(group="normalize_event_input_types")
-def test_web3_normalize_event_input_types(benchmark: BenchmarkFixture):
+def test_normalize_event_input_types(benchmark: BenchmarkFixture):
     benchmark(run_100, web3_abi.normalize_event_input_types, event_inputs)
 
 @pytest.mark.benchmark(group="normalize_event_input_types")
@@ -383,35 +343,33 @@ def test_faster_normalize_event_input_types(benchmark: BenchmarkFixture):
 # We'll benchmark a typical use-case: normalizing a tuple of values.
 
 @pytest.mark.benchmark(group="map_abi_data")
-def test_web3_map_abi_data(benchmark: BenchmarkFixture):
+def test_map_abi_data(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
     normalizers = [lambda typ, val: (typ, val)]
-    fn = web3_abi.map_abi_data(normalizers, types, data)
-    benchmark(run_100, lambda: fn)
+    benchmark(run_100, web3_abi.map_abi_data, normalizers, types, data)
 
 @pytest.mark.benchmark(group="map_abi_data")
 def test_faster_map_abi_data(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
     normalizers = [lambda typ, val: (typ, val)]
-    fn = faster_abi.map_abi_data(normalizers, types, data)
-    benchmark(run_100, lambda: fn)
+    benchmark(run_100, faster_abi.map_abi_data, normalizers, types, data)
 
 @pytest.mark.benchmark(group="abi_data_tree")
-def test_web3_abi_data_tree(benchmark: BenchmarkFixture):
+def test_abi_data_tree(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
-    benchmark(run_100, web3_abi.abi_data_tree(types, data))
+    benchmark(run_100, web3_abi.abi_data_tree, types, data))
 
 @pytest.mark.benchmark(group="abi_data_tree")
 def test_faster_abi_data_tree(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
-    benchmark(run_100, faster_abi.abi_data_tree(types, data))
+    benchmark(run_100, faster_abi.abi_data_tree, types, data))
 
 @pytest.mark.benchmark(group="strip_abi_types")
-def test_web3_strip_abi_types(benchmark: BenchmarkFixture):
+def test_strip_abi_types(benchmark: BenchmarkFixture):
     types = ["uint256", "address"]
     data = [123, "0x0000000000000000000000000000000000000000"]
     tree = web3_abi.abi_data_tree(types, data)
@@ -423,5 +381,3 @@ def test_faster_strip_abi_types(benchmark: BenchmarkFixture):
     data = [123, "0x0000000000000000000000000000000000000000"]
     tree = faster_abi.abi_data_tree(types, data)
     benchmark(run_100, faster_abi.strip_abi_types, tree)
-
-# --- End of Benchmarks ---
