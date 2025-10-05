@@ -185,8 +185,8 @@ class BaseEth(Module):
     def sign_munger(
         self,
         account: Union[Address, ChecksumAddress, ENS],
-        data: Union[int, bytes] = None,
-        hexstr: HexStr = None,
+        data: Optional[Union[int, bytes]] = None,
+        hexstr: Optional[HexStr] = None,
         text: Optional[str] = None,
     ) -> Tuple[Union[Address, ChecksumAddress, ENS], HexStr]:
         message_hex = to_hex(data, hexstr=hexstr, text=text)

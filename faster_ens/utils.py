@@ -75,7 +75,7 @@ def Web3() -> Type["_Web3"]:
 
 
 def init_web3(
-    provider: "BaseProvider" = None,
+    provider: Optional["BaseProvider"] = None,
     middleware: Optional[Sequence[Tuple["Middleware", str]]] = None,
 ) -> "_Web3":
     from faster_web3 import (

@@ -4,6 +4,7 @@ from functools import (
 from typing import (
     TYPE_CHECKING,
     Any,
+    Optional,
     Type,
     Union,
 )
@@ -39,7 +40,7 @@ if TYPE_CHECKING:
 
 class BaseENS:
     w3: Union["AsyncWeb3", "Web3"] = None
-    ens: Union["Contract", "AsyncContract"] = None
+    ens: Optional[Union["Contract", "AsyncContract"]] = None
     _resolver_contract: Union[Type["Contract"], Type["AsyncContract"]] = None
     _reverse_resolver_contract: Union[Type["Contract"], Type["AsyncContract"]] = None
 

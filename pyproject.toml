@@ -3,6 +3,7 @@ requires = [
     "setuptools", 
     "wheel", 
     "mypy[mypyc]==1.18.2",
+	"types-requests",
     "eth-typing>=5,<6",
 	"faster-eth-utils>=5.3.8,<5.4",
 	"faster-eth-abi>=5.2,<5.3",

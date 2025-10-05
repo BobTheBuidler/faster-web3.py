@@ -104,7 +104,7 @@ class Label:
     def __init__(
         self,
         type: Optional[str] = None,
-        tokens: List[Token] = None,
+        tokens: Optional[List[Token]] = None,
     ) -> None:
         self.type = type
         self.tokens = tokens
