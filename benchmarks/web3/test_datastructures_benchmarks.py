@@ -109,7 +109,7 @@ def test_faster_readableattributedict_recursive(benchmark: BenchmarkFixture, val
 def test_web3_mutableattributedict_setitem(benchmark: BenchmarkFixture):
     def setitem():
         mad = MutableAttributeDict({})
-        for i in range(100):
+        for i in range(20):
             mad[i] = i
     benchmark(run_100, setitem)
 
@@ -117,23 +117,23 @@ def test_web3_mutableattributedict_setitem(benchmark: BenchmarkFixture):
 def test_faster_mutableattributedict_setitem(benchmark: BenchmarkFixture):
     def setitem():
         mad = FasterMutableAttributeDict({})
-        for i in range(100):
+        for i in range(20):
             mad[i] = i
     benchmark(run_100, setitem)
 
 @pytest.mark.benchmark(group="MutableAttributeDict-delitem")
 def test_web3_mutableattributedict_delitem(benchmark: BenchmarkFixture):
     def delitem():
-        mad = MutableAttributeDict({i: i for i in range(100)})
-        for i in range(100):
+        mad = MutableAttributeDict({i: i for i in range(20)})
+        for i in range(20):
             del mad[i]
     benchmark(run_100, delitem)
 
 @pytest.mark.benchmark(group="MutableAttributeDict-delitem")
 def test_faster_mutableattributedict_delitem(benchmark: BenchmarkFixture):
     def delitem():
-        mad = FasterMutableAttributeDict({i: i for i in range(100)})
-        for i in range(100):
+        mad = FasterMutableAttributeDict({i: i for i in range(20)})
+        for i in range(20):
             del mad[i]
     benchmark(run_100, delitem)
 
@@ -203,7 +203,7 @@ def test_faster_namedelementonion_init(benchmark: BenchmarkFixture, elements):
 
 @pytest.mark.benchmark(group="NamedElementOnion-add")
 def test_web3_namedelementonion_add(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
+    onion = NamedElementOnion([make_callable(i) for i in range(10)])
     def add():
         for i in range(100, 200):
             onion.add(make_callable(i))
@@ -211,7 +211,7 @@ def test_web3_namedelementonion_add(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-add")
 def test_faster_namedelementonion_add(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
+    onion = FasterNamedElementOnion([make_callable(i) for i in range(10)])
     def add():
         for i in range(100, 200):
             onion.add(make_callable(i))
@@ -219,7 +219,7 @@ def test_faster_namedelementonion_add(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-inject")
 def test_web3_namedelementonion_inject(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
+    onion = NamedElementOnion([make_callable(i) for i in range(10)])
     def inject():
         for i in range(100, 200):
             onion.inject(make_callable(i), layer=0)
@@ -227,7 +227,7 @@ def test_web3_namedelementonion_inject(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-inject")
 def test_faster_namedelementonion_inject(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
+    onion = FasterNamedElementOnion([make_callable(i) for i in range(10)])
     def inject():
         for i in range(100, 200):
             onion.inject(make_callable(i), layer=0)
@@ -235,68 +235,86 @@ def test_faster_namedelementonion_inject(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
 def test_web3_namedelementonion_replace(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
+    middlewares = [make_callable(i) for i in range(10)]
+    to_replace = middlewares[0]
     def replace():
-        onion.replace(make_callable(0), make_callable(1000))
+        onion = NamedElementOnion(middlewares)
+        for i in range(10)
+            onion.replace(to_replace, make_callable(i + 10))
     benchmark(run_100, replace)
 
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
 def test_faster_namedelementonion_replace(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
+    middlewares = [make_callable(i) for i in range(10)]
+    to_replace = middlewares[0]
     def replace():
-        onion.replace(make_callable(0), make_callable(1000))
+        onion = FasterNamedElementOnion(middlewares)
+        for i in range(10)
+            onion.replace(to_replace, make_callable(i + 10))
     benchmark(run_100, replace)
 
 @pytest.mark.benchmark(group="NamedElementOnion-remove")
 def test_web3_namedelementonion_remove(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
+    middlewares = [make_callable(i) for i in range(10)]
     def remove():
-        onion.remove(make_callable(1))
+        onion = NamedElementOnion(middlewares)
+        for mw in middlewares:
+            onion.remove(mw)
     benchmark(run_100, remove)
 
 @pytest.mark.benchmark(group="NamedElementOnion-remove")
 def test_faster_namedelementonion_remove(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
+    middlewares = [make_callable(i) for i in range(10)]
     def remove():
-        onion.remove(make_callable(1))
+        onion = FasterNamedElementOnion(middlewares)
+        for mw in middlewares:
+            onion.remove(mw)
     benchmark(run_100, remove)
 
 @pytest.mark.benchmark(group="NamedElementOnion-contains")
 def test_web3_namedelementonion_contains(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: make_callable(2) in onion)
+    middlewares = [make_callable(i) for i in range(10)]
+    onion = NamedElementOnion(middlewares)
+    middleware = middlewares[4]
+    benchmark(run_100, lambda: middleware in onion)
 
 @pytest.mark.benchmark(group="NamedElementOnion-contains")
 def test_faster_namedelementonion_contains(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: make_callable(2) in onion)
+    middlewares = [make_callable(i) for i in range(10)]
+    onion = FasterNamedElementOnion(middlewares)
+    middleware = middlewares[4]
+    benchmark(run_100, lambda: middleware in onion)
 
 @pytest.mark.benchmark(group="NamedElementOnion-getitem")
 def test_web3_namedelementonion_getitem(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: onion[make_callable(2)])
+    middlewares = [make_callable(i) for i in range(10)]
+    onion = NamedElementOnion(middlewares)
+    middleware = middlewares[4]
+    benchmark(run_100, lambda: onion[middleware])
 
 @pytest.mark.benchmark(group="NamedElementOnion-getitem")
 def test_faster_namedelementonion_getitem(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: onion[make_callable(2)])
+    middlewares = [make_callable(i) for i in range(10)]
+    onion = FasterNamedElementOnion(middlewares)
+    middleware = middlewares[4]
+    benchmark(run_100, lambda: onion[middleware])
 
 @pytest.mark.benchmark(group="NamedElementOnion-iter")
 def test_web3_namedelementonion_iter(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: list(onion))
+    onion = NamedElementOnion([make_callable(i) for i in range(10)])
+    benchmark(run_100, list, onion)
 
 @pytest.mark.benchmark(group="NamedElementOnion-iter")
 def test_faster_namedelementonion_iter(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
-    benchmark(run_100, lambda: list(onion))
+    onion = FasterNamedElementOnion([make_callable(i) for i in range(10)])
+    benchmark(run_100, list, onion)
 
 @pytest.mark.benchmark(group="NamedElementOnion-as_tuple_of_middleware")
 def test_web3_namedelementonion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
-    onion = NamedElementOnion([make_callable(i) for i in range(100)])
+    onion = NamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, onion.as_tuple_of_middleware)
 
 @pytest.mark.benchmark(group="NamedElementOnion-as_tuple_of_middleware")
 def test_faster_namedelementonion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
-    onion = FasterNamedElementOnion([make_callable(i) for i in range(100)])
+    onion = FasterNamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, onion.as_tuple_of_middleware)
