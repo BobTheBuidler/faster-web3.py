@@ -138,7 +138,7 @@ def get_dev_ipc_path() -> str:
 
 
 class IPCProvider(JSONBaseProvider):
-    logger = logging.getLogger("web3.providers.IPCProvider")
+    logger = logging.getLogger("faster_web3.providers.IPCProvider")
     _socket = None
 
     def __init__(

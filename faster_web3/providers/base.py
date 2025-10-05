@@ -58,7 +58,7 @@ if TYPE_CHECKING:
 
 class BaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
-    logger: logging.Logger = logging.getLogger("web3.providers.base.BaseProvider")
+    logger: logging.Logger = logging.getLogger("faster_web3.providers.base.BaseProvider")
     # a tuple of (middleware, request_func)
     _request_func_cache: Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]] = (
         None,
@@ -132,7 +132,7 @@ class BaseProvider:
 
 
 class JSONBaseProvider(BaseProvider):
-    logger = logging.getLogger("web3.providers.base.JSONBaseProvider")
+    logger = logging.getLogger("faster_web3.providers.base.JSONBaseProvider")
 
     def __init__(self, **kwargs: Any) -> None:
         super().__init__(**kwargs)

@@ -65,7 +65,7 @@ DEFAULT_PERSISTENT_CONNECTION_TIMEOUT = 30.0
 
 
 class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
-    logger = logging.getLogger("web3.providers.PersistentConnectionProvider")
+    logger = logging.getLogger("faster_web3.providers.PersistentConnectionProvider")
     has_persistent_connection = True
 
     _send_func_cache: Tuple[

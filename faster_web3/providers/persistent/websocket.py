@@ -54,7 +54,7 @@ def get_default_endpoint() -> URI:
 
 
 class WebSocketProvider(PersistentConnectionProvider):
-    logger = logging.getLogger("web3.providers.WebSocketProvider")
+    logger = logging.getLogger("faster_web3.providers.WebSocketProvider")
     is_async: bool = True
 
     def __init__(

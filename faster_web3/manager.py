@@ -99,7 +99,7 @@ NULL_RESPONSES = [None, HexBytes("0x"), "0x"]
 
 
 class RequestManager:
-    logger = logging.getLogger("web3.manager.RequestManager")
+    logger = logging.getLogger("faster_web3.manager.RequestManager")
 
     middleware_onion: Union["MiddlewareOnion", NamedElementOnion[None, None]]
 

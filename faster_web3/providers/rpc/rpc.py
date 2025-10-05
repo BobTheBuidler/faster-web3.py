@@ -57,7 +57,7 @@ if TYPE_CHECKING:
 
 
 class HTTPProvider(JSONBaseProvider):
-    logger = logging.getLogger("web3.providers.HTTPProvider")
+    logger = logging.getLogger("faster_web3.providers.HTTPProvider")
     endpoint_uri = None
     _request_kwargs = None
 

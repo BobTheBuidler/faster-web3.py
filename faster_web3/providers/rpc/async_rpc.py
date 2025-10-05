@@ -54,7 +54,7 @@ from .utils import (
 
 
 class AsyncHTTPProvider(AsyncJSONBaseProvider):
-    logger = logging.getLogger("web3.providers.AsyncHTTPProvider")
+    logger = logging.getLogger("faster_web3.providers.AsyncHTTPProvider")
     endpoint_uri = None
     _request_kwargs = None
 

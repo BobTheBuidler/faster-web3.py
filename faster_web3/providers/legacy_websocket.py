@@ -90,7 +90,7 @@ class PersistentWebSocket:
 
 
 class LegacyWebSocketProvider(JSONBaseProvider):
-    logger = logging.getLogger("web3.providers.WebSocketProvider")
+    logger = logging.getLogger("faster_web3.providers.WebSocketProvider")
     _loop = None
 
     def __init__(

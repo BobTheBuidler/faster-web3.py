@@ -73,7 +73,7 @@ if TYPE_CHECKING:
 class AsyncBaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
     logger: logging.Logger = logging.getLogger(
-        "web3.providers.async_base.AsyncBaseProvider"
+        "faster_web3.providers.async_base.AsyncBaseProvider"
     )
     _request_func_cache: Tuple[
         Tuple[Middleware, ...], Callable[..., Coroutine[Any, Any, RPCResponse]]

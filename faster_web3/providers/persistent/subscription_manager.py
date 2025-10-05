@@ -50,7 +50,7 @@ class SubscriptionManager:
     """
 
     logger: logging.Logger = logging.getLogger(
-        "web3.providers.persistent.subscription_manager"
+        "faster_web3.providers.persistent.subscription_manager"
     )
 
     def __init__(self, w3: "AsyncWeb3") -> None:

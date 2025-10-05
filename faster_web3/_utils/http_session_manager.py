@@ -43,7 +43,7 @@ from faster_web3.utils.caching import (
 
 
 class HTTPSessionManager:
-    logger = logging.getLogger("web3._utils.http_session_manager.HTTPSessionManager")
+    logger = logging.getLogger("faster_web3._utils.http_session_manager.HTTPSessionManager")
     _lock: threading.Lock = threading.Lock()
 
     def __init__(

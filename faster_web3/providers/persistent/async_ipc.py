@@ -47,7 +47,7 @@ async def async_get_ipc_socket(
 
 
 class AsyncIPCProvider(PersistentConnectionProvider):
-    logger = logging.getLogger("web3.providers.AsyncIPCProvider")
+    logger = logging.getLogger("faster_web3.providers.AsyncIPCProvider")
 
     _reader: Optional[asyncio.StreamReader] = None
     _writer: Optional[asyncio.StreamWriter] = None
