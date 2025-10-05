@@ -52,7 +52,7 @@ def test_ipc_no_path():
 
 
 def test_ipc_tilda_in_path():
-    expectedPath = str(pathlib.Path.home()) + "/foo"
+    expectedPath = str(pathlib.Path.home()) + ("\foo" if sys.platform.startswith("win") else "/foo")
     assert IPCProvider("~/foo").ipc_path == expectedPath
     assert IPCProvider(pathlib.Path("~/foo")).ipc_path == expectedPath
 
@@ -61,8 +61,8 @@ def test_ipc_tilda_in_path():
     "platform, expected_result, expected_error",
     [
         ("darwin", "\\Library\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/Library/Ethereum/geth.ipc", None),
-        ("linux", "\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
-        ("freebsd", "\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
+        ("linux", "\\.ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
+        ("freebsd", "\\.ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
         ("win32", r"\\.\pipe\geth.ipc", None),
         (
             "unknown",
