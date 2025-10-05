@@ -51,9 +51,9 @@ def test_web3_parse_error_with_reverted_prefix(benchmark: BenchmarkFixture, data
 @pytest.mark.parametrize("data,exc", error_data_cases, ids=error_data_ids)
 def test_faster_web3_parse_error_with_reverted_prefix(benchmark: BenchmarkFixture, data, exc):
     if not exc:
-        benchmark(run_100, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, FasterContractLogicError, data)
+        benchmark(run_100, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
     else:
-        benchmark(run_100, call, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
+        benchmark(run_100, call, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, FasterContractLogicError, data)
 
 raise_contract_error_cases = ["error: contract reverted", "error: some other error", ""]
 raise_contract_error_ids = ["reverted", "other", "empty"]
