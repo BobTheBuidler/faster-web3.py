@@ -7,14 +7,14 @@ import faster_web3._utils.error_formatters_utils
 from web3.exceptions import (
     BlockNotFound,
     ContractLogicError,
-    CustomContractError,
+    ContractCustomError,
     TransactionIndexingInProgress,
     Web3ValueError,
 )
 from faster_web3.exceptions import (
     BlockNotFound as FasterBlockNotFound,
     ContractLogicError as FasterContractLogicError,
-    CustomContractError as FasterCustomContractError,
+    ContractCustomError as FasterContractCustomError,
     TransactionIndexingInProgress as FasterTransactionIndexingInProgress,
 )
 
@@ -69,7 +69,7 @@ def test_web3_raise_contract_error(benchmark: BenchmarkFixture, data):
     def call():
         try:
             return web3._utils.error_formatters_utils._raise_contract_error(data)
-        except CustomContractError:
+        except ContractCustomError:
             return
 
     benchmark(run_100, call)
@@ -84,7 +84,7 @@ def test_faster_web3_raise_contract_error(benchmark: BenchmarkFixture, data):
     def call():
         try:
             return faster_web3._utils.error_formatters_utils._raise_contract_error(data)
-        except FasterCustomContractError:
+        except FasterContractCustomError:
             return
 
     benchmark(run_100, call)
