@@ -19,12 +19,6 @@ import warnings
 from faster_web3._utils.compat import (
     Self,
 )
-from faster_web3.contract.async_contract import (
-    AsyncContractFunction,
-)
-from faster_web3.contract.contract import (
-    ContractFunction,
-)
 from faster_web3.exceptions import (
     Web3ValueError,
 )
