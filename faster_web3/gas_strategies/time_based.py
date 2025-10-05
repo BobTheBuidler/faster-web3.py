@@ -7,7 +7,6 @@ from typing import (
     Optional,
     Sequence,
     Tuple,
-    cast,
 )
 
 from eth_typing import (
@@ -88,7 +87,6 @@ def _get_raw_miner_data(
     latest = w3.eth.get_block("latest", full_transactions=True)
 
     for transaction in latest["transactions"]:
-        transaction = cast(TxData, transaction)
         yield (latest["miner"], latest["hash"], transaction["gasPrice"])
 
     block = latest
@@ -101,7 +99,6 @@ def _get_raw_miner_data(
         # block numbers to make caching the data easier to implement.
         block = w3.eth.get_block(block["parentHash"], full_transactions=True)
         for transaction in block["transactions"]:
-            transaction = cast(TxData, transaction)
             yield (block["miner"], block["hash"], transaction["gasPrice"])
 
 
