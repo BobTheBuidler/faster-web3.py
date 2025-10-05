@@ -78,6 +78,8 @@ def test_ipc_tilda_in_path():
     ],
 )
 def test_get_default_ipc_path(platform, expected_result, expected_error):
+    if sys.platform.startswith("win") and "/" in expected_result:
+        expected_result.replace("/", "\\")
     with patch.object(sys, "platform", platform):
         if expected_error:
             with pytest.raises(expected_error["error"], match=expected_error["match"]):
