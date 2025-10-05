@@ -78,7 +78,7 @@ directory = "newsfragments"
 filename = "docs/release_notes.rst"
 issue_format = "`#{issue} <https://github.com/ethereum/web3.py/issues/{issue}>`__"
 package = "faster_web3"
-title_format = "web3.py v{version} ({project_date})"
+title_format = "faster-web3.py v{version} ({project_date})"
 underlines = ["-", "~", "^"]
 
 [[tool.towncrier.type]]
