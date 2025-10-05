@@ -55,7 +55,7 @@ with open("./README.md") as readme:
 
 ext_modules = mypycify(
     [
-        "web3/_utils/type_conversion.py",
+        "faster_web3/_utils/type_conversion.py",
         "--strict",
         "--pretty",
     ]
