@@ -38,7 +38,7 @@ def delete_environment_variables(monkeypatch):
         (
             "file:///root/path/to/file.ipc",
             IPCProvider,
-            {"ipc_path": "D:\\root\\path\\to\\file.ipc if sys.platform.startswith("win") else "/root/path/to/file.ipc"},
+            {"ipc_path": "D:\\root\\path\\to\\file.ipc" if sys.platform.startswith("win") else "/root/path/to/file.ipc"},
         ),
         (
             "ws://1.2.3.4:5679",
