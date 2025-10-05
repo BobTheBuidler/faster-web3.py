@@ -60,9 +60,9 @@ def test_ipc_tilda_in_path():
 @pytest.mark.parametrize(
     "platform, expected_result, expected_error",
     [
-        ("darwin", "/Library/Ethereum/geth.ipc", None),
-        ("linux", "/.ethereum/geth.ipc", None),
-        ("freebsd", "/.ethereum/geth.ipc", None),
+        ("darwin", "\\Library\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/Library/Ethereum/geth.ipc", None),
+        ("linux", "\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
+        ("freebsd", "\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
         ("win32", r"\\.\pipe\geth.ipc", None),
         (
             "unknown",
@@ -78,7 +78,7 @@ def test_ipc_tilda_in_path():
     ],
 )
 def test_get_default_ipc_path(platform, expected_result, expected_error):
-    if sys.platform.startswith("win") and "/" in expected_result:
+    if sys.platform.startswith("win") and expected_result and "/" in expected_result:
         expected_result.replace("/", "\\")
     with patch.object(sys, "platform", platform):
         if expected_error:
@@ -100,7 +100,7 @@ def test_get_default_ipc_path(platform, expected_result, expected_error):
     [
         ("darwin", "/var/path/to/tmp/T/geth.ipc", None),
         ("linux", "/var/path/to/tmp/T/geth.ipc", None),
-        ("freebsd", "/tmp/geth.ipc", None),
+        ("freebsd", "/tmp\geth.ipc" if sys.platform.startswith("win") else "/tmp/geth.ipc", None),
         ("win32", r"\\.\pipe\geth.ipc", None),
         (
             "unknown",
