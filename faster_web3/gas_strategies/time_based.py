@@ -2,6 +2,7 @@ import collections
 import math
 import operator
 from typing import (
+    Final,
     Iterable,
     Sequence,
     Tuple,
@@ -244,22 +245,22 @@ def construct_time_based_gas_price_strategy(
 
 
 # fast: mine within 1 minute
-fast_gas_price_strategy = construct_time_based_gas_price_strategy(
+fast_gas_price_strategy: Final = construct_time_based_gas_price_strategy(
     max_wait_seconds=60,
     sample_size=120,
 )
 # medium: mine within 10 minutes
-medium_gas_price_strategy = construct_time_based_gas_price_strategy(
+medium_gas_price_strategy: Final = construct_time_based_gas_price_strategy(
     max_wait_seconds=600,
     sample_size=120,
 )
 # slow: mine within 1 hour (60 minutes)
-slow_gas_price_strategy = construct_time_based_gas_price_strategy(
+slow_gas_price_strategy: Final = construct_time_based_gas_price_strategy(
     max_wait_seconds=60 * 60,
     sample_size=120,
 )
 # glacial: mine within the next 24 hours.
-glacial_gas_price_strategy = construct_time_based_gas_price_strategy(
+glacial_gas_price_strategy: Final = construct_time_based_gas_price_strategy(
     max_wait_seconds=24 * 60 * 60,
     sample_size=720,
 )
