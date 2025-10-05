@@ -88,7 +88,7 @@ def is_beyond_validation_threshold(
 def validate_from_block_id_in_params(
     provider: SYNC_PROVIDER_TYPE,
     params: Sequence[Any],
-    _result: Dict[str, Any],
+    _result: Any,
 ) -> bool:
     block_id = params[0]
     if block_id == "earliest":
@@ -144,7 +144,7 @@ def validate_from_blocknum_in_result(
 def validate_from_blockhash_in_params(
     provider: SYNC_PROVIDER_TYPE,
     params: Sequence[Any],
-    _result: Dict[str, Any],
+    _result: Any,
 ) -> bool:
     cache_allowed_requests = provider.cache_allowed_requests
     try:
