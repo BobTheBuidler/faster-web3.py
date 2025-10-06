@@ -104,6 +104,9 @@ class MutableAttributeDict(
 
     def __delitem__(self, key: Any) -> None:
         del self.__dict__[key]
+    
+    def copy(self) -> "MutableAttributeDict":
+        return MutableAttributeDict(self.__dict__)
 
 
 @final
@@ -135,6 +138,9 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
             return self.__dict__ == dict(other)
         else:
             return False
+    
+    def copy(self) -> "AttributeDict":
+        return AttributeDict(self.__dict__)
 
 
 def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValue]:
