@@ -15,6 +15,9 @@ from faster_eth_utils.abi import (
 from faster_hexbytes import (
     HexBytes,
 )
+from mypy_extensions import (
+    mypyc_attr,
+)
 
 from .utils import (
     address_to_reverse_domain,
@@ -35,6 +38,7 @@ if TYPE_CHECKING:
     )
 
 
+@mypyc_attr(allow_interpreted_subclasses=True)
 class BaseENS:
     w3: Union["AsyncWeb3", "Web3"]
     ens: Optional[Union["Contract", "AsyncContract"]] = None
