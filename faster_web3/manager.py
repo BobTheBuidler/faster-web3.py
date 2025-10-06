@@ -7,12 +7,14 @@ from typing import (
     Callable,
     Coroutine,
     Dict,
+    Final,
     List,
     Optional,
     Sequence,
     Tuple,
     Union,
     cast,
+    final,
 )
 
 from faster_eth_utils.toolz import (
@@ -95,11 +97,12 @@ if TYPE_CHECKING:
     )
 
 
-NULL_RESPONSES = [None, HexBytes("0x"), "0x"]
+NULL_RESPONSES: Final = None, HexBytes("0x"), "0x"
 
 
+@final
 class RequestManager:
-    logger = logging.getLogger("faster_web3.manager.RequestManager")
+    logger: Final = logging.getLogger("faster_web3.manager.RequestManager")
 
     middleware_onion: Union["MiddlewareOnion", NamedElementOnion[None, None]]
 
@@ -109,17 +112,13 @@ class RequestManager:
         provider: Optional[Union["BaseProvider", "AsyncBaseProvider"]] = None,
         middleware: Optional[Sequence[Tuple[Middleware, str]]] = None,
     ) -> None:
-        self.w3 = w3
-
-        if provider is None:
-            self.provider = AutoProvider()
-        else:
-            self.provider = provider
+        self.w3: Final = w3
+        self.provider: Final = AutoProvider() if provider is None else provider
 
         if middleware is None:
             middleware = self.get_default_middleware()
 
-        self.middleware_onion = NamedElementOnion(middleware)
+        self.middleware_onion: Final = NamedElementOnion(middleware)
 
         if isinstance(provider, PersistentConnectionProvider):
             # set up the request processor to be able to properly process ordered
@@ -606,6 +605,7 @@ class RequestManager:
             return apply_result_formatters(result_formatters, partly_formatted_response)
 
 
+@final
 class _AsyncPersistentMessageStream:
     """
     Async generator for pulling subscription responses from the request processor
@@ -614,8 +614,8 @@ class _AsyncPersistentMessageStream:
     """
 
     def __init__(self, manager: RequestManager, *args: Any, **kwargs: Any) -> None:
-        self.manager = manager
-        self.provider: PersistentConnectionProvider = cast(
+        self.manager: Final = manager
+        self.provider: Final[PersistentConnectionProvider] = cast(
             PersistentConnectionProvider, manager._provider
         )
         super().__init__(*args, **kwargs)
