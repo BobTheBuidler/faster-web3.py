@@ -1378,6 +1378,8 @@ extern char CPyDef_datastructures___MutableAttributeDict_____setitem__(PyObject 
 extern PyObject *CPyPy_datastructures___MutableAttributeDict_____setitem__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_datastructures___MutableAttributeDict_____delitem__(PyObject *cpy_r_self, PyObject *cpy_r_key);
 extern PyObject *CPyPy_datastructures___MutableAttributeDict_____delitem__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_datastructures___MutableAttributeDict___copy(PyObject *cpy_r_self);
+extern PyObject *CPyPy_datastructures___MutableAttributeDict___copy(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_datastructures___AttributeDict_____setattr__(PyObject *cpy_r_self, PyObject *cpy_r_attr, PyObject *cpy_r_val);
 extern PyObject *CPyPy_datastructures___AttributeDict_____setattr__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_datastructures___AttributeDict_____delattr__(PyObject *cpy_r_self, PyObject *cpy_r_key);
@@ -1386,6 +1388,8 @@ extern CPyTagged CPyDef_datastructures___AttributeDict_____hash__(PyObject *cpy_
 extern PyObject *CPyPy_datastructures___AttributeDict_____hash__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_datastructures___AttributeDict_____eq__(PyObject *cpy_r_self, PyObject *cpy_r_other);
 extern PyObject *CPyPy_datastructures___AttributeDict_____eq__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_datastructures___AttributeDict___copy(PyObject *cpy_r_self);
+extern PyObject *CPyPy_datastructures___AttributeDict___copy(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_datastructures___AttributeDict_____ne__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_rhs);
 extern PyObject *CPyPy_datastructures___AttributeDict_____ne__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_datastructures____to_tuple_tupleize_lists_nested_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
