@@ -8,6 +8,7 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Final,
     Iterator,
     List,
     Mapping,
@@ -19,11 +20,10 @@ from typing import (
     Union,
     ValuesView,
     cast,
+    final,
 )
 
-from faster_eth_utils import (
-    is_integer,
-)
+import faster_eth_utils
 
 from faster_web3.exceptions import (
     Web3AssertionError,
@@ -39,6 +39,9 @@ from faster_web3.exceptions import (
 T = TypeVar("T")
 TKey = TypeVar("TKey", bound=Hashable)
 TValue = TypeVar("TValue")
+
+
+is_integer: Final = faster_eth_utils.is_integer
 
 
 class ReadableAttributeDict(Mapping[TKey, TValue]):
@@ -92,6 +95,7 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         return value
 
 
+@final
 class MutableAttributeDict(
     MutableMapping[TKey, TValue], ReadableAttributeDict[TKey, TValue]
 ):
@@ -100,8 +104,12 @@ class MutableAttributeDict(
 
     def __delitem__(self, key: Any) -> None:
         del self.__dict__[key]
+    
+    def copy(self) -> "MutableAttributeDict":
+        return MutableAttributeDict(self.__dict__)
 
 
+@final
 class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
     """
     Provides superficial immutability, someone could hack around it
@@ -130,6 +138,9 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
             return self.__dict__ == dict(other)
         else:
             return False
+    
+    def copy(self) -> "AttributeDict":
+        return AttributeDict(self.__dict__)
 
 
 def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValue]:
@@ -146,7 +157,7 @@ def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValu
     for k, v in d.items():
         if isinstance(v, (list, tuple)):
             ret[k] = _to_tuple(v)
-        elif isinstance(v, Mapping):
+        elif isinstance(v, dict) or isinstance(v, ReadableAttributeDict) or isinstance(v, Mapping):
             ret[k] = tupleize_lists_nested(v)
         elif not isinstance(v, Hashable):
             raise Web3TypeError(f"Found unhashable type '{type(v).__name__}': {v}")
@@ -155,6 +166,7 @@ def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValu
     return AttributeDict(ret)
 
 
+@final
 class NamedElementOnion(Mapping[TKey, TValue]):
     """
     Add layers to an onion-shaped structure. Optionally, inject to a specific layer.
