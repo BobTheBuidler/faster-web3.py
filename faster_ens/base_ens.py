@@ -1,6 +1,3 @@
-from functools import (
-    wraps,
-)
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -53,27 +50,22 @@ class BaseENS:
         self.w3.strict_bytes_type_checking = strict_bytes_type_check
 
     @staticmethod
-    @wraps(label_to_hash)
     def labelhash(label: str) -> HexBytes:
         return label_to_hash(label)
 
     @staticmethod
-    @wraps(raw_name_to_hash)
     def namehash(name: str) -> HexBytes:
         return raw_name_to_hash(name)
 
     @staticmethod
-    @wraps(normalize_name)
     def nameprep(name: str) -> str:
         return normalize_name(name)
 
     @staticmethod
-    @wraps(is_valid_name)
     def is_valid_name(name: str) -> bool:
         return is_valid_name(name)
 
     @staticmethod
-    @wraps(address_to_reverse_domain)
     def reverse_domain(address: ChecksumAddress) -> str:
         return address_to_reverse_domain(address)
 
