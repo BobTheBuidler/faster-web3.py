@@ -64,6 +64,7 @@ ext_modules = mypycify(
         "faster_web3/_utils/utility_methods.py",
         "faster_web3/auto",
         "faster_web3/gas_strategies",
+        "faster_web3/manager.py",
         "faster_web3/tools/benchmark/node.py",
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
