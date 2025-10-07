@@ -174,6 +174,11 @@ def test_sync_waits_for_full_result(jsonrpc_ipc_pipe_path, serve_empty_result):
     provider._socket.sock.close()
 
 
+@pytest.mark.skipif(
+    # I was able to get this test working with windows paths, but only on python3.10+
+    sys.platform.startswith("win") and sys.version_info > (3, 9),
+    reason="AF_UNIX sockets are not available on Windows",
+)
 def test_web3_auto_gethdev(request_mocker):
     # import fails on python3.9 on windows so we do it inside the test
     from faster_web3.auto.gethdev import (
