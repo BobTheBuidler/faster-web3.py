@@ -49,8 +49,9 @@ with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
     NORMALIZATION_SPEC: Final = _json_list_mapping_to_dict(f, "mapped")
+    EMOJI_NORMALIZATION_SPEC: Final[List[List[int]]] = NORMALIZATION_SPEC["emoji"]
     # clean `FE0F` (65039) from entries since it's optional
-    for e in NORMALIZATION_SPEC["emoji"]:
+    for e in EMOJI_NORMALIZATION_SPEC:
         if 65039 in e:
             for _ in range(e.count(65039)):
                 e.remove(65039)
@@ -202,7 +203,7 @@ def _construct_whole_confusable_map() -> Dict[int, Set[str]]:
 
 WHOLE_CONFUSABLE_MAP = _construct_whole_confusable_map()
 VALID_CODEPOINTS = _extract_valid_codepoints()
-MAX_LEN_EMOJI_PATTERN = max(map(len, NORMALIZATION_SPEC["emoji"]))
+MAX_LEN_EMOJI_PATTERN = max(map(len, EMOJI_NORMALIZATION_SPEC))
 NSM_MAX = NORMALIZATION_SPEC["nsm_max"]
 
 
@@ -460,7 +461,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
                         raise InvalidName("Empty name after removing 65039 (0xFE0F)")
                     end_index -= 1  # reset end_index after removing 0xFE0F
 
-                if current_emoji_sequence in NORMALIZATION_SPEC["emoji"]:
+                if current_emoji_sequence in EMOJI_NORMALIZATION_SPEC:
                     emoji_codepoint = current_emoji_sequence
                 end_index += 1
 
