@@ -142,6 +142,7 @@ extern PyObject *CPyStatic_types___globals;
 extern CPyModule *CPyModule_eth_account___datastructures;
 extern CPyModule *CPyModule_faster_web3____utils___abi_element_identifiers;
 extern CPyModule *CPyModule_faster_web3____utils___compat;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC;
 extern PyObject *CPyStatic__normalization___TokenType___EMOJI;
 extern PyObject *CPyStatic__normalization___TokenType___TEXT;
 extern PyTypeObject *CPyType__normalization___TokenType;
