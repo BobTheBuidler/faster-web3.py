@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1072];
+extern PyObject *CPyStatics[1073];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -143,6 +143,7 @@ extern CPyModule *CPyModule_eth_account___datastructures;
 extern CPyModule *CPyModule_faster_web3____utils___abi_element_identifiers;
 extern CPyModule *CPyModule_faster_web3____utils___compat;
 extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC;
+extern PyObject *CPyStatic__normalization___EMOJI_NORMALIZATION_SPEC;
 extern PyObject *CPyStatic__normalization___TokenType___EMOJI;
 extern PyObject *CPyStatic__normalization___TokenType___TEXT;
 extern PyTypeObject *CPyType__normalization___TokenType;
