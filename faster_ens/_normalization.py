@@ -1,8 +1,11 @@
+import json
+import sys
 from enum import (
     Enum,
 )
-import json
-import os
+from pathlib import (
+    Path,
+)
 from typing import (
     Any,
     Dict,
@@ -40,8 +43,8 @@ def _json_list_mapping_to_dict(
 
 # get the normalization spec json files downloaded from links in ENSIP-15
 # https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
-specs_dir_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "specs"))
-with open(os.path.join(specs_dir_path, "normalization_spec.json")) as spec:
+specs_dir_path = Path(sys.modules["faster_ens"]).parent.joinpath("specs").absolute()
+with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
     NORMALIZATION_SPEC = _json_list_mapping_to_dict(f, "mapped")
@@ -51,7 +54,7 @@ with open(os.path.join(specs_dir_path, "normalization_spec.json")) as spec:
             for _ in range(e.count(65039)):
                 e.remove(65039)
 
-with open(os.path.join(specs_dir_path, "nf.json")) as nf:
+with specs_dir_path.joinpath("nf.json").open() as nf:
     f = json.load(nf)
     NF = _json_list_mapping_to_dict(f, "decomp")
 
