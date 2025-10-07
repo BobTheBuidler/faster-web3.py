@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1065];
+extern PyObject *CPyStatics[1072];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -18,9 +18,10 @@ extern CPyModule *CPyModule_faster_ens____normalization__internal;
 extern CPyModule *CPyModule_faster_ens____normalization;
 extern PyObject *CPyStatic__normalization___globals;
 extern CPyModule *CPyModule_builtins;
-extern CPyModule *CPyModule_enum;
 extern CPyModule *CPyModule_json;
-extern CPyModule *CPyModule_os;
+extern CPyModule *CPyModule_sys;
+extern CPyModule *CPyModule_enum;
+extern CPyModule *CPyModule_pathlib;
 extern CPyModule *CPyModule_typing;
 extern CPyModule *CPyModule_pyunormalize;
 extern CPyModule *CPyModule_faster_ens___exceptions;
@@ -116,6 +117,7 @@ extern CPyModule *CPyModule_operator;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node__internal;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node;
 extern PyObject *CPyStatic_node___globals;
+extern CPyModule *CPyModule_os;
 extern CPyModule *CPyModule_socket;
 extern CPyModule *CPyModule_subprocess;
 extern CPyModule *CPyModule_tempfile;
