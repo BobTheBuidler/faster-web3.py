@@ -44,7 +44,7 @@ def _json_list_mapping_to_dict(
 
 # get the normalization spec json files downloaded from links in ENSIP-15
 # https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
-specs_dir_path = Path(sys.modules["faster_ens"]).parent.joinpath("specs").absolute()
+specs_dir_path = Path(sys.modules["faster_ens"].__file__).parent.joinpath("specs")
 with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
