@@ -102,19 +102,16 @@ class TextToken(Token):
 
 
 class Label:
-    type: str
-    tokens: List[Token]
-
     def __init__(
         self,
         type: Optional[str] = None,
         tokens: Optional[List[Token]] = None,
     ) -> None:
-        self.type = type
-        self.tokens = tokens
+        self.type: Final = type
+        self.tokens: Final = tokens
 
     @property
-    def text(self) -> str:
+    def text(self) -> str:  # sourcery skip: assign-if-exp
         if not self.tokens:
             return ""
 
