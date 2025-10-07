@@ -9,6 +9,7 @@ from pathlib import (
 from typing import (
     Any,
     Dict,
+    Final,
     List,
     Literal,
     Optional,
@@ -47,7 +48,7 @@ specs_dir_path = Path(sys.modules["faster_ens"]).parent.joinpath("specs").absolu
 with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
-    NORMALIZATION_SPEC = _json_list_mapping_to_dict(f, "mapped")
+    NORMALIZATION_SPEC: Final = _json_list_mapping_to_dict(f, "mapped")
     # clean `FE0F` (65039) from entries since it's optional
     for e in NORMALIZATION_SPEC["emoji"]:
         if 65039 in e:
@@ -204,7 +205,7 @@ def _construct_whole_confusable_map() -> Dict[int, Set[str]]:
 
 WHOLE_CONFUSABLE_MAP = _construct_whole_confusable_map()
 VALID_CODEPOINTS = _extract_valid_codepoints()
-MAX_LEN_EMOJI_PATTERN = max(len(e) for e in NORMALIZATION_SPEC["emoji"])
+MAX_LEN_EMOJI_PATTERN = max(map(len, NORMALIZATION_SPEC["emoji"]))
 NSM_MAX = NORMALIZATION_SPEC["nsm_max"]
 
 
@@ -482,8 +483,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
                 if leading_codepoint in NORMALIZATION_SPEC["ignored"]:
                     pass
 
-                elif leading_codepoint in NORMALIZATION_SPEC["mapped"]:
-                    mapped = NORMALIZATION_SPEC["mapped"][leading_codepoint]
+                elif (mapped := NORMALIZATION_SPEC["mapped"].get(leading_codepoint)) is not None:
                     for cp in mapped:
                         buffer.append(cp)
 
