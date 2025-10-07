@@ -6,7 +6,6 @@ on:
     paths-ignore:
       - '.github/workflows/**'
       - '!.github/workflows/benchmark.yaml'
-      - 'benchmarks/**'
   push:
     branches: [main, master]
     paths-ignore:
