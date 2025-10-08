@@ -35,7 +35,7 @@ extras_require = {
         "flaky>=3.7.0",
         "hypothesis>=3.31.2",
         "tox>=4.0.0",
-        "mypy==1.10.0",
+        "mypy==1.18.2",
         "pre-commit>=3.4.0",
     ],
 }
