@@ -11,7 +11,6 @@ from typing import (
     Tuple,
     Type,
     Union,
-    cast,
 )
 import warnings
 
@@ -85,8 +84,7 @@ def init_web3(
         Eth as EthMain,
     )
 
-    provider = provider or cast("BaseProvider", default)
-    if provider is default:
+    if provider is None:
         w3 = Web3Main(ens=None, modules={"eth": (EthMain)})
     else:
         w3 = Web3Main(provider, middleware, ens=None, modules={"eth": (EthMain)})
@@ -110,7 +108,7 @@ def customize_web3(w3: "_Web3") -> "_Web3":
     return w3
 
 
-def normalize_name(name: str) -> str:
+def normalize_name(name: Optional[str]) -> str:
     """
     Clean the fully qualified name, as defined in ENS `EIP-137
     <https://github.com/ethereum/EIPs/blob/master/EIPS/eip-137.md#name-syntax>`_  # blocklint: pragma # noqa: E501
@@ -151,7 +149,6 @@ def dns_encode_name(name: str) -> HexBytes:
     normalized_name = normalize_name(name)
 
     labels = normalized_name.split(".")
-    labels_as_bytes = [to_bytes(text=label) for label in labels]
 
     # raises if len(label) > 255:
     for index, label in enumerate(labels):
@@ -161,6 +158,7 @@ def dns_encode_name(name: str) -> HexBytes:
             )
 
     # concat label size in bytes to each label:
+    labels_as_bytes = (to_bytes(text=label) for label in labels)
     dns_prepped_labels = [to_bytes(len(label)) + label for label in labels_as_bytes]
 
     # return the joined prepped labels in order and append the zero byte at the end:
@@ -260,7 +258,7 @@ def address_in(
 
 def address_to_reverse_domain(address: ChecksumAddress) -> str:
     lower_unprefixed_address = remove_0x_prefix(HexStr(to_normalized_address(address)))
-    return lower_unprefixed_address + "." + REVERSE_REGISTRAR_DOMAIN
+    return f"{lower_unprefixed_address}.{REVERSE_REGISTRAR_DOMAIN}"
 
 
 def estimate_auction_start_gas(labels: Collection[str]) -> int:
@@ -278,22 +276,19 @@ def assert_signer_in_modifier_kwargs(modifier_kwargs: Any) -> ChecksumAddress:
     return modifier_dict["from"]
 
 
-def is_none_or_zero_address(addr: Union[Address, ChecksumAddress, HexAddress]) -> bool:
+def is_none_or_zero_address(addr: Union[Address, ChecksumAddress, HexAddress, None]) -> bool:
     return not addr or addr == EMPTY_ADDR_HEX
 
 
-def is_empty_name(name: str) -> bool:
-    return name is None or name.strip() in {"", "."}
+def is_empty_name(name: str) -> bool:  # sourcery skip: collection-into-set
+    return name is None or name.strip() in ("", ".")
 
 
 def is_valid_ens_name(ens_name: str) -> bool:
     split_domain = ens_name.split(".")
     if len(split_domain) == 1:
         return False
-    for name in split_domain:
-        if not is_valid_name(name):
-            return False
-    return True
+    return all(map(is_valid_name, split_domain))
 
 
 # -- async -- #
@@ -313,7 +308,6 @@ def init_async_web3(
         StalecheckMiddlewareBuilder,
     )
 
-    provider = provider or cast("AsyncBaseProvider", default)
     middleware = list(middleware)
     for i, (_mw, name) in enumerate(middleware):
         if name == "ens_name_to_address":
@@ -327,16 +321,14 @@ def init_async_web3(
             )
         )
 
-    if provider is default:
-        async_w3 = AsyncWeb3Main(
+    if provider is None:
+        return AsyncWeb3Main(
             middleware=middleware, ens=None, modules={"eth": (AsyncEthMain)}
         )
     else:
-        async_w3 = AsyncWeb3Main(
+        return AsyncWeb3Main(
             provider,
             middleware=middleware,
             ens=None,
             modules={"eth": (AsyncEthMain)},
         )
-
-    return async_w3

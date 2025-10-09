@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sys
 from setuptools import (
     find_packages,
     setup,
@@ -25,17 +26,17 @@ extras_require = {
         "sphinx>=6.0.0",
         "sphinx-autobuild>=2021.3.14",
         "sphinx_rtd_theme>=1.0.0",
-        "towncrier>=24,<25",
+        "towncrier>=25,<26",
     ],
     "test": [
-        "pytest-asyncio>=0.18.1,<0.23",
+        "pytest-asyncio>=1.2,<1.3",
         "pytest-mock>=1.10",
         "pytest-xdist>=2.4.0",
         "pytest>=7.0.0",
         "flaky>=3.7.0",
         "hypothesis>=3.31.2",
         "tox>=4.0.0",
-        "mypy==1.10.0",
+        f"mypy=={'1.14.1' if sys.version_info < (3, 9) else '1.18.2'}",
         "pre-commit>=3.4.0",
     ],
 }
@@ -55,7 +56,16 @@ with open("./README.md") as readme:
 
 ext_modules = mypycify(
     [
+        "faster_ens/_normalization.py",
+        # "faster_ens/async_ens.py",  figure out `default`
+        "faster_ens/auto.py",
+        "faster_ens/base_ens.py",
+        "faster_ens/constants.py",
+        # "faster_ens/ens.py",  figure out `default`
+        "faster_ens/utils.py",
+        "faster_web3/beacon",
         "faster_web3/_utils/abi.py",
+        "faster_web3/_utils/caching",
         "faster_web3/_utils/datatypes.py",
         "faster_web3/_utils/http.py",
         "faster_web3/_utils/math.py",
@@ -128,7 +138,7 @@ setup(
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
-    packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*"]),
+    packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*", "benchmarks", "benchmarks.*"]),
     ext_modules=ext_modules,
     package_data={"faster_web3": ["py.typed"], "faster_ens": ["py.typed"]},
     classifiers=[
