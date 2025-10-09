@@ -36,9 +36,10 @@ from faster_eth_utils.curried import (
 )
 from faster_eth_utils.toolz import (
     compose,
-)
-from faster_eth_utils.toolz import (
     curry,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.async_transactions import (
@@ -78,7 +79,7 @@ T = TypeVar("T")
 to_hexstr_from_eth_key = operator.methodcaller("to_hex")
 
 
-def is_eth_key(value: Any) -> bool:
+def is_eth_key(value: Any) -> TypeGuard[PrivateKey]:
     return isinstance(value, PrivateKey)
 
 
