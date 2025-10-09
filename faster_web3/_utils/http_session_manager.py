@@ -92,7 +92,7 @@ class HTTPSessionManager:
             self.logger.debug("Session cached: %s, %s", endpoint_uri, cached_session)
 
         if evicted_items is not None:
-            evicted_sessions = evicted_items.values()
+            evicted_sessions = list(evicted_items.values())
             for evicted_session in evicted_sessions:
                 self.logger.debug(
                     "Session cache full. Session evicted from cache: %s",
