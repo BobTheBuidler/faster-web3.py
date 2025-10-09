@@ -292,18 +292,18 @@ def assert_signer_in_modifier_kwargs(modifier_kwargs: Any) -> ChecksumAddress:
 @singledispatch
 def is_none_or_zero_address(addr: Union[Address, ChecksumAddress, HexAddress, None]) -> bool:
     return not addr or addr == EMPTY_ADDR_HEX
-
-@is_none_or_zero_address.register(bytes)
-def _(addr: bytes) -> bool:
-    return not addr
-    
-@is_none_or_zero_address.register(str)
-def _(addr: str) -> bool:
-    return not addr or addr == EMPTY_ADDR_HEX
     
 @is_none_or_zero_address.register(type(None))
 def _(addr: Literal[None]) -> bool:
     return True
+    
+@is_none_or_zero_address.register(str)
+def _(addr: str) -> bool:
+    return not addr or addr == EMPTY_ADDR_HEX
+
+@is_none_or_zero_address.register(bytes)
+def _(addr: bytes) -> bool:
+    return not addr
 
 
 @singledispatch
