@@ -9,6 +9,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Collection,
+    Literal,
     Optional,
     Sequence,
     Tuple,
