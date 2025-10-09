@@ -41,6 +41,9 @@ from faster_eth_utils.toolz import (
     valfilter,
     valmap,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_ens.utils import (
     is_valid_ens_name,
@@ -166,7 +169,7 @@ def validate_abi_value(abi_type: TypeStr, value: Any) -> None:
     raise Web3TypeError(f"The following abi value is not a '{abi_type}': {value}")
 
 
-def is_not_address_string(value: Any) -> bool:
+def is_not_address_string(value: Any) -> TypeGuard[str]:
     return (
         is_string(value)
         and not is_bytes(value)

@@ -7,6 +7,7 @@ from typing import (
     Dict,
     Iterable,
     Optional,
+    Sequence,
     Tuple,
     TypeVar,
 )
@@ -28,6 +29,9 @@ from faster_eth_utils.toolz import (
     curry,
     dissoc,
     pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.decorators import (
@@ -116,13 +120,13 @@ def apply_key_map(
             yield key, item
 
 
-def is_array_of_strings(value: Any) -> bool:
+def is_array_of_strings(value: Any) -> TypeGuard[Sequence[str]]:
     if not is_list_like(value):
         return False
     return all(is_string(item) for item in value)
 
 
-def is_array_of_dicts(value: Any) -> bool:
+def is_array_of_dicts(value: Any) -> TypeGuard[Sequence[Dict[Any, Any]]]:
     if not is_list_like(value):
         return False
     return all(is_dict(item) for item in value)

@@ -50,6 +50,9 @@ from faster_hexbytes import (
 from pydantic import (
     BaseModel,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_web3._utils.abi import (
     is_length,
@@ -154,7 +157,7 @@ def to_hexbytes(
         )
 
 
-def is_attrdict(val: Any) -> bool:
+def is_attrdict(val: Any) -> TypeGuard[AttributeDict]:
     return isinstance(val, AttributeDict)
 
 
