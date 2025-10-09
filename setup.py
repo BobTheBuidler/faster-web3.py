@@ -63,7 +63,6 @@ ext_modules = mypycify(
         "faster_ens/constants.py",
         # "faster_ens/ens.py",  figure out `default`
         "faster_ens/utils.py",
-        "faster_web3/beacon",
         "faster_web3/_utils/abi.py",
         "faster_web3/_utils/caching",
         "faster_web3/_utils/datatypes.py",
