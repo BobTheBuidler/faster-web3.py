@@ -78,6 +78,9 @@ from faster_eth_utils.toolz import (
     curry,
     pipe,
 )
+from mypy_extensions import (
+    mypyc_attr,
+)
 
 from faster_web3._utils.abi_element_identifiers import (
     FallbackFn,
@@ -210,11 +213,11 @@ class AddressEncoder(encoding.AddressEncoder):
 
 
 class AcceptsHexStrEncoder(encoding.BaseEncoder):
-    subencoder_cls: Optional[Type[encoding.BaseEncoder]] = None
-    is_strict: Optional[bool] = None
-    is_big_endian: bool = False
-    data_byte_size: Optional[int] = None
-    value_bit_size: Optional[int] = None
+    subencoder_cls: ClassVar[Optional[Type[encoding.BaseEncoder]]] = None
+    is_strict: ClassVar[Optional[bool]] = None
+    is_big_endian: ClassVar[bool] = False
+    data_byte_size: ClassVar[Optional[int]] = None
+    value_bit_size: ClassVar[Optional[int]] = None
 
     def __init__(
         self,
@@ -291,16 +294,16 @@ class AcceptsHexStrEncoder(encoding.BaseEncoder):
 
 class BytesEncoder(AcceptsHexStrEncoder):
     subencoder_cls: Final = encoding.BytesEncoder
-    is_strict: Final = False
+    is_strict: ClassVar = False
 
 
 @final
 class ExactLengthBytesEncoder(BytesEncoder):
-    is_strict: Final = True
+    is_strict: ClassVar = True
 
     def validate(self) -> None:
         super().validate()
-        if self.value_bit_size is None:
+        if value_bit_size is None:
             raise Web3ValueError("`value_bit_size` may not be none")
         if self.data_byte_size is None:
             raise Web3ValueError("`data_byte_size` may not be none")
@@ -337,14 +340,14 @@ class ExactLengthBytesEncoder(BytesEncoder):
 
 @final
 class ByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls: Final = encoding.ByteStringEncoder
-    is_strict: Final = False
+    subencoder_cls: ClassVar = encoding.ByteStringEncoder
+    is_strict: ClassVar = False
 
 
 @final
 class StrictByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls: Final = encoding.ByteStringEncoder
-    is_strict: Final = True
+    subencoder_cls: ClassVar = encoding.ByteStringEncoder
+    is_strict: ClassVar = True
 
 
 @final
@@ -663,6 +666,7 @@ def data_tree_map(
     return recursive_map(map_to_typed_data, data_tree)
 
 
+@mypyc_attr(native_class=False)
 class ABITypedData(namedtuple("ABITypedData", "abi_type, data")):
     """
     Marks data as having a certain ABI-type.
