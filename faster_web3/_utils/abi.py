@@ -11,6 +11,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    ClassVar,
     Collection,
     Coroutine,
     Dict,
@@ -303,7 +304,7 @@ class ExactLengthBytesEncoder(BytesEncoder):
 
     def validate(self) -> None:
         super().validate()
-        if value_bit_size is None:
+        if self.value_bit_size is None:
             raise Web3ValueError("`value_bit_size` may not be none")
         if self.data_byte_size is None:
             raise Web3ValueError("`data_byte_size` may not be none")
