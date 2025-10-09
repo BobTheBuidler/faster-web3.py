@@ -34,7 +34,7 @@ jobs:
             tox.ini
 
       - name: Drop existing build files
-        run: rm -r build
+        run: rm -rf build
         
       - name: Run Mypyc
         env:
