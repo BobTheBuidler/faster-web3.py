@@ -119,7 +119,7 @@ class HTTPSessionManager:
 
     def json_make_get_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
-    ) -> Dict[str, Any]:
+    ) -> Any:
         response = self.get_response_from_get_request(endpoint_uri, *args, **kwargs)
         response.raise_for_status()
         return response.json()
@@ -135,7 +135,7 @@ class HTTPSessionManager:
 
     def json_make_post_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
-    ) -> Dict[str, Any]:
+    ) -> Any:
         response = self.get_response_from_post_request(endpoint_uri, *args, **kwargs)
         response.raise_for_status()
         return response.json()
@@ -290,7 +290,7 @@ class HTTPSessionManager:
 
     async def async_json_make_get_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
-    ) -> Dict[str, Any]:
+    ) -> Any:
         response = await self.async_get_response_from_get_request(
             endpoint_uri, *args, **kwargs
         )
@@ -308,7 +308,7 @@ class HTTPSessionManager:
 
     async def async_json_make_post_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
-    ) -> Dict[str, Any]:
+    ) -> Any:
         response = await self.async_get_response_from_post_request(
             endpoint_uri, *args, **kwargs
         )
