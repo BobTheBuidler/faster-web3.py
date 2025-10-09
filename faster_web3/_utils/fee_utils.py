@@ -1,5 +1,6 @@
 from typing import (
     TYPE_CHECKING,
+    Final,
 )
 
 from faster_web3.types import (
@@ -11,11 +12,11 @@ if TYPE_CHECKING:
     from faster_web3.eth import AsyncEth  # noqa: F401
     from faster_web3.eth import Eth  # noqa: F401
 
-PRIORITY_FEE_MAX = Wei(1500000000)  # 1.5 gwei
-PRIORITY_FEE_MIN = Wei(1000000000)  # 1 gwei
+PRIORITY_FEE_MAX: Final = Wei(1500000000)  # 1.5 gwei
+PRIORITY_FEE_MIN: Final = Wei(1000000000)  # 1 gwei
 
 # 5th percentile fee history from the last 10 blocks
-PRIORITY_FEE_HISTORY_PARAMS = (10, "pending", [5.0])
+PRIORITY_FEE_HISTORY_PARAMS: Final = (10, "pending", [5.0])
 
 
 def _fee_history_priority_fee_estimate(fee_history: FeeHistory) -> Wei:
