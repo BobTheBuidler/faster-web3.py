@@ -1,8 +1,13 @@
 from typing import (
     TYPE_CHECKING,
     Final,
+    Union,
+    cast,
 )
 
+from faster_web3.datastructures import (
+    AttributeDict,
+)
 from faster_web3.types import (
     FeeHistory,
     Wei,
@@ -19,13 +24,17 @@ PRIORITY_FEE_MIN: Final = Wei(1000000000)  # 1 gwei
 PRIORITY_FEE_HISTORY_PARAMS: Final = (10, "pending", [5.0])
 
 
-def _fee_history_priority_fee_estimate(fee_history: FeeHistory) -> Wei:
+def _fee_history_priority_fee_estimate(fee_history: Union[FeeHistory, AttributeDict]) -> Wei:
+    if isinstance(fee_history, AttributeDict):
+        # If we have an AttributeDict we can unwrap it for better type optimizations
+        fee_history = cast(FeeHistory, fee_history.__dict__)
+
     # grab only non-zero fees and average against only that list
     non_empty_block_fees = [fee[0] for fee in fee_history["reward"] if fee[0] != 0]
 
     # prevent division by zero in the extremely unlikely case that all fees within
     # the polled fee history range for the specified percentile are 0
-    divisor = len(non_empty_block_fees) if len(non_empty_block_fees) != 0 else 1
+    divisor = len(non_empty_block_fees) or 1
 
     priority_fee_average_for_percentile = Wei(
         round(sum(non_empty_block_fees) / divisor)
@@ -34,11 +43,7 @@ def _fee_history_priority_fee_estimate(fee_history: FeeHistory) -> Wei:
     return (  # keep estimated priority fee within a max / min range
         PRIORITY_FEE_MAX
         if priority_fee_average_for_percentile > PRIORITY_FEE_MAX
-        else (
-            PRIORITY_FEE_MIN
-            if priority_fee_average_for_percentile < PRIORITY_FEE_MIN
-            else priority_fee_average_for_percentile
-        )
+        else max(priority_fee_average_for_percentile, PRIORITY_FEE_MIN)
     )
 
 
