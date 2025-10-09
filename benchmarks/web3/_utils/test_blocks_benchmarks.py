@@ -4,7 +4,14 @@ from pytest_codspeed import BenchmarkFixture
 import web3._utils.blocks
 import faster_web3._utils.blocks
 
+
+_object = object()
+
 def run_100(func, *args, **kwargs):
+    for _ in range(100):
+        func(*args, **kwargs)
+
+def run_100_exc(func, expected_exc, *args, **kwargs):
     for _ in range(100):
         func(*args, **kwargs)
 
@@ -22,7 +29,7 @@ predefined_cases = [
     b"random",
     123,
     None,
-    object(),
+    _object,
 ]
 predefined_ids = [
     "str-latest", "str-pending", "str-earliest", "str-safe", "str-finalized",
@@ -34,12 +41,20 @@ predefined_ids = [
 @pytest.mark.benchmark(group="is_predefined_block_number")
 @pytest.mark.parametrize("value", predefined_cases, ids=predefined_ids)
 def test_is_predefined_block_number(benchmark: BenchmarkFixture, value):
-    benchmark(run_100, web3._utils.blocks.is_predefined_block_number, value)
+    func = web3._utils.blocks.is_predefined_block_number
+    if value in (None, _object):
+        benchmark(run_100_exc, func, web3.exceptions.Web3TypeError, value)
+    else:
+        benchmark(run_100, func, value)
 
 @pytest.mark.benchmark(group="is_predefined_block_number")
 @pytest.mark.parametrize("value", predefined_cases, ids=predefined_ids)
 def test_faster_is_predefined_block_number(benchmark: BenchmarkFixture, value):
-    benchmark(run_100, faster_web3._utils.blocks.is_predefined_block_number, value)
+    func = faster_web3._utils.blocks.is_predefined_block_number
+    if value in (None, _object):
+        benchmark(run_100_exc, func, faster_web3.exceptions.Web3TypeError, value)
+    else:
+        benchmark(run_100, func, value)
 
 # --- is_hex_encoded_block_hash ---
 
@@ -108,7 +123,7 @@ select_cases = [
     ("0x1", "HASH", "NUMBER", "PREDEFINED"),
     # Invalid (should raise)
     (None, "HASH", "NUMBER", "PREDEFINED"),
-    (object(), "HASH", "NUMBER", "PREDEFINED"),
+    (_object, "HASH", "NUMBER", "PREDEFINED"),
 ]
 select_ids = [
     "predefined-str", "predefined-bytes", "hash-bytes", "hash-hexstr",
@@ -118,24 +133,33 @@ select_ids = [
 @pytest.mark.benchmark(group="select_method_for_block_identifier")
 @pytest.mark.parametrize("value,if_hash,if_number,if_predefined", select_cases, ids=select_ids)
 def test_select_method_for_block_identifier(benchmark: BenchmarkFixture, value, if_hash, if_number, if_predefined):
-    func = web3._utils.blocks.select_method_for_block_identifier
-    exc = web3.exceptions.Web3ValueError
-    def call():
-        try:
-            func(value, if_hash, if_number, if_predefined)
-        except exc:
-            pass
-    benchmark(run_100, call)
+    if value in (None, _object):
+        expected_exc = web3.exceptions.Web3TypeError
+    else:
+        expected_exc = web3.exceptions.Web3ValueError,
+    benchmark(
+        run_100_exc,
+        web3._utils.blocks.select_method_for_block_identifier,
+        expected_exc,
+        value,
+        if_hash,
+        if_number,
+        if_predefined,
+    )
 
 @pytest.mark.benchmark(group="select_method_for_block_identifier")
 @pytest.mark.parametrize("value,if_hash,if_number,if_predefined", select_cases, ids=select_ids)
 def test_faster_select_method_for_block_identifier(benchmark: BenchmarkFixture, value, if_hash, if_number, if_predefined):
-    func = faster_web3._utils.blocks.select_method_for_block_identifier
-    exc = faster_web3.exceptions.Web3ValueError
-    def call():
-        try:
-            func(value, if_hash, if_number, if_predefined)
-        except exc:
-            pass
-    benchmark(run_100, call)
-    benchmark(run_100, faster_web3._utils.blocks.select_method_for_block_identifier, value, if_hash, if_number, if_predefined)
+    if value in (None, _object):
+        expected_exc = faster_web3.exceptions.Web3TypeError
+    else:
+        expected_exc = faster_web3.exceptions.Web3ValueError,
+    benchmark(
+        run_100_exc,
+        faster_web3._utils.blocks.select_method_for_block_identifier,
+        expected_exc,
+        value,
+        if_hash,
+        if_number,
+        if_predefined,
+    )
