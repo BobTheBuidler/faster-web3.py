@@ -142,7 +142,7 @@ class HTTPSessionManager:
 
     def make_post_request(
         self, endpoint_uri: URI, data: Union[bytes, Dict[str, Any]], **kwargs: Any
-    ) -> bytes:
+    ) -> Union[bytes, str]:
         kwargs.setdefault("timeout", DEFAULT_HTTP_TIMEOUT)
         kwargs.setdefault("stream", False)
 
