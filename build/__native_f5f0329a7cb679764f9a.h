@@ -166,6 +166,30 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *_registry;
+    PyObject *_dispatch_cache;
+} faster_ens___utils___sha3_text_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *_registry;
+    PyObject *_dispatch_cache;
+} faster_ens___utils___is_none_or_zero_address_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *_registry;
+    PyObject *_dispatch_cache;
+} faster_ens___utils___is_empty_name_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     char _is_async;
     PyObject *_base_url;
     double _request_timeout;
