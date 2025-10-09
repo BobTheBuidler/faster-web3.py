@@ -13,7 +13,10 @@ def run_100(func, *args, **kwargs):
 
 def run_100_exc(func, expected_exc, *args, **kwargs):
     for _ in range(100):
-        func(*args, **kwargs)
+        try:
+            func(*args, **kwargs)
+        except expected_exc:
+            pass
 
 # --- is_predefined_block_number ---
 
