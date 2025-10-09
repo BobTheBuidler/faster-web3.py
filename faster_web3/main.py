@@ -55,6 +55,9 @@ from eth_typing.abi import TypeStr
 from faster_eth_utils import (
     combomethod,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_web3._utils.abi import (
     build_non_strict_registry,
@@ -254,12 +257,12 @@ class BaseWeb3:
     # Address Utility
     @staticmethod
     @wraps(is_address)
-    def is_address(value: Any) -> bool:
+    def is_address(value: Any) -> TypeGuard[AnyAddress]:
         return is_address(value)
 
     @staticmethod
     @wraps(is_checksum_address)
-    def is_checksum_address(value: Any) -> bool:
+    def is_checksum_address(value: Any) -> TypeGuard[ChecksumAddress]:
         return is_checksum_address(value)
 
     @staticmethod

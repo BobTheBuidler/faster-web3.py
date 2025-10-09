@@ -9,6 +9,7 @@ from typing import (
 
 from eth_typing import (
     ChecksumAddress,
+    HexStr,
 )
 from faster_eth_utils import (
     is_dict,
@@ -27,6 +28,9 @@ from faster_eth_utils.toolz import (
     identity,
     partial,
     pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.formatters import (
@@ -58,11 +62,11 @@ if TYPE_CHECKING:
     )
 
 
-def is_named_block(value: Any) -> bool:
+def is_named_block(value: Any) -> TypeGuard[str]:
     return value in {"latest", "earliest", "safe", "finalized"}
 
 
-def is_hexstr(value: Any) -> bool:
+def is_hexstr(value: Any) -> TypeGuard[HexStr]:
     return is_string(value) and is_hex(value)
 
 
