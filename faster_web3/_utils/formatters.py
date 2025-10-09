@@ -6,6 +6,7 @@ from typing import (
     Callable,
     Dict,
     Iterable,
+    Iterator,
     Optional,
     Tuple,
     TypeVar,
@@ -108,7 +109,7 @@ def static_result(value: TValue) -> Callable[..., Dict[str, TValue]]:
 @to_dict
 def apply_key_map(
     key_mappings: Dict[Any, Any], value: Dict[Any, Any]
-) -> Iterable[Tuple[Any, Any]]:
+) -> Iterator[Tuple[Any, Any]]:
     for key, item in value.items():
         if key in key_mappings:
             yield key_mappings[key], item
@@ -117,15 +118,11 @@ def apply_key_map(
 
 
 def is_array_of_strings(value: Any) -> bool:
-    if not is_list_like(value):
-        return False
-    return all(is_string(item) for item in value)
+    return is_list_like(value) and all(map(is_string, value))
 
 
 def is_array_of_dicts(value: Any) -> bool:
-    if not is_list_like(value):
-        return False
-    return all(is_dict(item) for item in value)
+    return is_list_like(value) and all(map(is_dict, value))
 
 
 @curry
