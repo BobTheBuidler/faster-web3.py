@@ -208,11 +208,11 @@ def sha3_text(val: Union[str, bytes]) -> HexBytes:
     return Web3().keccak(val)
 
 @sha3_text.register(str)
-def _(val: str) -> HexBytes:
+def sha3_text_str(val: str) -> HexBytes:
     return Web3().keccak(val.encode("utf-8"))
 
 @sha3_text.register(bytes)
-def _(val: bytes) -> HexBytes:
+def sha3_text_bytes(val: bytes) -> HexBytes:
     return Web3().keccak(val)
 
 
@@ -294,15 +294,15 @@ def is_none_or_zero_address(addr: Union[Address, ChecksumAddress, HexAddress, No
     return not addr or addr == EMPTY_ADDR_HEX
     
 @is_none_or_zero_address.register(type(None))
-def _(addr: Literal[None]) -> bool:
+def is_none_or_zero_address_none(addr: Literal[None]) -> bool:
     return True
     
 @is_none_or_zero_address.register(str)
-def _(addr: str) -> bool:
+def is_none_or_zero_address_str(addr: str) -> bool:
     return not addr or addr == EMPTY_ADDR_HEX
 
 @is_none_or_zero_address.register(bytes)
-def _(addr: bytes) -> bool:
+def is_none_or_zero_address_bytes(addr: bytes) -> bool:
     return not addr
 
 
@@ -311,11 +311,11 @@ def is_empty_name(name: Optional[str]) -> bool:  # sourcery skip: collection-int
     return name is None or name.strip() in ("", ".")
 
 @is_empty_name.register(type(None))
-def _(name: Literal[None]) -> bool:  # sourcery skip: collection-into-set
+def is_empty_name_none(name: Literal[None]) -> bool:  # sourcery skip: collection-into-set
     return True
 
 @is_empty_name.register(str)
-def _(name: str) -> bool:  # sourcery skip: collection-into-set
+def is_empty_name_str(name: str) -> bool:  # sourcery skip: collection-into-set
     return name.strip() in ("", ".")
 
 
