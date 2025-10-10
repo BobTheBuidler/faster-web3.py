@@ -19,6 +19,7 @@ from eth_typing import (
     ABI,
     ABICallable,
     ABIFunction,
+    Address,
     ChecksumAddress,
     TypeStr,
 )
@@ -119,7 +120,7 @@ def format_contract_call_return_data_curried(
 
 def call_contract_function(
     w3: "Web3",
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     normalizers: Tuple[Callable[..., Any], ...],
     abi_element_identifier: ABIElementIdentifier,
     transaction: TxParams,
@@ -293,7 +294,7 @@ def estimate_gas_for_function(
 
 
 def build_transaction_for_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, None],
     w3: "Web3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -371,7 +372,7 @@ def get_function_by_identifier(
 def find_events_by_identifier(
     contract_abi: ABI,
     w3: Union["Web3", "AsyncWeb3"],
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, None],
     callable_check: Callable[..., Any],
     event_type: Type[TContractEvent],
 ) -> List[TContractEvent]:
