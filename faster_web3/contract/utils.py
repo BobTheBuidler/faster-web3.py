@@ -18,6 +18,7 @@ from faster_eth_abi.exceptions import (
 from eth_typing import (
     ABI,
     ABICallable,
+    ABIEvent,
     ABIFunction,
     Address,
     ChecksumAddress,
@@ -90,7 +91,7 @@ def format_contract_call_return_data_curried(
     decode_tuples: bool,
     fn_abi: ABICallable,
     abi_element_identifier: ABIElementIdentifier,
-    normalizers: Tuple[Callable[..., Any], ...],
+    normalizers: Tuple[Callable[[TypeStr, Any], Tuple[TypeStr, Any]], ...],
     output_types: Sequence[TypeStr],
     return_data: Any,
 ) -> Any:
@@ -121,7 +122,7 @@ def format_contract_call_return_data_curried(
 def call_contract_function(
     w3: "Web3",
     address: Union[ChecksumAddress, Address],
-    normalizers: Tuple[Callable[..., Any], ...],
+    normalizers: Tuple[Callable[[TypeStr, Any], Tuple[TypeStr, Any]], ...],
     abi_element_identifier: ABIElementIdentifier,
     transaction: TxParams,
     block_id: Optional[BlockIdentifier] = None,
@@ -329,7 +330,7 @@ def find_functions_by_identifier(
     contract_abi: ABI,
     w3: Union["Web3", "AsyncWeb3"],
     address: Union[ChecksumAddress, Address],
-    callable_check: Callable[..., Any],
+    callable_check: Callable[[ABIFunction], Any],
     function_type: Type[TContractFn],
 ) -> List[TContractFn]:
     """
@@ -337,7 +338,7 @@ def find_functions_by_identifier(
     """
     fns_abi = sorted(
         filter_abi_by_type("function", contract_abi),
-        key=lambda fn: (fn["name"], len(fn.get("inputs", []))),
+        key=__function_abi_sort_key,
     )
     return [
         function_type.factory(
@@ -351,6 +352,12 @@ def find_functions_by_identifier(
         for fn_abi in fns_abi
         if callable_check(fn_abi)
     ]
+
+
+def __function_abi_sort_key(abi: ABIFunction) -> Tuple[str, int]:
+    inputs = abi.get("inputs")
+    num_args = 0 if inputs is None else len(inputs)
+    return abi["name"], num_args
 
 
 def get_function_by_identifier(
@@ -372,8 +379,8 @@ def get_function_by_identifier(
 def find_events_by_identifier(
     contract_abi: ABI,
     w3: Union["Web3", "AsyncWeb3"],
-    address: Union[ChecksumAddress, None],
-    callable_check: Callable[..., Any],
+    address: Union[ChecksumAddress, Address, None],
+    callable_check: Callable[[ABIEvent], Any],
     event_type: Type[TContractEvent],
 ) -> List[TContractEvent]:
     """
@@ -415,7 +422,7 @@ def get_event_by_identifier(
 async def async_call_contract_function(
     async_w3: "AsyncWeb3",
     address: ChecksumAddress,
-    normalizers: Tuple[Callable[..., Any], ...],
+    normalizers: Tuple[Callable[[TypeStr, Any], Tuple[TypeStr, Any]], ...],
     abi_element_identifier: ABIElementIdentifier,
     transaction: TxParams,
     block_id: Optional[BlockIdentifier] = None,
