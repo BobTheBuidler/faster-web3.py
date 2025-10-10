@@ -1,8 +1,8 @@
-import itertools
 from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    Final,
     List,
     Optional,
     Sequence,
@@ -80,7 +80,7 @@ if TYPE_CHECKING:
         PersistentConnectionProvider,
     )
 
-ACCEPTABLE_EMPTY_STRINGS = ["0x", b"0x", "", b""]
+ACCEPTABLE_EMPTY_STRINGS: Final = "0x", b"0x", "", b""
 
 
 @curry
@@ -107,10 +107,7 @@ def format_contract_call_return_data_curried(
         )
         raise BadFunctionCallOutput(msg) from e
 
-    _normalizers = itertools.chain(
-        BASE_RETURN_NORMALIZERS,
-        normalizers,
-    )
+    _normalizers = BASE_RETURN_NORMALIZERS + normalizers
     normalized_data = map_abi_data(_normalizers, output_types, output_data)
 
     if decode_tuples and fn_abi["type"] == "function":
@@ -221,10 +218,7 @@ def call_contract_function(
             )
         raise BadFunctionCallOutput(msg) from e
 
-    _normalizers = itertools.chain(
-        BASE_RETURN_NORMALIZERS,
-        normalizers,
-    )
+    _normalizers = BASE_RETURN_NORMALIZERS + normalizers
     normalized_data = map_abi_data(_normalizers, output_types, output_data)
 
     if decode_tuples and abi_callable["type"] == "function":
@@ -519,10 +513,7 @@ async def async_call_contract_function(
             )
         raise BadFunctionCallOutput(msg) from e
 
-    _normalizers = itertools.chain(
-        BASE_RETURN_NORMALIZERS,
-        normalizers,
-    )
+    _normalizers = BASE_RETURN_NORMALIZERS + normalizers
     normalized_data = map_abi_data(_normalizers, output_types, output_data)
 
     if decode_tuples:
