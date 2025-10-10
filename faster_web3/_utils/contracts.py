@@ -28,6 +28,7 @@ from eth_typing import (
     ABIFallback,
     ABIFunction,
     ABIReceive,
+    Address,
     ChecksumAddress,
     HexStr,
     TypeStr,
@@ -167,7 +168,7 @@ def encode_abi(
 
 
 def prepare_transaction(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     w3: Union["AsyncWeb3", "Web3"],
     abi_element_identifier: ABIElementIdentifier,
     contract_abi: Optional[ABI] = None,
