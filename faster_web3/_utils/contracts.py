@@ -318,15 +318,12 @@ def validate_payable(transaction: TxParams, abi_callable: ABICallable) -> None:
     Raise Web3ValidationError if non-zero ether
     is sent to a non-payable function.
     """
+    value = transaction.get("value")
+    if value is None or to_integer_if_hex(value) == 0:
+        return
     if (
-        "value" in transaction
-        and to_integer_if_hex(transaction["value"]) != 0
-        and (
-            "payable" in abi_callable
-            and not abi_callable["payable"]
-            or "stateMutability" in abi_callable
-            and abi_callable["stateMutability"] == "nonpayable"
-        )
+        abi_callable.get("payable") is False
+        or abi_callable.get("stateMutability") == "nonpayable"
     ):
         raise Web3ValidationError(
             "Sending non-zero ether to a contract function "
