@@ -1118,24 +1118,6 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
-    PyObject *___mypyc_self__;
-    PyObject *_contract_abi;
-    PyObject *_w3;
-    PyObject *_address;
-    PyObject *_callable_check;
-    PyObject *_function_type;
-} faster_web3___contract___utils___find_functions_by_identifier_envObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    vectorcallfunc vectorcall;
-    PyObject *___mypyc_env__;
-} faster_web3___contract___utils_____mypyc_lambda__0_find_functions_by_identifier_objObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
     PyObject *___mypyc_generator_attribute__async_w3;
     PyObject *___mypyc_generator_attribute__address;
     PyObject *___mypyc_generator_attribute__normalizers;

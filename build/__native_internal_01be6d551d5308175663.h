@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1338];
+extern PyObject *CPyStatics[1339];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -1812,12 +1812,6 @@ extern PyObject *CPyStatic_gethdev___w3;
 extern PyObject *CPyStatic_gethdev___async_w3;
 extern char CPyDef_gethdev_____top_level__(void);
 extern tuple_T4OOOO CPyStatic_contract___utils___ACCEPTABLE_EMPTY_STRINGS;
-extern PyTypeObject *CPyType_contract___utils___find_functions_by_identifier_env;
-extern PyObject *CPyDef_contract___utils___find_functions_by_identifier_env(void);
-extern CPyThreadLocal faster_web3___contract___utils___find_functions_by_identifier_envObject *contract___utils___find_functions_by_identifier_env_free_instance;
-extern PyTypeObject *CPyType_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj;
-extern PyObject *CPyDef_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj(void);
-extern CPyThreadLocal faster_web3___contract___utils_____mypyc_lambda__0_find_functions_by_identifier_objObject *contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj_free_instance;
 extern PyTypeObject *CPyType_contract___utils___async_call_contract_function_gen;
 extern PyObject *CPyDef_contract___utils___async_call_contract_function_gen(void);
 extern CPyThreadLocal faster_web3___contract___utils___async_call_contract_function_genObject *contract___utils___async_call_contract_function_gen_free_instance;
@@ -1840,12 +1834,10 @@ extern CPyTagged CPyDef_contract___utils___estimate_gas_for_function(PyObject *c
 extern PyObject *CPyPy_contract___utils___estimate_gas_for_function(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_contract___utils___build_transaction_for_function(PyObject *cpy_r_address, PyObject *cpy_r_w3, PyObject *cpy_r_abi_element_identifier, PyObject *cpy_r_transaction, PyObject *cpy_r_contract_abi, PyObject *cpy_r_fn_abi, PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
 extern PyObject *CPyPy_contract___utils___build_transaction_for_function(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
-extern PyObject *CPyPy_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern tuple_T2OI CPyDef_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_fn);
-extern PyObject *CPyPy_contract___utils_____mypyc_lambda__0_find_functions_by_identifier_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_contract___utils___find_functions_by_identifier(PyObject *cpy_r_contract_abi, PyObject *cpy_r_w3, PyObject *cpy_r_address, PyObject *cpy_r_callable_check, PyObject *cpy_r_function_type);
 extern PyObject *CPyPy_contract___utils___find_functions_by_identifier(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern tuple_T2OI CPyDef_contract___utils_____function_abi_sort_key(PyObject *cpy_r_abi);
+extern PyObject *CPyPy_contract___utils_____function_abi_sort_key(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_contract___utils___get_function_by_identifier(PyObject *cpy_r_fns, PyObject *cpy_r_identifier);
 extern PyObject *CPyPy_contract___utils___get_function_by_identifier(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_contract___utils___find_events_by_identifier(PyObject *cpy_r_contract_abi, PyObject *cpy_r_w3, PyObject *cpy_r_address, PyObject *cpy_r_callable_check, PyObject *cpy_r_event_type);
