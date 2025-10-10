@@ -167,7 +167,7 @@ def encode_abi(
 
 
 def prepare_transaction(
-    address: Union[ChecksumAddress, Address],
+    address: Union[ChecksumAddress, Address, None],
     w3: Union["AsyncWeb3", "Web3"],
     abi_element_identifier: ABIElementIdentifier,
     contract_abi: Optional[ABI] = None,
