@@ -263,7 +263,7 @@ def transact_with_contract_function(
 
 
 def estimate_gas_for_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     w3: "Web3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -295,7 +295,7 @@ def estimate_gas_for_function(
 
 
 def build_transaction_for_function(
-    address: Union[ChecksumAddress, None],
+    address: Union[ChecksumAddress, Address, None],
     w3: "Web3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -329,7 +329,7 @@ def build_transaction_for_function(
 def find_functions_by_identifier(
     contract_abi: ABI,
     w3: Union["Web3", "AsyncWeb3"],
-    address: Union[ChecksumAddress, Address],
+    address: Union[ChecksumAddress, Address, None],
     callable_check: Callable[[ABIFunction], Any],
     function_type: Type[TContractFn],
 ) -> List[TContractFn]:
@@ -367,13 +367,14 @@ def get_function_by_identifier(
     Check that the provided list of TContractFunction instances contains one element and
     return it.
     """
-    if len(fns) > 1:
-        raise Web3ValueError(
-            f"Found multiple functions with matching {identifier}. " f"Found: {fns!r}"
-        )
-    elif len(fns) == 0:
-        raise Web3ValueError(f"Could not find any function with matching {identifier}")
-    return fns[0]
+    length = len(fns)
+    if length == 1:
+        return fns[0]
+    elif length == 0:
+        err = f"Could not find any function with matching {identifier}"
+    else:
+        err = f"Found multiple functions with matching {identifier}. Found: {fns!r}"
+    raise Web3ValueError(err)
 
 
 def find_events_by_identifier(
@@ -407,13 +408,14 @@ def get_event_by_identifier(
     Check that the provided list of TContractEvent instances contains one element and
     return it.
     """
-    if len(events) > 1:
-        raise Web3ValueError(
-            f"Found multiple events with matching {identifier}. " f"Found: {events!r}"
-        )
-    elif len(events) == 0:
-        raise Web3ValueError(f"Could not find any event with matching {identifier}")
-    return events[0]
+    length = len(events)
+    if length == 1:
+        return events[0]
+    elif length == 0:
+        err = f"Could not find any event with matching {identifier}"
+    else:
+        err = f"Found multiple events with matching {identifier}. Found: {events!r}"
+    raise Web3ValueError(err)
 
 
 # --- async --- #
@@ -421,7 +423,7 @@ def get_event_by_identifier(
 
 async def async_call_contract_function(
     async_w3: "AsyncWeb3",
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     normalizers: Tuple[Callable[[TypeStr, Any], Tuple[TypeStr, Any]], ...],
     abi_element_identifier: ABIElementIdentifier,
     transaction: TxParams,
@@ -532,7 +534,7 @@ async def async_call_contract_function(
 
 
 async def async_transact_with_contract_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     async_w3: "AsyncWeb3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -561,7 +563,7 @@ async def async_transact_with_contract_function(
 
 
 async def async_estimate_gas_for_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     async_w3: "AsyncWeb3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -595,7 +597,7 @@ async def async_estimate_gas_for_function(
 
 
 async def async_build_transaction_for_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address, None],
     async_w3: "AsyncWeb3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
