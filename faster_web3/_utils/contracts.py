@@ -13,12 +13,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi.codec import (
-    ABICodec,
-)
-from faster_eth_abi.registry import (
-    registry as default_registry,
-)
 from eth_typing import (
     ABI,
     ABICallable,
@@ -32,6 +26,12 @@ from eth_typing import (
     ChecksumAddress,
     HexStr,
     TypeStr,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
+)
+from faster_eth_abi.registry import (
+    registry as default_registry,
 )
 from faster_eth_utils import (
     add_0x_prefix,
@@ -125,14 +125,13 @@ def encode_abi(
     w3: Union["AsyncWeb3", "Web3"],
     abi: ABIElement,
     arguments: Sequence[Any],
-    data: Optional[HexStr] = None,
+    data: Optional[Union[HexStr, HexBytes]] = None,
 ) -> HexStr:
-    argument_types = []
     try:
         argument_types = get_abi_input_types(abi)
     except ValueError:
         # Use the default argument_types if the abi doesn't have inputs
-        pass
+        argument_types = []
 
     if not check_if_arguments_can_be_encoded(
         abi,
