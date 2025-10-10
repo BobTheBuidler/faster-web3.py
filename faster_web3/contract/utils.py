@@ -233,7 +233,7 @@ def call_contract_function(
 
 
 def transact_with_contract_function(
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     w3: "Web3",
     abi_element_identifier: Optional[ABIElementIdentifier] = None,
     transaction: Optional[TxParams] = None,
@@ -328,7 +328,7 @@ def build_transaction_for_function(
 def find_functions_by_identifier(
     contract_abi: ABI,
     w3: Union["Web3", "AsyncWeb3"],
-    address: ChecksumAddress,
+    address: Union[ChecksumAddress, Address],
     callable_check: Callable[..., Any],
     function_type: Type[TContractFn],
 ) -> List[TContractFn]:
