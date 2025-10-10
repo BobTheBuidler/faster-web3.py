@@ -276,9 +276,10 @@ def decode_transaction_data(
     types = get_abi_input_types(fn_abi)
     abi_codec = ABICodec(default_registry)
     decoded = abi_codec.decode(types, data_bytes[4:])
+    inputs = fn_abi["inputs"]
     if normalizers:
-        decoded = map_abi_data(normalizers, types, decoded)
-    return named_tree(fn_abi["inputs"], decoded)
+        return named_tree(inputs, map_abi_data(normalizers, types, decoded))
+    return named_tree(inputs, decoded)
 
 
 def get_constructor_function_info(
