@@ -11,6 +11,7 @@ from typing import (
     Tuple,
     Type,
     Union,
+    cast,
 )
 import warnings
 
@@ -221,7 +222,7 @@ def normal_name_to_hash(name: Optional[str]) -> HexBytes:
     """
     node = EMPTY_SHA3_BYTES
     if not is_empty_name(name):
-        labels = name.split(".")
+        labels = cast(str, name).split(".")
         for label in reversed(labels):
             labelhash = label_to_hash(label)
             assert isinstance(labelhash, bytes)
