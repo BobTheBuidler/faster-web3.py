@@ -15,6 +15,7 @@ from typing import (
 
 from eth_typing import (
     Address,
+    AnyAddress,
     ChecksumAddress,
     HexAddress,
     HexStr,
@@ -307,7 +308,7 @@ class AsyncENS(BaseENS):
     async def setup_owner(
         self,
         name: str,
-        new_owner: Union[ChecksumAddress, _Default] = default,
+        new_owner: Union[AnyAddress, _Default] = default,
         transact: Optional["TxParams"] = None,
     ) -> Optional[ChecksumAddress]:
         """
