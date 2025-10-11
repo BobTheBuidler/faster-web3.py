@@ -191,6 +191,11 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+} faster_ens___utils____DefaultObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     char _is_async;
     PyObject *_base_url;
     double _request_timeout;
