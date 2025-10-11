@@ -12,6 +12,7 @@ from typing import (
     Tuple,
     Type,
     Union,
+    cast,
     final,
 )
 import warnings
@@ -223,7 +224,7 @@ def label_to_hash(label: str) -> HexBytes:
     return Web3().keccak(text=label)
 
 
-def normal_name_to_hash(name: str) -> HexBytes:
+def normal_name_to_hash(name: Optional[str]) -> HexBytes:
     """
     Hashes a pre-normalized name.
     The normalization of the name is a prerequisite and is not handled by this function.
@@ -234,7 +235,7 @@ def normal_name_to_hash(name: str) -> HexBytes:
     """
     node = EMPTY_SHA3_BYTES
     if not is_empty_name(name):
-        labels = name.split(".")
+        labels = cast(str, name).split(".")
         for label in reversed(labels):
             labelhash = label_to_hash(label)
             assert isinstance(labelhash, bytes)
