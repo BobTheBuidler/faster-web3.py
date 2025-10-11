@@ -13624,6 +13624,8 @@ int CPyExec_faster_ens___utils(PyObject *module)
     fail:
     Py_CLEAR(CPyModule_faster_ens___utils__internal);
     Py_CLEAR(modname);
+    CPy_XDECREF(CPyStatic_faster_ens___utils___default);
+    CPyStatic_faster_ens___utils___default = NULL;
     return -1;
 }
 static struct PyModuleDef faster_ens___utilsmodule = {
@@ -14239,7 +14241,7 @@ CPyL4: ;
         cpy_r_r21 = NULL;
     }
     if (cpy_r_r21 != NULL) goto __LL37;
-    CPy_TypeErrorTraceback("faster_ens/utils.py", "normalize_name", 131, CPyStatic_faster_ens___utils___globals, "str or None", cpy_r_r20);
+    CPy_TypeErrorTraceback("faster_ens/utils.py", "normalize_name", 132, CPyStatic_faster_ens___utils___globals, "str or None", cpy_r_r20);
     goto CPyL15;
 __LL37: ;
     cpy_r_name = cpy_r_r21;
@@ -14247,7 +14249,7 @@ CPyL11: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r22 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "normalize_name", 133, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "normalize_name", 134, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
         goto CPyL15;
     }
     cpy_r_r23 = CPyDef__normalization___normalize_name_ensip15(cpy_r_r22);
@@ -14446,7 +14448,7 @@ CPyL8: ;
     if (likely(PyUnicode_Check(cpy_r_r20)))
         cpy_r_r21 = cpy_r_r20;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 156, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r20);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 157, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r20);
         goto CPyL45;
     }
     cpy_r_r22 = CPyStr_Size_size_t(cpy_r_r21);
@@ -14529,7 +14531,7 @@ CPyL21: ;
     if (likely(PyUnicode_Check(cpy_r_r49)))
         cpy_r_r50 = cpy_r_r49;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 163, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r49);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 164, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r49);
         goto CPyL51;
     }
     cpy_r_r51 = CPyStatic_faster_ens___utils___globals;
@@ -14552,7 +14554,7 @@ CPyL21: ;
     if (likely(PyBytes_Check(cpy_r_r57) || PyByteArray_Check(cpy_r_r57)))
         cpy_r_r58 = cpy_r_r57;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 163, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r57);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 164, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r57);
         goto CPyL51;
     }
     CPyList_SetItemUnsafe(cpy_r_r40, cpy_r_r41, cpy_r_r58);
@@ -14583,7 +14585,7 @@ CPyL31: ;
     if (likely(PyBytes_Check(cpy_r_r63) || PyByteArray_Check(cpy_r_r63)))
         cpy_r_r64 = cpy_r_r63;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 164, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r63);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 165, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r63);
         goto CPyL56;
     }
     cpy_r_r65 = (CPyPtr)&((PyVarObject *)cpy_r_r64)->ob_size;
@@ -14609,7 +14611,7 @@ CPyL31: ;
     if (likely(PyBytes_Check(cpy_r_r74) || PyByteArray_Check(cpy_r_r74)))
         cpy_r_r75 = cpy_r_r74;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 164, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r74);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "dns_encode_name", 165, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r74);
         goto CPyL57;
     }
     cpy_r_r76 = CPyBytes_Concat(cpy_r_r75, cpy_r_r64);
@@ -14817,7 +14819,7 @@ CPyL3: ;
     if (likely(PyBytes_Check(cpy_r_r16) || PyByteArray_Check(cpy_r_r16)))
         cpy_r_r17 = cpy_r_r16;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "ens_encode_name", 177, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r16);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "ens_encode_name", 178, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r16);
         goto CPyL7;
     }
     return cpy_r_r17;
@@ -15061,7 +15063,7 @@ PyObject *CPyDef_faster_ens___utils___sha3_text(PyObject *cpy_r_val) {
     if (likely(PyUnicode_Check(cpy_r_val)))
         cpy_r_r1 = cpy_r_val;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "sha3_text", 204, CPyStatic_faster_ens___utils___globals, "str", cpy_r_val);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "sha3_text", 205, CPyStatic_faster_ens___utils___globals, "str", cpy_r_val);
         goto CPyL8;
     }
     cpy_r_r2 = PyUnicode_AsUTF8String(cpy_r_r1);
@@ -15080,7 +15082,7 @@ CPyL4: ;
     if (likely(PyBytes_Check(cpy_r_val) || PyByteArray_Check(cpy_r_val)))
         cpy_r_r4 = cpy_r_val;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "sha3_text", 205, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_val);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "sha3_text", 206, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_val);
         goto CPyL11;
     }
     cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'keccak' */
@@ -15205,7 +15207,7 @@ PyObject *CPyDef_faster_ens___utils___label_to_hash(PyObject *cpy_r_label) {
     if (likely(PyUnicode_Check(cpy_r_r12)))
         cpy_r_r13 = cpy_r_r12;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "label_to_hash", 211, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r12);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "label_to_hash", 212, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r12);
         goto CPyL14;
     }
     cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* " with a '.'" */
@@ -15366,7 +15368,7 @@ CPyL3: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r3 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 226, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 227, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
         goto CPyL26;
     }
     cpy_r_r4 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '.' */
@@ -15396,7 +15398,7 @@ CPyL8: ;
     if (likely(PyUnicode_Check(cpy_r_r18)))
         cpy_r_r19 = cpy_r_r18;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 227, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r18);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 228, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r18);
         goto CPyL28;
     }
     cpy_r_r20 = CPyDef_faster_ens___utils___label_to_hash(cpy_r_r19);
@@ -15448,7 +15450,7 @@ CPyL18: ;
     if (likely(PyBytes_Check(cpy_r_r26) || PyByteArray_Check(cpy_r_r26)))
         cpy_r_r27 = cpy_r_r26;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 231, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r26);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "normal_name_to_hash", 232, CPyStatic_faster_ens___utils___globals, "bytes", cpy_r_r26);
         goto CPyL32;
     }
     cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'keccak' */
@@ -15603,7 +15605,7 @@ CPyL1: ;
     if (likely(PyUnicode_Check(cpy_r_r2)))
         cpy_r_r3 = cpy_r_r2;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_in", 258, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r2);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_in", 259, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r2);
         goto CPyL12;
     }
     cpy_r_r4 = CPyStatic_faster_ens___utils___globals;
@@ -15726,7 +15728,7 @@ PyObject *CPyDef_faster_ens___utils___address_to_reverse_domain(PyObject *cpy_r_
     if (likely(PyUnicode_Check(cpy_r_r5)))
         cpy_r_r6 = cpy_r_r5;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_to_reverse_domain", 262, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r5);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_to_reverse_domain", 263, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r5);
         goto CPyL8;
     }
     cpy_r_r7 = CPyStatic_faster_ens___utils___globals;
@@ -15748,7 +15750,7 @@ PyObject *CPyDef_faster_ens___utils___address_to_reverse_domain(PyObject *cpy_r_
     if (likely(PyUnicode_Check(cpy_r_r12)))
         cpy_r_r13 = cpy_r_r12;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_to_reverse_domain", 262, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r12);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "address_to_reverse_domain", 263, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r12);
         goto CPyL8;
     }
     cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '.addr.reverse' */
@@ -15984,7 +15986,7 @@ CPyL15: ;
     if (likely(PyUnicode_Check(cpy_r_r31)))
         cpy_r_r32 = cpy_r_r31;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "assert_signer_in_modifier_kwargs", 278, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r31);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "assert_signer_in_modifier_kwargs", 279, CPyStatic_faster_ens___utils___globals, "str", cpy_r_r31);
         goto CPyL18;
     }
     return cpy_r_r32;
@@ -16060,7 +16062,7 @@ CPyL3: ;
         cpy_r_r4 = NULL;
     }
     if (cpy_r_r4 != NULL) goto __LL48;
-    CPy_TypeErrorTraceback("faster_ens/utils.py", "is_none_or_zero_address", 282, CPyStatic_faster_ens___utils___globals, "union[bytes, str]", cpy_r_addr);
+    CPy_TypeErrorTraceback("faster_ens/utils.py", "is_none_or_zero_address", 283, CPyStatic_faster_ens___utils___globals, "union[bytes, str]", cpy_r_addr);
     goto CPyL11;
 __LL48: ;
     cpy_r_r5 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
@@ -16166,7 +16168,7 @@ CPyL2: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r3 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "is_empty_name", 286, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "is_empty_name", 287, CPyStatic_faster_ens___utils___globals, "str", cpy_r_name);
         goto CPyL9;
     }
     cpy_r_r4 = CPyStr_Strip(cpy_r_r3, 0);
@@ -16524,7 +16526,7 @@ CPyL4: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r19 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 314, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 315, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL47;
     }
     cpy_r_r20 = 0;
@@ -16594,7 +16596,7 @@ __LL52: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r34 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 316, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 317, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL50;
     }
     cpy_r_r35 = CPyList_Pop(cpy_r_r34, cpy_r_i);
@@ -16656,7 +16658,7 @@ CPyL17: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r40 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 318, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 319, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL47;
     }
     cpy_r_r41 = (CPyPtr)&((PyVarObject *)cpy_r_r40)->ob_size;
@@ -16749,7 +16751,7 @@ CPyL24: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r62 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 319, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 320, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL47;
     }
     cpy_r_r63 = CPyStatic_faster_ens___utils___globals;
@@ -16799,7 +16801,7 @@ CPyL32: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r78 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 328, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 329, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL44;
     }
     cpy_r_r79 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'eth' */
@@ -16840,7 +16842,7 @@ CPyL38: ;
     if (likely(PyList_Check(cpy_r_middleware)))
         cpy_r_r92 = cpy_r_middleware;
     else {
-        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 333, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
+        CPy_TypeErrorTraceback("faster_ens/utils.py", "init_async_web3", 334, CPyStatic_faster_ens___utils___globals, "list", cpy_r_middleware);
         goto CPyL48;
     }
     cpy_r_r93 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'eth' */
@@ -17088,8 +17090,9 @@ CPyL3: ;
     CPyModule_datetime = cpy_r_r8;
     CPy_INCREF(CPyModule_datetime);
     CPy_DECREF(cpy_r_r8);
-    cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('TYPE_CHECKING', 'Any', 'Collection', 'Optional',
-                                    'Sequence', 'Tuple', 'Type', 'Union', 'cast') */
+    cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('TYPE_CHECKING', 'Any', 'Collection', 'Final',
+                                    'Optional', 'Sequence', 'Tuple', 'Type', 'Union',
+                                    'cast') */
     cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing' */
     cpy_r_r11 = CPyStatic_faster_ens___utils___globals;
     cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
@@ -17103,7 +17106,7 @@ CPyL3: ;
     cpy_r_r13 = (PyObject **)&CPyModule_warnings;
     PyObject **cpy_r_r14[1] = {cpy_r_r13};
     cpy_r_r15 = (void *)&cpy_r_r14;
-    int64_t cpy_r_r16[1] = {16};
+    int64_t cpy_r_r16[1] = {17};
     cpy_r_r17 = (void *)&cpy_r_r16;
     cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('warnings', 'warnings', 'warnings'),) */
     cpy_r_r19 = CPyStatic_faster_ens___utils___globals;
@@ -17194,6 +17197,8 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/utils.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___utils___globals);
         goto CPyL17;
     }
+    CPyStatic_faster_ens___utils___default = cpy_r_r50;
+    CPy_INCREF(CPyStatic_faster_ens___utils___default);
     cpy_r_r51 = CPyStatic_faster_ens___utils___globals;
     cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'default' */
     cpy_r_r53 = CPyDict_SetItem(cpy_r_r51, cpy_r_r52, cpy_r_r50);
@@ -166095,8 +166100,8 @@ const char * const CPyLit_Str[] = {
     "\001\'faster_web3._utils.http_session_manager",
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
-    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\004safe",
-    "\a\tfinalized\bearliest\006latest\apending\tis_string\006is_hex\nValueError",
+    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\bearliest",
+    "\a\tfinalized\006latest\apending\004safe\tis_string\006is_hex\nValueError",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_eth_utils.toolz\026faster_web3.exceptions",
     "\003\vRPCEndpoint\021faster_web3.types\"select_method_for_block_identifier",
@@ -166321,35 +166326,35 @@ const int CPyLit_Tuple[] = {
     156, 1, 148, 1, 159, 1, 161, 5, 163, 141, 164, 165, 166, 3, 156, 174,
     175, 1, 202, 1, 203, 1, 205, 1, 206, 2, 170, 79, 1, 209, 1, 30, 1,
     217, 1, 104, 1, 225, 1, 246, 1, 247, 1, 248, 1, 249, 3, 250, 170, 79,
-    2, 226, 227, 9, 153, 62, 251, 69, 252, 71, 154, 72, 253, 3, 254, 254,
-    254, 1, 1180, 5, 256, 155, 156, 174, 175, 4, 236, 238, 221, 237, 2,
-    244, 235, 6, 176, 177, 178, 181, 179, 183, 2, 220, 18, 1, 261, 1, 263,
-    7, 62, 64, 65, 67, 69, 72, 73, 1, 352, 2, 362, 175, 1, 363, 43, 311,
-    351, 345, 313, 329, 327, 297, 301, 291, 295, 289, 287, 347, 293, 319,
-    325, 281, 285, 283, 273, 271, 321, 267, 269, 339, 303, 307, 309, 305,
-    331, 335, 337, 333, 315, 299, 323, 349, 343, 277, 279, 275, 341, 317,
-    8, 62, 64, 65, 67, 69, 72, 253, 73, 2, 62, 69, 6, 372, 383, 374, 382,
-    371, 238, 1, 387, 2, 376, 386, 1, 390, 2, 393, 394, 6, 396, 397, 398,
-    399, 400, 401, 3, 427, 427, 427, 3, 428, 428, 428, 3, 429, 429, 429,
-    3, 1202, 1203, 1204, 13, 153, 62, 431, 432, 64, 65, 405, 67, 69, 252,
-    71, 72, 73, 3, 257, 257, 257, 1, 1207, 1, 433, 8, 435, 436, 437, 438,
-    439, 440, 441, 442, 1, 411, 1, 444, 1, 376, 1, 446, 1, 499, 3, 502,
-    502, 502, 1, 1216, 8, 153, 62, 64, 65, 69, 252, 507, 72, 1, 508, 3,
-    561, 561, 561, 3, 566, 566, 566, 2, 1220, 1221, 10, 153, 62, 431, 64,
-    67, 69, 252, 71, 72, 253, 12, 568, 569, 570, 571, 572, 573, 574, 575,
-    256, 156, 175, 576, 1, 548, 1, 578, 1, 547, 5, 546, 530, 513, 510,
-    518, 1, 515, 5, 514, 532, 535, 527, 550, 1, 581, 1, 529, 1, 552, 4,
-    523, 524, 526, 525, 4, 560, 376, 557, 386, 6, 586, 587, 588, 589, 590,
-    591, 3, 519, 536, 542, 7, 62, 251, 64, 65, 69, 71, 154, 3, 388, 257,
-    257, 2, 1207, 1239, 1, 598, 1, 609, 4, 153, 65, 72, 253, 1, 610, 2,
-    616, 617, 1, 621, 1, 622, 1, 627, 1, 562, 2, 650, 651, 2, 639, 653, 1,
-    1202, 1, 626, 3, 676, 676, 676, 3, 677, 677, 677, 4, 1254, 1255, 1204,
-    1216, 4, 678, 652, 352, 649, 1, 362, 3, 679, 679, 679, 1, 1259, 1,
-    648, 1, 398, 1, 625, 1, 645, 1, 682, 1, 252, 2, 691, 386, 1, 695, 2,
-    65, 72, 1, 175, 1, 386, 5, 62, 697, 698, 70, 72, 2, 699, 591, 4, 700,
-    246, 701, 202, 1, 702, 1, 703, 1, 706, 3, 718, 719, 720, 1, 732, 5,
-    169, 735, 151, 736, 147, 4, 169, 735, 151, 147, 11, 153, 62, 431, 65,
-    67, 69, 252, 71, 154, 72, 253, 1, 708, 7, 568, 569, 572, 574, 256,
+    2, 226, 227, 10, 153, 62, 251, 65, 69, 252, 71, 154, 72, 253, 3, 254,
+    254, 254, 1, 1180, 5, 256, 155, 156, 174, 175, 4, 236, 238, 221, 237,
+    2, 244, 235, 6, 176, 177, 178, 181, 179, 183, 2, 220, 18, 1, 261, 1,
+    263, 7, 62, 64, 65, 67, 69, 72, 73, 1, 352, 2, 362, 175, 1, 363, 43,
+    311, 351, 345, 313, 329, 327, 297, 301, 291, 295, 289, 287, 347, 293,
+    319, 325, 281, 285, 283, 273, 271, 321, 267, 269, 339, 303, 307, 309,
+    305, 331, 335, 337, 333, 315, 299, 323, 349, 343, 277, 279, 275, 341,
+    317, 8, 62, 64, 65, 67, 69, 72, 253, 73, 2, 62, 69, 6, 372, 383, 374,
+    382, 371, 238, 1, 387, 2, 376, 386, 1, 390, 2, 393, 394, 6, 396, 397,
+    398, 399, 400, 401, 3, 427, 427, 427, 3, 428, 428, 428, 3, 429, 429,
+    429, 3, 1202, 1203, 1204, 13, 153, 62, 431, 432, 64, 65, 405, 67, 69,
+    252, 71, 72, 73, 3, 257, 257, 257, 1, 1207, 1, 433, 8, 435, 436, 437,
+    438, 439, 440, 441, 442, 1, 411, 1, 444, 1, 376, 1, 446, 1, 499, 3,
+    502, 502, 502, 1, 1216, 8, 153, 62, 64, 65, 69, 252, 507, 72, 1, 508,
+    3, 561, 561, 561, 3, 566, 566, 566, 2, 1220, 1221, 10, 153, 62, 431,
+    64, 67, 69, 252, 71, 72, 253, 12, 568, 569, 570, 571, 572, 573, 574,
+    575, 256, 156, 175, 576, 1, 548, 1, 578, 1, 547, 5, 546, 530, 513,
+    510, 518, 1, 515, 5, 514, 532, 535, 527, 550, 1, 581, 1, 529, 1, 552,
+    4, 523, 524, 526, 525, 4, 560, 376, 557, 386, 6, 586, 587, 588, 589,
+    590, 591, 3, 519, 536, 542, 7, 62, 251, 64, 65, 69, 71, 154, 3, 388,
+    257, 257, 2, 1207, 1239, 1, 598, 1, 609, 4, 153, 65, 72, 253, 1, 610,
+    2, 616, 617, 1, 621, 1, 622, 1, 627, 1, 562, 2, 650, 651, 2, 639, 653,
+    1, 1202, 1, 626, 3, 676, 676, 676, 3, 677, 677, 677, 4, 1254, 1255,
+    1204, 1216, 4, 678, 652, 352, 649, 1, 362, 3, 679, 679, 679, 1, 1259,
+    1, 648, 1, 398, 1, 625, 1, 645, 1, 682, 1, 252, 2, 691, 386, 1, 695,
+    2, 65, 72, 1, 175, 1, 386, 5, 62, 697, 698, 70, 72, 2, 699, 591, 4,
+    700, 246, 701, 202, 1, 702, 1, 703, 1, 706, 3, 718, 719, 720, 1, 732,
+    5, 169, 735, 151, 736, 147, 4, 169, 735, 151, 147, 11, 153, 62, 431,
+    65, 67, 69, 252, 71, 154, 72, 253, 1, 708, 7, 568, 569, 572, 574, 256,
     156, 576, 3, 733, 510, 148, 2, 724, 387, 3, 527, 550, 716, 1, 743, 1,
     746, 1, 748, 1, 713, 1, 729, 2, 712, 386, 6, 586, 587, 751, 589, 590,
     591, 1, 536, 1, 69, 2, 591, 617, 1, 755, 2, 732, 768, 2, 775, 776, 3,
@@ -166646,6 +166651,7 @@ PyObject *CPyStatic_faster_ens___constants___ENS_CONTENT_HASH_INTERFACE_ID = NUL
 PyObject *CPyStatic_faster_ens___constants___ENS_MULTICHAIN_ADDRESS_INTERFACE_ID = NULL;
 PyObject *CPyStatic_faster_ens___constants___ENS_EXTENDED_RESOLVER_INTERFACE_ID = NULL;
 char CPyDef_faster_ens___constants_____top_level__(void);
+PyObject *CPyStatic_faster_ens___utils___default = NULL;
 PyObject *CPyDef_faster_ens___utils___Web3(void);
 PyObject *CPyPy_faster_ens___utils___Web3(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 PyObject *CPyDef_faster_ens___utils___init_web3(PyObject *cpy_r_provider, PyObject *cpy_r_middleware);
