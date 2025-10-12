@@ -99506,57 +99506,56 @@ PyObject *CPyDef_encoding____json_mapping_errors_FriendlyJsonSerde_gen_____mypyc
     PyObject *cpy_r_r22;
     PyObject *cpy_r_r23;
     PyObject *cpy_r_r24;
-    PyObject *cpy_r_r25;
-    tuple_T3OOO cpy_r_r26;
-    char cpy_r_r27;
+    tuple_T3OOO cpy_r_r25;
+    char cpy_r_r26;
+    PyObject *cpy_r_r27;
     PyObject *cpy_r_r28;
     PyObject *cpy_r_r29;
-    PyObject *cpy_r_r30;
-    char cpy_r_r31;
-    PyObject *cpy_r_r32;
-    char cpy_r_r33;
+    char cpy_r_r30;
+    PyObject *cpy_r_r31;
+    char cpy_r_r32;
+    PyObject *cpy_r_r33;
     PyObject *cpy_r_r34;
     PyObject *cpy_r_r35;
     PyObject *cpy_r_r36;
     PyObject *cpy_r_r37;
-    PyObject *cpy_r_r38;
-    PyObject **cpy_r_r40;
+    PyObject **cpy_r_r39;
+    PyObject *cpy_r_r40;
     PyObject *cpy_r_r41;
     PyObject *cpy_r_r42;
     PyObject *cpy_r_r43;
     PyObject *cpy_r_r44;
     PyObject *cpy_r_r45;
     PyObject *cpy_r_r46;
-    PyObject *cpy_r_r47;
-    PyObject **cpy_r_r49;
+    PyObject **cpy_r_r48;
+    PyObject *cpy_r_r49;
     PyObject *cpy_r_r50;
     PyObject *cpy_r_r51;
     PyObject *cpy_r_r52;
-    PyObject *cpy_r_r53;
+    CPyPtr cpy_r_r53;
     CPyPtr cpy_r_r54;
     CPyPtr cpy_r_r55;
     CPyPtr cpy_r_r56;
     CPyPtr cpy_r_r57;
-    CPyPtr cpy_r_r58;
-    PyObject *cpy_r_r59;
-    char cpy_r_r60;
-    PyObject *cpy_r_r61;
-    char cpy_r_r62;
+    PyObject *cpy_r_r58;
+    char cpy_r_r59;
+    PyObject *cpy_r_r60;
+    char cpy_r_r61;
+    tuple_T3OOO cpy_r_r62;
     tuple_T3OOO cpy_r_r63;
-    tuple_T3OOO cpy_r_r64;
-    char cpy_r_r65;
-    PyObject *cpy_r_r66;
-    int64_t cpy_r_r67;
+    char cpy_r_r64;
+    PyObject *cpy_r_r65;
+    int64_t cpy_r_r66;
+    char cpy_r_r67;
     char cpy_r_r68;
-    char cpy_r_r69;
-    PyObject *cpy_r_r70;
+    PyObject *cpy_r_r69;
+    char cpy_r_r70;
     char cpy_r_r71;
     char cpy_r_r72;
     char cpy_r_r73;
-    char cpy_r_r74;
-    PyObject *cpy_r_r75;
+    PyObject *cpy_r_r74;
     cpy_r_r0 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL53;
+    goto CPyL52;
 CPyL1: ;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_type != cpy_r_r1;
@@ -99564,14 +99563,14 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r3 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__mapping;
     if (unlikely(cpy_r_r3 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "mapping", 204, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     CPy_INCREF(cpy_r_r3);
 CPyL5: ;
@@ -99583,18 +99582,18 @@ CPyL5: ;
     cpy_r_r4 = 1;
     if (unlikely(!cpy_r_r4)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL58;
+        goto CPyL57;
     }
     ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1 = 0;
     cpy_r_r5 = 1;
     if (unlikely(!cpy_r_r5)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL58;
+        goto CPyL57;
     }
     cpy_r_r6 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
     if (unlikely(cpy_r_r6 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__0", 204, CPyStatic_encoding___globals);
-        goto CPyL58;
+        goto CPyL57;
     }
     CPy_INCREF(cpy_r_r6);
 CPyL8: ;
@@ -99604,13 +99603,13 @@ CPyL8: ;
     cpy_r_r8 = 1;
     if (unlikely(!cpy_r_r8)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL58;
+        goto CPyL57;
     }
     cpy_r_r9 = CPyDict_GetItemsIter(cpy_r_r3);
     CPy_DECREF(cpy_r_r3);
     if (unlikely(cpy_r_r9 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     if (((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3 != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3);
@@ -99619,20 +99618,20 @@ CPyL8: ;
     cpy_r_r10 = 1;
     if (unlikely(!cpy_r_r10)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
 CPyL11: ;
     cpy_r_r11 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r11 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__3", 204, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     CPy_INCREF(cpy_r_r11);
 CPyL12: ;
     cpy_r_r12 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r12 == CPY_INT_TAG)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__1", 204, CPyStatic_encoding___globals);
-        goto CPyL59;
+        goto CPyL58;
     }
 CPyL13: ;
     cpy_r_r13 = CPyDict_NextItem(cpy_r_r11, cpy_r_r12);
@@ -99642,10 +99641,10 @@ CPyL13: ;
     cpy_r_r15 = 1;
     if (unlikely(!cpy_r_r15)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL60;
+        goto CPyL59;
     }
     cpy_r_r16 = cpy_r_r13.f0;
-    if (!cpy_r_r16) goto CPyL61;
+    if (!cpy_r_r16) goto CPyL60;
     cpy_r_r17 = cpy_r_r13.f2;
     CPy_INCREF(cpy_r_r17);
     cpy_r_r18 = cpy_r_r13.f3;
@@ -99659,7 +99658,7 @@ CPyL13: ;
     cpy_r_r19 = 1;
     if (unlikely(!cpy_r_r19)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL62;
+        goto CPyL61;
     }
     if (((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__val != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__val);
@@ -99668,281 +99667,275 @@ CPyL13: ;
     cpy_r_r20 = 1;
     if (unlikely(!cpy_r_r20)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     cpy_r_r21 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r21 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "self", 206, CPyStatic_encoding___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
     CPy_INCREF_NO_IMM(cpy_r_r21);
 CPyL18: ;
     cpy_r_r22 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__val;
     if (unlikely(cpy_r_r22 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "val", 206, CPyStatic_encoding___globals);
-        goto CPyL63;
+        goto CPyL62;
     }
     CPy_INCREF(cpy_r_r22);
 CPyL19: ;
-    if (likely(PyDict_Check(cpy_r_r22)))
-        cpy_r_r23 = cpy_r_r22;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", 206, CPyStatic_encoding___globals, "dict", cpy_r_r22);
-        goto CPyL63;
-    }
-    cpy_r_r24 = NULL;
-    cpy_r_r25 = CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(cpy_r_r21, cpy_r_r23, cpy_r_r24);
-    CPy_DECREF(cpy_r_r23);
+    cpy_r_r23 = NULL;
+    cpy_r_r24 = CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(cpy_r_r21, cpy_r_r22, cpy_r_r23);
+    CPy_DECREF(cpy_r_r22);
     CPy_DECREF_NO_IMM(cpy_r_r21);
-    if (unlikely(cpy_r_r25 == NULL)) {
+    if (unlikely(cpy_r_r24 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
     } else
-        goto CPyL64;
-CPyL21: ;
-    cpy_r_r26 = CPy_CatchError();
+        goto CPyL63;
+CPyL20: ;
+    cpy_r_r25 = CPy_CatchError();
     if (((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4.f0 != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4.f0);
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4.f1);
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4.f2);
     }
-    ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4 = cpy_r_r26;
-    cpy_r_r27 = 1;
-    if (unlikely(!cpy_r_r27)) {
+    ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4 = cpy_r_r25;
+    cpy_r_r26 = 1;
+    if (unlikely(!cpy_r_r26)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
-    cpy_r_r28 = CPyModule_builtins;
-    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TypeError' */
-    cpy_r_r30 = CPyObject_GetAttr(cpy_r_r28, cpy_r_r29);
-    if (unlikely(cpy_r_r30 == NULL)) {
+    cpy_r_r27 = CPyModule_builtins;
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TypeError' */
+    cpy_r_r29 = CPyObject_GetAttr(cpy_r_r27, cpy_r_r28);
+    if (unlikely(cpy_r_r29 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
-    cpy_r_r31 = CPy_ExceptionMatches(cpy_r_r30);
-    CPy_DecRef(cpy_r_r30);
-    if (!cpy_r_r31) goto CPyL37;
-    cpy_r_r32 = CPy_GetExcValue();
+    cpy_r_r30 = CPy_ExceptionMatches(cpy_r_r29);
+    CPy_DecRef(cpy_r_r29);
+    if (!cpy_r_r30) goto CPyL36;
+    cpy_r_r31 = CPy_GetExcValue();
     if (((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc);
     }
-    ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc = cpy_r_r32;
-    cpy_r_r33 = 1;
-    if (unlikely(!cpy_r_r33)) {
+    ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc = cpy_r_r31;
+    cpy_r_r32 = 1;
+    if (unlikely(!cpy_r_r32)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
-    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
-    cpy_r_r35 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
-    cpy_r_r36 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
-    if (unlikely(cpy_r_r36 == NULL)) {
+    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
+    cpy_r_r35 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
+    if (unlikely(cpy_r_r35 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "key", 208, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
-    CPy_INCREF(cpy_r_r36);
-CPyL26: ;
-    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
-    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'format' */
-    PyObject *cpy_r_r39[3] = {cpy_r_r35, cpy_r_r36, cpy_r_r37};
-    cpy_r_r40 = (PyObject **)&cpy_r_r39;
-    cpy_r_r41 = PyObject_VectorcallMethod(cpy_r_r38, cpy_r_r40, 9223372036854775811ULL, 0);
-    if (unlikely(cpy_r_r41 == NULL)) {
+    CPy_INCREF(cpy_r_r35);
+CPyL25: ;
+    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'format' */
+    PyObject *cpy_r_r38[3] = {cpy_r_r34, cpy_r_r35, cpy_r_r36};
+    cpy_r_r39 = (PyObject **)&cpy_r_r38;
+    cpy_r_r40 = PyObject_VectorcallMethod(cpy_r_r37, cpy_r_r39, 9223372036854775811ULL, 0);
+    if (unlikely(cpy_r_r40 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL64;
+    }
+    CPy_DecRef(cpy_r_r35);
+    if (likely(PyUnicode_Check(cpy_r_r40)))
+        cpy_r_r41 = cpy_r_r40;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", 208, CPyStatic_encoding___globals, "str", cpy_r_r40);
+        goto CPyL40;
+    }
+    cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ': because (' */
+    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{:{}}' */
+    cpy_r_r44 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc;
+    if (unlikely(cpy_r_r44 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "exc", 208, CPyStatic_encoding___globals);
         goto CPyL65;
     }
-    CPy_DecRef(cpy_r_r36);
-    if (likely(PyUnicode_Check(cpy_r_r41)))
-        cpy_r_r42 = cpy_r_r41;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", 208, CPyStatic_encoding___globals, "str", cpy_r_r41);
-        goto CPyL41;
-    }
-    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ': because (' */
-    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{:{}}' */
-    cpy_r_r45 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc;
-    if (unlikely(cpy_r_r45 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "exc", 208, CPyStatic_encoding___globals);
+    CPy_INCREF(cpy_r_r44);
+CPyL28: ;
+    cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'format' */
+    PyObject *cpy_r_r47[3] = {cpy_r_r43, cpy_r_r44, cpy_r_r45};
+    cpy_r_r48 = (PyObject **)&cpy_r_r47;
+    cpy_r_r49 = PyObject_VectorcallMethod(cpy_r_r46, cpy_r_r48, 9223372036854775811ULL, 0);
+    if (unlikely(cpy_r_r49 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
         goto CPyL66;
     }
-    CPy_INCREF(cpy_r_r45);
-CPyL29: ;
-    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
-    cpy_r_r47 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'format' */
-    PyObject *cpy_r_r48[3] = {cpy_r_r44, cpy_r_r45, cpy_r_r46};
-    cpy_r_r49 = (PyObject **)&cpy_r_r48;
-    cpy_r_r50 = PyObject_VectorcallMethod(cpy_r_r47, cpy_r_r49, 9223372036854775811ULL, 0);
-    if (unlikely(cpy_r_r50 == NULL)) {
+    CPy_DecRef(cpy_r_r44);
+    if (likely(PyUnicode_Check(cpy_r_r49)))
+        cpy_r_r50 = cpy_r_r49;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", 208, CPyStatic_encoding___globals, "str", cpy_r_r49);
+        goto CPyL65;
+    }
+    cpy_r_r51 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ')' */
+    cpy_r_r52 = PyList_New(4);
+    if (unlikely(cpy_r_r52 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
         goto CPyL67;
     }
-    CPy_DecRef(cpy_r_r45);
-    if (likely(PyUnicode_Check(cpy_r_r50)))
-        cpy_r_r51 = cpy_r_r50;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", 208, CPyStatic_encoding___globals, "str", cpy_r_r50);
-        goto CPyL66;
-    }
-    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ')' */
-    cpy_r_r53 = PyList_New(4);
-    if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL68;
-    }
-    cpy_r_r54 = (CPyPtr)&((PyListObject *)cpy_r_r53)->ob_item;
-    cpy_r_r55 = *(CPyPtr *)cpy_r_r54;
+    cpy_r_r53 = (CPyPtr)&((PyListObject *)cpy_r_r52)->ob_item;
+    cpy_r_r54 = *(CPyPtr *)cpy_r_r53;
+    *(PyObject * *)cpy_r_r54 = cpy_r_r41;
+    CPy_INCREF(cpy_r_r42);
+    cpy_r_r55 = cpy_r_r54 + 8;
     *(PyObject * *)cpy_r_r55 = cpy_r_r42;
-    CPy_INCREF(cpy_r_r43);
-    cpy_r_r56 = cpy_r_r55 + 8;
-    *(PyObject * *)cpy_r_r56 = cpy_r_r43;
-    cpy_r_r57 = cpy_r_r55 + 16;
+    cpy_r_r56 = cpy_r_r54 + 16;
+    *(PyObject * *)cpy_r_r56 = cpy_r_r50;
+    CPy_INCREF(cpy_r_r51);
+    cpy_r_r57 = cpy_r_r54 + 24;
     *(PyObject * *)cpy_r_r57 = cpy_r_r51;
-    CPy_INCREF(cpy_r_r52);
-    cpy_r_r58 = cpy_r_r55 + 24;
-    *(PyObject * *)cpy_r_r58 = cpy_r_r52;
-    cpy_r_r59 = PyUnicode_Join(cpy_r_r34, cpy_r_r53);
-    CPy_DecRef(cpy_r_r53);
-    if (unlikely(cpy_r_r59 == NULL)) {
+    cpy_r_r58 = PyUnicode_Join(cpy_r_r33, cpy_r_r52);
+    CPy_DecRef(cpy_r_r52);
+    if (unlikely(cpy_r_r58 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
     ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
-    return cpy_r_r59;
-CPyL34: ;
-    cpy_r_r61 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r62 = cpy_r_type != cpy_r_r61;
-    if (!cpy_r_r62) goto CPyL39;
+    return cpy_r_r58;
+CPyL33: ;
+    cpy_r_r60 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r61 = cpy_r_type != cpy_r_r60;
+    if (!cpy_r_r61) goto CPyL38;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL40;
     }
     CPy_Unreachable();
-CPyL37: ;
+CPyL36: ;
     CPy_Reraise();
-    if (!0) goto CPyL41;
+    if (!0) goto CPyL40;
     CPy_Unreachable();
+CPyL38: ;
+    cpy_r_r62 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4;
+    if (unlikely(cpy_r_r62.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__4", -1, CPyStatic_encoding___globals);
+        goto CPyL56;
+    }
+    CPy_INCREF(cpy_r_r62.f0);
+    CPy_INCREF(cpy_r_r62.f1);
+    CPy_INCREF(cpy_r_r62.f2);
 CPyL39: ;
+    CPy_RestoreExcInfo(cpy_r_r62);
+    CPy_DECREF(cpy_r_r62.f0);
+    CPy_DECREF(cpy_r_r62.f1);
+    CPy_DECREF(cpy_r_r62.f2);
+    goto CPyL43;
+CPyL40: ;
     cpy_r_r63 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4;
     if (unlikely(cpy_r_r63.f0 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__4", -1, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     CPy_INCREF(cpy_r_r63.f0);
     CPy_INCREF(cpy_r_r63.f1);
     CPy_INCREF(cpy_r_r63.f2);
-CPyL40: ;
-    CPy_RestoreExcInfo(cpy_r_r63);
-    CPy_DECREF(cpy_r_r63.f0);
-    CPy_DECREF(cpy_r_r63.f1);
-    CPy_DECREF(cpy_r_r63.f2);
-    goto CPyL44;
 CPyL41: ;
-    cpy_r_r64 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4;
-    if (unlikely(cpy_r_r64.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__4", -1, CPyStatic_encoding___globals);
-        goto CPyL57;
-    }
-    CPy_INCREF(cpy_r_r64.f0);
-    CPy_INCREF(cpy_r_r64.f1);
-    CPy_INCREF(cpy_r_r64.f2);
-CPyL42: ;
-    CPy_RestoreExcInfo(cpy_r_r64);
-    CPy_DecRef(cpy_r_r64.f0);
-    CPy_DecRef(cpy_r_r64.f1);
-    CPy_DecRef(cpy_r_r64.f2);
-    cpy_r_r65 = CPy_KeepPropagating();
-    if (!cpy_r_r65) goto CPyL57;
+    CPy_RestoreExcInfo(cpy_r_r63);
+    CPy_DecRef(cpy_r_r63.f0);
+    CPy_DecRef(cpy_r_r63.f1);
+    CPy_DecRef(cpy_r_r63.f2);
+    cpy_r_r64 = CPy_KeepPropagating();
+    if (!cpy_r_r64) goto CPyL56;
     CPy_Unreachable();
-CPyL44: ;
-    cpy_r_r66 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
-    if (unlikely(cpy_r_r66 == NULL)) {
+CPyL43: ;
+    cpy_r_r65 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
+    if (unlikely(cpy_r_r65 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__0", 204, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
-    CPy_INCREF(cpy_r_r66);
-CPyL45: ;
-    cpy_r_r67 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
-    if (unlikely(cpy_r_r67 == -113)) {
+    CPy_INCREF(cpy_r_r65);
+CPyL44: ;
+    cpy_r_r66 = ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
+    if (unlikely(cpy_r_r66 == -113)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_mapping_errors", "_json_mapping_errors_FriendlyJsonSerde_gen", "__mypyc_temp__2", 204, CPyStatic_encoding___globals);
-        goto CPyL69;
+        goto CPyL68;
     }
-CPyL46: ;
-    cpy_r_r68 = CPyDict_CheckSize(cpy_r_r66, cpy_r_r67);
-    CPy_DECREF(cpy_r_r66);
-    if (unlikely(!cpy_r_r68)) {
+CPyL45: ;
+    cpy_r_r67 = CPyDict_CheckSize(cpy_r_r65, cpy_r_r66);
+    CPy_DECREF(cpy_r_r65);
+    if (unlikely(!cpy_r_r67)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     } else
         goto CPyL11;
-CPyL47: ;
-    cpy_r_r69 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r69)) {
+CPyL46: ;
+    cpy_r_r68 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r68)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
-    cpy_r_r70 = Py_None;
+    cpy_r_r69 = Py_None;
     ((faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL52;
-    CPyGen_SetStopIterationValue(cpy_r_r70);
-    if (!0) goto CPyL57;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL51;
+    CPyGen_SetStopIterationValue(cpy_r_r69);
+    if (!0) goto CPyL56;
     CPy_Unreachable();
-CPyL52: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r70;
+CPyL51: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r69;
     return 0;
-CPyL53: ;
-    cpy_r_r72 = cpy_r_r0 == 0;
-    if (cpy_r_r72) goto CPyL1;
-    cpy_r_r73 = cpy_r_r0 == 1;
-    if (cpy_r_r73) goto CPyL34;
+CPyL52: ;
+    cpy_r_r71 = cpy_r_r0 == 0;
+    if (cpy_r_r71) goto CPyL1;
+    cpy_r_r72 = cpy_r_r0 == 1;
+    if (cpy_r_r72) goto CPyL33;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r74 = 0;
-    if (unlikely(!cpy_r_r74)) {
+    cpy_r_r73 = 0;
+    if (unlikely(!cpy_r_r73)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_mapping_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL57;
+        goto CPyL56;
     }
     CPy_Unreachable();
+CPyL56: ;
+    cpy_r_r74 = NULL;
+    return cpy_r_r74;
 CPyL57: ;
-    cpy_r_r75 = NULL;
-    return cpy_r_r75;
-CPyL58: ;
     CPy_DecRef(cpy_r_r3);
-    goto CPyL57;
-CPyL59: ;
+    goto CPyL56;
+CPyL58: ;
     CPy_DecRef(cpy_r_r11);
-    goto CPyL57;
-CPyL60: ;
+    goto CPyL56;
+CPyL59: ;
     CPy_DecRef(cpy_r_r13.f2);
     CPy_DecRef(cpy_r_r13.f3);
-    goto CPyL57;
-CPyL61: ;
+    goto CPyL56;
+CPyL60: ;
     CPy_DECREF(cpy_r_r13.f2);
     CPy_DECREF(cpy_r_r13.f3);
-    goto CPyL47;
-CPyL62: ;
+    goto CPyL46;
+CPyL61: ;
     CPy_DecRef(cpy_r_r18);
-    goto CPyL57;
-CPyL63: ;
+    goto CPyL56;
+CPyL62: ;
     CPy_DecRef(cpy_r_r21);
-    goto CPyL21;
+    goto CPyL20;
+CPyL63: ;
+    CPy_DECREF(cpy_r_r24);
+    goto CPyL43;
 CPyL64: ;
-    CPy_DECREF(cpy_r_r25);
-    goto CPyL44;
+    CPy_DecRef(cpy_r_r35);
+    goto CPyL40;
 CPyL65: ;
-    CPy_DecRef(cpy_r_r36);
-    goto CPyL41;
+    CPy_DecRef(cpy_r_r41);
+    goto CPyL40;
 CPyL66: ;
-    CPy_DecRef(cpy_r_r42);
-    goto CPyL41;
+    CPy_DecRef(cpy_r_r41);
+    CPy_DecRef(cpy_r_r44);
+    goto CPyL40;
 CPyL67: ;
-    CPy_DecRef(cpy_r_r42);
-    CPy_DecRef(cpy_r_r45);
-    goto CPyL41;
+    CPy_DecRef(cpy_r_r41);
+    CPy_DecRef(cpy_r_r50);
+    goto CPyL40;
 CPyL68: ;
-    CPy_DecRef(cpy_r_r42);
-    CPy_DecRef(cpy_r_r51);
-    goto CPyL41;
-CPyL69: ;
-    CPy_DecRef(cpy_r_r66);
-    goto CPyL57;
+    CPy_DecRef(cpy_r_r65);
+    goto CPyL56;
 }
 
 PyObject *CPyDef_encoding____json_mapping_errors_FriendlyJsonSerde_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -100295,40 +100288,39 @@ PyObject *CPyDef_encoding____json_list_errors_FriendlyJsonSerde_gen_____mypyc_ge
     PyObject *cpy_r_r14;
     PyObject *cpy_r_r15;
     PyObject *cpy_r_r16;
-    PyObject *cpy_r_r17;
-    tuple_T3OOO cpy_r_r18;
-    char cpy_r_r19;
+    tuple_T3OOO cpy_r_r17;
+    char cpy_r_r18;
+    PyObject *cpy_r_r19;
     PyObject *cpy_r_r20;
     PyObject *cpy_r_r21;
-    PyObject *cpy_r_r22;
-    char cpy_r_r23;
-    PyObject *cpy_r_r24;
-    char cpy_r_r25;
-    CPyTagged cpy_r_r26;
+    char cpy_r_r22;
+    PyObject *cpy_r_r23;
+    char cpy_r_r24;
+    CPyTagged cpy_r_r25;
+    PyObject *cpy_r_r26;
     PyObject *cpy_r_r27;
     PyObject *cpy_r_r28;
     PyObject *cpy_r_r29;
     PyObject *cpy_r_r30;
     PyObject *cpy_r_r31;
-    PyObject *cpy_r_r32;
-    char cpy_r_r33;
-    PyObject *cpy_r_r34;
-    char cpy_r_r35;
+    char cpy_r_r32;
+    PyObject *cpy_r_r33;
+    char cpy_r_r34;
+    tuple_T3OOO cpy_r_r35;
     tuple_T3OOO cpy_r_r36;
-    tuple_T3OOO cpy_r_r37;
-    char cpy_r_r38;
+    char cpy_r_r37;
+    CPyTagged cpy_r_r38;
     CPyTagged cpy_r_r39;
-    CPyTagged cpy_r_r40;
+    char cpy_r_r40;
     char cpy_r_r41;
-    char cpy_r_r42;
-    PyObject *cpy_r_r43;
+    PyObject *cpy_r_r42;
+    char cpy_r_r43;
     char cpy_r_r44;
     char cpy_r_r45;
     char cpy_r_r46;
-    char cpy_r_r47;
-    PyObject *cpy_r_r48;
+    PyObject *cpy_r_r47;
     cpy_r_r0 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL46;
+    goto CPyL45;
 CPyL1: ;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_type != cpy_r_r1;
@@ -100336,7 +100328,7 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     CPy_Unreachable();
 CPyL4: ;
@@ -100344,19 +100336,19 @@ CPyL4: ;
     cpy_r_r3 = 1;
     if (unlikely(!cpy_r_r3)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     cpy_r_r4 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__iterable;
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "iterable", 211, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     CPy_INCREF(cpy_r_r4);
 CPyL6: ;
     cpy_r_r5 = PyObject_GetIter(cpy_r_r4);
     if (unlikely(cpy_r_r5 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL51;
+        goto CPyL50;
     }
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__6 != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__6);
@@ -100365,7 +100357,7 @@ CPyL6: ;
     cpy_r_r6 = 1;
     if (unlikely(!cpy_r_r6)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL52;
+        goto CPyL51;
     }
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7 != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7);
@@ -100374,23 +100366,23 @@ CPyL6: ;
     cpy_r_r7 = 1;
     if (unlikely(!cpy_r_r7)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
 CPyL9: ;
     cpy_r_r8 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7;
     if (unlikely(cpy_r_r8 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__7", 211, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     CPy_INCREF(cpy_r_r8);
 CPyL10: ;
     cpy_r_r9 = PyIter_Next(cpy_r_r8);
     CPy_DECREF(cpy_r_r8);
-    if (cpy_r_r9 == NULL) goto CPyL40;
+    if (cpy_r_r9 == NULL) goto CPyL39;
     cpy_r_r10 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
     if (unlikely(cpy_r_r10 == CPY_INT_TAG)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__5", -1, CPyStatic_encoding___globals);
-        goto CPyL53;
+        goto CPyL52;
     }
 CPyL12: ;
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__index != CPY_INT_TAG) {
@@ -100400,7 +100392,7 @@ CPyL12: ;
     cpy_r_r11 = 1;
     if (unlikely(!cpy_r_r11)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL53;
+        goto CPyL52;
     }
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__element != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__element);
@@ -100409,215 +100401,209 @@ CPyL12: ;
     cpy_r_r12 = 1;
     if (unlikely(!cpy_r_r12)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     cpy_r_r13 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r13 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "self", 213, CPyStatic_encoding___globals);
-        goto CPyL18;
+        goto CPyL17;
     }
     CPy_INCREF_NO_IMM(cpy_r_r13);
 CPyL15: ;
     cpy_r_r14 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__element;
     if (unlikely(cpy_r_r14 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "element", 213, CPyStatic_encoding___globals);
-        goto CPyL54;
+        goto CPyL53;
     }
     CPy_INCREF(cpy_r_r14);
 CPyL16: ;
-    if (likely(PyDict_Check(cpy_r_r14)))
-        cpy_r_r15 = cpy_r_r14;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", 213, CPyStatic_encoding___globals, "dict", cpy_r_r14);
-        goto CPyL54;
-    }
-    cpy_r_r16 = NULL;
-    cpy_r_r17 = CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(cpy_r_r13, cpy_r_r15, cpy_r_r16);
-    CPy_DECREF(cpy_r_r15);
+    cpy_r_r15 = NULL;
+    cpy_r_r16 = CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(cpy_r_r13, cpy_r_r14, cpy_r_r15);
+    CPy_DECREF(cpy_r_r14);
     CPy_DECREF_NO_IMM(cpy_r_r13);
-    if (unlikely(cpy_r_r17 == NULL)) {
+    if (unlikely(cpy_r_r16 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
     } else
-        goto CPyL55;
-CPyL18: ;
-    cpy_r_r18 = CPy_CatchError();
+        goto CPyL54;
+CPyL17: ;
+    cpy_r_r17 = CPy_CatchError();
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8.f0 != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8.f0);
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8.f1);
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8.f2);
     }
-    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8 = cpy_r_r18;
-    cpy_r_r19 = 1;
-    if (unlikely(!cpy_r_r19)) {
+    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8 = cpy_r_r17;
+    cpy_r_r18 = 1;
+    if (unlikely(!cpy_r_r18)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", -1, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
-    cpy_r_r20 = CPyModule_builtins;
-    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TypeError' */
-    cpy_r_r22 = CPyObject_GetAttr(cpy_r_r20, cpy_r_r21);
-    if (unlikely(cpy_r_r22 == NULL)) {
+    cpy_r_r19 = CPyModule_builtins;
+    cpy_r_r20 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TypeError' */
+    cpy_r_r21 = CPyObject_GetAttr(cpy_r_r19, cpy_r_r20);
+    if (unlikely(cpy_r_r21 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
-    cpy_r_r23 = CPy_ExceptionMatches(cpy_r_r22);
-    CPy_DecRef(cpy_r_r22);
-    if (!cpy_r_r23) goto CPyL31;
-    cpy_r_r24 = CPy_GetExcValue();
+    cpy_r_r22 = CPy_ExceptionMatches(cpy_r_r21);
+    CPy_DecRef(cpy_r_r21);
+    if (!cpy_r_r22) goto CPyL30;
+    cpy_r_r23 = CPy_GetExcValue();
     if (((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc != NULL) {
         CPy_DECREF(((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc);
     }
-    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc = cpy_r_r24;
-    cpy_r_r25 = 1;
-    if (unlikely(!cpy_r_r25)) {
+    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc = cpy_r_r23;
+    cpy_r_r24 = 1;
+    if (unlikely(!cpy_r_r24)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
-    cpy_r_r26 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__index;
-    if (unlikely(cpy_r_r26 == CPY_INT_TAG)) {
+    cpy_r_r25 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__index;
+    if (unlikely(cpy_r_r25 == CPY_INT_TAG)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "index", 215, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
-    CPyTagged_INCREF(cpy_r_r26);
-CPyL23: ;
-    cpy_r_r27 = CPyTagged_Str(cpy_r_r26);
-    CPyTagged_DecRef(cpy_r_r26);
-    if (unlikely(cpy_r_r27 == NULL)) {
+    CPyTagged_INCREF(cpy_r_r25);
+CPyL22: ;
+    cpy_r_r26 = CPyTagged_Str(cpy_r_r25);
+    CPyTagged_DecRef(cpy_r_r25);
+    if (unlikely(cpy_r_r26 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
-    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ': because (' */
-    cpy_r_r29 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc;
-    if (unlikely(cpy_r_r29 == NULL)) {
+    cpy_r_r27 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ': because (' */
+    cpy_r_r28 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__exc;
+    if (unlikely(cpy_r_r28 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "exc", 215, CPyStatic_encoding___globals);
-        goto CPyL56;
+        goto CPyL55;
     }
-    CPy_INCREF(cpy_r_r29);
-CPyL25: ;
-    cpy_r_r30 = PyObject_Str(cpy_r_r29);
+    CPy_INCREF(cpy_r_r28);
+CPyL24: ;
+    cpy_r_r29 = PyObject_Str(cpy_r_r28);
+    CPy_DecRef(cpy_r_r28);
+    if (unlikely(cpy_r_r29 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL55;
+    }
+    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ')' */
+    cpy_r_r31 = CPyStr_Build(4, cpy_r_r26, cpy_r_r27, cpy_r_r29, cpy_r_r30);
+    CPy_DecRef(cpy_r_r26);
     CPy_DecRef(cpy_r_r29);
-    if (unlikely(cpy_r_r30 == NULL)) {
+    if (unlikely(cpy_r_r31 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL56;
-    }
-    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ')' */
-    cpy_r_r32 = CPyStr_Build(4, cpy_r_r27, cpy_r_r28, cpy_r_r30, cpy_r_r31);
-    CPy_DecRef(cpy_r_r27);
-    CPy_DecRef(cpy_r_r30);
-    if (unlikely(cpy_r_r32 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
     ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
-    return cpy_r_r32;
-CPyL28: ;
-    cpy_r_r34 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r35 = cpy_r_type != cpy_r_r34;
-    if (!cpy_r_r35) goto CPyL33;
+    return cpy_r_r31;
+CPyL27: ;
+    cpy_r_r33 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r34 = cpy_r_type != cpy_r_r33;
+    if (!cpy_r_r34) goto CPyL32;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL34;
     }
     CPy_Unreachable();
-CPyL31: ;
+CPyL30: ;
     CPy_Reraise();
-    if (!0) goto CPyL35;
+    if (!0) goto CPyL34;
     CPy_Unreachable();
+CPyL32: ;
+    cpy_r_r35 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
+    if (unlikely(cpy_r_r35.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__8", -1, CPyStatic_encoding___globals);
+        goto CPyL49;
+    }
+    CPy_INCREF(cpy_r_r35.f0);
+    CPy_INCREF(cpy_r_r35.f1);
+    CPy_INCREF(cpy_r_r35.f2);
 CPyL33: ;
+    CPy_RestoreExcInfo(cpy_r_r35);
+    CPy_DECREF(cpy_r_r35.f0);
+    CPy_DECREF(cpy_r_r35.f1);
+    CPy_DECREF(cpy_r_r35.f2);
+    goto CPyL37;
+CPyL34: ;
     cpy_r_r36 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r36.f0 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__8", -1, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     CPy_INCREF(cpy_r_r36.f0);
     CPy_INCREF(cpy_r_r36.f1);
     CPy_INCREF(cpy_r_r36.f2);
-CPyL34: ;
-    CPy_RestoreExcInfo(cpy_r_r36);
-    CPy_DECREF(cpy_r_r36.f0);
-    CPy_DECREF(cpy_r_r36.f1);
-    CPy_DECREF(cpy_r_r36.f2);
-    goto CPyL38;
 CPyL35: ;
-    cpy_r_r37 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
-    if (unlikely(cpy_r_r37.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__8", -1, CPyStatic_encoding___globals);
-        goto CPyL50;
-    }
-    CPy_INCREF(cpy_r_r37.f0);
-    CPy_INCREF(cpy_r_r37.f1);
-    CPy_INCREF(cpy_r_r37.f2);
-CPyL36: ;
-    CPy_RestoreExcInfo(cpy_r_r37);
-    CPy_DecRef(cpy_r_r37.f0);
-    CPy_DecRef(cpy_r_r37.f1);
-    CPy_DecRef(cpy_r_r37.f2);
-    cpy_r_r38 = CPy_KeepPropagating();
-    if (!cpy_r_r38) goto CPyL50;
+    CPy_RestoreExcInfo(cpy_r_r36);
+    CPy_DecRef(cpy_r_r36.f0);
+    CPy_DecRef(cpy_r_r36.f1);
+    CPy_DecRef(cpy_r_r36.f2);
+    cpy_r_r37 = CPy_KeepPropagating();
+    if (!cpy_r_r37) goto CPyL49;
     CPy_Unreachable();
-CPyL38: ;
-    cpy_r_r39 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
-    if (unlikely(cpy_r_r39 == CPY_INT_TAG)) {
+CPyL37: ;
+    cpy_r_r38 = ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
+    if (unlikely(cpy_r_r38 == CPY_INT_TAG)) {
         CPy_AttributeError("faster_web3/_utils/encoding.py", "_json_list_errors", "_json_list_errors_FriendlyJsonSerde_gen", "__mypyc_temp__5", 211, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
-CPyL39: ;
-    cpy_r_r40 = cpy_r_r39 + 2;
-    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5 = cpy_r_r40;
-    cpy_r_r41 = 1;
-    if (unlikely(!cpy_r_r41)) {
+CPyL38: ;
+    cpy_r_r39 = cpy_r_r38 + 2;
+    ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5 = cpy_r_r39;
+    cpy_r_r40 = 1;
+    if (unlikely(!cpy_r_r40)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     } else
         goto CPyL9;
-CPyL40: ;
-    cpy_r_r42 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r42)) {
+CPyL39: ;
+    cpy_r_r41 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r41)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
-    cpy_r_r43 = Py_None;
+    cpy_r_r42 = Py_None;
     ((faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL45;
-    CPyGen_SetStopIterationValue(cpy_r_r43);
-    if (!0) goto CPyL50;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL44;
+    CPyGen_SetStopIterationValue(cpy_r_r42);
+    if (!0) goto CPyL49;
     CPy_Unreachable();
-CPyL45: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r43;
+CPyL44: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r42;
     return 0;
-CPyL46: ;
-    cpy_r_r45 = cpy_r_r0 == 0;
-    if (cpy_r_r45) goto CPyL1;
-    cpy_r_r46 = cpy_r_r0 == 1;
-    if (cpy_r_r46) goto CPyL28;
+CPyL45: ;
+    cpy_r_r44 = cpy_r_r0 == 0;
+    if (cpy_r_r44) goto CPyL1;
+    cpy_r_r45 = cpy_r_r0 == 1;
+    if (cpy_r_r45) goto CPyL27;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r47 = 0;
-    if (unlikely(!cpy_r_r47)) {
+    cpy_r_r46 = 0;
+    if (unlikely(!cpy_r_r46)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_json_list_errors", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL50;
+        goto CPyL49;
     }
     CPy_Unreachable();
+CPyL49: ;
+    cpy_r_r47 = NULL;
+    return cpy_r_r47;
 CPyL50: ;
-    cpy_r_r48 = NULL;
-    return cpy_r_r48;
-CPyL51: ;
     CPy_DecRef(cpy_r_r4);
-    goto CPyL50;
-CPyL52: ;
+    goto CPyL49;
+CPyL51: ;
     CPy_DecRef(cpy_r_r5);
-    goto CPyL50;
-CPyL53: ;
+    goto CPyL49;
+CPyL52: ;
     CPy_DecRef(cpy_r_r9);
-    goto CPyL50;
-CPyL54: ;
+    goto CPyL49;
+CPyL53: ;
     CPy_DecRef(cpy_r_r13);
-    goto CPyL18;
+    goto CPyL17;
+CPyL54: ;
+    CPy_DECREF(cpy_r_r16);
+    goto CPyL37;
 CPyL55: ;
-    CPy_DECREF(cpy_r_r17);
-    goto CPyL38;
-CPyL56: ;
-    CPy_DecRef(cpy_r_r27);
-    goto CPyL35;
+    CPy_DecRef(cpy_r_r26);
+    goto CPyL34;
 }
 
 PyObject *CPyDef_encoding____json_list_errors_FriendlyJsonSerde_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -100972,15 +100958,15 @@ PyObject *CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(PyObject *
     PyObject *cpy_r_r23;
     PyObject *cpy_r_r24;
     PyObject *cpy_r_r25;
-    PyObject **cpy_r_r27;
-    PyObject *cpy_r_r28;
+    PyObject *cpy_r_r26;
+    PyObject **cpy_r_r28;
     PyObject *cpy_r_r29;
     PyObject *cpy_r_r30;
     PyObject *cpy_r_r31;
-    PyObject **cpy_r_r33;
-    PyObject *cpy_r_r34;
-    char cpy_r_r35;
-    PyObject *cpy_r_r36;
+    PyObject *cpy_r_r32;
+    PyObject **cpy_r_r34;
+    PyObject *cpy_r_r35;
+    char cpy_r_r36;
     PyObject *cpy_r_r37;
     PyObject *cpy_r_r38;
     PyObject *cpy_r_r39;
@@ -100989,11 +100975,12 @@ PyObject *CPyDef_encoding___FriendlyJsonSerde____friendly_json_encode(PyObject *
     PyObject *cpy_r_r42;
     PyObject *cpy_r_r43;
     PyObject *cpy_r_r44;
-    PyObject **cpy_r_r46;
-    PyObject *cpy_r_r47;
-    char cpy_r_r48;
-    PyObject *cpy_r_r49;
-    if (cpy_r_cls != NULL) goto CPyL34;
+    PyObject *cpy_r_r45;
+    PyObject **cpy_r_r47;
+    PyObject *cpy_r_r48;
+    char cpy_r_r49;
+    PyObject *cpy_r_r50;
+    if (cpy_r_cls != NULL) goto CPyL35;
     cpy_r_r0 = Py_None;
     cpy_r_cls = cpy_r_r0;
 CPyL2: ;
@@ -101002,7 +100989,7 @@ CPyL2: ;
     cpy_r_r3 = CPyObject_GetAttr(cpy_r_r1, cpy_r_r2);
     if (unlikely(cpy_r_r3 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL36;
     }
     PyObject *cpy_r_r4[2] = {cpy_r_obj, cpy_r_cls};
     cpy_r_r5 = (PyObject **)&cpy_r_r4;
@@ -101011,7 +100998,7 @@ CPyL2: ;
     CPy_DECREF(cpy_r_r3);
     if (unlikely(cpy_r_r7 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL35;
+        goto CPyL36;
     }
     CPy_DECREF(cpy_r_cls);
     if (likely(PyUnicode_Check(cpy_r_r7)))
@@ -101028,209 +101015,217 @@ CPyL6: ;
     cpy_r_r12 = CPyObject_GetAttr(cpy_r_r10, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     }
     cpy_r_r13 = CPy_ExceptionMatches(cpy_r_r12);
     CPy_DecRef(cpy_r_r12);
-    if (!cpy_r_r13) goto CPyL29;
+    if (!cpy_r_r13) goto CPyL30;
     cpy_r_r14 = CPy_GetExcValue();
     cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'items' */
     cpy_r_r16 = PyObject_HasAttr(cpy_r_obj, cpy_r_r15);
     if (cpy_r_r16) {
-        goto CPyL36;
+        goto CPyL37;
     } else
-        goto CPyL16;
+        goto CPyL17;
 CPyL9: ;
     cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '; ' */
-    cpy_r_r18 = CPyDef_encoding___FriendlyJsonSerde____json_mapping_errors(cpy_r_self, cpy_r_obj);
-    if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+    CPy_INCREF(cpy_r_obj);
+    if (likely(PyDict_Check(cpy_r_obj)))
+        cpy_r_r18 = cpy_r_obj;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", 224, CPyStatic_encoding___globals, "dict", cpy_r_obj);
+        goto CPyL32;
     }
-    cpy_r_r19 = PyUnicode_Join(cpy_r_r17, cpy_r_r18);
+    cpy_r_r19 = CPyDef_encoding___FriendlyJsonSerde____json_mapping_errors(cpy_r_self, cpy_r_r18);
     CPy_DecRef(cpy_r_r18);
     if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     }
-    cpy_r_r20 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'dict had unencodable value at keys: {' */
-    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '}' */
-    cpy_r_r22 = CPyStr_Build(3, cpy_r_r20, cpy_r_r19, cpy_r_r21);
+    cpy_r_r20 = PyUnicode_Join(cpy_r_r17, cpy_r_r19);
     CPy_DecRef(cpy_r_r19);
-    if (unlikely(cpy_r_r22 == NULL)) {
+    if (unlikely(cpy_r_r20 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     }
-    cpy_r_r23 = CPyStatic_encoding___globals;
-    cpy_r_r24 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3TypeError' */
-    cpy_r_r25 = CPyDict_GetItem(cpy_r_r23, cpy_r_r24);
-    if (unlikely(cpy_r_r25 == NULL)) {
+    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'dict had unencodable value at keys: {' */
+    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '}' */
+    cpy_r_r23 = CPyStr_Build(3, cpy_r_r21, cpy_r_r20, cpy_r_r22);
+    CPy_DecRef(cpy_r_r20);
+    if (unlikely(cpy_r_r23 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL37;
+        goto CPyL32;
     }
-    PyObject *cpy_r_r26[1] = {cpy_r_r22};
-    cpy_r_r27 = (PyObject **)&cpy_r_r26;
-    cpy_r_r28 = PyObject_Vectorcall(cpy_r_r25, cpy_r_r27, 1, 0);
-    CPy_DecRef(cpy_r_r25);
-    if (unlikely(cpy_r_r28 == NULL)) {
+    cpy_r_r24 = CPyStatic_encoding___globals;
+    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3TypeError' */
+    cpy_r_r26 = CPyDict_GetItem(cpy_r_r24, cpy_r_r25);
+    if (unlikely(cpy_r_r26 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL37;
+        goto CPyL38;
     }
-    CPy_DecRef(cpy_r_r22);
-    CPy_Raise(cpy_r_r28);
-    CPy_DecRef(cpy_r_r28);
+    PyObject *cpy_r_r27[1] = {cpy_r_r23};
+    cpy_r_r28 = (PyObject **)&cpy_r_r27;
+    cpy_r_r29 = PyObject_Vectorcall(cpy_r_r26, cpy_r_r28, 1, 0);
+    CPy_DecRef(cpy_r_r26);
+    if (unlikely(cpy_r_r29 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL38;
+    }
+    CPy_DecRef(cpy_r_r23);
+    CPy_Raise(cpy_r_r29);
+    CPy_DecRef(cpy_r_r29);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     } else
-        goto CPyL38;
-CPyL15: ;
-    CPy_Unreachable();
+        goto CPyL39;
 CPyL16: ;
-    cpy_r_r29 = CPyStatic_encoding___globals;
-    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_list_like' */
-    cpy_r_r31 = CPyDict_GetItem(cpy_r_r29, cpy_r_r30);
-    if (unlikely(cpy_r_r31 == NULL)) {
+    CPy_Unreachable();
+CPyL17: ;
+    cpy_r_r30 = CPyStatic_encoding___globals;
+    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_list_like' */
+    cpy_r_r32 = CPyDict_GetItem(cpy_r_r30, cpy_r_r31);
+    if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL39;
-    }
-    PyObject *cpy_r_r32[1] = {cpy_r_obj};
-    cpy_r_r33 = (PyObject **)&cpy_r_r32;
-    cpy_r_r34 = PyObject_Vectorcall(cpy_r_r31, cpy_r_r33, 1, 0);
-    CPy_DecRef(cpy_r_r31);
-    if (unlikely(cpy_r_r34 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL39;
-    }
-    if (unlikely(!PyBool_Check(cpy_r_r34))) {
-        CPy_TypeError("bool", cpy_r_r34); cpy_r_r35 = 2;
-    } else
-        cpy_r_r35 = cpy_r_r34 == Py_True;
-    CPy_DecRef(cpy_r_r34);
-    if (unlikely(cpy_r_r35 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL39;
-    }
-    if (cpy_r_r35) {
         goto CPyL40;
-    } else
-        goto CPyL27;
-CPyL20: ;
-    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '; ' */
-    cpy_r_r37 = CPyDef_encoding___FriendlyJsonSerde____json_list_errors(cpy_r_self, cpy_r_obj);
-    if (unlikely(cpy_r_r37 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
     }
-    cpy_r_r38 = PyUnicode_Join(cpy_r_r36, cpy_r_r37);
-    CPy_DecRef(cpy_r_r37);
+    PyObject *cpy_r_r33[1] = {cpy_r_obj};
+    cpy_r_r34 = (PyObject **)&cpy_r_r33;
+    cpy_r_r35 = PyObject_Vectorcall(cpy_r_r32, cpy_r_r34, 1, 0);
+    CPy_DecRef(cpy_r_r32);
+    if (unlikely(cpy_r_r35 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL40;
+    }
+    if (unlikely(!PyBool_Check(cpy_r_r35))) {
+        CPy_TypeError("bool", cpy_r_r35); cpy_r_r36 = 2;
+    } else
+        cpy_r_r36 = cpy_r_r35 == Py_True;
+    CPy_DecRef(cpy_r_r35);
+    if (unlikely(cpy_r_r36 == 2)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL40;
+    }
+    if (cpy_r_r36) {
+        goto CPyL41;
+    } else
+        goto CPyL28;
+CPyL21: ;
+    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '; ' */
+    cpy_r_r38 = CPyDef_encoding___FriendlyJsonSerde____json_list_errors(cpy_r_self, cpy_r_obj);
     if (unlikely(cpy_r_r38 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     }
-    cpy_r_r39 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'list had unencodable value at index: [' */
-    cpy_r_r40 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ']' */
-    cpy_r_r41 = CPyStr_Build(3, cpy_r_r39, cpy_r_r38, cpy_r_r40);
+    cpy_r_r39 = PyUnicode_Join(cpy_r_r37, cpy_r_r38);
     CPy_DecRef(cpy_r_r38);
-    if (unlikely(cpy_r_r41 == NULL)) {
+    if (unlikely(cpy_r_r39 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     }
-    cpy_r_r42 = CPyStatic_encoding___globals;
-    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3TypeError' */
-    cpy_r_r44 = CPyDict_GetItem(cpy_r_r42, cpy_r_r43);
-    if (unlikely(cpy_r_r44 == NULL)) {
+    cpy_r_r40 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'list had unencodable value at index: [' */
+    cpy_r_r41 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ']' */
+    cpy_r_r42 = CPyStr_Build(3, cpy_r_r40, cpy_r_r39, cpy_r_r41);
+    CPy_DecRef(cpy_r_r39);
+    if (unlikely(cpy_r_r42 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL32;
     }
-    PyObject *cpy_r_r45[1] = {cpy_r_r41};
-    cpy_r_r46 = (PyObject **)&cpy_r_r45;
-    cpy_r_r47 = PyObject_Vectorcall(cpy_r_r44, cpy_r_r46, 1, 0);
-    CPy_DecRef(cpy_r_r44);
-    if (unlikely(cpy_r_r47 == NULL)) {
+    cpy_r_r43 = CPyStatic_encoding___globals;
+    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3TypeError' */
+    cpy_r_r45 = CPyDict_GetItem(cpy_r_r43, cpy_r_r44);
+    if (unlikely(cpy_r_r45 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL41;
+        goto CPyL42;
     }
-    CPy_DecRef(cpy_r_r41);
-    CPy_Raise(cpy_r_r47);
-    CPy_DecRef(cpy_r_r47);
+    PyObject *cpy_r_r46[1] = {cpy_r_r42};
+    cpy_r_r47 = (PyObject **)&cpy_r_r46;
+    cpy_r_r48 = PyObject_Vectorcall(cpy_r_r45, cpy_r_r47, 1, 0);
+    CPy_DecRef(cpy_r_r45);
+    if (unlikely(cpy_r_r48 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
+        goto CPyL42;
+    }
+    CPy_DecRef(cpy_r_r42);
+    CPy_Raise(cpy_r_r48);
+    CPy_DecRef(cpy_r_r48);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
+        goto CPyL32;
     } else
-        goto CPyL42;
-CPyL26: ;
-    CPy_Unreachable();
+        goto CPyL43;
 CPyL27: ;
+    CPy_Unreachable();
+CPyL28: ;
     CPy_Raise(cpy_r_r14);
     CPy_DecRef(cpy_r_r14);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "_friendly_json_encode", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL31;
-    } else
-        goto CPyL43;
-CPyL28: ;
-    CPy_Unreachable();
-CPyL29: ;
-    CPy_Reraise();
-    if (!0) {
-        goto CPyL31;
+        goto CPyL32;
     } else
         goto CPyL44;
-CPyL30: ;
+CPyL29: ;
     CPy_Unreachable();
+CPyL30: ;
+    CPy_Reraise();
+    if (!0) {
+        goto CPyL32;
+    } else
+        goto CPyL45;
 CPyL31: ;
+    CPy_Unreachable();
+CPyL32: ;
     CPy_RestoreExcInfo(cpy_r_r9);
     CPy_DecRef(cpy_r_r9.f0);
     CPy_DecRef(cpy_r_r9.f1);
     CPy_DecRef(cpy_r_r9.f2);
-    cpy_r_r48 = CPy_KeepPropagating();
-    if (!cpy_r_r48) goto CPyL33;
+    cpy_r_r49 = CPy_KeepPropagating();
+    if (!cpy_r_r49) goto CPyL34;
     CPy_Unreachable();
-CPyL33: ;
-    cpy_r_r49 = NULL;
-    return cpy_r_r49;
 CPyL34: ;
+    cpy_r_r50 = NULL;
+    return cpy_r_r50;
+CPyL35: ;
     CPy_INCREF(cpy_r_cls);
     goto CPyL2;
-CPyL35: ;
+CPyL36: ;
     CPy_DecRef(cpy_r_cls);
     goto CPyL6;
-CPyL36: ;
+CPyL37: ;
     CPy_DecRef(cpy_r_r14);
     goto CPyL9;
-CPyL37: ;
-    CPy_DecRef(cpy_r_r22);
-    goto CPyL31;
 CPyL38: ;
+    CPy_DecRef(cpy_r_r23);
+    goto CPyL32;
+CPyL39: ;
     CPy_DecRef(cpy_r_r9.f0);
     CPy_DecRef(cpy_r_r9.f1);
     CPy_DecRef(cpy_r_r9.f2);
-    goto CPyL15;
-CPyL39: ;
-    CPy_DecRef(cpy_r_r14);
-    goto CPyL31;
+    goto CPyL16;
 CPyL40: ;
     CPy_DecRef(cpy_r_r14);
-    goto CPyL20;
+    goto CPyL32;
 CPyL41: ;
-    CPy_DecRef(cpy_r_r41);
-    goto CPyL31;
+    CPy_DecRef(cpy_r_r14);
+    goto CPyL21;
 CPyL42: ;
-    CPy_DecRef(cpy_r_r9.f0);
-    CPy_DecRef(cpy_r_r9.f1);
-    CPy_DecRef(cpy_r_r9.f2);
-    goto CPyL26;
+    CPy_DecRef(cpy_r_r42);
+    goto CPyL32;
 CPyL43: ;
     CPy_DecRef(cpy_r_r9.f0);
     CPy_DecRef(cpy_r_r9.f1);
     CPy_DecRef(cpy_r_r9.f2);
-    goto CPyL28;
+    goto CPyL27;
 CPyL44: ;
     CPy_DecRef(cpy_r_r9.f0);
     CPy_DecRef(cpy_r_r9.f1);
     CPy_DecRef(cpy_r_r9.f2);
-    goto CPyL30;
+    goto CPyL29;
+CPyL45: ;
+    CPy_DecRef(cpy_r_r9.f0);
+    CPy_DecRef(cpy_r_r9.f1);
+    CPy_DecRef(cpy_r_r9.f2);
+    goto CPyL31;
 }
 
 PyObject *CPyPy_encoding___FriendlyJsonSerde____friendly_json_encode(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -101249,13 +101244,7 @@ PyObject *CPyPy_encoding___FriendlyJsonSerde____friendly_json_encode(PyObject *s
         CPy_TypeError("faster_web3._utils.encoding.FriendlyJsonSerde", obj_self); 
         goto fail;
     }
-    PyObject *arg_obj;
-    if (likely(PyDict_Check(obj_obj)))
-        arg_obj = obj_obj;
-    else {
-        CPy_TypeError("dict", obj_obj); 
-        goto fail;
-    }
+    PyObject *arg_obj = obj_obj;
     PyObject *arg_cls;
     if (obj_cls == NULL) {
         arg_cls = NULL;
@@ -101725,13 +101714,7 @@ PyObject *CPyPy_encoding___FriendlyJsonSerde___json_encode(PyObject *self, PyObj
         CPy_TypeError("faster_web3._utils.encoding.FriendlyJsonSerde", obj_self); 
         goto fail;
     }
-    PyObject *arg_obj;
-    if (likely(PyDict_Check(obj_obj)))
-        arg_obj = obj_obj;
-    else {
-        CPy_TypeError("dict", obj_obj); 
-        goto fail;
-    }
+    PyObject *arg_obj = obj_obj;
     PyObject *arg_cls;
     if (obj_cls == NULL) {
         arg_cls = NULL;
@@ -102733,34 +102716,22 @@ PyObject *CPyDef_encoding___to_json(PyObject *cpy_r_obj) {
     PyObject *cpy_r_r1;
     PyObject *cpy_r_r2;
     PyObject *cpy_r_r3;
-    PyObject *cpy_r_r4;
     cpy_r_r0 = CPyDef_encoding___FriendlyJsonSerde();
     if (unlikely(cpy_r_r0 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "to_json", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL4;
+        goto CPyL3;
     }
     cpy_r_r1 = (PyObject *)CPyType_encoding___Web3JsonEncoder;
-    CPy_INCREF(cpy_r_obj);
-    if (likely(PyDict_Check(cpy_r_obj)))
-        cpy_r_r2 = cpy_r_obj;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/encoding.py", "to_json", 319, CPyStatic_encoding___globals, "dict", cpy_r_obj);
-        goto CPyL5;
-    }
-    cpy_r_r3 = CPyDef_encoding___FriendlyJsonSerde___json_encode(cpy_r_r0, cpy_r_r2, cpy_r_r1);
-    CPy_DECREF(cpy_r_r2);
+    cpy_r_r2 = CPyDef_encoding___FriendlyJsonSerde___json_encode(cpy_r_r0, cpy_r_obj, cpy_r_r1);
     CPy_DECREF_NO_IMM(cpy_r_r0);
-    if (unlikely(cpy_r_r3 == NULL)) {
+    if (unlikely(cpy_r_r2 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/encoding.py", "to_json", DIFFCHECK_PLACEHOLDER, CPyStatic_encoding___globals);
-        goto CPyL4;
+        goto CPyL3;
     }
+    return cpy_r_r2;
+CPyL3: ;
+    cpy_r_r3 = NULL;
     return cpy_r_r3;
-CPyL4: ;
-    cpy_r_r4 = NULL;
-    return cpy_r_r4;
-CPyL5: ;
-    CPy_DecRef(cpy_r_r0);
-    goto CPyL4;
 }
 
 PyObject *CPyPy_encoding___to_json(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -124547,7 +124518,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -215061,7 +215032,7 @@ const char * const CPyLit_Str[] = {
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
     "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\006latest",
-    "\a\apending\bearliest\tfinalized\004safe\tis_string\006is_hex\nValueError",
+    "\a\tfinalized\apending\004safe\bearliest\tis_string\006is_hex\nValueError",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_eth_utils.toolz\026faster_web3.exceptions",
     "\003\vRPCEndpoint\021faster_web3.types\"select_method_for_block_identifier",
@@ -215491,7 +215462,7 @@ const int CPyLit_Tuple[] = {
     1353, 69, 252, 71, 154, 1354, 507, 72, 1, 1355, 5, 256, 588, 156,
     1357, 175, 2, 1358, 1359, 1, 1361, 1, 747
 };
-const int CPyLit_FrozenSet[] = {3, 5, 377, 378, 379, 380, 381, 3, 3, 1484, 0, 2, 358, 798};
+const int CPyLit_FrozenSet[] = {3, 5, 377, 378, 379, 380, 381, 3, 3, 1484, 0, 2, 798, 358};
 CPyModule *CPyModule_faster_ens____normalization__internal = NULL;
 CPyModule *CPyModule_faster_ens____normalization;
 PyObject *CPyStatic__normalization___globals;
