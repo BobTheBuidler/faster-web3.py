@@ -215,7 +215,7 @@ class FriendlyJsonSerde:
                 yield f"{index}: because ({exc})"
 
     def _friendly_json_encode(
-        self, obj: Dict[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
+        self, obj: Mapping[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
     ) -> str:
         try:
             return json.dumps(obj, cls=cls)
@@ -243,7 +243,7 @@ class FriendlyJsonSerde:
             raise json.decoder.JSONDecodeError(err_msg, exc.doc, exc.pos)
 
     def json_encode(
-        self, obj: Dict[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
+        self, obj: Mapping[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
     ) -> str:
         try:
             return self._friendly_json_encode(obj, cls=cls)
