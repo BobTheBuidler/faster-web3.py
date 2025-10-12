@@ -93,7 +93,7 @@ else:
             "faster_web3/middleware/attrdict.py",
             "faster_web3/middleware/buffered_gas_estimate.py",
             "faster_web3/middleware/gas_price_strategy.py",
-            "faster_web3/middleware/proof_of_authority.py",
+            # "faster_web3/middleware/proof_of_authority.py",
             "faster_web3/middleware/pythonic.py",
             "faster_web3/middleware/validation.py",
             "faster_web3/tools/benchmark/node.py",
