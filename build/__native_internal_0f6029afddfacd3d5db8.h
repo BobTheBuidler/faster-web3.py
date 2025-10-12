@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_e8baf9563ed8d376e861_H
-#define MYPYC_NATIVE_INTERNAL_e8baf9563ed8d376e861_H
+#ifndef MYPYC_NATIVE_INTERNAL_0f6029afddfacd3d5db8_H
+#define MYPYC_NATIVE_INTERNAL_0f6029afddfacd3d5db8_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_e8baf9563ed8d376e861.h"
+#include "__native_0f6029afddfacd3d5db8.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1598];
+extern PyObject *CPyStatics[1692];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -135,6 +135,11 @@ extern CPyModule *CPyModule_faster_web3____utils___utility_methods__internal;
 extern CPyModule *CPyModule_faster_web3____utils___utility_methods;
 extern PyObject *CPyStatic_type_conversion___globals;
 extern PyObject *CPyStatic_utility_methods___globals;
+extern CPyModule *CPyModule_faster_web3____utils___validation__internal;
+extern CPyModule *CPyModule_faster_web3____utils___validation;
+extern PyObject *CPyStatic_validation___globals;
+extern CPyModule *CPyModule_itertools;
+extern CPyModule *CPyModule_faster_eth_utils___hexadecimal;
 extern CPyModule *CPyModule_faster_web3___auto__internal;
 extern CPyModule *CPyModule_faster_web3___auto;
 extern PyObject *CPyStatic_faster_web3___auto___globals;
@@ -2018,6 +2023,62 @@ extern PyObject *CPyPy_utility_methods___none_in_dict(PyObject *self, PyObject *
 extern char CPyDef_utility_methods___either_set_is_a_subset(PyObject *cpy_r_set1, PyObject *cpy_r_set2, CPyTagged cpy_r_percentage);
 extern PyObject *CPyPy_utility_methods___either_set_is_a_subset(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_utility_methods_____top_level__(void);
+extern PyObject *CPyStatic_validation___KNOWN_REQUEST_TIMEOUT_MESSAGING;
+extern PyTypeObject *CPyType_validation____prepare_selector_collision_msg_env;
+extern PyObject *CPyDef_validation____prepare_selector_collision_msg_env(void);
+extern CPyThreadLocal faster_web3____utils___validation____prepare_selector_collision_msg_envObject *validation____prepare_selector_collision_msg_env_free_instance;
+extern PyTypeObject *CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj;
+extern PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj(void);
+extern CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance;
+extern PyTypeObject *CPyType_validation___validate_abi_env;
+extern PyObject *CPyDef_validation___validate_abi_env(void);
+extern CPyThreadLocal faster_web3____utils___validation___validate_abi_envObject *validation___validate_abi_env_free_instance;
+extern PyTypeObject *CPyType_validation_____mypyc_lambda__1_validate_abi_obj;
+extern PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj(void);
+extern CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *validation_____mypyc_lambda__1_validate_abi_obj_free_instance;
+extern PyTypeObject *CPyType_validation___has_one_val_env;
+extern PyObject *CPyDef_validation___has_one_val_env(void);
+extern CPyThreadLocal faster_web3____utils___validation___has_one_val_envObject *validation___has_one_val_env_free_instance;
+extern PyTypeObject *CPyType_validation_____mypyc_lambda__2_has_one_val_obj;
+extern PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj(void);
+extern CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *validation_____mypyc_lambda__2_has_one_val_obj_free_instance;
+extern PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs);
+extern PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_validation____prepare_selector_collision_msg(PyObject *cpy_r_duplicates);
+extern PyObject *CPyPy_validation____prepare_selector_collision_msg(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs);
+extern PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___validate_abi(PyObject *cpy_r_abi);
+extern PyObject *CPyPy_validation___validate_abi(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___validate_abi_type(PyObject *cpy_r_abi_type);
+extern PyObject *CPyPy_validation___validate_abi_type(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___validate_abi_value(PyObject *cpy_r_abi_type, PyObject *cpy_r_value);
+extern PyObject *CPyPy_validation___validate_abi_value(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___is_not_address_string(PyObject *cpy_r_value);
+extern PyObject *CPyPy_validation___is_not_address_string(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___validate_address(PyObject *cpy_r_value);
+extern PyObject *CPyPy_validation___validate_address(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_val);
+extern PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___has_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_validation___has_one_val(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___assert_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_validation___assert_one_val(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation____validate_subscription_fields(PyObject *cpy_r_response);
+extern PyObject *CPyPy_validation____validate_subscription_fields(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation____raise_bad_response_format(PyObject *cpy_r_response, PyObject *cpy_r_error);
+extern PyObject *CPyPy_validation____raise_bad_response_format(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_validation___raise_error_for_batch_response(PyObject *cpy_r_response, PyObject *cpy_r_logger);
+extern PyObject *CPyPy_validation___raise_error_for_batch_response(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation___validate_rpc_response_and_raise_if_error(PyObject *cpy_r_response, PyObject *cpy_r_error_formatters, char cpy_r_is_subscription_response, PyObject *cpy_r_logger, PyObject *cpy_r_params);
+extern PyObject *CPyPy_validation___validate_rpc_response_and_raise_if_error(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_validation_____top_level__(void);
 extern PyObject *CPyStatic_faster_web3___auto___w3;
 extern char CPyDef_faster_web3___auto_____top_level__(void);
 extern PyObject *CPyStatic_gethdev___w3;
