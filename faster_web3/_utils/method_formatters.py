@@ -1138,7 +1138,11 @@ def get_request_formatters(method_name: RPCEndpoint) -> Callable[[RPCResponse], 
 
 
 def raise_block_not_found(
-    params: Union[Tuple[BlockIdentifier], Tuple[BlockIdentifier, bool]]
+    params: Union[
+        Tuple[BlockIdentifier],
+        Tuple[BlockIdentifier, bool],
+        Tuple[()],
+    ]
 ) -> NoReturn:
     try:
         block_identifier = params[0]
@@ -1153,6 +1157,7 @@ def raise_block_not_found_for_uncle_at_index(
     params: Union[
         Tuple[BlockIdentifier],
         Tuple[BlockIdentifier, Union[HexStr, int]],
+        Tuple[()],
     ]
 ) -> NoReturn:
     try:
