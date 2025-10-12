@@ -215032,7 +215032,7 @@ const char * const CPyLit_Str[] = {
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
     "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\006latest",
-    "\a\tfinalized\apending\004safe\bearliest\tis_string\006is_hex\nValueError",
+    "\a\apending\bearliest\tfinalized\004safe\tis_string\006is_hex\nValueError",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_eth_utils.toolz\026faster_web3.exceptions",
     "\003\vRPCEndpoint\021faster_web3.types\"select_method_for_block_identifier",
