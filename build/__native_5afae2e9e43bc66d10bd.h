@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_95165774e50df86d685c_H
-#define MYPYC_NATIVE_95165774e50df86d685c_H
+#ifndef MYPYC_NATIVE_5afae2e9e43bc66d10bd_H
+#define MYPYC_NATIVE_5afae2e9e43bc66d10bd_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -971,7 +971,7 @@ typedef struct {
     PyObject *___mypyc_temp__4;
     tuple_T3OOO ___mypyc_temp__5;
     PyObject *___mypyc_generator_attribute__last_block;
-    CPyTagged ___mypyc_generator_attribute__last_block_num;
+    PyObject *___mypyc_generator_attribute__last_block_num;
 } faster_web3____utils___contracts___async_parse_block_identifier_int_genObject;
 
 typedef struct {
@@ -1580,6 +1580,87 @@ typedef struct {
     vectorcallfunc vectorcall;
     PyObject *___mypyc_env__;
 } faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___middleware___attrdict___AttributeDictMiddlewareObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__response;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+} faster_web3___middleware___attrdict___async_response_processor_AttributeDictMiddleware_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___middleware___buffered_gas_estimate___BufferedGasEstimateMiddlewareObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__transaction;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    CPyTagged ___mypyc_generator_attribute__gas_estimate;
+} faster_web3___middleware___buffered_gas_estimate___async_request_processor_BufferedGasEstimateMiddleware_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___middleware___gas_price_strategy___GasPriceStrategyMiddlewareObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__transaction;
+    PyObject *___mypyc_generator_attribute__w3;
+    PyObject *___mypyc_generator_attribute__generated_gas_price;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__latest_block;
+} faster_web3___middleware___gas_price_strategy___async_request_processor_GasPriceStrategyMiddleware_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    CPyTagged _web3_chain_id;
+} faster_web3___middleware___validation____transaction_param_validator_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3___middleware___validation_____mypyc_lambda__0__transaction_param_validator_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__method;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__request_formatters;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    CPyTagged ___mypyc_generator_attribute__w3_chain_id;
+    PyObject *___mypyc_temp__2;
+    int64_t ___mypyc_temp__3;
+} faster_web3___middleware___validation___async_build_method_validators_genObject;
 
 typedef struct {
     PyObject_HEAD

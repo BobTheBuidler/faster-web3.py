@@ -1,11 +1,15 @@
 from typing import (
     TYPE_CHECKING,
     Any,
+    Union,
     cast,
 )
 
 from faster_eth_utils.toolz import (
     assoc,
+)
+from mypy_extensions import (
+    mypyc_attr,
 )
 
 from faster_web3._utils.method_formatters import (
@@ -18,6 +22,9 @@ from faster_web3._utils.utility_methods import (
 )
 from faster_web3.constants import (
     DYNAMIC_FEE_TXN_PARAMS,
+)
+from faster_web3.datastructures import (
+    AttributeDict,
 )
 from faster_web3.exceptions import (
     InvalidTransaction,
@@ -41,7 +48,9 @@ if TYPE_CHECKING:
 
 
 def validate_transaction_params(
-    transaction: TxParams, latest_block: BlockData, strategy_based_gas_price: Wei
+    transaction: TxParams,
+    latest_block: Union[BlockData, AttributeDict],
+    strategy_based_gas_price: Union[Wei, None],
 ) -> TxParams:
     # gas price strategy explicitly set:
     if (
@@ -79,6 +88,7 @@ def validate_transaction_params(
     return transaction
 
 
+@mypyc_attr(allow_interpreted_subclasses=True)
 class GasPriceStrategyMiddleware(Web3Middleware):
     """
     - Uses a gas price strategy if one is set. This is only supported for
