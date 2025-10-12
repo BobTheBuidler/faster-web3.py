@@ -137,9 +137,9 @@ def remove_key_if(
 
 
 def apply_error_formatters(
-    error_formatters: Union[Callable[..., Any], None],
+    error_formatters: Union[Callable[..., TReturn], None],
     response: RPCResponse,
-) -> RPCResponse:
+) -> Union[RPCResponse, TReturn]:  # sourcery skip: assign-if-exp
     if error_formatters:
         return error_formatters(response)
     else:
@@ -147,10 +147,10 @@ def apply_error_formatters(
 
 
 def apply_null_result_formatters(
-    null_result_formatters: Union[Callable[..., Any], None],
+    null_result_formatters: Union[Callable[..., TReturn], None],
     response: RPCResponse,
     params: Optional[Any] = None,
-) -> RPCResponse:
+) -> Union[RPCResponse, TReturn]:  # sourcery skip: assign-if-exp
     if null_result_formatters:
         return null_result_formatters(params)
     else:
