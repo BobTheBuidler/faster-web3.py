@@ -61,14 +61,6 @@ typedef struct tuple_T3IOO {
 } tuple_T3IOO;
 #endif
 
-#ifndef MYPYC_DECLARED_tuple_T2OC
-#define MYPYC_DECLARED_tuple_T2OC
-typedef struct tuple_T2OC {
-    PyObject *f0;
-    char f1;
-} tuple_T2OC;
-#endif
-
 #ifndef MYPYC_DECLARED_tuple_T2OI
 #define MYPYC_DECLARED_tuple_T2OI
 typedef struct tuple_T2OI {
