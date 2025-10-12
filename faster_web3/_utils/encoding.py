@@ -100,7 +100,7 @@ def hex_encode_abi_type(
         raise Web3ValueError(f"Unsupported ABI type: {abi_type}")
 
 
-def to_hex_twos_compliment(value: Any, bit_size: int) -> HexStr:
+def to_hex_twos_compliment(value: int, bit_size: int) -> HexStr:
     """
     Converts integer value to twos compliment hex representation with given bit_size
     """
@@ -109,8 +109,7 @@ def to_hex_twos_compliment(value: Any, bit_size: int) -> HexStr:
 
     value = (1 << bit_size) + value
     hex_value = hex(value)
-    hex_value = HexStr(hex_value.rstrip("L"))
-    return hex_value
+    return HexStr(hex_value.rstrip("L"))
 
 
 def to_hex_with_size(value: Any, bit_size: int) -> HexStr:
@@ -212,8 +211,7 @@ class FriendlyJsonSerde:
         self, obj: Dict[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
     ) -> str:
         try:
-            encoded = json.dumps(obj, cls=cls)
-            return encoded
+            return json.dumps(obj, cls=cls)
         except TypeError as full_exception:
             if hasattr(obj, "items"):
                 item_errors = "; ".join(self._json_mapping_errors(obj))
@@ -230,8 +228,7 @@ class FriendlyJsonSerde:
 
     def json_decode(self, json_str: str) -> Dict[Any, Any]:
         try:
-            decoded = json.loads(json_str)
-            return decoded
+            return json.loads(json_str)
         except json.decoder.JSONDecodeError as exc:
             err_msg = f"Could not decode {json_str!r} because of {exc}."
             # Calling code may rely on catching JSONDecodeError to recognize bad json
@@ -262,10 +259,7 @@ class DynamicArrayPackedEncoder(BaseArrayEncoder):
     is_dynamic = True
 
     def encode(self, value: Sequence[Any]) -> bytes:
-        encoded_elements = self.encode_elements(value)  # type: ignore[no-untyped-call]
-        encoded_value = encoded_elements
-
-        return encoded_value
+        return self.encode_elements(value)
 
 
 #  TODO: Replace with eth-abi packed encoder once web3 requires eth-abi>=2
