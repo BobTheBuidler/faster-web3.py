@@ -37,7 +37,9 @@ def is_not_null(value: Any) -> bool:
     return value is not None
 
 
-remap_extradata_to_poa_fields: Final = apply_key_map(
+remap_extradata_to_poa_fields: Final[
+    Callable[[Dict[Any, Any]], Dict[Any, Any]]
+] = apply_key_map(
     {
         "extraData": "proofOfAuthorityData",
     }
