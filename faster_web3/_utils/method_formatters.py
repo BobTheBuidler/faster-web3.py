@@ -134,7 +134,7 @@ to_ascii_if_bytes: Final = apply_formatter_if(is_bytes, bytes_to_ascii)
 to_integer_if_hex: Final = apply_formatter_if(is_string, hex_to_integer)
 to_hex_if_integer: Final = apply_formatter_if(is_integer, integer_to_hex)
 
-is_false: Final[TypeGuard[Literal[False]]] = partial(operator.is_, False)
+is_false: Final[Callable[[Any], TypeGuard[Literal[False]]]] = partial(operator.is_, False)
 is_not_false: Final = complement(is_false)
 is_not_null: Final = complement(is_null)
 
