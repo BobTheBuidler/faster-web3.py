@@ -28,7 +28,7 @@ def reject_recursive_repeats(to_wrap: Callable[..., Any]) -> Callable[..., Any]:
     already_called: Set[Tuple[int, ...]] = set()
 
     try:
-        to_wrap.__already_called = already_called
+        to_wrap.__already_called = already_called  # type: ignore [attr-defined]
     except AttributeError:
         # we can't set arbitrary attributes on native functions
         # but this isn't necessary for faster-web3.py
