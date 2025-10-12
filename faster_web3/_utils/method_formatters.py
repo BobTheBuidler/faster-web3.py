@@ -1137,7 +1137,9 @@ def get_request_formatters(method_name: RPCEndpoint) -> Callable[[RPCResponse], 
     return compose(*formatters)
 
 
-def raise_block_not_found(params: Tuple[BlockIdentifier, bool]) -> NoReturn:
+def raise_block_not_found(
+    params: Union[Tuple[BlockIdentifier], Tuple[BlockIdentifier, bool]]
+) -> NoReturn:
     try:
         block_identifier = params[0]
         message = f"Block with id: {block_identifier!r} not found."
@@ -1148,7 +1150,10 @@ def raise_block_not_found(params: Tuple[BlockIdentifier, bool]) -> NoReturn:
 
 
 def raise_block_not_found_for_uncle_at_index(
-    params: Tuple[BlockIdentifier, Union[HexStr, int]],
+    params: Union[
+        Tuple[BlockIdentifier],
+        Tuple[BlockIdentifier, Union[HexStr, int]],
+    ]
 ) -> NoReturn:
     try:
         block_identifier = params[0]
@@ -1163,7 +1168,7 @@ def raise_block_not_found_for_uncle_at_index(
     raise BlockNotFound(message)
 
 
-def raise_transaction_not_found(params: Tuple[_Hash32]) -> NoReturn:
+def raise_transaction_not_found(params: Union[Tuple[_Hash32], Tuple[()]]) -> NoReturn:
     try:
         transaction_hash = params[0]
         message = f"Transaction with hash: {transaction_hash!r} not found."
