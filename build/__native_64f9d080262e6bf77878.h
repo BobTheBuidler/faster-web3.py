@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_0f6029afddfacd3d5db8_H
-#define MYPYC_NATIVE_0f6029afddfacd3d5db8_H
+#ifndef MYPYC_NATIVE_64f9d080262e6bf77878_H
+#define MYPYC_NATIVE_64f9d080262e6bf77878_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -985,6 +985,53 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
 } faster_web3____utils___datatypes_____new___3_PropertyCheckingFactory_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3____utils___encoding___FriendlyJsonSerdeObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    char _is_dynamic;
+} faster_web3____utils___encoding___DynamicArrayPackedEncoderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3____utils___encoding___Web3JsonEncoderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__mapping;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    CPyTagged ___mypyc_temp__1;
+    int64_t ___mypyc_temp__2;
+    PyObject *___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__key;
+    PyObject *___mypyc_generator_attribute__val;
+    tuple_T3OOO ___mypyc_temp__4;
+    PyObject *___mypyc_generator_attribute__exc;
+} faster_web3____utils___encoding____json_mapping_errors_FriendlyJsonSerde_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__iterable;
+    int32_t ___mypyc_next_label__;
+    CPyTagged ___mypyc_temp__5;
+    CPyTagged ___mypyc_generator_attribute__index;
+    PyObject *___mypyc_temp__6;
+    PyObject *___mypyc_temp__7;
+    PyObject *___mypyc_generator_attribute__element;
+    tuple_T3OOO ___mypyc_temp__8;
+    PyObject *___mypyc_generator_attribute__exc;
+} faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject;
 
 typedef struct {
     PyObject_HEAD
