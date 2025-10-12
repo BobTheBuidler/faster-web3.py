@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_e8baf9563ed8d376e861_H
-#define MYPYC_NATIVE_e8baf9563ed8d376e861_H
+#ifndef MYPYC_NATIVE_0f6029afddfacd3d5db8_H
+#define MYPYC_NATIVE_0f6029afddfacd3d5db8_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -1196,6 +1196,54 @@ typedef struct {
     PyObject *___mypyc_temp__3;
     PyObject *___mypyc_generator_attribute__f;
 } faster_web3____utils___method_formatters___apply_module_to_formatters_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_duplicates;
+    PyObject *_dup_sel;
+} faster_web3____utils___validation____prepare_selector_collision_msg_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_abi;
+    PyObject *_e;
+    PyObject *_functions;
+    PyObject *_selectors;
+} faster_web3____utils___validation___validate_abi_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_args;
+    PyObject *_kwargs;
+    PyObject *_vals;
+} faster_web3____utils___validation___has_one_val_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject;
 
 typedef struct {
     PyObject_HEAD
