@@ -9,6 +9,7 @@ from typing import (
     Iterator,
     Optional,
     TypeVar,
+    Union,
 )
 
 from eth_typing import (
@@ -26,7 +27,6 @@ from faster_eth_utils.toolz import (
     compose,
     curry,
     dissoc,
-    pipe,
 )
 
 from faster_web3._utils.decorators import (
@@ -137,23 +137,21 @@ def remove_key_if(
 
 
 def apply_error_formatters(
-    error_formatters: Callable[..., Any],
+    error_formatters: Union[Callable[..., Any], None],
     response: RPCResponse,
 ) -> RPCResponse:
     if error_formatters:
-        formatted_resp = pipe(response, error_formatters)
-        return formatted_resp
+        return error_formatters(response)
     else:
         return response
 
 
 def apply_null_result_formatters(
-    null_result_formatters: Callable[..., Any],
+    null_result_formatters: Union[Callable[..., Any], None],
     response: RPCResponse,
     params: Optional[Any] = None,
 ) -> RPCResponse:
     if null_result_formatters:
-        formatted_resp = pipe(params, null_result_formatters)
-        return formatted_resp
+        return null_result_formatters(params)
     else:
         return response
