@@ -172,16 +172,15 @@ def hexstr_if_str(
         text=text), eg~ to_bytes, to_text, to_hex, to_int, etc
     @param hexstr_or_primitive in bytes, str, or int.
     """
-    if isinstance(hexstr_or_primitive, str):
-        (primitive, hexstr) = (None, hexstr_or_primitive)
-        if remove_0x_prefix(HexStr(hexstr)) and not is_hex(hexstr):
-            raise Web3ValueError(
-                "when sending a str, it must be a hex string. "
-                f"Got: {hexstr_or_primitive!r}"
-            )
-    else:
-        (primitive, hexstr) = (hexstr_or_primitive, None)
-    return to_type(primitive, hexstr=hexstr)
+    if not isinstance(hexstr_or_primitive, str):
+        return to_type(hexstr_or_primitive)
+    hexstr = hexstr_or_primitive
+    if remove_0x_prefix(HexStr(hexstr)) and not is_hex(hexstr):
+        raise Web3ValueError(
+            "when sending a str, it must be a hex string. "
+            f"Got: {hexstr_or_primitive!r}"
+        )
+    return to_type(hexstr=hexstr)
 
 
 class FriendlyJsonSerde:
