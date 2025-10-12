@@ -6,6 +6,7 @@ from typing import (
     Callable,
     Dict,
     Iterable,
+    Mapping,
     Optional,
     Sequence,
     Type,
@@ -307,7 +308,7 @@ class Web3JsonEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 
-def to_json(obj: Dict[Any, Any]) -> str:
+def to_json(obj: Mapping[Any, Any]) -> str:
     """
     Convert a complex object (like a transaction object) to a JSON string
     """
