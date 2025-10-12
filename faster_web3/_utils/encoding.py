@@ -9,6 +9,7 @@ from typing import (
     Optional,
     Sequence,
     Type,
+    TypeVar,
     Union,
 )
 
@@ -62,6 +63,9 @@ from faster_web3.exceptions import (
     Web3TypeError,
     Web3ValueError,
 )
+
+
+TReturn = TypeVar("TReturn")
 
 
 def hex_encode_abi_type(
@@ -163,8 +167,8 @@ def text_if_str(
 
 @curry
 def hexstr_if_str(
-    to_type: Callable[..., HexStr], hexstr_or_primitive: Union[Primitives, HexStr, str]
-) -> HexStr:
+    to_type: Callable[..., TReturn], hexstr_or_primitive: Union[Primitives, HexStr, str]
+) -> TReturn:
     """
     Convert to a type, assuming that strings can be only hexstr (not unicode text)
 
