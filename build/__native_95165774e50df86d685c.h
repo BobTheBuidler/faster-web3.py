@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_17c38a30493dc15f08e1_H
-#define MYPYC_NATIVE_17c38a30493dc15f08e1_H
+#ifndef MYPYC_NATIVE_95165774e50df86d685c_H
+#define MYPYC_NATIVE_95165774e50df86d685c_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -1091,6 +1091,76 @@ typedef struct {
     tuple_T3OOO ___mypyc_temp__1;
     PyObject *___mypyc_generator_attribute__fee_history;
 } faster_web3____utils___fee_utils___async_fee_history_priority_fee_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_func;
+    PyObject *_recurse;
+    PyObject *_data;
+} faster_web3____utils___formatters___recursive_map_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___formatters___recurse_recursive_map_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_value;
+    PyObject *_inner;
+} faster_web3____utils___formatters___static_return_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___formatters___inner_static_return_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_result;
+    PyObject *_inner;
+    PyObject *_value;
+} faster_web3____utils___formatters___static_result_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___formatters___inner_static_result_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_key_mappings;
+    PyObject *_get_key;
+    PyObject *_apply_key_map_curried;
+} faster_web3____utils___formatters___apply_key_map_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___formatters___get_key_apply_key_map_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___formatters___apply_key_map_curried_apply_key_map_objObject;
 
 typedef struct {
     PyObject_HEAD

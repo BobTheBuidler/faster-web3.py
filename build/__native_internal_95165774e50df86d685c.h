@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_17c38a30493dc15f08e1_H
-#define MYPYC_NATIVE_INTERNAL_17c38a30493dc15f08e1_H
+#ifndef MYPYC_NATIVE_INTERNAL_95165774e50df86d685c_H
+#define MYPYC_NATIVE_INTERNAL_95165774e50df86d685c_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_17c38a30493dc15f08e1.h"
+#include "__native_95165774e50df86d685c.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1780];
+extern PyObject *CPyStatics[1792];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -118,6 +118,11 @@ extern CPyModule *CPyModule_faster_eth_abi;
 extern CPyModule *CPyModule_faster_web3____utils___fee_utils__internal;
 extern CPyModule *CPyModule_faster_web3____utils___fee_utils;
 extern PyObject *CPyStatic_fee_utils___globals;
+extern CPyModule *CPyModule_faster_web3____utils___formatters__internal;
+extern CPyModule *CPyModule_faster_web3____utils___formatters;
+extern PyObject *CPyStatic_formatters___globals;
+extern CPyModule *CPyModule_collections___abc;
+extern CPyModule *CPyModule_faster_eth_utils___curried;
 extern CPyModule *CPyModule_faster_web3____utils___http__internal;
 extern CPyModule *CPyModule_faster_web3____utils___http;
 extern PyObject *CPyStatic_http___globals;
@@ -134,11 +139,9 @@ extern CPyModule *CPyModule_faster_web3____utils___math;
 extern PyObject *CPyStatic_math___globals;
 extern PyObject *CPyStatic_method_formatters___globals;
 extern CPyModule *CPyModule_operator;
-extern CPyModule *CPyModule_faster_eth_utils___curried;
 extern CPyModule *CPyModule_typing_extensions;
 extern CPyModule *CPyModule_faster_web3____utils___error_formatters_utils;
 extern CPyModule *CPyModule_faster_web3____utils___filters;
-extern CPyModule *CPyModule_faster_web3____utils___formatters;
 extern CPyModule *CPyModule_faster_web3____utils___type_conversion__internal;
 extern CPyModule *CPyModule_faster_web3____utils___type_conversion;
 extern CPyModule *CPyModule_faster_web3____utils___utility_methods__internal;
@@ -1761,6 +1764,78 @@ extern PyObject *CPyPy_fee_utils___async_fee_history_priority_fee_gen_____await_
 extern PyObject *CPyDef_fee_utils___async_fee_history_priority_fee(PyObject *cpy_r_async_eth);
 extern PyObject *CPyPy_fee_utils___async_fee_history_priority_fee(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_fee_utils_____top_level__(void);
+extern PyTypeObject *CPyType_formatters___recursive_map_env;
+extern PyObject *CPyDef_formatters___recursive_map_env(void);
+extern CPyThreadLocal faster_web3____utils___formatters___recursive_map_envObject *formatters___recursive_map_env_free_instance;
+extern PyTypeObject *CPyType_formatters___recurse_recursive_map_obj;
+extern PyObject *CPyDef_formatters___recurse_recursive_map_obj(void);
+extern CPyThreadLocal faster_web3____utils___formatters___recurse_recursive_map_objObject *formatters___recurse_recursive_map_obj_free_instance;
+extern PyTypeObject *CPyType_formatters___static_return_env;
+extern PyObject *CPyDef_formatters___static_return_env(void);
+extern CPyThreadLocal faster_web3____utils___formatters___static_return_envObject *formatters___static_return_env_free_instance;
+extern PyTypeObject *CPyType_formatters___inner_static_return_obj;
+extern PyObject *CPyDef_formatters___inner_static_return_obj(void);
+extern CPyThreadLocal faster_web3____utils___formatters___inner_static_return_objObject *formatters___inner_static_return_obj_free_instance;
+extern PyTypeObject *CPyType_formatters___static_result_env;
+extern PyObject *CPyDef_formatters___static_result_env(void);
+extern CPyThreadLocal faster_web3____utils___formatters___static_result_envObject *formatters___static_result_env_free_instance;
+extern PyTypeObject *CPyType_formatters___inner_static_result_obj;
+extern PyObject *CPyDef_formatters___inner_static_result_obj(void);
+extern CPyThreadLocal faster_web3____utils___formatters___inner_static_result_objObject *formatters___inner_static_result_obj_free_instance;
+extern PyTypeObject *CPyType_formatters___apply_key_map_env;
+extern PyObject *CPyDef_formatters___apply_key_map_env(void);
+extern CPyThreadLocal faster_web3____utils___formatters___apply_key_map_envObject *formatters___apply_key_map_env_free_instance;
+extern PyTypeObject *CPyType_formatters___get_key_apply_key_map_obj;
+extern PyObject *CPyDef_formatters___get_key_apply_key_map_obj(void);
+extern CPyThreadLocal faster_web3____utils___formatters___get_key_apply_key_map_objObject *formatters___get_key_apply_key_map_obj_free_instance;
+extern PyTypeObject *CPyType_formatters___apply_key_map_curried_apply_key_map_obj;
+extern PyObject *CPyDef_formatters___apply_key_map_curried_apply_key_map_obj(void);
+extern CPyThreadLocal faster_web3____utils___formatters___apply_key_map_curried_apply_key_map_objObject *formatters___apply_key_map_curried_apply_key_map_obj_free_instance;
+extern CPyTagged CPyDef_formatters___hex_to_integer(PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___hex_to_integer(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_formatters_to_args(PyObject *cpy_r_formatters);
+extern PyObject *CPyPy_formatters___apply_formatters_to_args(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___map_collection(PyObject *cpy_r_func, PyObject *cpy_r_collection);
+extern PyObject *CPyPy_formatters___map_collection(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___recurse_recursive_map_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_formatters___recurse_recursive_map_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___recurse_recursive_map_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_item);
+extern PyObject *CPyPy_formatters___recurse_recursive_map_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___recursive_map(PyObject *cpy_r_func, PyObject *cpy_r_data);
+extern PyObject *CPyPy_formatters___recursive_map(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___inner_static_return_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_formatters___inner_static_return_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___inner_static_return_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_formatters___inner_static_return_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___static_return(PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___static_return(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___inner_static_result_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_formatters___inner_static_result_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___inner_static_result_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_formatters___inner_static_result_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___static_result(PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___static_result(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___get_key_apply_key_map_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_formatters___get_key_apply_key_map_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___get_key_apply_key_map_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_key);
+extern PyObject *CPyPy_formatters___get_key_apply_key_map_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_key_map_curried_apply_key_map_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_formatters___apply_key_map_curried_apply_key_map_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_key_map_curried_apply_key_map_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___apply_key_map_curried_apply_key_map_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_key_map(PyObject *cpy_r_key_mappings);
+extern PyObject *CPyPy_formatters___apply_key_map(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_formatters___is_array_of_strings(PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___is_array_of_strings(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_formatters___is_array_of_dicts(PyObject *cpy_r_value);
+extern PyObject *CPyPy_formatters___is_array_of_dicts(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___remove_key_if(PyObject *cpy_r_key, PyObject *cpy_r_remove_if, PyObject *cpy_r_input_dict);
+extern PyObject *CPyPy_formatters___remove_key_if(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_error_formatters(PyObject *cpy_r_error_formatters, PyObject *cpy_r_response);
+extern PyObject *CPyPy_formatters___apply_error_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_formatters___apply_null_result_formatters(PyObject *cpy_r_null_result_formatters, PyObject *cpy_r_response, PyObject *cpy_r_params);
+extern PyObject *CPyPy_formatters___apply_null_result_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_formatters_____top_level__(void);
 extern PyObject *CPyDef_http___construct_user_agent(PyObject *cpy_r_module, PyObject *cpy_r_class_name);
 extern PyObject *CPyPy_http___construct_user_agent(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_http_____top_level__(void);
