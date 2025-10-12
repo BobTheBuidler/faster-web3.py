@@ -13,6 +13,7 @@ from typing import (
     Collection,
     Coroutine,
     Dict,
+    Final,
     Iterable,
     List,
     Mapping,
@@ -22,6 +23,7 @@ from typing import (
     Type,
     Union,
     cast,
+    final,
 )
 
 from faster_eth_abi import (
@@ -637,22 +639,26 @@ def abi_data_tree(
     return list(map(abi_sub_tree, types, data))
 
 
-@curry
-def data_tree_map(
-    func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]], data_tree: Any
-) -> "ABITypedData":
+@final
+class data_tree_map:
     """
     Map func to every ABITypedData element in the tree. func will
     receive two args: abi_type, and data
     """
 
-    def map_to_typed_data(elements: Any) -> "ABITypedData":
-        if isinstance(elements, ABITypedData) and elements.abi_type is not None:
-            return ABITypedData(func(*elements))
-        else:
-            return elements
+    def __init__(self, func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]]) -> None:
+        self.func: Final = func
+    
+    def __call__(self, data_tree: Any) -> "ABITypedData":
+        func = self.func
 
-    return recursive_map(map_to_typed_data, data_tree)
+        def map_to_typed_data(elements: Any) -> "ABITypedData":
+            if isinstance(elements, ABITypedData) and elements.abi_type is not None:
+                return ABITypedData(func(*elements))
+            else:
+                return elements
+
+        return recursive_map(map_to_typed_data, data_tree)
 
 
 class ABITypedData(namedtuple("ABITypedData", "abi_type, data")):
