@@ -84,7 +84,9 @@ def _check_extradata_length(val: Any) -> Any:
     return val
 
 
-def _transaction_normalizer(transaction: TxParams) -> TxParams:
+def _transaction_normalizer(transaction: Any) -> Any: # TxParams) -> TxParams:
+    if not isinstance(transaction, dict):
+        raise TypeError(f"{transaction} is not a dict")
     return dissoc(transaction, "chainId")
 
 
