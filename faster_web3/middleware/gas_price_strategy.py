@@ -7,6 +7,9 @@ from typing import (
 from faster_eth_utils.toolz import (
     assoc,
 )
+from mypy_extensions import (
+    mypyc_attr,
+)
 
 from faster_web3._utils.method_formatters import (
     to_hex_if_integer,
@@ -79,6 +82,7 @@ def validate_transaction_params(
     return transaction
 
 
+@mypyc_attr(allow_interpreted_subclasses=True)
 class GasPriceStrategyMiddleware(Web3Middleware):
     """
     - Uses a gas price strategy if one is set. This is only supported for

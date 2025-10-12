@@ -5,6 +5,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     cast,
+    final,
 )
 
 from faster_web3.datastructures import (
@@ -43,6 +44,7 @@ def _handle_async_response(response: "RPCResponse") -> "RPCResponse":
     return response
 
 
+@final
 class AttributeDictMiddleware(Web3Middleware, ABC):
     """
     Converts any result which is a dictionary into an `AttributeDict`.
@@ -70,6 +72,3 @@ class AttributeDictMiddleware(Web3Middleware, ABC):
             return response
         else:
             return _handle_async_response(response)
-
-
-AttributeDictMiddleware = AttributeDictMiddleware

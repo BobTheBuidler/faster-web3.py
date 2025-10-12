@@ -1,5 +1,7 @@
 from typing import (
     TYPE_CHECKING,
+    Any,
+    Final,
 )
 
 from faster_eth_utils import (
@@ -9,10 +11,8 @@ from faster_eth_utils.curried import (
     apply_formatter_if,
     apply_formatters_to_dict,
     apply_key_map,
-    is_null,
 )
 from faster_eth_utils.toolz import (
-    complement,
     compose,
 )
 from faster_hexbytes import (
@@ -32,26 +32,29 @@ if TYPE_CHECKING:
         Web3,
     )
 
-is_not_null = complement(is_null)
 
-remap_extradata_to_poa_fields = apply_key_map(
+def is_not_null(value: Any) -> bool:
+    return value is not None
+
+
+remap_extradata_to_poa_fields: Final = apply_key_map(
     {
         "extraData": "proofOfAuthorityData",
     }
 )
 
-pythonic_extradata_to_poa = apply_formatters_to_dict(
+pythonic_extradata_to_poa: Final = apply_formatters_to_dict(
     {
         "proofOfAuthorityData": HexBytes,
     }
 )
 
-extradata_to_poa_cleanup = compose(
+extradata_to_poa_cleanup: Final = compose(
     pythonic_extradata_to_poa, remap_extradata_to_poa_fields
 )
 
 
-ExtraDataToPOAMiddleware = FormattingMiddlewareBuilder.build(
+ExtraDataToPOAMiddleware: Final = FormattingMiddlewareBuilder.build(
     result_formatters={
         RPC.eth_getBlockByHash: apply_formatter_if(
             is_not_null, extradata_to_poa_cleanup

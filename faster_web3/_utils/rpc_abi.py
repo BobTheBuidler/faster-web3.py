@@ -2,7 +2,7 @@ from typing import (
     Any,
     Callable,
     Dict,
-    Iterable,
+    Iterator,
     Sequence,
     Tuple,
     Union,
@@ -227,7 +227,7 @@ def apply_abi_formatters_to_dict(
 def abi_request_formatters(
     normalizers: Sequence[Callable[[TypeStr, Any], Tuple[TypeStr, Any]]],
     abis: Dict[RPCEndpoint, Any],
-) -> Iterable[Tuple[RPCEndpoint, Callable[..., Any]]]:
+) -> Iterator[Tuple[RPCEndpoint, Callable[..., Any]]]:
     for method, abi_types in abis.items():
         if isinstance(abi_types, list):
             yield method, map_abi_data(normalizers, abi_types)
