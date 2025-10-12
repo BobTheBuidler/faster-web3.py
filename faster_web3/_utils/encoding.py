@@ -5,12 +5,14 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Final,
     Iterable,
     Optional,
     Sequence,
     Type,
     TypeVar,
     Union,
+    final,
 )
 
 from faster_eth_abi.encoding import (
@@ -187,6 +189,7 @@ def hexstr_if_str(
     return to_type(hexstr=hexstr)
 
 
+@final
 class FriendlyJsonSerde:
     """
     Friendly JSON serializer & deserializer
@@ -258,8 +261,9 @@ def to_4byte_hex(hex_or_str_or_bytes: Union[HexStr, str, bytes, int]) -> HexStr:
     return pad_hex(hex_str, size_of_4bytes)
 
 
+@final
 class DynamicArrayPackedEncoder(BaseArrayEncoder):
-    is_dynamic = True
+    is_dynamic: Final = True
 
     def encode(self, value: Sequence[Any]) -> bytes:
         return self.encode_elements(value)
