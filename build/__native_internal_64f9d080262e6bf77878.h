@@ -1622,6 +1622,7 @@ extern PyObject *CPyPy_datatypes_____new___3_PropertyCheckingFactory_obj_____get
 extern PyObject *CPyDef_datatypes_____new___3_PropertyCheckingFactory_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_mcs, PyObject *cpy_r_name, tuple_T1O cpy_r_bases, PyObject *cpy_r_namespace, PyObject *cpy_r_normalizers);
 extern PyObject *CPyPy_datatypes_____new___3_PropertyCheckingFactory_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_datatypes_____top_level__(void);
+extern char CPyStatic_encoding___DynamicArrayPackedEncoder___is_dynamic;
 extern PyTypeObject *CPyType_encoding___FriendlyJsonSerde;
 extern PyObject *CPyDef_encoding___FriendlyJsonSerde(void);
 extern PyTypeObject *CPyType_encoding___DynamicArrayPackedEncoder;
