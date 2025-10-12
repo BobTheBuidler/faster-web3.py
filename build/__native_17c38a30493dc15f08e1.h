@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_64f9d080262e6bf77878_H
-#define MYPYC_NATIVE_64f9d080262e6bf77878_H
+#ifndef MYPYC_NATIVE_17c38a30493dc15f08e1_H
+#define MYPYC_NATIVE_17c38a30493dc15f08e1_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -985,6 +985,55 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
 } faster_web3____utils___datatypes_____new___3_PropertyCheckingFactory_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_to_wrap;
+    PyObject *_already_called;
+    PyObject *_wrapped;
+} faster_web3____utils___decorators___reject_recursive_repeats_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___decorators___wrapped_reject_recursive_repeats_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_replace_message;
+    PyObject *_decorator;
+} faster_web3____utils___decorators___deprecated_for_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *___mypyc_env__;
+    PyObject *_to_wrap;
+    PyObject *_wrapper;
+    PyObject *_replace_message;
+    PyObject *_decorator;
+} faster_web3____utils___decorators___decorator_deprecated_for_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___decorators___decorator_deprecated_for_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___decorators___wrapper_deprecated_for_decorator_objObject;
 
 typedef struct {
     PyObject_HEAD

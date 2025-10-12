@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_64f9d080262e6bf77878_H
-#define MYPYC_NATIVE_INTERNAL_64f9d080262e6bf77878_H
+#ifndef MYPYC_NATIVE_INTERNAL_17c38a30493dc15f08e1_H
+#define MYPYC_NATIVE_INTERNAL_17c38a30493dc15f08e1_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_64f9d080262e6bf77878.h"
+#include "__native_17c38a30493dc15f08e1.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1766];
+extern PyObject *CPyStatics[1780];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -103,6 +103,9 @@ extern CPyModule *CPyModule_faster_web3___utils___abi;
 extern CPyModule *CPyModule_faster_web3____utils___datatypes__internal;
 extern CPyModule *CPyModule_faster_web3____utils___datatypes;
 extern PyObject *CPyStatic_datatypes___globals;
+extern CPyModule *CPyModule_faster_web3____utils___decorators__internal;
+extern CPyModule *CPyModule_faster_web3____utils___decorators;
+extern PyObject *CPyStatic_decorators___globals;
 extern PyObject *CPyStatic_encoding___globals;
 extern CPyModule *CPyModule_re;
 extern CPyModule *CPyModule_faster_eth_abi___encoding;
@@ -1622,6 +1625,42 @@ extern PyObject *CPyPy_datatypes_____new___3_PropertyCheckingFactory_obj_____get
 extern PyObject *CPyDef_datatypes_____new___3_PropertyCheckingFactory_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_mcs, PyObject *cpy_r_name, tuple_T1O cpy_r_bases, PyObject *cpy_r_namespace, PyObject *cpy_r_normalizers);
 extern PyObject *CPyPy_datatypes_____new___3_PropertyCheckingFactory_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_datatypes_____top_level__(void);
+extern PyObject *CPyStatic_decorators___get_thread_id;
+extern PyTypeObject *CPyType_decorators___reject_recursive_repeats_env;
+extern PyObject *CPyDef_decorators___reject_recursive_repeats_env(void);
+extern CPyThreadLocal faster_web3____utils___decorators___reject_recursive_repeats_envObject *decorators___reject_recursive_repeats_env_free_instance;
+extern PyTypeObject *CPyType_decorators___wrapped_reject_recursive_repeats_obj;
+extern PyObject *CPyDef_decorators___wrapped_reject_recursive_repeats_obj(void);
+extern CPyThreadLocal faster_web3____utils___decorators___wrapped_reject_recursive_repeats_objObject *decorators___wrapped_reject_recursive_repeats_obj_free_instance;
+extern PyTypeObject *CPyType_decorators___deprecated_for_env;
+extern PyObject *CPyDef_decorators___deprecated_for_env(void);
+extern CPyThreadLocal faster_web3____utils___decorators___deprecated_for_envObject *decorators___deprecated_for_env_free_instance;
+extern PyTypeObject *CPyType_decorators___decorator_deprecated_for_env;
+extern PyObject *CPyDef_decorators___decorator_deprecated_for_env(void);
+extern CPyThreadLocal faster_web3____utils___decorators___decorator_deprecated_for_envObject *decorators___decorator_deprecated_for_env_free_instance;
+extern PyTypeObject *CPyType_decorators___decorator_deprecated_for_obj;
+extern PyObject *CPyDef_decorators___decorator_deprecated_for_obj(void);
+extern CPyThreadLocal faster_web3____utils___decorators___decorator_deprecated_for_objObject *decorators___decorator_deprecated_for_obj_free_instance;
+extern PyTypeObject *CPyType_decorators___wrapper_deprecated_for_decorator_obj;
+extern PyObject *CPyDef_decorators___wrapper_deprecated_for_decorator_obj(void);
+extern CPyThreadLocal faster_web3____utils___decorators___wrapper_deprecated_for_decorator_objObject *decorators___wrapper_deprecated_for_decorator_obj_free_instance;
+extern PyObject *CPyDef_decorators___wrapped_reject_recursive_repeats_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_decorators___wrapped_reject_recursive_repeats_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___wrapped_reject_recursive_repeats_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_args);
+extern PyObject *CPyPy_decorators___wrapped_reject_recursive_repeats_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___reject_recursive_repeats(PyObject *cpy_r_to_wrap);
+extern PyObject *CPyPy_decorators___reject_recursive_repeats(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___wrapper_deprecated_for_decorator_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_decorators___wrapper_deprecated_for_decorator_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___wrapper_deprecated_for_decorator_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_decorators___wrapper_deprecated_for_decorator_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___decorator_deprecated_for_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_decorators___decorator_deprecated_for_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___decorator_deprecated_for_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_to_wrap);
+extern PyObject *CPyPy_decorators___decorator_deprecated_for_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_decorators___deprecated_for(PyObject *cpy_r_replace_message);
+extern PyObject *CPyPy_decorators___deprecated_for(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_decorators_____top_level__(void);
 extern char CPyStatic_encoding___DynamicArrayPackedEncoder___is_dynamic;
 extern PyTypeObject *CPyType_encoding___FriendlyJsonSerde;
 extern PyObject *CPyDef_encoding___FriendlyJsonSerde(void);
