@@ -1972,11 +1972,11 @@ extern PyObject *CPyDef_method_formatters___combine_formatters(PyObject *cpy_r_f
 extern PyObject *CPyPy_method_formatters___combine_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___get_request_formatters(PyObject *cpy_r_method_name);
 extern PyObject *CPyPy_method_formatters___get_request_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___raise_block_not_found(tuple_T2OC cpy_r_params);
+extern PyObject *CPyDef_method_formatters___raise_block_not_found(PyObject *cpy_r_params);
 extern PyObject *CPyPy_method_formatters___raise_block_not_found(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___raise_block_not_found_for_uncle_at_index(tuple_T2OO cpy_r_params);
+extern PyObject *CPyDef_method_formatters___raise_block_not_found_for_uncle_at_index(PyObject *cpy_r_params);
 extern PyObject *CPyPy_method_formatters___raise_block_not_found_for_uncle_at_index(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___raise_transaction_not_found(tuple_T1O cpy_r_params);
+extern PyObject *CPyDef_method_formatters___raise_transaction_not_found(PyObject *cpy_r_params);
 extern PyObject *CPyPy_method_formatters___raise_transaction_not_found(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___raise_transaction_not_found_with_index(tuple_T2OI cpy_r_params);
 extern PyObject *CPyPy_method_formatters___raise_transaction_not_found_with_index(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
