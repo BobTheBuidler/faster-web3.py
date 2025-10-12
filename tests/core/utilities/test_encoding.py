@@ -81,7 +81,7 @@ def test_hex_encode_abi_type(abi_type, value, expected):
 def test_hexstr_if_str_passthrough(val):
     to_type = Mock(return_value="zoot")
     assert hexstr_if_str(to_type, val) == "zoot"
-    assert to_type.call_args == ((val,), {"hexstr": None})
+    assert to_type.call_args == ((val,), {})
 
 
 def test_hexstr_if_str_curried():
@@ -95,7 +95,7 @@ def test_hexstr_if_str_curried():
 def test_hexstr_if_str_on_valid_hex(val):
     to_type = Mock(return_value="zoot")
     assert hexstr_if_str(to_type, val) == "zoot"
-    assert to_type.call_args == ((None,), {"hexstr": val})
+    assert to_type.call_args == ((), {"hexstr": val})
 
 
 @given(st.text())
