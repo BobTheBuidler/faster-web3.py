@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_time_based(void)
+PyInit_method_formatters(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("e8baf9563ed8d376e861__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___gas_strategies___time_based");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___method_formatters");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "e8baf9563ed8d376e861__mypyc.init_faster_web3___gas_strategies___time_based");
+    void *init_func = PyCapsule_GetPointer(capsule, "e8baf9563ed8d376e861__mypyc.init_faster_web3____utils___method_formatters");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_time_based(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_time_based(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_method_formatters(); }

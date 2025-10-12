@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_01be6d551d5308175663_H
-#define MYPYC_NATIVE_01be6d551d5308175663_H
+#ifndef MYPYC_NATIVE_e8baf9563ed8d376e861_H
+#define MYPYC_NATIVE_e8baf9563ed8d376e861_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -61,6 +61,39 @@ typedef struct tuple_T3IOO {
 } tuple_T3IOO;
 #endif
 
+#ifndef MYPYC_DECLARED_tuple_T2OC
+#define MYPYC_DECLARED_tuple_T2OC
+typedef struct tuple_T2OC {
+    PyObject *f0;
+    char f1;
+} tuple_T2OC;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2OI
+#define MYPYC_DECLARED_tuple_T2OI
+typedef struct tuple_T2OI {
+    PyObject *f0;
+    CPyTagged f1;
+} tuple_T2OI;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2T2OOT2OO
+#define MYPYC_DECLARED_tuple_T2T2OOT2OO
+typedef struct tuple_T2T2OOT2OO {
+    tuple_T2OO f0;
+    tuple_T2OO f1;
+} tuple_T2T2OOT2OO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T3T2OOT2OOT2OO
+#define MYPYC_DECLARED_tuple_T3T2OOT2OOT2OO
+typedef struct tuple_T3T2OOT2OOT2OO {
+    tuple_T2OO f0;
+    tuple_T2OO f1;
+    tuple_T2OO f2;
+} tuple_T3T2OOT2OOT2OO;
+#endif
+
 #ifndef MYPYC_DECLARED_tuple_T2T2OOO
 #define MYPYC_DECLARED_tuple_T2T2OOO
 typedef struct tuple_T2T2OOO {
@@ -85,14 +118,6 @@ typedef struct tuple_T4OOOO {
     PyObject *f2;
     PyObject *f3;
 } tuple_T4OOOO;
-#endif
-
-#ifndef MYPYC_DECLARED_tuple_T2OI
-#define MYPYC_DECLARED_tuple_T2OI
-typedef struct tuple_T2OI {
-    PyObject *f0;
-    CPyTagged f1;
-} tuple_T2OI;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T15OOOOOOOOOOOOOOO
@@ -1114,6 +1139,71 @@ typedef struct {
     PyObject *___mypyc_temp__40;
     int64_t ___mypyc_temp__41;
 } faster_web3____utils___http_session_manager____async_close_evicted_sessions_HTTPSessionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__0_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__1_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__2_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__3_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__4_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__5_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___method_formatters_____mypyc_lambda__6_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__formatter_maps;
+    PyObject *___mypyc_generator_attribute__method_name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    PyObject *___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__formatter_map;
+} faster_web3____utils___method_formatters___combine_formatters_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__formatters;
+    PyObject *___mypyc_generator_attribute__module;
+    PyObject *___mypyc_generator_attribute__method_name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    PyObject *___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__f;
+} faster_web3____utils___method_formatters___apply_module_to_formatters_genObject;
 
 typedef struct {
     PyObject_HEAD
