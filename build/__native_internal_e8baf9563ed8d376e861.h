@@ -1803,7 +1803,7 @@ extern char CPyDef_math_____top_level__(void);
 extern PyObject *CPyStatic_method_formatters___to_ascii_if_bytes;
 extern PyObject *CPyStatic_method_formatters___to_integer_if_hex;
 extern PyObject *CPyStatic_method_formatters___to_hex_if_integer;
-extern char CPyStatic_method_formatters___is_false;
+extern PyObject *CPyStatic_method_formatters___is_false;
 extern PyObject *CPyStatic_method_formatters___is_not_false;
 extern PyObject *CPyStatic_method_formatters___is_not_null;
 extern PyObject *CPyStatic_method_formatters___ACCESS_LIST_FORMATTER;
