@@ -50,7 +50,7 @@ if TYPE_CHECKING:
 def validate_transaction_params(
     transaction: TxParams,
     latest_block: Union[BlockData, AttributeDict],
-    strategy_based_gas_price: Wei,
+    strategy_based_gas_price: Union[Wei, None],
 ) -> TxParams:
     # gas price strategy explicitly set:
     if (
