@@ -1,5 +1,7 @@
-from .eth_module import (
+from .async_eth_module import (
     AsyncEthModuleTest,
+)
+from .eth_module import (
     EthModuleTest,
 )
 from .go_ethereum_admin_module import (
