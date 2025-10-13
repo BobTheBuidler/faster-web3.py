@@ -8,7 +8,7 @@ from mypy_extensions import (
 )
 
 
-@mypyc_attr(allow_interpreted_subclasses=True)
+@mypyc_attr(native_class=False)
 class ENSException(Exception):
     """
     Base class for all ENS Errors
