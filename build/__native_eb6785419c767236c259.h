@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_95165774e50df86d685c_H
-#define MYPYC_NATIVE_95165774e50df86d685c_H
+#ifndef MYPYC_NATIVE_eb6785419c767236c259_H
+#define MYPYC_NATIVE_eb6785419c767236c259_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -204,6 +204,66 @@ typedef struct {
     PyObject *__resolver_contract;
     PyObject *__reverse_resolver_contract;
 } faster_ens___base_ens___BaseENSObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___ENSValueErrorObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___AddressMismatchObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___UnauthorizedErrorObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___UnownedNameObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___ResolverNotFoundObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___UnsupportedFunctionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___BidTooLowObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___InvalidBidHashObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___InvalidLabelObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___OversizeTransactionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___UnderfundedBidObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___exceptions___ENSValidationErrorObject;
 
 typedef struct {
     PyObject_HEAD

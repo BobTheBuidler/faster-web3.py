@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_95165774e50df86d685c_H
-#define MYPYC_NATIVE_INTERNAL_95165774e50df86d685c_H
+#ifndef MYPYC_NATIVE_INTERNAL_eb6785419c767236c259_H
+#define MYPYC_NATIVE_INTERNAL_eb6785419c767236c259_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_95165774e50df86d685c.h"
+#include "__native_eb6785419c767236c259.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1792];
+extern PyObject *CPyStatics[1808];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -24,6 +24,7 @@ extern CPyModule *CPyModule_enum;
 extern CPyModule *CPyModule_pathlib;
 extern CPyModule *CPyModule_typing;
 extern CPyModule *CPyModule_pyunormalize;
+extern CPyModule *CPyModule_faster_ens___exceptions__internal;
 extern CPyModule *CPyModule_faster_ens___exceptions;
 extern CPyModule *CPyModule_faster_ens___auto__internal;
 extern CPyModule *CPyModule_faster_ens___auto;
@@ -41,6 +42,8 @@ extern CPyModule *CPyModule_faster_ens___utils;
 extern CPyModule *CPyModule_faster_ens___constants__internal;
 extern CPyModule *CPyModule_faster_ens___constants;
 extern PyObject *CPyStatic_faster_ens___constants___globals;
+extern PyObject *CPyStatic_exceptions___globals;
+extern CPyModule *CPyModule_idna;
 extern PyObject *CPyStatic_faster_ens___utils___globals;
 extern CPyModule *CPyModule_datetime;
 extern CPyModule *CPyModule_warnings;
@@ -320,6 +323,22 @@ extern PyObject *CPyStatic_faster_ens___constants___ENS_CONTENT_HASH_INTERFACE_I
 extern PyObject *CPyStatic_faster_ens___constants___ENS_MULTICHAIN_ADDRESS_INTERFACE_ID;
 extern PyObject *CPyStatic_faster_ens___constants___ENS_EXTENDED_RESOLVER_INTERFACE_ID;
 extern char CPyDef_faster_ens___constants_____top_level__(void);
+extern PyTypeObject *CPyType_exceptions___ENSException;
+extern PyTypeObject *CPyType_exceptions___ENSValueError;
+extern PyTypeObject *CPyType_exceptions___ENSTypeError;
+extern PyTypeObject *CPyType_exceptions___AddressMismatch;
+extern PyTypeObject *CPyType_exceptions___InvalidName;
+extern PyTypeObject *CPyType_exceptions___UnauthorizedError;
+extern PyTypeObject *CPyType_exceptions___UnownedName;
+extern PyTypeObject *CPyType_exceptions___ResolverNotFound;
+extern PyTypeObject *CPyType_exceptions___UnsupportedFunction;
+extern PyTypeObject *CPyType_exceptions___BidTooLow;
+extern PyTypeObject *CPyType_exceptions___InvalidBidHash;
+extern PyTypeObject *CPyType_exceptions___InvalidLabel;
+extern PyTypeObject *CPyType_exceptions___OversizeTransaction;
+extern PyTypeObject *CPyType_exceptions___UnderfundedBid;
+extern PyTypeObject *CPyType_exceptions___ENSValidationError;
+extern char CPyDef_exceptions_____top_level__(void);
 extern PyObject *CPyStatic_faster_ens___utils___default;
 extern PyObject *CPyDef_faster_ens___utils___Web3(void);
 extern PyObject *CPyPy_faster_ens___utils___Web3(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
