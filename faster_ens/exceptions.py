@@ -8,6 +8,7 @@ from mypy_extensions import (
 )
 
 
+@mypyc_attr(allow_interpreted_subclasses=True)
 class ENSException(Exception):
     """
     Base class for all ENS Errors
@@ -23,6 +24,7 @@ class ENSValueError(ENSException, ValueError):
 
 
 @final
+@mypyc_attr(native_class=False)
 class ENSTypeError(ENSException, TypeError):
     """
     An ENS exception wrapper for `TypeError`, for better control over
@@ -39,6 +41,7 @@ class AddressMismatch(ENSException):
     """
 
 
+@final
 @mypyc_attr(native_class=False)
 class InvalidName(idna.IDNAError, ENSException):
     """
