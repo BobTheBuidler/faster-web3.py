@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_eb6785419c767236c259_H
-#define MYPYC_NATIVE_eb6785419c767236c259_H
+#ifndef MYPYC_NATIVE_c4d35c44eb52f85ea738_H
+#define MYPYC_NATIVE_c4d35c44eb52f85ea738_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -86,6 +86,63 @@ typedef struct tuple_T3T2OOT2OOT2OO {
 } tuple_T3T2OOT2OOT2OO;
 #endif
 
+#ifndef MYPYC_DECLARED_tuple_T2II
+#define MYPYC_DECLARED_tuple_T2II
+typedef struct tuple_T2II {
+    CPyTagged f0;
+    CPyTagged f1;
+} tuple_T2II;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T4OOOO
+#define MYPYC_DECLARED_tuple_T4OOOO
+typedef struct tuple_T4OOOO {
+    PyObject *f0;
+    PyObject *f1;
+    PyObject *f2;
+    PyObject *f3;
+} tuple_T4OOOO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2OC
+#define MYPYC_DECLARED_tuple_T2OC
+typedef struct tuple_T2OC {
+    PyObject *f0;
+    char f1;
+} tuple_T2OC;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2IC
+#define MYPYC_DECLARED_tuple_T2IC
+typedef struct tuple_T2IC {
+    CPyTagged f0;
+    char f1;
+} tuple_T2IC;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T9T2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OO
+#define MYPYC_DECLARED_tuple_T9T2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OO
+typedef struct tuple_T9T2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OO {
+    tuple_T2OO f0;
+    tuple_T2OO f1;
+    tuple_T2OO f2;
+    tuple_T2OO f3;
+    tuple_T2OO f4;
+    tuple_T2OO f5;
+    tuple_T2OO f6;
+    tuple_T2OO f7;
+    tuple_T2OO f8;
+} tuple_T9T2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OOT2OO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2IO
+#define MYPYC_DECLARED_tuple_T2IO
+typedef struct tuple_T2IO {
+    CPyTagged f0;
+    PyObject *f1;
+} tuple_T2IO;
+#endif
+
 #ifndef MYPYC_DECLARED_tuple_T2T2OOO
 #define MYPYC_DECLARED_tuple_T2T2OOO
 typedef struct tuple_T2T2OOO {
@@ -100,16 +157,6 @@ typedef struct tuple_T2OT3OOO {
     PyObject *f0;
     tuple_T3OOO f1;
 } tuple_T2OT3OOO;
-#endif
-
-#ifndef MYPYC_DECLARED_tuple_T4OOOO
-#define MYPYC_DECLARED_tuple_T4OOOO
-typedef struct tuple_T4OOOO {
-    PyObject *f0;
-    PyObject *f1;
-    PyObject *f2;
-    PyObject *f3;
-} tuple_T4OOOO;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T15OOOOOOOOOOOOOOO
@@ -1422,6 +1469,108 @@ typedef struct {
     PyObject *___mypyc_temp__3;
     PyObject *___mypyc_generator_attribute__f;
 } faster_web3____utils___method_formatters___apply_module_to_formatters_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3____utils___module_testing___eth_module___EthModuleTestObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_w3;
+    PyObject *_gas_price_strategy;
+    PyObject *_self;
+    PyObject *_keyfile_account_address_dual_type;
+    CPyTagged _max_fee;
+    CPyTagged _max_priority_fee;
+    PyObject *_txn_params;
+} faster_web3____utils___module_testing___eth_module___test_gas_price_from_strategy_bypassed_for_dynamic_fee_txn_EthModuleTest_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___module_testing___eth_module___gas_price_strategy_test_gas_price_from_strategy_bypassed_for_dynamic_fee_txn_EthModuleTest_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_w3;
+    PyObject *_gas_price_strategy;
+    PyObject *_self;
+    PyObject *_keyfile_account_address_dual_type;
+    PyObject *_txn_params;
+} faster_web3____utils___module_testing___eth_module___test_gas_price_from_strategy_bypassed_for_dynamic_fee_txn_no_tip_EthModuleTest_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___module_testing___eth_module___gas_price_strategy_test_gas_price_from_strategy_bypassed_for_dynamic_fee_txn_no_tip_EthModuleTest_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    CPyTagged _two_gwei_in_wei;
+    PyObject *_gas_price_strategy;
+    PyObject *_self;
+    PyObject *_w3;
+    PyObject *_keyfile_account_address_dual_type;
+    PyObject *_txn_params;
+} faster_web3____utils___module_testing___eth_module___test_gas_price_strategy_hex_value_EthModuleTest_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___module_testing___eth_module___gas_price_strategy_test_gas_price_strategy_hex_value_EthModuleTest_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    CPyTagged _two_gwei_in_wei;
+    PyObject *_higher_gas_price_strategy;
+    PyObject *_self;
+    PyObject *_w3;
+    PyObject *_keyfile_account_address;
+    PyObject *_txn_params;
+    PyObject *_txn_hash;
+} faster_web3____utils___module_testing___eth_module___test_eth_replace_transaction_gas_price_defaulting_strategy_higher_EthModuleTest_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___module_testing___eth_module___higher_gas_price_strategy_test_eth_replace_transaction_gas_price_defaulting_strategy_higher_EthModuleTest_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_lower_gas_price_strategy;
+    PyObject *_self;
+    PyObject *_w3;
+    PyObject *_keyfile_account_address;
+    CPyTagged _gas_price;
+    PyObject *_txn_params;
+    PyObject *_txn_hash;
+} faster_web3____utils___module_testing___eth_module___test_eth_replace_transaction_gas_price_defaulting_strategy_lower_EthModuleTest_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___module_testing___eth_module___lower_gas_price_strategy_test_eth_replace_transaction_gas_price_defaulting_strategy_lower_EthModuleTest_objObject;
 
 typedef struct {
     PyObject_HEAD
