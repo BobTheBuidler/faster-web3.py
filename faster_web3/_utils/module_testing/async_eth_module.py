@@ -1,3 +1,4 @@
+# mypy: disable-error-code="comparison-overlap"
 import pytest
 import asyncio
 import json
