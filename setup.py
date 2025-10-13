@@ -85,6 +85,7 @@ else:
             "faster_web3/_utils/http_session_manager.py",
             "faster_web3/_utils/math.py",
             "faster_web3/_utils/method_formatters.py",
+            "faster_web3/_utils/module_testing/eth_module.py",
             "faster_web3/_utils/type_conversion.py",
             "faster_web3/_utils/utility_methods.py",
             "faster_web3/_utils/validation.py",

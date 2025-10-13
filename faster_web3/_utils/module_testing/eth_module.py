@@ -10,6 +10,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    Final,
     List,
     Type,
     Union,
@@ -101,19 +102,19 @@ from faster_web3.types import (
     Wei,
 )
 
-UNKNOWN_ADDRESS = ChecksumAddress(
+UNKNOWN_ADDRESS: Final = ChecksumAddress(
     HexAddress(HexStr("0xdEADBEeF00000000000000000000000000000000"))
 )
 
-UNKNOWN_HASH = HexStr(
+UNKNOWN_HASH: Final = HexStr(
     "0xdeadbeef00000000000000000000000000000000000000000000000000000000"
 )
 # "test offchain lookup" as an abi-encoded string
-OFFCHAIN_LOOKUP_TEST_DATA = "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b7570000000000000000000000000"  # noqa: E501
-OFFCHAIN_LOOKUP_4BYTE_DATA = "0x556f1830"
-OFFCHAIN_LOOKUP_RETURN_DATA = "00000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000001a0da96d05a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000002c68747470733a2f2f776562332e70792f676174657761792f7b73656e6465727d2f7b646174617d2e6a736f6e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001768747470733a2f2f776562332e70792f6761746577617900000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b757000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b7570000000000000000000000000"  # noqa: E501
+OFFCHAIN_LOOKUP_TEST_DATA: Final = "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b7570000000000000000000000000"  # noqa: E501
+OFFCHAIN_LOOKUP_4BYTE_DATA: Final = "0x556f1830"
+OFFCHAIN_LOOKUP_RETURN_DATA: Final = "00000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000001a0da96d05a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000002c68747470733a2f2f776562332e70792f676174657761792f7b73656e6465727d2f7b646174617d2e6a736f6e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001768747470733a2f2f776562332e70792f6761746577617900000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b757000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001474657374206f6666636861696e206c6f6f6b7570000000000000000000000000"  # noqa: E501
 # "web3py" as an abi-encoded string
-WEB3PY_AS_HEXBYTES = "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000067765623370790000000000000000000000000000000000000000000000000000"  # noqa: E501
+WEB3PY_AS_HEXBYTES: Final = "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000067765623370790000000000000000000000000000000000000000000000000000"  # noqa: E501
 
 
 if TYPE_CHECKING:
@@ -267,14 +268,15 @@ class AsyncEthModuleTest:
         result = await async_w3.eth.sign_transaction(txn_params)
         signatory_account = async_w3.eth.account.recover_transaction(result["raw"])
         assert async_keyfile_account_address_dual_type == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["maxFeePerGas"] == txn_params["maxFeePerGas"]
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["maxFeePerGas"] == txn_params["maxFeePerGas"]
         assert (
-            result["tx"]["maxPriorityFeePerGas"] == txn_params["maxPriorityFeePerGas"]
+            tx["maxPriorityFeePerGas"] == txn_params["maxPriorityFeePerGas"]
         )
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     @pytest.mark.asyncio
     async def test_eth_sign_typed_data(
@@ -401,11 +403,12 @@ class AsyncEthModuleTest:
         result = await async_w3.eth.sign_transaction(txn_params)
         signatory_account = async_w3.eth.account.recover_transaction(result["raw"])
         assert async_keyfile_account_address == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["gasPrice"] == txn_params["gasPrice"]
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["gasPrice"] == txn_params["gasPrice"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     @pytest.mark.asyncio
     async def test_async_eth_sign_transaction_hex_fees(
@@ -423,14 +426,15 @@ class AsyncEthModuleTest:
         result = await async_w3.eth.sign_transaction(txn_params)
         signatory_account = async_w3.eth.account.recover_transaction(result["raw"])
         assert async_keyfile_account_address == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["maxFeePerGas"] == int(str(txn_params["maxFeePerGas"]), 16)
-        assert result["tx"]["maxPriorityFeePerGas"] == int(
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["maxFeePerGas"] == int(str(txn_params["maxFeePerGas"]), 16)
+        assert tx["maxPriorityFeePerGas"] == int(
             str(txn_params["maxPriorityFeePerGas"]), 16
         )
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     @pytest.mark.asyncio
     async def test_async_eth_sign_transaction_ens_names(
@@ -451,15 +455,16 @@ class AsyncEthModuleTest:
             result = await async_w3.eth.sign_transaction(txn_params)
             signatory_account = async_w3.eth.account.recover_transaction(result["raw"])
             assert async_keyfile_account_address == signatory_account
-            assert result["tx"]["to"] == async_keyfile_account_address
-            assert result["tx"]["value"] == txn_params["value"]
-            assert result["tx"]["gas"] == txn_params["gas"]
-            assert result["tx"]["maxFeePerGas"] == txn_params["maxFeePerGas"]
+            tx = result["tx"]
+            assert tx["to"] == async_keyfile_account_address
+            assert tx["value"] == txn_params["value"]
+            assert tx["gas"] == txn_params["gas"]
+            assert tx["maxFeePerGas"] == txn_params["maxFeePerGas"]
             assert (
-                result["tx"]["maxPriorityFeePerGas"]
+                tx["maxPriorityFeePerGas"]
                 == txn_params["maxPriorityFeePerGas"]
             )
-            assert result["tx"]["nonce"] == txn_params["nonce"]
+            assert tx["nonce"] == txn_params["nonce"]
 
     @pytest.mark.asyncio
     async def test_eth_send_transaction(
@@ -3115,11 +3120,12 @@ class EthModuleTest:
         result = w3.eth.sign_transaction(txn_params)
         signatory_account = w3.eth.account.recover_transaction(result["raw"])
         assert keyfile_account_address == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["gasPrice"] == txn_params["gasPrice"]
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["gasPrice"] == txn_params["gasPrice"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     def test_eth_sign_transaction(
         self, w3: "Web3", keyfile_account_address: ChecksumAddress
@@ -3136,14 +3142,15 @@ class EthModuleTest:
         result = w3.eth.sign_transaction(txn_params)
         signatory_account = w3.eth.account.recover_transaction(result["raw"])
         assert keyfile_account_address == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["maxFeePerGas"] == txn_params["maxFeePerGas"]
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["maxFeePerGas"] == txn_params["maxFeePerGas"]
         assert (
-            result["tx"]["maxPriorityFeePerGas"] == txn_params["maxPriorityFeePerGas"]
+            tx["maxPriorityFeePerGas"] == txn_params["maxPriorityFeePerGas"]
         )
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     def test_eth_sign_transaction_hex_fees(
         self, w3: "Web3", keyfile_account_address: ChecksumAddress
@@ -3160,14 +3167,15 @@ class EthModuleTest:
         result = w3.eth.sign_transaction(txn_params)
         signatory_account = w3.eth.account.recover_transaction(result["raw"])
         assert keyfile_account_address == signatory_account
-        assert result["tx"]["to"] == txn_params["to"]
-        assert result["tx"]["value"] == txn_params["value"]
-        assert result["tx"]["gas"] == txn_params["gas"]
-        assert result["tx"]["maxFeePerGas"] == int(str(txn_params["maxFeePerGas"]), 16)
-        assert result["tx"]["maxPriorityFeePerGas"] == int(
+        tx = result["tx"]
+        assert tx["to"] == txn_params["to"]
+        assert tx["value"] == txn_params["value"]
+        assert tx["gas"] == txn_params["gas"]
+        assert tx["maxFeePerGas"] == int(str(txn_params["maxFeePerGas"]), 16)
+        assert tx["maxPriorityFeePerGas"] == int(
             str(txn_params["maxPriorityFeePerGas"]), 16
         )
-        assert result["tx"]["nonce"] == txn_params["nonce"]
+        assert tx["nonce"] == txn_params["nonce"]
 
     def test_eth_sign_transaction_ens_names(
         self, w3: "Web3", keyfile_account_address: ChecksumAddress
@@ -3185,15 +3193,16 @@ class EthModuleTest:
             result = w3.eth.sign_transaction(txn_params)
             signatory_account = w3.eth.account.recover_transaction(result["raw"])
             assert keyfile_account_address == signatory_account
-            assert result["tx"]["to"] == keyfile_account_address
-            assert result["tx"]["value"] == txn_params["value"]
-            assert result["tx"]["gas"] == txn_params["gas"]
-            assert result["tx"]["maxFeePerGas"] == txn_params["maxFeePerGas"]
+            tx = result["tx"]
+            assert tx["to"] == keyfile_account_address
+            assert tx["value"] == txn_params["value"]
+            assert tx["gas"] == txn_params["gas"]
+            assert tx["maxFeePerGas"] == txn_params["maxFeePerGas"]
             assert (
-                result["tx"]["maxPriorityFeePerGas"]
+                tx["maxPriorityFeePerGas"]
                 == txn_params["maxPriorityFeePerGas"]
             )
-            assert result["tx"]["nonce"] == txn_params["nonce"]
+            assert tx["nonce"] == txn_params["nonce"]
 
     def test_eth_send_transaction_addr_checksum_required(
         self, w3: "Web3", keyfile_account_address: ChecksumAddress
