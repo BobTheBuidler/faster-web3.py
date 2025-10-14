@@ -64,6 +64,7 @@ if skip_mypyc:
 else:
     ext_modules = mypycify(
         [
+            "faster_ens/__init__.py",
             "faster_ens/_normalization.py",
             "faster_ens/abis.py",
             # "faster_ens/async_ens.py",  figure out `default`
