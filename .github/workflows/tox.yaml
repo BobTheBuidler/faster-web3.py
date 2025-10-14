@@ -79,7 +79,9 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ccache
 
       - name: Print ccache config
-        run: ccache -k
+        run: |
+          ccache --version
+          ccache --help
         
       - name: Show ccache stats before build
         run: ccache -s
