@@ -16,8 +16,193 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
-#include "__native_eb6785419c767236c259.h"
-#include "__native_internal_eb6785419c767236c259.h"
+#include "__native_a275922bdb158aae1fea.h"
+#include "__native_internal_a275922bdb158aae1fea.h"
+static PyMethodDef faster_ensmodule_methods[] = {
+    {NULL, NULL, 0, NULL}
+};
+
+int CPyExec_faster_ens(PyObject *module)
+{
+    PyObject* modname = NULL;
+    modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_ens__internal, "__name__");
+    CPyStatic_faster_ens___globals = PyModule_GetDict(CPyModule_faster_ens__internal);
+    if (unlikely(CPyStatic_faster_ens___globals == NULL))
+        goto fail;
+    if (CPyGlobalsInit() < 0)
+        goto fail;
+    char result = CPyDef_faster_ens_____top_level__();
+    if (result == 2)
+        goto fail;
+    Py_DECREF(modname);
+    return 0;
+    fail:
+    Py_CLEAR(CPyModule_faster_ens__internal);
+    Py_CLEAR(modname);
+    return -1;
+}
+static struct PyModuleDef faster_ensmodule = {
+    PyModuleDef_HEAD_INIT,
+    "faster_ens",
+    NULL, /* docstring */
+    0,       /* size of per-interpreter state of the module */
+    faster_ensmodule_methods,
+    NULL,
+};
+
+PyObject *CPyInit_faster_ens(void)
+{
+    if (CPyModule_faster_ens__internal) {
+        Py_INCREF(CPyModule_faster_ens__internal);
+        return CPyModule_faster_ens__internal;
+    }
+    CPyModule_faster_ens__internal = PyModule_Create(&faster_ensmodule);
+    if (unlikely(CPyModule_faster_ens__internal == NULL))
+        goto fail;
+    if (CPyExec_faster_ens(CPyModule_faster_ens__internal) != 0)
+        goto fail;
+    return CPyModule_faster_ens__internal;
+    fail:
+    return NULL;
+}
+
+char CPyDef_faster_ens_____top_level__(void) {
+    PyObject *cpy_r_r0;
+    PyObject *cpy_r_r1;
+    char cpy_r_r2;
+    PyObject *cpy_r_r3;
+    PyObject *cpy_r_r4;
+    PyObject *cpy_r_r5;
+    PyObject *cpy_r_r6;
+    PyObject *cpy_r_r7;
+    PyObject *cpy_r_r8;
+    PyObject *cpy_r_r9;
+    PyObject *cpy_r_r10;
+    PyObject *cpy_r_r11;
+    PyObject *cpy_r_r12;
+    PyObject *cpy_r_r13;
+    PyObject *cpy_r_r14;
+    PyObject *cpy_r_r15;
+    PyObject *cpy_r_r16;
+    PyObject *cpy_r_r17;
+    PyObject *cpy_r_r18;
+    PyObject *cpy_r_r19;
+    PyObject *cpy_r_r20;
+    PyObject *cpy_r_r21;
+    PyObject *cpy_r_r22;
+    PyObject *cpy_r_r23;
+    PyObject *cpy_r_r24;
+    PyObject *cpy_r_r25;
+    PyObject *cpy_r_r26;
+    PyObject *cpy_r_r27;
+    PyObject *cpy_r_r28;
+    PyObject *cpy_r_r29;
+    PyObject *cpy_r_r30;
+    PyObject *cpy_r_r31;
+    PyObject *cpy_r_r32;
+    PyObject *cpy_r_r33;
+    int32_t cpy_r_r34;
+    char cpy_r_r35;
+    char cpy_r_r36;
+    cpy_r_r0 = CPyModule_builtins;
+    cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
+    if (cpy_r_r2) goto CPyL3;
+    cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'builtins' */
+    cpy_r_r4 = PyImport_Import(cpy_r_r3);
+    if (unlikely(cpy_r_r4 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", -1, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    CPyModule_builtins = cpy_r_r4;
+    CPy_INCREF(CPyModule_builtins);
+    CPy_DECREF(cpy_r_r4);
+CPyL3: ;
+    cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('AsyncENS',) */
+    cpy_r_r6 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_ens.async_ens' */
+    cpy_r_r7 = CPyStatic_faster_ens___globals;
+    cpy_r_r8 = CPyImport_ImportFromMany(cpy_r_r6, cpy_r_r5, cpy_r_r5, cpy_r_r7);
+    if (unlikely(cpy_r_r8 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    CPyModule_faster_ens___async_ens = cpy_r_r8;
+    CPy_INCREF(CPyModule_faster_ens___async_ens);
+    CPy_DECREF(cpy_r_r8);
+    cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BaseENS',) */
+    cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_ens.base_ens' */
+    cpy_r_r11 = CPyStatic_faster_ens___globals;
+    cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
+    if (unlikely(cpy_r_r12 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    CPyModule_faster_ens___base_ens = cpy_r_r12;
+    CPy_INCREF(CPyModule_faster_ens___base_ens);
+    CPy_DECREF(cpy_r_r12);
+    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('ENS',) */
+    cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_ens.ens' */
+    cpy_r_r15 = CPyStatic_faster_ens___globals;
+    cpy_r_r16 = CPyImport_ImportFromMany(cpy_r_r14, cpy_r_r13, cpy_r_r13, cpy_r_r15);
+    if (unlikely(cpy_r_r16 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    CPyModule_faster_ens___ens = cpy_r_r16;
+    CPy_INCREF(CPyModule_faster_ens___ens);
+    CPy_DECREF(cpy_r_r16);
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('AddressMismatch', 'BidTooLow', 'InvalidLabel',
+                                     'InvalidName', 'UnauthorizedError', 'UnderfundedBid',
+                                     'UnownedName') */
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_ens.exceptions' */
+    cpy_r_r19 = CPyStatic_faster_ens___globals;
+    cpy_r_r20 = CPyImport_ImportFromMany(cpy_r_r18, cpy_r_r17, cpy_r_r17, cpy_r_r19);
+    if (unlikely(cpy_r_r20 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    CPyModule_faster_ens___exceptions = cpy_r_r20;
+    CPy_INCREF(CPyModule_faster_ens___exceptions);
+    CPy_DECREF(cpy_r_r20);
+    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AsyncENS' */
+    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'BaseENS' */
+    cpy_r_r23 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ENS' */
+    cpy_r_r24 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AddressMismatch' */
+    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'BidTooLow' */
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'InvalidLabel' */
+    cpy_r_r27 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'InvalidName' */
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'UnauthorizedError' */
+    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'UnderfundedBid' */
+    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'UnownedName' */
+    CPy_INCREF(cpy_r_r21);
+    CPy_INCREF(cpy_r_r22);
+    CPy_INCREF(cpy_r_r23);
+    CPy_INCREF(cpy_r_r24);
+    CPy_INCREF(cpy_r_r25);
+    CPy_INCREF(cpy_r_r26);
+    CPy_INCREF(cpy_r_r27);
+    CPy_INCREF(cpy_r_r28);
+    CPy_INCREF(cpy_r_r29);
+    CPy_INCREF(cpy_r_r30);
+    cpy_r_r31 = CPyList_Build(10, cpy_r_r21, cpy_r_r22, cpy_r_r23, cpy_r_r24, cpy_r_r25, cpy_r_r26, cpy_r_r27, cpy_r_r28, cpy_r_r29, cpy_r_r30);
+    if (unlikely(cpy_r_r31 == NULL)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    cpy_r_r32 = CPyStatic_faster_ens___globals;
+    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '__all__' */
+    cpy_r_r34 = CPyDict_SetItem(cpy_r_r32, cpy_r_r33, cpy_r_r31);
+    CPy_DECREF_NO_IMM(cpy_r_r31);
+    cpy_r_r35 = cpy_r_r34 >= 0;
+    if (unlikely(!cpy_r_r35)) {
+        CPy_AddTraceback("faster_ens/__init__.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_faster_ens___globals);
+        goto CPyL10;
+    }
+    return 1;
+CPyL10: ;
+    cpy_r_r36 = 2;
+    return cpy_r_r36;
+}
 
 static int
 _normalization___Token_init(PyObject *self, PyObject *args, PyObject *kwds)
@@ -11199,6 +11384,15631 @@ CPyL298: ;
     CPy_DecRef(cpy_r_r533);
     goto CPyL242;
 }
+static PyMethodDef abismodule_methods[] = {
+    {NULL, NULL, 0, NULL}
+};
+
+int CPyExec_faster_ens___abis(PyObject *module)
+{
+    PyObject* modname = NULL;
+    modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_ens___abis__internal, "__name__");
+    CPyStatic_abis___globals = PyModule_GetDict(CPyModule_faster_ens___abis__internal);
+    if (unlikely(CPyStatic_abis___globals == NULL))
+        goto fail;
+    if (CPyGlobalsInit() < 0)
+        goto fail;
+    char result = CPyDef_abis_____top_level__();
+    if (result == 2)
+        goto fail;
+    Py_DECREF(modname);
+    return 0;
+    fail:
+    Py_CLEAR(CPyModule_faster_ens___abis__internal);
+    Py_CLEAR(modname);
+    return -1;
+}
+static struct PyModuleDef abismodule = {
+    PyModuleDef_HEAD_INIT,
+    "faster_ens.abis",
+    NULL, /* docstring */
+    0,       /* size of per-interpreter state of the module */
+    abismodule_methods,
+    NULL,
+};
+
+PyObject *CPyInit_faster_ens___abis(void)
+{
+    if (CPyModule_faster_ens___abis__internal) {
+        Py_INCREF(CPyModule_faster_ens___abis__internal);
+        return CPyModule_faster_ens___abis__internal;
+    }
+    CPyModule_faster_ens___abis__internal = PyModule_Create(&abismodule);
+    if (unlikely(CPyModule_faster_ens___abis__internal == NULL))
+        goto fail;
+    if (CPyExec_faster_ens___abis(CPyModule_faster_ens___abis__internal) != 0)
+        goto fail;
+    return CPyModule_faster_ens___abis__internal;
+    fail:
+    return NULL;
+}
+
+char CPyDef_abis_____top_level__(void) {
+    PyObject *cpy_r_r0;
+    PyObject *cpy_r_r1;
+    char cpy_r_r2;
+    PyObject *cpy_r_r3;
+    PyObject *cpy_r_r4;
+    PyObject *cpy_r_r5;
+    PyObject *cpy_r_r6;
+    PyObject *cpy_r_r7;
+    PyObject *cpy_r_r8;
+    PyObject *cpy_r_r9;
+    PyObject *cpy_r_r10;
+    PyObject *cpy_r_r11;
+    PyObject *cpy_r_r12;
+    CPyPtr cpy_r_r13;
+    CPyPtr cpy_r_r14;
+    PyObject *cpy_r_r15;
+    PyObject *cpy_r_r16;
+    PyObject *cpy_r_r17;
+    PyObject *cpy_r_r18;
+    PyObject *cpy_r_r19;
+    PyObject *cpy_r_r20;
+    PyObject *cpy_r_r21;
+    PyObject *cpy_r_r22;
+    PyObject *cpy_r_r23;
+    CPyPtr cpy_r_r24;
+    CPyPtr cpy_r_r25;
+    PyObject *cpy_r_r26;
+    PyObject *cpy_r_r27;
+    PyObject *cpy_r_r28;
+    PyObject *cpy_r_r29;
+    PyObject *cpy_r_r30;
+    PyObject *cpy_r_r31;
+    PyObject *cpy_r_r32;
+    PyObject *cpy_r_r33;
+    PyObject *cpy_r_r34;
+    PyObject *cpy_r_r35;
+    PyObject *cpy_r_r36;
+    PyObject *cpy_r_r37;
+    PyObject *cpy_r_r38;
+    PyObject *cpy_r_r39;
+    CPyPtr cpy_r_r40;
+    CPyPtr cpy_r_r41;
+    PyObject *cpy_r_r42;
+    PyObject *cpy_r_r43;
+    PyObject *cpy_r_r44;
+    PyObject *cpy_r_r45;
+    PyObject *cpy_r_r46;
+    PyObject *cpy_r_r47;
+    PyObject *cpy_r_r48;
+    PyObject *cpy_r_r49;
+    PyObject *cpy_r_r50;
+    CPyPtr cpy_r_r51;
+    CPyPtr cpy_r_r52;
+    PyObject *cpy_r_r53;
+    PyObject *cpy_r_r54;
+    PyObject *cpy_r_r55;
+    PyObject *cpy_r_r56;
+    PyObject *cpy_r_r57;
+    PyObject *cpy_r_r58;
+    PyObject *cpy_r_r59;
+    PyObject *cpy_r_r60;
+    PyObject *cpy_r_r61;
+    PyObject *cpy_r_r62;
+    PyObject *cpy_r_r63;
+    PyObject *cpy_r_r64;
+    PyObject *cpy_r_r65;
+    PyObject *cpy_r_r66;
+    PyObject *cpy_r_r67;
+    PyObject *cpy_r_r68;
+    PyObject *cpy_r_r69;
+    PyObject *cpy_r_r70;
+    PyObject *cpy_r_r71;
+    PyObject *cpy_r_r72;
+    PyObject *cpy_r_r73;
+    PyObject *cpy_r_r74;
+    PyObject *cpy_r_r75;
+    PyObject *cpy_r_r76;
+    CPyPtr cpy_r_r77;
+    CPyPtr cpy_r_r78;
+    CPyPtr cpy_r_r79;
+    CPyPtr cpy_r_r80;
+    PyObject *cpy_r_r81;
+    PyObject *cpy_r_r82;
+    PyObject *cpy_r_r83;
+    PyObject *cpy_r_r84;
+    PyObject *cpy_r_r85;
+    PyObject *cpy_r_r86;
+    PyObject *cpy_r_r87;
+    PyObject *cpy_r_r88;
+    PyObject *cpy_r_r89;
+    PyObject *cpy_r_r90;
+    PyObject *cpy_r_r91;
+    PyObject *cpy_r_r92;
+    PyObject *cpy_r_r93;
+    PyObject *cpy_r_r94;
+    PyObject *cpy_r_r95;
+    PyObject *cpy_r_r96;
+    PyObject *cpy_r_r97;
+    PyObject *cpy_r_r98;
+    PyObject *cpy_r_r99;
+    PyObject *cpy_r_r100;
+    PyObject *cpy_r_r101;
+    PyObject *cpy_r_r102;
+    PyObject *cpy_r_r103;
+    CPyPtr cpy_r_r104;
+    CPyPtr cpy_r_r105;
+    CPyPtr cpy_r_r106;
+    PyObject *cpy_r_r107;
+    PyObject *cpy_r_r108;
+    PyObject *cpy_r_r109;
+    PyObject *cpy_r_r110;
+    PyObject *cpy_r_r111;
+    PyObject *cpy_r_r112;
+    PyObject *cpy_r_r113;
+    PyObject *cpy_r_r114;
+    PyObject *cpy_r_r115;
+    PyObject *cpy_r_r116;
+    PyObject *cpy_r_r117;
+    PyObject *cpy_r_r118;
+    PyObject *cpy_r_r119;
+    PyObject *cpy_r_r120;
+    PyObject *cpy_r_r121;
+    PyObject *cpy_r_r122;
+    PyObject *cpy_r_r123;
+    PyObject *cpy_r_r124;
+    CPyPtr cpy_r_r125;
+    CPyPtr cpy_r_r126;
+    PyObject *cpy_r_r127;
+    PyObject *cpy_r_r128;
+    PyObject *cpy_r_r129;
+    PyObject *cpy_r_r130;
+    PyObject *cpy_r_r131;
+    PyObject *cpy_r_r132;
+    PyObject *cpy_r_r133;
+    PyObject *cpy_r_r134;
+    PyObject *cpy_r_r135;
+    CPyPtr cpy_r_r136;
+    CPyPtr cpy_r_r137;
+    PyObject *cpy_r_r138;
+    PyObject *cpy_r_r139;
+    PyObject *cpy_r_r140;
+    PyObject *cpy_r_r141;
+    PyObject *cpy_r_r142;
+    PyObject *cpy_r_r143;
+    PyObject *cpy_r_r144;
+    PyObject *cpy_r_r145;
+    PyObject *cpy_r_r146;
+    PyObject *cpy_r_r147;
+    PyObject *cpy_r_r148;
+    PyObject *cpy_r_r149;
+    PyObject *cpy_r_r150;
+    PyObject *cpy_r_r151;
+    PyObject *cpy_r_r152;
+    PyObject *cpy_r_r153;
+    PyObject *cpy_r_r154;
+    PyObject *cpy_r_r155;
+    PyObject *cpy_r_r156;
+    CPyPtr cpy_r_r157;
+    CPyPtr cpy_r_r158;
+    CPyPtr cpy_r_r159;
+    PyObject *cpy_r_r160;
+    PyObject *cpy_r_r161;
+    PyObject *cpy_r_r162;
+    PyObject *cpy_r_r163;
+    PyObject *cpy_r_r164;
+    PyObject *cpy_r_r165;
+    PyObject *cpy_r_r166;
+    PyObject *cpy_r_r167;
+    PyObject *cpy_r_r168;
+    PyObject *cpy_r_r169;
+    PyObject *cpy_r_r170;
+    PyObject *cpy_r_r171;
+    PyObject *cpy_r_r172;
+    PyObject *cpy_r_r173;
+    PyObject *cpy_r_r174;
+    PyObject *cpy_r_r175;
+    PyObject *cpy_r_r176;
+    PyObject *cpy_r_r177;
+    PyObject *cpy_r_r178;
+    PyObject *cpy_r_r179;
+    PyObject *cpy_r_r180;
+    PyObject *cpy_r_r181;
+    PyObject *cpy_r_r182;
+    CPyPtr cpy_r_r183;
+    CPyPtr cpy_r_r184;
+    CPyPtr cpy_r_r185;
+    PyObject *cpy_r_r186;
+    PyObject *cpy_r_r187;
+    PyObject *cpy_r_r188;
+    PyObject *cpy_r_r189;
+    PyObject *cpy_r_r190;
+    PyObject *cpy_r_r191;
+    PyObject *cpy_r_r192;
+    PyObject *cpy_r_r193;
+    PyObject *cpy_r_r194;
+    PyObject *cpy_r_r195;
+    PyObject *cpy_r_r196;
+    PyObject *cpy_r_r197;
+    PyObject *cpy_r_r198;
+    PyObject *cpy_r_r199;
+    PyObject *cpy_r_r200;
+    PyObject *cpy_r_r201;
+    PyObject *cpy_r_r202;
+    PyObject *cpy_r_r203;
+    PyObject *cpy_r_r204;
+    PyObject *cpy_r_r205;
+    PyObject *cpy_r_r206;
+    PyObject *cpy_r_r207;
+    PyObject *cpy_r_r208;
+    PyObject *cpy_r_r209;
+    PyObject *cpy_r_r210;
+    PyObject *cpy_r_r211;
+    PyObject *cpy_r_r212;
+    CPyPtr cpy_r_r213;
+    CPyPtr cpy_r_r214;
+    CPyPtr cpy_r_r215;
+    PyObject *cpy_r_r216;
+    PyObject *cpy_r_r217;
+    PyObject *cpy_r_r218;
+    PyObject *cpy_r_r219;
+    PyObject *cpy_r_r220;
+    PyObject *cpy_r_r221;
+    PyObject *cpy_r_r222;
+    PyObject *cpy_r_r223;
+    PyObject *cpy_r_r224;
+    PyObject *cpy_r_r225;
+    PyObject *cpy_r_r226;
+    PyObject *cpy_r_r227;
+    PyObject *cpy_r_r228;
+    PyObject *cpy_r_r229;
+    PyObject *cpy_r_r230;
+    PyObject *cpy_r_r231;
+    PyObject *cpy_r_r232;
+    PyObject *cpy_r_r233;
+    PyObject *cpy_r_r234;
+    PyObject *cpy_r_r235;
+    PyObject *cpy_r_r236;
+    PyObject *cpy_r_r237;
+    PyObject *cpy_r_r238;
+    PyObject *cpy_r_r239;
+    PyObject *cpy_r_r240;
+    PyObject *cpy_r_r241;
+    PyObject *cpy_r_r242;
+    PyObject *cpy_r_r243;
+    PyObject *cpy_r_r244;
+    PyObject *cpy_r_r245;
+    CPyPtr cpy_r_r246;
+    CPyPtr cpy_r_r247;
+    CPyPtr cpy_r_r248;
+    CPyPtr cpy_r_r249;
+    PyObject *cpy_r_r250;
+    PyObject *cpy_r_r251;
+    PyObject *cpy_r_r252;
+    PyObject *cpy_r_r253;
+    PyObject *cpy_r_r254;
+    PyObject *cpy_r_r255;
+    PyObject *cpy_r_r256;
+    PyObject *cpy_r_r257;
+    PyObject *cpy_r_r258;
+    PyObject *cpy_r_r259;
+    PyObject *cpy_r_r260;
+    PyObject *cpy_r_r261;
+    PyObject *cpy_r_r262;
+    PyObject *cpy_r_r263;
+    PyObject *cpy_r_r264;
+    PyObject *cpy_r_r265;
+    PyObject *cpy_r_r266;
+    PyObject *cpy_r_r267;
+    PyObject *cpy_r_r268;
+    PyObject *cpy_r_r269;
+    PyObject *cpy_r_r270;
+    PyObject *cpy_r_r271;
+    PyObject *cpy_r_r272;
+    CPyPtr cpy_r_r273;
+    CPyPtr cpy_r_r274;
+    CPyPtr cpy_r_r275;
+    PyObject *cpy_r_r276;
+    PyObject *cpy_r_r277;
+    PyObject *cpy_r_r278;
+    PyObject *cpy_r_r279;
+    PyObject *cpy_r_r280;
+    PyObject *cpy_r_r281;
+    PyObject *cpy_r_r282;
+    PyObject *cpy_r_r283;
+    PyObject *cpy_r_r284;
+    PyObject *cpy_r_r285;
+    PyObject *cpy_r_r286;
+    PyObject *cpy_r_r287;
+    PyObject *cpy_r_r288;
+    PyObject *cpy_r_r289;
+    PyObject *cpy_r_r290;
+    PyObject *cpy_r_r291;
+    PyObject *cpy_r_r292;
+    PyObject *cpy_r_r293;
+    PyObject *cpy_r_r294;
+    PyObject *cpy_r_r295;
+    PyObject *cpy_r_r296;
+    PyObject *cpy_r_r297;
+    PyObject *cpy_r_r298;
+    CPyPtr cpy_r_r299;
+    CPyPtr cpy_r_r300;
+    CPyPtr cpy_r_r301;
+    PyObject *cpy_r_r302;
+    PyObject *cpy_r_r303;
+    PyObject *cpy_r_r304;
+    PyObject *cpy_r_r305;
+    PyObject *cpy_r_r306;
+    PyObject *cpy_r_r307;
+    PyObject *cpy_r_r308;
+    PyObject *cpy_r_r309;
+    PyObject *cpy_r_r310;
+    int32_t cpy_r_r311;
+    char cpy_r_r312;
+    PyObject *cpy_r_r313;
+    PyObject *cpy_r_r314;
+    PyObject *cpy_r_r315;
+    PyObject *cpy_r_r316;
+    PyObject *cpy_r_r317;
+    PyObject *cpy_r_r318;
+    PyObject *cpy_r_r319;
+    PyObject *cpy_r_r320;
+    CPyPtr cpy_r_r321;
+    CPyPtr cpy_r_r322;
+    PyObject *cpy_r_r323;
+    PyObject *cpy_r_r324;
+    PyObject *cpy_r_r325;
+    PyObject *cpy_r_r326;
+    PyObject *cpy_r_r327;
+    PyObject *cpy_r_r328;
+    PyObject *cpy_r_r329;
+    PyObject *cpy_r_r330;
+    PyObject *cpy_r_r331;
+    PyObject *cpy_r_r332;
+    PyObject *cpy_r_r333;
+    PyObject *cpy_r_r334;
+    PyObject *cpy_r_r335;
+    PyObject *cpy_r_r336;
+    PyObject *cpy_r_r337;
+    PyObject *cpy_r_r338;
+    PyObject *cpy_r_r339;
+    PyObject *cpy_r_r340;
+    CPyPtr cpy_r_r341;
+    CPyPtr cpy_r_r342;
+    PyObject *cpy_r_r343;
+    PyObject *cpy_r_r344;
+    PyObject *cpy_r_r345;
+    PyObject *cpy_r_r346;
+    PyObject *cpy_r_r347;
+    PyObject *cpy_r_r348;
+    PyObject *cpy_r_r349;
+    PyObject *cpy_r_r350;
+    PyObject *cpy_r_r351;
+    CPyPtr cpy_r_r352;
+    CPyPtr cpy_r_r353;
+    PyObject *cpy_r_r354;
+    PyObject *cpy_r_r355;
+    PyObject *cpy_r_r356;
+    PyObject *cpy_r_r357;
+    PyObject *cpy_r_r358;
+    PyObject *cpy_r_r359;
+    PyObject *cpy_r_r360;
+    PyObject *cpy_r_r361;
+    PyObject *cpy_r_r362;
+    PyObject *cpy_r_r363;
+    PyObject *cpy_r_r364;
+    PyObject *cpy_r_r365;
+    PyObject *cpy_r_r366;
+    PyObject *cpy_r_r367;
+    CPyPtr cpy_r_r368;
+    CPyPtr cpy_r_r369;
+    PyObject *cpy_r_r370;
+    PyObject *cpy_r_r371;
+    PyObject *cpy_r_r372;
+    PyObject *cpy_r_r373;
+    PyObject *cpy_r_r374;
+    PyObject *cpy_r_r375;
+    PyObject *cpy_r_r376;
+    PyObject *cpy_r_r377;
+    PyObject *cpy_r_r378;
+    PyObject *cpy_r_r379;
+    PyObject *cpy_r_r380;
+    PyObject *cpy_r_r381;
+    PyObject *cpy_r_r382;
+    PyObject *cpy_r_r383;
+    PyObject *cpy_r_r384;
+    PyObject *cpy_r_r385;
+    PyObject *cpy_r_r386;
+    PyObject *cpy_r_r387;
+    PyObject *cpy_r_r388;
+    PyObject *cpy_r_r389;
+    PyObject *cpy_r_r390;
+    PyObject *cpy_r_r391;
+    PyObject *cpy_r_r392;
+    PyObject *cpy_r_r393;
+    PyObject *cpy_r_r394;
+    PyObject *cpy_r_r395;
+    PyObject *cpy_r_r396;
+    PyObject *cpy_r_r397;
+    PyObject *cpy_r_r398;
+    PyObject *cpy_r_r399;
+    PyObject *cpy_r_r400;
+    PyObject *cpy_r_r401;
+    PyObject *cpy_r_r402;
+    CPyPtr cpy_r_r403;
+    CPyPtr cpy_r_r404;
+    CPyPtr cpy_r_r405;
+    CPyPtr cpy_r_r406;
+    CPyPtr cpy_r_r407;
+    PyObject *cpy_r_r408;
+    PyObject *cpy_r_r409;
+    PyObject *cpy_r_r410;
+    PyObject *cpy_r_r411;
+    PyObject *cpy_r_r412;
+    PyObject *cpy_r_r413;
+    PyObject *cpy_r_r414;
+    PyObject *cpy_r_r415;
+    PyObject *cpy_r_r416;
+    CPyPtr cpy_r_r417;
+    CPyPtr cpy_r_r418;
+    PyObject *cpy_r_r419;
+    PyObject *cpy_r_r420;
+    PyObject *cpy_r_r421;
+    PyObject *cpy_r_r422;
+    PyObject *cpy_r_r423;
+    PyObject *cpy_r_r424;
+    PyObject *cpy_r_r425;
+    PyObject *cpy_r_r426;
+    PyObject *cpy_r_r427;
+    PyObject *cpy_r_r428;
+    PyObject *cpy_r_r429;
+    PyObject *cpy_r_r430;
+    PyObject *cpy_r_r431;
+    PyObject *cpy_r_r432;
+    PyObject *cpy_r_r433;
+    PyObject *cpy_r_r434;
+    PyObject *cpy_r_r435;
+    PyObject *cpy_r_r436;
+    PyObject *cpy_r_r437;
+    CPyPtr cpy_r_r438;
+    CPyPtr cpy_r_r439;
+    CPyPtr cpy_r_r440;
+    PyObject *cpy_r_r441;
+    PyObject *cpy_r_r442;
+    PyObject *cpy_r_r443;
+    PyObject *cpy_r_r444;
+    PyObject *cpy_r_r445;
+    PyObject *cpy_r_r446;
+    PyObject *cpy_r_r447;
+    PyObject *cpy_r_r448;
+    PyObject *cpy_r_r449;
+    PyObject *cpy_r_r450;
+    PyObject *cpy_r_r451;
+    PyObject *cpy_r_r452;
+    PyObject *cpy_r_r453;
+    PyObject *cpy_r_r454;
+    PyObject *cpy_r_r455;
+    PyObject *cpy_r_r456;
+    PyObject *cpy_r_r457;
+    PyObject *cpy_r_r458;
+    CPyPtr cpy_r_r459;
+    CPyPtr cpy_r_r460;
+    PyObject *cpy_r_r461;
+    PyObject *cpy_r_r462;
+    PyObject *cpy_r_r463;
+    PyObject *cpy_r_r464;
+    PyObject *cpy_r_r465;
+    PyObject *cpy_r_r466;
+    PyObject *cpy_r_r467;
+    PyObject *cpy_r_r468;
+    PyObject *cpy_r_r469;
+    PyObject *cpy_r_r470;
+    PyObject *cpy_r_r471;
+    PyObject *cpy_r_r472;
+    PyObject *cpy_r_r473;
+    PyObject *cpy_r_r474;
+    PyObject *cpy_r_r475;
+    PyObject *cpy_r_r476;
+    PyObject *cpy_r_r477;
+    PyObject *cpy_r_r478;
+    PyObject *cpy_r_r479;
+    PyObject *cpy_r_r480;
+    PyObject *cpy_r_r481;
+    PyObject *cpy_r_r482;
+    PyObject *cpy_r_r483;
+    PyObject *cpy_r_r484;
+    PyObject *cpy_r_r485;
+    PyObject *cpy_r_r486;
+    PyObject *cpy_r_r487;
+    PyObject *cpy_r_r488;
+    PyObject *cpy_r_r489;
+    CPyPtr cpy_r_r490;
+    CPyPtr cpy_r_r491;
+    CPyPtr cpy_r_r492;
+    CPyPtr cpy_r_r493;
+    CPyPtr cpy_r_r494;
+    CPyPtr cpy_r_r495;
+    PyObject *cpy_r_r496;
+    PyObject *cpy_r_r497;
+    PyObject *cpy_r_r498;
+    PyObject *cpy_r_r499;
+    PyObject *cpy_r_r500;
+    PyObject *cpy_r_r501;
+    PyObject *cpy_r_r502;
+    PyObject *cpy_r_r503;
+    PyObject *cpy_r_r504;
+    PyObject *cpy_r_r505;
+    PyObject *cpy_r_r506;
+    PyObject *cpy_r_r507;
+    PyObject *cpy_r_r508;
+    PyObject *cpy_r_r509;
+    PyObject *cpy_r_r510;
+    PyObject *cpy_r_r511;
+    PyObject *cpy_r_r512;
+    PyObject *cpy_r_r513;
+    CPyPtr cpy_r_r514;
+    CPyPtr cpy_r_r515;
+    PyObject *cpy_r_r516;
+    PyObject *cpy_r_r517;
+    PyObject *cpy_r_r518;
+    PyObject *cpy_r_r519;
+    PyObject *cpy_r_r520;
+    PyObject *cpy_r_r521;
+    PyObject *cpy_r_r522;
+    PyObject *cpy_r_r523;
+    PyObject *cpy_r_r524;
+    PyObject *cpy_r_r525;
+    PyObject *cpy_r_r526;
+    PyObject *cpy_r_r527;
+    PyObject *cpy_r_r528;
+    PyObject *cpy_r_r529;
+    PyObject *cpy_r_r530;
+    PyObject *cpy_r_r531;
+    PyObject *cpy_r_r532;
+    PyObject *cpy_r_r533;
+    PyObject *cpy_r_r534;
+    PyObject *cpy_r_r535;
+    PyObject *cpy_r_r536;
+    PyObject *cpy_r_r537;
+    PyObject *cpy_r_r538;
+    PyObject *cpy_r_r539;
+    CPyPtr cpy_r_r540;
+    CPyPtr cpy_r_r541;
+    CPyPtr cpy_r_r542;
+    CPyPtr cpy_r_r543;
+    PyObject *cpy_r_r544;
+    PyObject *cpy_r_r545;
+    PyObject *cpy_r_r546;
+    PyObject *cpy_r_r547;
+    PyObject *cpy_r_r548;
+    PyObject *cpy_r_r549;
+    PyObject *cpy_r_r550;
+    PyObject *cpy_r_r551;
+    PyObject *cpy_r_r552;
+    PyObject *cpy_r_r553;
+    PyObject *cpy_r_r554;
+    PyObject *cpy_r_r555;
+    PyObject *cpy_r_r556;
+    PyObject *cpy_r_r557;
+    PyObject *cpy_r_r558;
+    PyObject *cpy_r_r559;
+    PyObject *cpy_r_r560;
+    PyObject *cpy_r_r561;
+    CPyPtr cpy_r_r562;
+    CPyPtr cpy_r_r563;
+    PyObject *cpy_r_r564;
+    PyObject *cpy_r_r565;
+    PyObject *cpy_r_r566;
+    PyObject *cpy_r_r567;
+    PyObject *cpy_r_r568;
+    PyObject *cpy_r_r569;
+    PyObject *cpy_r_r570;
+    PyObject *cpy_r_r571;
+    PyObject *cpy_r_r572;
+    PyObject *cpy_r_r573;
+    PyObject *cpy_r_r574;
+    PyObject *cpy_r_r575;
+    PyObject *cpy_r_r576;
+    PyObject *cpy_r_r577;
+    PyObject *cpy_r_r578;
+    PyObject *cpy_r_r579;
+    PyObject *cpy_r_r580;
+    PyObject *cpy_r_r581;
+    PyObject *cpy_r_r582;
+    PyObject *cpy_r_r583;
+    PyObject *cpy_r_r584;
+    PyObject *cpy_r_r585;
+    PyObject *cpy_r_r586;
+    CPyPtr cpy_r_r587;
+    CPyPtr cpy_r_r588;
+    CPyPtr cpy_r_r589;
+    PyObject *cpy_r_r590;
+    PyObject *cpy_r_r591;
+    PyObject *cpy_r_r592;
+    PyObject *cpy_r_r593;
+    PyObject *cpy_r_r594;
+    PyObject *cpy_r_r595;
+    PyObject *cpy_r_r596;
+    PyObject *cpy_r_r597;
+    PyObject *cpy_r_r598;
+    CPyPtr cpy_r_r599;
+    CPyPtr cpy_r_r600;
+    PyObject *cpy_r_r601;
+    PyObject *cpy_r_r602;
+    PyObject *cpy_r_r603;
+    PyObject *cpy_r_r604;
+    PyObject *cpy_r_r605;
+    PyObject *cpy_r_r606;
+    PyObject *cpy_r_r607;
+    PyObject *cpy_r_r608;
+    PyObject *cpy_r_r609;
+    PyObject *cpy_r_r610;
+    PyObject *cpy_r_r611;
+    PyObject *cpy_r_r612;
+    PyObject *cpy_r_r613;
+    PyObject *cpy_r_r614;
+    CPyPtr cpy_r_r615;
+    CPyPtr cpy_r_r616;
+    PyObject *cpy_r_r617;
+    PyObject *cpy_r_r618;
+    PyObject *cpy_r_r619;
+    PyObject *cpy_r_r620;
+    PyObject *cpy_r_r621;
+    PyObject *cpy_r_r622;
+    PyObject *cpy_r_r623;
+    PyObject *cpy_r_r624;
+    PyObject *cpy_r_r625;
+    CPyPtr cpy_r_r626;
+    CPyPtr cpy_r_r627;
+    PyObject *cpy_r_r628;
+    PyObject *cpy_r_r629;
+    PyObject *cpy_r_r630;
+    PyObject *cpy_r_r631;
+    PyObject *cpy_r_r632;
+    PyObject *cpy_r_r633;
+    PyObject *cpy_r_r634;
+    PyObject *cpy_r_r635;
+    PyObject *cpy_r_r636;
+    PyObject *cpy_r_r637;
+    PyObject *cpy_r_r638;
+    PyObject *cpy_r_r639;
+    PyObject *cpy_r_r640;
+    PyObject *cpy_r_r641;
+    PyObject *cpy_r_r642;
+    PyObject *cpy_r_r643;
+    PyObject *cpy_r_r644;
+    PyObject *cpy_r_r645;
+    PyObject *cpy_r_r646;
+    CPyPtr cpy_r_r647;
+    CPyPtr cpy_r_r648;
+    CPyPtr cpy_r_r649;
+    PyObject *cpy_r_r650;
+    PyObject *cpy_r_r651;
+    PyObject *cpy_r_r652;
+    PyObject *cpy_r_r653;
+    PyObject *cpy_r_r654;
+    PyObject *cpy_r_r655;
+    PyObject *cpy_r_r656;
+    PyObject *cpy_r_r657;
+    PyObject *cpy_r_r658;
+    PyObject *cpy_r_r659;
+    PyObject *cpy_r_r660;
+    PyObject *cpy_r_r661;
+    PyObject *cpy_r_r662;
+    PyObject *cpy_r_r663;
+    PyObject *cpy_r_r664;
+    PyObject *cpy_r_r665;
+    PyObject *cpy_r_r666;
+    PyObject *cpy_r_r667;
+    PyObject *cpy_r_r668;
+    PyObject *cpy_r_r669;
+    PyObject *cpy_r_r670;
+    PyObject *cpy_r_r671;
+    PyObject *cpy_r_r672;
+    CPyPtr cpy_r_r673;
+    CPyPtr cpy_r_r674;
+    CPyPtr cpy_r_r675;
+    PyObject *cpy_r_r676;
+    PyObject *cpy_r_r677;
+    PyObject *cpy_r_r678;
+    PyObject *cpy_r_r679;
+    PyObject *cpy_r_r680;
+    PyObject *cpy_r_r681;
+    PyObject *cpy_r_r682;
+    PyObject *cpy_r_r683;
+    PyObject *cpy_r_r684;
+    CPyPtr cpy_r_r685;
+    CPyPtr cpy_r_r686;
+    PyObject *cpy_r_r687;
+    PyObject *cpy_r_r688;
+    PyObject *cpy_r_r689;
+    PyObject *cpy_r_r690;
+    PyObject *cpy_r_r691;
+    PyObject *cpy_r_r692;
+    PyObject *cpy_r_r693;
+    PyObject *cpy_r_r694;
+    PyObject *cpy_r_r695;
+    PyObject *cpy_r_r696;
+    PyObject *cpy_r_r697;
+    PyObject *cpy_r_r698;
+    PyObject *cpy_r_r699;
+    PyObject *cpy_r_r700;
+    CPyPtr cpy_r_r701;
+    CPyPtr cpy_r_r702;
+    PyObject *cpy_r_r703;
+    PyObject *cpy_r_r704;
+    PyObject *cpy_r_r705;
+    PyObject *cpy_r_r706;
+    PyObject *cpy_r_r707;
+    PyObject *cpy_r_r708;
+    PyObject *cpy_r_r709;
+    PyObject *cpy_r_r710;
+    PyObject *cpy_r_r711;
+    PyObject *cpy_r_r712;
+    PyObject *cpy_r_r713;
+    PyObject *cpy_r_r714;
+    PyObject *cpy_r_r715;
+    PyObject *cpy_r_r716;
+    PyObject *cpy_r_r717;
+    PyObject *cpy_r_r718;
+    PyObject *cpy_r_r719;
+    PyObject *cpy_r_r720;
+    PyObject *cpy_r_r721;
+    PyObject *cpy_r_r722;
+    PyObject *cpy_r_r723;
+    PyObject *cpy_r_r724;
+    CPyPtr cpy_r_r725;
+    CPyPtr cpy_r_r726;
+    PyObject *cpy_r_r727;
+    PyObject *cpy_r_r728;
+    PyObject *cpy_r_r729;
+    PyObject *cpy_r_r730;
+    PyObject *cpy_r_r731;
+    PyObject *cpy_r_r732;
+    PyObject *cpy_r_r733;
+    PyObject *cpy_r_r734;
+    PyObject *cpy_r_r735;
+    PyObject *cpy_r_r736;
+    PyObject *cpy_r_r737;
+    PyObject *cpy_r_r738;
+    PyObject *cpy_r_r739;
+    PyObject *cpy_r_r740;
+    PyObject *cpy_r_r741;
+    PyObject *cpy_r_r742;
+    PyObject *cpy_r_r743;
+    PyObject *cpy_r_r744;
+    CPyPtr cpy_r_r745;
+    CPyPtr cpy_r_r746;
+    PyObject *cpy_r_r747;
+    PyObject *cpy_r_r748;
+    PyObject *cpy_r_r749;
+    PyObject *cpy_r_r750;
+    PyObject *cpy_r_r751;
+    PyObject *cpy_r_r752;
+    PyObject *cpy_r_r753;
+    PyObject *cpy_r_r754;
+    PyObject *cpy_r_r755;
+    PyObject *cpy_r_r756;
+    PyObject *cpy_r_r757;
+    PyObject *cpy_r_r758;
+    PyObject *cpy_r_r759;
+    PyObject *cpy_r_r760;
+    CPyPtr cpy_r_r761;
+    CPyPtr cpy_r_r762;
+    PyObject *cpy_r_r763;
+    PyObject *cpy_r_r764;
+    PyObject *cpy_r_r765;
+    PyObject *cpy_r_r766;
+    PyObject *cpy_r_r767;
+    PyObject *cpy_r_r768;
+    PyObject *cpy_r_r769;
+    PyObject *cpy_r_r770;
+    PyObject *cpy_r_r771;
+    PyObject *cpy_r_r772;
+    PyObject *cpy_r_r773;
+    PyObject *cpy_r_r774;
+    PyObject *cpy_r_r775;
+    PyObject *cpy_r_r776;
+    PyObject *cpy_r_r777;
+    PyObject *cpy_r_r778;
+    PyObject *cpy_r_r779;
+    PyObject *cpy_r_r780;
+    CPyPtr cpy_r_r781;
+    CPyPtr cpy_r_r782;
+    PyObject *cpy_r_r783;
+    PyObject *cpy_r_r784;
+    PyObject *cpy_r_r785;
+    PyObject *cpy_r_r786;
+    PyObject *cpy_r_r787;
+    PyObject *cpy_r_r788;
+    PyObject *cpy_r_r789;
+    PyObject *cpy_r_r790;
+    PyObject *cpy_r_r791;
+    PyObject *cpy_r_r792;
+    PyObject *cpy_r_r793;
+    PyObject *cpy_r_r794;
+    PyObject *cpy_r_r795;
+    PyObject *cpy_r_r796;
+    PyObject *cpy_r_r797;
+    PyObject *cpy_r_r798;
+    PyObject *cpy_r_r799;
+    PyObject *cpy_r_r800;
+    CPyPtr cpy_r_r801;
+    CPyPtr cpy_r_r802;
+    PyObject *cpy_r_r803;
+    PyObject *cpy_r_r804;
+    PyObject *cpy_r_r805;
+    PyObject *cpy_r_r806;
+    PyObject *cpy_r_r807;
+    PyObject *cpy_r_r808;
+    PyObject *cpy_r_r809;
+    PyObject *cpy_r_r810;
+    PyObject *cpy_r_r811;
+    PyObject *cpy_r_r812;
+    PyObject *cpy_r_r813;
+    PyObject *cpy_r_r814;
+    PyObject *cpy_r_r815;
+    PyObject *cpy_r_r816;
+    PyObject *cpy_r_r817;
+    PyObject *cpy_r_r818;
+    PyObject *cpy_r_r819;
+    PyObject *cpy_r_r820;
+    PyObject *cpy_r_r821;
+    PyObject *cpy_r_r822;
+    PyObject *cpy_r_r823;
+    PyObject *cpy_r_r824;
+    PyObject *cpy_r_r825;
+    PyObject *cpy_r_r826;
+    PyObject *cpy_r_r827;
+    PyObject *cpy_r_r828;
+    PyObject *cpy_r_r829;
+    PyObject *cpy_r_r830;
+    CPyPtr cpy_r_r831;
+    CPyPtr cpy_r_r832;
+    CPyPtr cpy_r_r833;
+    CPyPtr cpy_r_r834;
+    PyObject *cpy_r_r835;
+    PyObject *cpy_r_r836;
+    PyObject *cpy_r_r837;
+    PyObject *cpy_r_r838;
+    PyObject *cpy_r_r839;
+    PyObject *cpy_r_r840;
+    PyObject *cpy_r_r841;
+    PyObject *cpy_r_r842;
+    PyObject *cpy_r_r843;
+    PyObject *cpy_r_r844;
+    PyObject *cpy_r_r845;
+    PyObject *cpy_r_r846;
+    PyObject *cpy_r_r847;
+    PyObject *cpy_r_r848;
+    PyObject *cpy_r_r849;
+    PyObject *cpy_r_r850;
+    PyObject *cpy_r_r851;
+    PyObject *cpy_r_r852;
+    CPyPtr cpy_r_r853;
+    CPyPtr cpy_r_r854;
+    PyObject *cpy_r_r855;
+    PyObject *cpy_r_r856;
+    PyObject *cpy_r_r857;
+    PyObject *cpy_r_r858;
+    PyObject *cpy_r_r859;
+    PyObject *cpy_r_r860;
+    PyObject *cpy_r_r861;
+    PyObject *cpy_r_r862;
+    PyObject *cpy_r_r863;
+    PyObject *cpy_r_r864;
+    PyObject *cpy_r_r865;
+    PyObject *cpy_r_r866;
+    PyObject *cpy_r_r867;
+    PyObject *cpy_r_r868;
+    PyObject *cpy_r_r869;
+    PyObject *cpy_r_r870;
+    PyObject *cpy_r_r871;
+    PyObject *cpy_r_r872;
+    PyObject *cpy_r_r873;
+    PyObject *cpy_r_r874;
+    PyObject *cpy_r_r875;
+    PyObject *cpy_r_r876;
+    CPyPtr cpy_r_r877;
+    CPyPtr cpy_r_r878;
+    PyObject *cpy_r_r879;
+    PyObject *cpy_r_r880;
+    PyObject *cpy_r_r881;
+    PyObject *cpy_r_r882;
+    PyObject *cpy_r_r883;
+    PyObject *cpy_r_r884;
+    PyObject *cpy_r_r885;
+    PyObject *cpy_r_r886;
+    PyObject *cpy_r_r887;
+    PyObject *cpy_r_r888;
+    PyObject *cpy_r_r889;
+    PyObject *cpy_r_r890;
+    PyObject *cpy_r_r891;
+    PyObject *cpy_r_r892;
+    PyObject *cpy_r_r893;
+    PyObject *cpy_r_r894;
+    PyObject *cpy_r_r895;
+    PyObject *cpy_r_r896;
+    PyObject *cpy_r_r897;
+    CPyPtr cpy_r_r898;
+    CPyPtr cpy_r_r899;
+    CPyPtr cpy_r_r900;
+    PyObject *cpy_r_r901;
+    PyObject *cpy_r_r902;
+    PyObject *cpy_r_r903;
+    PyObject *cpy_r_r904;
+    PyObject *cpy_r_r905;
+    PyObject *cpy_r_r906;
+    PyObject *cpy_r_r907;
+    PyObject *cpy_r_r908;
+    PyObject *cpy_r_r909;
+    PyObject *cpy_r_r910;
+    PyObject *cpy_r_r911;
+    PyObject *cpy_r_r912;
+    PyObject *cpy_r_r913;
+    PyObject *cpy_r_r914;
+    PyObject *cpy_r_r915;
+    PyObject *cpy_r_r916;
+    PyObject *cpy_r_r917;
+    PyObject *cpy_r_r918;
+    PyObject *cpy_r_r919;
+    PyObject *cpy_r_r920;
+    PyObject *cpy_r_r921;
+    PyObject *cpy_r_r922;
+    PyObject *cpy_r_r923;
+    PyObject *cpy_r_r924;
+    PyObject *cpy_r_r925;
+    PyObject *cpy_r_r926;
+    PyObject *cpy_r_r927;
+    CPyPtr cpy_r_r928;
+    CPyPtr cpy_r_r929;
+    CPyPtr cpy_r_r930;
+    CPyPtr cpy_r_r931;
+    PyObject *cpy_r_r932;
+    PyObject *cpy_r_r933;
+    PyObject *cpy_r_r934;
+    PyObject *cpy_r_r935;
+    PyObject *cpy_r_r936;
+    PyObject *cpy_r_r937;
+    PyObject *cpy_r_r938;
+    PyObject *cpy_r_r939;
+    PyObject *cpy_r_r940;
+    PyObject *cpy_r_r941;
+    PyObject *cpy_r_r942;
+    PyObject *cpy_r_r943;
+    PyObject *cpy_r_r944;
+    PyObject *cpy_r_r945;
+    PyObject *cpy_r_r946;
+    PyObject *cpy_r_r947;
+    PyObject *cpy_r_r948;
+    PyObject *cpy_r_r949;
+    PyObject *cpy_r_r950;
+    PyObject *cpy_r_r951;
+    PyObject *cpy_r_r952;
+    PyObject *cpy_r_r953;
+    CPyPtr cpy_r_r954;
+    CPyPtr cpy_r_r955;
+    CPyPtr cpy_r_r956;
+    PyObject *cpy_r_r957;
+    PyObject *cpy_r_r958;
+    PyObject *cpy_r_r959;
+    PyObject *cpy_r_r960;
+    PyObject *cpy_r_r961;
+    PyObject *cpy_r_r962;
+    PyObject *cpy_r_r963;
+    PyObject *cpy_r_r964;
+    PyObject *cpy_r_r965;
+    PyObject *cpy_r_r966;
+    PyObject *cpy_r_r967;
+    PyObject *cpy_r_r968;
+    PyObject *cpy_r_r969;
+    PyObject *cpy_r_r970;
+    PyObject *cpy_r_r971;
+    PyObject *cpy_r_r972;
+    PyObject *cpy_r_r973;
+    PyObject *cpy_r_r974;
+    PyObject *cpy_r_r975;
+    PyObject *cpy_r_r976;
+    PyObject *cpy_r_r977;
+    PyObject *cpy_r_r978;
+    PyObject *cpy_r_r979;
+    PyObject *cpy_r_r980;
+    PyObject *cpy_r_r981;
+    PyObject *cpy_r_r982;
+    PyObject *cpy_r_r983;
+    PyObject *cpy_r_r984;
+    PyObject *cpy_r_r985;
+    PyObject *cpy_r_r986;
+    CPyPtr cpy_r_r987;
+    CPyPtr cpy_r_r988;
+    CPyPtr cpy_r_r989;
+    CPyPtr cpy_r_r990;
+    PyObject *cpy_r_r991;
+    PyObject *cpy_r_r992;
+    PyObject *cpy_r_r993;
+    PyObject *cpy_r_r994;
+    PyObject *cpy_r_r995;
+    PyObject *cpy_r_r996;
+    PyObject *cpy_r_r997;
+    PyObject *cpy_r_r998;
+    PyObject *cpy_r_r999;
+    PyObject *cpy_r_r1000;
+    PyObject *cpy_r_r1001;
+    PyObject *cpy_r_r1002;
+    PyObject *cpy_r_r1003;
+    PyObject *cpy_r_r1004;
+    PyObject *cpy_r_r1005;
+    PyObject *cpy_r_r1006;
+    PyObject *cpy_r_r1007;
+    PyObject *cpy_r_r1008;
+    PyObject *cpy_r_r1009;
+    PyObject *cpy_r_r1010;
+    PyObject *cpy_r_r1011;
+    PyObject *cpy_r_r1012;
+    PyObject *cpy_r_r1013;
+    PyObject *cpy_r_r1014;
+    PyObject *cpy_r_r1015;
+    PyObject *cpy_r_r1016;
+    PyObject *cpy_r_r1017;
+    PyObject *cpy_r_r1018;
+    PyObject *cpy_r_r1019;
+    PyObject *cpy_r_r1020;
+    PyObject *cpy_r_r1021;
+    PyObject *cpy_r_r1022;
+    PyObject *cpy_r_r1023;
+    PyObject *cpy_r_r1024;
+    PyObject *cpy_r_r1025;
+    PyObject *cpy_r_r1026;
+    PyObject *cpy_r_r1027;
+    CPyPtr cpy_r_r1028;
+    CPyPtr cpy_r_r1029;
+    CPyPtr cpy_r_r1030;
+    CPyPtr cpy_r_r1031;
+    CPyPtr cpy_r_r1032;
+    PyObject *cpy_r_r1033;
+    PyObject *cpy_r_r1034;
+    PyObject *cpy_r_r1035;
+    PyObject *cpy_r_r1036;
+    PyObject *cpy_r_r1037;
+    PyObject *cpy_r_r1038;
+    PyObject *cpy_r_r1039;
+    PyObject *cpy_r_r1040;
+    PyObject *cpy_r_r1041;
+    PyObject *cpy_r_r1042;
+    PyObject *cpy_r_r1043;
+    PyObject *cpy_r_r1044;
+    PyObject *cpy_r_r1045;
+    PyObject *cpy_r_r1046;
+    PyObject *cpy_r_r1047;
+    PyObject *cpy_r_r1048;
+    PyObject *cpy_r_r1049;
+    PyObject *cpy_r_r1050;
+    PyObject *cpy_r_r1051;
+    PyObject *cpy_r_r1052;
+    PyObject *cpy_r_r1053;
+    PyObject *cpy_r_r1054;
+    PyObject *cpy_r_r1055;
+    PyObject *cpy_r_r1056;
+    PyObject *cpy_r_r1057;
+    PyObject *cpy_r_r1058;
+    PyObject *cpy_r_r1059;
+    PyObject *cpy_r_r1060;
+    PyObject *cpy_r_r1061;
+    PyObject *cpy_r_r1062;
+    PyObject *cpy_r_r1063;
+    PyObject *cpy_r_r1064;
+    PyObject *cpy_r_r1065;
+    PyObject *cpy_r_r1066;
+    PyObject *cpy_r_r1067;
+    PyObject *cpy_r_r1068;
+    PyObject *cpy_r_r1069;
+    CPyPtr cpy_r_r1070;
+    CPyPtr cpy_r_r1071;
+    CPyPtr cpy_r_r1072;
+    CPyPtr cpy_r_r1073;
+    CPyPtr cpy_r_r1074;
+    PyObject *cpy_r_r1075;
+    PyObject *cpy_r_r1076;
+    PyObject *cpy_r_r1077;
+    PyObject *cpy_r_r1078;
+    PyObject *cpy_r_r1079;
+    PyObject *cpy_r_r1080;
+    PyObject *cpy_r_r1081;
+    PyObject *cpy_r_r1082;
+    PyObject *cpy_r_r1083;
+    PyObject *cpy_r_r1084;
+    PyObject *cpy_r_r1085;
+    PyObject *cpy_r_r1086;
+    PyObject *cpy_r_r1087;
+    PyObject *cpy_r_r1088;
+    PyObject *cpy_r_r1089;
+    PyObject *cpy_r_r1090;
+    PyObject *cpy_r_r1091;
+    PyObject *cpy_r_r1092;
+    PyObject *cpy_r_r1093;
+    PyObject *cpy_r_r1094;
+    PyObject *cpy_r_r1095;
+    PyObject *cpy_r_r1096;
+    PyObject *cpy_r_r1097;
+    CPyPtr cpy_r_r1098;
+    CPyPtr cpy_r_r1099;
+    CPyPtr cpy_r_r1100;
+    PyObject *cpy_r_r1101;
+    PyObject *cpy_r_r1102;
+    PyObject *cpy_r_r1103;
+    PyObject *cpy_r_r1104;
+    PyObject *cpy_r_r1105;
+    PyObject *cpy_r_r1106;
+    PyObject *cpy_r_r1107;
+    PyObject *cpy_r_r1108;
+    PyObject *cpy_r_r1109;
+    PyObject *cpy_r_r1110;
+    PyObject *cpy_r_r1111;
+    PyObject *cpy_r_r1112;
+    PyObject *cpy_r_r1113;
+    PyObject *cpy_r_r1114;
+    PyObject *cpy_r_r1115;
+    PyObject *cpy_r_r1116;
+    PyObject *cpy_r_r1117;
+    PyObject *cpy_r_r1118;
+    PyObject *cpy_r_r1119;
+    PyObject *cpy_r_r1120;
+    PyObject *cpy_r_r1121;
+    PyObject *cpy_r_r1122;
+    PyObject *cpy_r_r1123;
+    PyObject *cpy_r_r1124;
+    PyObject *cpy_r_r1125;
+    PyObject *cpy_r_r1126;
+    PyObject *cpy_r_r1127;
+    PyObject *cpy_r_r1128;
+    PyObject *cpy_r_r1129;
+    PyObject *cpy_r_r1130;
+    PyObject *cpy_r_r1131;
+    PyObject *cpy_r_r1132;
+    PyObject *cpy_r_r1133;
+    PyObject *cpy_r_r1134;
+    PyObject *cpy_r_r1135;
+    PyObject *cpy_r_r1136;
+    PyObject *cpy_r_r1137;
+    CPyPtr cpy_r_r1138;
+    CPyPtr cpy_r_r1139;
+    CPyPtr cpy_r_r1140;
+    CPyPtr cpy_r_r1141;
+    CPyPtr cpy_r_r1142;
+    PyObject *cpy_r_r1143;
+    PyObject *cpy_r_r1144;
+    PyObject *cpy_r_r1145;
+    PyObject *cpy_r_r1146;
+    PyObject *cpy_r_r1147;
+    PyObject *cpy_r_r1148;
+    PyObject *cpy_r_r1149;
+    PyObject *cpy_r_r1150;
+    PyObject *cpy_r_r1151;
+    int32_t cpy_r_r1152;
+    char cpy_r_r1153;
+    PyObject *cpy_r_r1154;
+    PyObject *cpy_r_r1155;
+    PyObject *cpy_r_r1156;
+    PyObject *cpy_r_r1157;
+    PyObject *cpy_r_r1158;
+    PyObject *cpy_r_r1159;
+    PyObject *cpy_r_r1160;
+    PyObject *cpy_r_r1161;
+    PyObject *cpy_r_r1162;
+    PyObject *cpy_r_r1163;
+    PyObject *cpy_r_r1164;
+    PyObject *cpy_r_r1165;
+    CPyPtr cpy_r_r1166;
+    CPyPtr cpy_r_r1167;
+    PyObject *cpy_r_r1168;
+    PyObject *cpy_r_r1169;
+    PyObject *cpy_r_r1170;
+    PyObject *cpy_r_r1171;
+    PyObject *cpy_r_r1172;
+    PyObject *cpy_r_r1173;
+    PyObject *cpy_r_r1174;
+    PyObject *cpy_r_r1175;
+    PyObject *cpy_r_r1176;
+    PyObject *cpy_r_r1177;
+    PyObject *cpy_r_r1178;
+    PyObject *cpy_r_r1179;
+    PyObject *cpy_r_r1180;
+    PyObject *cpy_r_r1181;
+    PyObject *cpy_r_r1182;
+    PyObject *cpy_r_r1183;
+    PyObject *cpy_r_r1184;
+    PyObject *cpy_r_r1185;
+    PyObject *cpy_r_r1186;
+    PyObject *cpy_r_r1187;
+    PyObject *cpy_r_r1188;
+    PyObject *cpy_r_r1189;
+    PyObject *cpy_r_r1190;
+    PyObject *cpy_r_r1191;
+    PyObject *cpy_r_r1192;
+    PyObject *cpy_r_r1193;
+    PyObject *cpy_r_r1194;
+    CPyPtr cpy_r_r1195;
+    CPyPtr cpy_r_r1196;
+    PyObject *cpy_r_r1197;
+    PyObject *cpy_r_r1198;
+    PyObject *cpy_r_r1199;
+    PyObject *cpy_r_r1200;
+    PyObject *cpy_r_r1201;
+    PyObject *cpy_r_r1202;
+    PyObject *cpy_r_r1203;
+    PyObject *cpy_r_r1204;
+    PyObject *cpy_r_r1205;
+    PyObject *cpy_r_r1206;
+    PyObject *cpy_r_r1207;
+    PyObject *cpy_r_r1208;
+    PyObject *cpy_r_r1209;
+    PyObject *cpy_r_r1210;
+    PyObject *cpy_r_r1211;
+    PyObject *cpy_r_r1212;
+    PyObject *cpy_r_r1213;
+    PyObject *cpy_r_r1214;
+    PyObject *cpy_r_r1215;
+    PyObject *cpy_r_r1216;
+    PyObject *cpy_r_r1217;
+    PyObject *cpy_r_r1218;
+    CPyPtr cpy_r_r1219;
+    CPyPtr cpy_r_r1220;
+    PyObject *cpy_r_r1221;
+    PyObject *cpy_r_r1222;
+    PyObject *cpy_r_r1223;
+    PyObject *cpy_r_r1224;
+    PyObject *cpy_r_r1225;
+    PyObject *cpy_r_r1226;
+    PyObject *cpy_r_r1227;
+    PyObject *cpy_r_r1228;
+    PyObject *cpy_r_r1229;
+    PyObject *cpy_r_r1230;
+    PyObject *cpy_r_r1231;
+    PyObject *cpy_r_r1232;
+    PyObject *cpy_r_r1233;
+    PyObject *cpy_r_r1234;
+    PyObject *cpy_r_r1235;
+    PyObject *cpy_r_r1236;
+    PyObject *cpy_r_r1237;
+    PyObject *cpy_r_r1238;
+    CPyPtr cpy_r_r1239;
+    CPyPtr cpy_r_r1240;
+    PyObject *cpy_r_r1241;
+    PyObject *cpy_r_r1242;
+    PyObject *cpy_r_r1243;
+    PyObject *cpy_r_r1244;
+    PyObject *cpy_r_r1245;
+    PyObject *cpy_r_r1246;
+    PyObject *cpy_r_r1247;
+    PyObject *cpy_r_r1248;
+    PyObject *cpy_r_r1249;
+    PyObject *cpy_r_r1250;
+    PyObject *cpy_r_r1251;
+    PyObject *cpy_r_r1252;
+    PyObject *cpy_r_r1253;
+    PyObject *cpy_r_r1254;
+    CPyPtr cpy_r_r1255;
+    CPyPtr cpy_r_r1256;
+    PyObject *cpy_r_r1257;
+    PyObject *cpy_r_r1258;
+    PyObject *cpy_r_r1259;
+    PyObject *cpy_r_r1260;
+    PyObject *cpy_r_r1261;
+    PyObject *cpy_r_r1262;
+    PyObject *cpy_r_r1263;
+    PyObject *cpy_r_r1264;
+    PyObject *cpy_r_r1265;
+    PyObject *cpy_r_r1266;
+    PyObject *cpy_r_r1267;
+    PyObject *cpy_r_r1268;
+    PyObject *cpy_r_r1269;
+    PyObject *cpy_r_r1270;
+    PyObject *cpy_r_r1271;
+    PyObject *cpy_r_r1272;
+    PyObject *cpy_r_r1273;
+    PyObject *cpy_r_r1274;
+    CPyPtr cpy_r_r1275;
+    CPyPtr cpy_r_r1276;
+    PyObject *cpy_r_r1277;
+    PyObject *cpy_r_r1278;
+    PyObject *cpy_r_r1279;
+    PyObject *cpy_r_r1280;
+    PyObject *cpy_r_r1281;
+    PyObject *cpy_r_r1282;
+    PyObject *cpy_r_r1283;
+    PyObject *cpy_r_r1284;
+    PyObject *cpy_r_r1285;
+    PyObject *cpy_r_r1286;
+    PyObject *cpy_r_r1287;
+    PyObject *cpy_r_r1288;
+    PyObject *cpy_r_r1289;
+    PyObject *cpy_r_r1290;
+    PyObject *cpy_r_r1291;
+    PyObject *cpy_r_r1292;
+    PyObject *cpy_r_r1293;
+    PyObject *cpy_r_r1294;
+    CPyPtr cpy_r_r1295;
+    CPyPtr cpy_r_r1296;
+    PyObject *cpy_r_r1297;
+    PyObject *cpy_r_r1298;
+    PyObject *cpy_r_r1299;
+    PyObject *cpy_r_r1300;
+    PyObject *cpy_r_r1301;
+    PyObject *cpy_r_r1302;
+    PyObject *cpy_r_r1303;
+    PyObject *cpy_r_r1304;
+    PyObject *cpy_r_r1305;
+    PyObject *cpy_r_r1306;
+    PyObject *cpy_r_r1307;
+    PyObject *cpy_r_r1308;
+    PyObject *cpy_r_r1309;
+    PyObject *cpy_r_r1310;
+    PyObject *cpy_r_r1311;
+    PyObject *cpy_r_r1312;
+    PyObject *cpy_r_r1313;
+    PyObject *cpy_r_r1314;
+    PyObject *cpy_r_r1315;
+    PyObject *cpy_r_r1316;
+    PyObject *cpy_r_r1317;
+    PyObject *cpy_r_r1318;
+    PyObject *cpy_r_r1319;
+    PyObject *cpy_r_r1320;
+    PyObject *cpy_r_r1321;
+    PyObject *cpy_r_r1322;
+    PyObject *cpy_r_r1323;
+    PyObject *cpy_r_r1324;
+    PyObject *cpy_r_r1325;
+    PyObject *cpy_r_r1326;
+    CPyPtr cpy_r_r1327;
+    CPyPtr cpy_r_r1328;
+    PyObject *cpy_r_r1329;
+    PyObject *cpy_r_r1330;
+    PyObject *cpy_r_r1331;
+    PyObject *cpy_r_r1332;
+    PyObject *cpy_r_r1333;
+    PyObject *cpy_r_r1334;
+    PyObject *cpy_r_r1335;
+    PyObject *cpy_r_r1336;
+    PyObject *cpy_r_r1337;
+    PyObject *cpy_r_r1338;
+    PyObject *cpy_r_r1339;
+    PyObject *cpy_r_r1340;
+    PyObject *cpy_r_r1341;
+    PyObject *cpy_r_r1342;
+    PyObject *cpy_r_r1343;
+    PyObject *cpy_r_r1344;
+    PyObject *cpy_r_r1345;
+    PyObject *cpy_r_r1346;
+    int32_t cpy_r_r1347;
+    char cpy_r_r1348;
+    PyObject *cpy_r_r1349;
+    PyObject *cpy_r_r1350;
+    PyObject *cpy_r_r1351;
+    PyObject *cpy_r_r1352;
+    PyObject *cpy_r_r1353;
+    PyObject *cpy_r_r1354;
+    PyObject *cpy_r_r1355;
+    PyObject *cpy_r_r1356;
+    PyObject *cpy_r_r1357;
+    PyObject *cpy_r_r1358;
+    PyObject *cpy_r_r1359;
+    PyObject *cpy_r_r1360;
+    CPyPtr cpy_r_r1361;
+    CPyPtr cpy_r_r1362;
+    PyObject *cpy_r_r1363;
+    PyObject *cpy_r_r1364;
+    PyObject *cpy_r_r1365;
+    PyObject *cpy_r_r1366;
+    PyObject *cpy_r_r1367;
+    PyObject *cpy_r_r1368;
+    PyObject *cpy_r_r1369;
+    PyObject *cpy_r_r1370;
+    PyObject *cpy_r_r1371;
+    PyObject *cpy_r_r1372;
+    PyObject *cpy_r_r1373;
+    PyObject *cpy_r_r1374;
+    PyObject *cpy_r_r1375;
+    PyObject *cpy_r_r1376;
+    CPyPtr cpy_r_r1377;
+    CPyPtr cpy_r_r1378;
+    PyObject *cpy_r_r1379;
+    PyObject *cpy_r_r1380;
+    PyObject *cpy_r_r1381;
+    PyObject *cpy_r_r1382;
+    PyObject *cpy_r_r1383;
+    PyObject *cpy_r_r1384;
+    PyObject *cpy_r_r1385;
+    PyObject *cpy_r_r1386;
+    PyObject *cpy_r_r1387;
+    CPyPtr cpy_r_r1388;
+    CPyPtr cpy_r_r1389;
+    PyObject *cpy_r_r1390;
+    PyObject *cpy_r_r1391;
+    PyObject *cpy_r_r1392;
+    PyObject *cpy_r_r1393;
+    PyObject *cpy_r_r1394;
+    PyObject *cpy_r_r1395;
+    PyObject *cpy_r_r1396;
+    PyObject *cpy_r_r1397;
+    PyObject *cpy_r_r1398;
+    PyObject *cpy_r_r1399;
+    PyObject *cpy_r_r1400;
+    PyObject *cpy_r_r1401;
+    PyObject *cpy_r_r1402;
+    PyObject *cpy_r_r1403;
+    PyObject *cpy_r_r1404;
+    PyObject *cpy_r_r1405;
+    PyObject *cpy_r_r1406;
+    PyObject *cpy_r_r1407;
+    PyObject *cpy_r_r1408;
+    CPyPtr cpy_r_r1409;
+    CPyPtr cpy_r_r1410;
+    CPyPtr cpy_r_r1411;
+    PyObject *cpy_r_r1412;
+    PyObject *cpy_r_r1413;
+    PyObject *cpy_r_r1414;
+    PyObject *cpy_r_r1415;
+    PyObject *cpy_r_r1416;
+    PyObject *cpy_r_r1417;
+    PyObject *cpy_r_r1418;
+    PyObject *cpy_r_r1419;
+    PyObject *cpy_r_r1420;
+    PyObject *cpy_r_r1421;
+    PyObject *cpy_r_r1422;
+    PyObject *cpy_r_r1423;
+    PyObject *cpy_r_r1424;
+    PyObject *cpy_r_r1425;
+    PyObject *cpy_r_r1426;
+    PyObject *cpy_r_r1427;
+    PyObject *cpy_r_r1428;
+    PyObject *cpy_r_r1429;
+    PyObject *cpy_r_r1430;
+    PyObject *cpy_r_r1431;
+    PyObject *cpy_r_r1432;
+    PyObject *cpy_r_r1433;
+    CPyPtr cpy_r_r1434;
+    CPyPtr cpy_r_r1435;
+    PyObject *cpy_r_r1436;
+    PyObject *cpy_r_r1437;
+    PyObject *cpy_r_r1438;
+    PyObject *cpy_r_r1439;
+    PyObject *cpy_r_r1440;
+    PyObject *cpy_r_r1441;
+    PyObject *cpy_r_r1442;
+    PyObject *cpy_r_r1443;
+    PyObject *cpy_r_r1444;
+    PyObject *cpy_r_r1445;
+    PyObject *cpy_r_r1446;
+    PyObject *cpy_r_r1447;
+    PyObject *cpy_r_r1448;
+    PyObject *cpy_r_r1449;
+    PyObject *cpy_r_r1450;
+    PyObject *cpy_r_r1451;
+    PyObject *cpy_r_r1452;
+    PyObject *cpy_r_r1453;
+    CPyPtr cpy_r_r1454;
+    CPyPtr cpy_r_r1455;
+    CPyPtr cpy_r_r1456;
+    PyObject *cpy_r_r1457;
+    PyObject *cpy_r_r1458;
+    PyObject *cpy_r_r1459;
+    PyObject *cpy_r_r1460;
+    CPyPtr cpy_r_r1461;
+    CPyPtr cpy_r_r1462;
+    CPyPtr cpy_r_r1463;
+    CPyPtr cpy_r_r1464;
+    CPyPtr cpy_r_r1465;
+    CPyPtr cpy_r_r1466;
+    PyObject *cpy_r_r1467;
+    PyObject *cpy_r_r1468;
+    int32_t cpy_r_r1469;
+    char cpy_r_r1470;
+    PyObject *cpy_r_r1471;
+    PyObject *cpy_r_r1472;
+    PyObject *cpy_r_r1473;
+    PyObject *cpy_r_r1474;
+    PyObject *cpy_r_r1475;
+    PyObject *cpy_r_r1476;
+    PyObject *cpy_r_r1477;
+    PyObject *cpy_r_r1478;
+    PyObject *cpy_r_r1479;
+    CPyPtr cpy_r_r1480;
+    CPyPtr cpy_r_r1481;
+    PyObject *cpy_r_r1482;
+    PyObject *cpy_r_r1483;
+    PyObject *cpy_r_r1484;
+    PyObject *cpy_r_r1485;
+    PyObject *cpy_r_r1486;
+    PyObject *cpy_r_r1487;
+    PyObject *cpy_r_r1488;
+    PyObject *cpy_r_r1489;
+    PyObject *cpy_r_r1490;
+    PyObject *cpy_r_r1491;
+    PyObject *cpy_r_r1492;
+    PyObject *cpy_r_r1493;
+    PyObject *cpy_r_r1494;
+    PyObject *cpy_r_r1495;
+    PyObject *cpy_r_r1496;
+    PyObject *cpy_r_r1497;
+    PyObject *cpy_r_r1498;
+    PyObject *cpy_r_r1499;
+    PyObject *cpy_r_r1500;
+    PyObject *cpy_r_r1501;
+    PyObject *cpy_r_r1502;
+    PyObject *cpy_r_r1503;
+    PyObject *cpy_r_r1504;
+    PyObject *cpy_r_r1505;
+    PyObject *cpy_r_r1506;
+    PyObject *cpy_r_r1507;
+    PyObject *cpy_r_r1508;
+    PyObject *cpy_r_r1509;
+    CPyPtr cpy_r_r1510;
+    CPyPtr cpy_r_r1511;
+    CPyPtr cpy_r_r1512;
+    PyObject *cpy_r_r1513;
+    PyObject *cpy_r_r1514;
+    PyObject *cpy_r_r1515;
+    PyObject *cpy_r_r1516;
+    PyObject *cpy_r_r1517;
+    PyObject *cpy_r_r1518;
+    PyObject *cpy_r_r1519;
+    PyObject *cpy_r_r1520;
+    PyObject *cpy_r_r1521;
+    PyObject *cpy_r_r1522;
+    PyObject *cpy_r_r1523;
+    PyObject *cpy_r_r1524;
+    PyObject *cpy_r_r1525;
+    PyObject *cpy_r_r1526;
+    PyObject *cpy_r_r1527;
+    PyObject *cpy_r_r1528;
+    PyObject *cpy_r_r1529;
+    PyObject *cpy_r_r1530;
+    PyObject *cpy_r_r1531;
+    PyObject *cpy_r_r1532;
+    PyObject *cpy_r_r1533;
+    PyObject *cpy_r_r1534;
+    PyObject *cpy_r_r1535;
+    PyObject *cpy_r_r1536;
+    PyObject *cpy_r_r1537;
+    PyObject *cpy_r_r1538;
+    PyObject *cpy_r_r1539;
+    CPyPtr cpy_r_r1540;
+    CPyPtr cpy_r_r1541;
+    CPyPtr cpy_r_r1542;
+    PyObject *cpy_r_r1543;
+    PyObject *cpy_r_r1544;
+    PyObject *cpy_r_r1545;
+    PyObject *cpy_r_r1546;
+    PyObject *cpy_r_r1547;
+    PyObject *cpy_r_r1548;
+    PyObject *cpy_r_r1549;
+    PyObject *cpy_r_r1550;
+    PyObject *cpy_r_r1551;
+    PyObject *cpy_r_r1552;
+    PyObject *cpy_r_r1553;
+    PyObject *cpy_r_r1554;
+    PyObject *cpy_r_r1555;
+    PyObject *cpy_r_r1556;
+    PyObject *cpy_r_r1557;
+    PyObject *cpy_r_r1558;
+    PyObject *cpy_r_r1559;
+    PyObject *cpy_r_r1560;
+    PyObject *cpy_r_r1561;
+    PyObject *cpy_r_r1562;
+    PyObject *cpy_r_r1563;
+    PyObject *cpy_r_r1564;
+    PyObject *cpy_r_r1565;
+    PyObject *cpy_r_r1566;
+    PyObject *cpy_r_r1567;
+    PyObject *cpy_r_r1568;
+    PyObject *cpy_r_r1569;
+    PyObject *cpy_r_r1570;
+    PyObject *cpy_r_r1571;
+    PyObject *cpy_r_r1572;
+    PyObject *cpy_r_r1573;
+    PyObject *cpy_r_r1574;
+    PyObject *cpy_r_r1575;
+    PyObject *cpy_r_r1576;
+    PyObject *cpy_r_r1577;
+    PyObject *cpy_r_r1578;
+    CPyPtr cpy_r_r1579;
+    CPyPtr cpy_r_r1580;
+    CPyPtr cpy_r_r1581;
+    CPyPtr cpy_r_r1582;
+    PyObject *cpy_r_r1583;
+    PyObject *cpy_r_r1584;
+    PyObject *cpy_r_r1585;
+    PyObject *cpy_r_r1586;
+    PyObject *cpy_r_r1587;
+    PyObject *cpy_r_r1588;
+    PyObject *cpy_r_r1589;
+    PyObject *cpy_r_r1590;
+    PyObject *cpy_r_r1591;
+    PyObject *cpy_r_r1592;
+    PyObject *cpy_r_r1593;
+    PyObject *cpy_r_r1594;
+    PyObject *cpy_r_r1595;
+    PyObject *cpy_r_r1596;
+    PyObject *cpy_r_r1597;
+    PyObject *cpy_r_r1598;
+    PyObject *cpy_r_r1599;
+    PyObject *cpy_r_r1600;
+    PyObject *cpy_r_r1601;
+    PyObject *cpy_r_r1602;
+    PyObject *cpy_r_r1603;
+    PyObject *cpy_r_r1604;
+    PyObject *cpy_r_r1605;
+    PyObject *cpy_r_r1606;
+    PyObject *cpy_r_r1607;
+    PyObject *cpy_r_r1608;
+    PyObject *cpy_r_r1609;
+    PyObject *cpy_r_r1610;
+    PyObject *cpy_r_r1611;
+    PyObject *cpy_r_r1612;
+    PyObject *cpy_r_r1613;
+    PyObject *cpy_r_r1614;
+    PyObject *cpy_r_r1615;
+    PyObject *cpy_r_r1616;
+    PyObject *cpy_r_r1617;
+    PyObject *cpy_r_r1618;
+    PyObject *cpy_r_r1619;
+    PyObject *cpy_r_r1620;
+    PyObject *cpy_r_r1621;
+    PyObject *cpy_r_r1622;
+    PyObject *cpy_r_r1623;
+    PyObject *cpy_r_r1624;
+    PyObject *cpy_r_r1625;
+    PyObject *cpy_r_r1626;
+    PyObject *cpy_r_r1627;
+    CPyPtr cpy_r_r1628;
+    CPyPtr cpy_r_r1629;
+    CPyPtr cpy_r_r1630;
+    CPyPtr cpy_r_r1631;
+    CPyPtr cpy_r_r1632;
+    PyObject *cpy_r_r1633;
+    PyObject *cpy_r_r1634;
+    PyObject *cpy_r_r1635;
+    PyObject *cpy_r_r1636;
+    PyObject *cpy_r_r1637;
+    PyObject *cpy_r_r1638;
+    PyObject *cpy_r_r1639;
+    PyObject *cpy_r_r1640;
+    PyObject *cpy_r_r1641;
+    PyObject *cpy_r_r1642;
+    PyObject *cpy_r_r1643;
+    PyObject *cpy_r_r1644;
+    PyObject *cpy_r_r1645;
+    PyObject *cpy_r_r1646;
+    PyObject *cpy_r_r1647;
+    PyObject *cpy_r_r1648;
+    PyObject *cpy_r_r1649;
+    PyObject *cpy_r_r1650;
+    PyObject *cpy_r_r1651;
+    PyObject *cpy_r_r1652;
+    PyObject *cpy_r_r1653;
+    PyObject *cpy_r_r1654;
+    PyObject *cpy_r_r1655;
+    PyObject *cpy_r_r1656;
+    PyObject *cpy_r_r1657;
+    PyObject *cpy_r_r1658;
+    PyObject *cpy_r_r1659;
+    CPyPtr cpy_r_r1660;
+    CPyPtr cpy_r_r1661;
+    CPyPtr cpy_r_r1662;
+    PyObject *cpy_r_r1663;
+    PyObject *cpy_r_r1664;
+    PyObject *cpy_r_r1665;
+    PyObject *cpy_r_r1666;
+    PyObject *cpy_r_r1667;
+    PyObject *cpy_r_r1668;
+    PyObject *cpy_r_r1669;
+    PyObject *cpy_r_r1670;
+    PyObject *cpy_r_r1671;
+    PyObject *cpy_r_r1672;
+    PyObject *cpy_r_r1673;
+    PyObject *cpy_r_r1674;
+    PyObject *cpy_r_r1675;
+    PyObject *cpy_r_r1676;
+    PyObject *cpy_r_r1677;
+    PyObject *cpy_r_r1678;
+    PyObject *cpy_r_r1679;
+    PyObject *cpy_r_r1680;
+    PyObject *cpy_r_r1681;
+    PyObject *cpy_r_r1682;
+    PyObject *cpy_r_r1683;
+    PyObject *cpy_r_r1684;
+    PyObject *cpy_r_r1685;
+    PyObject *cpy_r_r1686;
+    PyObject *cpy_r_r1687;
+    PyObject *cpy_r_r1688;
+    PyObject *cpy_r_r1689;
+    PyObject *cpy_r_r1690;
+    PyObject *cpy_r_r1691;
+    PyObject *cpy_r_r1692;
+    PyObject *cpy_r_r1693;
+    PyObject *cpy_r_r1694;
+    PyObject *cpy_r_r1695;
+    PyObject *cpy_r_r1696;
+    PyObject *cpy_r_r1697;
+    PyObject *cpy_r_r1698;
+    PyObject *cpy_r_r1699;
+    PyObject *cpy_r_r1700;
+    PyObject *cpy_r_r1701;
+    PyObject *cpy_r_r1702;
+    PyObject *cpy_r_r1703;
+    PyObject *cpy_r_r1704;
+    PyObject *cpy_r_r1705;
+    PyObject *cpy_r_r1706;
+    PyObject *cpy_r_r1707;
+    CPyPtr cpy_r_r1708;
+    CPyPtr cpy_r_r1709;
+    CPyPtr cpy_r_r1710;
+    CPyPtr cpy_r_r1711;
+    CPyPtr cpy_r_r1712;
+    PyObject *cpy_r_r1713;
+    PyObject *cpy_r_r1714;
+    PyObject *cpy_r_r1715;
+    PyObject *cpy_r_r1716;
+    PyObject *cpy_r_r1717;
+    PyObject *cpy_r_r1718;
+    PyObject *cpy_r_r1719;
+    PyObject *cpy_r_r1720;
+    PyObject *cpy_r_r1721;
+    PyObject *cpy_r_r1722;
+    PyObject *cpy_r_r1723;
+    PyObject *cpy_r_r1724;
+    PyObject *cpy_r_r1725;
+    PyObject *cpy_r_r1726;
+    PyObject *cpy_r_r1727;
+    PyObject *cpy_r_r1728;
+    PyObject *cpy_r_r1729;
+    PyObject *cpy_r_r1730;
+    PyObject *cpy_r_r1731;
+    PyObject *cpy_r_r1732;
+    PyObject *cpy_r_r1733;
+    PyObject *cpy_r_r1734;
+    PyObject *cpy_r_r1735;
+    PyObject *cpy_r_r1736;
+    PyObject *cpy_r_r1737;
+    PyObject *cpy_r_r1738;
+    PyObject *cpy_r_r1739;
+    PyObject *cpy_r_r1740;
+    PyObject *cpy_r_r1741;
+    PyObject *cpy_r_r1742;
+    PyObject *cpy_r_r1743;
+    PyObject *cpy_r_r1744;
+    PyObject *cpy_r_r1745;
+    PyObject *cpy_r_r1746;
+    PyObject *cpy_r_r1747;
+    PyObject *cpy_r_r1748;
+    CPyPtr cpy_r_r1749;
+    CPyPtr cpy_r_r1750;
+    CPyPtr cpy_r_r1751;
+    CPyPtr cpy_r_r1752;
+    PyObject *cpy_r_r1753;
+    PyObject *cpy_r_r1754;
+    PyObject *cpy_r_r1755;
+    PyObject *cpy_r_r1756;
+    PyObject *cpy_r_r1757;
+    PyObject *cpy_r_r1758;
+    PyObject *cpy_r_r1759;
+    PyObject *cpy_r_r1760;
+    PyObject *cpy_r_r1761;
+    PyObject *cpy_r_r1762;
+    PyObject *cpy_r_r1763;
+    PyObject *cpy_r_r1764;
+    PyObject *cpy_r_r1765;
+    PyObject *cpy_r_r1766;
+    PyObject *cpy_r_r1767;
+    PyObject *cpy_r_r1768;
+    PyObject *cpy_r_r1769;
+    PyObject *cpy_r_r1770;
+    CPyPtr cpy_r_r1771;
+    CPyPtr cpy_r_r1772;
+    PyObject *cpy_r_r1773;
+    PyObject *cpy_r_r1774;
+    PyObject *cpy_r_r1775;
+    PyObject *cpy_r_r1776;
+    PyObject *cpy_r_r1777;
+    PyObject *cpy_r_r1778;
+    PyObject *cpy_r_r1779;
+    PyObject *cpy_r_r1780;
+    PyObject *cpy_r_r1781;
+    PyObject *cpy_r_r1782;
+    PyObject *cpy_r_r1783;
+    PyObject *cpy_r_r1784;
+    PyObject *cpy_r_r1785;
+    PyObject *cpy_r_r1786;
+    PyObject *cpy_r_r1787;
+    PyObject *cpy_r_r1788;
+    PyObject *cpy_r_r1789;
+    PyObject *cpy_r_r1790;
+    PyObject *cpy_r_r1791;
+    PyObject *cpy_r_r1792;
+    PyObject *cpy_r_r1793;
+    PyObject *cpy_r_r1794;
+    PyObject *cpy_r_r1795;
+    PyObject *cpy_r_r1796;
+    PyObject *cpy_r_r1797;
+    PyObject *cpy_r_r1798;
+    PyObject *cpy_r_r1799;
+    PyObject *cpy_r_r1800;
+    PyObject *cpy_r_r1801;
+    PyObject *cpy_r_r1802;
+    PyObject *cpy_r_r1803;
+    PyObject *cpy_r_r1804;
+    PyObject *cpy_r_r1805;
+    PyObject *cpy_r_r1806;
+    PyObject *cpy_r_r1807;
+    PyObject *cpy_r_r1808;
+    CPyPtr cpy_r_r1809;
+    CPyPtr cpy_r_r1810;
+    CPyPtr cpy_r_r1811;
+    CPyPtr cpy_r_r1812;
+    PyObject *cpy_r_r1813;
+    PyObject *cpy_r_r1814;
+    PyObject *cpy_r_r1815;
+    PyObject *cpy_r_r1816;
+    PyObject *cpy_r_r1817;
+    PyObject *cpy_r_r1818;
+    PyObject *cpy_r_r1819;
+    PyObject *cpy_r_r1820;
+    PyObject *cpy_r_r1821;
+    PyObject *cpy_r_r1822;
+    PyObject *cpy_r_r1823;
+    PyObject *cpy_r_r1824;
+    PyObject *cpy_r_r1825;
+    PyObject *cpy_r_r1826;
+    PyObject *cpy_r_r1827;
+    PyObject *cpy_r_r1828;
+    PyObject *cpy_r_r1829;
+    PyObject *cpy_r_r1830;
+    PyObject *cpy_r_r1831;
+    PyObject *cpy_r_r1832;
+    PyObject *cpy_r_r1833;
+    PyObject *cpy_r_r1834;
+    PyObject *cpy_r_r1835;
+    PyObject *cpy_r_r1836;
+    PyObject *cpy_r_r1837;
+    PyObject *cpy_r_r1838;
+    PyObject *cpy_r_r1839;
+    CPyPtr cpy_r_r1840;
+    CPyPtr cpy_r_r1841;
+    CPyPtr cpy_r_r1842;
+    PyObject *cpy_r_r1843;
+    PyObject *cpy_r_r1844;
+    PyObject *cpy_r_r1845;
+    PyObject *cpy_r_r1846;
+    PyObject *cpy_r_r1847;
+    PyObject *cpy_r_r1848;
+    PyObject *cpy_r_r1849;
+    PyObject *cpy_r_r1850;
+    PyObject *cpy_r_r1851;
+    PyObject *cpy_r_r1852;
+    PyObject *cpy_r_r1853;
+    PyObject *cpy_r_r1854;
+    PyObject *cpy_r_r1855;
+    PyObject *cpy_r_r1856;
+    PyObject *cpy_r_r1857;
+    PyObject *cpy_r_r1858;
+    PyObject *cpy_r_r1859;
+    PyObject *cpy_r_r1860;
+    PyObject *cpy_r_r1861;
+    PyObject *cpy_r_r1862;
+    PyObject *cpy_r_r1863;
+    PyObject *cpy_r_r1864;
+    PyObject *cpy_r_r1865;
+    PyObject *cpy_r_r1866;
+    PyObject *cpy_r_r1867;
+    PyObject *cpy_r_r1868;
+    PyObject *cpy_r_r1869;
+    PyObject *cpy_r_r1870;
+    PyObject *cpy_r_r1871;
+    PyObject *cpy_r_r1872;
+    PyObject *cpy_r_r1873;
+    PyObject *cpy_r_r1874;
+    PyObject *cpy_r_r1875;
+    PyObject *cpy_r_r1876;
+    PyObject *cpy_r_r1877;
+    PyObject *cpy_r_r1878;
+    CPyPtr cpy_r_r1879;
+    CPyPtr cpy_r_r1880;
+    CPyPtr cpy_r_r1881;
+    CPyPtr cpy_r_r1882;
+    PyObject *cpy_r_r1883;
+    PyObject *cpy_r_r1884;
+    PyObject *cpy_r_r1885;
+    PyObject *cpy_r_r1886;
+    PyObject *cpy_r_r1887;
+    PyObject *cpy_r_r1888;
+    PyObject *cpy_r_r1889;
+    PyObject *cpy_r_r1890;
+    PyObject *cpy_r_r1891;
+    PyObject *cpy_r_r1892;
+    PyObject *cpy_r_r1893;
+    PyObject *cpy_r_r1894;
+    PyObject *cpy_r_r1895;
+    PyObject *cpy_r_r1896;
+    PyObject *cpy_r_r1897;
+    PyObject *cpy_r_r1898;
+    PyObject *cpy_r_r1899;
+    PyObject *cpy_r_r1900;
+    PyObject *cpy_r_r1901;
+    PyObject *cpy_r_r1902;
+    PyObject *cpy_r_r1903;
+    PyObject *cpy_r_r1904;
+    PyObject *cpy_r_r1905;
+    PyObject *cpy_r_r1906;
+    PyObject *cpy_r_r1907;
+    PyObject *cpy_r_r1908;
+    PyObject *cpy_r_r1909;
+    PyObject *cpy_r_r1910;
+    PyObject *cpy_r_r1911;
+    PyObject *cpy_r_r1912;
+    PyObject *cpy_r_r1913;
+    PyObject *cpy_r_r1914;
+    PyObject *cpy_r_r1915;
+    PyObject *cpy_r_r1916;
+    PyObject *cpy_r_r1917;
+    PyObject *cpy_r_r1918;
+    CPyPtr cpy_r_r1919;
+    CPyPtr cpy_r_r1920;
+    CPyPtr cpy_r_r1921;
+    CPyPtr cpy_r_r1922;
+    PyObject *cpy_r_r1923;
+    PyObject *cpy_r_r1924;
+    PyObject *cpy_r_r1925;
+    PyObject *cpy_r_r1926;
+    PyObject *cpy_r_r1927;
+    PyObject *cpy_r_r1928;
+    PyObject *cpy_r_r1929;
+    PyObject *cpy_r_r1930;
+    PyObject *cpy_r_r1931;
+    PyObject *cpy_r_r1932;
+    PyObject *cpy_r_r1933;
+    PyObject *cpy_r_r1934;
+    PyObject *cpy_r_r1935;
+    PyObject *cpy_r_r1936;
+    PyObject *cpy_r_r1937;
+    PyObject *cpy_r_r1938;
+    PyObject *cpy_r_r1939;
+    PyObject *cpy_r_r1940;
+    PyObject *cpy_r_r1941;
+    PyObject *cpy_r_r1942;
+    PyObject *cpy_r_r1943;
+    PyObject *cpy_r_r1944;
+    PyObject *cpy_r_r1945;
+    CPyPtr cpy_r_r1946;
+    CPyPtr cpy_r_r1947;
+    CPyPtr cpy_r_r1948;
+    PyObject *cpy_r_r1949;
+    PyObject *cpy_r_r1950;
+    PyObject *cpy_r_r1951;
+    PyObject *cpy_r_r1952;
+    PyObject *cpy_r_r1953;
+    PyObject *cpy_r_r1954;
+    PyObject *cpy_r_r1955;
+    PyObject *cpy_r_r1956;
+    PyObject *cpy_r_r1957;
+    PyObject *cpy_r_r1958;
+    PyObject *cpy_r_r1959;
+    PyObject *cpy_r_r1960;
+    PyObject *cpy_r_r1961;
+    PyObject *cpy_r_r1962;
+    PyObject *cpy_r_r1963;
+    PyObject *cpy_r_r1964;
+    PyObject *cpy_r_r1965;
+    PyObject *cpy_r_r1966;
+    CPyPtr cpy_r_r1967;
+    CPyPtr cpy_r_r1968;
+    CPyPtr cpy_r_r1969;
+    PyObject *cpy_r_r1970;
+    PyObject *cpy_r_r1971;
+    PyObject *cpy_r_r1972;
+    PyObject *cpy_r_r1973;
+    PyObject *cpy_r_r1974;
+    PyObject *cpy_r_r1975;
+    PyObject *cpy_r_r1976;
+    PyObject *cpy_r_r1977;
+    PyObject *cpy_r_r1978;
+    PyObject *cpy_r_r1979;
+    PyObject *cpy_r_r1980;
+    PyObject *cpy_r_r1981;
+    PyObject *cpy_r_r1982;
+    PyObject *cpy_r_r1983;
+    PyObject *cpy_r_r1984;
+    PyObject *cpy_r_r1985;
+    PyObject *cpy_r_r1986;
+    PyObject *cpy_r_r1987;
+    CPyPtr cpy_r_r1988;
+    CPyPtr cpy_r_r1989;
+    PyObject *cpy_r_r1990;
+    PyObject *cpy_r_r1991;
+    PyObject *cpy_r_r1992;
+    PyObject *cpy_r_r1993;
+    PyObject *cpy_r_r1994;
+    PyObject *cpy_r_r1995;
+    PyObject *cpy_r_r1996;
+    PyObject *cpy_r_r1997;
+    PyObject *cpy_r_r1998;
+    PyObject *cpy_r_r1999;
+    PyObject *cpy_r_r2000;
+    CPyPtr cpy_r_r2001;
+    CPyPtr cpy_r_r2002;
+    PyObject *cpy_r_r2003;
+    PyObject *cpy_r_r2004;
+    PyObject *cpy_r_r2005;
+    PyObject *cpy_r_r2006;
+    PyObject *cpy_r_r2007;
+    PyObject *cpy_r_r2008;
+    PyObject *cpy_r_r2009;
+    PyObject *cpy_r_r2010;
+    PyObject *cpy_r_r2011;
+    PyObject *cpy_r_r2012;
+    PyObject *cpy_r_r2013;
+    PyObject *cpy_r_r2014;
+    PyObject *cpy_r_r2015;
+    PyObject *cpy_r_r2016;
+    PyObject *cpy_r_r2017;
+    PyObject *cpy_r_r2018;
+    PyObject *cpy_r_r2019;
+    PyObject *cpy_r_r2020;
+    PyObject *cpy_r_r2021;
+    PyObject *cpy_r_r2022;
+    PyObject *cpy_r_r2023;
+    PyObject *cpy_r_r2024;
+    PyObject *cpy_r_r2025;
+    PyObject *cpy_r_r2026;
+    PyObject *cpy_r_r2027;
+    CPyPtr cpy_r_r2028;
+    CPyPtr cpy_r_r2029;
+    CPyPtr cpy_r_r2030;
+    PyObject *cpy_r_r2031;
+    PyObject *cpy_r_r2032;
+    PyObject *cpy_r_r2033;
+    PyObject *cpy_r_r2034;
+    PyObject *cpy_r_r2035;
+    PyObject *cpy_r_r2036;
+    PyObject *cpy_r_r2037;
+    PyObject *cpy_r_r2038;
+    PyObject *cpy_r_r2039;
+    PyObject *cpy_r_r2040;
+    PyObject *cpy_r_r2041;
+    CPyPtr cpy_r_r2042;
+    CPyPtr cpy_r_r2043;
+    PyObject *cpy_r_r2044;
+    PyObject *cpy_r_r2045;
+    PyObject *cpy_r_r2046;
+    PyObject *cpy_r_r2047;
+    PyObject *cpy_r_r2048;
+    PyObject *cpy_r_r2049;
+    PyObject *cpy_r_r2050;
+    PyObject *cpy_r_r2051;
+    PyObject *cpy_r_r2052;
+    PyObject *cpy_r_r2053;
+    PyObject *cpy_r_r2054;
+    PyObject *cpy_r_r2055;
+    PyObject *cpy_r_r2056;
+    PyObject *cpy_r_r2057;
+    PyObject *cpy_r_r2058;
+    PyObject *cpy_r_r2059;
+    PyObject *cpy_r_r2060;
+    PyObject *cpy_r_r2061;
+    PyObject *cpy_r_r2062;
+    PyObject *cpy_r_r2063;
+    PyObject *cpy_r_r2064;
+    PyObject *cpy_r_r2065;
+    PyObject *cpy_r_r2066;
+    PyObject *cpy_r_r2067;
+    PyObject *cpy_r_r2068;
+    PyObject *cpy_r_r2069;
+    PyObject *cpy_r_r2070;
+    PyObject *cpy_r_r2071;
+    PyObject *cpy_r_r2072;
+    PyObject *cpy_r_r2073;
+    PyObject *cpy_r_r2074;
+    PyObject *cpy_r_r2075;
+    CPyPtr cpy_r_r2076;
+    CPyPtr cpy_r_r2077;
+    CPyPtr cpy_r_r2078;
+    CPyPtr cpy_r_r2079;
+    PyObject *cpy_r_r2080;
+    PyObject *cpy_r_r2081;
+    PyObject *cpy_r_r2082;
+    PyObject *cpy_r_r2083;
+    PyObject *cpy_r_r2084;
+    PyObject *cpy_r_r2085;
+    PyObject *cpy_r_r2086;
+    PyObject *cpy_r_r2087;
+    PyObject *cpy_r_r2088;
+    PyObject *cpy_r_r2089;
+    PyObject *cpy_r_r2090;
+    CPyPtr cpy_r_r2091;
+    CPyPtr cpy_r_r2092;
+    PyObject *cpy_r_r2093;
+    PyObject *cpy_r_r2094;
+    PyObject *cpy_r_r2095;
+    PyObject *cpy_r_r2096;
+    PyObject *cpy_r_r2097;
+    PyObject *cpy_r_r2098;
+    PyObject *cpy_r_r2099;
+    PyObject *cpy_r_r2100;
+    PyObject *cpy_r_r2101;
+    PyObject *cpy_r_r2102;
+    PyObject *cpy_r_r2103;
+    PyObject *cpy_r_r2104;
+    PyObject *cpy_r_r2105;
+    PyObject *cpy_r_r2106;
+    PyObject *cpy_r_r2107;
+    PyObject *cpy_r_r2108;
+    PyObject *cpy_r_r2109;
+    PyObject *cpy_r_r2110;
+    CPyPtr cpy_r_r2111;
+    CPyPtr cpy_r_r2112;
+    PyObject *cpy_r_r2113;
+    PyObject *cpy_r_r2114;
+    PyObject *cpy_r_r2115;
+    PyObject *cpy_r_r2116;
+    PyObject *cpy_r_r2117;
+    PyObject *cpy_r_r2118;
+    PyObject *cpy_r_r2119;
+    PyObject *cpy_r_r2120;
+    PyObject *cpy_r_r2121;
+    PyObject *cpy_r_r2122;
+    PyObject *cpy_r_r2123;
+    PyObject *cpy_r_r2124;
+    PyObject *cpy_r_r2125;
+    PyObject *cpy_r_r2126;
+    PyObject *cpy_r_r2127;
+    PyObject *cpy_r_r2128;
+    PyObject *cpy_r_r2129;
+    PyObject *cpy_r_r2130;
+    PyObject *cpy_r_r2131;
+    PyObject *cpy_r_r2132;
+    PyObject *cpy_r_r2133;
+    PyObject *cpy_r_r2134;
+    CPyPtr cpy_r_r2135;
+    CPyPtr cpy_r_r2136;
+    PyObject *cpy_r_r2137;
+    PyObject *cpy_r_r2138;
+    PyObject *cpy_r_r2139;
+    PyObject *cpy_r_r2140;
+    PyObject *cpy_r_r2141;
+    PyObject *cpy_r_r2142;
+    PyObject *cpy_r_r2143;
+    PyObject *cpy_r_r2144;
+    PyObject *cpy_r_r2145;
+    PyObject *cpy_r_r2146;
+    PyObject *cpy_r_r2147;
+    CPyPtr cpy_r_r2148;
+    CPyPtr cpy_r_r2149;
+    PyObject *cpy_r_r2150;
+    PyObject *cpy_r_r2151;
+    PyObject *cpy_r_r2152;
+    PyObject *cpy_r_r2153;
+    PyObject *cpy_r_r2154;
+    PyObject *cpy_r_r2155;
+    PyObject *cpy_r_r2156;
+    PyObject *cpy_r_r2157;
+    PyObject *cpy_r_r2158;
+    PyObject *cpy_r_r2159;
+    PyObject *cpy_r_r2160;
+    PyObject *cpy_r_r2161;
+    PyObject *cpy_r_r2162;
+    PyObject *cpy_r_r2163;
+    PyObject *cpy_r_r2164;
+    PyObject *cpy_r_r2165;
+    PyObject *cpy_r_r2166;
+    PyObject *cpy_r_r2167;
+    PyObject *cpy_r_r2168;
+    PyObject *cpy_r_r2169;
+    PyObject *cpy_r_r2170;
+    PyObject *cpy_r_r2171;
+    PyObject *cpy_r_r2172;
+    PyObject *cpy_r_r2173;
+    PyObject *cpy_r_r2174;
+    PyObject *cpy_r_r2175;
+    PyObject *cpy_r_r2176;
+    PyObject *cpy_r_r2177;
+    PyObject *cpy_r_r2178;
+    PyObject *cpy_r_r2179;
+    PyObject *cpy_r_r2180;
+    PyObject *cpy_r_r2181;
+    CPyPtr cpy_r_r2182;
+    CPyPtr cpy_r_r2183;
+    CPyPtr cpy_r_r2184;
+    CPyPtr cpy_r_r2185;
+    PyObject *cpy_r_r2186;
+    PyObject *cpy_r_r2187;
+    PyObject *cpy_r_r2188;
+    PyObject *cpy_r_r2189;
+    PyObject *cpy_r_r2190;
+    PyObject *cpy_r_r2191;
+    PyObject *cpy_r_r2192;
+    PyObject *cpy_r_r2193;
+    PyObject *cpy_r_r2194;
+    PyObject *cpy_r_r2195;
+    PyObject *cpy_r_r2196;
+    CPyPtr cpy_r_r2197;
+    CPyPtr cpy_r_r2198;
+    PyObject *cpy_r_r2199;
+    PyObject *cpy_r_r2200;
+    PyObject *cpy_r_r2201;
+    PyObject *cpy_r_r2202;
+    PyObject *cpy_r_r2203;
+    PyObject *cpy_r_r2204;
+    PyObject *cpy_r_r2205;
+    PyObject *cpy_r_r2206;
+    PyObject *cpy_r_r2207;
+    PyObject *cpy_r_r2208;
+    PyObject *cpy_r_r2209;
+    PyObject *cpy_r_r2210;
+    PyObject *cpy_r_r2211;
+    PyObject *cpy_r_r2212;
+    PyObject *cpy_r_r2213;
+    PyObject *cpy_r_r2214;
+    PyObject *cpy_r_r2215;
+    PyObject *cpy_r_r2216;
+    PyObject *cpy_r_r2217;
+    PyObject *cpy_r_r2218;
+    PyObject *cpy_r_r2219;
+    PyObject *cpy_r_r2220;
+    PyObject *cpy_r_r2221;
+    PyObject *cpy_r_r2222;
+    PyObject *cpy_r_r2223;
+    CPyPtr cpy_r_r2224;
+    CPyPtr cpy_r_r2225;
+    CPyPtr cpy_r_r2226;
+    PyObject *cpy_r_r2227;
+    PyObject *cpy_r_r2228;
+    PyObject *cpy_r_r2229;
+    PyObject *cpy_r_r2230;
+    PyObject *cpy_r_r2231;
+    PyObject *cpy_r_r2232;
+    PyObject *cpy_r_r2233;
+    PyObject *cpy_r_r2234;
+    PyObject *cpy_r_r2235;
+    PyObject *cpy_r_r2236;
+    PyObject *cpy_r_r2237;
+    CPyPtr cpy_r_r2238;
+    CPyPtr cpy_r_r2239;
+    PyObject *cpy_r_r2240;
+    PyObject *cpy_r_r2241;
+    PyObject *cpy_r_r2242;
+    PyObject *cpy_r_r2243;
+    PyObject *cpy_r_r2244;
+    PyObject *cpy_r_r2245;
+    PyObject *cpy_r_r2246;
+    PyObject *cpy_r_r2247;
+    PyObject *cpy_r_r2248;
+    PyObject *cpy_r_r2249;
+    PyObject *cpy_r_r2250;
+    PyObject *cpy_r_r2251;
+    PyObject *cpy_r_r2252;
+    PyObject *cpy_r_r2253;
+    PyObject *cpy_r_r2254;
+    PyObject *cpy_r_r2255;
+    PyObject *cpy_r_r2256;
+    PyObject *cpy_r_r2257;
+    PyObject *cpy_r_r2258;
+    PyObject *cpy_r_r2259;
+    PyObject *cpy_r_r2260;
+    PyObject *cpy_r_r2261;
+    PyObject *cpy_r_r2262;
+    PyObject *cpy_r_r2263;
+    PyObject *cpy_r_r2264;
+    CPyPtr cpy_r_r2265;
+    CPyPtr cpy_r_r2266;
+    CPyPtr cpy_r_r2267;
+    PyObject *cpy_r_r2268;
+    PyObject *cpy_r_r2269;
+    PyObject *cpy_r_r2270;
+    PyObject *cpy_r_r2271;
+    PyObject *cpy_r_r2272;
+    PyObject *cpy_r_r2273;
+    PyObject *cpy_r_r2274;
+    PyObject *cpy_r_r2275;
+    PyObject *cpy_r_r2276;
+    PyObject *cpy_r_r2277;
+    PyObject *cpy_r_r2278;
+    CPyPtr cpy_r_r2279;
+    CPyPtr cpy_r_r2280;
+    PyObject *cpy_r_r2281;
+    PyObject *cpy_r_r2282;
+    PyObject *cpy_r_r2283;
+    PyObject *cpy_r_r2284;
+    PyObject *cpy_r_r2285;
+    PyObject *cpy_r_r2286;
+    PyObject *cpy_r_r2287;
+    PyObject *cpy_r_r2288;
+    PyObject *cpy_r_r2289;
+    PyObject *cpy_r_r2290;
+    PyObject *cpy_r_r2291;
+    PyObject *cpy_r_r2292;
+    PyObject *cpy_r_r2293;
+    PyObject *cpy_r_r2294;
+    PyObject *cpy_r_r2295;
+    PyObject *cpy_r_r2296;
+    PyObject *cpy_r_r2297;
+    PyObject *cpy_r_r2298;
+    CPyPtr cpy_r_r2299;
+    CPyPtr cpy_r_r2300;
+    PyObject *cpy_r_r2301;
+    PyObject *cpy_r_r2302;
+    PyObject *cpy_r_r2303;
+    PyObject *cpy_r_r2304;
+    PyObject *cpy_r_r2305;
+    PyObject *cpy_r_r2306;
+    PyObject *cpy_r_r2307;
+    PyObject *cpy_r_r2308;
+    PyObject *cpy_r_r2309;
+    PyObject *cpy_r_r2310;
+    PyObject *cpy_r_r2311;
+    CPyPtr cpy_r_r2312;
+    CPyPtr cpy_r_r2313;
+    PyObject *cpy_r_r2314;
+    PyObject *cpy_r_r2315;
+    PyObject *cpy_r_r2316;
+    PyObject *cpy_r_r2317;
+    PyObject *cpy_r_r2318;
+    PyObject *cpy_r_r2319;
+    PyObject *cpy_r_r2320;
+    PyObject *cpy_r_r2321;
+    PyObject *cpy_r_r2322;
+    PyObject *cpy_r_r2323;
+    PyObject *cpy_r_r2324;
+    PyObject *cpy_r_r2325;
+    PyObject *cpy_r_r2326;
+    PyObject *cpy_r_r2327;
+    PyObject *cpy_r_r2328;
+    PyObject *cpy_r_r2329;
+    PyObject *cpy_r_r2330;
+    PyObject *cpy_r_r2331;
+    CPyPtr cpy_r_r2332;
+    CPyPtr cpy_r_r2333;
+    PyObject *cpy_r_r2334;
+    PyObject *cpy_r_r2335;
+    PyObject *cpy_r_r2336;
+    PyObject *cpy_r_r2337;
+    PyObject *cpy_r_r2338;
+    PyObject *cpy_r_r2339;
+    PyObject *cpy_r_r2340;
+    PyObject *cpy_r_r2341;
+    PyObject *cpy_r_r2342;
+    PyObject *cpy_r_r2343;
+    PyObject *cpy_r_r2344;
+    CPyPtr cpy_r_r2345;
+    CPyPtr cpy_r_r2346;
+    PyObject *cpy_r_r2347;
+    PyObject *cpy_r_r2348;
+    PyObject *cpy_r_r2349;
+    PyObject *cpy_r_r2350;
+    PyObject *cpy_r_r2351;
+    PyObject *cpy_r_r2352;
+    PyObject *cpy_r_r2353;
+    PyObject *cpy_r_r2354;
+    PyObject *cpy_r_r2355;
+    PyObject *cpy_r_r2356;
+    PyObject *cpy_r_r2357;
+    PyObject *cpy_r_r2358;
+    PyObject *cpy_r_r2359;
+    PyObject *cpy_r_r2360;
+    PyObject *cpy_r_r2361;
+    PyObject *cpy_r_r2362;
+    PyObject *cpy_r_r2363;
+    PyObject *cpy_r_r2364;
+    CPyPtr cpy_r_r2365;
+    CPyPtr cpy_r_r2366;
+    PyObject *cpy_r_r2367;
+    PyObject *cpy_r_r2368;
+    PyObject *cpy_r_r2369;
+    PyObject *cpy_r_r2370;
+    PyObject *cpy_r_r2371;
+    PyObject *cpy_r_r2372;
+    PyObject *cpy_r_r2373;
+    PyObject *cpy_r_r2374;
+    PyObject *cpy_r_r2375;
+    PyObject *cpy_r_r2376;
+    PyObject *cpy_r_r2377;
+    PyObject *cpy_r_r2378;
+    PyObject *cpy_r_r2379;
+    PyObject *cpy_r_r2380;
+    PyObject *cpy_r_r2381;
+    PyObject *cpy_r_r2382;
+    PyObject *cpy_r_r2383;
+    PyObject *cpy_r_r2384;
+    CPyPtr cpy_r_r2385;
+    CPyPtr cpy_r_r2386;
+    CPyPtr cpy_r_r2387;
+    PyObject *cpy_r_r2388;
+    PyObject *cpy_r_r2389;
+    PyObject *cpy_r_r2390;
+    PyObject *cpy_r_r2391;
+    PyObject *cpy_r_r2392;
+    PyObject *cpy_r_r2393;
+    PyObject *cpy_r_r2394;
+    PyObject *cpy_r_r2395;
+    PyObject *cpy_r_r2396;
+    PyObject *cpy_r_r2397;
+    PyObject *cpy_r_r2398;
+    PyObject *cpy_r_r2399;
+    PyObject *cpy_r_r2400;
+    PyObject *cpy_r_r2401;
+    PyObject *cpy_r_r2402;
+    PyObject *cpy_r_r2403;
+    PyObject *cpy_r_r2404;
+    PyObject *cpy_r_r2405;
+    PyObject *cpy_r_r2406;
+    PyObject *cpy_r_r2407;
+    PyObject *cpy_r_r2408;
+    PyObject *cpy_r_r2409;
+    PyObject *cpy_r_r2410;
+    PyObject *cpy_r_r2411;
+    PyObject *cpy_r_r2412;
+    PyObject *cpy_r_r2413;
+    PyObject *cpy_r_r2414;
+    PyObject *cpy_r_r2415;
+    PyObject *cpy_r_r2416;
+    PyObject *cpy_r_r2417;
+    PyObject *cpy_r_r2418;
+    PyObject *cpy_r_r2419;
+    CPyPtr cpy_r_r2420;
+    CPyPtr cpy_r_r2421;
+    CPyPtr cpy_r_r2422;
+    CPyPtr cpy_r_r2423;
+    PyObject *cpy_r_r2424;
+    PyObject *cpy_r_r2425;
+    PyObject *cpy_r_r2426;
+    PyObject *cpy_r_r2427;
+    PyObject *cpy_r_r2428;
+    PyObject *cpy_r_r2429;
+    PyObject *cpy_r_r2430;
+    PyObject *cpy_r_r2431;
+    PyObject *cpy_r_r2432;
+    PyObject *cpy_r_r2433;
+    PyObject *cpy_r_r2434;
+    PyObject *cpy_r_r2435;
+    PyObject *cpy_r_r2436;
+    PyObject *cpy_r_r2437;
+    PyObject *cpy_r_r2438;
+    PyObject *cpy_r_r2439;
+    PyObject *cpy_r_r2440;
+    PyObject *cpy_r_r2441;
+    PyObject *cpy_r_r2442;
+    PyObject *cpy_r_r2443;
+    PyObject *cpy_r_r2444;
+    PyObject *cpy_r_r2445;
+    PyObject *cpy_r_r2446;
+    PyObject *cpy_r_r2447;
+    PyObject *cpy_r_r2448;
+    PyObject *cpy_r_r2449;
+    PyObject *cpy_r_r2450;
+    PyObject *cpy_r_r2451;
+    PyObject *cpy_r_r2452;
+    PyObject *cpy_r_r2453;
+    PyObject *cpy_r_r2454;
+    PyObject *cpy_r_r2455;
+    PyObject *cpy_r_r2456;
+    PyObject *cpy_r_r2457;
+    PyObject *cpy_r_r2458;
+    PyObject *cpy_r_r2459;
+    CPyPtr cpy_r_r2460;
+    CPyPtr cpy_r_r2461;
+    CPyPtr cpy_r_r2462;
+    CPyPtr cpy_r_r2463;
+    PyObject *cpy_r_r2464;
+    PyObject *cpy_r_r2465;
+    PyObject *cpy_r_r2466;
+    PyObject *cpy_r_r2467;
+    PyObject *cpy_r_r2468;
+    PyObject *cpy_r_r2469;
+    PyObject *cpy_r_r2470;
+    PyObject *cpy_r_r2471;
+    PyObject *cpy_r_r2472;
+    PyObject *cpy_r_r2473;
+    PyObject *cpy_r_r2474;
+    PyObject *cpy_r_r2475;
+    PyObject *cpy_r_r2476;
+    PyObject *cpy_r_r2477;
+    PyObject *cpy_r_r2478;
+    PyObject *cpy_r_r2479;
+    PyObject *cpy_r_r2480;
+    PyObject *cpy_r_r2481;
+    PyObject *cpy_r_r2482;
+    PyObject *cpy_r_r2483;
+    PyObject *cpy_r_r2484;
+    PyObject *cpy_r_r2485;
+    PyObject *cpy_r_r2486;
+    PyObject *cpy_r_r2487;
+    PyObject *cpy_r_r2488;
+    PyObject *cpy_r_r2489;
+    PyObject *cpy_r_r2490;
+    PyObject *cpy_r_r2491;
+    PyObject *cpy_r_r2492;
+    CPyPtr cpy_r_r2493;
+    CPyPtr cpy_r_r2494;
+    CPyPtr cpy_r_r2495;
+    PyObject *cpy_r_r2496;
+    PyObject *cpy_r_r2497;
+    PyObject *cpy_r_r2498;
+    PyObject *cpy_r_r2499;
+    PyObject *cpy_r_r2500;
+    PyObject *cpy_r_r2501;
+    PyObject *cpy_r_r2502;
+    PyObject *cpy_r_r2503;
+    PyObject *cpy_r_r2504;
+    PyObject *cpy_r_r2505;
+    PyObject *cpy_r_r2506;
+    PyObject *cpy_r_r2507;
+    PyObject *cpy_r_r2508;
+    PyObject *cpy_r_r2509;
+    PyObject *cpy_r_r2510;
+    PyObject *cpy_r_r2511;
+    PyObject *cpy_r_r2512;
+    PyObject *cpy_r_r2513;
+    PyObject *cpy_r_r2514;
+    PyObject *cpy_r_r2515;
+    PyObject *cpy_r_r2516;
+    PyObject *cpy_r_r2517;
+    PyObject *cpy_r_r2518;
+    PyObject *cpy_r_r2519;
+    PyObject *cpy_r_r2520;
+    PyObject *cpy_r_r2521;
+    PyObject *cpy_r_r2522;
+    PyObject *cpy_r_r2523;
+    PyObject *cpy_r_r2524;
+    PyObject *cpy_r_r2525;
+    PyObject *cpy_r_r2526;
+    PyObject *cpy_r_r2527;
+    PyObject *cpy_r_r2528;
+    PyObject *cpy_r_r2529;
+    PyObject *cpy_r_r2530;
+    PyObject *cpy_r_r2531;
+    CPyPtr cpy_r_r2532;
+    CPyPtr cpy_r_r2533;
+    CPyPtr cpy_r_r2534;
+    CPyPtr cpy_r_r2535;
+    PyObject *cpy_r_r2536;
+    PyObject *cpy_r_r2537;
+    PyObject *cpy_r_r2538;
+    PyObject *cpy_r_r2539;
+    PyObject *cpy_r_r2540;
+    PyObject *cpy_r_r2541;
+    PyObject *cpy_r_r2542;
+    PyObject *cpy_r_r2543;
+    PyObject *cpy_r_r2544;
+    PyObject *cpy_r_r2545;
+    PyObject *cpy_r_r2546;
+    PyObject *cpy_r_r2547;
+    PyObject *cpy_r_r2548;
+    PyObject *cpy_r_r2549;
+    PyObject *cpy_r_r2550;
+    PyObject *cpy_r_r2551;
+    PyObject *cpy_r_r2552;
+    PyObject *cpy_r_r2553;
+    PyObject *cpy_r_r2554;
+    PyObject *cpy_r_r2555;
+    PyObject *cpy_r_r2556;
+    PyObject *cpy_r_r2557;
+    PyObject *cpy_r_r2558;
+    PyObject *cpy_r_r2559;
+    PyObject *cpy_r_r2560;
+    PyObject *cpy_r_r2561;
+    PyObject *cpy_r_r2562;
+    PyObject *cpy_r_r2563;
+    PyObject *cpy_r_r2564;
+    CPyPtr cpy_r_r2565;
+    CPyPtr cpy_r_r2566;
+    CPyPtr cpy_r_r2567;
+    PyObject *cpy_r_r2568;
+    PyObject *cpy_r_r2569;
+    PyObject *cpy_r_r2570;
+    PyObject *cpy_r_r2571;
+    PyObject *cpy_r_r2572;
+    PyObject *cpy_r_r2573;
+    PyObject *cpy_r_r2574;
+    PyObject *cpy_r_r2575;
+    PyObject *cpy_r_r2576;
+    PyObject *cpy_r_r2577;
+    PyObject *cpy_r_r2578;
+    PyObject *cpy_r_r2579;
+    PyObject *cpy_r_r2580;
+    PyObject *cpy_r_r2581;
+    PyObject *cpy_r_r2582;
+    PyObject *cpy_r_r2583;
+    PyObject *cpy_r_r2584;
+    PyObject *cpy_r_r2585;
+    PyObject *cpy_r_r2586;
+    PyObject *cpy_r_r2587;
+    PyObject *cpy_r_r2588;
+    PyObject *cpy_r_r2589;
+    PyObject *cpy_r_r2590;
+    PyObject *cpy_r_r2591;
+    PyObject *cpy_r_r2592;
+    PyObject *cpy_r_r2593;
+    PyObject *cpy_r_r2594;
+    PyObject *cpy_r_r2595;
+    PyObject *cpy_r_r2596;
+    CPyPtr cpy_r_r2597;
+    CPyPtr cpy_r_r2598;
+    CPyPtr cpy_r_r2599;
+    PyObject *cpy_r_r2600;
+    PyObject *cpy_r_r2601;
+    PyObject *cpy_r_r2602;
+    PyObject *cpy_r_r2603;
+    PyObject *cpy_r_r2604;
+    PyObject *cpy_r_r2605;
+    PyObject *cpy_r_r2606;
+    PyObject *cpy_r_r2607;
+    PyObject *cpy_r_r2608;
+    PyObject *cpy_r_r2609;
+    PyObject *cpy_r_r2610;
+    PyObject *cpy_r_r2611;
+    PyObject *cpy_r_r2612;
+    PyObject *cpy_r_r2613;
+    PyObject *cpy_r_r2614;
+    PyObject *cpy_r_r2615;
+    PyObject *cpy_r_r2616;
+    PyObject *cpy_r_r2617;
+    PyObject *cpy_r_r2618;
+    PyObject *cpy_r_r2619;
+    PyObject *cpy_r_r2620;
+    PyObject *cpy_r_r2621;
+    PyObject *cpy_r_r2622;
+    PyObject *cpy_r_r2623;
+    PyObject *cpy_r_r2624;
+    PyObject *cpy_r_r2625;
+    PyObject *cpy_r_r2626;
+    PyObject *cpy_r_r2627;
+    PyObject *cpy_r_r2628;
+    PyObject *cpy_r_r2629;
+    PyObject *cpy_r_r2630;
+    PyObject *cpy_r_r2631;
+    PyObject *cpy_r_r2632;
+    PyObject *cpy_r_r2633;
+    PyObject *cpy_r_r2634;
+    PyObject *cpy_r_r2635;
+    CPyPtr cpy_r_r2636;
+    CPyPtr cpy_r_r2637;
+    CPyPtr cpy_r_r2638;
+    CPyPtr cpy_r_r2639;
+    PyObject *cpy_r_r2640;
+    PyObject *cpy_r_r2641;
+    PyObject *cpy_r_r2642;
+    PyObject *cpy_r_r2643;
+    PyObject *cpy_r_r2644;
+    PyObject *cpy_r_r2645;
+    PyObject *cpy_r_r2646;
+    PyObject *cpy_r_r2647;
+    PyObject *cpy_r_r2648;
+    PyObject *cpy_r_r2649;
+    PyObject *cpy_r_r2650;
+    PyObject *cpy_r_r2651;
+    PyObject *cpy_r_r2652;
+    PyObject *cpy_r_r2653;
+    PyObject *cpy_r_r2654;
+    PyObject *cpy_r_r2655;
+    PyObject *cpy_r_r2656;
+    PyObject *cpy_r_r2657;
+    PyObject *cpy_r_r2658;
+    PyObject *cpy_r_r2659;
+    PyObject *cpy_r_r2660;
+    PyObject *cpy_r_r2661;
+    PyObject *cpy_r_r2662;
+    PyObject *cpy_r_r2663;
+    PyObject *cpy_r_r2664;
+    PyObject *cpy_r_r2665;
+    PyObject *cpy_r_r2666;
+    PyObject *cpy_r_r2667;
+    PyObject *cpy_r_r2668;
+    CPyPtr cpy_r_r2669;
+    CPyPtr cpy_r_r2670;
+    CPyPtr cpy_r_r2671;
+    PyObject *cpy_r_r2672;
+    PyObject *cpy_r_r2673;
+    PyObject *cpy_r_r2674;
+    PyObject *cpy_r_r2675;
+    PyObject *cpy_r_r2676;
+    PyObject *cpy_r_r2677;
+    PyObject *cpy_r_r2678;
+    PyObject *cpy_r_r2679;
+    PyObject *cpy_r_r2680;
+    PyObject *cpy_r_r2681;
+    PyObject *cpy_r_r2682;
+    PyObject *cpy_r_r2683;
+    PyObject *cpy_r_r2684;
+    PyObject *cpy_r_r2685;
+    PyObject *cpy_r_r2686;
+    PyObject *cpy_r_r2687;
+    PyObject *cpy_r_r2688;
+    PyObject *cpy_r_r2689;
+    PyObject *cpy_r_r2690;
+    PyObject *cpy_r_r2691;
+    PyObject *cpy_r_r2692;
+    PyObject *cpy_r_r2693;
+    PyObject *cpy_r_r2694;
+    PyObject *cpy_r_r2695;
+    PyObject *cpy_r_r2696;
+    PyObject *cpy_r_r2697;
+    PyObject *cpy_r_r2698;
+    PyObject *cpy_r_r2699;
+    PyObject *cpy_r_r2700;
+    PyObject *cpy_r_r2701;
+    PyObject *cpy_r_r2702;
+    PyObject *cpy_r_r2703;
+    PyObject *cpy_r_r2704;
+    PyObject *cpy_r_r2705;
+    PyObject *cpy_r_r2706;
+    PyObject *cpy_r_r2707;
+    CPyPtr cpy_r_r2708;
+    CPyPtr cpy_r_r2709;
+    CPyPtr cpy_r_r2710;
+    CPyPtr cpy_r_r2711;
+    PyObject *cpy_r_r2712;
+    PyObject *cpy_r_r2713;
+    PyObject *cpy_r_r2714;
+    PyObject *cpy_r_r2715;
+    PyObject *cpy_r_r2716;
+    PyObject *cpy_r_r2717;
+    PyObject *cpy_r_r2718;
+    PyObject *cpy_r_r2719;
+    PyObject *cpy_r_r2720;
+    PyObject *cpy_r_r2721;
+    PyObject *cpy_r_r2722;
+    PyObject *cpy_r_r2723;
+    PyObject *cpy_r_r2724;
+    PyObject *cpy_r_r2725;
+    PyObject *cpy_r_r2726;
+    PyObject *cpy_r_r2727;
+    PyObject *cpy_r_r2728;
+    PyObject *cpy_r_r2729;
+    PyObject *cpy_r_r2730;
+    PyObject *cpy_r_r2731;
+    PyObject *cpy_r_r2732;
+    PyObject *cpy_r_r2733;
+    PyObject *cpy_r_r2734;
+    PyObject *cpy_r_r2735;
+    PyObject *cpy_r_r2736;
+    PyObject *cpy_r_r2737;
+    PyObject *cpy_r_r2738;
+    PyObject *cpy_r_r2739;
+    PyObject *cpy_r_r2740;
+    PyObject *cpy_r_r2741;
+    PyObject *cpy_r_r2742;
+    PyObject *cpy_r_r2743;
+    PyObject *cpy_r_r2744;
+    PyObject *cpy_r_r2745;
+    PyObject *cpy_r_r2746;
+    PyObject *cpy_r_r2747;
+    CPyPtr cpy_r_r2748;
+    CPyPtr cpy_r_r2749;
+    CPyPtr cpy_r_r2750;
+    CPyPtr cpy_r_r2751;
+    PyObject *cpy_r_r2752;
+    PyObject *cpy_r_r2753;
+    PyObject *cpy_r_r2754;
+    PyObject *cpy_r_r2755;
+    PyObject *cpy_r_r2756;
+    PyObject *cpy_r_r2757;
+    PyObject *cpy_r_r2758;
+    PyObject *cpy_r_r2759;
+    PyObject *cpy_r_r2760;
+    PyObject *cpy_r_r2761;
+    PyObject *cpy_r_r2762;
+    PyObject *cpy_r_r2763;
+    PyObject *cpy_r_r2764;
+    PyObject *cpy_r_r2765;
+    PyObject *cpy_r_r2766;
+    PyObject *cpy_r_r2767;
+    PyObject *cpy_r_r2768;
+    PyObject *cpy_r_r2769;
+    PyObject *cpy_r_r2770;
+    PyObject *cpy_r_r2771;
+    PyObject *cpy_r_r2772;
+    PyObject *cpy_r_r2773;
+    CPyPtr cpy_r_r2774;
+    CPyPtr cpy_r_r2775;
+    PyObject *cpy_r_r2776;
+    PyObject *cpy_r_r2777;
+    PyObject *cpy_r_r2778;
+    PyObject *cpy_r_r2779;
+    PyObject *cpy_r_r2780;
+    PyObject *cpy_r_r2781;
+    PyObject *cpy_r_r2782;
+    PyObject *cpy_r_r2783;
+    PyObject *cpy_r_r2784;
+    PyObject *cpy_r_r2785;
+    PyObject *cpy_r_r2786;
+    CPyPtr cpy_r_r2787;
+    CPyPtr cpy_r_r2788;
+    PyObject *cpy_r_r2789;
+    PyObject *cpy_r_r2790;
+    PyObject *cpy_r_r2791;
+    PyObject *cpy_r_r2792;
+    PyObject *cpy_r_r2793;
+    PyObject *cpy_r_r2794;
+    PyObject *cpy_r_r2795;
+    PyObject *cpy_r_r2796;
+    PyObject *cpy_r_r2797;
+    PyObject *cpy_r_r2798;
+    PyObject *cpy_r_r2799;
+    PyObject *cpy_r_r2800;
+    PyObject *cpy_r_r2801;
+    PyObject *cpy_r_r2802;
+    PyObject *cpy_r_r2803;
+    PyObject *cpy_r_r2804;
+    PyObject *cpy_r_r2805;
+    PyObject *cpy_r_r2806;
+    PyObject *cpy_r_r2807;
+    PyObject *cpy_r_r2808;
+    PyObject *cpy_r_r2809;
+    PyObject *cpy_r_r2810;
+    PyObject *cpy_r_r2811;
+    PyObject *cpy_r_r2812;
+    PyObject *cpy_r_r2813;
+    CPyPtr cpy_r_r2814;
+    CPyPtr cpy_r_r2815;
+    CPyPtr cpy_r_r2816;
+    PyObject *cpy_r_r2817;
+    PyObject *cpy_r_r2818;
+    PyObject *cpy_r_r2819;
+    PyObject *cpy_r_r2820;
+    PyObject *cpy_r_r2821;
+    PyObject *cpy_r_r2822;
+    PyObject *cpy_r_r2823;
+    PyObject *cpy_r_r2824;
+    PyObject *cpy_r_r2825;
+    PyObject *cpy_r_r2826;
+    PyObject *cpy_r_r2827;
+    CPyPtr cpy_r_r2828;
+    CPyPtr cpy_r_r2829;
+    PyObject *cpy_r_r2830;
+    PyObject *cpy_r_r2831;
+    PyObject *cpy_r_r2832;
+    PyObject *cpy_r_r2833;
+    PyObject *cpy_r_r2834;
+    PyObject *cpy_r_r2835;
+    PyObject *cpy_r_r2836;
+    PyObject *cpy_r_r2837;
+    PyObject *cpy_r_r2838;
+    PyObject *cpy_r_r2839;
+    PyObject *cpy_r_r2840;
+    int32_t cpy_r_r2841;
+    char cpy_r_r2842;
+    PyObject *cpy_r_r2843;
+    PyObject *cpy_r_r2844;
+    PyObject *cpy_r_r2845;
+    PyObject *cpy_r_r2846;
+    PyObject *cpy_r_r2847;
+    PyObject *cpy_r_r2848;
+    PyObject *cpy_r_r2849;
+    PyObject *cpy_r_r2850;
+    PyObject *cpy_r_r2851;
+    PyObject *cpy_r_r2852;
+    PyObject *cpy_r_r2853;
+    PyObject *cpy_r_r2854;
+    PyObject *cpy_r_r2855;
+    PyObject *cpy_r_r2856;
+    PyObject *cpy_r_r2857;
+    PyObject *cpy_r_r2858;
+    PyObject *cpy_r_r2859;
+    PyObject *cpy_r_r2860;
+    PyObject *cpy_r_r2861;
+    PyObject *cpy_r_r2862;
+    PyObject *cpy_r_r2863;
+    CPyPtr cpy_r_r2864;
+    CPyPtr cpy_r_r2865;
+    CPyPtr cpy_r_r2866;
+    PyObject *cpy_r_r2867;
+    PyObject *cpy_r_r2868;
+    PyObject *cpy_r_r2869;
+    PyObject *cpy_r_r2870;
+    PyObject *cpy_r_r2871;
+    PyObject *cpy_r_r2872;
+    PyObject *cpy_r_r2873;
+    PyObject *cpy_r_r2874;
+    PyObject *cpy_r_r2875;
+    PyObject *cpy_r_r2876;
+    PyObject *cpy_r_r2877;
+    CPyPtr cpy_r_r2878;
+    CPyPtr cpy_r_r2879;
+    PyObject *cpy_r_r2880;
+    PyObject *cpy_r_r2881;
+    PyObject *cpy_r_r2882;
+    PyObject *cpy_r_r2883;
+    PyObject *cpy_r_r2884;
+    PyObject *cpy_r_r2885;
+    PyObject *cpy_r_r2886;
+    PyObject *cpy_r_r2887;
+    PyObject *cpy_r_r2888;
+    PyObject *cpy_r_r2889;
+    PyObject *cpy_r_r2890;
+    PyObject *cpy_r_r2891;
+    PyObject *cpy_r_r2892;
+    PyObject *cpy_r_r2893;
+    PyObject *cpy_r_r2894;
+    PyObject *cpy_r_r2895;
+    PyObject *cpy_r_r2896;
+    PyObject *cpy_r_r2897;
+    PyObject *cpy_r_r2898;
+    PyObject *cpy_r_r2899;
+    PyObject *cpy_r_r2900;
+    PyObject *cpy_r_r2901;
+    PyObject *cpy_r_r2902;
+    CPyPtr cpy_r_r2903;
+    CPyPtr cpy_r_r2904;
+    CPyPtr cpy_r_r2905;
+    PyObject *cpy_r_r2906;
+    PyObject *cpy_r_r2907;
+    PyObject *cpy_r_r2908;
+    PyObject *cpy_r_r2909;
+    PyObject *cpy_r_r2910;
+    PyObject *cpy_r_r2911;
+    PyObject *cpy_r_r2912;
+    PyObject *cpy_r_r2913;
+    PyObject *cpy_r_r2914;
+    PyObject *cpy_r_r2915;
+    PyObject *cpy_r_r2916;
+    CPyPtr cpy_r_r2917;
+    CPyPtr cpy_r_r2918;
+    PyObject *cpy_r_r2919;
+    PyObject *cpy_r_r2920;
+    PyObject *cpy_r_r2921;
+    PyObject *cpy_r_r2922;
+    PyObject *cpy_r_r2923;
+    PyObject *cpy_r_r2924;
+    PyObject *cpy_r_r2925;
+    CPyPtr cpy_r_r2926;
+    CPyPtr cpy_r_r2927;
+    CPyPtr cpy_r_r2928;
+    PyObject *cpy_r_r2929;
+    PyObject *cpy_r_r2930;
+    PyObject *cpy_r_r2931;
+    int32_t cpy_r_r2932;
+    char cpy_r_r2933;
+    PyObject *cpy_r_r2934;
+    PyObject *cpy_r_r2935;
+    PyObject *cpy_r_r2936;
+    PyObject *cpy_r_r2937;
+    PyObject *cpy_r_r2938;
+    PyObject *cpy_r_r2939;
+    PyObject *cpy_r_r2940;
+    PyObject *cpy_r_r2941;
+    PyObject *cpy_r_r2942;
+    PyObject *cpy_r_r2943;
+    PyObject *cpy_r_r2944;
+    PyObject *cpy_r_r2945;
+    CPyPtr cpy_r_r2946;
+    CPyPtr cpy_r_r2947;
+    PyObject *cpy_r_r2948;
+    PyObject *cpy_r_r2949;
+    PyObject *cpy_r_r2950;
+    PyObject *cpy_r_r2951;
+    PyObject *cpy_r_r2952;
+    PyObject *cpy_r_r2953;
+    PyObject *cpy_r_r2954;
+    PyObject *cpy_r_r2955;
+    PyObject *cpy_r_r2956;
+    PyObject *cpy_r_r2957;
+    PyObject *cpy_r_r2958;
+    PyObject *cpy_r_r2959;
+    PyObject *cpy_r_r2960;
+    PyObject *cpy_r_r2961;
+    PyObject *cpy_r_r2962;
+    PyObject *cpy_r_r2963;
+    CPyPtr cpy_r_r2964;
+    CPyPtr cpy_r_r2965;
+    PyObject *cpy_r_r2966;
+    PyObject *cpy_r_r2967;
+    PyObject *cpy_r_r2968;
+    PyObject *cpy_r_r2969;
+    PyObject *cpy_r_r2970;
+    PyObject *cpy_r_r2971;
+    PyObject *cpy_r_r2972;
+    PyObject *cpy_r_r2973;
+    PyObject *cpy_r_r2974;
+    CPyPtr cpy_r_r2975;
+    CPyPtr cpy_r_r2976;
+    PyObject *cpy_r_r2977;
+    PyObject *cpy_r_r2978;
+    PyObject *cpy_r_r2979;
+    PyObject *cpy_r_r2980;
+    PyObject *cpy_r_r2981;
+    PyObject *cpy_r_r2982;
+    PyObject *cpy_r_r2983;
+    PyObject *cpy_r_r2984;
+    PyObject *cpy_r_r2985;
+    PyObject *cpy_r_r2986;
+    PyObject *cpy_r_r2987;
+    PyObject *cpy_r_r2988;
+    PyObject *cpy_r_r2989;
+    PyObject *cpy_r_r2990;
+    PyObject *cpy_r_r2991;
+    PyObject *cpy_r_r2992;
+    PyObject *cpy_r_r2993;
+    PyObject *cpy_r_r2994;
+    PyObject *cpy_r_r2995;
+    PyObject *cpy_r_r2996;
+    PyObject *cpy_r_r2997;
+    CPyPtr cpy_r_r2998;
+    CPyPtr cpy_r_r2999;
+    CPyPtr cpy_r_r3000;
+    PyObject *cpy_r_r3001;
+    PyObject *cpy_r_r3002;
+    PyObject *cpy_r_r3003;
+    PyObject *cpy_r_r3004;
+    PyObject *cpy_r_r3005;
+    PyObject *cpy_r_r3006;
+    PyObject *cpy_r_r3007;
+    PyObject *cpy_r_r3008;
+    PyObject *cpy_r_r3009;
+    PyObject *cpy_r_r3010;
+    PyObject *cpy_r_r3011;
+    PyObject *cpy_r_r3012;
+    PyObject *cpy_r_r3013;
+    PyObject *cpy_r_r3014;
+    PyObject *cpy_r_r3015;
+    PyObject *cpy_r_r3016;
+    PyObject *cpy_r_r3017;
+    PyObject *cpy_r_r3018;
+    PyObject *cpy_r_r3019;
+    CPyPtr cpy_r_r3020;
+    CPyPtr cpy_r_r3021;
+    PyObject *cpy_r_r3022;
+    PyObject *cpy_r_r3023;
+    PyObject *cpy_r_r3024;
+    PyObject *cpy_r_r3025;
+    PyObject *cpy_r_r3026;
+    PyObject *cpy_r_r3027;
+    PyObject *cpy_r_r3028;
+    PyObject *cpy_r_r3029;
+    CPyPtr cpy_r_r3030;
+    CPyPtr cpy_r_r3031;
+    CPyPtr cpy_r_r3032;
+    CPyPtr cpy_r_r3033;
+    CPyPtr cpy_r_r3034;
+    PyObject *cpy_r_r3035;
+    PyObject *cpy_r_r3036;
+    int32_t cpy_r_r3037;
+    char cpy_r_r3038;
+    PyObject *cpy_r_r3039;
+    PyObject *cpy_r_r3040;
+    PyObject *cpy_r_r3041;
+    PyObject *cpy_r_r3042;
+    PyObject *cpy_r_r3043;
+    PyObject *cpy_r_r3044;
+    PyObject *cpy_r_r3045;
+    PyObject *cpy_r_r3046;
+    PyObject *cpy_r_r3047;
+    PyObject *cpy_r_r3048;
+    PyObject *cpy_r_r3049;
+    PyObject *cpy_r_r3050;
+    PyObject *cpy_r_r3051;
+    CPyPtr cpy_r_r3052;
+    CPyPtr cpy_r_r3053;
+    CPyPtr cpy_r_r3054;
+    PyObject *cpy_r_r3055;
+    PyObject *cpy_r_r3056;
+    PyObject *cpy_r_r3057;
+    PyObject *cpy_r_r3058;
+    PyObject *cpy_r_r3059;
+    PyObject *cpy_r_r3060;
+    PyObject *cpy_r_r3061;
+    PyObject *cpy_r_r3062;
+    PyObject *cpy_r_r3063;
+    CPyPtr cpy_r_r3064;
+    CPyPtr cpy_r_r3065;
+    PyObject *cpy_r_r3066;
+    PyObject *cpy_r_r3067;
+    PyObject *cpy_r_r3068;
+    PyObject *cpy_r_r3069;
+    PyObject *cpy_r_r3070;
+    PyObject *cpy_r_r3071;
+    PyObject *cpy_r_r3072;
+    PyObject *cpy_r_r3073;
+    PyObject *cpy_r_r3074;
+    PyObject *cpy_r_r3075;
+    PyObject *cpy_r_r3076;
+    PyObject *cpy_r_r3077;
+    PyObject *cpy_r_r3078;
+    PyObject *cpy_r_r3079;
+    CPyPtr cpy_r_r3080;
+    CPyPtr cpy_r_r3081;
+    PyObject *cpy_r_r3082;
+    PyObject *cpy_r_r3083;
+    PyObject *cpy_r_r3084;
+    PyObject *cpy_r_r3085;
+    PyObject *cpy_r_r3086;
+    PyObject *cpy_r_r3087;
+    PyObject *cpy_r_r3088;
+    PyObject *cpy_r_r3089;
+    PyObject *cpy_r_r3090;
+    CPyPtr cpy_r_r3091;
+    CPyPtr cpy_r_r3092;
+    PyObject *cpy_r_r3093;
+    PyObject *cpy_r_r3094;
+    PyObject *cpy_r_r3095;
+    PyObject *cpy_r_r3096;
+    PyObject *cpy_r_r3097;
+    PyObject *cpy_r_r3098;
+    PyObject *cpy_r_r3099;
+    PyObject *cpy_r_r3100;
+    PyObject *cpy_r_r3101;
+    PyObject *cpy_r_r3102;
+    PyObject *cpy_r_r3103;
+    PyObject *cpy_r_r3104;
+    PyObject *cpy_r_r3105;
+    PyObject *cpy_r_r3106;
+    PyObject *cpy_r_r3107;
+    PyObject *cpy_r_r3108;
+    PyObject *cpy_r_r3109;
+    PyObject *cpy_r_r3110;
+    CPyPtr cpy_r_r3111;
+    CPyPtr cpy_r_r3112;
+    PyObject *cpy_r_r3113;
+    PyObject *cpy_r_r3114;
+    PyObject *cpy_r_r3115;
+    PyObject *cpy_r_r3116;
+    PyObject *cpy_r_r3117;
+    PyObject *cpy_r_r3118;
+    PyObject *cpy_r_r3119;
+    PyObject *cpy_r_r3120;
+    PyObject *cpy_r_r3121;
+    PyObject *cpy_r_r3122;
+    PyObject *cpy_r_r3123;
+    PyObject *cpy_r_r3124;
+    PyObject *cpy_r_r3125;
+    PyObject *cpy_r_r3126;
+    PyObject *cpy_r_r3127;
+    PyObject *cpy_r_r3128;
+    PyObject *cpy_r_r3129;
+    PyObject *cpy_r_r3130;
+    CPyPtr cpy_r_r3131;
+    CPyPtr cpy_r_r3132;
+    PyObject *cpy_r_r3133;
+    PyObject *cpy_r_r3134;
+    PyObject *cpy_r_r3135;
+    PyObject *cpy_r_r3136;
+    PyObject *cpy_r_r3137;
+    PyObject *cpy_r_r3138;
+    PyObject *cpy_r_r3139;
+    PyObject *cpy_r_r3140;
+    PyObject *cpy_r_r3141;
+    PyObject *cpy_r_r3142;
+    PyObject *cpy_r_r3143;
+    PyObject *cpy_r_r3144;
+    PyObject *cpy_r_r3145;
+    PyObject *cpy_r_r3146;
+    CPyPtr cpy_r_r3147;
+    CPyPtr cpy_r_r3148;
+    PyObject *cpy_r_r3149;
+    PyObject *cpy_r_r3150;
+    PyObject *cpy_r_r3151;
+    PyObject *cpy_r_r3152;
+    PyObject *cpy_r_r3153;
+    PyObject *cpy_r_r3154;
+    PyObject *cpy_r_r3155;
+    PyObject *cpy_r_r3156;
+    PyObject *cpy_r_r3157;
+    CPyPtr cpy_r_r3158;
+    CPyPtr cpy_r_r3159;
+    PyObject *cpy_r_r3160;
+    PyObject *cpy_r_r3161;
+    PyObject *cpy_r_r3162;
+    PyObject *cpy_r_r3163;
+    PyObject *cpy_r_r3164;
+    PyObject *cpy_r_r3165;
+    PyObject *cpy_r_r3166;
+    PyObject *cpy_r_r3167;
+    PyObject *cpy_r_r3168;
+    PyObject *cpy_r_r3169;
+    PyObject *cpy_r_r3170;
+    PyObject *cpy_r_r3171;
+    PyObject *cpy_r_r3172;
+    PyObject *cpy_r_r3173;
+    CPyPtr cpy_r_r3174;
+    CPyPtr cpy_r_r3175;
+    PyObject *cpy_r_r3176;
+    PyObject *cpy_r_r3177;
+    PyObject *cpy_r_r3178;
+    PyObject *cpy_r_r3179;
+    PyObject *cpy_r_r3180;
+    PyObject *cpy_r_r3181;
+    PyObject *cpy_r_r3182;
+    PyObject *cpy_r_r3183;
+    PyObject *cpy_r_r3184;
+    CPyPtr cpy_r_r3185;
+    CPyPtr cpy_r_r3186;
+    PyObject *cpy_r_r3187;
+    PyObject *cpy_r_r3188;
+    PyObject *cpy_r_r3189;
+    PyObject *cpy_r_r3190;
+    PyObject *cpy_r_r3191;
+    PyObject *cpy_r_r3192;
+    PyObject *cpy_r_r3193;
+    PyObject *cpy_r_r3194;
+    PyObject *cpy_r_r3195;
+    PyObject *cpy_r_r3196;
+    PyObject *cpy_r_r3197;
+    PyObject *cpy_r_r3198;
+    PyObject *cpy_r_r3199;
+    PyObject *cpy_r_r3200;
+    PyObject *cpy_r_r3201;
+    PyObject *cpy_r_r3202;
+    PyObject *cpy_r_r3203;
+    PyObject *cpy_r_r3204;
+    CPyPtr cpy_r_r3205;
+    CPyPtr cpy_r_r3206;
+    CPyPtr cpy_r_r3207;
+    PyObject *cpy_r_r3208;
+    PyObject *cpy_r_r3209;
+    PyObject *cpy_r_r3210;
+    PyObject *cpy_r_r3211;
+    PyObject *cpy_r_r3212;
+    PyObject *cpy_r_r3213;
+    CPyPtr cpy_r_r3214;
+    CPyPtr cpy_r_r3215;
+    CPyPtr cpy_r_r3216;
+    CPyPtr cpy_r_r3217;
+    CPyPtr cpy_r_r3218;
+    CPyPtr cpy_r_r3219;
+    CPyPtr cpy_r_r3220;
+    CPyPtr cpy_r_r3221;
+    PyObject *cpy_r_r3222;
+    PyObject *cpy_r_r3223;
+    int32_t cpy_r_r3224;
+    char cpy_r_r3225;
+    char cpy_r_r3226;
+    cpy_r_r0 = CPyModule_builtins;
+    cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
+    if (cpy_r_r2) goto CPyL3;
+    cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'builtins' */
+    cpy_r_r4 = PyImport_Import(cpy_r_r3);
+    if (unlikely(cpy_r_r4 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", -1, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    CPyModule_builtins = cpy_r_r4;
+    CPy_INCREF(CPyModule_builtins);
+    CPy_DECREF(cpy_r_r4);
+CPyL3: ;
+    cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r6 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r7 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r8 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r11 = CPyDict_Build(2, cpy_r_r7, cpy_r_r8, cpy_r_r9, cpy_r_r10);
+    if (unlikely(cpy_r_r11 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r12 = PyList_New(1);
+    if (unlikely(cpy_r_r12 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL545;
+    }
+    cpy_r_r13 = (CPyPtr)&((PyListObject *)cpy_r_r12)->ob_item;
+    cpy_r_r14 = *(CPyPtr *)cpy_r_r13;
+    *(PyObject * *)cpy_r_r14 = cpy_r_r11;
+    cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r16 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver' */
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r19 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r20 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r22 = CPyDict_Build(2, cpy_r_r18, cpy_r_r19, cpy_r_r20, cpy_r_r21);
+    if (unlikely(cpy_r_r22 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL546;
+    }
+    cpy_r_r23 = PyList_New(1);
+    if (unlikely(cpy_r_r23 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL547;
+    }
+    cpy_r_r24 = (CPyPtr)&((PyListObject *)cpy_r_r23)->ob_item;
+    cpy_r_r25 = *(CPyPtr *)cpy_r_r24;
+    *(PyObject * *)cpy_r_r25 = cpy_r_r22;
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r27 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r29 = 1 ? Py_True : Py_False;
+    cpy_r_r30 = 0 ? Py_True : Py_False;
+    cpy_r_r31 = CPyDict_Build(6, cpy_r_r5, cpy_r_r29, cpy_r_r6, cpy_r_r12, cpy_r_r15, cpy_r_r16, cpy_r_r17, cpy_r_r23, cpy_r_r26, cpy_r_r30, cpy_r_r27, cpy_r_r28);
+    CPy_DECREF_NO_IMM(cpy_r_r12);
+    CPy_DECREF_NO_IMM(cpy_r_r23);
+    if (unlikely(cpy_r_r31 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r32 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r35 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r38 = CPyDict_Build(2, cpy_r_r34, cpy_r_r35, cpy_r_r36, cpy_r_r37);
+    if (unlikely(cpy_r_r38 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL548;
+    }
+    cpy_r_r39 = PyList_New(1);
+    if (unlikely(cpy_r_r39 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL549;
+    }
+    cpy_r_r40 = (CPyPtr)&((PyListObject *)cpy_r_r39)->ob_item;
+    cpy_r_r41 = *(CPyPtr *)cpy_r_r40;
+    *(PyObject * *)cpy_r_r41 = cpy_r_r38;
+    cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r47 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r48 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r49 = CPyDict_Build(2, cpy_r_r45, cpy_r_r46, cpy_r_r47, cpy_r_r48);
+    if (unlikely(cpy_r_r49 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL550;
+    }
+    cpy_r_r50 = PyList_New(1);
+    if (unlikely(cpy_r_r50 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL551;
+    }
+    cpy_r_r51 = (CPyPtr)&((PyListObject *)cpy_r_r50)->ob_item;
+    cpy_r_r52 = *(CPyPtr *)cpy_r_r51;
+    *(PyObject * *)cpy_r_r52 = cpy_r_r49;
+    cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r55 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r56 = 1 ? Py_True : Py_False;
+    cpy_r_r57 = 0 ? Py_True : Py_False;
+    cpy_r_r58 = CPyDict_Build(6, cpy_r_r32, cpy_r_r56, cpy_r_r33, cpy_r_r39, cpy_r_r42, cpy_r_r43, cpy_r_r44, cpy_r_r50, cpy_r_r53, cpy_r_r57, cpy_r_r54, cpy_r_r55);
+    CPy_DECREF_NO_IMM(cpy_r_r39);
+    CPy_DECREF_NO_IMM(cpy_r_r50);
+    if (unlikely(cpy_r_r58 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL548;
+    }
+    cpy_r_r59 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r60 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r63 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r64 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r65 = CPyDict_Build(2, cpy_r_r61, cpy_r_r62, cpy_r_r63, cpy_r_r64);
+    if (unlikely(cpy_r_r65 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL552;
+    }
+    cpy_r_r66 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r67 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'label' */
+    cpy_r_r68 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r69 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r70 = CPyDict_Build(2, cpy_r_r66, cpy_r_r67, cpy_r_r68, cpy_r_r69);
+    if (unlikely(cpy_r_r70 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL553;
+    }
+    cpy_r_r71 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r72 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r73 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r74 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r75 = CPyDict_Build(2, cpy_r_r71, cpy_r_r72, cpy_r_r73, cpy_r_r74);
+    if (unlikely(cpy_r_r75 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL554;
+    }
+    cpy_r_r76 = PyList_New(3);
+    if (unlikely(cpy_r_r76 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL555;
+    }
+    cpy_r_r77 = (CPyPtr)&((PyListObject *)cpy_r_r76)->ob_item;
+    cpy_r_r78 = *(CPyPtr *)cpy_r_r77;
+    *(PyObject * *)cpy_r_r78 = cpy_r_r65;
+    cpy_r_r79 = cpy_r_r78 + 8;
+    *(PyObject * *)cpy_r_r79 = cpy_r_r70;
+    cpy_r_r80 = cpy_r_r78 + 16;
+    *(PyObject * *)cpy_r_r80 = cpy_r_r75;
+    cpy_r_r81 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r82 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setSubnodeOwner' */
+    cpy_r_r83 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r84 = PyList_New(0);
+    if (unlikely(cpy_r_r84 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL556;
+    }
+    cpy_r_r85 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r86 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r87 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r88 = 0 ? Py_True : Py_False;
+    cpy_r_r89 = 0 ? Py_True : Py_False;
+    cpy_r_r90 = CPyDict_Build(6, cpy_r_r59, cpy_r_r88, cpy_r_r60, cpy_r_r76, cpy_r_r81, cpy_r_r82, cpy_r_r83, cpy_r_r84, cpy_r_r85, cpy_r_r89, cpy_r_r86, cpy_r_r87);
+    CPy_DECREF_NO_IMM(cpy_r_r76);
+    CPy_DECREF_NO_IMM(cpy_r_r84);
+    if (unlikely(cpy_r_r90 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL552;
+    }
+    cpy_r_r91 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r92 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r93 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r94 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r95 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r96 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r97 = CPyDict_Build(2, cpy_r_r93, cpy_r_r94, cpy_r_r95, cpy_r_r96);
+    if (unlikely(cpy_r_r97 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL557;
+    }
+    cpy_r_r98 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r99 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ttl' */
+    cpy_r_r100 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint64' */
+    cpy_r_r102 = CPyDict_Build(2, cpy_r_r98, cpy_r_r99, cpy_r_r100, cpy_r_r101);
+    if (unlikely(cpy_r_r102 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL558;
+    }
+    cpy_r_r103 = PyList_New(2);
+    if (unlikely(cpy_r_r103 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL559;
+    }
+    cpy_r_r104 = (CPyPtr)&((PyListObject *)cpy_r_r103)->ob_item;
+    cpy_r_r105 = *(CPyPtr *)cpy_r_r104;
+    *(PyObject * *)cpy_r_r105 = cpy_r_r97;
+    cpy_r_r106 = cpy_r_r105 + 8;
+    *(PyObject * *)cpy_r_r106 = cpy_r_r102;
+    cpy_r_r107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setTTL' */
+    cpy_r_r109 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r110 = PyList_New(0);
+    if (unlikely(cpy_r_r110 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL560;
+    }
+    cpy_r_r111 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r112 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r113 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r114 = 0 ? Py_True : Py_False;
+    cpy_r_r115 = 0 ? Py_True : Py_False;
+    cpy_r_r116 = CPyDict_Build(6, cpy_r_r91, cpy_r_r114, cpy_r_r92, cpy_r_r103, cpy_r_r107, cpy_r_r108, cpy_r_r109, cpy_r_r110, cpy_r_r111, cpy_r_r115, cpy_r_r112, cpy_r_r113);
+    CPy_DECREF_NO_IMM(cpy_r_r103);
+    CPy_DECREF_NO_IMM(cpy_r_r110);
+    if (unlikely(cpy_r_r116 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL557;
+    }
+    cpy_r_r117 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r118 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r119 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r120 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r121 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r122 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r123 = CPyDict_Build(2, cpy_r_r119, cpy_r_r120, cpy_r_r121, cpy_r_r122);
+    if (unlikely(cpy_r_r123 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL561;
+    }
+    cpy_r_r124 = PyList_New(1);
+    if (unlikely(cpy_r_r124 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL562;
+    }
+    cpy_r_r125 = (CPyPtr)&((PyListObject *)cpy_r_r124)->ob_item;
+    cpy_r_r126 = *(CPyPtr *)cpy_r_r125;
+    *(PyObject * *)cpy_r_r126 = cpy_r_r123;
+    cpy_r_r127 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r128 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ttl' */
+    cpy_r_r129 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r130 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r131 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r132 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r133 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint64' */
+    cpy_r_r134 = CPyDict_Build(2, cpy_r_r130, cpy_r_r131, cpy_r_r132, cpy_r_r133);
+    if (unlikely(cpy_r_r134 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL563;
+    }
+    cpy_r_r135 = PyList_New(1);
+    if (unlikely(cpy_r_r135 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL564;
+    }
+    cpy_r_r136 = (CPyPtr)&((PyListObject *)cpy_r_r135)->ob_item;
+    cpy_r_r137 = *(CPyPtr *)cpy_r_r136;
+    *(PyObject * *)cpy_r_r137 = cpy_r_r134;
+    cpy_r_r138 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r139 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r141 = 1 ? Py_True : Py_False;
+    cpy_r_r142 = 0 ? Py_True : Py_False;
+    cpy_r_r143 = CPyDict_Build(6, cpy_r_r117, cpy_r_r141, cpy_r_r118, cpy_r_r124, cpy_r_r127, cpy_r_r128, cpy_r_r129, cpy_r_r135, cpy_r_r138, cpy_r_r142, cpy_r_r139, cpy_r_r140);
+    CPy_DECREF_NO_IMM(cpy_r_r124);
+    CPy_DECREF_NO_IMM(cpy_r_r135);
+    if (unlikely(cpy_r_r143 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL561;
+    }
+    cpy_r_r144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r145 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r146 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r147 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r148 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r149 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r150 = CPyDict_Build(2, cpy_r_r146, cpy_r_r147, cpy_r_r148, cpy_r_r149);
+    if (unlikely(cpy_r_r150 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL565;
+    }
+    cpy_r_r151 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r152 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver' */
+    cpy_r_r153 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r154 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r155 = CPyDict_Build(2, cpy_r_r151, cpy_r_r152, cpy_r_r153, cpy_r_r154);
+    if (unlikely(cpy_r_r155 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL566;
+    }
+    cpy_r_r156 = PyList_New(2);
+    if (unlikely(cpy_r_r156 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL567;
+    }
+    cpy_r_r157 = (CPyPtr)&((PyListObject *)cpy_r_r156)->ob_item;
+    cpy_r_r158 = *(CPyPtr *)cpy_r_r157;
+    *(PyObject * *)cpy_r_r158 = cpy_r_r150;
+    cpy_r_r159 = cpy_r_r158 + 8;
+    *(PyObject * *)cpy_r_r159 = cpy_r_r155;
+    cpy_r_r160 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r161 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setResolver' */
+    cpy_r_r162 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r163 = PyList_New(0);
+    if (unlikely(cpy_r_r163 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL568;
+    }
+    cpy_r_r164 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r165 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r166 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r167 = 0 ? Py_True : Py_False;
+    cpy_r_r168 = 0 ? Py_True : Py_False;
+    cpy_r_r169 = CPyDict_Build(6, cpy_r_r144, cpy_r_r167, cpy_r_r145, cpy_r_r156, cpy_r_r160, cpy_r_r161, cpy_r_r162, cpy_r_r163, cpy_r_r164, cpy_r_r168, cpy_r_r165, cpy_r_r166);
+    CPy_DECREF_NO_IMM(cpy_r_r156);
+    CPy_DECREF_NO_IMM(cpy_r_r163);
+    if (unlikely(cpy_r_r169 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL565;
+    }
+    cpy_r_r170 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r171 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r172 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r173 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r174 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r175 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r176 = CPyDict_Build(2, cpy_r_r172, cpy_r_r173, cpy_r_r174, cpy_r_r175);
+    if (unlikely(cpy_r_r176 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL569;
+    }
+    cpy_r_r177 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r178 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r179 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r180 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r181 = CPyDict_Build(2, cpy_r_r177, cpy_r_r178, cpy_r_r179, cpy_r_r180);
+    if (unlikely(cpy_r_r181 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL570;
+    }
+    cpy_r_r182 = PyList_New(2);
+    if (unlikely(cpy_r_r182 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL571;
+    }
+    cpy_r_r183 = (CPyPtr)&((PyListObject *)cpy_r_r182)->ob_item;
+    cpy_r_r184 = *(CPyPtr *)cpy_r_r183;
+    *(PyObject * *)cpy_r_r184 = cpy_r_r176;
+    cpy_r_r185 = cpy_r_r184 + 8;
+    *(PyObject * *)cpy_r_r185 = cpy_r_r181;
+    cpy_r_r186 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r187 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setOwner' */
+    cpy_r_r188 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r189 = PyList_New(0);
+    if (unlikely(cpy_r_r189 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL572;
+    }
+    cpy_r_r190 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r191 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r192 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r193 = 0 ? Py_True : Py_False;
+    cpy_r_r194 = 0 ? Py_True : Py_False;
+    cpy_r_r195 = CPyDict_Build(6, cpy_r_r170, cpy_r_r193, cpy_r_r171, cpy_r_r182, cpy_r_r186, cpy_r_r187, cpy_r_r188, cpy_r_r189, cpy_r_r190, cpy_r_r194, cpy_r_r191, cpy_r_r192);
+    CPy_DECREF_NO_IMM(cpy_r_r182);
+    CPy_DECREF_NO_IMM(cpy_r_r189);
+    if (unlikely(cpy_r_r195 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL569;
+    }
+    cpy_r_r196 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r197 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r198 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r199 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r200 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r201 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r202 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r203 = 1 ? Py_True : Py_False;
+    cpy_r_r204 = CPyDict_Build(3, cpy_r_r198, cpy_r_r203, cpy_r_r199, cpy_r_r200, cpy_r_r201, cpy_r_r202);
+    if (unlikely(cpy_r_r204 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL573;
+    }
+    cpy_r_r205 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r206 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r207 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r208 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r209 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r210 = 0 ? Py_True : Py_False;
+    cpy_r_r211 = CPyDict_Build(3, cpy_r_r205, cpy_r_r210, cpy_r_r206, cpy_r_r207, cpy_r_r208, cpy_r_r209);
+    if (unlikely(cpy_r_r211 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL574;
+    }
+    cpy_r_r212 = PyList_New(2);
+    if (unlikely(cpy_r_r212 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL575;
+    }
+    cpy_r_r213 = (CPyPtr)&((PyListObject *)cpy_r_r212)->ob_item;
+    cpy_r_r214 = *(CPyPtr *)cpy_r_r213;
+    *(PyObject * *)cpy_r_r214 = cpy_r_r204;
+    cpy_r_r215 = cpy_r_r214 + 8;
+    *(PyObject * *)cpy_r_r215 = cpy_r_r211;
+    cpy_r_r216 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r217 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Transfer' */
+    cpy_r_r218 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r219 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r220 = 0 ? Py_True : Py_False;
+    cpy_r_r221 = CPyDict_Build(4, cpy_r_r196, cpy_r_r220, cpy_r_r197, cpy_r_r212, cpy_r_r216, cpy_r_r217, cpy_r_r218, cpy_r_r219);
+    CPy_DECREF_NO_IMM(cpy_r_r212);
+    if (unlikely(cpy_r_r221 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL573;
+    }
+    cpy_r_r222 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r223 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r224 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r225 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r226 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r227 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r228 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r229 = 1 ? Py_True : Py_False;
+    cpy_r_r230 = CPyDict_Build(3, cpy_r_r224, cpy_r_r229, cpy_r_r225, cpy_r_r226, cpy_r_r227, cpy_r_r228);
+    if (unlikely(cpy_r_r230 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL576;
+    }
+    cpy_r_r231 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r232 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r233 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'label' */
+    cpy_r_r234 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r235 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r236 = 1 ? Py_True : Py_False;
+    cpy_r_r237 = CPyDict_Build(3, cpy_r_r231, cpy_r_r236, cpy_r_r232, cpy_r_r233, cpy_r_r234, cpy_r_r235);
+    if (unlikely(cpy_r_r237 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL577;
+    }
+    cpy_r_r238 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r239 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r240 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r241 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r242 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r243 = 0 ? Py_True : Py_False;
+    cpy_r_r244 = CPyDict_Build(3, cpy_r_r238, cpy_r_r243, cpy_r_r239, cpy_r_r240, cpy_r_r241, cpy_r_r242);
+    if (unlikely(cpy_r_r244 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL578;
+    }
+    cpy_r_r245 = PyList_New(3);
+    if (unlikely(cpy_r_r245 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL579;
+    }
+    cpy_r_r246 = (CPyPtr)&((PyListObject *)cpy_r_r245)->ob_item;
+    cpy_r_r247 = *(CPyPtr *)cpy_r_r246;
+    *(PyObject * *)cpy_r_r247 = cpy_r_r230;
+    cpy_r_r248 = cpy_r_r247 + 8;
+    *(PyObject * *)cpy_r_r248 = cpy_r_r237;
+    cpy_r_r249 = cpy_r_r247 + 16;
+    *(PyObject * *)cpy_r_r249 = cpy_r_r244;
+    cpy_r_r250 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r251 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'NewOwner' */
+    cpy_r_r252 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r253 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r254 = 0 ? Py_True : Py_False;
+    cpy_r_r255 = CPyDict_Build(4, cpy_r_r222, cpy_r_r254, cpy_r_r223, cpy_r_r245, cpy_r_r250, cpy_r_r251, cpy_r_r252, cpy_r_r253);
+    CPy_DECREF_NO_IMM(cpy_r_r245);
+    if (unlikely(cpy_r_r255 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL576;
+    }
+    cpy_r_r256 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r257 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r258 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r259 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r260 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r261 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r262 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r263 = 1 ? Py_True : Py_False;
+    cpy_r_r264 = CPyDict_Build(3, cpy_r_r258, cpy_r_r263, cpy_r_r259, cpy_r_r260, cpy_r_r261, cpy_r_r262);
+    if (unlikely(cpy_r_r264 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL580;
+    }
+    cpy_r_r265 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r266 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r267 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver' */
+    cpy_r_r268 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r269 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r270 = 0 ? Py_True : Py_False;
+    cpy_r_r271 = CPyDict_Build(3, cpy_r_r265, cpy_r_r270, cpy_r_r266, cpy_r_r267, cpy_r_r268, cpy_r_r269);
+    if (unlikely(cpy_r_r271 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL581;
+    }
+    cpy_r_r272 = PyList_New(2);
+    if (unlikely(cpy_r_r272 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL582;
+    }
+    cpy_r_r273 = (CPyPtr)&((PyListObject *)cpy_r_r272)->ob_item;
+    cpy_r_r274 = *(CPyPtr *)cpy_r_r273;
+    *(PyObject * *)cpy_r_r274 = cpy_r_r264;
+    cpy_r_r275 = cpy_r_r274 + 8;
+    *(PyObject * *)cpy_r_r275 = cpy_r_r271;
+    cpy_r_r276 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r277 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'NewResolver' */
+    cpy_r_r278 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r279 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r280 = 0 ? Py_True : Py_False;
+    cpy_r_r281 = CPyDict_Build(4, cpy_r_r256, cpy_r_r280, cpy_r_r257, cpy_r_r272, cpy_r_r276, cpy_r_r277, cpy_r_r278, cpy_r_r279);
+    CPy_DECREF_NO_IMM(cpy_r_r272);
+    if (unlikely(cpy_r_r281 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL580;
+    }
+    cpy_r_r282 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r283 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r284 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r285 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r286 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r287 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r288 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r289 = 1 ? Py_True : Py_False;
+    cpy_r_r290 = CPyDict_Build(3, cpy_r_r284, cpy_r_r289, cpy_r_r285, cpy_r_r286, cpy_r_r287, cpy_r_r288);
+    if (unlikely(cpy_r_r290 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL583;
+    }
+    cpy_r_r291 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r292 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r293 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ttl' */
+    cpy_r_r294 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r295 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint64' */
+    cpy_r_r296 = 0 ? Py_True : Py_False;
+    cpy_r_r297 = CPyDict_Build(3, cpy_r_r291, cpy_r_r296, cpy_r_r292, cpy_r_r293, cpy_r_r294, cpy_r_r295);
+    if (unlikely(cpy_r_r297 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL584;
+    }
+    cpy_r_r298 = PyList_New(2);
+    if (unlikely(cpy_r_r298 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL585;
+    }
+    cpy_r_r299 = (CPyPtr)&((PyListObject *)cpy_r_r298)->ob_item;
+    cpy_r_r300 = *(CPyPtr *)cpy_r_r299;
+    *(PyObject * *)cpy_r_r300 = cpy_r_r290;
+    cpy_r_r301 = cpy_r_r300 + 8;
+    *(PyObject * *)cpy_r_r301 = cpy_r_r297;
+    cpy_r_r302 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r303 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'NewTTL' */
+    cpy_r_r304 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r305 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r306 = 0 ? Py_True : Py_False;
+    cpy_r_r307 = CPyDict_Build(4, cpy_r_r282, cpy_r_r306, cpy_r_r283, cpy_r_r298, cpy_r_r302, cpy_r_r303, cpy_r_r304, cpy_r_r305);
+    CPy_DECREF_NO_IMM(cpy_r_r298);
+    if (unlikely(cpy_r_r307 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL583;
+    }
+    cpy_r_r308 = CPyList_Build(11, cpy_r_r31, cpy_r_r58, cpy_r_r90, cpy_r_r116, cpy_r_r143, cpy_r_r169, cpy_r_r195, cpy_r_r221, cpy_r_r255, cpy_r_r281, cpy_r_r307);
+    if (unlikely(cpy_r_r308 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r309 = CPyStatic_abis___globals;
+    cpy_r_r310 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ENS' */
+    cpy_r_r311 = CPyDict_SetItem(cpy_r_r309, cpy_r_r310, cpy_r_r308);
+    CPy_DECREF_NO_IMM(cpy_r_r308);
+    cpy_r_r312 = cpy_r_r311 >= 0;
+    if (unlikely(!cpy_r_r312)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r313 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r314 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r315 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r316 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r317 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r318 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r319 = CPyDict_Build(2, cpy_r_r315, cpy_r_r316, cpy_r_r317, cpy_r_r318);
+    if (unlikely(cpy_r_r319 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r320 = PyList_New(1);
+    if (unlikely(cpy_r_r320 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL586;
+    }
+    cpy_r_r321 = (CPyPtr)&((PyListObject *)cpy_r_r320)->ob_item;
+    cpy_r_r322 = *(CPyPtr *)cpy_r_r321;
+    *(PyObject * *)cpy_r_r322 = cpy_r_r319;
+    cpy_r_r323 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r324 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'releaseDeed' */
+    cpy_r_r325 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r326 = PyList_New(0);
+    if (unlikely(cpy_r_r326 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL587;
+    }
+    cpy_r_r327 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r328 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r329 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r330 = 0 ? Py_True : Py_False;
+    cpy_r_r331 = 0 ? Py_True : Py_False;
+    cpy_r_r332 = CPyDict_Build(6, cpy_r_r313, cpy_r_r330, cpy_r_r314, cpy_r_r320, cpy_r_r323, cpy_r_r324, cpy_r_r325, cpy_r_r326, cpy_r_r327, cpy_r_r331, cpy_r_r328, cpy_r_r329);
+    CPy_DECREF_NO_IMM(cpy_r_r320);
+    CPy_DECREF_NO_IMM(cpy_r_r326);
+    if (unlikely(cpy_r_r332 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r333 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r334 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r335 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r336 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r337 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r338 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r339 = CPyDict_Build(2, cpy_r_r335, cpy_r_r336, cpy_r_r337, cpy_r_r338);
+    if (unlikely(cpy_r_r339 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL588;
+    }
+    cpy_r_r340 = PyList_New(1);
+    if (unlikely(cpy_r_r340 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL589;
+    }
+    cpy_r_r341 = (CPyPtr)&((PyListObject *)cpy_r_r340)->ob_item;
+    cpy_r_r342 = *(CPyPtr *)cpy_r_r341;
+    *(PyObject * *)cpy_r_r342 = cpy_r_r339;
+    cpy_r_r343 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r344 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'getAllowedTime' */
+    cpy_r_r345 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r346 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r347 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'timestamp' */
+    cpy_r_r348 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r349 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r350 = CPyDict_Build(2, cpy_r_r346, cpy_r_r347, cpy_r_r348, cpy_r_r349);
+    if (unlikely(cpy_r_r350 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL590;
+    }
+    cpy_r_r351 = PyList_New(1);
+    if (unlikely(cpy_r_r351 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL591;
+    }
+    cpy_r_r352 = (CPyPtr)&((PyListObject *)cpy_r_r351)->ob_item;
+    cpy_r_r353 = *(CPyPtr *)cpy_r_r352;
+    *(PyObject * *)cpy_r_r353 = cpy_r_r350;
+    cpy_r_r354 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r355 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r356 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r357 = 1 ? Py_True : Py_False;
+    cpy_r_r358 = 0 ? Py_True : Py_False;
+    cpy_r_r359 = CPyDict_Build(6, cpy_r_r333, cpy_r_r357, cpy_r_r334, cpy_r_r340, cpy_r_r343, cpy_r_r344, cpy_r_r345, cpy_r_r351, cpy_r_r354, cpy_r_r358, cpy_r_r355, cpy_r_r356);
+    CPy_DECREF_NO_IMM(cpy_r_r340);
+    CPy_DECREF_NO_IMM(cpy_r_r351);
+    if (unlikely(cpy_r_r359 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL588;
+    }
+    cpy_r_r360 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r361 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r362 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r363 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'unhashedName' */
+    cpy_r_r364 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r365 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r366 = CPyDict_Build(2, cpy_r_r362, cpy_r_r363, cpy_r_r364, cpy_r_r365);
+    if (unlikely(cpy_r_r366 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL592;
+    }
+    cpy_r_r367 = PyList_New(1);
+    if (unlikely(cpy_r_r367 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL593;
+    }
+    cpy_r_r368 = (CPyPtr)&((PyListObject *)cpy_r_r367)->ob_item;
+    cpy_r_r369 = *(CPyPtr *)cpy_r_r368;
+    *(PyObject * *)cpy_r_r369 = cpy_r_r366;
+    cpy_r_r370 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r371 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'invalidateName' */
+    cpy_r_r372 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r373 = PyList_New(0);
+    if (unlikely(cpy_r_r373 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL594;
+    }
+    cpy_r_r374 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r375 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r376 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r377 = 0 ? Py_True : Py_False;
+    cpy_r_r378 = 0 ? Py_True : Py_False;
+    cpy_r_r379 = CPyDict_Build(6, cpy_r_r360, cpy_r_r377, cpy_r_r361, cpy_r_r367, cpy_r_r370, cpy_r_r371, cpy_r_r372, cpy_r_r373, cpy_r_r374, cpy_r_r378, cpy_r_r375, cpy_r_r376);
+    CPy_DECREF_NO_IMM(cpy_r_r367);
+    CPy_DECREF_NO_IMM(cpy_r_r373);
+    if (unlikely(cpy_r_r379 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL592;
+    }
+    cpy_r_r380 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r381 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r382 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r383 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r384 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r385 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r386 = CPyDict_Build(2, cpy_r_r382, cpy_r_r383, cpy_r_r384, cpy_r_r385);
+    if (unlikely(cpy_r_r386 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL595;
+    }
+    cpy_r_r387 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r388 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r389 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r390 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r391 = CPyDict_Build(2, cpy_r_r387, cpy_r_r388, cpy_r_r389, cpy_r_r390);
+    if (unlikely(cpy_r_r391 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL596;
+    }
+    cpy_r_r392 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r393 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r394 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r395 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r396 = CPyDict_Build(2, cpy_r_r392, cpy_r_r393, cpy_r_r394, cpy_r_r395);
+    if (unlikely(cpy_r_r396 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL597;
+    }
+    cpy_r_r397 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r398 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'salt' */
+    cpy_r_r399 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r400 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r401 = CPyDict_Build(2, cpy_r_r397, cpy_r_r398, cpy_r_r399, cpy_r_r400);
+    if (unlikely(cpy_r_r401 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL598;
+    }
+    cpy_r_r402 = PyList_New(4);
+    if (unlikely(cpy_r_r402 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL599;
+    }
+    cpy_r_r403 = (CPyPtr)&((PyListObject *)cpy_r_r402)->ob_item;
+    cpy_r_r404 = *(CPyPtr *)cpy_r_r403;
+    *(PyObject * *)cpy_r_r404 = cpy_r_r386;
+    cpy_r_r405 = cpy_r_r404 + 8;
+    *(PyObject * *)cpy_r_r405 = cpy_r_r391;
+    cpy_r_r406 = cpy_r_r404 + 16;
+    *(PyObject * *)cpy_r_r406 = cpy_r_r396;
+    cpy_r_r407 = cpy_r_r404 + 24;
+    *(PyObject * *)cpy_r_r407 = cpy_r_r401;
+    cpy_r_r408 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r409 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'shaBid' */
+    cpy_r_r410 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r411 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r412 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'sealedBid' */
+    cpy_r_r413 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r414 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r415 = CPyDict_Build(2, cpy_r_r411, cpy_r_r412, cpy_r_r413, cpy_r_r414);
+    if (unlikely(cpy_r_r415 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL600;
+    }
+    cpy_r_r416 = PyList_New(1);
+    if (unlikely(cpy_r_r416 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL601;
+    }
+    cpy_r_r417 = (CPyPtr)&((PyListObject *)cpy_r_r416)->ob_item;
+    cpy_r_r418 = *(CPyPtr *)cpy_r_r417;
+    *(PyObject * *)cpy_r_r418 = cpy_r_r415;
+    cpy_r_r419 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r420 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r421 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r422 = 1 ? Py_True : Py_False;
+    cpy_r_r423 = 0 ? Py_True : Py_False;
+    cpy_r_r424 = CPyDict_Build(6, cpy_r_r380, cpy_r_r422, cpy_r_r381, cpy_r_r402, cpy_r_r408, cpy_r_r409, cpy_r_r410, cpy_r_r416, cpy_r_r419, cpy_r_r423, cpy_r_r420, cpy_r_r421);
+    CPy_DECREF_NO_IMM(cpy_r_r402);
+    CPy_DECREF_NO_IMM(cpy_r_r416);
+    if (unlikely(cpy_r_r424 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL595;
+    }
+    cpy_r_r425 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r426 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r427 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r428 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bidder' */
+    cpy_r_r429 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r430 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r431 = CPyDict_Build(2, cpy_r_r427, cpy_r_r428, cpy_r_r429, cpy_r_r430);
+    if (unlikely(cpy_r_r431 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL602;
+    }
+    cpy_r_r432 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r433 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'seal' */
+    cpy_r_r434 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r435 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r436 = CPyDict_Build(2, cpy_r_r432, cpy_r_r433, cpy_r_r434, cpy_r_r435);
+    if (unlikely(cpy_r_r436 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL603;
+    }
+    cpy_r_r437 = PyList_New(2);
+    if (unlikely(cpy_r_r437 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL604;
+    }
+    cpy_r_r438 = (CPyPtr)&((PyListObject *)cpy_r_r437)->ob_item;
+    cpy_r_r439 = *(CPyPtr *)cpy_r_r438;
+    *(PyObject * *)cpy_r_r439 = cpy_r_r431;
+    cpy_r_r440 = cpy_r_r439 + 8;
+    *(PyObject * *)cpy_r_r440 = cpy_r_r436;
+    cpy_r_r441 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r442 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'cancelBid' */
+    cpy_r_r443 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r444 = PyList_New(0);
+    if (unlikely(cpy_r_r444 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL605;
+    }
+    cpy_r_r445 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r446 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r447 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r448 = 0 ? Py_True : Py_False;
+    cpy_r_r449 = 0 ? Py_True : Py_False;
+    cpy_r_r450 = CPyDict_Build(6, cpy_r_r425, cpy_r_r448, cpy_r_r426, cpy_r_r437, cpy_r_r441, cpy_r_r442, cpy_r_r443, cpy_r_r444, cpy_r_r445, cpy_r_r449, cpy_r_r446, cpy_r_r447);
+    CPy_DECREF_NO_IMM(cpy_r_r437);
+    CPy_DECREF_NO_IMM(cpy_r_r444);
+    if (unlikely(cpy_r_r450 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL602;
+    }
+    cpy_r_r451 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r452 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r453 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r454 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r455 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r456 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r457 = CPyDict_Build(2, cpy_r_r453, cpy_r_r454, cpy_r_r455, cpy_r_r456);
+    if (unlikely(cpy_r_r457 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL606;
+    }
+    cpy_r_r458 = PyList_New(1);
+    if (unlikely(cpy_r_r458 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL607;
+    }
+    cpy_r_r459 = (CPyPtr)&((PyListObject *)cpy_r_r458)->ob_item;
+    cpy_r_r460 = *(CPyPtr *)cpy_r_r459;
+    *(PyObject * *)cpy_r_r460 = cpy_r_r457;
+    cpy_r_r461 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r462 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'entries' */
+    cpy_r_r463 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r464 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r465 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r466 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r467 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint8' */
+    cpy_r_r468 = CPyDict_Build(2, cpy_r_r464, cpy_r_r465, cpy_r_r466, cpy_r_r467);
+    if (unlikely(cpy_r_r468 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL608;
+    }
+    cpy_r_r469 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r470 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r471 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r472 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r473 = CPyDict_Build(2, cpy_r_r469, cpy_r_r470, cpy_r_r471, cpy_r_r472);
+    if (unlikely(cpy_r_r473 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL609;
+    }
+    cpy_r_r474 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r475 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r476 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r477 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r478 = CPyDict_Build(2, cpy_r_r474, cpy_r_r475, cpy_r_r476, cpy_r_r477);
+    if (unlikely(cpy_r_r478 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL610;
+    }
+    cpy_r_r479 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r480 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r481 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r482 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r483 = CPyDict_Build(2, cpy_r_r479, cpy_r_r480, cpy_r_r481, cpy_r_r482);
+    if (unlikely(cpy_r_r483 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL611;
+    }
+    cpy_r_r484 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r485 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r486 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r487 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r488 = CPyDict_Build(2, cpy_r_r484, cpy_r_r485, cpy_r_r486, cpy_r_r487);
+    if (unlikely(cpy_r_r488 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL612;
+    }
+    cpy_r_r489 = PyList_New(5);
+    if (unlikely(cpy_r_r489 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL613;
+    }
+    cpy_r_r490 = (CPyPtr)&((PyListObject *)cpy_r_r489)->ob_item;
+    cpy_r_r491 = *(CPyPtr *)cpy_r_r490;
+    *(PyObject * *)cpy_r_r491 = cpy_r_r468;
+    cpy_r_r492 = cpy_r_r491 + 8;
+    *(PyObject * *)cpy_r_r492 = cpy_r_r473;
+    cpy_r_r493 = cpy_r_r491 + 16;
+    *(PyObject * *)cpy_r_r493 = cpy_r_r478;
+    cpy_r_r494 = cpy_r_r491 + 24;
+    *(PyObject * *)cpy_r_r494 = cpy_r_r483;
+    cpy_r_r495 = cpy_r_r491 + 32;
+    *(PyObject * *)cpy_r_r495 = cpy_r_r488;
+    cpy_r_r496 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r497 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r498 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r499 = 1 ? Py_True : Py_False;
+    cpy_r_r500 = 0 ? Py_True : Py_False;
+    cpy_r_r501 = CPyDict_Build(6, cpy_r_r451, cpy_r_r499, cpy_r_r452, cpy_r_r458, cpy_r_r461, cpy_r_r462, cpy_r_r463, cpy_r_r489, cpy_r_r496, cpy_r_r500, cpy_r_r497, cpy_r_r498);
+    CPy_DECREF_NO_IMM(cpy_r_r458);
+    CPy_DECREF_NO_IMM(cpy_r_r489);
+    if (unlikely(cpy_r_r501 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL606;
+    }
+    cpy_r_r502 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r503 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r504 = PyList_New(0);
+    if (unlikely(cpy_r_r504 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL614;
+    }
+    cpy_r_r505 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r506 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ens' */
+    cpy_r_r507 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r508 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r509 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r510 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r511 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r512 = CPyDict_Build(2, cpy_r_r508, cpy_r_r509, cpy_r_r510, cpy_r_r511);
+    if (unlikely(cpy_r_r512 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL615;
+    }
+    cpy_r_r513 = PyList_New(1);
+    if (unlikely(cpy_r_r513 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL616;
+    }
+    cpy_r_r514 = (CPyPtr)&((PyListObject *)cpy_r_r513)->ob_item;
+    cpy_r_r515 = *(CPyPtr *)cpy_r_r514;
+    *(PyObject * *)cpy_r_r515 = cpy_r_r512;
+    cpy_r_r516 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r517 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r518 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r519 = 1 ? Py_True : Py_False;
+    cpy_r_r520 = 0 ? Py_True : Py_False;
+    cpy_r_r521 = CPyDict_Build(6, cpy_r_r502, cpy_r_r519, cpy_r_r503, cpy_r_r504, cpy_r_r505, cpy_r_r506, cpy_r_r507, cpy_r_r513, cpy_r_r516, cpy_r_r520, cpy_r_r517, cpy_r_r518);
+    CPy_DECREF_NO_IMM(cpy_r_r504);
+    CPy_DECREF_NO_IMM(cpy_r_r513);
+    if (unlikely(cpy_r_r521 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL614;
+    }
+    cpy_r_r522 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r523 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r524 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r525 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r526 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r527 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r528 = CPyDict_Build(2, cpy_r_r524, cpy_r_r525, cpy_r_r526, cpy_r_r527);
+    if (unlikely(cpy_r_r528 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL617;
+    }
+    cpy_r_r529 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r530 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_value' */
+    cpy_r_r531 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r532 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r533 = CPyDict_Build(2, cpy_r_r529, cpy_r_r530, cpy_r_r531, cpy_r_r532);
+    if (unlikely(cpy_r_r533 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL618;
+    }
+    cpy_r_r534 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r535 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_salt' */
+    cpy_r_r536 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r537 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r538 = CPyDict_Build(2, cpy_r_r534, cpy_r_r535, cpy_r_r536, cpy_r_r537);
+    if (unlikely(cpy_r_r538 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL619;
+    }
+    cpy_r_r539 = PyList_New(3);
+    if (unlikely(cpy_r_r539 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL620;
+    }
+    cpy_r_r540 = (CPyPtr)&((PyListObject *)cpy_r_r539)->ob_item;
+    cpy_r_r541 = *(CPyPtr *)cpy_r_r540;
+    *(PyObject * *)cpy_r_r541 = cpy_r_r528;
+    cpy_r_r542 = cpy_r_r541 + 8;
+    *(PyObject * *)cpy_r_r542 = cpy_r_r533;
+    cpy_r_r543 = cpy_r_r541 + 16;
+    *(PyObject * *)cpy_r_r543 = cpy_r_r538;
+    cpy_r_r544 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r545 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'unsealBid' */
+    cpy_r_r546 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r547 = PyList_New(0);
+    if (unlikely(cpy_r_r547 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL621;
+    }
+    cpy_r_r548 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r549 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r550 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r551 = 0 ? Py_True : Py_False;
+    cpy_r_r552 = 0 ? Py_True : Py_False;
+    cpy_r_r553 = CPyDict_Build(6, cpy_r_r522, cpy_r_r551, cpy_r_r523, cpy_r_r539, cpy_r_r544, cpy_r_r545, cpy_r_r546, cpy_r_r547, cpy_r_r548, cpy_r_r552, cpy_r_r549, cpy_r_r550);
+    CPy_DECREF_NO_IMM(cpy_r_r539);
+    CPy_DECREF_NO_IMM(cpy_r_r547);
+    if (unlikely(cpy_r_r553 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL617;
+    }
+    cpy_r_r554 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r555 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r556 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r557 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r558 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r559 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r560 = CPyDict_Build(2, cpy_r_r556, cpy_r_r557, cpy_r_r558, cpy_r_r559);
+    if (unlikely(cpy_r_r560 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL622;
+    }
+    cpy_r_r561 = PyList_New(1);
+    if (unlikely(cpy_r_r561 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL623;
+    }
+    cpy_r_r562 = (CPyPtr)&((PyListObject *)cpy_r_r561)->ob_item;
+    cpy_r_r563 = *(CPyPtr *)cpy_r_r562;
+    *(PyObject * *)cpy_r_r563 = cpy_r_r560;
+    cpy_r_r564 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r565 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transferRegistrars' */
+    cpy_r_r566 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r567 = PyList_New(0);
+    if (unlikely(cpy_r_r567 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL624;
+    }
+    cpy_r_r568 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r569 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r570 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r571 = 0 ? Py_True : Py_False;
+    cpy_r_r572 = 0 ? Py_True : Py_False;
+    cpy_r_r573 = CPyDict_Build(6, cpy_r_r554, cpy_r_r571, cpy_r_r555, cpy_r_r561, cpy_r_r564, cpy_r_r565, cpy_r_r566, cpy_r_r567, cpy_r_r568, cpy_r_r572, cpy_r_r569, cpy_r_r570);
+    CPy_DECREF_NO_IMM(cpy_r_r561);
+    CPy_DECREF_NO_IMM(cpy_r_r567);
+    if (unlikely(cpy_r_r573 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL622;
+    }
+    cpy_r_r574 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r575 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r576 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r577 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r578 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r579 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r580 = CPyDict_Build(2, cpy_r_r576, cpy_r_r577, cpy_r_r578, cpy_r_r579);
+    if (unlikely(cpy_r_r580 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL625;
+    }
+    cpy_r_r581 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r582 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r583 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r584 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r585 = CPyDict_Build(2, cpy_r_r581, cpy_r_r582, cpy_r_r583, cpy_r_r584);
+    if (unlikely(cpy_r_r585 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL626;
+    }
+    cpy_r_r586 = PyList_New(2);
+    if (unlikely(cpy_r_r586 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL627;
+    }
+    cpy_r_r587 = (CPyPtr)&((PyListObject *)cpy_r_r586)->ob_item;
+    cpy_r_r588 = *(CPyPtr *)cpy_r_r587;
+    *(PyObject * *)cpy_r_r588 = cpy_r_r580;
+    cpy_r_r589 = cpy_r_r588 + 8;
+    *(PyObject * *)cpy_r_r589 = cpy_r_r585;
+    cpy_r_r590 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r591 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'sealedBids' */
+    cpy_r_r592 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r593 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r594 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r595 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r596 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r597 = CPyDict_Build(2, cpy_r_r593, cpy_r_r594, cpy_r_r595, cpy_r_r596);
+    if (unlikely(cpy_r_r597 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL628;
+    }
+    cpy_r_r598 = PyList_New(1);
+    if (unlikely(cpy_r_r598 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL629;
+    }
+    cpy_r_r599 = (CPyPtr)&((PyListObject *)cpy_r_r598)->ob_item;
+    cpy_r_r600 = *(CPyPtr *)cpy_r_r599;
+    *(PyObject * *)cpy_r_r600 = cpy_r_r597;
+    cpy_r_r601 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r602 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r603 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r604 = 1 ? Py_True : Py_False;
+    cpy_r_r605 = 0 ? Py_True : Py_False;
+    cpy_r_r606 = CPyDict_Build(6, cpy_r_r574, cpy_r_r604, cpy_r_r575, cpy_r_r586, cpy_r_r590, cpy_r_r591, cpy_r_r592, cpy_r_r598, cpy_r_r601, cpy_r_r605, cpy_r_r602, cpy_r_r603);
+    CPy_DECREF_NO_IMM(cpy_r_r586);
+    CPy_DECREF_NO_IMM(cpy_r_r598);
+    if (unlikely(cpy_r_r606 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL625;
+    }
+    cpy_r_r607 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r608 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r609 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r610 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r611 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r612 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r613 = CPyDict_Build(2, cpy_r_r609, cpy_r_r610, cpy_r_r611, cpy_r_r612);
+    if (unlikely(cpy_r_r613 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL630;
+    }
+    cpy_r_r614 = PyList_New(1);
+    if (unlikely(cpy_r_r614 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL631;
+    }
+    cpy_r_r615 = (CPyPtr)&((PyListObject *)cpy_r_r614)->ob_item;
+    cpy_r_r616 = *(CPyPtr *)cpy_r_r615;
+    *(PyObject * *)cpy_r_r616 = cpy_r_r613;
+    cpy_r_r617 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r618 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'state' */
+    cpy_r_r619 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r620 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r621 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r622 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r623 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint8' */
+    cpy_r_r624 = CPyDict_Build(2, cpy_r_r620, cpy_r_r621, cpy_r_r622, cpy_r_r623);
+    if (unlikely(cpy_r_r624 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL632;
+    }
+    cpy_r_r625 = PyList_New(1);
+    if (unlikely(cpy_r_r625 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL633;
+    }
+    cpy_r_r626 = (CPyPtr)&((PyListObject *)cpy_r_r625)->ob_item;
+    cpy_r_r627 = *(CPyPtr *)cpy_r_r626;
+    *(PyObject * *)cpy_r_r627 = cpy_r_r624;
+    cpy_r_r628 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r629 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r630 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r631 = 1 ? Py_True : Py_False;
+    cpy_r_r632 = 0 ? Py_True : Py_False;
+    cpy_r_r633 = CPyDict_Build(6, cpy_r_r607, cpy_r_r631, cpy_r_r608, cpy_r_r614, cpy_r_r617, cpy_r_r618, cpy_r_r619, cpy_r_r625, cpy_r_r628, cpy_r_r632, cpy_r_r629, cpy_r_r630);
+    CPy_DECREF_NO_IMM(cpy_r_r614);
+    CPy_DECREF_NO_IMM(cpy_r_r625);
+    if (unlikely(cpy_r_r633 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL630;
+    }
+    cpy_r_r634 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r635 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r636 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r637 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r638 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r639 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r640 = CPyDict_Build(2, cpy_r_r636, cpy_r_r637, cpy_r_r638, cpy_r_r639);
+    if (unlikely(cpy_r_r640 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL634;
+    }
+    cpy_r_r641 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r642 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newOwner' */
+    cpy_r_r643 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r644 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r645 = CPyDict_Build(2, cpy_r_r641, cpy_r_r642, cpy_r_r643, cpy_r_r644);
+    if (unlikely(cpy_r_r645 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL635;
+    }
+    cpy_r_r646 = PyList_New(2);
+    if (unlikely(cpy_r_r646 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL636;
+    }
+    cpy_r_r647 = (CPyPtr)&((PyListObject *)cpy_r_r646)->ob_item;
+    cpy_r_r648 = *(CPyPtr *)cpy_r_r647;
+    *(PyObject * *)cpy_r_r648 = cpy_r_r640;
+    cpy_r_r649 = cpy_r_r648 + 8;
+    *(PyObject * *)cpy_r_r649 = cpy_r_r645;
+    cpy_r_r650 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r651 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transfer' */
+    cpy_r_r652 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r653 = PyList_New(0);
+    if (unlikely(cpy_r_r653 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL637;
+    }
+    cpy_r_r654 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r655 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r656 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r657 = 0 ? Py_True : Py_False;
+    cpy_r_r658 = 0 ? Py_True : Py_False;
+    cpy_r_r659 = CPyDict_Build(6, cpy_r_r634, cpy_r_r657, cpy_r_r635, cpy_r_r646, cpy_r_r650, cpy_r_r651, cpy_r_r652, cpy_r_r653, cpy_r_r654, cpy_r_r658, cpy_r_r655, cpy_r_r656);
+    CPy_DECREF_NO_IMM(cpy_r_r646);
+    CPy_DECREF_NO_IMM(cpy_r_r653);
+    if (unlikely(cpy_r_r659 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL634;
+    }
+    cpy_r_r660 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r661 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r662 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r663 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r664 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r665 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r666 = CPyDict_Build(2, cpy_r_r662, cpy_r_r663, cpy_r_r664, cpy_r_r665);
+    if (unlikely(cpy_r_r666 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL638;
+    }
+    cpy_r_r667 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r668 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_timestamp' */
+    cpy_r_r669 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r670 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r671 = CPyDict_Build(2, cpy_r_r667, cpy_r_r668, cpy_r_r669, cpy_r_r670);
+    if (unlikely(cpy_r_r671 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL639;
+    }
+    cpy_r_r672 = PyList_New(2);
+    if (unlikely(cpy_r_r672 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL640;
+    }
+    cpy_r_r673 = (CPyPtr)&((PyListObject *)cpy_r_r672)->ob_item;
+    cpy_r_r674 = *(CPyPtr *)cpy_r_r673;
+    *(PyObject * *)cpy_r_r674 = cpy_r_r666;
+    cpy_r_r675 = cpy_r_r674 + 8;
+    *(PyObject * *)cpy_r_r675 = cpy_r_r671;
+    cpy_r_r676 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r677 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'isAllowed' */
+    cpy_r_r678 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r679 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r680 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'allowed' */
+    cpy_r_r681 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r682 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r683 = CPyDict_Build(2, cpy_r_r679, cpy_r_r680, cpy_r_r681, cpy_r_r682);
+    if (unlikely(cpy_r_r683 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL641;
+    }
+    cpy_r_r684 = PyList_New(1);
+    if (unlikely(cpy_r_r684 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL642;
+    }
+    cpy_r_r685 = (CPyPtr)&((PyListObject *)cpy_r_r684)->ob_item;
+    cpy_r_r686 = *(CPyPtr *)cpy_r_r685;
+    *(PyObject * *)cpy_r_r686 = cpy_r_r683;
+    cpy_r_r687 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r688 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r689 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r690 = 1 ? Py_True : Py_False;
+    cpy_r_r691 = 0 ? Py_True : Py_False;
+    cpy_r_r692 = CPyDict_Build(6, cpy_r_r660, cpy_r_r690, cpy_r_r661, cpy_r_r672, cpy_r_r676, cpy_r_r677, cpy_r_r678, cpy_r_r684, cpy_r_r687, cpy_r_r691, cpy_r_r688, cpy_r_r689);
+    CPy_DECREF_NO_IMM(cpy_r_r672);
+    CPy_DECREF_NO_IMM(cpy_r_r684);
+    if (unlikely(cpy_r_r692 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL638;
+    }
+    cpy_r_r693 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r694 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r695 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r696 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r697 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r698 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r699 = CPyDict_Build(2, cpy_r_r695, cpy_r_r696, cpy_r_r697, cpy_r_r698);
+    if (unlikely(cpy_r_r699 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL643;
+    }
+    cpy_r_r700 = PyList_New(1);
+    if (unlikely(cpy_r_r700 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL644;
+    }
+    cpy_r_r701 = (CPyPtr)&((PyListObject *)cpy_r_r700)->ob_item;
+    cpy_r_r702 = *(CPyPtr *)cpy_r_r701;
+    *(PyObject * *)cpy_r_r702 = cpy_r_r699;
+    cpy_r_r703 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r704 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'finalizeAuction' */
+    cpy_r_r705 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r706 = PyList_New(0);
+    if (unlikely(cpy_r_r706 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL645;
+    }
+    cpy_r_r707 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r708 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r709 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r710 = 0 ? Py_True : Py_False;
+    cpy_r_r711 = 0 ? Py_True : Py_False;
+    cpy_r_r712 = CPyDict_Build(6, cpy_r_r693, cpy_r_r710, cpy_r_r694, cpy_r_r700, cpy_r_r703, cpy_r_r704, cpy_r_r705, cpy_r_r706, cpy_r_r707, cpy_r_r711, cpy_r_r708, cpy_r_r709);
+    CPy_DECREF_NO_IMM(cpy_r_r700);
+    CPy_DECREF_NO_IMM(cpy_r_r706);
+    if (unlikely(cpy_r_r712 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL643;
+    }
+    cpy_r_r713 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r714 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r715 = PyList_New(0);
+    if (unlikely(cpy_r_r715 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL646;
+    }
+    cpy_r_r716 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r717 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registryStarted' */
+    cpy_r_r718 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r719 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r720 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r721 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r722 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r723 = CPyDict_Build(2, cpy_r_r719, cpy_r_r720, cpy_r_r721, cpy_r_r722);
+    if (unlikely(cpy_r_r723 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL647;
+    }
+    cpy_r_r724 = PyList_New(1);
+    if (unlikely(cpy_r_r724 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL648;
+    }
+    cpy_r_r725 = (CPyPtr)&((PyListObject *)cpy_r_r724)->ob_item;
+    cpy_r_r726 = *(CPyPtr *)cpy_r_r725;
+    *(PyObject * *)cpy_r_r726 = cpy_r_r723;
+    cpy_r_r727 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r728 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r729 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r730 = 1 ? Py_True : Py_False;
+    cpy_r_r731 = 0 ? Py_True : Py_False;
+    cpy_r_r732 = CPyDict_Build(6, cpy_r_r713, cpy_r_r730, cpy_r_r714, cpy_r_r715, cpy_r_r716, cpy_r_r717, cpy_r_r718, cpy_r_r724, cpy_r_r727, cpy_r_r731, cpy_r_r728, cpy_r_r729);
+    CPy_DECREF_NO_IMM(cpy_r_r715);
+    CPy_DECREF_NO_IMM(cpy_r_r724);
+    if (unlikely(cpy_r_r732 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL646;
+    }
+    cpy_r_r733 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r734 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r735 = PyList_New(0);
+    if (unlikely(cpy_r_r735 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL649;
+    }
+    cpy_r_r736 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r737 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'launchLength' */
+    cpy_r_r738 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r739 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r740 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r741 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r742 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint32' */
+    cpy_r_r743 = CPyDict_Build(2, cpy_r_r739, cpy_r_r740, cpy_r_r741, cpy_r_r742);
+    if (unlikely(cpy_r_r743 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL650;
+    }
+    cpy_r_r744 = PyList_New(1);
+    if (unlikely(cpy_r_r744 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL651;
+    }
+    cpy_r_r745 = (CPyPtr)&((PyListObject *)cpy_r_r744)->ob_item;
+    cpy_r_r746 = *(CPyPtr *)cpy_r_r745;
+    *(PyObject * *)cpy_r_r746 = cpy_r_r743;
+    cpy_r_r747 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r748 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r749 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r750 = 1 ? Py_True : Py_False;
+    cpy_r_r751 = 0 ? Py_True : Py_False;
+    cpy_r_r752 = CPyDict_Build(6, cpy_r_r733, cpy_r_r750, cpy_r_r734, cpy_r_r735, cpy_r_r736, cpy_r_r737, cpy_r_r738, cpy_r_r744, cpy_r_r747, cpy_r_r751, cpy_r_r748, cpy_r_r749);
+    CPy_DECREF_NO_IMM(cpy_r_r735);
+    CPy_DECREF_NO_IMM(cpy_r_r744);
+    if (unlikely(cpy_r_r752 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL649;
+    }
+    cpy_r_r753 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r754 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r755 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r756 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'sealedBid' */
+    cpy_r_r757 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r758 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r759 = CPyDict_Build(2, cpy_r_r755, cpy_r_r756, cpy_r_r757, cpy_r_r758);
+    if (unlikely(cpy_r_r759 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL652;
+    }
+    cpy_r_r760 = PyList_New(1);
+    if (unlikely(cpy_r_r760 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL653;
+    }
+    cpy_r_r761 = (CPyPtr)&((PyListObject *)cpy_r_r760)->ob_item;
+    cpy_r_r762 = *(CPyPtr *)cpy_r_r761;
+    *(PyObject * *)cpy_r_r762 = cpy_r_r759;
+    cpy_r_r763 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r764 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newBid' */
+    cpy_r_r765 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r766 = PyList_New(0);
+    if (unlikely(cpy_r_r766 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL654;
+    }
+    cpy_r_r767 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r768 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r769 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r770 = 0 ? Py_True : Py_False;
+    cpy_r_r771 = 1 ? Py_True : Py_False;
+    cpy_r_r772 = CPyDict_Build(6, cpy_r_r753, cpy_r_r770, cpy_r_r754, cpy_r_r760, cpy_r_r763, cpy_r_r764, cpy_r_r765, cpy_r_r766, cpy_r_r767, cpy_r_r771, cpy_r_r768, cpy_r_r769);
+    CPy_DECREF_NO_IMM(cpy_r_r760);
+    CPy_DECREF_NO_IMM(cpy_r_r766);
+    if (unlikely(cpy_r_r772 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL652;
+    }
+    cpy_r_r773 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r774 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r775 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r776 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'labels' */
+    cpy_r_r777 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r778 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32[]' */
+    cpy_r_r779 = CPyDict_Build(2, cpy_r_r775, cpy_r_r776, cpy_r_r777, cpy_r_r778);
+    if (unlikely(cpy_r_r779 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL655;
+    }
+    cpy_r_r780 = PyList_New(1);
+    if (unlikely(cpy_r_r780 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL656;
+    }
+    cpy_r_r781 = (CPyPtr)&((PyListObject *)cpy_r_r780)->ob_item;
+    cpy_r_r782 = *(CPyPtr *)cpy_r_r781;
+    *(PyObject * *)cpy_r_r782 = cpy_r_r779;
+    cpy_r_r783 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r784 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'eraseNode' */
+    cpy_r_r785 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r786 = PyList_New(0);
+    if (unlikely(cpy_r_r786 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL657;
+    }
+    cpy_r_r787 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r788 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r789 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r790 = 0 ? Py_True : Py_False;
+    cpy_r_r791 = 0 ? Py_True : Py_False;
+    cpy_r_r792 = CPyDict_Build(6, cpy_r_r773, cpy_r_r790, cpy_r_r774, cpy_r_r780, cpy_r_r783, cpy_r_r784, cpy_r_r785, cpy_r_r786, cpy_r_r787, cpy_r_r791, cpy_r_r788, cpy_r_r789);
+    CPy_DECREF_NO_IMM(cpy_r_r780);
+    CPy_DECREF_NO_IMM(cpy_r_r786);
+    if (unlikely(cpy_r_r792 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL655;
+    }
+    cpy_r_r793 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r794 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r795 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r796 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hashes' */
+    cpy_r_r797 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r798 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32[]' */
+    cpy_r_r799 = CPyDict_Build(2, cpy_r_r795, cpy_r_r796, cpy_r_r797, cpy_r_r798);
+    if (unlikely(cpy_r_r799 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL658;
+    }
+    cpy_r_r800 = PyList_New(1);
+    if (unlikely(cpy_r_r800 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL659;
+    }
+    cpy_r_r801 = (CPyPtr)&((PyListObject *)cpy_r_r800)->ob_item;
+    cpy_r_r802 = *(CPyPtr *)cpy_r_r801;
+    *(PyObject * *)cpy_r_r802 = cpy_r_r799;
+    cpy_r_r803 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r804 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'startAuctions' */
+    cpy_r_r805 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r806 = PyList_New(0);
+    if (unlikely(cpy_r_r806 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL660;
+    }
+    cpy_r_r807 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r808 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r809 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r810 = 0 ? Py_True : Py_False;
+    cpy_r_r811 = 0 ? Py_True : Py_False;
+    cpy_r_r812 = CPyDict_Build(6, cpy_r_r793, cpy_r_r810, cpy_r_r794, cpy_r_r800, cpy_r_r803, cpy_r_r804, cpy_r_r805, cpy_r_r806, cpy_r_r807, cpy_r_r811, cpy_r_r808, cpy_r_r809);
+    CPy_DECREF_NO_IMM(cpy_r_r800);
+    CPy_DECREF_NO_IMM(cpy_r_r806);
+    if (unlikely(cpy_r_r812 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL658;
+    }
+    cpy_r_r813 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r814 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r815 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r816 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r817 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r818 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r819 = CPyDict_Build(2, cpy_r_r815, cpy_r_r816, cpy_r_r817, cpy_r_r818);
+    if (unlikely(cpy_r_r819 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL661;
+    }
+    cpy_r_r820 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r821 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'deed' */
+    cpy_r_r822 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r823 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r824 = CPyDict_Build(2, cpy_r_r820, cpy_r_r821, cpy_r_r822, cpy_r_r823);
+    if (unlikely(cpy_r_r824 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL662;
+    }
+    cpy_r_r825 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r826 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrationDate' */
+    cpy_r_r827 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r828 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r829 = CPyDict_Build(2, cpy_r_r825, cpy_r_r826, cpy_r_r827, cpy_r_r828);
+    if (unlikely(cpy_r_r829 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL663;
+    }
+    cpy_r_r830 = PyList_New(3);
+    if (unlikely(cpy_r_r830 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL664;
+    }
+    cpy_r_r831 = (CPyPtr)&((PyListObject *)cpy_r_r830)->ob_item;
+    cpy_r_r832 = *(CPyPtr *)cpy_r_r831;
+    *(PyObject * *)cpy_r_r832 = cpy_r_r819;
+    cpy_r_r833 = cpy_r_r832 + 8;
+    *(PyObject * *)cpy_r_r833 = cpy_r_r824;
+    cpy_r_r834 = cpy_r_r832 + 16;
+    *(PyObject * *)cpy_r_r834 = cpy_r_r829;
+    cpy_r_r835 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r836 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'acceptRegistrarTransfer' */
+    cpy_r_r837 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r838 = PyList_New(0);
+    if (unlikely(cpy_r_r838 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL665;
+    }
+    cpy_r_r839 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r840 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r841 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r842 = 0 ? Py_True : Py_False;
+    cpy_r_r843 = 0 ? Py_True : Py_False;
+    cpy_r_r844 = CPyDict_Build(6, cpy_r_r813, cpy_r_r842, cpy_r_r814, cpy_r_r830, cpy_r_r835, cpy_r_r836, cpy_r_r837, cpy_r_r838, cpy_r_r839, cpy_r_r843, cpy_r_r840, cpy_r_r841);
+    CPy_DECREF_NO_IMM(cpy_r_r830);
+    CPy_DECREF_NO_IMM(cpy_r_r838);
+    if (unlikely(cpy_r_r844 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL661;
+    }
+    cpy_r_r845 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r846 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r847 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r848 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_hash' */
+    cpy_r_r849 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r850 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r851 = CPyDict_Build(2, cpy_r_r847, cpy_r_r848, cpy_r_r849, cpy_r_r850);
+    if (unlikely(cpy_r_r851 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL666;
+    }
+    cpy_r_r852 = PyList_New(1);
+    if (unlikely(cpy_r_r852 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL667;
+    }
+    cpy_r_r853 = (CPyPtr)&((PyListObject *)cpy_r_r852)->ob_item;
+    cpy_r_r854 = *(CPyPtr *)cpy_r_r853;
+    *(PyObject * *)cpy_r_r854 = cpy_r_r851;
+    cpy_r_r855 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r856 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'startAuction' */
+    cpy_r_r857 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r858 = PyList_New(0);
+    if (unlikely(cpy_r_r858 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL668;
+    }
+    cpy_r_r859 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r860 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r861 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r862 = 0 ? Py_True : Py_False;
+    cpy_r_r863 = 0 ? Py_True : Py_False;
+    cpy_r_r864 = CPyDict_Build(6, cpy_r_r845, cpy_r_r862, cpy_r_r846, cpy_r_r852, cpy_r_r855, cpy_r_r856, cpy_r_r857, cpy_r_r858, cpy_r_r859, cpy_r_r863, cpy_r_r860, cpy_r_r861);
+    CPy_DECREF_NO_IMM(cpy_r_r852);
+    CPy_DECREF_NO_IMM(cpy_r_r858);
+    if (unlikely(cpy_r_r864 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL666;
+    }
+    cpy_r_r865 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r866 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r867 = PyList_New(0);
+    if (unlikely(cpy_r_r867 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL669;
+    }
+    cpy_r_r868 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r869 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'rootNode' */
+    cpy_r_r870 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r871 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r872 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r873 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r874 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r875 = CPyDict_Build(2, cpy_r_r871, cpy_r_r872, cpy_r_r873, cpy_r_r874);
+    if (unlikely(cpy_r_r875 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL670;
+    }
+    cpy_r_r876 = PyList_New(1);
+    if (unlikely(cpy_r_r876 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL671;
+    }
+    cpy_r_r877 = (CPyPtr)&((PyListObject *)cpy_r_r876)->ob_item;
+    cpy_r_r878 = *(CPyPtr *)cpy_r_r877;
+    *(PyObject * *)cpy_r_r878 = cpy_r_r875;
+    cpy_r_r879 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r880 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r881 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r882 = 1 ? Py_True : Py_False;
+    cpy_r_r883 = 0 ? Py_True : Py_False;
+    cpy_r_r884 = CPyDict_Build(6, cpy_r_r865, cpy_r_r882, cpy_r_r866, cpy_r_r867, cpy_r_r868, cpy_r_r869, cpy_r_r870, cpy_r_r876, cpy_r_r879, cpy_r_r883, cpy_r_r880, cpy_r_r881);
+    CPy_DECREF_NO_IMM(cpy_r_r867);
+    CPy_DECREF_NO_IMM(cpy_r_r876);
+    if (unlikely(cpy_r_r884 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL669;
+    }
+    cpy_r_r885 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r886 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r887 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r888 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hashes' */
+    cpy_r_r889 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r890 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32[]' */
+    cpy_r_r891 = CPyDict_Build(2, cpy_r_r887, cpy_r_r888, cpy_r_r889, cpy_r_r890);
+    if (unlikely(cpy_r_r891 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL672;
+    }
+    cpy_r_r892 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r893 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'sealedBid' */
+    cpy_r_r894 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r895 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r896 = CPyDict_Build(2, cpy_r_r892, cpy_r_r893, cpy_r_r894, cpy_r_r895);
+    if (unlikely(cpy_r_r896 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL673;
+    }
+    cpy_r_r897 = PyList_New(2);
+    if (unlikely(cpy_r_r897 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL674;
+    }
+    cpy_r_r898 = (CPyPtr)&((PyListObject *)cpy_r_r897)->ob_item;
+    cpy_r_r899 = *(CPyPtr *)cpy_r_r898;
+    *(PyObject * *)cpy_r_r899 = cpy_r_r891;
+    cpy_r_r900 = cpy_r_r899 + 8;
+    *(PyObject * *)cpy_r_r900 = cpy_r_r896;
+    cpy_r_r901 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r902 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'startAuctionsAndBid' */
+    cpy_r_r903 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r904 = PyList_New(0);
+    if (unlikely(cpy_r_r904 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL675;
+    }
+    cpy_r_r905 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r906 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r907 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r908 = 0 ? Py_True : Py_False;
+    cpy_r_r909 = 1 ? Py_True : Py_False;
+    cpy_r_r910 = CPyDict_Build(6, cpy_r_r885, cpy_r_r908, cpy_r_r886, cpy_r_r897, cpy_r_r901, cpy_r_r902, cpy_r_r903, cpy_r_r904, cpy_r_r905, cpy_r_r909, cpy_r_r906, cpy_r_r907);
+    CPy_DECREF_NO_IMM(cpy_r_r897);
+    CPy_DECREF_NO_IMM(cpy_r_r904);
+    if (unlikely(cpy_r_r910 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL672;
+    }
+    cpy_r_r911 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r912 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r913 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_ens' */
+    cpy_r_r914 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r915 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r916 = CPyDict_Build(2, cpy_r_r912, cpy_r_r913, cpy_r_r914, cpy_r_r915);
+    if (unlikely(cpy_r_r916 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL676;
+    }
+    cpy_r_r917 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r918 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_rootNode' */
+    cpy_r_r919 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r920 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r921 = CPyDict_Build(2, cpy_r_r917, cpy_r_r918, cpy_r_r919, cpy_r_r920);
+    if (unlikely(cpy_r_r921 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL677;
+    }
+    cpy_r_r922 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r923 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_startDate' */
+    cpy_r_r924 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r925 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r926 = CPyDict_Build(2, cpy_r_r922, cpy_r_r923, cpy_r_r924, cpy_r_r925);
+    if (unlikely(cpy_r_r926 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL678;
+    }
+    cpy_r_r927 = PyList_New(3);
+    if (unlikely(cpy_r_r927 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL679;
+    }
+    cpy_r_r928 = (CPyPtr)&((PyListObject *)cpy_r_r927)->ob_item;
+    cpy_r_r929 = *(CPyPtr *)cpy_r_r928;
+    *(PyObject * *)cpy_r_r929 = cpy_r_r916;
+    cpy_r_r930 = cpy_r_r929 + 8;
+    *(PyObject * *)cpy_r_r930 = cpy_r_r921;
+    cpy_r_r931 = cpy_r_r929 + 16;
+    *(PyObject * *)cpy_r_r931 = cpy_r_r926;
+    cpy_r_r932 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r933 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r934 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r935 = 0 ? Py_True : Py_False;
+    cpy_r_r936 = CPyDict_Build(3, cpy_r_r911, cpy_r_r927, cpy_r_r932, cpy_r_r935, cpy_r_r933, cpy_r_r934);
+    CPy_DECREF_NO_IMM(cpy_r_r927);
+    if (unlikely(cpy_r_r936 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL676;
+    }
+    cpy_r_r937 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r938 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r939 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r940 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r941 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r942 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r943 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r944 = 1 ? Py_True : Py_False;
+    cpy_r_r945 = CPyDict_Build(3, cpy_r_r939, cpy_r_r944, cpy_r_r940, cpy_r_r941, cpy_r_r942, cpy_r_r943);
+    if (unlikely(cpy_r_r945 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL680;
+    }
+    cpy_r_r946 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r947 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r948 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrationDate' */
+    cpy_r_r949 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r950 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r951 = 0 ? Py_True : Py_False;
+    cpy_r_r952 = CPyDict_Build(3, cpy_r_r946, cpy_r_r951, cpy_r_r947, cpy_r_r948, cpy_r_r949, cpy_r_r950);
+    if (unlikely(cpy_r_r952 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL681;
+    }
+    cpy_r_r953 = PyList_New(2);
+    if (unlikely(cpy_r_r953 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL682;
+    }
+    cpy_r_r954 = (CPyPtr)&((PyListObject *)cpy_r_r953)->ob_item;
+    cpy_r_r955 = *(CPyPtr *)cpy_r_r954;
+    *(PyObject * *)cpy_r_r955 = cpy_r_r945;
+    cpy_r_r956 = cpy_r_r955 + 8;
+    *(PyObject * *)cpy_r_r956 = cpy_r_r952;
+    cpy_r_r957 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r958 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AuctionStarted' */
+    cpy_r_r959 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r960 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r961 = 0 ? Py_True : Py_False;
+    cpy_r_r962 = CPyDict_Build(4, cpy_r_r937, cpy_r_r961, cpy_r_r938, cpy_r_r953, cpy_r_r957, cpy_r_r958, cpy_r_r959, cpy_r_r960);
+    CPy_DECREF_NO_IMM(cpy_r_r953);
+    if (unlikely(cpy_r_r962 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL680;
+    }
+    cpy_r_r963 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r964 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r965 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r966 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r967 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r968 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r969 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r970 = 1 ? Py_True : Py_False;
+    cpy_r_r971 = CPyDict_Build(3, cpy_r_r965, cpy_r_r970, cpy_r_r966, cpy_r_r967, cpy_r_r968, cpy_r_r969);
+    if (unlikely(cpy_r_r971 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL683;
+    }
+    cpy_r_r972 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r973 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r974 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bidder' */
+    cpy_r_r975 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r976 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r977 = 1 ? Py_True : Py_False;
+    cpy_r_r978 = CPyDict_Build(3, cpy_r_r972, cpy_r_r977, cpy_r_r973, cpy_r_r974, cpy_r_r975, cpy_r_r976);
+    if (unlikely(cpy_r_r978 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL684;
+    }
+    cpy_r_r979 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r980 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r981 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'deposit' */
+    cpy_r_r982 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r983 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r984 = 0 ? Py_True : Py_False;
+    cpy_r_r985 = CPyDict_Build(3, cpy_r_r979, cpy_r_r984, cpy_r_r980, cpy_r_r981, cpy_r_r982, cpy_r_r983);
+    if (unlikely(cpy_r_r985 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL685;
+    }
+    cpy_r_r986 = PyList_New(3);
+    if (unlikely(cpy_r_r986 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL686;
+    }
+    cpy_r_r987 = (CPyPtr)&((PyListObject *)cpy_r_r986)->ob_item;
+    cpy_r_r988 = *(CPyPtr *)cpy_r_r987;
+    *(PyObject * *)cpy_r_r988 = cpy_r_r971;
+    cpy_r_r989 = cpy_r_r988 + 8;
+    *(PyObject * *)cpy_r_r989 = cpy_r_r978;
+    cpy_r_r990 = cpy_r_r988 + 16;
+    *(PyObject * *)cpy_r_r990 = cpy_r_r985;
+    cpy_r_r991 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r992 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'NewBid' */
+    cpy_r_r993 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r994 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r995 = 0 ? Py_True : Py_False;
+    cpy_r_r996 = CPyDict_Build(4, cpy_r_r963, cpy_r_r995, cpy_r_r964, cpy_r_r986, cpy_r_r991, cpy_r_r992, cpy_r_r993, cpy_r_r994);
+    CPy_DECREF_NO_IMM(cpy_r_r986);
+    if (unlikely(cpy_r_r996 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL683;
+    }
+    cpy_r_r997 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r998 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r999 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1000 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1001 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r1002 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1003 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1004 = 1 ? Py_True : Py_False;
+    cpy_r_r1005 = CPyDict_Build(3, cpy_r_r999, cpy_r_r1004, cpy_r_r1000, cpy_r_r1001, cpy_r_r1002, cpy_r_r1003);
+    if (unlikely(cpy_r_r1005 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL687;
+    }
+    cpy_r_r1006 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1007 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1008 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r1009 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1010 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1011 = 1 ? Py_True : Py_False;
+    cpy_r_r1012 = CPyDict_Build(3, cpy_r_r1006, cpy_r_r1011, cpy_r_r1007, cpy_r_r1008, cpy_r_r1009, cpy_r_r1010);
+    if (unlikely(cpy_r_r1012 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL688;
+    }
+    cpy_r_r1013 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1014 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1015 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r1016 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1017 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1018 = 0 ? Py_True : Py_False;
+    cpy_r_r1019 = CPyDict_Build(3, cpy_r_r1013, cpy_r_r1018, cpy_r_r1014, cpy_r_r1015, cpy_r_r1016, cpy_r_r1017);
+    if (unlikely(cpy_r_r1019 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL689;
+    }
+    cpy_r_r1020 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1021 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1022 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'status' */
+    cpy_r_r1023 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1024 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint8' */
+    cpy_r_r1025 = 0 ? Py_True : Py_False;
+    cpy_r_r1026 = CPyDict_Build(3, cpy_r_r1020, cpy_r_r1025, cpy_r_r1021, cpy_r_r1022, cpy_r_r1023, cpy_r_r1024);
+    if (unlikely(cpy_r_r1026 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL690;
+    }
+    cpy_r_r1027 = PyList_New(4);
+    if (unlikely(cpy_r_r1027 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL691;
+    }
+    cpy_r_r1028 = (CPyPtr)&((PyListObject *)cpy_r_r1027)->ob_item;
+    cpy_r_r1029 = *(CPyPtr *)cpy_r_r1028;
+    *(PyObject * *)cpy_r_r1029 = cpy_r_r1005;
+    cpy_r_r1030 = cpy_r_r1029 + 8;
+    *(PyObject * *)cpy_r_r1030 = cpy_r_r1012;
+    cpy_r_r1031 = cpy_r_r1029 + 16;
+    *(PyObject * *)cpy_r_r1031 = cpy_r_r1019;
+    cpy_r_r1032 = cpy_r_r1029 + 24;
+    *(PyObject * *)cpy_r_r1032 = cpy_r_r1026;
+    cpy_r_r1033 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1034 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'BidRevealed' */
+    cpy_r_r1035 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1036 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1037 = 0 ? Py_True : Py_False;
+    cpy_r_r1038 = CPyDict_Build(4, cpy_r_r997, cpy_r_r1037, cpy_r_r998, cpy_r_r1027, cpy_r_r1033, cpy_r_r1034, cpy_r_r1035, cpy_r_r1036);
+    CPy_DECREF_NO_IMM(cpy_r_r1027);
+    if (unlikely(cpy_r_r1038 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL687;
+    }
+    cpy_r_r1039 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1040 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1041 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1042 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1043 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r1044 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1045 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1046 = 1 ? Py_True : Py_False;
+    cpy_r_r1047 = CPyDict_Build(3, cpy_r_r1041, cpy_r_r1046, cpy_r_r1042, cpy_r_r1043, cpy_r_r1044, cpy_r_r1045);
+    if (unlikely(cpy_r_r1047 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL692;
+    }
+    cpy_r_r1048 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1049 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1050 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r1051 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1052 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1053 = 1 ? Py_True : Py_False;
+    cpy_r_r1054 = CPyDict_Build(3, cpy_r_r1048, cpy_r_r1053, cpy_r_r1049, cpy_r_r1050, cpy_r_r1051, cpy_r_r1052);
+    if (unlikely(cpy_r_r1054 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL693;
+    }
+    cpy_r_r1055 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1056 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1057 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r1058 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1059 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1060 = 0 ? Py_True : Py_False;
+    cpy_r_r1061 = CPyDict_Build(3, cpy_r_r1055, cpy_r_r1060, cpy_r_r1056, cpy_r_r1057, cpy_r_r1058, cpy_r_r1059);
+    if (unlikely(cpy_r_r1061 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL694;
+    }
+    cpy_r_r1062 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1063 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1064 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrationDate' */
+    cpy_r_r1065 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1066 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1067 = 0 ? Py_True : Py_False;
+    cpy_r_r1068 = CPyDict_Build(3, cpy_r_r1062, cpy_r_r1067, cpy_r_r1063, cpy_r_r1064, cpy_r_r1065, cpy_r_r1066);
+    if (unlikely(cpy_r_r1068 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL695;
+    }
+    cpy_r_r1069 = PyList_New(4);
+    if (unlikely(cpy_r_r1069 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL696;
+    }
+    cpy_r_r1070 = (CPyPtr)&((PyListObject *)cpy_r_r1069)->ob_item;
+    cpy_r_r1071 = *(CPyPtr *)cpy_r_r1070;
+    *(PyObject * *)cpy_r_r1071 = cpy_r_r1047;
+    cpy_r_r1072 = cpy_r_r1071 + 8;
+    *(PyObject * *)cpy_r_r1072 = cpy_r_r1054;
+    cpy_r_r1073 = cpy_r_r1071 + 16;
+    *(PyObject * *)cpy_r_r1073 = cpy_r_r1061;
+    cpy_r_r1074 = cpy_r_r1071 + 24;
+    *(PyObject * *)cpy_r_r1074 = cpy_r_r1068;
+    cpy_r_r1075 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1076 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'HashRegistered' */
+    cpy_r_r1077 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1078 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1079 = 0 ? Py_True : Py_False;
+    cpy_r_r1080 = CPyDict_Build(4, cpy_r_r1039, cpy_r_r1079, cpy_r_r1040, cpy_r_r1069, cpy_r_r1075, cpy_r_r1076, cpy_r_r1077, cpy_r_r1078);
+    CPy_DECREF_NO_IMM(cpy_r_r1069);
+    if (unlikely(cpy_r_r1080 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL692;
+    }
+    cpy_r_r1081 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1082 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1083 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1084 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1085 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r1086 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1087 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1088 = 1 ? Py_True : Py_False;
+    cpy_r_r1089 = CPyDict_Build(3, cpy_r_r1083, cpy_r_r1088, cpy_r_r1084, cpy_r_r1085, cpy_r_r1086, cpy_r_r1087);
+    if (unlikely(cpy_r_r1089 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL697;
+    }
+    cpy_r_r1090 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1091 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1092 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r1093 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1094 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1095 = 0 ? Py_True : Py_False;
+    cpy_r_r1096 = CPyDict_Build(3, cpy_r_r1090, cpy_r_r1095, cpy_r_r1091, cpy_r_r1092, cpy_r_r1093, cpy_r_r1094);
+    if (unlikely(cpy_r_r1096 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL698;
+    }
+    cpy_r_r1097 = PyList_New(2);
+    if (unlikely(cpy_r_r1097 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL699;
+    }
+    cpy_r_r1098 = (CPyPtr)&((PyListObject *)cpy_r_r1097)->ob_item;
+    cpy_r_r1099 = *(CPyPtr *)cpy_r_r1098;
+    *(PyObject * *)cpy_r_r1099 = cpy_r_r1089;
+    cpy_r_r1100 = cpy_r_r1099 + 8;
+    *(PyObject * *)cpy_r_r1100 = cpy_r_r1096;
+    cpy_r_r1101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1102 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'HashReleased' */
+    cpy_r_r1103 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1104 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1105 = 0 ? Py_True : Py_False;
+    cpy_r_r1106 = CPyDict_Build(4, cpy_r_r1081, cpy_r_r1105, cpy_r_r1082, cpy_r_r1097, cpy_r_r1101, cpy_r_r1102, cpy_r_r1103, cpy_r_r1104);
+    CPy_DECREF_NO_IMM(cpy_r_r1097);
+    if (unlikely(cpy_r_r1106 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL697;
+    }
+    cpy_r_r1107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1109 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1110 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1111 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r1112 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1113 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1114 = 1 ? Py_True : Py_False;
+    cpy_r_r1115 = CPyDict_Build(3, cpy_r_r1109, cpy_r_r1114, cpy_r_r1110, cpy_r_r1111, cpy_r_r1112, cpy_r_r1113);
+    if (unlikely(cpy_r_r1115 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL700;
+    }
+    cpy_r_r1116 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1117 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1118 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1119 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1120 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1121 = 1 ? Py_True : Py_False;
+    cpy_r_r1122 = CPyDict_Build(3, cpy_r_r1116, cpy_r_r1121, cpy_r_r1117, cpy_r_r1118, cpy_r_r1119, cpy_r_r1120);
+    if (unlikely(cpy_r_r1122 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL701;
+    }
+    cpy_r_r1123 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1124 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1125 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r1126 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1127 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1128 = 0 ? Py_True : Py_False;
+    cpy_r_r1129 = CPyDict_Build(3, cpy_r_r1123, cpy_r_r1128, cpy_r_r1124, cpy_r_r1125, cpy_r_r1126, cpy_r_r1127);
+    if (unlikely(cpy_r_r1129 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL702;
+    }
+    cpy_r_r1130 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1131 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1132 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrationDate' */
+    cpy_r_r1133 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1134 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1135 = 0 ? Py_True : Py_False;
+    cpy_r_r1136 = CPyDict_Build(3, cpy_r_r1130, cpy_r_r1135, cpy_r_r1131, cpy_r_r1132, cpy_r_r1133, cpy_r_r1134);
+    if (unlikely(cpy_r_r1136 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL703;
+    }
+    cpy_r_r1137 = PyList_New(4);
+    if (unlikely(cpy_r_r1137 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL704;
+    }
+    cpy_r_r1138 = (CPyPtr)&((PyListObject *)cpy_r_r1137)->ob_item;
+    cpy_r_r1139 = *(CPyPtr *)cpy_r_r1138;
+    *(PyObject * *)cpy_r_r1139 = cpy_r_r1115;
+    cpy_r_r1140 = cpy_r_r1139 + 8;
+    *(PyObject * *)cpy_r_r1140 = cpy_r_r1122;
+    cpy_r_r1141 = cpy_r_r1139 + 16;
+    *(PyObject * *)cpy_r_r1141 = cpy_r_r1129;
+    cpy_r_r1142 = cpy_r_r1139 + 24;
+    *(PyObject * *)cpy_r_r1142 = cpy_r_r1136;
+    cpy_r_r1143 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'HashInvalidated' */
+    cpy_r_r1145 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1146 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1147 = 0 ? Py_True : Py_False;
+    cpy_r_r1148 = CPyDict_Build(4, cpy_r_r1107, cpy_r_r1147, cpy_r_r1108, cpy_r_r1137, cpy_r_r1143, cpy_r_r1144, cpy_r_r1145, cpy_r_r1146);
+    CPy_DECREF_NO_IMM(cpy_r_r1137);
+    if (unlikely(cpy_r_r1148 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL700;
+    }
+    cpy_r_r1149 = CPyList_Build(30, cpy_r_r332, cpy_r_r359, cpy_r_r379, cpy_r_r424, cpy_r_r450, cpy_r_r501, cpy_r_r521, cpy_r_r553, cpy_r_r573, cpy_r_r606, cpy_r_r633, cpy_r_r659, cpy_r_r692, cpy_r_r712, cpy_r_r732, cpy_r_r752, cpy_r_r772, cpy_r_r792, cpy_r_r812, cpy_r_r844, cpy_r_r864, cpy_r_r884, cpy_r_r910, cpy_r_r936, cpy_r_r962, cpy_r_r996, cpy_r_r1038, cpy_r_r1080, cpy_r_r1106, cpy_r_r1148);
+    if (unlikely(cpy_r_r1149 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1150 = CPyStatic_abis___globals;
+    cpy_r_r1151 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AUCTION_REGISTRAR' */
+    cpy_r_r1152 = CPyDict_SetItem(cpy_r_r1150, cpy_r_r1151, cpy_r_r1149);
+    CPy_DECREF_NO_IMM(cpy_r_r1149);
+    cpy_r_r1153 = cpy_r_r1152 >= 0;
+    if (unlikely(!cpy_r_r1153)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1154 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1155 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1156 = PyList_New(0);
+    if (unlikely(cpy_r_r1156 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1157 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1158 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'creationDate' */
+    cpy_r_r1159 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1160 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1161 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1162 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1163 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1164 = CPyDict_Build(2, cpy_r_r1160, cpy_r_r1161, cpy_r_r1162, cpy_r_r1163);
+    if (unlikely(cpy_r_r1164 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL705;
+    }
+    cpy_r_r1165 = PyList_New(1);
+    if (unlikely(cpy_r_r1165 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL706;
+    }
+    cpy_r_r1166 = (CPyPtr)&((PyListObject *)cpy_r_r1165)->ob_item;
+    cpy_r_r1167 = *(CPyPtr *)cpy_r_r1166;
+    *(PyObject * *)cpy_r_r1167 = cpy_r_r1164;
+    cpy_r_r1168 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1169 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1170 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1171 = 1 ? Py_True : Py_False;
+    cpy_r_r1172 = 0 ? Py_True : Py_False;
+    cpy_r_r1173 = CPyDict_Build(6, cpy_r_r1154, cpy_r_r1171, cpy_r_r1155, cpy_r_r1156, cpy_r_r1157, cpy_r_r1158, cpy_r_r1159, cpy_r_r1165, cpy_r_r1168, cpy_r_r1172, cpy_r_r1169, cpy_r_r1170);
+    CPy_DECREF_NO_IMM(cpy_r_r1156);
+    CPy_DECREF_NO_IMM(cpy_r_r1165);
+    if (unlikely(cpy_r_r1173 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1174 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1175 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1176 = PyList_New(0);
+    if (unlikely(cpy_r_r1176 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL707;
+    }
+    cpy_r_r1177 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1178 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'destroyDeed' */
+    cpy_r_r1179 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1180 = PyList_New(0);
+    if (unlikely(cpy_r_r1180 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL708;
+    }
+    cpy_r_r1181 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1182 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1183 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1184 = 0 ? Py_True : Py_False;
+    cpy_r_r1185 = 0 ? Py_True : Py_False;
+    cpy_r_r1186 = CPyDict_Build(6, cpy_r_r1174, cpy_r_r1184, cpy_r_r1175, cpy_r_r1176, cpy_r_r1177, cpy_r_r1178, cpy_r_r1179, cpy_r_r1180, cpy_r_r1181, cpy_r_r1185, cpy_r_r1182, cpy_r_r1183);
+    CPy_DECREF_NO_IMM(cpy_r_r1176);
+    CPy_DECREF_NO_IMM(cpy_r_r1180);
+    if (unlikely(cpy_r_r1186 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL707;
+    }
+    cpy_r_r1187 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1188 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1189 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1190 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newOwner' */
+    cpy_r_r1191 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1192 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1193 = CPyDict_Build(2, cpy_r_r1189, cpy_r_r1190, cpy_r_r1191, cpy_r_r1192);
+    if (unlikely(cpy_r_r1193 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL709;
+    }
+    cpy_r_r1194 = PyList_New(1);
+    if (unlikely(cpy_r_r1194 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL710;
+    }
+    cpy_r_r1195 = (CPyPtr)&((PyListObject *)cpy_r_r1194)->ob_item;
+    cpy_r_r1196 = *(CPyPtr *)cpy_r_r1195;
+    *(PyObject * *)cpy_r_r1196 = cpy_r_r1193;
+    cpy_r_r1197 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1198 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setOwner' */
+    cpy_r_r1199 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1200 = PyList_New(0);
+    if (unlikely(cpy_r_r1200 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL711;
+    }
+    cpy_r_r1201 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1202 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1203 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1204 = 0 ? Py_True : Py_False;
+    cpy_r_r1205 = 0 ? Py_True : Py_False;
+    cpy_r_r1206 = CPyDict_Build(6, cpy_r_r1187, cpy_r_r1204, cpy_r_r1188, cpy_r_r1194, cpy_r_r1197, cpy_r_r1198, cpy_r_r1199, cpy_r_r1200, cpy_r_r1201, cpy_r_r1205, cpy_r_r1202, cpy_r_r1203);
+    CPy_DECREF_NO_IMM(cpy_r_r1194);
+    CPy_DECREF_NO_IMM(cpy_r_r1200);
+    if (unlikely(cpy_r_r1206 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL709;
+    }
+    cpy_r_r1207 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1208 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1209 = PyList_New(0);
+    if (unlikely(cpy_r_r1209 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL712;
+    }
+    cpy_r_r1210 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1211 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrar' */
+    cpy_r_r1212 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1213 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1214 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1215 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1216 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1217 = CPyDict_Build(2, cpy_r_r1213, cpy_r_r1214, cpy_r_r1215, cpy_r_r1216);
+    if (unlikely(cpy_r_r1217 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL713;
+    }
+    cpy_r_r1218 = PyList_New(1);
+    if (unlikely(cpy_r_r1218 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL714;
+    }
+    cpy_r_r1219 = (CPyPtr)&((PyListObject *)cpy_r_r1218)->ob_item;
+    cpy_r_r1220 = *(CPyPtr *)cpy_r_r1219;
+    *(PyObject * *)cpy_r_r1220 = cpy_r_r1217;
+    cpy_r_r1221 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1222 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1223 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1224 = 1 ? Py_True : Py_False;
+    cpy_r_r1225 = 0 ? Py_True : Py_False;
+    cpy_r_r1226 = CPyDict_Build(6, cpy_r_r1207, cpy_r_r1224, cpy_r_r1208, cpy_r_r1209, cpy_r_r1210, cpy_r_r1211, cpy_r_r1212, cpy_r_r1218, cpy_r_r1221, cpy_r_r1225, cpy_r_r1222, cpy_r_r1223);
+    CPy_DECREF_NO_IMM(cpy_r_r1209);
+    CPy_DECREF_NO_IMM(cpy_r_r1218);
+    if (unlikely(cpy_r_r1226 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL712;
+    }
+    cpy_r_r1227 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1228 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1229 = PyList_New(0);
+    if (unlikely(cpy_r_r1229 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL715;
+    }
+    cpy_r_r1230 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1231 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r1232 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1233 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1234 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1235 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1236 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1237 = CPyDict_Build(2, cpy_r_r1233, cpy_r_r1234, cpy_r_r1235, cpy_r_r1236);
+    if (unlikely(cpy_r_r1237 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL716;
+    }
+    cpy_r_r1238 = PyList_New(1);
+    if (unlikely(cpy_r_r1238 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL717;
+    }
+    cpy_r_r1239 = (CPyPtr)&((PyListObject *)cpy_r_r1238)->ob_item;
+    cpy_r_r1240 = *(CPyPtr *)cpy_r_r1239;
+    *(PyObject * *)cpy_r_r1240 = cpy_r_r1237;
+    cpy_r_r1241 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1242 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1243 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1244 = 1 ? Py_True : Py_False;
+    cpy_r_r1245 = 0 ? Py_True : Py_False;
+    cpy_r_r1246 = CPyDict_Build(6, cpy_r_r1227, cpy_r_r1244, cpy_r_r1228, cpy_r_r1229, cpy_r_r1230, cpy_r_r1231, cpy_r_r1232, cpy_r_r1238, cpy_r_r1241, cpy_r_r1245, cpy_r_r1242, cpy_r_r1243);
+    CPy_DECREF_NO_IMM(cpy_r_r1229);
+    CPy_DECREF_NO_IMM(cpy_r_r1238);
+    if (unlikely(cpy_r_r1246 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL715;
+    }
+    cpy_r_r1247 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1248 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1249 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1250 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'refundRatio' */
+    cpy_r_r1251 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1252 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1253 = CPyDict_Build(2, cpy_r_r1249, cpy_r_r1250, cpy_r_r1251, cpy_r_r1252);
+    if (unlikely(cpy_r_r1253 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL718;
+    }
+    cpy_r_r1254 = PyList_New(1);
+    if (unlikely(cpy_r_r1254 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL719;
+    }
+    cpy_r_r1255 = (CPyPtr)&((PyListObject *)cpy_r_r1254)->ob_item;
+    cpy_r_r1256 = *(CPyPtr *)cpy_r_r1255;
+    *(PyObject * *)cpy_r_r1256 = cpy_r_r1253;
+    cpy_r_r1257 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1258 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'closeDeed' */
+    cpy_r_r1259 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1260 = PyList_New(0);
+    if (unlikely(cpy_r_r1260 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL720;
+    }
+    cpy_r_r1261 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1262 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1263 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1264 = 0 ? Py_True : Py_False;
+    cpy_r_r1265 = 0 ? Py_True : Py_False;
+    cpy_r_r1266 = CPyDict_Build(6, cpy_r_r1247, cpy_r_r1264, cpy_r_r1248, cpy_r_r1254, cpy_r_r1257, cpy_r_r1258, cpy_r_r1259, cpy_r_r1260, cpy_r_r1261, cpy_r_r1265, cpy_r_r1262, cpy_r_r1263);
+    CPy_DECREF_NO_IMM(cpy_r_r1254);
+    CPy_DECREF_NO_IMM(cpy_r_r1260);
+    if (unlikely(cpy_r_r1266 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL718;
+    }
+    cpy_r_r1267 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1268 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1269 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1270 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newRegistrar' */
+    cpy_r_r1271 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1272 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1273 = CPyDict_Build(2, cpy_r_r1269, cpy_r_r1270, cpy_r_r1271, cpy_r_r1272);
+    if (unlikely(cpy_r_r1273 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL721;
+    }
+    cpy_r_r1274 = PyList_New(1);
+    if (unlikely(cpy_r_r1274 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL722;
+    }
+    cpy_r_r1275 = (CPyPtr)&((PyListObject *)cpy_r_r1274)->ob_item;
+    cpy_r_r1276 = *(CPyPtr *)cpy_r_r1275;
+    *(PyObject * *)cpy_r_r1276 = cpy_r_r1273;
+    cpy_r_r1277 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1278 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setRegistrar' */
+    cpy_r_r1279 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1280 = PyList_New(0);
+    if (unlikely(cpy_r_r1280 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL723;
+    }
+    cpy_r_r1281 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1282 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1283 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1284 = 0 ? Py_True : Py_False;
+    cpy_r_r1285 = 0 ? Py_True : Py_False;
+    cpy_r_r1286 = CPyDict_Build(6, cpy_r_r1267, cpy_r_r1284, cpy_r_r1268, cpy_r_r1274, cpy_r_r1277, cpy_r_r1278, cpy_r_r1279, cpy_r_r1280, cpy_r_r1281, cpy_r_r1285, cpy_r_r1282, cpy_r_r1283);
+    CPy_DECREF_NO_IMM(cpy_r_r1274);
+    CPy_DECREF_NO_IMM(cpy_r_r1280);
+    if (unlikely(cpy_r_r1286 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL721;
+    }
+    cpy_r_r1287 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1288 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1289 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1290 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newValue' */
+    cpy_r_r1291 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1292 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1293 = CPyDict_Build(2, cpy_r_r1289, cpy_r_r1290, cpy_r_r1291, cpy_r_r1292);
+    if (unlikely(cpy_r_r1293 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL724;
+    }
+    cpy_r_r1294 = PyList_New(1);
+    if (unlikely(cpy_r_r1294 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL725;
+    }
+    cpy_r_r1295 = (CPyPtr)&((PyListObject *)cpy_r_r1294)->ob_item;
+    cpy_r_r1296 = *(CPyPtr *)cpy_r_r1295;
+    *(PyObject * *)cpy_r_r1296 = cpy_r_r1293;
+    cpy_r_r1297 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1298 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setBalance' */
+    cpy_r_r1299 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1300 = PyList_New(0);
+    if (unlikely(cpy_r_r1300 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL726;
+    }
+    cpy_r_r1301 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1302 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1303 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1304 = 0 ? Py_True : Py_False;
+    cpy_r_r1305 = 1 ? Py_True : Py_False;
+    cpy_r_r1306 = CPyDict_Build(6, cpy_r_r1287, cpy_r_r1304, cpy_r_r1288, cpy_r_r1294, cpy_r_r1297, cpy_r_r1298, cpy_r_r1299, cpy_r_r1300, cpy_r_r1301, cpy_r_r1305, cpy_r_r1302, cpy_r_r1303);
+    CPy_DECREF_NO_IMM(cpy_r_r1294);
+    CPy_DECREF_NO_IMM(cpy_r_r1300);
+    if (unlikely(cpy_r_r1306 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL724;
+    }
+    cpy_r_r1307 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1308 = PyList_New(0);
+    if (unlikely(cpy_r_r1308 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL727;
+    }
+    cpy_r_r1309 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1310 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r1311 = CPyDict_Build(2, cpy_r_r1307, cpy_r_r1308, cpy_r_r1309, cpy_r_r1310);
+    CPy_DECREF_NO_IMM(cpy_r_r1308);
+    if (unlikely(cpy_r_r1311 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL727;
+    }
+    cpy_r_r1312 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1313 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1314 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'fallback' */
+    cpy_r_r1315 = 1 ? Py_True : Py_False;
+    cpy_r_r1316 = CPyDict_Build(2, cpy_r_r1312, cpy_r_r1315, cpy_r_r1313, cpy_r_r1314);
+    if (unlikely(cpy_r_r1316 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL728;
+    }
+    cpy_r_r1317 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1318 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1319 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1320 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1321 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newOwner' */
+    cpy_r_r1322 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1323 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1324 = 0 ? Py_True : Py_False;
+    cpy_r_r1325 = CPyDict_Build(3, cpy_r_r1319, cpy_r_r1324, cpy_r_r1320, cpy_r_r1321, cpy_r_r1322, cpy_r_r1323);
+    if (unlikely(cpy_r_r1325 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL729;
+    }
+    cpy_r_r1326 = PyList_New(1);
+    if (unlikely(cpy_r_r1326 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL730;
+    }
+    cpy_r_r1327 = (CPyPtr)&((PyListObject *)cpy_r_r1326)->ob_item;
+    cpy_r_r1328 = *(CPyPtr *)cpy_r_r1327;
+    *(PyObject * *)cpy_r_r1328 = cpy_r_r1325;
+    cpy_r_r1329 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1330 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'OwnerChanged' */
+    cpy_r_r1331 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1332 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1333 = 0 ? Py_True : Py_False;
+    cpy_r_r1334 = CPyDict_Build(4, cpy_r_r1317, cpy_r_r1333, cpy_r_r1318, cpy_r_r1326, cpy_r_r1329, cpy_r_r1330, cpy_r_r1331, cpy_r_r1332);
+    CPy_DECREF_NO_IMM(cpy_r_r1326);
+    if (unlikely(cpy_r_r1334 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL729;
+    }
+    cpy_r_r1335 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1336 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1337 = PyList_New(0);
+    if (unlikely(cpy_r_r1337 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL731;
+    }
+    cpy_r_r1338 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1339 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'DeedClosed' */
+    cpy_r_r1340 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1341 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1342 = 0 ? Py_True : Py_False;
+    cpy_r_r1343 = CPyDict_Build(4, cpy_r_r1335, cpy_r_r1342, cpy_r_r1336, cpy_r_r1337, cpy_r_r1338, cpy_r_r1339, cpy_r_r1340, cpy_r_r1341);
+    CPy_DECREF_NO_IMM(cpy_r_r1337);
+    if (unlikely(cpy_r_r1343 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL731;
+    }
+    cpy_r_r1344 = CPyList_Build(12, cpy_r_r1173, cpy_r_r1186, cpy_r_r1206, cpy_r_r1226, cpy_r_r1246, cpy_r_r1266, cpy_r_r1286, cpy_r_r1306, cpy_r_r1311, cpy_r_r1316, cpy_r_r1334, cpy_r_r1343);
+    if (unlikely(cpy_r_r1344 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1345 = CPyStatic_abis___globals;
+    cpy_r_r1346 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'DEED' */
+    cpy_r_r1347 = CPyDict_SetItem(cpy_r_r1345, cpy_r_r1346, cpy_r_r1344);
+    CPy_DECREF_NO_IMM(cpy_r_r1344);
+    cpy_r_r1348 = cpy_r_r1347 >= 0;
+    if (unlikely(!cpy_r_r1348)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1349 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1350 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1351 = PyList_New(0);
+    if (unlikely(cpy_r_r1351 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1352 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1353 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ens' */
+    cpy_r_r1354 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1355 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1356 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1357 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1358 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1359 = CPyDict_Build(2, cpy_r_r1355, cpy_r_r1356, cpy_r_r1357, cpy_r_r1358);
+    if (unlikely(cpy_r_r1359 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL732;
+    }
+    cpy_r_r1360 = PyList_New(1);
+    if (unlikely(cpy_r_r1360 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL733;
+    }
+    cpy_r_r1361 = (CPyPtr)&((PyListObject *)cpy_r_r1360)->ob_item;
+    cpy_r_r1362 = *(CPyPtr *)cpy_r_r1361;
+    *(PyObject * *)cpy_r_r1362 = cpy_r_r1359;
+    cpy_r_r1363 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1364 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1365 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1366 = 1 ? Py_True : Py_False;
+    cpy_r_r1367 = 0 ? Py_True : Py_False;
+    cpy_r_r1368 = CPyDict_Build(6, cpy_r_r1349, cpy_r_r1366, cpy_r_r1350, cpy_r_r1351, cpy_r_r1352, cpy_r_r1353, cpy_r_r1354, cpy_r_r1360, cpy_r_r1363, cpy_r_r1367, cpy_r_r1364, cpy_r_r1365);
+    CPy_DECREF_NO_IMM(cpy_r_r1351);
+    CPy_DECREF_NO_IMM(cpy_r_r1360);
+    if (unlikely(cpy_r_r1368 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1369 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1370 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1371 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1372 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1373 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1374 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1375 = CPyDict_Build(2, cpy_r_r1371, cpy_r_r1372, cpy_r_r1373, cpy_r_r1374);
+    if (unlikely(cpy_r_r1375 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL734;
+    }
+    cpy_r_r1376 = PyList_New(1);
+    if (unlikely(cpy_r_r1376 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL735;
+    }
+    cpy_r_r1377 = (CPyPtr)&((PyListObject *)cpy_r_r1376)->ob_item;
+    cpy_r_r1378 = *(CPyPtr *)cpy_r_r1377;
+    *(PyObject * *)cpy_r_r1378 = cpy_r_r1375;
+    cpy_r_r1379 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1380 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'expiryTimes' */
+    cpy_r_r1381 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1382 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1383 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1384 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1385 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1386 = CPyDict_Build(2, cpy_r_r1382, cpy_r_r1383, cpy_r_r1384, cpy_r_r1385);
+    if (unlikely(cpy_r_r1386 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL736;
+    }
+    cpy_r_r1387 = PyList_New(1);
+    if (unlikely(cpy_r_r1387 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL737;
+    }
+    cpy_r_r1388 = (CPyPtr)&((PyListObject *)cpy_r_r1387)->ob_item;
+    cpy_r_r1389 = *(CPyPtr *)cpy_r_r1388;
+    *(PyObject * *)cpy_r_r1389 = cpy_r_r1386;
+    cpy_r_r1390 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1391 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1392 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1393 = 1 ? Py_True : Py_False;
+    cpy_r_r1394 = 0 ? Py_True : Py_False;
+    cpy_r_r1395 = CPyDict_Build(6, cpy_r_r1369, cpy_r_r1393, cpy_r_r1370, cpy_r_r1376, cpy_r_r1379, cpy_r_r1380, cpy_r_r1381, cpy_r_r1387, cpy_r_r1390, cpy_r_r1394, cpy_r_r1391, cpy_r_r1392);
+    CPy_DECREF_NO_IMM(cpy_r_r1376);
+    CPy_DECREF_NO_IMM(cpy_r_r1387);
+    if (unlikely(cpy_r_r1395 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL734;
+    }
+    cpy_r_r1396 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1397 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1398 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1399 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'subnode' */
+    cpy_r_r1400 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1401 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1402 = CPyDict_Build(2, cpy_r_r1398, cpy_r_r1399, cpy_r_r1400, cpy_r_r1401);
+    if (unlikely(cpy_r_r1402 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL738;
+    }
+    cpy_r_r1403 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1404 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r1405 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1406 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1407 = CPyDict_Build(2, cpy_r_r1403, cpy_r_r1404, cpy_r_r1405, cpy_r_r1406);
+    if (unlikely(cpy_r_r1407 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL739;
+    }
+    cpy_r_r1408 = PyList_New(2);
+    if (unlikely(cpy_r_r1408 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL740;
+    }
+    cpy_r_r1409 = (CPyPtr)&((PyListObject *)cpy_r_r1408)->ob_item;
+    cpy_r_r1410 = *(CPyPtr *)cpy_r_r1409;
+    *(PyObject * *)cpy_r_r1410 = cpy_r_r1402;
+    cpy_r_r1411 = cpy_r_r1410 + 8;
+    *(PyObject * *)cpy_r_r1411 = cpy_r_r1407;
+    cpy_r_r1412 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1413 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'register' */
+    cpy_r_r1414 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1415 = PyList_New(0);
+    if (unlikely(cpy_r_r1415 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL741;
+    }
+    cpy_r_r1416 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1417 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1418 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1419 = 0 ? Py_True : Py_False;
+    cpy_r_r1420 = 0 ? Py_True : Py_False;
+    cpy_r_r1421 = CPyDict_Build(6, cpy_r_r1396, cpy_r_r1419, cpy_r_r1397, cpy_r_r1408, cpy_r_r1412, cpy_r_r1413, cpy_r_r1414, cpy_r_r1415, cpy_r_r1416, cpy_r_r1420, cpy_r_r1417, cpy_r_r1418);
+    CPy_DECREF_NO_IMM(cpy_r_r1408);
+    CPy_DECREF_NO_IMM(cpy_r_r1415);
+    if (unlikely(cpy_r_r1421 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL738;
+    }
+    cpy_r_r1422 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1423 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1424 = PyList_New(0);
+    if (unlikely(cpy_r_r1424 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL742;
+    }
+    cpy_r_r1425 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1426 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'rootNode' */
+    cpy_r_r1427 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1428 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1429 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1430 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1431 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1432 = CPyDict_Build(2, cpy_r_r1428, cpy_r_r1429, cpy_r_r1430, cpy_r_r1431);
+    if (unlikely(cpy_r_r1432 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL743;
+    }
+    cpy_r_r1433 = PyList_New(1);
+    if (unlikely(cpy_r_r1433 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL744;
+    }
+    cpy_r_r1434 = (CPyPtr)&((PyListObject *)cpy_r_r1433)->ob_item;
+    cpy_r_r1435 = *(CPyPtr *)cpy_r_r1434;
+    *(PyObject * *)cpy_r_r1435 = cpy_r_r1432;
+    cpy_r_r1436 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1437 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1438 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1439 = 1 ? Py_True : Py_False;
+    cpy_r_r1440 = 0 ? Py_True : Py_False;
+    cpy_r_r1441 = CPyDict_Build(6, cpy_r_r1422, cpy_r_r1439, cpy_r_r1423, cpy_r_r1424, cpy_r_r1425, cpy_r_r1426, cpy_r_r1427, cpy_r_r1433, cpy_r_r1436, cpy_r_r1440, cpy_r_r1437, cpy_r_r1438);
+    CPy_DECREF_NO_IMM(cpy_r_r1424);
+    CPy_DECREF_NO_IMM(cpy_r_r1433);
+    if (unlikely(cpy_r_r1441 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL742;
+    }
+    cpy_r_r1442 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1443 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1444 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ensAddr' */
+    cpy_r_r1445 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1446 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1447 = CPyDict_Build(2, cpy_r_r1443, cpy_r_r1444, cpy_r_r1445, cpy_r_r1446);
+    if (unlikely(cpy_r_r1447 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL745;
+    }
+    cpy_r_r1448 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1449 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1450 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1451 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1452 = CPyDict_Build(2, cpy_r_r1448, cpy_r_r1449, cpy_r_r1450, cpy_r_r1451);
+    if (unlikely(cpy_r_r1452 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL746;
+    }
+    cpy_r_r1453 = PyList_New(2);
+    if (unlikely(cpy_r_r1453 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL747;
+    }
+    cpy_r_r1454 = (CPyPtr)&((PyListObject *)cpy_r_r1453)->ob_item;
+    cpy_r_r1455 = *(CPyPtr *)cpy_r_r1454;
+    *(PyObject * *)cpy_r_r1455 = cpy_r_r1447;
+    cpy_r_r1456 = cpy_r_r1455 + 8;
+    *(PyObject * *)cpy_r_r1456 = cpy_r_r1452;
+    cpy_r_r1457 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1458 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r1459 = CPyDict_Build(2, cpy_r_r1442, cpy_r_r1453, cpy_r_r1457, cpy_r_r1458);
+    CPy_DECREF_NO_IMM(cpy_r_r1453);
+    if (unlikely(cpy_r_r1459 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL745;
+    }
+    cpy_r_r1460 = PyList_New(5);
+    if (unlikely(cpy_r_r1460 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL748;
+    }
+    cpy_r_r1461 = (CPyPtr)&((PyListObject *)cpy_r_r1460)->ob_item;
+    cpy_r_r1462 = *(CPyPtr *)cpy_r_r1461;
+    *(PyObject * *)cpy_r_r1462 = cpy_r_r1368;
+    cpy_r_r1463 = cpy_r_r1462 + 8;
+    *(PyObject * *)cpy_r_r1463 = cpy_r_r1395;
+    cpy_r_r1464 = cpy_r_r1462 + 16;
+    *(PyObject * *)cpy_r_r1464 = cpy_r_r1421;
+    cpy_r_r1465 = cpy_r_r1462 + 24;
+    *(PyObject * *)cpy_r_r1465 = cpy_r_r1441;
+    cpy_r_r1466 = cpy_r_r1462 + 32;
+    *(PyObject * *)cpy_r_r1466 = cpy_r_r1459;
+    cpy_r_r1467 = CPyStatic_abis___globals;
+    cpy_r_r1468 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'FIFS_REGISTRAR' */
+    cpy_r_r1469 = CPyDict_SetItem(cpy_r_r1467, cpy_r_r1468, cpy_r_r1460);
+    CPy_DECREF_NO_IMM(cpy_r_r1460);
+    cpy_r_r1470 = cpy_r_r1469 >= 0;
+    if (unlikely(!cpy_r_r1470)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1471 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1472 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1473 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contract ENS' */
+    cpy_r_r1474 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1475 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_ens' */
+    cpy_r_r1476 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1477 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1478 = CPyDict_Build(3, cpy_r_r1472, cpy_r_r1473, cpy_r_r1474, cpy_r_r1475, cpy_r_r1476, cpy_r_r1477);
+    if (unlikely(cpy_r_r1478 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1479 = PyList_New(1);
+    if (unlikely(cpy_r_r1479 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL749;
+    }
+    cpy_r_r1480 = (CPyPtr)&((PyListObject *)cpy_r_r1479)->ob_item;
+    cpy_r_r1481 = *(CPyPtr *)cpy_r_r1480;
+    *(PyObject * *)cpy_r_r1481 = cpy_r_r1478;
+    cpy_r_r1482 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1483 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r1484 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r1485 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1486 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r1487 = 0 ? Py_True : Py_False;
+    cpy_r_r1488 = CPyDict_Build(4, cpy_r_r1471, cpy_r_r1479, cpy_r_r1482, cpy_r_r1487, cpy_r_r1483, cpy_r_r1484, cpy_r_r1485, cpy_r_r1486);
+    CPy_DECREF_NO_IMM(cpy_r_r1479);
+    if (unlikely(cpy_r_r1488 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r1489 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1490 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1491 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1492 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1493 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1494 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1495 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1496 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1497 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1498 = 1 ? Py_True : Py_False;
+    cpy_r_r1499 = CPyDict_Build(4, cpy_r_r1491, cpy_r_r1498, cpy_r_r1492, cpy_r_r1493, cpy_r_r1494, cpy_r_r1495, cpy_r_r1496, cpy_r_r1497);
+    if (unlikely(cpy_r_r1499 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL750;
+    }
+    cpy_r_r1500 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1501 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1502 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1503 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1504 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contentType' */
+    cpy_r_r1505 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1506 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1507 = 1 ? Py_True : Py_False;
+    cpy_r_r1508 = CPyDict_Build(4, cpy_r_r1500, cpy_r_r1507, cpy_r_r1501, cpy_r_r1502, cpy_r_r1503, cpy_r_r1504, cpy_r_r1505, cpy_r_r1506);
+    if (unlikely(cpy_r_r1508 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL751;
+    }
+    cpy_r_r1509 = PyList_New(2);
+    if (unlikely(cpy_r_r1509 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL752;
+    }
+    cpy_r_r1510 = (CPyPtr)&((PyListObject *)cpy_r_r1509)->ob_item;
+    cpy_r_r1511 = *(CPyPtr *)cpy_r_r1510;
+    *(PyObject * *)cpy_r_r1511 = cpy_r_r1499;
+    cpy_r_r1512 = cpy_r_r1511 + 8;
+    *(PyObject * *)cpy_r_r1512 = cpy_r_r1508;
+    cpy_r_r1513 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1514 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ABIChanged' */
+    cpy_r_r1515 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1516 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1517 = 0 ? Py_True : Py_False;
+    cpy_r_r1518 = CPyDict_Build(4, cpy_r_r1489, cpy_r_r1517, cpy_r_r1490, cpy_r_r1509, cpy_r_r1513, cpy_r_r1514, cpy_r_r1515, cpy_r_r1516);
+    CPy_DECREF_NO_IMM(cpy_r_r1509);
+    if (unlikely(cpy_r_r1518 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL750;
+    }
+    cpy_r_r1519 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1520 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1521 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1522 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1523 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1524 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1525 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1526 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1527 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1528 = 1 ? Py_True : Py_False;
+    cpy_r_r1529 = CPyDict_Build(4, cpy_r_r1521, cpy_r_r1528, cpy_r_r1522, cpy_r_r1523, cpy_r_r1524, cpy_r_r1525, cpy_r_r1526, cpy_r_r1527);
+    if (unlikely(cpy_r_r1529 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL753;
+    }
+    cpy_r_r1530 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1531 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1532 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1533 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1534 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'a' */
+    cpy_r_r1535 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1536 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1537 = 0 ? Py_True : Py_False;
+    cpy_r_r1538 = CPyDict_Build(4, cpy_r_r1530, cpy_r_r1537, cpy_r_r1531, cpy_r_r1532, cpy_r_r1533, cpy_r_r1534, cpy_r_r1535, cpy_r_r1536);
+    if (unlikely(cpy_r_r1538 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL754;
+    }
+    cpy_r_r1539 = PyList_New(2);
+    if (unlikely(cpy_r_r1539 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL755;
+    }
+    cpy_r_r1540 = (CPyPtr)&((PyListObject *)cpy_r_r1539)->ob_item;
+    cpy_r_r1541 = *(CPyPtr *)cpy_r_r1540;
+    *(PyObject * *)cpy_r_r1541 = cpy_r_r1529;
+    cpy_r_r1542 = cpy_r_r1541 + 8;
+    *(PyObject * *)cpy_r_r1542 = cpy_r_r1538;
+    cpy_r_r1543 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1544 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AddrChanged' */
+    cpy_r_r1545 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1546 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1547 = 0 ? Py_True : Py_False;
+    cpy_r_r1548 = CPyDict_Build(4, cpy_r_r1519, cpy_r_r1547, cpy_r_r1520, cpy_r_r1539, cpy_r_r1543, cpy_r_r1544, cpy_r_r1545, cpy_r_r1546);
+    CPy_DECREF_NO_IMM(cpy_r_r1539);
+    if (unlikely(cpy_r_r1548 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL753;
+    }
+    cpy_r_r1549 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1550 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1551 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1552 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1553 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1554 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1555 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1556 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1557 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1558 = 1 ? Py_True : Py_False;
+    cpy_r_r1559 = CPyDict_Build(4, cpy_r_r1551, cpy_r_r1558, cpy_r_r1552, cpy_r_r1553, cpy_r_r1554, cpy_r_r1555, cpy_r_r1556, cpy_r_r1557);
+    if (unlikely(cpy_r_r1559 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL756;
+    }
+    cpy_r_r1560 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1561 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1562 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1563 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1564 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'coinType' */
+    cpy_r_r1565 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1566 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1567 = 0 ? Py_True : Py_False;
+    cpy_r_r1568 = CPyDict_Build(4, cpy_r_r1560, cpy_r_r1567, cpy_r_r1561, cpy_r_r1562, cpy_r_r1563, cpy_r_r1564, cpy_r_r1565, cpy_r_r1566);
+    if (unlikely(cpy_r_r1568 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL757;
+    }
+    cpy_r_r1569 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1570 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1571 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1572 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1573 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'newAddress' */
+    cpy_r_r1574 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1575 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1576 = 0 ? Py_True : Py_False;
+    cpy_r_r1577 = CPyDict_Build(4, cpy_r_r1569, cpy_r_r1576, cpy_r_r1570, cpy_r_r1571, cpy_r_r1572, cpy_r_r1573, cpy_r_r1574, cpy_r_r1575);
+    if (unlikely(cpy_r_r1577 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL758;
+    }
+    cpy_r_r1578 = PyList_New(3);
+    if (unlikely(cpy_r_r1578 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL759;
+    }
+    cpy_r_r1579 = (CPyPtr)&((PyListObject *)cpy_r_r1578)->ob_item;
+    cpy_r_r1580 = *(CPyPtr *)cpy_r_r1579;
+    *(PyObject * *)cpy_r_r1580 = cpy_r_r1559;
+    cpy_r_r1581 = cpy_r_r1580 + 8;
+    *(PyObject * *)cpy_r_r1581 = cpy_r_r1568;
+    cpy_r_r1582 = cpy_r_r1580 + 16;
+    *(PyObject * *)cpy_r_r1582 = cpy_r_r1577;
+    cpy_r_r1583 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1584 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AddressChanged' */
+    cpy_r_r1585 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1586 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1587 = 0 ? Py_True : Py_False;
+    cpy_r_r1588 = CPyDict_Build(4, cpy_r_r1549, cpy_r_r1587, cpy_r_r1550, cpy_r_r1578, cpy_r_r1583, cpy_r_r1584, cpy_r_r1585, cpy_r_r1586);
+    CPy_DECREF_NO_IMM(cpy_r_r1578);
+    if (unlikely(cpy_r_r1588 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL756;
+    }
+    cpy_r_r1589 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1590 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1591 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1592 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1593 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1594 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1595 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1596 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1597 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1598 = 1 ? Py_True : Py_False;
+    cpy_r_r1599 = CPyDict_Build(4, cpy_r_r1591, cpy_r_r1598, cpy_r_r1592, cpy_r_r1593, cpy_r_r1594, cpy_r_r1595, cpy_r_r1596, cpy_r_r1597);
+    if (unlikely(cpy_r_r1599 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL760;
+    }
+    cpy_r_r1600 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1601 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1602 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1603 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1604 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r1605 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1606 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1607 = 1 ? Py_True : Py_False;
+    cpy_r_r1608 = CPyDict_Build(4, cpy_r_r1600, cpy_r_r1607, cpy_r_r1601, cpy_r_r1602, cpy_r_r1603, cpy_r_r1604, cpy_r_r1605, cpy_r_r1606);
+    if (unlikely(cpy_r_r1608 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL761;
+    }
+    cpy_r_r1609 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1610 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1611 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1612 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1613 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'target' */
+    cpy_r_r1614 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1615 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1616 = 1 ? Py_True : Py_False;
+    cpy_r_r1617 = CPyDict_Build(4, cpy_r_r1609, cpy_r_r1616, cpy_r_r1610, cpy_r_r1611, cpy_r_r1612, cpy_r_r1613, cpy_r_r1614, cpy_r_r1615);
+    if (unlikely(cpy_r_r1617 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL762;
+    }
+    cpy_r_r1618 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1619 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1620 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r1621 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1622 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'isAuthorised' */
+    cpy_r_r1623 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1624 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r1625 = 0 ? Py_True : Py_False;
+    cpy_r_r1626 = CPyDict_Build(4, cpy_r_r1618, cpy_r_r1625, cpy_r_r1619, cpy_r_r1620, cpy_r_r1621, cpy_r_r1622, cpy_r_r1623, cpy_r_r1624);
+    if (unlikely(cpy_r_r1626 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL763;
+    }
+    cpy_r_r1627 = PyList_New(4);
+    if (unlikely(cpy_r_r1627 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL764;
+    }
+    cpy_r_r1628 = (CPyPtr)&((PyListObject *)cpy_r_r1627)->ob_item;
+    cpy_r_r1629 = *(CPyPtr *)cpy_r_r1628;
+    *(PyObject * *)cpy_r_r1629 = cpy_r_r1599;
+    cpy_r_r1630 = cpy_r_r1629 + 8;
+    *(PyObject * *)cpy_r_r1630 = cpy_r_r1608;
+    cpy_r_r1631 = cpy_r_r1629 + 16;
+    *(PyObject * *)cpy_r_r1631 = cpy_r_r1617;
+    cpy_r_r1632 = cpy_r_r1629 + 24;
+    *(PyObject * *)cpy_r_r1632 = cpy_r_r1626;
+    cpy_r_r1633 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1634 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'AuthorisationChanged' */
+    cpy_r_r1635 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1636 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1637 = 0 ? Py_True : Py_False;
+    cpy_r_r1638 = CPyDict_Build(4, cpy_r_r1589, cpy_r_r1637, cpy_r_r1590, cpy_r_r1627, cpy_r_r1633, cpy_r_r1634, cpy_r_r1635, cpy_r_r1636);
+    CPy_DECREF_NO_IMM(cpy_r_r1627);
+    if (unlikely(cpy_r_r1638 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL760;
+    }
+    cpy_r_r1639 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1640 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1641 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1642 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1643 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1644 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1645 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1646 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1647 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1648 = 1 ? Py_True : Py_False;
+    cpy_r_r1649 = CPyDict_Build(4, cpy_r_r1641, cpy_r_r1648, cpy_r_r1642, cpy_r_r1643, cpy_r_r1644, cpy_r_r1645, cpy_r_r1646, cpy_r_r1647);
+    if (unlikely(cpy_r_r1649 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL765;
+    }
+    cpy_r_r1650 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1651 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1652 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1653 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1654 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r1655 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1656 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1657 = 0 ? Py_True : Py_False;
+    cpy_r_r1658 = CPyDict_Build(4, cpy_r_r1650, cpy_r_r1657, cpy_r_r1651, cpy_r_r1652, cpy_r_r1653, cpy_r_r1654, cpy_r_r1655, cpy_r_r1656);
+    if (unlikely(cpy_r_r1658 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL766;
+    }
+    cpy_r_r1659 = PyList_New(2);
+    if (unlikely(cpy_r_r1659 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL767;
+    }
+    cpy_r_r1660 = (CPyPtr)&((PyListObject *)cpy_r_r1659)->ob_item;
+    cpy_r_r1661 = *(CPyPtr *)cpy_r_r1660;
+    *(PyObject * *)cpy_r_r1661 = cpy_r_r1649;
+    cpy_r_r1662 = cpy_r_r1661 + 8;
+    *(PyObject * *)cpy_r_r1662 = cpy_r_r1658;
+    cpy_r_r1663 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1664 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ContenthashChanged' */
+    cpy_r_r1665 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1666 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1667 = 0 ? Py_True : Py_False;
+    cpy_r_r1668 = CPyDict_Build(4, cpy_r_r1639, cpy_r_r1667, cpy_r_r1640, cpy_r_r1659, cpy_r_r1663, cpy_r_r1664, cpy_r_r1665, cpy_r_r1666);
+    CPy_DECREF_NO_IMM(cpy_r_r1659);
+    if (unlikely(cpy_r_r1668 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL765;
+    }
+    cpy_r_r1669 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1670 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1671 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1672 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1673 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1674 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1675 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1676 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1677 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1678 = 1 ? Py_True : Py_False;
+    cpy_r_r1679 = CPyDict_Build(4, cpy_r_r1671, cpy_r_r1678, cpy_r_r1672, cpy_r_r1673, cpy_r_r1674, cpy_r_r1675, cpy_r_r1676, cpy_r_r1677);
+    if (unlikely(cpy_r_r1679 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL768;
+    }
+    cpy_r_r1680 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1681 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1682 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1683 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1684 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1685 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1686 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1687 = 0 ? Py_True : Py_False;
+    cpy_r_r1688 = CPyDict_Build(4, cpy_r_r1680, cpy_r_r1687, cpy_r_r1681, cpy_r_r1682, cpy_r_r1683, cpy_r_r1684, cpy_r_r1685, cpy_r_r1686);
+    if (unlikely(cpy_r_r1688 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL769;
+    }
+    cpy_r_r1689 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1690 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1691 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r1692 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1693 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resource' */
+    cpy_r_r1694 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1695 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r1696 = 0 ? Py_True : Py_False;
+    cpy_r_r1697 = CPyDict_Build(4, cpy_r_r1689, cpy_r_r1696, cpy_r_r1690, cpy_r_r1691, cpy_r_r1692, cpy_r_r1693, cpy_r_r1694, cpy_r_r1695);
+    if (unlikely(cpy_r_r1697 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL770;
+    }
+    cpy_r_r1698 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1699 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1700 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1701 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1702 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'record' */
+    cpy_r_r1703 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1704 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1705 = 0 ? Py_True : Py_False;
+    cpy_r_r1706 = CPyDict_Build(4, cpy_r_r1698, cpy_r_r1705, cpy_r_r1699, cpy_r_r1700, cpy_r_r1701, cpy_r_r1702, cpy_r_r1703, cpy_r_r1704);
+    if (unlikely(cpy_r_r1706 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL771;
+    }
+    cpy_r_r1707 = PyList_New(4);
+    if (unlikely(cpy_r_r1707 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL772;
+    }
+    cpy_r_r1708 = (CPyPtr)&((PyListObject *)cpy_r_r1707)->ob_item;
+    cpy_r_r1709 = *(CPyPtr *)cpy_r_r1708;
+    *(PyObject * *)cpy_r_r1709 = cpy_r_r1679;
+    cpy_r_r1710 = cpy_r_r1709 + 8;
+    *(PyObject * *)cpy_r_r1710 = cpy_r_r1688;
+    cpy_r_r1711 = cpy_r_r1709 + 16;
+    *(PyObject * *)cpy_r_r1711 = cpy_r_r1697;
+    cpy_r_r1712 = cpy_r_r1709 + 24;
+    *(PyObject * *)cpy_r_r1712 = cpy_r_r1706;
+    cpy_r_r1713 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1714 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'DNSRecordChanged' */
+    cpy_r_r1715 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1716 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1717 = 0 ? Py_True : Py_False;
+    cpy_r_r1718 = CPyDict_Build(4, cpy_r_r1669, cpy_r_r1717, cpy_r_r1670, cpy_r_r1707, cpy_r_r1713, cpy_r_r1714, cpy_r_r1715, cpy_r_r1716);
+    CPy_DECREF_NO_IMM(cpy_r_r1707);
+    if (unlikely(cpy_r_r1718 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL768;
+    }
+    cpy_r_r1719 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1720 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1721 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1722 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1723 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1724 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1725 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1726 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1727 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1728 = 1 ? Py_True : Py_False;
+    cpy_r_r1729 = CPyDict_Build(4, cpy_r_r1721, cpy_r_r1728, cpy_r_r1722, cpy_r_r1723, cpy_r_r1724, cpy_r_r1725, cpy_r_r1726, cpy_r_r1727);
+    if (unlikely(cpy_r_r1729 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL773;
+    }
+    cpy_r_r1730 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1731 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1732 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1733 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1734 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1735 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1736 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1737 = 0 ? Py_True : Py_False;
+    cpy_r_r1738 = CPyDict_Build(4, cpy_r_r1730, cpy_r_r1737, cpy_r_r1731, cpy_r_r1732, cpy_r_r1733, cpy_r_r1734, cpy_r_r1735, cpy_r_r1736);
+    if (unlikely(cpy_r_r1738 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL774;
+    }
+    cpy_r_r1739 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1740 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1741 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r1742 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1743 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resource' */
+    cpy_r_r1744 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1745 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r1746 = 0 ? Py_True : Py_False;
+    cpy_r_r1747 = CPyDict_Build(4, cpy_r_r1739, cpy_r_r1746, cpy_r_r1740, cpy_r_r1741, cpy_r_r1742, cpy_r_r1743, cpy_r_r1744, cpy_r_r1745);
+    if (unlikely(cpy_r_r1747 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL775;
+    }
+    cpy_r_r1748 = PyList_New(3);
+    if (unlikely(cpy_r_r1748 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL776;
+    }
+    cpy_r_r1749 = (CPyPtr)&((PyListObject *)cpy_r_r1748)->ob_item;
+    cpy_r_r1750 = *(CPyPtr *)cpy_r_r1749;
+    *(PyObject * *)cpy_r_r1750 = cpy_r_r1729;
+    cpy_r_r1751 = cpy_r_r1750 + 8;
+    *(PyObject * *)cpy_r_r1751 = cpy_r_r1738;
+    cpy_r_r1752 = cpy_r_r1750 + 16;
+    *(PyObject * *)cpy_r_r1752 = cpy_r_r1747;
+    cpy_r_r1753 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1754 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'DNSRecordDeleted' */
+    cpy_r_r1755 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1756 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1757 = 0 ? Py_True : Py_False;
+    cpy_r_r1758 = CPyDict_Build(4, cpy_r_r1719, cpy_r_r1757, cpy_r_r1720, cpy_r_r1748, cpy_r_r1753, cpy_r_r1754, cpy_r_r1755, cpy_r_r1756);
+    CPy_DECREF_NO_IMM(cpy_r_r1748);
+    if (unlikely(cpy_r_r1758 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL773;
+    }
+    cpy_r_r1759 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1760 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1761 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1762 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1763 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1764 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1765 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1766 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1767 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1768 = 1 ? Py_True : Py_False;
+    cpy_r_r1769 = CPyDict_Build(4, cpy_r_r1761, cpy_r_r1768, cpy_r_r1762, cpy_r_r1763, cpy_r_r1764, cpy_r_r1765, cpy_r_r1766, cpy_r_r1767);
+    if (unlikely(cpy_r_r1769 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL777;
+    }
+    cpy_r_r1770 = PyList_New(1);
+    if (unlikely(cpy_r_r1770 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL778;
+    }
+    cpy_r_r1771 = (CPyPtr)&((PyListObject *)cpy_r_r1770)->ob_item;
+    cpy_r_r1772 = *(CPyPtr *)cpy_r_r1771;
+    *(PyObject * *)cpy_r_r1772 = cpy_r_r1769;
+    cpy_r_r1773 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1774 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'DNSZoneCleared' */
+    cpy_r_r1775 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1776 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1777 = 0 ? Py_True : Py_False;
+    cpy_r_r1778 = CPyDict_Build(4, cpy_r_r1759, cpy_r_r1777, cpy_r_r1760, cpy_r_r1770, cpy_r_r1773, cpy_r_r1774, cpy_r_r1775, cpy_r_r1776);
+    CPy_DECREF_NO_IMM(cpy_r_r1770);
+    if (unlikely(cpy_r_r1778 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL777;
+    }
+    cpy_r_r1779 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1780 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1781 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1782 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1783 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1784 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1785 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1786 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1787 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1788 = 1 ? Py_True : Py_False;
+    cpy_r_r1789 = CPyDict_Build(4, cpy_r_r1781, cpy_r_r1788, cpy_r_r1782, cpy_r_r1783, cpy_r_r1784, cpy_r_r1785, cpy_r_r1786, cpy_r_r1787);
+    if (unlikely(cpy_r_r1789 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL779;
+    }
+    cpy_r_r1790 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1791 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1792 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r1793 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1794 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'interfaceID' */
+    cpy_r_r1795 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1796 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r1797 = 1 ? Py_True : Py_False;
+    cpy_r_r1798 = CPyDict_Build(4, cpy_r_r1790, cpy_r_r1797, cpy_r_r1791, cpy_r_r1792, cpy_r_r1793, cpy_r_r1794, cpy_r_r1795, cpy_r_r1796);
+    if (unlikely(cpy_r_r1798 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL780;
+    }
+    cpy_r_r1799 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1800 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1801 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1802 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1803 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'implementer' */
+    cpy_r_r1804 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1805 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1806 = 0 ? Py_True : Py_False;
+    cpy_r_r1807 = CPyDict_Build(4, cpy_r_r1799, cpy_r_r1806, cpy_r_r1800, cpy_r_r1801, cpy_r_r1802, cpy_r_r1803, cpy_r_r1804, cpy_r_r1805);
+    if (unlikely(cpy_r_r1807 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL781;
+    }
+    cpy_r_r1808 = PyList_New(3);
+    if (unlikely(cpy_r_r1808 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL782;
+    }
+    cpy_r_r1809 = (CPyPtr)&((PyListObject *)cpy_r_r1808)->ob_item;
+    cpy_r_r1810 = *(CPyPtr *)cpy_r_r1809;
+    *(PyObject * *)cpy_r_r1810 = cpy_r_r1789;
+    cpy_r_r1811 = cpy_r_r1810 + 8;
+    *(PyObject * *)cpy_r_r1811 = cpy_r_r1798;
+    cpy_r_r1812 = cpy_r_r1810 + 16;
+    *(PyObject * *)cpy_r_r1812 = cpy_r_r1807;
+    cpy_r_r1813 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1814 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'InterfaceChanged' */
+    cpy_r_r1815 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1816 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1817 = 0 ? Py_True : Py_False;
+    cpy_r_r1818 = CPyDict_Build(4, cpy_r_r1779, cpy_r_r1817, cpy_r_r1780, cpy_r_r1808, cpy_r_r1813, cpy_r_r1814, cpy_r_r1815, cpy_r_r1816);
+    CPy_DECREF_NO_IMM(cpy_r_r1808);
+    if (unlikely(cpy_r_r1818 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL779;
+    }
+    cpy_r_r1819 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1820 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1821 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1822 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1823 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1824 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1825 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1826 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1827 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1828 = 1 ? Py_True : Py_False;
+    cpy_r_r1829 = CPyDict_Build(4, cpy_r_r1821, cpy_r_r1828, cpy_r_r1822, cpy_r_r1823, cpy_r_r1824, cpy_r_r1825, cpy_r_r1826, cpy_r_r1827);
+    if (unlikely(cpy_r_r1829 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL783;
+    }
+    cpy_r_r1830 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1831 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1832 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1833 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1834 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1835 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1836 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1837 = 0 ? Py_True : Py_False;
+    cpy_r_r1838 = CPyDict_Build(4, cpy_r_r1830, cpy_r_r1837, cpy_r_r1831, cpy_r_r1832, cpy_r_r1833, cpy_r_r1834, cpy_r_r1835, cpy_r_r1836);
+    if (unlikely(cpy_r_r1838 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL784;
+    }
+    cpy_r_r1839 = PyList_New(2);
+    if (unlikely(cpy_r_r1839 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL785;
+    }
+    cpy_r_r1840 = (CPyPtr)&((PyListObject *)cpy_r_r1839)->ob_item;
+    cpy_r_r1841 = *(CPyPtr *)cpy_r_r1840;
+    *(PyObject * *)cpy_r_r1841 = cpy_r_r1829;
+    cpy_r_r1842 = cpy_r_r1841 + 8;
+    *(PyObject * *)cpy_r_r1842 = cpy_r_r1838;
+    cpy_r_r1843 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1844 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'NameChanged' */
+    cpy_r_r1845 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1846 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1847 = 0 ? Py_True : Py_False;
+    cpy_r_r1848 = CPyDict_Build(4, cpy_r_r1819, cpy_r_r1847, cpy_r_r1820, cpy_r_r1839, cpy_r_r1843, cpy_r_r1844, cpy_r_r1845, cpy_r_r1846);
+    CPy_DECREF_NO_IMM(cpy_r_r1839);
+    if (unlikely(cpy_r_r1848 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL783;
+    }
+    cpy_r_r1849 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1850 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1851 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1852 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1853 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1854 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1855 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1856 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1857 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1858 = 1 ? Py_True : Py_False;
+    cpy_r_r1859 = CPyDict_Build(4, cpy_r_r1851, cpy_r_r1858, cpy_r_r1852, cpy_r_r1853, cpy_r_r1854, cpy_r_r1855, cpy_r_r1856, cpy_r_r1857);
+    if (unlikely(cpy_r_r1859 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL786;
+    }
+    cpy_r_r1860 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1861 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1862 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1863 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1864 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'x' */
+    cpy_r_r1865 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1866 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1867 = 0 ? Py_True : Py_False;
+    cpy_r_r1868 = CPyDict_Build(4, cpy_r_r1860, cpy_r_r1867, cpy_r_r1861, cpy_r_r1862, cpy_r_r1863, cpy_r_r1864, cpy_r_r1865, cpy_r_r1866);
+    if (unlikely(cpy_r_r1868 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL787;
+    }
+    cpy_r_r1869 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1870 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1871 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1872 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1873 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'y' */
+    cpy_r_r1874 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1875 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1876 = 0 ? Py_True : Py_False;
+    cpy_r_r1877 = CPyDict_Build(4, cpy_r_r1869, cpy_r_r1876, cpy_r_r1870, cpy_r_r1871, cpy_r_r1872, cpy_r_r1873, cpy_r_r1874, cpy_r_r1875);
+    if (unlikely(cpy_r_r1877 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL788;
+    }
+    cpy_r_r1878 = PyList_New(3);
+    if (unlikely(cpy_r_r1878 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL789;
+    }
+    cpy_r_r1879 = (CPyPtr)&((PyListObject *)cpy_r_r1878)->ob_item;
+    cpy_r_r1880 = *(CPyPtr *)cpy_r_r1879;
+    *(PyObject * *)cpy_r_r1880 = cpy_r_r1859;
+    cpy_r_r1881 = cpy_r_r1880 + 8;
+    *(PyObject * *)cpy_r_r1881 = cpy_r_r1868;
+    cpy_r_r1882 = cpy_r_r1880 + 16;
+    *(PyObject * *)cpy_r_r1882 = cpy_r_r1877;
+    cpy_r_r1883 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1884 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'PubkeyChanged' */
+    cpy_r_r1885 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1886 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1887 = 0 ? Py_True : Py_False;
+    cpy_r_r1888 = CPyDict_Build(4, cpy_r_r1849, cpy_r_r1887, cpy_r_r1850, cpy_r_r1878, cpy_r_r1883, cpy_r_r1884, cpy_r_r1885, cpy_r_r1886);
+    CPy_DECREF_NO_IMM(cpy_r_r1878);
+    if (unlikely(cpy_r_r1888 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL786;
+    }
+    cpy_r_r1889 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'anonymous' */
+    cpy_r_r1890 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1891 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1892 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1893 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1894 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1895 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1896 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1897 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1898 = 1 ? Py_True : Py_False;
+    cpy_r_r1899 = CPyDict_Build(4, cpy_r_r1891, cpy_r_r1898, cpy_r_r1892, cpy_r_r1893, cpy_r_r1894, cpy_r_r1895, cpy_r_r1896, cpy_r_r1897);
+    if (unlikely(cpy_r_r1899 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL790;
+    }
+    cpy_r_r1900 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1901 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1902 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1903 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1904 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexedKey' */
+    cpy_r_r1905 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1906 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1907 = 1 ? Py_True : Py_False;
+    cpy_r_r1908 = CPyDict_Build(4, cpy_r_r1900, cpy_r_r1907, cpy_r_r1901, cpy_r_r1902, cpy_r_r1903, cpy_r_r1904, cpy_r_r1905, cpy_r_r1906);
+    if (unlikely(cpy_r_r1908 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL791;
+    }
+    cpy_r_r1909 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'indexed' */
+    cpy_r_r1910 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1911 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1912 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1913 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'key' */
+    cpy_r_r1914 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1915 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r1916 = 0 ? Py_True : Py_False;
+    cpy_r_r1917 = CPyDict_Build(4, cpy_r_r1909, cpy_r_r1916, cpy_r_r1910, cpy_r_r1911, cpy_r_r1912, cpy_r_r1913, cpy_r_r1914, cpy_r_r1915);
+    if (unlikely(cpy_r_r1917 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL792;
+    }
+    cpy_r_r1918 = PyList_New(3);
+    if (unlikely(cpy_r_r1918 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL793;
+    }
+    cpy_r_r1919 = (CPyPtr)&((PyListObject *)cpy_r_r1918)->ob_item;
+    cpy_r_r1920 = *(CPyPtr *)cpy_r_r1919;
+    *(PyObject * *)cpy_r_r1920 = cpy_r_r1899;
+    cpy_r_r1921 = cpy_r_r1920 + 8;
+    *(PyObject * *)cpy_r_r1921 = cpy_r_r1908;
+    cpy_r_r1922 = cpy_r_r1920 + 16;
+    *(PyObject * *)cpy_r_r1922 = cpy_r_r1917;
+    cpy_r_r1923 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1924 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TextChanged' */
+    cpy_r_r1925 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1926 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'event' */
+    cpy_r_r1927 = 0 ? Py_True : Py_False;
+    cpy_r_r1928 = CPyDict_Build(4, cpy_r_r1889, cpy_r_r1927, cpy_r_r1890, cpy_r_r1918, cpy_r_r1923, cpy_r_r1924, cpy_r_r1925, cpy_r_r1926);
+    CPy_DECREF_NO_IMM(cpy_r_r1918);
+    if (unlikely(cpy_r_r1928 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL790;
+    }
+    cpy_r_r1929 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1930 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1931 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1932 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1933 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1934 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1935 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1936 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1937 = CPyDict_Build(3, cpy_r_r1931, cpy_r_r1932, cpy_r_r1933, cpy_r_r1934, cpy_r_r1935, cpy_r_r1936);
+    if (unlikely(cpy_r_r1937 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL794;
+    }
+    cpy_r_r1938 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1939 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1940 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1941 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contentTypes' */
+    cpy_r_r1942 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1943 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1944 = CPyDict_Build(3, cpy_r_r1938, cpy_r_r1939, cpy_r_r1940, cpy_r_r1941, cpy_r_r1942, cpy_r_r1943);
+    if (unlikely(cpy_r_r1944 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL795;
+    }
+    cpy_r_r1945 = PyList_New(2);
+    if (unlikely(cpy_r_r1945 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL796;
+    }
+    cpy_r_r1946 = (CPyPtr)&((PyListObject *)cpy_r_r1945)->ob_item;
+    cpy_r_r1947 = *(CPyPtr *)cpy_r_r1946;
+    *(PyObject * *)cpy_r_r1947 = cpy_r_r1937;
+    cpy_r_r1948 = cpy_r_r1947 + 8;
+    *(PyObject * *)cpy_r_r1948 = cpy_r_r1944;
+    cpy_r_r1949 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1950 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ABI' */
+    cpy_r_r1951 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1952 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1953 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1954 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1955 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1956 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1957 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r1958 = CPyDict_Build(3, cpy_r_r1952, cpy_r_r1953, cpy_r_r1954, cpy_r_r1955, cpy_r_r1956, cpy_r_r1957);
+    if (unlikely(cpy_r_r1958 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL797;
+    }
+    cpy_r_r1959 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1960 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1961 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1962 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1963 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1964 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r1965 = CPyDict_Build(3, cpy_r_r1959, cpy_r_r1960, cpy_r_r1961, cpy_r_r1962, cpy_r_r1963, cpy_r_r1964);
+    if (unlikely(cpy_r_r1965 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL798;
+    }
+    cpy_r_r1966 = PyList_New(2);
+    if (unlikely(cpy_r_r1966 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL799;
+    }
+    cpy_r_r1967 = (CPyPtr)&((PyListObject *)cpy_r_r1966)->ob_item;
+    cpy_r_r1968 = *(CPyPtr *)cpy_r_r1967;
+    *(PyObject * *)cpy_r_r1968 = cpy_r_r1958;
+    cpy_r_r1969 = cpy_r_r1968 + 8;
+    *(PyObject * *)cpy_r_r1969 = cpy_r_r1965;
+    cpy_r_r1970 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r1971 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r1972 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r1973 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1974 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r1975 = 1 ? Py_True : Py_False;
+    cpy_r_r1976 = 0 ? Py_True : Py_False;
+    cpy_r_r1977 = CPyDict_Build(7, cpy_r_r1929, cpy_r_r1975, cpy_r_r1930, cpy_r_r1945, cpy_r_r1949, cpy_r_r1950, cpy_r_r1951, cpy_r_r1966, cpy_r_r1970, cpy_r_r1976, cpy_r_r1971, cpy_r_r1972, cpy_r_r1973, cpy_r_r1974);
+    CPy_DECREF_NO_IMM(cpy_r_r1945);
+    CPy_DECREF_NO_IMM(cpy_r_r1966);
+    if (unlikely(cpy_r_r1977 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL794;
+    }
+    cpy_r_r1978 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r1979 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r1980 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1981 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1982 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1983 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r1984 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1985 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r1986 = CPyDict_Build(3, cpy_r_r1980, cpy_r_r1981, cpy_r_r1982, cpy_r_r1983, cpy_r_r1984, cpy_r_r1985);
+    if (unlikely(cpy_r_r1986 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL800;
+    }
+    cpy_r_r1987 = PyList_New(1);
+    if (unlikely(cpy_r_r1987 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL801;
+    }
+    cpy_r_r1988 = (CPyPtr)&((PyListObject *)cpy_r_r1987)->ob_item;
+    cpy_r_r1989 = *(CPyPtr *)cpy_r_r1988;
+    *(PyObject * *)cpy_r_r1989 = cpy_r_r1986;
+    cpy_r_r1990 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1991 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'addr' */
+    cpy_r_r1992 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r1993 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r1994 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address payable' */
+    cpy_r_r1995 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r1996 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r1997 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r1998 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r1999 = CPyDict_Build(3, cpy_r_r1993, cpy_r_r1994, cpy_r_r1995, cpy_r_r1996, cpy_r_r1997, cpy_r_r1998);
+    if (unlikely(cpy_r_r1999 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL802;
+    }
+    cpy_r_r2000 = PyList_New(1);
+    if (unlikely(cpy_r_r2000 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL803;
+    }
+    cpy_r_r2001 = (CPyPtr)&((PyListObject *)cpy_r_r2000)->ob_item;
+    cpy_r_r2002 = *(CPyPtr *)cpy_r_r2001;
+    *(PyObject * *)cpy_r_r2002 = cpy_r_r1999;
+    cpy_r_r2003 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2004 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2005 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2006 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2007 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2008 = 1 ? Py_True : Py_False;
+    cpy_r_r2009 = 0 ? Py_True : Py_False;
+    cpy_r_r2010 = CPyDict_Build(7, cpy_r_r1978, cpy_r_r2008, cpy_r_r1979, cpy_r_r1987, cpy_r_r1990, cpy_r_r1991, cpy_r_r1992, cpy_r_r2000, cpy_r_r2003, cpy_r_r2009, cpy_r_r2004, cpy_r_r2005, cpy_r_r2006, cpy_r_r2007);
+    CPy_DECREF_NO_IMM(cpy_r_r1987);
+    CPy_DECREF_NO_IMM(cpy_r_r2000);
+    if (unlikely(cpy_r_r2010 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL800;
+    }
+    cpy_r_r2011 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2012 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2013 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2014 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2015 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2016 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2017 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2018 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2019 = CPyDict_Build(3, cpy_r_r2013, cpy_r_r2014, cpy_r_r2015, cpy_r_r2016, cpy_r_r2017, cpy_r_r2018);
+    if (unlikely(cpy_r_r2019 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL804;
+    }
+    cpy_r_r2020 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2021 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2022 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2023 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'coinType' */
+    cpy_r_r2024 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2025 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2026 = CPyDict_Build(3, cpy_r_r2020, cpy_r_r2021, cpy_r_r2022, cpy_r_r2023, cpy_r_r2024, cpy_r_r2025);
+    if (unlikely(cpy_r_r2026 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL805;
+    }
+    cpy_r_r2027 = PyList_New(2);
+    if (unlikely(cpy_r_r2027 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL806;
+    }
+    cpy_r_r2028 = (CPyPtr)&((PyListObject *)cpy_r_r2027)->ob_item;
+    cpy_r_r2029 = *(CPyPtr *)cpy_r_r2028;
+    *(PyObject * *)cpy_r_r2029 = cpy_r_r2019;
+    cpy_r_r2030 = cpy_r_r2029 + 8;
+    *(PyObject * *)cpy_r_r2030 = cpy_r_r2026;
+    cpy_r_r2031 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2032 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'addr' */
+    cpy_r_r2033 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2034 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2035 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2036 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2037 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2038 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2039 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2040 = CPyDict_Build(3, cpy_r_r2034, cpy_r_r2035, cpy_r_r2036, cpy_r_r2037, cpy_r_r2038, cpy_r_r2039);
+    if (unlikely(cpy_r_r2040 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL807;
+    }
+    cpy_r_r2041 = PyList_New(1);
+    if (unlikely(cpy_r_r2041 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL808;
+    }
+    cpy_r_r2042 = (CPyPtr)&((PyListObject *)cpy_r_r2041)->ob_item;
+    cpy_r_r2043 = *(CPyPtr *)cpy_r_r2042;
+    *(PyObject * *)cpy_r_r2043 = cpy_r_r2040;
+    cpy_r_r2044 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2045 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2046 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2047 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2048 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2049 = 1 ? Py_True : Py_False;
+    cpy_r_r2050 = 0 ? Py_True : Py_False;
+    cpy_r_r2051 = CPyDict_Build(7, cpy_r_r2011, cpy_r_r2049, cpy_r_r2012, cpy_r_r2027, cpy_r_r2031, cpy_r_r2032, cpy_r_r2033, cpy_r_r2041, cpy_r_r2044, cpy_r_r2050, cpy_r_r2045, cpy_r_r2046, cpy_r_r2047, cpy_r_r2048);
+    CPy_DECREF_NO_IMM(cpy_r_r2027);
+    CPy_DECREF_NO_IMM(cpy_r_r2041);
+    if (unlikely(cpy_r_r2051 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL804;
+    }
+    cpy_r_r2052 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2053 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2054 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2055 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2056 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2057 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2058 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2059 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2060 = CPyDict_Build(3, cpy_r_r2054, cpy_r_r2055, cpy_r_r2056, cpy_r_r2057, cpy_r_r2058, cpy_r_r2059);
+    if (unlikely(cpy_r_r2060 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL809;
+    }
+    cpy_r_r2061 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2062 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2063 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2064 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2065 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2066 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2067 = CPyDict_Build(3, cpy_r_r2061, cpy_r_r2062, cpy_r_r2063, cpy_r_r2064, cpy_r_r2065, cpy_r_r2066);
+    if (unlikely(cpy_r_r2067 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL810;
+    }
+    cpy_r_r2068 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2069 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2070 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2071 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2072 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2073 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2074 = CPyDict_Build(3, cpy_r_r2068, cpy_r_r2069, cpy_r_r2070, cpy_r_r2071, cpy_r_r2072, cpy_r_r2073);
+    if (unlikely(cpy_r_r2074 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL811;
+    }
+    cpy_r_r2075 = PyList_New(3);
+    if (unlikely(cpy_r_r2075 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL812;
+    }
+    cpy_r_r2076 = (CPyPtr)&((PyListObject *)cpy_r_r2075)->ob_item;
+    cpy_r_r2077 = *(CPyPtr *)cpy_r_r2076;
+    *(PyObject * *)cpy_r_r2077 = cpy_r_r2060;
+    cpy_r_r2078 = cpy_r_r2077 + 8;
+    *(PyObject * *)cpy_r_r2078 = cpy_r_r2067;
+    cpy_r_r2079 = cpy_r_r2077 + 16;
+    *(PyObject * *)cpy_r_r2079 = cpy_r_r2074;
+    cpy_r_r2080 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2081 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'authorisations' */
+    cpy_r_r2082 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2083 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2084 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2085 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2086 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2087 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2088 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2089 = CPyDict_Build(3, cpy_r_r2083, cpy_r_r2084, cpy_r_r2085, cpy_r_r2086, cpy_r_r2087, cpy_r_r2088);
+    if (unlikely(cpy_r_r2089 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL813;
+    }
+    cpy_r_r2090 = PyList_New(1);
+    if (unlikely(cpy_r_r2090 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL814;
+    }
+    cpy_r_r2091 = (CPyPtr)&((PyListObject *)cpy_r_r2090)->ob_item;
+    cpy_r_r2092 = *(CPyPtr *)cpy_r_r2091;
+    *(PyObject * *)cpy_r_r2092 = cpy_r_r2089;
+    cpy_r_r2093 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2094 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2095 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2096 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2097 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2098 = 1 ? Py_True : Py_False;
+    cpy_r_r2099 = 0 ? Py_True : Py_False;
+    cpy_r_r2100 = CPyDict_Build(7, cpy_r_r2052, cpy_r_r2098, cpy_r_r2053, cpy_r_r2075, cpy_r_r2080, cpy_r_r2081, cpy_r_r2082, cpy_r_r2090, cpy_r_r2093, cpy_r_r2099, cpy_r_r2094, cpy_r_r2095, cpy_r_r2096, cpy_r_r2097);
+    CPy_DECREF_NO_IMM(cpy_r_r2075);
+    CPy_DECREF_NO_IMM(cpy_r_r2090);
+    if (unlikely(cpy_r_r2100 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL809;
+    }
+    cpy_r_r2101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2102 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2103 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2104 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2105 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2106 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2109 = CPyDict_Build(3, cpy_r_r2103, cpy_r_r2104, cpy_r_r2105, cpy_r_r2106, cpy_r_r2107, cpy_r_r2108);
+    if (unlikely(cpy_r_r2109 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL815;
+    }
+    cpy_r_r2110 = PyList_New(1);
+    if (unlikely(cpy_r_r2110 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL816;
+    }
+    cpy_r_r2111 = (CPyPtr)&((PyListObject *)cpy_r_r2110)->ob_item;
+    cpy_r_r2112 = *(CPyPtr *)cpy_r_r2111;
+    *(PyObject * *)cpy_r_r2112 = cpy_r_r2109;
+    cpy_r_r2113 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2114 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'clearDNSZone' */
+    cpy_r_r2115 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2116 = PyList_New(0);
+    if (unlikely(cpy_r_r2116 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL817;
+    }
+    cpy_r_r2117 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2118 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2119 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2120 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2121 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2122 = 0 ? Py_True : Py_False;
+    cpy_r_r2123 = 0 ? Py_True : Py_False;
+    cpy_r_r2124 = CPyDict_Build(7, cpy_r_r2101, cpy_r_r2122, cpy_r_r2102, cpy_r_r2110, cpy_r_r2113, cpy_r_r2114, cpy_r_r2115, cpy_r_r2116, cpy_r_r2117, cpy_r_r2123, cpy_r_r2118, cpy_r_r2119, cpy_r_r2120, cpy_r_r2121);
+    CPy_DECREF_NO_IMM(cpy_r_r2110);
+    CPy_DECREF_NO_IMM(cpy_r_r2116);
+    if (unlikely(cpy_r_r2124 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL815;
+    }
+    cpy_r_r2125 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2126 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2127 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2128 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2129 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2130 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2131 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2132 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2133 = CPyDict_Build(3, cpy_r_r2127, cpy_r_r2128, cpy_r_r2129, cpy_r_r2130, cpy_r_r2131, cpy_r_r2132);
+    if (unlikely(cpy_r_r2133 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL818;
+    }
+    cpy_r_r2134 = PyList_New(1);
+    if (unlikely(cpy_r_r2134 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL819;
+    }
+    cpy_r_r2135 = (CPyPtr)&((PyListObject *)cpy_r_r2134)->ob_item;
+    cpy_r_r2136 = *(CPyPtr *)cpy_r_r2135;
+    *(PyObject * *)cpy_r_r2136 = cpy_r_r2133;
+    cpy_r_r2137 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2138 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contenthash' */
+    cpy_r_r2139 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2141 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2142 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2143 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2145 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2146 = CPyDict_Build(3, cpy_r_r2140, cpy_r_r2141, cpy_r_r2142, cpy_r_r2143, cpy_r_r2144, cpy_r_r2145);
+    if (unlikely(cpy_r_r2146 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL820;
+    }
+    cpy_r_r2147 = PyList_New(1);
+    if (unlikely(cpy_r_r2147 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL821;
+    }
+    cpy_r_r2148 = (CPyPtr)&((PyListObject *)cpy_r_r2147)->ob_item;
+    cpy_r_r2149 = *(CPyPtr *)cpy_r_r2148;
+    *(PyObject * *)cpy_r_r2149 = cpy_r_r2146;
+    cpy_r_r2150 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2151 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2152 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2153 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2154 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2155 = 1 ? Py_True : Py_False;
+    cpy_r_r2156 = 0 ? Py_True : Py_False;
+    cpy_r_r2157 = CPyDict_Build(7, cpy_r_r2125, cpy_r_r2155, cpy_r_r2126, cpy_r_r2134, cpy_r_r2137, cpy_r_r2138, cpy_r_r2139, cpy_r_r2147, cpy_r_r2150, cpy_r_r2156, cpy_r_r2151, cpy_r_r2152, cpy_r_r2153, cpy_r_r2154);
+    CPy_DECREF_NO_IMM(cpy_r_r2134);
+    CPy_DECREF_NO_IMM(cpy_r_r2147);
+    if (unlikely(cpy_r_r2157 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL818;
+    }
+    cpy_r_r2158 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2159 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2160 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2161 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2162 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2163 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2164 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2165 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2166 = CPyDict_Build(3, cpy_r_r2160, cpy_r_r2161, cpy_r_r2162, cpy_r_r2163, cpy_r_r2164, cpy_r_r2165);
+    if (unlikely(cpy_r_r2166 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL822;
+    }
+    cpy_r_r2167 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2168 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2169 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2170 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2171 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2172 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2173 = CPyDict_Build(3, cpy_r_r2167, cpy_r_r2168, cpy_r_r2169, cpy_r_r2170, cpy_r_r2171, cpy_r_r2172);
+    if (unlikely(cpy_r_r2173 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL823;
+    }
+    cpy_r_r2174 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2175 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r2176 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2177 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resource' */
+    cpy_r_r2178 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2179 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint16' */
+    cpy_r_r2180 = CPyDict_Build(3, cpy_r_r2174, cpy_r_r2175, cpy_r_r2176, cpy_r_r2177, cpy_r_r2178, cpy_r_r2179);
+    if (unlikely(cpy_r_r2180 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL824;
+    }
+    cpy_r_r2181 = PyList_New(3);
+    if (unlikely(cpy_r_r2181 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL825;
+    }
+    cpy_r_r2182 = (CPyPtr)&((PyListObject *)cpy_r_r2181)->ob_item;
+    cpy_r_r2183 = *(CPyPtr *)cpy_r_r2182;
+    *(PyObject * *)cpy_r_r2183 = cpy_r_r2166;
+    cpy_r_r2184 = cpy_r_r2183 + 8;
+    *(PyObject * *)cpy_r_r2184 = cpy_r_r2173;
+    cpy_r_r2185 = cpy_r_r2183 + 16;
+    *(PyObject * *)cpy_r_r2185 = cpy_r_r2180;
+    cpy_r_r2186 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2187 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'dnsRecord' */
+    cpy_r_r2188 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2189 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2190 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2191 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2192 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2193 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2194 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2195 = CPyDict_Build(3, cpy_r_r2189, cpy_r_r2190, cpy_r_r2191, cpy_r_r2192, cpy_r_r2193, cpy_r_r2194);
+    if (unlikely(cpy_r_r2195 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL826;
+    }
+    cpy_r_r2196 = PyList_New(1);
+    if (unlikely(cpy_r_r2196 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL827;
+    }
+    cpy_r_r2197 = (CPyPtr)&((PyListObject *)cpy_r_r2196)->ob_item;
+    cpy_r_r2198 = *(CPyPtr *)cpy_r_r2197;
+    *(PyObject * *)cpy_r_r2198 = cpy_r_r2195;
+    cpy_r_r2199 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2200 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2201 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2202 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2203 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2204 = 1 ? Py_True : Py_False;
+    cpy_r_r2205 = 0 ? Py_True : Py_False;
+    cpy_r_r2206 = CPyDict_Build(7, cpy_r_r2158, cpy_r_r2204, cpy_r_r2159, cpy_r_r2181, cpy_r_r2186, cpy_r_r2187, cpy_r_r2188, cpy_r_r2196, cpy_r_r2199, cpy_r_r2205, cpy_r_r2200, cpy_r_r2201, cpy_r_r2202, cpy_r_r2203);
+    CPy_DECREF_NO_IMM(cpy_r_r2181);
+    CPy_DECREF_NO_IMM(cpy_r_r2196);
+    if (unlikely(cpy_r_r2206 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL822;
+    }
+    cpy_r_r2207 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2208 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2209 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2210 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2211 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2212 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2213 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2214 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2215 = CPyDict_Build(3, cpy_r_r2209, cpy_r_r2210, cpy_r_r2211, cpy_r_r2212, cpy_r_r2213, cpy_r_r2214);
+    if (unlikely(cpy_r_r2215 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL828;
+    }
+    cpy_r_r2216 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2217 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2218 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2219 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2220 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2221 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2222 = CPyDict_Build(3, cpy_r_r2216, cpy_r_r2217, cpy_r_r2218, cpy_r_r2219, cpy_r_r2220, cpy_r_r2221);
+    if (unlikely(cpy_r_r2222 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL829;
+    }
+    cpy_r_r2223 = PyList_New(2);
+    if (unlikely(cpy_r_r2223 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL830;
+    }
+    cpy_r_r2224 = (CPyPtr)&((PyListObject *)cpy_r_r2223)->ob_item;
+    cpy_r_r2225 = *(CPyPtr *)cpy_r_r2224;
+    *(PyObject * *)cpy_r_r2225 = cpy_r_r2215;
+    cpy_r_r2226 = cpy_r_r2225 + 8;
+    *(PyObject * *)cpy_r_r2226 = cpy_r_r2222;
+    cpy_r_r2227 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2228 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hasDNSRecords' */
+    cpy_r_r2229 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2230 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2231 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2232 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2233 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2234 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2235 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2236 = CPyDict_Build(3, cpy_r_r2230, cpy_r_r2231, cpy_r_r2232, cpy_r_r2233, cpy_r_r2234, cpy_r_r2235);
+    if (unlikely(cpy_r_r2236 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL831;
+    }
+    cpy_r_r2237 = PyList_New(1);
+    if (unlikely(cpy_r_r2237 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL832;
+    }
+    cpy_r_r2238 = (CPyPtr)&((PyListObject *)cpy_r_r2237)->ob_item;
+    cpy_r_r2239 = *(CPyPtr *)cpy_r_r2238;
+    *(PyObject * *)cpy_r_r2239 = cpy_r_r2236;
+    cpy_r_r2240 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2241 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2242 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2243 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2244 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2245 = 1 ? Py_True : Py_False;
+    cpy_r_r2246 = 0 ? Py_True : Py_False;
+    cpy_r_r2247 = CPyDict_Build(7, cpy_r_r2207, cpy_r_r2245, cpy_r_r2208, cpy_r_r2223, cpy_r_r2227, cpy_r_r2228, cpy_r_r2229, cpy_r_r2237, cpy_r_r2240, cpy_r_r2246, cpy_r_r2241, cpy_r_r2242, cpy_r_r2243, cpy_r_r2244);
+    CPy_DECREF_NO_IMM(cpy_r_r2223);
+    CPy_DECREF_NO_IMM(cpy_r_r2237);
+    if (unlikely(cpy_r_r2247 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL828;
+    }
+    cpy_r_r2248 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2249 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2250 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2251 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2252 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2253 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2254 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2255 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2256 = CPyDict_Build(3, cpy_r_r2250, cpy_r_r2251, cpy_r_r2252, cpy_r_r2253, cpy_r_r2254, cpy_r_r2255);
+    if (unlikely(cpy_r_r2256 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL833;
+    }
+    cpy_r_r2257 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2258 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2259 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2260 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'interfaceID' */
+    cpy_r_r2261 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2262 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2263 = CPyDict_Build(3, cpy_r_r2257, cpy_r_r2258, cpy_r_r2259, cpy_r_r2260, cpy_r_r2261, cpy_r_r2262);
+    if (unlikely(cpy_r_r2263 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL834;
+    }
+    cpy_r_r2264 = PyList_New(2);
+    if (unlikely(cpy_r_r2264 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL835;
+    }
+    cpy_r_r2265 = (CPyPtr)&((PyListObject *)cpy_r_r2264)->ob_item;
+    cpy_r_r2266 = *(CPyPtr *)cpy_r_r2265;
+    *(PyObject * *)cpy_r_r2266 = cpy_r_r2256;
+    cpy_r_r2267 = cpy_r_r2266 + 8;
+    *(PyObject * *)cpy_r_r2267 = cpy_r_r2263;
+    cpy_r_r2268 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2269 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'interfaceImplementer' */
+    cpy_r_r2270 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2271 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2272 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2273 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2274 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2275 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2276 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2277 = CPyDict_Build(3, cpy_r_r2271, cpy_r_r2272, cpy_r_r2273, cpy_r_r2274, cpy_r_r2275, cpy_r_r2276);
+    if (unlikely(cpy_r_r2277 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL836;
+    }
+    cpy_r_r2278 = PyList_New(1);
+    if (unlikely(cpy_r_r2278 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL837;
+    }
+    cpy_r_r2279 = (CPyPtr)&((PyListObject *)cpy_r_r2278)->ob_item;
+    cpy_r_r2280 = *(CPyPtr *)cpy_r_r2279;
+    *(PyObject * *)cpy_r_r2280 = cpy_r_r2277;
+    cpy_r_r2281 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2282 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2283 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2284 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2285 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2286 = 1 ? Py_True : Py_False;
+    cpy_r_r2287 = 0 ? Py_True : Py_False;
+    cpy_r_r2288 = CPyDict_Build(7, cpy_r_r2248, cpy_r_r2286, cpy_r_r2249, cpy_r_r2264, cpy_r_r2268, cpy_r_r2269, cpy_r_r2270, cpy_r_r2278, cpy_r_r2281, cpy_r_r2287, cpy_r_r2282, cpy_r_r2283, cpy_r_r2284, cpy_r_r2285);
+    CPy_DECREF_NO_IMM(cpy_r_r2264);
+    CPy_DECREF_NO_IMM(cpy_r_r2278);
+    if (unlikely(cpy_r_r2288 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL833;
+    }
+    cpy_r_r2289 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2290 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2291 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2292 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes[]' */
+    cpy_r_r2293 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2294 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r2295 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2296 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes[]' */
+    cpy_r_r2297 = CPyDict_Build(3, cpy_r_r2291, cpy_r_r2292, cpy_r_r2293, cpy_r_r2294, cpy_r_r2295, cpy_r_r2296);
+    if (unlikely(cpy_r_r2297 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL838;
+    }
+    cpy_r_r2298 = PyList_New(1);
+    if (unlikely(cpy_r_r2298 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL839;
+    }
+    cpy_r_r2299 = (CPyPtr)&((PyListObject *)cpy_r_r2298)->ob_item;
+    cpy_r_r2300 = *(CPyPtr *)cpy_r_r2299;
+    *(PyObject * *)cpy_r_r2300 = cpy_r_r2297;
+    cpy_r_r2301 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2302 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'multicall' */
+    cpy_r_r2303 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2304 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2305 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes[]' */
+    cpy_r_r2306 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2307 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'results' */
+    cpy_r_r2308 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2309 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes[]' */
+    cpy_r_r2310 = CPyDict_Build(3, cpy_r_r2304, cpy_r_r2305, cpy_r_r2306, cpy_r_r2307, cpy_r_r2308, cpy_r_r2309);
+    if (unlikely(cpy_r_r2310 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL840;
+    }
+    cpy_r_r2311 = PyList_New(1);
+    if (unlikely(cpy_r_r2311 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL841;
+    }
+    cpy_r_r2312 = (CPyPtr)&((PyListObject *)cpy_r_r2311)->ob_item;
+    cpy_r_r2313 = *(CPyPtr *)cpy_r_r2312;
+    *(PyObject * *)cpy_r_r2313 = cpy_r_r2310;
+    cpy_r_r2314 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2315 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2316 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2317 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2318 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2319 = 0 ? Py_True : Py_False;
+    cpy_r_r2320 = 0 ? Py_True : Py_False;
+    cpy_r_r2321 = CPyDict_Build(7, cpy_r_r2289, cpy_r_r2319, cpy_r_r2290, cpy_r_r2298, cpy_r_r2301, cpy_r_r2302, cpy_r_r2303, cpy_r_r2311, cpy_r_r2314, cpy_r_r2320, cpy_r_r2315, cpy_r_r2316, cpy_r_r2317, cpy_r_r2318);
+    CPy_DECREF_NO_IMM(cpy_r_r2298);
+    CPy_DECREF_NO_IMM(cpy_r_r2311);
+    if (unlikely(cpy_r_r2321 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL838;
+    }
+    cpy_r_r2322 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2323 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2324 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2325 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2326 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2327 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2328 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2329 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2330 = CPyDict_Build(3, cpy_r_r2324, cpy_r_r2325, cpy_r_r2326, cpy_r_r2327, cpy_r_r2328, cpy_r_r2329);
+    if (unlikely(cpy_r_r2330 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL842;
+    }
+    cpy_r_r2331 = PyList_New(1);
+    if (unlikely(cpy_r_r2331 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL843;
+    }
+    cpy_r_r2332 = (CPyPtr)&((PyListObject *)cpy_r_r2331)->ob_item;
+    cpy_r_r2333 = *(CPyPtr *)cpy_r_r2332;
+    *(PyObject * *)cpy_r_r2333 = cpy_r_r2330;
+    cpy_r_r2334 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2335 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2336 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2337 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2338 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2339 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2340 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2341 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2342 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2343 = CPyDict_Build(3, cpy_r_r2337, cpy_r_r2338, cpy_r_r2339, cpy_r_r2340, cpy_r_r2341, cpy_r_r2342);
+    if (unlikely(cpy_r_r2343 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL844;
+    }
+    cpy_r_r2344 = PyList_New(1);
+    if (unlikely(cpy_r_r2344 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL845;
+    }
+    cpy_r_r2345 = (CPyPtr)&((PyListObject *)cpy_r_r2344)->ob_item;
+    cpy_r_r2346 = *(CPyPtr *)cpy_r_r2345;
+    *(PyObject * *)cpy_r_r2346 = cpy_r_r2343;
+    cpy_r_r2347 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2348 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2349 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2350 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2351 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2352 = 1 ? Py_True : Py_False;
+    cpy_r_r2353 = 0 ? Py_True : Py_False;
+    cpy_r_r2354 = CPyDict_Build(7, cpy_r_r2322, cpy_r_r2352, cpy_r_r2323, cpy_r_r2331, cpy_r_r2334, cpy_r_r2335, cpy_r_r2336, cpy_r_r2344, cpy_r_r2347, cpy_r_r2353, cpy_r_r2348, cpy_r_r2349, cpy_r_r2350, cpy_r_r2351);
+    CPy_DECREF_NO_IMM(cpy_r_r2331);
+    CPy_DECREF_NO_IMM(cpy_r_r2344);
+    if (unlikely(cpy_r_r2354 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL842;
+    }
+    cpy_r_r2355 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2356 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2357 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2358 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2359 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2360 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2361 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2362 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2363 = CPyDict_Build(3, cpy_r_r2357, cpy_r_r2358, cpy_r_r2359, cpy_r_r2360, cpy_r_r2361, cpy_r_r2362);
+    if (unlikely(cpy_r_r2363 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL846;
+    }
+    cpy_r_r2364 = PyList_New(1);
+    if (unlikely(cpy_r_r2364 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL847;
+    }
+    cpy_r_r2365 = (CPyPtr)&((PyListObject *)cpy_r_r2364)->ob_item;
+    cpy_r_r2366 = *(CPyPtr *)cpy_r_r2365;
+    *(PyObject * *)cpy_r_r2366 = cpy_r_r2363;
+    cpy_r_r2367 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2368 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'pubkey' */
+    cpy_r_r2369 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2370 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2371 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2372 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2373 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'x' */
+    cpy_r_r2374 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2375 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2376 = CPyDict_Build(3, cpy_r_r2370, cpy_r_r2371, cpy_r_r2372, cpy_r_r2373, cpy_r_r2374, cpy_r_r2375);
+    if (unlikely(cpy_r_r2376 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL848;
+    }
+    cpy_r_r2377 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2378 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2379 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2380 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'y' */
+    cpy_r_r2381 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2382 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2383 = CPyDict_Build(3, cpy_r_r2377, cpy_r_r2378, cpy_r_r2379, cpy_r_r2380, cpy_r_r2381, cpy_r_r2382);
+    if (unlikely(cpy_r_r2383 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL849;
+    }
+    cpy_r_r2384 = PyList_New(2);
+    if (unlikely(cpy_r_r2384 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL850;
+    }
+    cpy_r_r2385 = (CPyPtr)&((PyListObject *)cpy_r_r2384)->ob_item;
+    cpy_r_r2386 = *(CPyPtr *)cpy_r_r2385;
+    *(PyObject * *)cpy_r_r2386 = cpy_r_r2376;
+    cpy_r_r2387 = cpy_r_r2386 + 8;
+    *(PyObject * *)cpy_r_r2387 = cpy_r_r2383;
+    cpy_r_r2388 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2389 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2390 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2391 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2392 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2393 = 1 ? Py_True : Py_False;
+    cpy_r_r2394 = 0 ? Py_True : Py_False;
+    cpy_r_r2395 = CPyDict_Build(7, cpy_r_r2355, cpy_r_r2393, cpy_r_r2356, cpy_r_r2364, cpy_r_r2367, cpy_r_r2368, cpy_r_r2369, cpy_r_r2384, cpy_r_r2388, cpy_r_r2394, cpy_r_r2389, cpy_r_r2390, cpy_r_r2391, cpy_r_r2392);
+    CPy_DECREF_NO_IMM(cpy_r_r2364);
+    CPy_DECREF_NO_IMM(cpy_r_r2384);
+    if (unlikely(cpy_r_r2395 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL846;
+    }
+    cpy_r_r2396 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2397 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2398 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2399 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2400 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2401 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2402 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2403 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2404 = CPyDict_Build(3, cpy_r_r2398, cpy_r_r2399, cpy_r_r2400, cpy_r_r2401, cpy_r_r2402, cpy_r_r2403);
+    if (unlikely(cpy_r_r2404 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL851;
+    }
+    cpy_r_r2405 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2406 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2407 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2408 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contentType' */
+    cpy_r_r2409 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2410 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2411 = CPyDict_Build(3, cpy_r_r2405, cpy_r_r2406, cpy_r_r2407, cpy_r_r2408, cpy_r_r2409, cpy_r_r2410);
+    if (unlikely(cpy_r_r2411 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL852;
+    }
+    cpy_r_r2412 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2413 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2414 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2415 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r2416 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2417 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2418 = CPyDict_Build(3, cpy_r_r2412, cpy_r_r2413, cpy_r_r2414, cpy_r_r2415, cpy_r_r2416, cpy_r_r2417);
+    if (unlikely(cpy_r_r2418 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL853;
+    }
+    cpy_r_r2419 = PyList_New(3);
+    if (unlikely(cpy_r_r2419 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL854;
+    }
+    cpy_r_r2420 = (CPyPtr)&((PyListObject *)cpy_r_r2419)->ob_item;
+    cpy_r_r2421 = *(CPyPtr *)cpy_r_r2420;
+    *(PyObject * *)cpy_r_r2421 = cpy_r_r2404;
+    cpy_r_r2422 = cpy_r_r2421 + 8;
+    *(PyObject * *)cpy_r_r2422 = cpy_r_r2411;
+    cpy_r_r2423 = cpy_r_r2421 + 16;
+    *(PyObject * *)cpy_r_r2423 = cpy_r_r2418;
+    cpy_r_r2424 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2425 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setABI' */
+    cpy_r_r2426 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2427 = PyList_New(0);
+    if (unlikely(cpy_r_r2427 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL855;
+    }
+    cpy_r_r2428 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2429 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2430 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2431 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2432 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2433 = 0 ? Py_True : Py_False;
+    cpy_r_r2434 = 0 ? Py_True : Py_False;
+    cpy_r_r2435 = CPyDict_Build(7, cpy_r_r2396, cpy_r_r2433, cpy_r_r2397, cpy_r_r2419, cpy_r_r2424, cpy_r_r2425, cpy_r_r2426, cpy_r_r2427, cpy_r_r2428, cpy_r_r2434, cpy_r_r2429, cpy_r_r2430, cpy_r_r2431, cpy_r_r2432);
+    CPy_DECREF_NO_IMM(cpy_r_r2419);
+    CPy_DECREF_NO_IMM(cpy_r_r2427);
+    if (unlikely(cpy_r_r2435 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL851;
+    }
+    cpy_r_r2436 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2437 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2438 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2439 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2440 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2441 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2442 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2443 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2444 = CPyDict_Build(3, cpy_r_r2438, cpy_r_r2439, cpy_r_r2440, cpy_r_r2441, cpy_r_r2442, cpy_r_r2443);
+    if (unlikely(cpy_r_r2444 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL856;
+    }
+    cpy_r_r2445 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2446 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2447 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2448 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'coinType' */
+    cpy_r_r2449 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2450 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'uint256' */
+    cpy_r_r2451 = CPyDict_Build(3, cpy_r_r2445, cpy_r_r2446, cpy_r_r2447, cpy_r_r2448, cpy_r_r2449, cpy_r_r2450);
+    if (unlikely(cpy_r_r2451 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL857;
+    }
+    cpy_r_r2452 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2453 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2454 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2455 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'a' */
+    cpy_r_r2456 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2457 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2458 = CPyDict_Build(3, cpy_r_r2452, cpy_r_r2453, cpy_r_r2454, cpy_r_r2455, cpy_r_r2456, cpy_r_r2457);
+    if (unlikely(cpy_r_r2458 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL858;
+    }
+    cpy_r_r2459 = PyList_New(3);
+    if (unlikely(cpy_r_r2459 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL859;
+    }
+    cpy_r_r2460 = (CPyPtr)&((PyListObject *)cpy_r_r2459)->ob_item;
+    cpy_r_r2461 = *(CPyPtr *)cpy_r_r2460;
+    *(PyObject * *)cpy_r_r2461 = cpy_r_r2444;
+    cpy_r_r2462 = cpy_r_r2461 + 8;
+    *(PyObject * *)cpy_r_r2462 = cpy_r_r2451;
+    cpy_r_r2463 = cpy_r_r2461 + 16;
+    *(PyObject * *)cpy_r_r2463 = cpy_r_r2458;
+    cpy_r_r2464 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2465 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    cpy_r_r2466 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2467 = PyList_New(0);
+    if (unlikely(cpy_r_r2467 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL860;
+    }
+    cpy_r_r2468 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2469 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2470 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2471 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2472 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2473 = 0 ? Py_True : Py_False;
+    cpy_r_r2474 = 0 ? Py_True : Py_False;
+    cpy_r_r2475 = CPyDict_Build(7, cpy_r_r2436, cpy_r_r2473, cpy_r_r2437, cpy_r_r2459, cpy_r_r2464, cpy_r_r2465, cpy_r_r2466, cpy_r_r2467, cpy_r_r2468, cpy_r_r2474, cpy_r_r2469, cpy_r_r2470, cpy_r_r2471, cpy_r_r2472);
+    CPy_DECREF_NO_IMM(cpy_r_r2459);
+    CPy_DECREF_NO_IMM(cpy_r_r2467);
+    if (unlikely(cpy_r_r2475 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL856;
+    }
+    cpy_r_r2476 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2477 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2478 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2479 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2480 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2481 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2482 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2483 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2484 = CPyDict_Build(3, cpy_r_r2478, cpy_r_r2479, cpy_r_r2480, cpy_r_r2481, cpy_r_r2482, cpy_r_r2483);
+    if (unlikely(cpy_r_r2484 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL861;
+    }
+    cpy_r_r2485 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2486 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2487 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2488 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'a' */
+    cpy_r_r2489 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2490 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2491 = CPyDict_Build(3, cpy_r_r2485, cpy_r_r2486, cpy_r_r2487, cpy_r_r2488, cpy_r_r2489, cpy_r_r2490);
+    if (unlikely(cpy_r_r2491 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL862;
+    }
+    cpy_r_r2492 = PyList_New(2);
+    if (unlikely(cpy_r_r2492 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL863;
+    }
+    cpy_r_r2493 = (CPyPtr)&((PyListObject *)cpy_r_r2492)->ob_item;
+    cpy_r_r2494 = *(CPyPtr *)cpy_r_r2493;
+    *(PyObject * *)cpy_r_r2494 = cpy_r_r2484;
+    cpy_r_r2495 = cpy_r_r2494 + 8;
+    *(PyObject * *)cpy_r_r2495 = cpy_r_r2491;
+    cpy_r_r2496 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2497 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    cpy_r_r2498 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2499 = PyList_New(0);
+    if (unlikely(cpy_r_r2499 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL864;
+    }
+    cpy_r_r2500 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2501 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2502 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2503 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2504 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2505 = 0 ? Py_True : Py_False;
+    cpy_r_r2506 = 0 ? Py_True : Py_False;
+    cpy_r_r2507 = CPyDict_Build(7, cpy_r_r2476, cpy_r_r2505, cpy_r_r2477, cpy_r_r2492, cpy_r_r2496, cpy_r_r2497, cpy_r_r2498, cpy_r_r2499, cpy_r_r2500, cpy_r_r2506, cpy_r_r2501, cpy_r_r2502, cpy_r_r2503, cpy_r_r2504);
+    CPy_DECREF_NO_IMM(cpy_r_r2492);
+    CPy_DECREF_NO_IMM(cpy_r_r2499);
+    if (unlikely(cpy_r_r2507 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL861;
+    }
+    cpy_r_r2508 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2509 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2510 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2511 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2512 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2513 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2514 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2515 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2516 = CPyDict_Build(3, cpy_r_r2510, cpy_r_r2511, cpy_r_r2512, cpy_r_r2513, cpy_r_r2514, cpy_r_r2515);
+    if (unlikely(cpy_r_r2516 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL865;
+    }
+    cpy_r_r2517 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2518 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2519 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2520 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'target' */
+    cpy_r_r2521 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2522 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2523 = CPyDict_Build(3, cpy_r_r2517, cpy_r_r2518, cpy_r_r2519, cpy_r_r2520, cpy_r_r2521, cpy_r_r2522);
+    if (unlikely(cpy_r_r2523 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL866;
+    }
+    cpy_r_r2524 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2525 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2526 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2527 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'isAuthorised' */
+    cpy_r_r2528 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2529 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2530 = CPyDict_Build(3, cpy_r_r2524, cpy_r_r2525, cpy_r_r2526, cpy_r_r2527, cpy_r_r2528, cpy_r_r2529);
+    if (unlikely(cpy_r_r2530 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL867;
+    }
+    cpy_r_r2531 = PyList_New(3);
+    if (unlikely(cpy_r_r2531 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL868;
+    }
+    cpy_r_r2532 = (CPyPtr)&((PyListObject *)cpy_r_r2531)->ob_item;
+    cpy_r_r2533 = *(CPyPtr *)cpy_r_r2532;
+    *(PyObject * *)cpy_r_r2533 = cpy_r_r2516;
+    cpy_r_r2534 = cpy_r_r2533 + 8;
+    *(PyObject * *)cpy_r_r2534 = cpy_r_r2523;
+    cpy_r_r2535 = cpy_r_r2533 + 16;
+    *(PyObject * *)cpy_r_r2535 = cpy_r_r2530;
+    cpy_r_r2536 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2537 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAuthorisation' */
+    cpy_r_r2538 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2539 = PyList_New(0);
+    if (unlikely(cpy_r_r2539 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL869;
+    }
+    cpy_r_r2540 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2541 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2542 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2543 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2544 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2545 = 0 ? Py_True : Py_False;
+    cpy_r_r2546 = 0 ? Py_True : Py_False;
+    cpy_r_r2547 = CPyDict_Build(7, cpy_r_r2508, cpy_r_r2545, cpy_r_r2509, cpy_r_r2531, cpy_r_r2536, cpy_r_r2537, cpy_r_r2538, cpy_r_r2539, cpy_r_r2540, cpy_r_r2546, cpy_r_r2541, cpy_r_r2542, cpy_r_r2543, cpy_r_r2544);
+    CPy_DECREF_NO_IMM(cpy_r_r2531);
+    CPy_DECREF_NO_IMM(cpy_r_r2539);
+    if (unlikely(cpy_r_r2547 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL865;
+    }
+    cpy_r_r2548 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2549 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2550 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2551 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2552 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2553 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2554 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2555 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2556 = CPyDict_Build(3, cpy_r_r2550, cpy_r_r2551, cpy_r_r2552, cpy_r_r2553, cpy_r_r2554, cpy_r_r2555);
+    if (unlikely(cpy_r_r2556 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL870;
+    }
+    cpy_r_r2557 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2558 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2559 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2560 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r2561 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2562 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2563 = CPyDict_Build(3, cpy_r_r2557, cpy_r_r2558, cpy_r_r2559, cpy_r_r2560, cpy_r_r2561, cpy_r_r2562);
+    if (unlikely(cpy_r_r2563 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL871;
+    }
+    cpy_r_r2564 = PyList_New(2);
+    if (unlikely(cpy_r_r2564 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL872;
+    }
+    cpy_r_r2565 = (CPyPtr)&((PyListObject *)cpy_r_r2564)->ob_item;
+    cpy_r_r2566 = *(CPyPtr *)cpy_r_r2565;
+    *(PyObject * *)cpy_r_r2566 = cpy_r_r2556;
+    cpy_r_r2567 = cpy_r_r2566 + 8;
+    *(PyObject * *)cpy_r_r2567 = cpy_r_r2563;
+    cpy_r_r2568 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2569 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setContenthash' */
+    cpy_r_r2570 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2571 = PyList_New(0);
+    if (unlikely(cpy_r_r2571 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL873;
+    }
+    cpy_r_r2572 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2573 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2574 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2575 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2576 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2577 = 0 ? Py_True : Py_False;
+    cpy_r_r2578 = 0 ? Py_True : Py_False;
+    cpy_r_r2579 = CPyDict_Build(7, cpy_r_r2548, cpy_r_r2577, cpy_r_r2549, cpy_r_r2564, cpy_r_r2568, cpy_r_r2569, cpy_r_r2570, cpy_r_r2571, cpy_r_r2572, cpy_r_r2578, cpy_r_r2573, cpy_r_r2574, cpy_r_r2575, cpy_r_r2576);
+    CPy_DECREF_NO_IMM(cpy_r_r2564);
+    CPy_DECREF_NO_IMM(cpy_r_r2571);
+    if (unlikely(cpy_r_r2579 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL870;
+    }
+    cpy_r_r2580 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2581 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2582 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2583 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2584 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2585 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2586 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2587 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2588 = CPyDict_Build(3, cpy_r_r2582, cpy_r_r2583, cpy_r_r2584, cpy_r_r2585, cpy_r_r2586, cpy_r_r2587);
+    if (unlikely(cpy_r_r2588 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL874;
+    }
+    cpy_r_r2589 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2590 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2591 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2592 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r2593 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2594 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2595 = CPyDict_Build(3, cpy_r_r2589, cpy_r_r2590, cpy_r_r2591, cpy_r_r2592, cpy_r_r2593, cpy_r_r2594);
+    if (unlikely(cpy_r_r2595 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL875;
+    }
+    cpy_r_r2596 = PyList_New(2);
+    if (unlikely(cpy_r_r2596 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL876;
+    }
+    cpy_r_r2597 = (CPyPtr)&((PyListObject *)cpy_r_r2596)->ob_item;
+    cpy_r_r2598 = *(CPyPtr *)cpy_r_r2597;
+    *(PyObject * *)cpy_r_r2598 = cpy_r_r2588;
+    cpy_r_r2599 = cpy_r_r2598 + 8;
+    *(PyObject * *)cpy_r_r2599 = cpy_r_r2595;
+    cpy_r_r2600 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2601 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setDNSRecords' */
+    cpy_r_r2602 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2603 = PyList_New(0);
+    if (unlikely(cpy_r_r2603 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL877;
+    }
+    cpy_r_r2604 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2605 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2606 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2607 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2608 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2609 = 0 ? Py_True : Py_False;
+    cpy_r_r2610 = 0 ? Py_True : Py_False;
+    cpy_r_r2611 = CPyDict_Build(7, cpy_r_r2580, cpy_r_r2609, cpy_r_r2581, cpy_r_r2596, cpy_r_r2600, cpy_r_r2601, cpy_r_r2602, cpy_r_r2603, cpy_r_r2604, cpy_r_r2610, cpy_r_r2605, cpy_r_r2606, cpy_r_r2607, cpy_r_r2608);
+    CPy_DECREF_NO_IMM(cpy_r_r2596);
+    CPy_DECREF_NO_IMM(cpy_r_r2603);
+    if (unlikely(cpy_r_r2611 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL874;
+    }
+    cpy_r_r2612 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2613 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2614 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2615 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2616 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2617 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2618 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2619 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2620 = CPyDict_Build(3, cpy_r_r2614, cpy_r_r2615, cpy_r_r2616, cpy_r_r2617, cpy_r_r2618, cpy_r_r2619);
+    if (unlikely(cpy_r_r2620 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL878;
+    }
+    cpy_r_r2621 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2622 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2623 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2624 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'interfaceID' */
+    cpy_r_r2625 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2626 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2627 = CPyDict_Build(3, cpy_r_r2621, cpy_r_r2622, cpy_r_r2623, cpy_r_r2624, cpy_r_r2625, cpy_r_r2626);
+    if (unlikely(cpy_r_r2627 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL879;
+    }
+    cpy_r_r2628 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2629 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2630 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2631 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'implementer' */
+    cpy_r_r2632 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2633 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2634 = CPyDict_Build(3, cpy_r_r2628, cpy_r_r2629, cpy_r_r2630, cpy_r_r2631, cpy_r_r2632, cpy_r_r2633);
+    if (unlikely(cpy_r_r2634 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL880;
+    }
+    cpy_r_r2635 = PyList_New(3);
+    if (unlikely(cpy_r_r2635 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL881;
+    }
+    cpy_r_r2636 = (CPyPtr)&((PyListObject *)cpy_r_r2635)->ob_item;
+    cpy_r_r2637 = *(CPyPtr *)cpy_r_r2636;
+    *(PyObject * *)cpy_r_r2637 = cpy_r_r2620;
+    cpy_r_r2638 = cpy_r_r2637 + 8;
+    *(PyObject * *)cpy_r_r2638 = cpy_r_r2627;
+    cpy_r_r2639 = cpy_r_r2637 + 16;
+    *(PyObject * *)cpy_r_r2639 = cpy_r_r2634;
+    cpy_r_r2640 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2641 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setInterface' */
+    cpy_r_r2642 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2643 = PyList_New(0);
+    if (unlikely(cpy_r_r2643 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL882;
+    }
+    cpy_r_r2644 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2645 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2646 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2647 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2648 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2649 = 0 ? Py_True : Py_False;
+    cpy_r_r2650 = 0 ? Py_True : Py_False;
+    cpy_r_r2651 = CPyDict_Build(7, cpy_r_r2612, cpy_r_r2649, cpy_r_r2613, cpy_r_r2635, cpy_r_r2640, cpy_r_r2641, cpy_r_r2642, cpy_r_r2643, cpy_r_r2644, cpy_r_r2650, cpy_r_r2645, cpy_r_r2646, cpy_r_r2647, cpy_r_r2648);
+    CPy_DECREF_NO_IMM(cpy_r_r2635);
+    CPy_DECREF_NO_IMM(cpy_r_r2643);
+    if (unlikely(cpy_r_r2651 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL878;
+    }
+    cpy_r_r2652 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2653 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2654 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2655 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2656 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2657 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2658 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2659 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2660 = CPyDict_Build(3, cpy_r_r2654, cpy_r_r2655, cpy_r_r2656, cpy_r_r2657, cpy_r_r2658, cpy_r_r2659);
+    if (unlikely(cpy_r_r2660 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL883;
+    }
+    cpy_r_r2661 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2662 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2663 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2664 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2665 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2666 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2667 = CPyDict_Build(3, cpy_r_r2661, cpy_r_r2662, cpy_r_r2663, cpy_r_r2664, cpy_r_r2665, cpy_r_r2666);
+    if (unlikely(cpy_r_r2667 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL884;
+    }
+    cpy_r_r2668 = PyList_New(2);
+    if (unlikely(cpy_r_r2668 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL885;
+    }
+    cpy_r_r2669 = (CPyPtr)&((PyListObject *)cpy_r_r2668)->ob_item;
+    cpy_r_r2670 = *(CPyPtr *)cpy_r_r2669;
+    *(PyObject * *)cpy_r_r2670 = cpy_r_r2660;
+    cpy_r_r2671 = cpy_r_r2670 + 8;
+    *(PyObject * *)cpy_r_r2671 = cpy_r_r2667;
+    cpy_r_r2672 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2673 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setName' */
+    cpy_r_r2674 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2675 = PyList_New(0);
+    if (unlikely(cpy_r_r2675 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL886;
+    }
+    cpy_r_r2676 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2677 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2678 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2679 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2680 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2681 = 0 ? Py_True : Py_False;
+    cpy_r_r2682 = 0 ? Py_True : Py_False;
+    cpy_r_r2683 = CPyDict_Build(7, cpy_r_r2652, cpy_r_r2681, cpy_r_r2653, cpy_r_r2668, cpy_r_r2672, cpy_r_r2673, cpy_r_r2674, cpy_r_r2675, cpy_r_r2676, cpy_r_r2682, cpy_r_r2677, cpy_r_r2678, cpy_r_r2679, cpy_r_r2680);
+    CPy_DECREF_NO_IMM(cpy_r_r2668);
+    CPy_DECREF_NO_IMM(cpy_r_r2675);
+    if (unlikely(cpy_r_r2683 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL883;
+    }
+    cpy_r_r2684 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2685 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2686 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2687 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2688 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2689 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2690 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2691 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2692 = CPyDict_Build(3, cpy_r_r2686, cpy_r_r2687, cpy_r_r2688, cpy_r_r2689, cpy_r_r2690, cpy_r_r2691);
+    if (unlikely(cpy_r_r2692 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL887;
+    }
+    cpy_r_r2693 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2694 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2695 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2696 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'x' */
+    cpy_r_r2697 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2698 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2699 = CPyDict_Build(3, cpy_r_r2693, cpy_r_r2694, cpy_r_r2695, cpy_r_r2696, cpy_r_r2697, cpy_r_r2698);
+    if (unlikely(cpy_r_r2699 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL888;
+    }
+    cpy_r_r2700 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2701 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2702 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2703 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'y' */
+    cpy_r_r2704 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2705 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2706 = CPyDict_Build(3, cpy_r_r2700, cpy_r_r2701, cpy_r_r2702, cpy_r_r2703, cpy_r_r2704, cpy_r_r2705);
+    if (unlikely(cpy_r_r2706 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL889;
+    }
+    cpy_r_r2707 = PyList_New(3);
+    if (unlikely(cpy_r_r2707 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL890;
+    }
+    cpy_r_r2708 = (CPyPtr)&((PyListObject *)cpy_r_r2707)->ob_item;
+    cpy_r_r2709 = *(CPyPtr *)cpy_r_r2708;
+    *(PyObject * *)cpy_r_r2709 = cpy_r_r2692;
+    cpy_r_r2710 = cpy_r_r2709 + 8;
+    *(PyObject * *)cpy_r_r2710 = cpy_r_r2699;
+    cpy_r_r2711 = cpy_r_r2709 + 16;
+    *(PyObject * *)cpy_r_r2711 = cpy_r_r2706;
+    cpy_r_r2712 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2713 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setPubkey' */
+    cpy_r_r2714 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2715 = PyList_New(0);
+    if (unlikely(cpy_r_r2715 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL891;
+    }
+    cpy_r_r2716 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2717 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2718 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2719 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2720 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2721 = 0 ? Py_True : Py_False;
+    cpy_r_r2722 = 0 ? Py_True : Py_False;
+    cpy_r_r2723 = CPyDict_Build(7, cpy_r_r2684, cpy_r_r2721, cpy_r_r2685, cpy_r_r2707, cpy_r_r2712, cpy_r_r2713, cpy_r_r2714, cpy_r_r2715, cpy_r_r2716, cpy_r_r2722, cpy_r_r2717, cpy_r_r2718, cpy_r_r2719, cpy_r_r2720);
+    CPy_DECREF_NO_IMM(cpy_r_r2707);
+    CPy_DECREF_NO_IMM(cpy_r_r2715);
+    if (unlikely(cpy_r_r2723 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL887;
+    }
+    cpy_r_r2724 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2725 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2726 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2727 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2728 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2729 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2730 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2731 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2732 = CPyDict_Build(3, cpy_r_r2726, cpy_r_r2727, cpy_r_r2728, cpy_r_r2729, cpy_r_r2730, cpy_r_r2731);
+    if (unlikely(cpy_r_r2732 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL892;
+    }
+    cpy_r_r2733 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2734 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2735 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2736 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'key' */
+    cpy_r_r2737 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2738 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2739 = CPyDict_Build(3, cpy_r_r2733, cpy_r_r2734, cpy_r_r2735, cpy_r_r2736, cpy_r_r2737, cpy_r_r2738);
+    if (unlikely(cpy_r_r2739 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL893;
+    }
+    cpy_r_r2740 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2741 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2742 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2743 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r2744 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2745 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2746 = CPyDict_Build(3, cpy_r_r2740, cpy_r_r2741, cpy_r_r2742, cpy_r_r2743, cpy_r_r2744, cpy_r_r2745);
+    if (unlikely(cpy_r_r2746 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL894;
+    }
+    cpy_r_r2747 = PyList_New(3);
+    if (unlikely(cpy_r_r2747 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL895;
+    }
+    cpy_r_r2748 = (CPyPtr)&((PyListObject *)cpy_r_r2747)->ob_item;
+    cpy_r_r2749 = *(CPyPtr *)cpy_r_r2748;
+    *(PyObject * *)cpy_r_r2749 = cpy_r_r2732;
+    cpy_r_r2750 = cpy_r_r2749 + 8;
+    *(PyObject * *)cpy_r_r2750 = cpy_r_r2739;
+    cpy_r_r2751 = cpy_r_r2749 + 16;
+    *(PyObject * *)cpy_r_r2751 = cpy_r_r2746;
+    cpy_r_r2752 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2753 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setText' */
+    cpy_r_r2754 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2755 = PyList_New(0);
+    if (unlikely(cpy_r_r2755 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL896;
+    }
+    cpy_r_r2756 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2757 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2758 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r2759 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2760 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2761 = 0 ? Py_True : Py_False;
+    cpy_r_r2762 = 0 ? Py_True : Py_False;
+    cpy_r_r2763 = CPyDict_Build(7, cpy_r_r2724, cpy_r_r2761, cpy_r_r2725, cpy_r_r2747, cpy_r_r2752, cpy_r_r2753, cpy_r_r2754, cpy_r_r2755, cpy_r_r2756, cpy_r_r2762, cpy_r_r2757, cpy_r_r2758, cpy_r_r2759, cpy_r_r2760);
+    CPy_DECREF_NO_IMM(cpy_r_r2747);
+    CPy_DECREF_NO_IMM(cpy_r_r2755);
+    if (unlikely(cpy_r_r2763 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL892;
+    }
+    cpy_r_r2764 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2765 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2766 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2767 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2768 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2769 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'interfaceID' */
+    cpy_r_r2770 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2771 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes4' */
+    cpy_r_r2772 = CPyDict_Build(3, cpy_r_r2766, cpy_r_r2767, cpy_r_r2768, cpy_r_r2769, cpy_r_r2770, cpy_r_r2771);
+    if (unlikely(cpy_r_r2772 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL897;
+    }
+    cpy_r_r2773 = PyList_New(1);
+    if (unlikely(cpy_r_r2773 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL898;
+    }
+    cpy_r_r2774 = (CPyPtr)&((PyListObject *)cpy_r_r2773)->ob_item;
+    cpy_r_r2775 = *(CPyPtr *)cpy_r_r2774;
+    *(PyObject * *)cpy_r_r2775 = cpy_r_r2772;
+    cpy_r_r2776 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2777 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'supportsInterface' */
+    cpy_r_r2778 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2779 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2780 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2781 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2782 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2783 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2784 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bool' */
+    cpy_r_r2785 = CPyDict_Build(3, cpy_r_r2779, cpy_r_r2780, cpy_r_r2781, cpy_r_r2782, cpy_r_r2783, cpy_r_r2784);
+    if (unlikely(cpy_r_r2785 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL899;
+    }
+    cpy_r_r2786 = PyList_New(1);
+    if (unlikely(cpy_r_r2786 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL900;
+    }
+    cpy_r_r2787 = (CPyPtr)&((PyListObject *)cpy_r_r2786)->ob_item;
+    cpy_r_r2788 = *(CPyPtr *)cpy_r_r2787;
+    *(PyObject * *)cpy_r_r2788 = cpy_r_r2785;
+    cpy_r_r2789 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2790 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2791 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'pure' */
+    cpy_r_r2792 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2793 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2794 = 1 ? Py_True : Py_False;
+    cpy_r_r2795 = 0 ? Py_True : Py_False;
+    cpy_r_r2796 = CPyDict_Build(7, cpy_r_r2764, cpy_r_r2794, cpy_r_r2765, cpy_r_r2773, cpy_r_r2776, cpy_r_r2777, cpy_r_r2778, cpy_r_r2786, cpy_r_r2789, cpy_r_r2795, cpy_r_r2790, cpy_r_r2791, cpy_r_r2792, cpy_r_r2793);
+    CPy_DECREF_NO_IMM(cpy_r_r2773);
+    CPy_DECREF_NO_IMM(cpy_r_r2786);
+    if (unlikely(cpy_r_r2796 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL897;
+    }
+    cpy_r_r2797 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2798 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2799 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2800 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2801 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2802 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2803 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2804 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2805 = CPyDict_Build(3, cpy_r_r2799, cpy_r_r2800, cpy_r_r2801, cpy_r_r2802, cpy_r_r2803, cpy_r_r2804);
+    if (unlikely(cpy_r_r2805 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL901;
+    }
+    cpy_r_r2806 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2807 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2808 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2809 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'key' */
+    cpy_r_r2810 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2811 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2812 = CPyDict_Build(3, cpy_r_r2806, cpy_r_r2807, cpy_r_r2808, cpy_r_r2809, cpy_r_r2810, cpy_r_r2811);
+    if (unlikely(cpy_r_r2812 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL902;
+    }
+    cpy_r_r2813 = PyList_New(2);
+    if (unlikely(cpy_r_r2813 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL903;
+    }
+    cpy_r_r2814 = (CPyPtr)&((PyListObject *)cpy_r_r2813)->ob_item;
+    cpy_r_r2815 = *(CPyPtr *)cpy_r_r2814;
+    *(PyObject * *)cpy_r_r2815 = cpy_r_r2805;
+    cpy_r_r2816 = cpy_r_r2815 + 8;
+    *(PyObject * *)cpy_r_r2816 = cpy_r_r2812;
+    cpy_r_r2817 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2818 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'text' */
+    cpy_r_r2819 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2820 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2821 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2822 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2823 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2824 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2825 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2826 = CPyDict_Build(3, cpy_r_r2820, cpy_r_r2821, cpy_r_r2822, cpy_r_r2823, cpy_r_r2824, cpy_r_r2825);
+    if (unlikely(cpy_r_r2826 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL904;
+    }
+    cpy_r_r2827 = PyList_New(1);
+    if (unlikely(cpy_r_r2827 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL905;
+    }
+    cpy_r_r2828 = (CPyPtr)&((PyListObject *)cpy_r_r2827)->ob_item;
+    cpy_r_r2829 = *(CPyPtr *)cpy_r_r2828;
+    *(PyObject * *)cpy_r_r2829 = cpy_r_r2826;
+    cpy_r_r2830 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2831 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2832 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2833 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2834 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2835 = 1 ? Py_True : Py_False;
+    cpy_r_r2836 = 0 ? Py_True : Py_False;
+    cpy_r_r2837 = CPyDict_Build(7, cpy_r_r2797, cpy_r_r2835, cpy_r_r2798, cpy_r_r2813, cpy_r_r2817, cpy_r_r2818, cpy_r_r2819, cpy_r_r2827, cpy_r_r2830, cpy_r_r2836, cpy_r_r2831, cpy_r_r2832, cpy_r_r2833, cpy_r_r2834);
+    CPy_DECREF_NO_IMM(cpy_r_r2813);
+    CPy_DECREF_NO_IMM(cpy_r_r2827);
+    if (unlikely(cpy_r_r2837 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL901;
+    }
+    cpy_r_r2838 = CPyList_Build(37, cpy_r_r1488, cpy_r_r1518, cpy_r_r1548, cpy_r_r1588, cpy_r_r1638, cpy_r_r1668, cpy_r_r1718, cpy_r_r1758, cpy_r_r1778, cpy_r_r1818, cpy_r_r1848, cpy_r_r1888, cpy_r_r1928, cpy_r_r1977, cpy_r_r2010, cpy_r_r2051, cpy_r_r2100, cpy_r_r2124, cpy_r_r2157, cpy_r_r2206, cpy_r_r2247, cpy_r_r2288, cpy_r_r2321, cpy_r_r2354, cpy_r_r2395, cpy_r_r2435, cpy_r_r2475, cpy_r_r2507, cpy_r_r2547, cpy_r_r2579, cpy_r_r2611, cpy_r_r2651, cpy_r_r2683, cpy_r_r2723, cpy_r_r2763, cpy_r_r2796, cpy_r_r2837);
+    if (unlikely(cpy_r_r2838 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2839 = CPyStatic_abis___globals;
+    cpy_r_r2840 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'PUBLIC_RESOLVER_2' */
+    cpy_r_r2841 = CPyDict_SetItem(cpy_r_r2839, cpy_r_r2840, cpy_r_r2838);
+    CPy_DECREF_NO_IMM(cpy_r_r2838);
+    cpy_r_r2842 = cpy_r_r2841 >= 0;
+    if (unlikely(!cpy_r_r2842)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2843 = CPyStatic_abis___globals;
+    cpy_r_r2844 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'PUBLIC_RESOLVER_2' */
+    cpy_r_r2845 = CPyDict_GetItem(cpy_r_r2843, cpy_r_r2844);
+    if (unlikely(cpy_r_r2845 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    if (likely(PyList_Check(cpy_r_r2845)))
+        cpy_r_r2846 = cpy_r_r2845;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/abis.py", "<module>", 1087, CPyStatic_abis___globals, "list", cpy_r_r2845);
+        goto CPyL544;
+    }
+    cpy_r_r2847 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2848 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2849 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2850 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2851 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2852 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2853 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2854 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2855 = CPyDict_Build(3, cpy_r_r2849, cpy_r_r2850, cpy_r_r2851, cpy_r_r2852, cpy_r_r2853, cpy_r_r2854);
+    if (unlikely(cpy_r_r2855 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL906;
+    }
+    cpy_r_r2856 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2857 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2858 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2859 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r2860 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2861 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2862 = CPyDict_Build(3, cpy_r_r2856, cpy_r_r2857, cpy_r_r2858, cpy_r_r2859, cpy_r_r2860, cpy_r_r2861);
+    if (unlikely(cpy_r_r2862 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL907;
+    }
+    cpy_r_r2863 = PyList_New(2);
+    if (unlikely(cpy_r_r2863 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL908;
+    }
+    cpy_r_r2864 = (CPyPtr)&((PyListObject *)cpy_r_r2863)->ob_item;
+    cpy_r_r2865 = *(CPyPtr *)cpy_r_r2864;
+    *(PyObject * *)cpy_r_r2865 = cpy_r_r2855;
+    cpy_r_r2866 = cpy_r_r2865 + 8;
+    *(PyObject * *)cpy_r_r2866 = cpy_r_r2862;
+    cpy_r_r2867 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2868 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolve' */
+    cpy_r_r2869 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2870 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2871 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2872 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2873 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2874 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2875 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2876 = CPyDict_Build(3, cpy_r_r2870, cpy_r_r2871, cpy_r_r2872, cpy_r_r2873, cpy_r_r2874, cpy_r_r2875);
+    if (unlikely(cpy_r_r2876 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL909;
+    }
+    cpy_r_r2877 = PyList_New(1);
+    if (unlikely(cpy_r_r2877 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL910;
+    }
+    cpy_r_r2878 = (CPyPtr)&((PyListObject *)cpy_r_r2877)->ob_item;
+    cpy_r_r2879 = *(CPyPtr *)cpy_r_r2878;
+    *(PyObject * *)cpy_r_r2879 = cpy_r_r2876;
+    cpy_r_r2880 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2881 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2882 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2883 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2884 = 0 ? Py_True : Py_False;
+    cpy_r_r2885 = CPyDict_Build(6, cpy_r_r2847, cpy_r_r2884, cpy_r_r2848, cpy_r_r2863, cpy_r_r2867, cpy_r_r2868, cpy_r_r2869, cpy_r_r2877, cpy_r_r2880, cpy_r_r2881, cpy_r_r2882, cpy_r_r2883);
+    CPy_DECREF_NO_IMM(cpy_r_r2863);
+    CPy_DECREF_NO_IMM(cpy_r_r2877);
+    if (unlikely(cpy_r_r2885 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL906;
+    }
+    cpy_r_r2886 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2887 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2888 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2889 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2890 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2891 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'response' */
+    cpy_r_r2892 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2893 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2894 = CPyDict_Build(3, cpy_r_r2888, cpy_r_r2889, cpy_r_r2890, cpy_r_r2891, cpy_r_r2892, cpy_r_r2893);
+    if (unlikely(cpy_r_r2894 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL911;
+    }
+    cpy_r_r2895 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2896 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2897 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2898 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'extraData' */
+    cpy_r_r2899 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2900 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2901 = CPyDict_Build(3, cpy_r_r2895, cpy_r_r2896, cpy_r_r2897, cpy_r_r2898, cpy_r_r2899, cpy_r_r2900);
+    if (unlikely(cpy_r_r2901 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL912;
+    }
+    cpy_r_r2902 = PyList_New(2);
+    if (unlikely(cpy_r_r2902 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL913;
+    }
+    cpy_r_r2903 = (CPyPtr)&((PyListObject *)cpy_r_r2902)->ob_item;
+    cpy_r_r2904 = *(CPyPtr *)cpy_r_r2903;
+    *(PyObject * *)cpy_r_r2904 = cpy_r_r2894;
+    cpy_r_r2905 = cpy_r_r2904 + 8;
+    *(PyObject * *)cpy_r_r2905 = cpy_r_r2901;
+    cpy_r_r2906 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2907 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolveWithProof' */
+    cpy_r_r2908 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2909 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'internalType' */
+    cpy_r_r2910 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2911 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2912 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2913 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2914 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r2915 = CPyDict_Build(3, cpy_r_r2909, cpy_r_r2910, cpy_r_r2911, cpy_r_r2912, cpy_r_r2913, cpy_r_r2914);
+    if (unlikely(cpy_r_r2915 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL914;
+    }
+    cpy_r_r2916 = PyList_New(1);
+    if (unlikely(cpy_r_r2916 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL915;
+    }
+    cpy_r_r2917 = (CPyPtr)&((PyListObject *)cpy_r_r2916)->ob_item;
+    cpy_r_r2918 = *(CPyPtr *)cpy_r_r2917;
+    *(PyObject * *)cpy_r_r2918 = cpy_r_r2915;
+    cpy_r_r2919 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2920 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2921 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2922 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2923 = 0 ? Py_True : Py_False;
+    cpy_r_r2924 = CPyDict_Build(6, cpy_r_r2886, cpy_r_r2923, cpy_r_r2887, cpy_r_r2902, cpy_r_r2906, cpy_r_r2907, cpy_r_r2908, cpy_r_r2916, cpy_r_r2919, cpy_r_r2920, cpy_r_r2921, cpy_r_r2922);
+    CPy_DECREF_NO_IMM(cpy_r_r2902);
+    CPy_DECREF_NO_IMM(cpy_r_r2916);
+    if (unlikely(cpy_r_r2924 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL911;
+    }
+    cpy_r_r2925 = PyList_New(2);
+    if (unlikely(cpy_r_r2925 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL916;
+    }
+    cpy_r_r2926 = (CPyPtr)&((PyListObject *)cpy_r_r2925)->ob_item;
+    cpy_r_r2927 = *(CPyPtr *)cpy_r_r2926;
+    *(PyObject * *)cpy_r_r2927 = cpy_r_r2885;
+    cpy_r_r2928 = cpy_r_r2927 + 8;
+    *(PyObject * *)cpy_r_r2928 = cpy_r_r2924;
+    cpy_r_r2929 = PySequence_Concat(cpy_r_r2846, cpy_r_r2925);
+    CPy_DECREF_NO_IMM(cpy_r_r2846);
+    CPy_DECREF_NO_IMM(cpy_r_r2925);
+    if (unlikely(cpy_r_r2929 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2930 = CPyStatic_abis___globals;
+    cpy_r_r2931 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'PUBLIC_RESOLVER_2_EXTENDED' */
+    cpy_r_r2932 = CPyDict_SetItem(cpy_r_r2930, cpy_r_r2931, cpy_r_r2929);
+    CPy_DECREF_NO_IMM(cpy_r_r2929);
+    cpy_r_r2933 = cpy_r_r2932 >= 0;
+    if (unlikely(!cpy_r_r2933)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2934 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2935 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2936 = PyList_New(0);
+    if (unlikely(cpy_r_r2936 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2937 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2938 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ens' */
+    cpy_r_r2939 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2940 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2941 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2942 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2943 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r2944 = CPyDict_Build(2, cpy_r_r2940, cpy_r_r2941, cpy_r_r2942, cpy_r_r2943);
+    if (unlikely(cpy_r_r2944 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL917;
+    }
+    cpy_r_r2945 = PyList_New(1);
+    if (unlikely(cpy_r_r2945 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL918;
+    }
+    cpy_r_r2946 = (CPyPtr)&((PyListObject *)cpy_r_r2945)->ob_item;
+    cpy_r_r2947 = *(CPyPtr *)cpy_r_r2946;
+    *(PyObject * *)cpy_r_r2947 = cpy_r_r2944;
+    cpy_r_r2948 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2949 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2950 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2951 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2952 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2953 = 1 ? Py_True : Py_False;
+    cpy_r_r2954 = 0 ? Py_True : Py_False;
+    cpy_r_r2955 = CPyDict_Build(7, cpy_r_r2934, cpy_r_r2953, cpy_r_r2935, cpy_r_r2936, cpy_r_r2937, cpy_r_r2938, cpy_r_r2939, cpy_r_r2945, cpy_r_r2948, cpy_r_r2954, cpy_r_r2949, cpy_r_r2950, cpy_r_r2951, cpy_r_r2952);
+    CPy_DECREF_NO_IMM(cpy_r_r2936);
+    CPy_DECREF_NO_IMM(cpy_r_r2945);
+    if (unlikely(cpy_r_r2955 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r2956 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2957 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2958 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2959 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2960 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2961 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2962 = CPyDict_Build(2, cpy_r_r2958, cpy_r_r2959, cpy_r_r2960, cpy_r_r2961);
+    if (unlikely(cpy_r_r2962 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL919;
+    }
+    cpy_r_r2963 = PyList_New(1);
+    if (unlikely(cpy_r_r2963 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL920;
+    }
+    cpy_r_r2964 = (CPyPtr)&((PyListObject *)cpy_r_r2963)->ob_item;
+    cpy_r_r2965 = *(CPyPtr *)cpy_r_r2964;
+    *(PyObject * *)cpy_r_r2965 = cpy_r_r2962;
+    cpy_r_r2966 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2967 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2968 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r2969 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2970 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r2971 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2972 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2973 = CPyDict_Build(2, cpy_r_r2969, cpy_r_r2970, cpy_r_r2971, cpy_r_r2972);
+    if (unlikely(cpy_r_r2973 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL921;
+    }
+    cpy_r_r2974 = PyList_New(1);
+    if (unlikely(cpy_r_r2974 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL922;
+    }
+    cpy_r_r2975 = (CPyPtr)&((PyListObject *)cpy_r_r2974)->ob_item;
+    cpy_r_r2976 = *(CPyPtr *)cpy_r_r2975;
+    *(PyObject * *)cpy_r_r2976 = cpy_r_r2973;
+    cpy_r_r2977 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r2978 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r2979 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'view' */
+    cpy_r_r2980 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2981 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r2982 = 1 ? Py_True : Py_False;
+    cpy_r_r2983 = 0 ? Py_True : Py_False;
+    cpy_r_r2984 = CPyDict_Build(7, cpy_r_r2956, cpy_r_r2982, cpy_r_r2957, cpy_r_r2963, cpy_r_r2966, cpy_r_r2967, cpy_r_r2968, cpy_r_r2974, cpy_r_r2977, cpy_r_r2983, cpy_r_r2978, cpy_r_r2979, cpy_r_r2980, cpy_r_r2981);
+    CPy_DECREF_NO_IMM(cpy_r_r2963);
+    CPy_DECREF_NO_IMM(cpy_r_r2974);
+    if (unlikely(cpy_r_r2984 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL919;
+    }
+    cpy_r_r2985 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r2986 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r2987 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2988 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r2989 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2990 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r2991 = CPyDict_Build(2, cpy_r_r2987, cpy_r_r2988, cpy_r_r2989, cpy_r_r2990);
+    if (unlikely(cpy_r_r2991 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL923;
+    }
+    cpy_r_r2992 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r2993 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_name' */
+    cpy_r_r2994 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r2995 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r2996 = CPyDict_Build(2, cpy_r_r2992, cpy_r_r2993, cpy_r_r2994, cpy_r_r2995);
+    if (unlikely(cpy_r_r2996 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL924;
+    }
+    cpy_r_r2997 = PyList_New(2);
+    if (unlikely(cpy_r_r2997 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL925;
+    }
+    cpy_r_r2998 = (CPyPtr)&((PyListObject *)cpy_r_r2997)->ob_item;
+    cpy_r_r2999 = *(CPyPtr *)cpy_r_r2998;
+    *(PyObject * *)cpy_r_r2999 = cpy_r_r2991;
+    cpy_r_r3000 = cpy_r_r2999 + 8;
+    *(PyObject * *)cpy_r_r3000 = cpy_r_r2996;
+    cpy_r_r3001 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3002 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setName' */
+    cpy_r_r3003 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3004 = PyList_New(0);
+    if (unlikely(cpy_r_r3004 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL926;
+    }
+    cpy_r_r3005 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3006 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r3007 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r3008 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3009 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3010 = 0 ? Py_True : Py_False;
+    cpy_r_r3011 = 0 ? Py_True : Py_False;
+    cpy_r_r3012 = CPyDict_Build(7, cpy_r_r2985, cpy_r_r3010, cpy_r_r2986, cpy_r_r2997, cpy_r_r3001, cpy_r_r3002, cpy_r_r3003, cpy_r_r3004, cpy_r_r3005, cpy_r_r3011, cpy_r_r3006, cpy_r_r3007, cpy_r_r3008, cpy_r_r3009);
+    CPy_DECREF_NO_IMM(cpy_r_r2997);
+    CPy_DECREF_NO_IMM(cpy_r_r3004);
+    if (unlikely(cpy_r_r3012 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL923;
+    }
+    cpy_r_r3013 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3014 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3015 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ensAddr' */
+    cpy_r_r3016 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3017 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3018 = CPyDict_Build(2, cpy_r_r3014, cpy_r_r3015, cpy_r_r3016, cpy_r_r3017);
+    if (unlikely(cpy_r_r3018 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL927;
+    }
+    cpy_r_r3019 = PyList_New(1);
+    if (unlikely(cpy_r_r3019 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL928;
+    }
+    cpy_r_r3020 = (CPyPtr)&((PyListObject *)cpy_r_r3019)->ob_item;
+    cpy_r_r3021 = *(CPyPtr *)cpy_r_r3020;
+    *(PyObject * *)cpy_r_r3021 = cpy_r_r3018;
+    cpy_r_r3022 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3023 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'stateMutability' */
+    cpy_r_r3024 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonpayable' */
+    cpy_r_r3025 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3026 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r3027 = 0 ? Py_True : Py_False;
+    cpy_r_r3028 = CPyDict_Build(4, cpy_r_r3013, cpy_r_r3019, cpy_r_r3022, cpy_r_r3027, cpy_r_r3023, cpy_r_r3024, cpy_r_r3025, cpy_r_r3026);
+    CPy_DECREF_NO_IMM(cpy_r_r3019);
+    if (unlikely(cpy_r_r3028 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL927;
+    }
+    cpy_r_r3029 = PyList_New(4);
+    if (unlikely(cpy_r_r3029 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL929;
+    }
+    cpy_r_r3030 = (CPyPtr)&((PyListObject *)cpy_r_r3029)->ob_item;
+    cpy_r_r3031 = *(CPyPtr *)cpy_r_r3030;
+    *(PyObject * *)cpy_r_r3031 = cpy_r_r2955;
+    cpy_r_r3032 = cpy_r_r3031 + 8;
+    *(PyObject * *)cpy_r_r3032 = cpy_r_r2984;
+    cpy_r_r3033 = cpy_r_r3031 + 16;
+    *(PyObject * *)cpy_r_r3033 = cpy_r_r3012;
+    cpy_r_r3034 = cpy_r_r3031 + 24;
+    *(PyObject * *)cpy_r_r3034 = cpy_r_r3028;
+    cpy_r_r3035 = CPyStatic_abis___globals;
+    cpy_r_r3036 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'REVERSE_RESOLVER' */
+    cpy_r_r3037 = CPyDict_SetItem(cpy_r_r3035, cpy_r_r3036, cpy_r_r3029);
+    CPy_DECREF_NO_IMM(cpy_r_r3029);
+    cpy_r_r3038 = cpy_r_r3037 >= 0;
+    if (unlikely(!cpy_r_r3038)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r3039 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3040 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3041 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3042 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r3043 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3044 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3045 = CPyDict_Build(2, cpy_r_r3041, cpy_r_r3042, cpy_r_r3043, cpy_r_r3044);
+    if (unlikely(cpy_r_r3045 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r3046 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3047 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver' */
+    cpy_r_r3048 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3049 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3050 = CPyDict_Build(2, cpy_r_r3046, cpy_r_r3047, cpy_r_r3048, cpy_r_r3049);
+    if (unlikely(cpy_r_r3050 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL930;
+    }
+    cpy_r_r3051 = PyList_New(2);
+    if (unlikely(cpy_r_r3051 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL931;
+    }
+    cpy_r_r3052 = (CPyPtr)&((PyListObject *)cpy_r_r3051)->ob_item;
+    cpy_r_r3053 = *(CPyPtr *)cpy_r_r3052;
+    *(PyObject * *)cpy_r_r3053 = cpy_r_r3045;
+    cpy_r_r3054 = cpy_r_r3053 + 8;
+    *(PyObject * *)cpy_r_r3054 = cpy_r_r3050;
+    cpy_r_r3055 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3056 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'claimWithResolver' */
+    cpy_r_r3057 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3058 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3059 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r3060 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3061 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r3062 = CPyDict_Build(2, cpy_r_r3058, cpy_r_r3059, cpy_r_r3060, cpy_r_r3061);
+    if (unlikely(cpy_r_r3062 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL932;
+    }
+    cpy_r_r3063 = PyList_New(1);
+    if (unlikely(cpy_r_r3063 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL933;
+    }
+    cpy_r_r3064 = (CPyPtr)&((PyListObject *)cpy_r_r3063)->ob_item;
+    cpy_r_r3065 = *(CPyPtr *)cpy_r_r3064;
+    *(PyObject * *)cpy_r_r3065 = cpy_r_r3062;
+    cpy_r_r3066 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3067 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3068 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3069 = 0 ? Py_True : Py_False;
+    cpy_r_r3070 = 0 ? Py_True : Py_False;
+    cpy_r_r3071 = CPyDict_Build(6, cpy_r_r3039, cpy_r_r3069, cpy_r_r3040, cpy_r_r3051, cpy_r_r3055, cpy_r_r3056, cpy_r_r3057, cpy_r_r3063, cpy_r_r3066, cpy_r_r3070, cpy_r_r3067, cpy_r_r3068);
+    CPy_DECREF_NO_IMM(cpy_r_r3051);
+    CPy_DECREF_NO_IMM(cpy_r_r3063);
+    if (unlikely(cpy_r_r3071 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    cpy_r_r3072 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3073 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3074 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3075 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'owner' */
+    cpy_r_r3076 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3077 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3078 = CPyDict_Build(2, cpy_r_r3074, cpy_r_r3075, cpy_r_r3076, cpy_r_r3077);
+    if (unlikely(cpy_r_r3078 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL934;
+    }
+    cpy_r_r3079 = PyList_New(1);
+    if (unlikely(cpy_r_r3079 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL935;
+    }
+    cpy_r_r3080 = (CPyPtr)&((PyListObject *)cpy_r_r3079)->ob_item;
+    cpy_r_r3081 = *(CPyPtr *)cpy_r_r3080;
+    *(PyObject * *)cpy_r_r3081 = cpy_r_r3078;
+    cpy_r_r3082 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3083 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'claim' */
+    cpy_r_r3084 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3085 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3086 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r3087 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3088 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r3089 = CPyDict_Build(2, cpy_r_r3085, cpy_r_r3086, cpy_r_r3087, cpy_r_r3088);
+    if (unlikely(cpy_r_r3089 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL936;
+    }
+    cpy_r_r3090 = PyList_New(1);
+    if (unlikely(cpy_r_r3090 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL937;
+    }
+    cpy_r_r3091 = (CPyPtr)&((PyListObject *)cpy_r_r3090)->ob_item;
+    cpy_r_r3092 = *(CPyPtr *)cpy_r_r3091;
+    *(PyObject * *)cpy_r_r3092 = cpy_r_r3089;
+    cpy_r_r3093 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3094 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3095 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3096 = 0 ? Py_True : Py_False;
+    cpy_r_r3097 = 0 ? Py_True : Py_False;
+    cpy_r_r3098 = CPyDict_Build(6, cpy_r_r3072, cpy_r_r3096, cpy_r_r3073, cpy_r_r3079, cpy_r_r3082, cpy_r_r3083, cpy_r_r3084, cpy_r_r3090, cpy_r_r3093, cpy_r_r3097, cpy_r_r3094, cpy_r_r3095);
+    CPy_DECREF_NO_IMM(cpy_r_r3079);
+    CPy_DECREF_NO_IMM(cpy_r_r3090);
+    if (unlikely(cpy_r_r3098 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL934;
+    }
+    cpy_r_r3099 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3100 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3101 = PyList_New(0);
+    if (unlikely(cpy_r_r3101 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL938;
+    }
+    cpy_r_r3102 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3103 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ens' */
+    cpy_r_r3104 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3105 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3106 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r3107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3109 = CPyDict_Build(2, cpy_r_r3105, cpy_r_r3106, cpy_r_r3107, cpy_r_r3108);
+    if (unlikely(cpy_r_r3109 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL939;
+    }
+    cpy_r_r3110 = PyList_New(1);
+    if (unlikely(cpy_r_r3110 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL940;
+    }
+    cpy_r_r3111 = (CPyPtr)&((PyListObject *)cpy_r_r3110)->ob_item;
+    cpy_r_r3112 = *(CPyPtr *)cpy_r_r3111;
+    *(PyObject * *)cpy_r_r3112 = cpy_r_r3109;
+    cpy_r_r3113 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3114 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3115 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3116 = 1 ? Py_True : Py_False;
+    cpy_r_r3117 = 0 ? Py_True : Py_False;
+    cpy_r_r3118 = CPyDict_Build(6, cpy_r_r3099, cpy_r_r3116, cpy_r_r3100, cpy_r_r3101, cpy_r_r3102, cpy_r_r3103, cpy_r_r3104, cpy_r_r3110, cpy_r_r3113, cpy_r_r3117, cpy_r_r3114, cpy_r_r3115);
+    CPy_DECREF_NO_IMM(cpy_r_r3101);
+    CPy_DECREF_NO_IMM(cpy_r_r3110);
+    if (unlikely(cpy_r_r3118 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL938;
+    }
+    cpy_r_r3119 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3120 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3121 = PyList_New(0);
+    if (unlikely(cpy_r_r3121 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL941;
+    }
+    cpy_r_r3122 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3123 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'defaultResolver' */
+    cpy_r_r3124 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3125 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3126 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
+    cpy_r_r3127 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3128 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3129 = CPyDict_Build(2, cpy_r_r3125, cpy_r_r3126, cpy_r_r3127, cpy_r_r3128);
+    if (unlikely(cpy_r_r3129 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL942;
+    }
+    cpy_r_r3130 = PyList_New(1);
+    if (unlikely(cpy_r_r3130 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL943;
+    }
+    cpy_r_r3131 = (CPyPtr)&((PyListObject *)cpy_r_r3130)->ob_item;
+    cpy_r_r3132 = *(CPyPtr *)cpy_r_r3131;
+    *(PyObject * *)cpy_r_r3132 = cpy_r_r3129;
+    cpy_r_r3133 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3134 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3135 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3136 = 1 ? Py_True : Py_False;
+    cpy_r_r3137 = 0 ? Py_True : Py_False;
+    cpy_r_r3138 = CPyDict_Build(6, cpy_r_r3119, cpy_r_r3136, cpy_r_r3120, cpy_r_r3121, cpy_r_r3122, cpy_r_r3123, cpy_r_r3124, cpy_r_r3130, cpy_r_r3133, cpy_r_r3137, cpy_r_r3134, cpy_r_r3135);
+    CPy_DECREF_NO_IMM(cpy_r_r3121);
+    CPy_DECREF_NO_IMM(cpy_r_r3130);
+    if (unlikely(cpy_r_r3138 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL941;
+    }
+    cpy_r_r3139 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3141 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3142 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'addr' */
+    cpy_r_r3143 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3145 = CPyDict_Build(2, cpy_r_r3141, cpy_r_r3142, cpy_r_r3143, cpy_r_r3144);
+    if (unlikely(cpy_r_r3145 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL944;
+    }
+    cpy_r_r3146 = PyList_New(1);
+    if (unlikely(cpy_r_r3146 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL945;
+    }
+    cpy_r_r3147 = (CPyPtr)&((PyListObject *)cpy_r_r3146)->ob_item;
+    cpy_r_r3148 = *(CPyPtr *)cpy_r_r3147;
+    *(PyObject * *)cpy_r_r3148 = cpy_r_r3145;
+    cpy_r_r3149 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3150 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r3151 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3152 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3153 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ret' */
+    cpy_r_r3154 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3155 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r3156 = CPyDict_Build(2, cpy_r_r3152, cpy_r_r3153, cpy_r_r3154, cpy_r_r3155);
+    if (unlikely(cpy_r_r3156 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL946;
+    }
+    cpy_r_r3157 = PyList_New(1);
+    if (unlikely(cpy_r_r3157 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL947;
+    }
+    cpy_r_r3158 = (CPyPtr)&((PyListObject *)cpy_r_r3157)->ob_item;
+    cpy_r_r3159 = *(CPyPtr *)cpy_r_r3158;
+    *(PyObject * *)cpy_r_r3159 = cpy_r_r3156;
+    cpy_r_r3160 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3161 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3162 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3163 = 1 ? Py_True : Py_False;
+    cpy_r_r3164 = 0 ? Py_True : Py_False;
+    cpy_r_r3165 = CPyDict_Build(6, cpy_r_r3139, cpy_r_r3163, cpy_r_r3140, cpy_r_r3146, cpy_r_r3149, cpy_r_r3150, cpy_r_r3151, cpy_r_r3157, cpy_r_r3160, cpy_r_r3164, cpy_r_r3161, cpy_r_r3162);
+    CPy_DECREF_NO_IMM(cpy_r_r3146);
+    CPy_DECREF_NO_IMM(cpy_r_r3157);
+    if (unlikely(cpy_r_r3165 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL944;
+    }
+    cpy_r_r3166 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constant' */
+    cpy_r_r3167 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3168 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3169 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3170 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3171 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'string' */
+    cpy_r_r3172 = CPyDict_Build(2, cpy_r_r3168, cpy_r_r3169, cpy_r_r3170, cpy_r_r3171);
+    if (unlikely(cpy_r_r3172 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL948;
+    }
+    cpy_r_r3173 = PyList_New(1);
+    if (unlikely(cpy_r_r3173 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL949;
+    }
+    cpy_r_r3174 = (CPyPtr)&((PyListObject *)cpy_r_r3173)->ob_item;
+    cpy_r_r3175 = *(CPyPtr *)cpy_r_r3174;
+    *(PyObject * *)cpy_r_r3175 = cpy_r_r3172;
+    cpy_r_r3176 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3177 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setName' */
+    cpy_r_r3178 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'outputs' */
+    cpy_r_r3179 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3180 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'node' */
+    cpy_r_r3181 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3182 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes32' */
+    cpy_r_r3183 = CPyDict_Build(2, cpy_r_r3179, cpy_r_r3180, cpy_r_r3181, cpy_r_r3182);
+    if (unlikely(cpy_r_r3183 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL950;
+    }
+    cpy_r_r3184 = PyList_New(1);
+    if (unlikely(cpy_r_r3184 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL951;
+    }
+    cpy_r_r3185 = (CPyPtr)&((PyListObject *)cpy_r_r3184)->ob_item;
+    cpy_r_r3186 = *(CPyPtr *)cpy_r_r3185;
+    *(PyObject * *)cpy_r_r3186 = cpy_r_r3183;
+    cpy_r_r3187 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3188 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3189 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r3190 = 0 ? Py_True : Py_False;
+    cpy_r_r3191 = 0 ? Py_True : Py_False;
+    cpy_r_r3192 = CPyDict_Build(6, cpy_r_r3166, cpy_r_r3190, cpy_r_r3167, cpy_r_r3173, cpy_r_r3176, cpy_r_r3177, cpy_r_r3178, cpy_r_r3184, cpy_r_r3187, cpy_r_r3191, cpy_r_r3188, cpy_r_r3189);
+    CPy_DECREF_NO_IMM(cpy_r_r3173);
+    CPy_DECREF_NO_IMM(cpy_r_r3184);
+    if (unlikely(cpy_r_r3192 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL948;
+    }
+    cpy_r_r3193 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'inputs' */
+    cpy_r_r3194 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3195 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'ensAddr' */
+    cpy_r_r3196 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3197 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3198 = CPyDict_Build(2, cpy_r_r3194, cpy_r_r3195, cpy_r_r3196, cpy_r_r3197);
+    if (unlikely(cpy_r_r3198 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL952;
+    }
+    cpy_r_r3199 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'name' */
+    cpy_r_r3200 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolverAddr' */
+    cpy_r_r3201 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3202 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'address' */
+    cpy_r_r3203 = CPyDict_Build(2, cpy_r_r3199, cpy_r_r3200, cpy_r_r3201, cpy_r_r3202);
+    if (unlikely(cpy_r_r3203 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL953;
+    }
+    cpy_r_r3204 = PyList_New(2);
+    if (unlikely(cpy_r_r3204 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL954;
+    }
+    cpy_r_r3205 = (CPyPtr)&((PyListObject *)cpy_r_r3204)->ob_item;
+    cpy_r_r3206 = *(CPyPtr *)cpy_r_r3205;
+    *(PyObject * *)cpy_r_r3206 = cpy_r_r3198;
+    cpy_r_r3207 = cpy_r_r3206 + 8;
+    *(PyObject * *)cpy_r_r3207 = cpy_r_r3203;
+    cpy_r_r3208 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'payable' */
+    cpy_r_r3209 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r3210 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'constructor' */
+    cpy_r_r3211 = 0 ? Py_True : Py_False;
+    cpy_r_r3212 = CPyDict_Build(3, cpy_r_r3193, cpy_r_r3204, cpy_r_r3208, cpy_r_r3211, cpy_r_r3209, cpy_r_r3210);
+    CPy_DECREF_NO_IMM(cpy_r_r3204);
+    if (unlikely(cpy_r_r3212 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL952;
+    }
+    cpy_r_r3213 = PyList_New(7);
+    if (unlikely(cpy_r_r3213 == NULL)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL955;
+    }
+    cpy_r_r3214 = (CPyPtr)&((PyListObject *)cpy_r_r3213)->ob_item;
+    cpy_r_r3215 = *(CPyPtr *)cpy_r_r3214;
+    *(PyObject * *)cpy_r_r3215 = cpy_r_r3071;
+    cpy_r_r3216 = cpy_r_r3215 + 8;
+    *(PyObject * *)cpy_r_r3216 = cpy_r_r3098;
+    cpy_r_r3217 = cpy_r_r3215 + 16;
+    *(PyObject * *)cpy_r_r3217 = cpy_r_r3118;
+    cpy_r_r3218 = cpy_r_r3215 + 24;
+    *(PyObject * *)cpy_r_r3218 = cpy_r_r3138;
+    cpy_r_r3219 = cpy_r_r3215 + 32;
+    *(PyObject * *)cpy_r_r3219 = cpy_r_r3165;
+    cpy_r_r3220 = cpy_r_r3215 + 40;
+    *(PyObject * *)cpy_r_r3220 = cpy_r_r3192;
+    cpy_r_r3221 = cpy_r_r3215 + 48;
+    *(PyObject * *)cpy_r_r3221 = cpy_r_r3212;
+    cpy_r_r3222 = CPyStatic_abis___globals;
+    cpy_r_r3223 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'REVERSE_REGISTRAR' */
+    cpy_r_r3224 = CPyDict_SetItem(cpy_r_r3222, cpy_r_r3223, cpy_r_r3213);
+    CPy_DECREF_NO_IMM(cpy_r_r3213);
+    cpy_r_r3225 = cpy_r_r3224 >= 0;
+    if (unlikely(!cpy_r_r3225)) {
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_abis___globals);
+        goto CPyL544;
+    }
+    return 1;
+CPyL544: ;
+    cpy_r_r3226 = 2;
+    return cpy_r_r3226;
+CPyL545: ;
+    CPy_DecRef(cpy_r_r11);
+    goto CPyL544;
+CPyL546: ;
+    CPy_DecRef(cpy_r_r12);
+    goto CPyL544;
+CPyL547: ;
+    CPy_DecRef(cpy_r_r12);
+    CPy_DecRef(cpy_r_r22);
+    goto CPyL544;
+CPyL548: ;
+    CPy_DecRef(cpy_r_r31);
+    goto CPyL544;
+CPyL549: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r38);
+    goto CPyL544;
+CPyL550: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r39);
+    goto CPyL544;
+CPyL551: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r39);
+    CPy_DecRef(cpy_r_r49);
+    goto CPyL544;
+CPyL552: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    goto CPyL544;
+CPyL553: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r65);
+    goto CPyL544;
+CPyL554: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r65);
+    CPy_DecRef(cpy_r_r70);
+    goto CPyL544;
+CPyL555: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r65);
+    CPy_DecRef(cpy_r_r70);
+    CPy_DecRef(cpy_r_r75);
+    goto CPyL544;
+CPyL556: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r76);
+    goto CPyL544;
+CPyL557: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    goto CPyL544;
+CPyL558: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r97);
+    goto CPyL544;
+CPyL559: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r97);
+    CPy_DecRef(cpy_r_r102);
+    goto CPyL544;
+CPyL560: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r103);
+    goto CPyL544;
+CPyL561: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    goto CPyL544;
+CPyL562: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r123);
+    goto CPyL544;
+CPyL563: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r124);
+    goto CPyL544;
+CPyL564: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r124);
+    CPy_DecRef(cpy_r_r134);
+    goto CPyL544;
+CPyL565: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    goto CPyL544;
+CPyL566: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r150);
+    goto CPyL544;
+CPyL567: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r150);
+    CPy_DecRef(cpy_r_r155);
+    goto CPyL544;
+CPyL568: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r156);
+    goto CPyL544;
+CPyL569: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    goto CPyL544;
+CPyL570: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r176);
+    goto CPyL544;
+CPyL571: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r176);
+    CPy_DecRef(cpy_r_r181);
+    goto CPyL544;
+CPyL572: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r182);
+    goto CPyL544;
+CPyL573: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    goto CPyL544;
+CPyL574: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r204);
+    goto CPyL544;
+CPyL575: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r204);
+    CPy_DecRef(cpy_r_r211);
+    goto CPyL544;
+CPyL576: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    goto CPyL544;
+CPyL577: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r230);
+    goto CPyL544;
+CPyL578: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r230);
+    CPy_DecRef(cpy_r_r237);
+    goto CPyL544;
+CPyL579: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r230);
+    CPy_DecRef(cpy_r_r237);
+    CPy_DecRef(cpy_r_r244);
+    goto CPyL544;
+CPyL580: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    goto CPyL544;
+CPyL581: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    CPy_DecRef(cpy_r_r264);
+    goto CPyL544;
+CPyL582: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    CPy_DecRef(cpy_r_r264);
+    CPy_DecRef(cpy_r_r271);
+    goto CPyL544;
+CPyL583: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    CPy_DecRef(cpy_r_r281);
+    goto CPyL544;
+CPyL584: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    CPy_DecRef(cpy_r_r281);
+    CPy_DecRef(cpy_r_r290);
+    goto CPyL544;
+CPyL585: ;
+    CPy_DecRef(cpy_r_r31);
+    CPy_DecRef(cpy_r_r58);
+    CPy_DecRef(cpy_r_r90);
+    CPy_DecRef(cpy_r_r116);
+    CPy_DecRef(cpy_r_r143);
+    CPy_DecRef(cpy_r_r169);
+    CPy_DecRef(cpy_r_r195);
+    CPy_DecRef(cpy_r_r221);
+    CPy_DecRef(cpy_r_r255);
+    CPy_DecRef(cpy_r_r281);
+    CPy_DecRef(cpy_r_r290);
+    CPy_DecRef(cpy_r_r297);
+    goto CPyL544;
+CPyL586: ;
+    CPy_DecRef(cpy_r_r319);
+    goto CPyL544;
+CPyL587: ;
+    CPy_DecRef(cpy_r_r320);
+    goto CPyL544;
+CPyL588: ;
+    CPy_DecRef(cpy_r_r332);
+    goto CPyL544;
+CPyL589: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r339);
+    goto CPyL544;
+CPyL590: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r340);
+    goto CPyL544;
+CPyL591: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r340);
+    CPy_DecRef(cpy_r_r350);
+    goto CPyL544;
+CPyL592: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    goto CPyL544;
+CPyL593: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r366);
+    goto CPyL544;
+CPyL594: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r367);
+    goto CPyL544;
+CPyL595: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    goto CPyL544;
+CPyL596: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r386);
+    goto CPyL544;
+CPyL597: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r386);
+    CPy_DecRef(cpy_r_r391);
+    goto CPyL544;
+CPyL598: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r386);
+    CPy_DecRef(cpy_r_r391);
+    CPy_DecRef(cpy_r_r396);
+    goto CPyL544;
+CPyL599: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r386);
+    CPy_DecRef(cpy_r_r391);
+    CPy_DecRef(cpy_r_r396);
+    CPy_DecRef(cpy_r_r401);
+    goto CPyL544;
+CPyL600: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r402);
+    goto CPyL544;
+CPyL601: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r402);
+    CPy_DecRef(cpy_r_r415);
+    goto CPyL544;
+CPyL602: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    goto CPyL544;
+CPyL603: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r431);
+    goto CPyL544;
+CPyL604: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r431);
+    CPy_DecRef(cpy_r_r436);
+    goto CPyL544;
+CPyL605: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r437);
+    goto CPyL544;
+CPyL606: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    goto CPyL544;
+CPyL607: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r457);
+    goto CPyL544;
+CPyL608: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    goto CPyL544;
+CPyL609: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    CPy_DecRef(cpy_r_r468);
+    goto CPyL544;
+CPyL610: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    CPy_DecRef(cpy_r_r468);
+    CPy_DecRef(cpy_r_r473);
+    goto CPyL544;
+CPyL611: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    CPy_DecRef(cpy_r_r468);
+    CPy_DecRef(cpy_r_r473);
+    CPy_DecRef(cpy_r_r478);
+    goto CPyL544;
+CPyL612: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    CPy_DecRef(cpy_r_r468);
+    CPy_DecRef(cpy_r_r473);
+    CPy_DecRef(cpy_r_r478);
+    CPy_DecRef(cpy_r_r483);
+    goto CPyL544;
+CPyL613: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r458);
+    CPy_DecRef(cpy_r_r468);
+    CPy_DecRef(cpy_r_r473);
+    CPy_DecRef(cpy_r_r478);
+    CPy_DecRef(cpy_r_r483);
+    CPy_DecRef(cpy_r_r488);
+    goto CPyL544;
+CPyL614: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    goto CPyL544;
+CPyL615: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r504);
+    goto CPyL544;
+CPyL616: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r504);
+    CPy_DecRef(cpy_r_r512);
+    goto CPyL544;
+CPyL617: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    goto CPyL544;
+CPyL618: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r528);
+    goto CPyL544;
+CPyL619: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r528);
+    CPy_DecRef(cpy_r_r533);
+    goto CPyL544;
+CPyL620: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r528);
+    CPy_DecRef(cpy_r_r533);
+    CPy_DecRef(cpy_r_r538);
+    goto CPyL544;
+CPyL621: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r539);
+    goto CPyL544;
+CPyL622: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    goto CPyL544;
+CPyL623: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r560);
+    goto CPyL544;
+CPyL624: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r561);
+    goto CPyL544;
+CPyL625: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    goto CPyL544;
+CPyL626: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r580);
+    goto CPyL544;
+CPyL627: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r580);
+    CPy_DecRef(cpy_r_r585);
+    goto CPyL544;
+CPyL628: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r586);
+    goto CPyL544;
+CPyL629: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r586);
+    CPy_DecRef(cpy_r_r597);
+    goto CPyL544;
+CPyL630: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    goto CPyL544;
+CPyL631: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r613);
+    goto CPyL544;
+CPyL632: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r614);
+    goto CPyL544;
+CPyL633: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r614);
+    CPy_DecRef(cpy_r_r624);
+    goto CPyL544;
+CPyL634: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    goto CPyL544;
+CPyL635: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r640);
+    goto CPyL544;
+CPyL636: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r640);
+    CPy_DecRef(cpy_r_r645);
+    goto CPyL544;
+CPyL637: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r646);
+    goto CPyL544;
+CPyL638: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    goto CPyL544;
+CPyL639: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r666);
+    goto CPyL544;
+CPyL640: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r666);
+    CPy_DecRef(cpy_r_r671);
+    goto CPyL544;
+CPyL641: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r672);
+    goto CPyL544;
+CPyL642: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r672);
+    CPy_DecRef(cpy_r_r683);
+    goto CPyL544;
+CPyL643: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    goto CPyL544;
+CPyL644: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r699);
+    goto CPyL544;
+CPyL645: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r700);
+    goto CPyL544;
+CPyL646: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    goto CPyL544;
+CPyL647: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r715);
+    goto CPyL544;
+CPyL648: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r715);
+    CPy_DecRef(cpy_r_r723);
+    goto CPyL544;
+CPyL649: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    goto CPyL544;
+CPyL650: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r735);
+    goto CPyL544;
+CPyL651: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r735);
+    CPy_DecRef(cpy_r_r743);
+    goto CPyL544;
+CPyL652: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    goto CPyL544;
+CPyL653: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r759);
+    goto CPyL544;
+CPyL654: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r760);
+    goto CPyL544;
+CPyL655: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    goto CPyL544;
+CPyL656: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r779);
+    goto CPyL544;
+CPyL657: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r780);
+    goto CPyL544;
+CPyL658: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    goto CPyL544;
+CPyL659: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r799);
+    goto CPyL544;
+CPyL660: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r800);
+    goto CPyL544;
+CPyL661: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    goto CPyL544;
+CPyL662: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r819);
+    goto CPyL544;
+CPyL663: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r819);
+    CPy_DecRef(cpy_r_r824);
+    goto CPyL544;
+CPyL664: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r819);
+    CPy_DecRef(cpy_r_r824);
+    CPy_DecRef(cpy_r_r829);
+    goto CPyL544;
+CPyL665: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r830);
+    goto CPyL544;
+CPyL666: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    goto CPyL544;
+CPyL667: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r851);
+    goto CPyL544;
+CPyL668: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r852);
+    goto CPyL544;
+CPyL669: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    goto CPyL544;
+CPyL670: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r867);
+    goto CPyL544;
+CPyL671: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r867);
+    CPy_DecRef(cpy_r_r875);
+    goto CPyL544;
+CPyL672: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    goto CPyL544;
+CPyL673: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r891);
+    goto CPyL544;
+CPyL674: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r891);
+    CPy_DecRef(cpy_r_r896);
+    goto CPyL544;
+CPyL675: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r897);
+    goto CPyL544;
+CPyL676: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    goto CPyL544;
+CPyL677: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r916);
+    goto CPyL544;
+CPyL678: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r916);
+    CPy_DecRef(cpy_r_r921);
+    goto CPyL544;
+CPyL679: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r916);
+    CPy_DecRef(cpy_r_r921);
+    CPy_DecRef(cpy_r_r926);
+    goto CPyL544;
+CPyL680: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    goto CPyL544;
+CPyL681: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r945);
+    goto CPyL544;
+CPyL682: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r945);
+    CPy_DecRef(cpy_r_r952);
+    goto CPyL544;
+CPyL683: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    goto CPyL544;
+CPyL684: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r971);
+    goto CPyL544;
+CPyL685: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r971);
+    CPy_DecRef(cpy_r_r978);
+    goto CPyL544;
+CPyL686: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r971);
+    CPy_DecRef(cpy_r_r978);
+    CPy_DecRef(cpy_r_r985);
+    goto CPyL544;
+CPyL687: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    goto CPyL544;
+CPyL688: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1005);
+    goto CPyL544;
+CPyL689: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1005);
+    CPy_DecRef(cpy_r_r1012);
+    goto CPyL544;
+CPyL690: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1005);
+    CPy_DecRef(cpy_r_r1012);
+    CPy_DecRef(cpy_r_r1019);
+    goto CPyL544;
+CPyL691: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1005);
+    CPy_DecRef(cpy_r_r1012);
+    CPy_DecRef(cpy_r_r1019);
+    CPy_DecRef(cpy_r_r1026);
+    goto CPyL544;
+CPyL692: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    goto CPyL544;
+CPyL693: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1047);
+    goto CPyL544;
+CPyL694: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1047);
+    CPy_DecRef(cpy_r_r1054);
+    goto CPyL544;
+CPyL695: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1047);
+    CPy_DecRef(cpy_r_r1054);
+    CPy_DecRef(cpy_r_r1061);
+    goto CPyL544;
+CPyL696: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1047);
+    CPy_DecRef(cpy_r_r1054);
+    CPy_DecRef(cpy_r_r1061);
+    CPy_DecRef(cpy_r_r1068);
+    goto CPyL544;
+CPyL697: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    goto CPyL544;
+CPyL698: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1089);
+    goto CPyL544;
+CPyL699: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1089);
+    CPy_DecRef(cpy_r_r1096);
+    goto CPyL544;
+CPyL700: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1106);
+    goto CPyL544;
+CPyL701: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1106);
+    CPy_DecRef(cpy_r_r1115);
+    goto CPyL544;
+CPyL702: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1106);
+    CPy_DecRef(cpy_r_r1115);
+    CPy_DecRef(cpy_r_r1122);
+    goto CPyL544;
+CPyL703: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1106);
+    CPy_DecRef(cpy_r_r1115);
+    CPy_DecRef(cpy_r_r1122);
+    CPy_DecRef(cpy_r_r1129);
+    goto CPyL544;
+CPyL704: ;
+    CPy_DecRef(cpy_r_r332);
+    CPy_DecRef(cpy_r_r359);
+    CPy_DecRef(cpy_r_r379);
+    CPy_DecRef(cpy_r_r424);
+    CPy_DecRef(cpy_r_r450);
+    CPy_DecRef(cpy_r_r501);
+    CPy_DecRef(cpy_r_r521);
+    CPy_DecRef(cpy_r_r553);
+    CPy_DecRef(cpy_r_r573);
+    CPy_DecRef(cpy_r_r606);
+    CPy_DecRef(cpy_r_r633);
+    CPy_DecRef(cpy_r_r659);
+    CPy_DecRef(cpy_r_r692);
+    CPy_DecRef(cpy_r_r712);
+    CPy_DecRef(cpy_r_r732);
+    CPy_DecRef(cpy_r_r752);
+    CPy_DecRef(cpy_r_r772);
+    CPy_DecRef(cpy_r_r792);
+    CPy_DecRef(cpy_r_r812);
+    CPy_DecRef(cpy_r_r844);
+    CPy_DecRef(cpy_r_r864);
+    CPy_DecRef(cpy_r_r884);
+    CPy_DecRef(cpy_r_r910);
+    CPy_DecRef(cpy_r_r936);
+    CPy_DecRef(cpy_r_r962);
+    CPy_DecRef(cpy_r_r996);
+    CPy_DecRef(cpy_r_r1038);
+    CPy_DecRef(cpy_r_r1080);
+    CPy_DecRef(cpy_r_r1106);
+    CPy_DecRef(cpy_r_r1115);
+    CPy_DecRef(cpy_r_r1122);
+    CPy_DecRef(cpy_r_r1129);
+    CPy_DecRef(cpy_r_r1136);
+    goto CPyL544;
+CPyL705: ;
+    CPy_DecRef(cpy_r_r1156);
+    goto CPyL544;
+CPyL706: ;
+    CPy_DecRef(cpy_r_r1156);
+    CPy_DecRef(cpy_r_r1164);
+    goto CPyL544;
+CPyL707: ;
+    CPy_DecRef(cpy_r_r1173);
+    goto CPyL544;
+CPyL708: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1176);
+    goto CPyL544;
+CPyL709: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    goto CPyL544;
+CPyL710: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1193);
+    goto CPyL544;
+CPyL711: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1194);
+    goto CPyL544;
+CPyL712: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    goto CPyL544;
+CPyL713: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1209);
+    goto CPyL544;
+CPyL714: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1209);
+    CPy_DecRef(cpy_r_r1217);
+    goto CPyL544;
+CPyL715: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    goto CPyL544;
+CPyL716: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1229);
+    goto CPyL544;
+CPyL717: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1229);
+    CPy_DecRef(cpy_r_r1237);
+    goto CPyL544;
+CPyL718: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    goto CPyL544;
+CPyL719: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1253);
+    goto CPyL544;
+CPyL720: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1254);
+    goto CPyL544;
+CPyL721: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    goto CPyL544;
+CPyL722: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1273);
+    goto CPyL544;
+CPyL723: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1274);
+    goto CPyL544;
+CPyL724: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    goto CPyL544;
+CPyL725: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1293);
+    goto CPyL544;
+CPyL726: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1294);
+    goto CPyL544;
+CPyL727: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1306);
+    goto CPyL544;
+CPyL728: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1306);
+    CPy_DecRef(cpy_r_r1311);
+    goto CPyL544;
+CPyL729: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1306);
+    CPy_DecRef(cpy_r_r1311);
+    CPy_DecRef(cpy_r_r1316);
+    goto CPyL544;
+CPyL730: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1306);
+    CPy_DecRef(cpy_r_r1311);
+    CPy_DecRef(cpy_r_r1316);
+    CPy_DecRef(cpy_r_r1325);
+    goto CPyL544;
+CPyL731: ;
+    CPy_DecRef(cpy_r_r1173);
+    CPy_DecRef(cpy_r_r1186);
+    CPy_DecRef(cpy_r_r1206);
+    CPy_DecRef(cpy_r_r1226);
+    CPy_DecRef(cpy_r_r1246);
+    CPy_DecRef(cpy_r_r1266);
+    CPy_DecRef(cpy_r_r1286);
+    CPy_DecRef(cpy_r_r1306);
+    CPy_DecRef(cpy_r_r1311);
+    CPy_DecRef(cpy_r_r1316);
+    CPy_DecRef(cpy_r_r1334);
+    goto CPyL544;
+CPyL732: ;
+    CPy_DecRef(cpy_r_r1351);
+    goto CPyL544;
+CPyL733: ;
+    CPy_DecRef(cpy_r_r1351);
+    CPy_DecRef(cpy_r_r1359);
+    goto CPyL544;
+CPyL734: ;
+    CPy_DecRef(cpy_r_r1368);
+    goto CPyL544;
+CPyL735: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1375);
+    goto CPyL544;
+CPyL736: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1376);
+    goto CPyL544;
+CPyL737: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1376);
+    CPy_DecRef(cpy_r_r1386);
+    goto CPyL544;
+CPyL738: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    goto CPyL544;
+CPyL739: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1402);
+    goto CPyL544;
+CPyL740: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1402);
+    CPy_DecRef(cpy_r_r1407);
+    goto CPyL544;
+CPyL741: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1408);
+    goto CPyL544;
+CPyL742: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    goto CPyL544;
+CPyL743: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1424);
+    goto CPyL544;
+CPyL744: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1424);
+    CPy_DecRef(cpy_r_r1432);
+    goto CPyL544;
+CPyL745: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1441);
+    goto CPyL544;
+CPyL746: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1441);
+    CPy_DecRef(cpy_r_r1447);
+    goto CPyL544;
+CPyL747: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1441);
+    CPy_DecRef(cpy_r_r1447);
+    CPy_DecRef(cpy_r_r1452);
+    goto CPyL544;
+CPyL748: ;
+    CPy_DecRef(cpy_r_r1368);
+    CPy_DecRef(cpy_r_r1395);
+    CPy_DecRef(cpy_r_r1421);
+    CPy_DecRef(cpy_r_r1441);
+    CPy_DecRef(cpy_r_r1459);
+    goto CPyL544;
+CPyL749: ;
+    CPy_DecRef(cpy_r_r1478);
+    goto CPyL544;
+CPyL750: ;
+    CPy_DecRef(cpy_r_r1488);
+    goto CPyL544;
+CPyL751: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1499);
+    goto CPyL544;
+CPyL752: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1499);
+    CPy_DecRef(cpy_r_r1508);
+    goto CPyL544;
+CPyL753: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    goto CPyL544;
+CPyL754: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1529);
+    goto CPyL544;
+CPyL755: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1529);
+    CPy_DecRef(cpy_r_r1538);
+    goto CPyL544;
+CPyL756: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    goto CPyL544;
+CPyL757: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1559);
+    goto CPyL544;
+CPyL758: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1559);
+    CPy_DecRef(cpy_r_r1568);
+    goto CPyL544;
+CPyL759: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1559);
+    CPy_DecRef(cpy_r_r1568);
+    CPy_DecRef(cpy_r_r1577);
+    goto CPyL544;
+CPyL760: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    goto CPyL544;
+CPyL761: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1599);
+    goto CPyL544;
+CPyL762: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1599);
+    CPy_DecRef(cpy_r_r1608);
+    goto CPyL544;
+CPyL763: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1599);
+    CPy_DecRef(cpy_r_r1608);
+    CPy_DecRef(cpy_r_r1617);
+    goto CPyL544;
+CPyL764: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1599);
+    CPy_DecRef(cpy_r_r1608);
+    CPy_DecRef(cpy_r_r1617);
+    CPy_DecRef(cpy_r_r1626);
+    goto CPyL544;
+CPyL765: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    goto CPyL544;
+CPyL766: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1649);
+    goto CPyL544;
+CPyL767: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1649);
+    CPy_DecRef(cpy_r_r1658);
+    goto CPyL544;
+CPyL768: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    goto CPyL544;
+CPyL769: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1679);
+    goto CPyL544;
+CPyL770: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1679);
+    CPy_DecRef(cpy_r_r1688);
+    goto CPyL544;
+CPyL771: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1679);
+    CPy_DecRef(cpy_r_r1688);
+    CPy_DecRef(cpy_r_r1697);
+    goto CPyL544;
+CPyL772: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1679);
+    CPy_DecRef(cpy_r_r1688);
+    CPy_DecRef(cpy_r_r1697);
+    CPy_DecRef(cpy_r_r1706);
+    goto CPyL544;
+CPyL773: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    goto CPyL544;
+CPyL774: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1729);
+    goto CPyL544;
+CPyL775: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1729);
+    CPy_DecRef(cpy_r_r1738);
+    goto CPyL544;
+CPyL776: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1729);
+    CPy_DecRef(cpy_r_r1738);
+    CPy_DecRef(cpy_r_r1747);
+    goto CPyL544;
+CPyL777: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    goto CPyL544;
+CPyL778: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1769);
+    goto CPyL544;
+CPyL779: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    goto CPyL544;
+CPyL780: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1789);
+    goto CPyL544;
+CPyL781: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1789);
+    CPy_DecRef(cpy_r_r1798);
+    goto CPyL544;
+CPyL782: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1789);
+    CPy_DecRef(cpy_r_r1798);
+    CPy_DecRef(cpy_r_r1807);
+    goto CPyL544;
+CPyL783: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    goto CPyL544;
+CPyL784: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1829);
+    goto CPyL544;
+CPyL785: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1829);
+    CPy_DecRef(cpy_r_r1838);
+    goto CPyL544;
+CPyL786: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    goto CPyL544;
+CPyL787: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1859);
+    goto CPyL544;
+CPyL788: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1859);
+    CPy_DecRef(cpy_r_r1868);
+    goto CPyL544;
+CPyL789: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1859);
+    CPy_DecRef(cpy_r_r1868);
+    CPy_DecRef(cpy_r_r1877);
+    goto CPyL544;
+CPyL790: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    goto CPyL544;
+CPyL791: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1899);
+    goto CPyL544;
+CPyL792: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1899);
+    CPy_DecRef(cpy_r_r1908);
+    goto CPyL544;
+CPyL793: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1899);
+    CPy_DecRef(cpy_r_r1908);
+    CPy_DecRef(cpy_r_r1917);
+    goto CPyL544;
+CPyL794: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    goto CPyL544;
+CPyL795: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1937);
+    goto CPyL544;
+CPyL796: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1937);
+    CPy_DecRef(cpy_r_r1944);
+    goto CPyL544;
+CPyL797: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1945);
+    goto CPyL544;
+CPyL798: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1945);
+    CPy_DecRef(cpy_r_r1958);
+    goto CPyL544;
+CPyL799: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1945);
+    CPy_DecRef(cpy_r_r1958);
+    CPy_DecRef(cpy_r_r1965);
+    goto CPyL544;
+CPyL800: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    goto CPyL544;
+CPyL801: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r1986);
+    goto CPyL544;
+CPyL802: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r1987);
+    goto CPyL544;
+CPyL803: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r1987);
+    CPy_DecRef(cpy_r_r1999);
+    goto CPyL544;
+CPyL804: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    goto CPyL544;
+CPyL805: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2019);
+    goto CPyL544;
+CPyL806: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2019);
+    CPy_DecRef(cpy_r_r2026);
+    goto CPyL544;
+CPyL807: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2027);
+    goto CPyL544;
+CPyL808: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2027);
+    CPy_DecRef(cpy_r_r2040);
+    goto CPyL544;
+CPyL809: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    goto CPyL544;
+CPyL810: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2060);
+    goto CPyL544;
+CPyL811: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2060);
+    CPy_DecRef(cpy_r_r2067);
+    goto CPyL544;
+CPyL812: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2060);
+    CPy_DecRef(cpy_r_r2067);
+    CPy_DecRef(cpy_r_r2074);
+    goto CPyL544;
+CPyL813: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2075);
+    goto CPyL544;
+CPyL814: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2075);
+    CPy_DecRef(cpy_r_r2089);
+    goto CPyL544;
+CPyL815: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    goto CPyL544;
+CPyL816: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2109);
+    goto CPyL544;
+CPyL817: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2110);
+    goto CPyL544;
+CPyL818: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    goto CPyL544;
+CPyL819: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2133);
+    goto CPyL544;
+CPyL820: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2134);
+    goto CPyL544;
+CPyL821: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2134);
+    CPy_DecRef(cpy_r_r2146);
+    goto CPyL544;
+CPyL822: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    goto CPyL544;
+CPyL823: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2166);
+    goto CPyL544;
+CPyL824: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2166);
+    CPy_DecRef(cpy_r_r2173);
+    goto CPyL544;
+CPyL825: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2166);
+    CPy_DecRef(cpy_r_r2173);
+    CPy_DecRef(cpy_r_r2180);
+    goto CPyL544;
+CPyL826: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2181);
+    goto CPyL544;
+CPyL827: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2181);
+    CPy_DecRef(cpy_r_r2195);
+    goto CPyL544;
+CPyL828: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    goto CPyL544;
+CPyL829: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2215);
+    goto CPyL544;
+CPyL830: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2215);
+    CPy_DecRef(cpy_r_r2222);
+    goto CPyL544;
+CPyL831: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2223);
+    goto CPyL544;
+CPyL832: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2223);
+    CPy_DecRef(cpy_r_r2236);
+    goto CPyL544;
+CPyL833: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    goto CPyL544;
+CPyL834: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2256);
+    goto CPyL544;
+CPyL835: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2256);
+    CPy_DecRef(cpy_r_r2263);
+    goto CPyL544;
+CPyL836: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2264);
+    goto CPyL544;
+CPyL837: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2264);
+    CPy_DecRef(cpy_r_r2277);
+    goto CPyL544;
+CPyL838: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    goto CPyL544;
+CPyL839: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2297);
+    goto CPyL544;
+CPyL840: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2298);
+    goto CPyL544;
+CPyL841: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2298);
+    CPy_DecRef(cpy_r_r2310);
+    goto CPyL544;
+CPyL842: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    goto CPyL544;
+CPyL843: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2330);
+    goto CPyL544;
+CPyL844: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2331);
+    goto CPyL544;
+CPyL845: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2331);
+    CPy_DecRef(cpy_r_r2343);
+    goto CPyL544;
+CPyL846: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    goto CPyL544;
+CPyL847: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2363);
+    goto CPyL544;
+CPyL848: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2364);
+    goto CPyL544;
+CPyL849: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2364);
+    CPy_DecRef(cpy_r_r2376);
+    goto CPyL544;
+CPyL850: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2364);
+    CPy_DecRef(cpy_r_r2376);
+    CPy_DecRef(cpy_r_r2383);
+    goto CPyL544;
+CPyL851: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    goto CPyL544;
+CPyL852: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2404);
+    goto CPyL544;
+CPyL853: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2404);
+    CPy_DecRef(cpy_r_r2411);
+    goto CPyL544;
+CPyL854: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2404);
+    CPy_DecRef(cpy_r_r2411);
+    CPy_DecRef(cpy_r_r2418);
+    goto CPyL544;
+CPyL855: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2419);
+    goto CPyL544;
+CPyL856: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    goto CPyL544;
+CPyL857: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2444);
+    goto CPyL544;
+CPyL858: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2444);
+    CPy_DecRef(cpy_r_r2451);
+    goto CPyL544;
+CPyL859: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2444);
+    CPy_DecRef(cpy_r_r2451);
+    CPy_DecRef(cpy_r_r2458);
+    goto CPyL544;
+CPyL860: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2459);
+    goto CPyL544;
+CPyL861: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    goto CPyL544;
+CPyL862: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2484);
+    goto CPyL544;
+CPyL863: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2484);
+    CPy_DecRef(cpy_r_r2491);
+    goto CPyL544;
+CPyL864: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2492);
+    goto CPyL544;
+CPyL865: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    goto CPyL544;
+CPyL866: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2516);
+    goto CPyL544;
+CPyL867: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2516);
+    CPy_DecRef(cpy_r_r2523);
+    goto CPyL544;
+CPyL868: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2516);
+    CPy_DecRef(cpy_r_r2523);
+    CPy_DecRef(cpy_r_r2530);
+    goto CPyL544;
+CPyL869: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2531);
+    goto CPyL544;
+CPyL870: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    goto CPyL544;
+CPyL871: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2556);
+    goto CPyL544;
+CPyL872: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2556);
+    CPy_DecRef(cpy_r_r2563);
+    goto CPyL544;
+CPyL873: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2564);
+    goto CPyL544;
+CPyL874: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    goto CPyL544;
+CPyL875: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2588);
+    goto CPyL544;
+CPyL876: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2588);
+    CPy_DecRef(cpy_r_r2595);
+    goto CPyL544;
+CPyL877: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2596);
+    goto CPyL544;
+CPyL878: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    goto CPyL544;
+CPyL879: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2620);
+    goto CPyL544;
+CPyL880: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2620);
+    CPy_DecRef(cpy_r_r2627);
+    goto CPyL544;
+CPyL881: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2620);
+    CPy_DecRef(cpy_r_r2627);
+    CPy_DecRef(cpy_r_r2634);
+    goto CPyL544;
+CPyL882: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2635);
+    goto CPyL544;
+CPyL883: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    goto CPyL544;
+CPyL884: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2660);
+    goto CPyL544;
+CPyL885: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2660);
+    CPy_DecRef(cpy_r_r2667);
+    goto CPyL544;
+CPyL886: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2668);
+    goto CPyL544;
+CPyL887: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    goto CPyL544;
+CPyL888: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2692);
+    goto CPyL544;
+CPyL889: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2692);
+    CPy_DecRef(cpy_r_r2699);
+    goto CPyL544;
+CPyL890: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2692);
+    CPy_DecRef(cpy_r_r2699);
+    CPy_DecRef(cpy_r_r2706);
+    goto CPyL544;
+CPyL891: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2707);
+    goto CPyL544;
+CPyL892: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    goto CPyL544;
+CPyL893: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2732);
+    goto CPyL544;
+CPyL894: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2732);
+    CPy_DecRef(cpy_r_r2739);
+    goto CPyL544;
+CPyL895: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2732);
+    CPy_DecRef(cpy_r_r2739);
+    CPy_DecRef(cpy_r_r2746);
+    goto CPyL544;
+CPyL896: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2747);
+    goto CPyL544;
+CPyL897: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    goto CPyL544;
+CPyL898: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2772);
+    goto CPyL544;
+CPyL899: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2773);
+    goto CPyL544;
+CPyL900: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2773);
+    CPy_DecRef(cpy_r_r2785);
+    goto CPyL544;
+CPyL901: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2796);
+    goto CPyL544;
+CPyL902: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2796);
+    CPy_DecRef(cpy_r_r2805);
+    goto CPyL544;
+CPyL903: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2796);
+    CPy_DecRef(cpy_r_r2805);
+    CPy_DecRef(cpy_r_r2812);
+    goto CPyL544;
+CPyL904: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2796);
+    CPy_DecRef(cpy_r_r2813);
+    goto CPyL544;
+CPyL905: ;
+    CPy_DecRef(cpy_r_r1488);
+    CPy_DecRef(cpy_r_r1518);
+    CPy_DecRef(cpy_r_r1548);
+    CPy_DecRef(cpy_r_r1588);
+    CPy_DecRef(cpy_r_r1638);
+    CPy_DecRef(cpy_r_r1668);
+    CPy_DecRef(cpy_r_r1718);
+    CPy_DecRef(cpy_r_r1758);
+    CPy_DecRef(cpy_r_r1778);
+    CPy_DecRef(cpy_r_r1818);
+    CPy_DecRef(cpy_r_r1848);
+    CPy_DecRef(cpy_r_r1888);
+    CPy_DecRef(cpy_r_r1928);
+    CPy_DecRef(cpy_r_r1977);
+    CPy_DecRef(cpy_r_r2010);
+    CPy_DecRef(cpy_r_r2051);
+    CPy_DecRef(cpy_r_r2100);
+    CPy_DecRef(cpy_r_r2124);
+    CPy_DecRef(cpy_r_r2157);
+    CPy_DecRef(cpy_r_r2206);
+    CPy_DecRef(cpy_r_r2247);
+    CPy_DecRef(cpy_r_r2288);
+    CPy_DecRef(cpy_r_r2321);
+    CPy_DecRef(cpy_r_r2354);
+    CPy_DecRef(cpy_r_r2395);
+    CPy_DecRef(cpy_r_r2435);
+    CPy_DecRef(cpy_r_r2475);
+    CPy_DecRef(cpy_r_r2507);
+    CPy_DecRef(cpy_r_r2547);
+    CPy_DecRef(cpy_r_r2579);
+    CPy_DecRef(cpy_r_r2611);
+    CPy_DecRef(cpy_r_r2651);
+    CPy_DecRef(cpy_r_r2683);
+    CPy_DecRef(cpy_r_r2723);
+    CPy_DecRef(cpy_r_r2763);
+    CPy_DecRef(cpy_r_r2796);
+    CPy_DecRef(cpy_r_r2813);
+    CPy_DecRef(cpy_r_r2826);
+    goto CPyL544;
+CPyL906: ;
+    CPy_DecRef(cpy_r_r2846);
+    goto CPyL544;
+CPyL907: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2855);
+    goto CPyL544;
+CPyL908: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2855);
+    CPy_DecRef(cpy_r_r2862);
+    goto CPyL544;
+CPyL909: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2863);
+    goto CPyL544;
+CPyL910: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2863);
+    CPy_DecRef(cpy_r_r2876);
+    goto CPyL544;
+CPyL911: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    goto CPyL544;
+CPyL912: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    CPy_DecRef(cpy_r_r2894);
+    goto CPyL544;
+CPyL913: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    CPy_DecRef(cpy_r_r2894);
+    CPy_DecRef(cpy_r_r2901);
+    goto CPyL544;
+CPyL914: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    CPy_DecRef(cpy_r_r2902);
+    goto CPyL544;
+CPyL915: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    CPy_DecRef(cpy_r_r2902);
+    CPy_DecRef(cpy_r_r2915);
+    goto CPyL544;
+CPyL916: ;
+    CPy_DecRef(cpy_r_r2846);
+    CPy_DecRef(cpy_r_r2885);
+    CPy_DecRef(cpy_r_r2924);
+    goto CPyL544;
+CPyL917: ;
+    CPy_DecRef(cpy_r_r2936);
+    goto CPyL544;
+CPyL918: ;
+    CPy_DecRef(cpy_r_r2936);
+    CPy_DecRef(cpy_r_r2944);
+    goto CPyL544;
+CPyL919: ;
+    CPy_DecRef(cpy_r_r2955);
+    goto CPyL544;
+CPyL920: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2962);
+    goto CPyL544;
+CPyL921: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2963);
+    goto CPyL544;
+CPyL922: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2963);
+    CPy_DecRef(cpy_r_r2973);
+    goto CPyL544;
+CPyL923: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    goto CPyL544;
+CPyL924: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r2991);
+    goto CPyL544;
+CPyL925: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r2991);
+    CPy_DecRef(cpy_r_r2996);
+    goto CPyL544;
+CPyL926: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r2997);
+    goto CPyL544;
+CPyL927: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r3012);
+    goto CPyL544;
+CPyL928: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r3012);
+    CPy_DecRef(cpy_r_r3018);
+    goto CPyL544;
+CPyL929: ;
+    CPy_DecRef(cpy_r_r2955);
+    CPy_DecRef(cpy_r_r2984);
+    CPy_DecRef(cpy_r_r3012);
+    CPy_DecRef(cpy_r_r3028);
+    goto CPyL544;
+CPyL930: ;
+    CPy_DecRef(cpy_r_r3045);
+    goto CPyL544;
+CPyL931: ;
+    CPy_DecRef(cpy_r_r3045);
+    CPy_DecRef(cpy_r_r3050);
+    goto CPyL544;
+CPyL932: ;
+    CPy_DecRef(cpy_r_r3051);
+    goto CPyL544;
+CPyL933: ;
+    CPy_DecRef(cpy_r_r3051);
+    CPy_DecRef(cpy_r_r3062);
+    goto CPyL544;
+CPyL934: ;
+    CPy_DecRef(cpy_r_r3071);
+    goto CPyL544;
+CPyL935: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3078);
+    goto CPyL544;
+CPyL936: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3079);
+    goto CPyL544;
+CPyL937: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3079);
+    CPy_DecRef(cpy_r_r3089);
+    goto CPyL544;
+CPyL938: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    goto CPyL544;
+CPyL939: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3101);
+    goto CPyL544;
+CPyL940: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3101);
+    CPy_DecRef(cpy_r_r3109);
+    goto CPyL544;
+CPyL941: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    goto CPyL544;
+CPyL942: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3121);
+    goto CPyL544;
+CPyL943: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3121);
+    CPy_DecRef(cpy_r_r3129);
+    goto CPyL544;
+CPyL944: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    goto CPyL544;
+CPyL945: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3145);
+    goto CPyL544;
+CPyL946: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3146);
+    goto CPyL544;
+CPyL947: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3146);
+    CPy_DecRef(cpy_r_r3156);
+    goto CPyL544;
+CPyL948: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    goto CPyL544;
+CPyL949: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3172);
+    goto CPyL544;
+CPyL950: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3173);
+    goto CPyL544;
+CPyL951: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3173);
+    CPy_DecRef(cpy_r_r3183);
+    goto CPyL544;
+CPyL952: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3192);
+    goto CPyL544;
+CPyL953: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3192);
+    CPy_DecRef(cpy_r_r3198);
+    goto CPyL544;
+CPyL954: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3192);
+    CPy_DecRef(cpy_r_r3198);
+    CPy_DecRef(cpy_r_r3203);
+    goto CPyL544;
+CPyL955: ;
+    CPy_DecRef(cpy_r_r3071);
+    CPy_DecRef(cpy_r_r3098);
+    CPy_DecRef(cpy_r_r3118);
+    CPy_DecRef(cpy_r_r3138);
+    CPy_DecRef(cpy_r_r3165);
+    CPy_DecRef(cpy_r_r3192);
+    CPy_DecRef(cpy_r_r3212);
+    goto CPyL544;
+}
 static PyMethodDef faster_ens___automodule_methods[] = {
     {NULL, NULL, 0, NULL}
 };
@@ -13556,6 +29366,357 @@ CPyL3: ;
 CPyL24: ;
     cpy_r_r98 = 2;
     return cpy_r_r98;
+}
+static PyMethodDef contract_datamodule_methods[] = {
+    {NULL, NULL, 0, NULL}
+};
+
+int CPyExec_faster_ens___contract_data(PyObject *module)
+{
+    PyObject* modname = NULL;
+    modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_ens___contract_data__internal, "__name__");
+    CPyStatic_contract_data___globals = PyModule_GetDict(CPyModule_faster_ens___contract_data__internal);
+    if (unlikely(CPyStatic_contract_data___globals == NULL))
+        goto fail;
+    if (CPyGlobalsInit() < 0)
+        goto fail;
+    char result = CPyDef_contract_data_____top_level__();
+    if (result == 2)
+        goto fail;
+    Py_DECREF(modname);
+    return 0;
+    fail:
+    Py_CLEAR(CPyModule_faster_ens___contract_data__internal);
+    Py_CLEAR(modname);
+    return -1;
+}
+static struct PyModuleDef contract_datamodule = {
+    PyModuleDef_HEAD_INIT,
+    "faster_ens.contract_data",
+    NULL, /* docstring */
+    0,       /* size of per-interpreter state of the module */
+    contract_datamodule_methods,
+    NULL,
+};
+
+PyObject *CPyInit_faster_ens___contract_data(void)
+{
+    if (CPyModule_faster_ens___contract_data__internal) {
+        Py_INCREF(CPyModule_faster_ens___contract_data__internal);
+        return CPyModule_faster_ens___contract_data__internal;
+    }
+    CPyModule_faster_ens___contract_data__internal = PyModule_Create(&contract_datamodule);
+    if (unlikely(CPyModule_faster_ens___contract_data__internal == NULL))
+        goto fail;
+    if (CPyExec_faster_ens___contract_data(CPyModule_faster_ens___contract_data__internal) != 0)
+        goto fail;
+    return CPyModule_faster_ens___contract_data__internal;
+    fail:
+    return NULL;
+}
+
+char CPyDef_contract_data_____top_level__(void) {
+    PyObject *cpy_r_r0;
+    PyObject *cpy_r_r1;
+    char cpy_r_r2;
+    PyObject *cpy_r_r3;
+    PyObject *cpy_r_r4;
+    PyObject **cpy_r_r5;
+    void *cpy_r_r7;
+    void *cpy_r_r9;
+    PyObject *cpy_r_r10;
+    PyObject *cpy_r_r11;
+    PyObject *cpy_r_r12;
+    PyObject *cpy_r_r13;
+    char cpy_r_r14;
+    PyObject *cpy_r_r15;
+    PyObject *cpy_r_r16;
+    PyObject *cpy_r_r17;
+    PyObject *cpy_r_r18;
+    PyObject **cpy_r_r20;
+    PyObject *cpy_r_r21;
+    PyObject *cpy_r_r22;
+    PyObject *cpy_r_r23;
+    int32_t cpy_r_r24;
+    char cpy_r_r25;
+    PyObject *cpy_r_r26;
+    PyObject *cpy_r_r27;
+    PyObject *cpy_r_r28;
+    int32_t cpy_r_r29;
+    char cpy_r_r30;
+    PyObject *cpy_r_r31;
+    PyObject *cpy_r_r32;
+    PyObject *cpy_r_r33;
+    int32_t cpy_r_r34;
+    char cpy_r_r35;
+    PyObject *cpy_r_r36;
+    PyObject *cpy_r_r37;
+    PyObject *cpy_r_r38;
+    PyObject *cpy_r_r39;
+    PyObject **cpy_r_r41;
+    PyObject *cpy_r_r42;
+    PyObject *cpy_r_r43;
+    PyObject *cpy_r_r44;
+    int32_t cpy_r_r45;
+    char cpy_r_r46;
+    PyObject *cpy_r_r47;
+    PyObject *cpy_r_r48;
+    PyObject *cpy_r_r49;
+    int32_t cpy_r_r50;
+    char cpy_r_r51;
+    PyObject *cpy_r_r52;
+    PyObject *cpy_r_r53;
+    PyObject *cpy_r_r54;
+    int32_t cpy_r_r55;
+    char cpy_r_r56;
+    PyObject *cpy_r_r57;
+    PyObject *cpy_r_r58;
+    PyObject *cpy_r_r59;
+    PyObject *cpy_r_r60;
+    PyObject **cpy_r_r62;
+    PyObject *cpy_r_r63;
+    PyObject *cpy_r_r64;
+    PyObject *cpy_r_r65;
+    int32_t cpy_r_r66;
+    char cpy_r_r67;
+    PyObject *cpy_r_r68;
+    PyObject *cpy_r_r69;
+    PyObject *cpy_r_r70;
+    int32_t cpy_r_r71;
+    char cpy_r_r72;
+    PyObject *cpy_r_r73;
+    PyObject *cpy_r_r74;
+    PyObject *cpy_r_r75;
+    int32_t cpy_r_r76;
+    char cpy_r_r77;
+    PyObject *cpy_r_r78;
+    PyObject *cpy_r_r79;
+    PyObject *cpy_r_r80;
+    PyObject *cpy_r_r81;
+    PyObject **cpy_r_r83;
+    PyObject *cpy_r_r84;
+    PyObject *cpy_r_r85;
+    PyObject *cpy_r_r86;
+    int32_t cpy_r_r87;
+    char cpy_r_r88;
+    PyObject *cpy_r_r89;
+    PyObject *cpy_r_r90;
+    PyObject *cpy_r_r91;
+    int32_t cpy_r_r92;
+    char cpy_r_r93;
+    PyObject *cpy_r_r94;
+    PyObject *cpy_r_r95;
+    PyObject *cpy_r_r96;
+    int32_t cpy_r_r97;
+    char cpy_r_r98;
+    char cpy_r_r99;
+    cpy_r_r0 = CPyModule_builtins;
+    cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
+    if (cpy_r_r2) goto CPyL3;
+    cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'builtins' */
+    cpy_r_r4 = PyImport_Import(cpy_r_r3);
+    if (unlikely(cpy_r_r4 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", -1, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    CPyModule_builtins = cpy_r_r4;
+    CPy_INCREF(CPyModule_builtins);
+    CPy_DECREF(cpy_r_r4);
+CPyL3: ;
+    cpy_r_r5 = (PyObject **)&CPyModule_json;
+    PyObject **cpy_r_r6[1] = {cpy_r_r5};
+    cpy_r_r7 = (void *)&cpy_r_r6;
+    int64_t cpy_r_r8[1] = {2};
+    cpy_r_r9 = (void *)&cpy_r_r8;
+    cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('json', 'json', 'json'),) */
+    cpy_r_r11 = CPyStatic_contract_data___globals;
+    cpy_r_r12 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_ens/contract_data.py' */
+    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '<module>' */
+    cpy_r_r14 = CPyImport_ImportMany(cpy_r_r10, cpy_r_r7, cpy_r_r11, cpy_r_r12, cpy_r_r13, cpy_r_r9);
+    if (!cpy_r_r14) goto CPyL25;
+    cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('[{"inputs":[{"internalType":"contract '
+                                    'ENS","name":"_ens","type":"address"},{"internalType":"bytes32","name":"_baseNode","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"controller","type":"address"}],"name":"ControllerAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"controller","type":"address"}],"name":"ControllerRemoved","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"expires","type":"uint256"}],"name":"NameMigrated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"expires","type":"uint256"}],"name":"NameRegistered","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"expires","type":"uint256"}],"name":"NameRenewed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"constant":true,"inputs":[],"name":"GRACE_PERIOD","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"controller","type":"address"}],"name":"addController","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],"name":"available","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"baseNode","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"controllers","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"ens","outputs":[{"internalType":"contract '
+                                    'ENS","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isOwner","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],"name":"nameExpires","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"address","name":"owner","type":"address"}],"name":"reclaim","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"duration","type":"uint256"}],"name":"register","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"duration","type":"uint256"}],"name":"registerOnly","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"controller","type":"address"}],"name":"removeController","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"duration","type":"uint256"}],"name":"renew","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"renounceOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"resolver","type":"address"}],"name":"setResolver","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes4","name":"interfaceID","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]') */
+    cpy_r_r16 = CPyModule_json;
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'loads' */
+    cpy_r_r18 = CPyObject_GetAttr(cpy_r_r16, cpy_r_r17);
+    if (unlikely(cpy_r_r18 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    PyObject *cpy_r_r19[1] = {cpy_r_r15};
+    cpy_r_r20 = (PyObject **)&cpy_r_r19;
+    cpy_r_r21 = PyObject_Vectorcall(cpy_r_r18, cpy_r_r20, 1, 0);
+    CPy_DECREF(cpy_r_r18);
+    if (unlikely(cpy_r_r21 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r22 = CPyStatic_contract_data___globals;
+    cpy_r_r23 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrar_abi' */
+    cpy_r_r24 = CPyDict_SetItem(cpy_r_r22, cpy_r_r23, cpy_r_r21);
+    CPy_DECREF(cpy_r_r21);
+    cpy_r_r25 = cpy_r_r24 >= 0;
+    if (unlikely(!cpy_r_r25)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '60806040523480156200001157600080fd5b5060405160408062002e71833981018060405260408110156200003357600080fd5b8101908080519060200190929190805190602001909291905050506200008b6301ffc9a77c010000000000000000000000000000000000000000000000000000000002620001d6640100000000026401000000009004565b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3620001866380ac58cd7c010000000000000000000000000000000000000000000000000000000002620001d6640100000000026401000000009004565b81600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600381905550505062000294565b63ffffffff7c010000000000000000000000000000000000000000000000000000000002817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916141515156200022857600080fd5b6001600080837bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b612bcd80620002a46000396000f3fe60806040526004361061015f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a714610164578063081812fc146101d6578063095ea7b3146102515780630e297b45146102ac57806323b872dd1461032557806328ed4f6c146103a05780633f15457f146103fb57806342842e0e146104525780634e543b26146104cd5780636352211e1461051e57806370a0823114610599578063715018a6146105fe5780638da5cb5b146106155780638f32d59b1461066c57806396e494e81461069b578063a22cb465146106ee578063a7fc7a071461074b578063b88d4fde1461079c578063c1a287e2146108ae578063c475abff146108d9578063d6e4fa8614610932578063da8c229e14610981578063ddf7fcb0146109ea578063e985e9c514610a15578063f2fde38b14610a9e578063f6a74ed714610aef578063fca247ac14610b40575b600080fd5b34801561017057600080fd5b506101bc6004803603602081101561018757600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190505050610bb9565b604051808215151515815260200191505060405180910390f35b3480156101e257600080fd5b5061020f600480360360208110156101f957600080fd5b8101908080359060200190929190505050610f82565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561025d57600080fd5b506102aa6004803603604081101561027457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610fd3565b005b3480156102b857600080fd5b5061030f600480360360608110156102cf57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611118565b6040518082815260200191505060405180910390f35b34801561033157600080fd5b5061039e6004803603606081101561034857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611130565b005b3480156103ac57600080fd5b506103f9600480360360408110156103c357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611155565b005b34801561040757600080fd5b50610410611381565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561045e57600080fd5b506104cb6004803603606081101561047557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506113a7565b005b3480156104d957600080fd5b5061051c600480360360208110156104f057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113c8565b005b34801561052a57600080fd5b506105576004803603602081101561054157600080fd5b81019080803590602001909291905050506114bd565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156105a557600080fd5b506105e8600480360360208110156105bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f0565b6040518082815260200191505060405180910390f35b34801561060a57600080fd5b50610613611574565b005b34801561062157600080fd5b5061062a611648565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561067857600080fd5b50610681611672565b604051808215151515815260200191505060405180910390f35b3480156106a757600080fd5b506106d4600480360360208110156106be57600080fd5b81019080803590602001909291905050506116ca565b604051808215151515815260200191505060405180910390f35b3480156106fa57600080fd5b506107496004803603604081101561071157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506116ee565b005b34801561075757600080fd5b5061079a6004803603602081101561076e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061182a565b005b3480156107a857600080fd5b506108ac600480360360808110156107bf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019064010000000081111561082657600080fd5b82018360208201111561083857600080fd5b8035906020019184600183028401116401000000008311171561085a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506118db565b005b3480156108ba57600080fd5b506108c3611903565b6040518082815260200191505060405180910390f35b3480156108e557600080fd5b5061091c600480360360408110156108fc57600080fd5b81019080803590602001909291908035906020019092919050505061190a565b6040518082815260200191505060405180910390f35b34801561093e57600080fd5b5061096b6004803603602081101561095557600080fd5b8101908080359060200190929190505050611b45565b6040518082815260200191505060405180910390f35b34801561098d57600080fd5b506109d0600480360360208110156109a457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b62565b604051808215151515815260200191505060405180910390f35b3480156109f657600080fd5b506109ff611b82565b6040518082815260200191505060405180910390f35b348015610a2157600080fd5b50610a8460048036036040811015610a3857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b88565b604051808215151515815260200191505060405180910390f35b348015610aaa57600080fd5b50610aed60048036036020811015610ac157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c1c565b005b348015610afb57600080fd5b50610b3e60048036036020811015610b1257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c3b565b005b348015610b4c57600080fd5b50610ba360048036036060811015610b6357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611cec565b6040518082815260200191505060405180910390f35b600060405180807f737570706f727473496e74657266616365286279746573342900000000000000815250601901905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480610efe575060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362c6279746573290000000000000000000000000000000000815250602f019050604051809103902060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362900000000000000000000000000000000000000000000008152506029019050604051809103902060405180807f7472616e7366657246726f6d28616464726573732c616464726573732c75696e81526020017f74323536290000000000000000000000000000000000000000000000000000008152506025019050604051809103902060405180807f6973417070726f766564466f72416c6c28616464726573732c6164647265737381526020017f29000000000000000000000000000000000000000000000000000000000000008152506021019050604051809103902060405180807f736574417070726f76616c466f72416c6c28616464726573732c626f6f6c2900815250601f019050604051809103902060405180807f676574417070726f7665642875696e74323536290000000000000000000000008152506014019050604051809103902060405180807f617070726f766528616464726573732c75696e743235362900000000000000008152506018019050604051809103902060405180807f6f776e65724f662875696e7432353629000000000000000000000000000000008152506010019050604051809103902060405180807f62616c616e63654f6628616464726573732900000000000000000000000000008152506012019050604051809103902018181818181818187bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b80610f7b575060405180807f7265636c61696d2875696e743235362c61646472657373290000000000000000815250601801905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b9050919050565b6000610f8d82611d04565b1515610f9857600080fd5b6006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000610fde826114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561101b57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061105b575061105a8133611b88565b5b151561106657600080fd5b826006600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92560405160405180910390a4505050565b60006111278484846000611d76565b90509392505050565b61113a33826120b2565b151561114557600080fd5b611150838383612147565b505050565b3073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156111fd57600080fd5b505afa158015611211573d6000803e3d6000fd5b505050506040513d602081101561122757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff1614151561125a57600080fd5b61126433836120b2565b151561126f57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035484600102846040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561134157600080fd5b505af1158015611355573d6000803e3d6000fd5b505050506040513d602081101561136b57600080fd5b8101908080519060200190929190505050505050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6113c383838360206040519081016040528060008152506118db565b505050565b6113d0611672565b15156113db57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a600354836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b1580156114a257600080fd5b505af11580156114b6573d6000803e3d6000fd5b5050505050565b60004260096000848152602001908152602001600020541115156114e057600080fd5b6114e9826123ac565b9050919050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561152d57600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b61157c611672565b151561158757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000426276a700600960008581526020019081526020016000205401109050919050565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561172957600080fd5b80600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c3183604051808215151515815260200191505060405180910390a35050565b611832611672565b151561183d57600080fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f0a8bb31534c0ed46f380cb867bd5c803a189ced9a764e30b3a4991a9901d747460405160405180910390a250565b6118e6848484611130565b6118f28484848461242a565b15156118fd57600080fd5b50505050565b6276a70081565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156119b457600080fd5b505afa1580156119c8573d6000803e3d6000fd5b505050506040513d60208110156119de57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611a1157600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611a6957600080fd5b426276a70060096000868152602001908152602001600020540110151515611a9057600080fd5b6276a70082016276a7008360096000878152602001908152602001600020540101111515611abd57600080fd5b816009600085815260200190815260200160002060008282540192505081905550827f9b87a00e30f1ac65d898f070f8a3488fe60517182d0a2098e1b4b93a54aa9bd660096000868152602001908152602001600020546040518082815260200191505060405180910390a26009600084815260200190815260200160002054905092915050565b600060096000838152602001908152602001600020549050919050565b60046020528060005260406000206000915054906101000a900460ff1681565b60035481565b6000600860008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b611c24611672565b1515611c2f57600080fd5b611c388161264d565b50565b611c43611672565b1515611c4e57600080fd5b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f33d83959be2573f5453b12eb9d43b3499bc57d96bd2f067ba44803c859e8111360405160405180910390a250565b6000611cfb8484846001611d76565b90509392505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415915050919050565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b158015611e2057600080fd5b505afa158015611e34573d6000803e3d6000fd5b505050506040513d6020811015611e4a57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611e7d57600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611ed557600080fd5b611ede856116ca565b1515611ee957600080fd5b6276a70042016276a70084420101111515611f0357600080fd5b8242016009600087815260200190815260200160002081905550611f2685611d04565b15611f3557611f3485612749565b5b611f3f848661275e565b811561205457600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035487600102876040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561201757600080fd5b505af115801561202b573d6000803e3d6000fd5b505050506040513d602081101561204157600080fd5b8101908080519060200190929190505050505b8373ffffffffffffffffffffffffffffffffffffffff16857fb3d987963d01b2f68493b4bdb130988f157ea43070d4ad840fee0466ed9370d98542016040518082815260200191505060405180910390a38242019050949350505050565b6000806120be836114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16148061212d57508373ffffffffffffffffffffffffffffffffffffffff1661211584610f82565b73ffffffffffffffffffffffffffffffffffffffff16145b8061213e575061213d8185611b88565b5b91505092915050565b8273ffffffffffffffffffffffffffffffffffffffff16612167826114bd565b73ffffffffffffffffffffffffffffffffffffffff1614151561218957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156121c557600080fd5b6121ce816128f7565b6122216001600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506122b76001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561242157600080fd5b80915050919050565b600061244b8473ffffffffffffffffffffffffffffffffffffffff166129fa565b151561245a5760019050612645565b60008473ffffffffffffffffffffffffffffffffffffffff1663150b7a02338887876040518563ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015612551578082015181840152602081019050612536565b50505050905090810190601f16801561257e5780820380516001836020036101000a031916815260200191505b5095505050505050602060405180830381600087803b1580156125a057600080fd5b505af11580156125b4573d6000803e3d6000fd5b505050506040513d60208110156125ca57600080fd5b8101908080519060200190929190505050905063150b7a027c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149150505b949350505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561268957600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a380600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b61275b612755826114bd565b82612a0d565b50565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561279a57600080fd5b6127a381611d04565b1515156127af57600080fd5b816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506128546001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808273ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a45050565b600073ffffffffffffffffffffffffffffffffffffffff166006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156129b45760006006600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008282111515156129c857600080fd5b600082840390508091505092915050565b60008082840190508381101515156129f057600080fd5b8091505092915050565b600080823b905060008111915050919050565b8173ffffffffffffffffffffffffffffffffffffffff16612a2d826114bd565b73ffffffffffffffffffffffffffffffffffffffff16141515612a4f57600080fd5b612a58816128f7565b612aab6001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060006005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505056fea165627a7a72305820af9388697026a32fc11fae5e11a7544e431f49880e9dccb1eb61220f2ec18abc0029' */
+    cpy_r_r27 = CPyStatic_contract_data___globals;
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrar_bytecode' */
+    cpy_r_r29 = CPyDict_SetItem(cpy_r_r27, cpy_r_r28, cpy_r_r26);
+    cpy_r_r30 = cpy_r_r29 >= 0;
+    if (unlikely(!cpy_r_r30)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '60806040526004361061015f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a714610164578063081812fc146101d6578063095ea7b3146102515780630e297b45146102ac57806323b872dd1461032557806328ed4f6c146103a05780633f15457f146103fb57806342842e0e146104525780634e543b26146104cd5780636352211e1461051e57806370a0823114610599578063715018a6146105fe5780638da5cb5b146106155780638f32d59b1461066c57806396e494e81461069b578063a22cb465146106ee578063a7fc7a071461074b578063b88d4fde1461079c578063c1a287e2146108ae578063c475abff146108d9578063d6e4fa8614610932578063da8c229e14610981578063ddf7fcb0146109ea578063e985e9c514610a15578063f2fde38b14610a9e578063f6a74ed714610aef578063fca247ac14610b40575b600080fd5b34801561017057600080fd5b506101bc6004803603602081101561018757600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190505050610bb9565b604051808215151515815260200191505060405180910390f35b3480156101e257600080fd5b5061020f600480360360208110156101f957600080fd5b8101908080359060200190929190505050610f82565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561025d57600080fd5b506102aa6004803603604081101561027457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610fd3565b005b3480156102b857600080fd5b5061030f600480360360608110156102cf57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611118565b6040518082815260200191505060405180910390f35b34801561033157600080fd5b5061039e6004803603606081101561034857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611130565b005b3480156103ac57600080fd5b506103f9600480360360408110156103c357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611155565b005b34801561040757600080fd5b50610410611381565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561045e57600080fd5b506104cb6004803603606081101561047557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506113a7565b005b3480156104d957600080fd5b5061051c600480360360208110156104f057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113c8565b005b34801561052a57600080fd5b506105576004803603602081101561054157600080fd5b81019080803590602001909291905050506114bd565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156105a557600080fd5b506105e8600480360360208110156105bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f0565b6040518082815260200191505060405180910390f35b34801561060a57600080fd5b50610613611574565b005b34801561062157600080fd5b5061062a611648565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561067857600080fd5b50610681611672565b604051808215151515815260200191505060405180910390f35b3480156106a757600080fd5b506106d4600480360360208110156106be57600080fd5b81019080803590602001909291905050506116ca565b604051808215151515815260200191505060405180910390f35b3480156106fa57600080fd5b506107496004803603604081101561071157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506116ee565b005b34801561075757600080fd5b5061079a6004803603602081101561076e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061182a565b005b3480156107a857600080fd5b506108ac600480360360808110156107bf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019064010000000081111561082657600080fd5b82018360208201111561083857600080fd5b8035906020019184600183028401116401000000008311171561085a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506118db565b005b3480156108ba57600080fd5b506108c3611903565b6040518082815260200191505060405180910390f35b3480156108e557600080fd5b5061091c600480360360408110156108fc57600080fd5b81019080803590602001909291908035906020019092919050505061190a565b6040518082815260200191505060405180910390f35b34801561093e57600080fd5b5061096b6004803603602081101561095557600080fd5b8101908080359060200190929190505050611b45565b6040518082815260200191505060405180910390f35b34801561098d57600080fd5b506109d0600480360360208110156109a457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b62565b604051808215151515815260200191505060405180910390f35b3480156109f657600080fd5b506109ff611b82565b6040518082815260200191505060405180910390f35b348015610a2157600080fd5b50610a8460048036036040811015610a3857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b88565b604051808215151515815260200191505060405180910390f35b348015610aaa57600080fd5b50610aed60048036036020811015610ac157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c1c565b005b348015610afb57600080fd5b50610b3e60048036036020811015610b1257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c3b565b005b348015610b4c57600080fd5b50610ba360048036036060811015610b6357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611cec565b6040518082815260200191505060405180910390f35b600060405180807f737570706f727473496e74657266616365286279746573342900000000000000815250601901905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480610efe575060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362c6279746573290000000000000000000000000000000000815250602f019050604051809103902060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362900000000000000000000000000000000000000000000008152506029019050604051809103902060405180807f7472616e7366657246726f6d28616464726573732c616464726573732c75696e81526020017f74323536290000000000000000000000000000000000000000000000000000008152506025019050604051809103902060405180807f6973417070726f766564466f72416c6c28616464726573732c6164647265737381526020017f29000000000000000000000000000000000000000000000000000000000000008152506021019050604051809103902060405180807f736574417070726f76616c466f72416c6c28616464726573732c626f6f6c2900815250601f019050604051809103902060405180807f676574417070726f7665642875696e74323536290000000000000000000000008152506014019050604051809103902060405180807f617070726f766528616464726573732c75696e743235362900000000000000008152506018019050604051809103902060405180807f6f776e65724f662875696e7432353629000000000000000000000000000000008152506010019050604051809103902060405180807f62616c616e63654f6628616464726573732900000000000000000000000000008152506012019050604051809103902018181818181818187bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b80610f7b575060405180807f7265636c61696d2875696e743235362c61646472657373290000000000000000815250601801905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b9050919050565b6000610f8d82611d04565b1515610f9857600080fd5b6006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000610fde826114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561101b57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061105b575061105a8133611b88565b5b151561106657600080fd5b826006600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92560405160405180910390a4505050565b60006111278484846000611d76565b90509392505050565b61113a33826120b2565b151561114557600080fd5b611150838383612147565b505050565b3073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156111fd57600080fd5b505afa158015611211573d6000803e3d6000fd5b505050506040513d602081101561122757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff1614151561125a57600080fd5b61126433836120b2565b151561126f57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035484600102846040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561134157600080fd5b505af1158015611355573d6000803e3d6000fd5b505050506040513d602081101561136b57600080fd5b8101908080519060200190929190505050505050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6113c383838360206040519081016040528060008152506118db565b505050565b6113d0611672565b15156113db57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a600354836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b1580156114a257600080fd5b505af11580156114b6573d6000803e3d6000fd5b5050505050565b60004260096000848152602001908152602001600020541115156114e057600080fd5b6114e9826123ac565b9050919050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561152d57600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b61157c611672565b151561158757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000426276a700600960008581526020019081526020016000205401109050919050565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561172957600080fd5b80600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c3183604051808215151515815260200191505060405180910390a35050565b611832611672565b151561183d57600080fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f0a8bb31534c0ed46f380cb867bd5c803a189ced9a764e30b3a4991a9901d747460405160405180910390a250565b6118e6848484611130565b6118f28484848461242a565b15156118fd57600080fd5b50505050565b6276a70081565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156119b457600080fd5b505afa1580156119c8573d6000803e3d6000fd5b505050506040513d60208110156119de57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611a1157600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611a6957600080fd5b426276a70060096000868152602001908152602001600020540110151515611a9057600080fd5b6276a70082016276a7008360096000878152602001908152602001600020540101111515611abd57600080fd5b816009600085815260200190815260200160002060008282540192505081905550827f9b87a00e30f1ac65d898f070f8a3488fe60517182d0a2098e1b4b93a54aa9bd660096000868152602001908152602001600020546040518082815260200191505060405180910390a26009600084815260200190815260200160002054905092915050565b600060096000838152602001908152602001600020549050919050565b60046020528060005260406000206000915054906101000a900460ff1681565b60035481565b6000600860008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b611c24611672565b1515611c2f57600080fd5b611c388161264d565b50565b611c43611672565b1515611c4e57600080fd5b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f33d83959be2573f5453b12eb9d43b3499bc57d96bd2f067ba44803c859e8111360405160405180910390a250565b6000611cfb8484846001611d76565b90509392505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415915050919050565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b158015611e2057600080fd5b505afa158015611e34573d6000803e3d6000fd5b505050506040513d6020811015611e4a57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611e7d57600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611ed557600080fd5b611ede856116ca565b1515611ee957600080fd5b6276a70042016276a70084420101111515611f0357600080fd5b8242016009600087815260200190815260200160002081905550611f2685611d04565b15611f3557611f3485612749565b5b611f3f848661275e565b811561205457600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035487600102876040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561201757600080fd5b505af115801561202b573d6000803e3d6000fd5b505050506040513d602081101561204157600080fd5b8101908080519060200190929190505050505b8373ffffffffffffffffffffffffffffffffffffffff16857fb3d987963d01b2f68493b4bdb130988f157ea43070d4ad840fee0466ed9370d98542016040518082815260200191505060405180910390a38242019050949350505050565b6000806120be836114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16148061212d57508373ffffffffffffffffffffffffffffffffffffffff1661211584610f82565b73ffffffffffffffffffffffffffffffffffffffff16145b8061213e575061213d8185611b88565b5b91505092915050565b8273ffffffffffffffffffffffffffffffffffffffff16612167826114bd565b73ffffffffffffffffffffffffffffffffffffffff1614151561218957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156121c557600080fd5b6121ce816128f7565b6122216001600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506122b76001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561242157600080fd5b80915050919050565b600061244b8473ffffffffffffffffffffffffffffffffffffffff166129fa565b151561245a5760019050612645565b60008473ffffffffffffffffffffffffffffffffffffffff1663150b7a02338887876040518563ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015612551578082015181840152602081019050612536565b50505050905090810190601f16801561257e5780820380516001836020036101000a031916815260200191505b5095505050505050602060405180830381600087803b1580156125a057600080fd5b505af11580156125b4573d6000803e3d6000fd5b505050506040513d60208110156125ca57600080fd5b8101908080519060200190929190505050905063150b7a027c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149150505b949350505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561268957600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a380600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b61275b612755826114bd565b82612a0d565b50565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561279a57600080fd5b6127a381611d04565b1515156127af57600080fd5b816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506128546001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808273ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a45050565b600073ffffffffffffffffffffffffffffffffffffffff166006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156129b45760006006600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008282111515156129c857600080fd5b600082840390508091505092915050565b60008082840190508381101515156129f057600080fd5b8091505092915050565b600080823b905060008111915050919050565b8173ffffffffffffffffffffffffffffffffffffffff16612a2d826114bd565b73ffffffffffffffffffffffffffffffffffffffff16141515612a4f57600080fd5b612a58816128f7565b612aab6001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060006005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505056fea165627a7a72305820af9388697026a32fc11fae5e11a7544e431f49880e9dccb1eb61220f2ec18abc0029' */
+    cpy_r_r32 = CPyStatic_contract_data___globals;
+    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'registrar_bytecode_runtime' */
+    cpy_r_r34 = CPyDict_SetItem(cpy_r_r32, cpy_r_r33, cpy_r_r31);
+    cpy_r_r35 = cpy_r_r34 >= 0;
+    if (unlikely(!cpy_r_r35)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('[{"inputs":[{"internalType":"contract '
+                                    'ENS","name":"_ens","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":true,"internalType":"uint256","name":"contentType","type":"uint256"}],"name":"ABIChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"address","name":"a","type":"address"}],"name":"AddrChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"uint256","name":"coinType","type":"uint256"},{"indexed":false,"internalType":"bytes","name":"newAddress","type":"bytes"}],"name":"AddressChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"target","type":"address"},{"indexed":false,"internalType":"bool","name":"isAuthorised","type":"bool"}],"name":"AuthorisationChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"bytes","name":"hash","type":"bytes"}],"name":"ContenthashChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"bytes","name":"name","type":"bytes"},{"indexed":false,"internalType":"uint16","name":"resource","type":"uint16"},{"indexed":false,"internalType":"bytes","name":"record","type":"bytes"}],"name":"DNSRecordChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"bytes","name":"name","type":"bytes"},{"indexed":false,"internalType":"uint16","name":"resource","type":"uint16"}],"name":"DNSRecordDeleted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"DNSZoneCleared","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":true,"internalType":"bytes4","name":"interfaceID","type":"bytes4"},{"indexed":false,"internalType":"address","name":"implementer","type":"address"}],"name":"InterfaceChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"string","name":"name","type":"string"}],"name":"NameChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":false,"internalType":"bytes32","name":"x","type":"bytes32"},{"indexed":false,"internalType":"bytes32","name":"y","type":"bytes32"}],"name":"PubkeyChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"node","type":"bytes32"},{"indexed":true,"internalType":"string","name":"indexedKey","type":"string"},{"indexed":false,"internalType":"string","name":"key","type":"string"}],"name":"TextChanged","type":"event"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"uint256","name":"contentTypes","type":"uint256"}],"name":"ABI","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"bytes","name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"addr","outputs":[{"internalType":"address '
+                                    'payable","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"uint256","name":"coinType","type":"uint256"}],"name":"addr","outputs":[{"internalType":"bytes","name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"},{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"authorisations","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"clearDNSZone","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"contenthash","outputs":[{"internalType":"bytes","name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes32","name":"name","type":"bytes32"},{"internalType":"uint16","name":"resource","type":"uint16"}],"name":"dnsRecord","outputs":[{"internalType":"bytes","name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes32","name":"name","type":"bytes32"}],"name":"hasDNSRecords","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes4","name":"interfaceID","type":"bytes4"}],"name":"interfaceImplementer","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes[]","name":"data","type":"bytes[]"}],"name":"multicall","outputs":[{"internalType":"bytes[]","name":"results","type":"bytes[]"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"}],"name":"pubkey","outputs":[{"internalType":"bytes32","name":"x","type":"bytes32"},{"internalType":"bytes32","name":"y","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"uint256","name":"contentType","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"name":"setABI","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"uint256","name":"coinType","type":"uint256"},{"internalType":"bytes","name":"a","type":"bytes"}],"name":"setAddr","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"address","name":"a","type":"address"}],"name":"setAddr","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"address","name":"target","type":"address"},{"internalType":"bool","name":"isAuthorised","type":"bool"}],"name":"setAuthorisation","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes","name":"hash","type":"bytes"}],"name":"setContenthash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes","name":"data","type":"bytes"}],"name":"setDNSRecords","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes4","name":"interfaceID","type":"bytes4"},{"internalType":"address","name":"implementer","type":"address"}],"name":"setInterface","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"string","name":"name","type":"string"}],"name":"setName","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"bytes32","name":"x","type":"bytes32"},{"internalType":"bytes32","name":"y","type":"bytes32"}],"name":"setPubkey","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"string","name":"key","type":"string"},{"internalType":"string","name":"value","type":"string"}],"name":"setText","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes4","name":"interfaceID","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"string","name":"key","type":"string"}],"name":"text","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]') */
+    cpy_r_r37 = CPyModule_json;
+    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'loads' */
+    cpy_r_r39 = CPyObject_GetAttr(cpy_r_r37, cpy_r_r38);
+    if (unlikely(cpy_r_r39 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    PyObject *cpy_r_r40[1] = {cpy_r_r36};
+    cpy_r_r41 = (PyObject **)&cpy_r_r40;
+    cpy_r_r42 = PyObject_Vectorcall(cpy_r_r39, cpy_r_r41, 1, 0);
+    CPy_DECREF(cpy_r_r39);
+    if (unlikely(cpy_r_r42 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r43 = CPyStatic_contract_data___globals;
+    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver_abi' */
+    cpy_r_r45 = CPyDict_SetItem(cpy_r_r43, cpy_r_r44, cpy_r_r42);
+    CPy_DECREF(cpy_r_r42);
+    cpy_r_r46 = cpy_r_r45 >= 0;
+    if (unlikely(!cpy_r_r46)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r47 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '60806040523480156200001157600080fd5b506040516020806200399f833981018060405262000033919081019062000091565b80600a60006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505062000105565b6000620000898251620000f1565b905092915050565b600060208284031215620000a457600080fd5b6000620000b4848285016200007b565b91505092915050565b6000620000ca82620000d1565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000620000fe82620000bd565b9050919050565b61388a80620001156000396000f3fe608060405260043610610133576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a7146101385780630af179d71461017557806310f13a8c1461019e578063124a319c146101c75780632203ab561461020457806329cd62ea14610242578063304e6ade1461026b5780633b3b57de146102945780633e9ce794146102d15780634cbf6ba4146102fa57806359d1d43c14610337578063623195b014610374578063691f34311461039d57806377372213146103da5780638b95dd7114610403578063a8fa56821461042c578063ad5780af14610469578063bc1c58d114610492578063c8690233146104cf578063d5fa2b001461050d578063e59d895d14610536578063f1cb7e061461055f578063f86bc8791461059c575b600080fd5b34801561014457600080fd5b5061015f600480360361015a9190810190613148565b6105d9565b60405161016c91906132df565b60405180910390f35b34801561018157600080fd5b5061019c60048036036101979190810190612f00565b610656565b005b3480156101aa57600080fd5b506101c560048036036101c09190810190612fb0565b6108d5565b005b3480156101d357600080fd5b506101ee60048036036101e99190810190612e75565b610979565b6040516101fb91906132a9565b60405180910390f35b34801561021057600080fd5b5061022b60048036036102269190810190613039565b610ede565b60405161023992919061361e565b60405180910390f35b34801561024e57600080fd5b5061026960048036036102649190810190612dd7565b611033565b005b34801561027757600080fd5b50610292600480360361028d9190810190612f00565b6110c8565b005b3480156102a057600080fd5b506102bb60048036036102b69190810190612c98565b611141565b6040516102c891906132c4565b60405180910390f35b3480156102dd57600080fd5b506102f860048036036102f39190810190612d4c565b611178565b005b34801561030657600080fd5b50610321600480360361031c9190810190612d9b565b61125f565b60405161032e91906132df565b60405180910390f35b34801561034357600080fd5b5061035e60048036036103599190810190612f58565b6112c7565b60405161036b91906135fc565b60405180910390f35b34801561038057600080fd5b5061039b60048036036103969190810190613075565b6113a3565b005b3480156103a957600080fd5b506103c460048036036103bf9190810190612c98565b61143f565b6040516103d191906135fc565b60405180910390f35b3480156103e657600080fd5b5061040160048036036103fc9190810190612f58565b6114f4565b005b34801561040f57600080fd5b5061042a600480360361042591908101906130e1565b61156d565b005b34801561043857600080fd5b50610453600480360361044e9190810190612e26565b611647565b60405161046091906135da565b60405180910390f35b34801561047557600080fd5b50610490600480360361048b9190810190612c98565b61174c565b005b34801561049e57600080fd5b506104b960048036036104b49190810190612c98565b6117bf565b6040516104c691906135da565b60405180910390f35b3480156104db57600080fd5b506104f660048036036104f19190810190612c98565b611874565b604051610504929190613383565b60405180910390f35b34801561051957600080fd5b50610534600480360361052f9190810190612cc1565b6118ae565b005b34801561054257600080fd5b5061055d60048036036105589190810190612eb1565b6118dc565b005b34801561056b57600080fd5b5061058660048036036105819190810190613039565b6119d3565b60405161059391906135da565b60405180910390f35b3480156105a857600080fd5b506105c360048036036105be9190810190612cfd565b611a9a565b6040516105d091906132df565b60405180910390f35b60006359d1d43c7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061064f575061064e82611ad6565b5b9050919050565b8261066081611b53565b151561066b57600080fd5b6000809050600080905060608060006106826128bc565b6106da60008a8a8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050611cf890919063ffffffff16565b90505b6106e681611d22565b15156108625760008661ffff161415610791578060400151955061070981611d38565b9350836040516020018082805190602001908083835b602083101515610744578051825260208201915060208101905060208303925061071f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405160208183030381529060405280519060200120915061078a81611d6f565b9250610854565b606061079c82611d38565b9050816040015161ffff168761ffff161415806107c957506107c78186611d9f90919063ffffffff16565b155b156108525761082b8b86898d8d8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050508a8b88602001510360008b5114611dc6565b81604001519650816020015195508094508480519060200120925061084f82611d6f565b93505b505b61085d816120fa565b6106dd565b506000835111156108ca576108c98984878b8b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505088898e8e9050036000895114611dc6565b5b505050505050505050565b846108df81611b53565b15156108ea57600080fd5b828260096000898152602001908152602001600020878760405180838380828437808301925050509250505090815260200160405180910390209190610931929190612908565b507fd8c9334b1a9c2f9da342a0a2b32629c1a229b6445dad78947f674b44444a7550868686888860405161096995949392919061350f565b60405180910390a1505050505050565b600080600660008581526020019081526020016000206000847bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610a405780915050610ed8565b6000610a4b85611141565b9050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610a8d57600092505050610ed8565b600060608273ffffffffffffffffffffffffffffffffffffffff166301ffc9a77c010000000000000000000000000000000000000000000000000000000002604051602401610adc91906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610b8e5780518252602082019150602081019050602083039250610b69565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610bee576040519150601f19603f3d011682016040523d82523d6000602084013e610bf3565b606091505b5091509150811580610c06575060208151105b80610cae575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610c3f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610cc0576000945050505050610ed8565b8273ffffffffffffffffffffffffffffffffffffffff1686604051602401610ce891906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610d9a5780518252602082019150602081019050602083039250610d75565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610dfa576040519150601f19603f3d011682016040523d82523d6000602084013e610dff565b606091505b508092508193505050811580610e16575060208151105b80610ebe575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610e4f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610ed0576000945050505050610ed8565b829450505050505b92915050565b60006060600080600086815260200190815260200160002090506000600190505b848111151561100f57600085821614158015610f4157506000826000838152602001908152602001600020805460018160011615610100020316600290049050115b156110005780826000838152602001908152602001600020808054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610fee5780601f10610fc357610100808354040283529160200191610fee565b820191906000526020600020905b815481529060010190602001808311610fd157829003601f168201915b5050505050905093509350505061102c565b6001819060020a029050610eff565b506000602060405190810160405280600081525081915092509250505b9250929050565b8261103d81611b53565b151561104857600080fd5b6040805190810160405280848152602001838152506008600086815260200190815260200160002060008201518160000155602082015181600101559050507f1d6f5e03d3f63eb58751986629a5439baee5079ff04f345becb66e23eb154e468484846040516110ba939291906133ac565b60405180910390a150505050565b826110d281611b53565b15156110dd57600080fd5b82826002600087815260200190815260200160002091906110ff929190612988565b507fe379c1624ed7e714cc0937528a32359d69d5281337765313dba4e081b72d75788484846040516111339392919061341a565b60405180910390a150505050565b6000606061115083603c6119d3565b9050600081511415611166576000915050611173565b61116f81612210565b9150505b919050565b80600b600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df83338484604051611252949392919061333e565b60405180910390a1505050565b60008060056000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060009054906101000a900461ffff1661ffff161415905092915050565b606060096000858152602001908152602001600020838360405180838380828437808301925050509250505090815260200160405180910390208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156113955780601f1061136a57610100808354040283529160200191611395565b820191906000526020600020905b81548152906001019060200180831161137857829003601f168201915b505050505090509392505050565b836113ad81611b53565b15156113b857600080fd5b60008460018603161415156113cc57600080fd5b8282600080888152602001908152602001600020600087815260200190815260200160002091906113fe929190612988565b507faa121bbeef5f32f5961a2a28966e769023910fc9479059ee3495d4c1a696efe38585604051611430929190613558565b60405180910390a15050505050565b6060600760008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156114e85780601f106114bd576101008083540402835291602001916114e8565b820191906000526020600020905b8154815290600101906020018083116114cb57829003601f168201915b50505050509050919050565b826114fe81611b53565b151561150957600080fd5b828260076000878152602001908152602001600020919061152b929190612908565b507fb7d29e911041e8d9b843369e890bcb72c9388692ba48b65ac54e7214c4c348f784848460405161155f939291906134dd565b60405180910390a150505050565b8261157781611b53565b151561158257600080fd5b7f65412581168e88a1e60c6459d7f44ae83ad0832e670826c05a4e2476b57af7528484846040516115b593929190613581565b60405180910390a1603c831415611608577f52d7d861f09ab3d26239d492e8968629f95e9e318cf0b73bfddc441522a15fd2846115f184612210565b6040516115ff929190613315565b60405180910390a15b816001600086815260200190815260200160002060008581526020019081526020016000209080519060200190611640929190612a08565b5050505050565b606060046000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060008361ffff1661ffff1681526020019081526020016000208054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561173e5780601f106117135761010080835404028352916020019161173e565b820191906000526020600020905b81548152906001019060200180831161172157829003601f168201915b505050505090509392505050565b8061175681611b53565b151561176157600080fd5b60036000838152602001908152602001600020600081548092919060010191905055507fb757169b8492ca2f1c6619d9d76ce22803035c3b1d5f6930dffe7b127c1a1983826040516117b391906132fa565b60405180910390a15050565b6060600260008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156118685780601f1061183d57610100808354040283529160200191611868565b820191906000526020600020905b81548152906001019060200180831161184b57829003601f168201915b50505050509050919050565b6000806008600084815260200190815260200160002060000154600860008581526020019081526020016000206001015491509150915091565b816118b881611b53565b15156118c357600080fd5b6118d783603c6118d285612235565b61156d565b505050565b826118e681611b53565b15156118f157600080fd5b81600660008681526020019081526020016000206000857bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7c69f06bea0bdef565b709e93a147836b0063ba2dd89f02d0b7e8d931e6a6daa8484846040516119c5939291906133e3565b60405180910390a150505050565b60606001600084815260200190815260200160002060008381526020019081526020016000208054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015611a8d5780601f10611a6257610100808354040283529160200191611a8d565b820191906000526020600020905b815481529060010190602001808311611a7057829003601f168201915b5050505050905092915050565b600b602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b600063c86902337c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480611b4c5750611b4b82612280565b5b9050919050565b600080600a60009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401611bcd91906132fa565b60206040518083038186803b158015611be557600080fd5b505afa158015611bf9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250611c1d9190810190612c6f565b90503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161480611cf05750600b600084815260200190815260200160002060008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff165b915050919050565b611d006128bc565b828160000181905250818160c0018181525050611d1c816120fa565b92915050565b6000816000015151826020015110159050919050565b6060611d688260200151611d54846000015185602001516122fd565b846000015161235a9092919063ffffffff16565b9050919050565b6060611d988260a001518360a001518460c0015103846000015161235a9092919063ffffffff16565b9050919050565b600081518351148015611dbe5750611dbd83600084600087516123cf565b5b905092915050565b6000600360008981526020019081526020016000205490506000878051906020012090506060611e0186868961235a9092919063ffffffff16565b90508315611f79576000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141515611edf57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff16809291906001900391906101000a81548161ffff021916908361ffff160217905550505b600460008b81526020019081526020016000206000848152602001908152602001600020600083815260200190815260200160002060008961ffff1661ffff1681526020019081526020016000206000611f399190612a88565b7f03528ed0c2a3ebc993b12ce3c16bb382f9c7d88ef7d8a1bf290eaf35955a12078a8a8a604051611f6c9392919061344c565b60405180910390a16120ee565b6000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141561204d57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550505b80600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff16815260200190815260200160002090805190602001906120af929190612a08565b507f52a608b3303a48862d07a73d82fa221318c0027fbbcfb1b2329bface3f19ff2b8a8a8a846040516120e5949392919061348a565b60405180910390a15b50505050505050505050565b8060c00151816020018181525050806000015151816020015110151561211f5761220d565b6000612133826000015183602001516122fd565b82602001510190506121528183600001516123f390919063ffffffff16565b826040019061ffff16908161ffff16815250506002810190506121828183600001516123f390919063ffffffff16565b826060019061ffff16908161ffff16815250506002810190506121b281836000015161241b90919063ffffffff16565b826080019063ffffffff16908163ffffffff168152505060048101905060006121e88284600001516123f390919063ffffffff16565b61ffff169050600282019150818360a00181815250508082018360c001818152505050505b50565b60006014825114151561222257600080fd5b600c6101000a6020830151049050919050565b606060146040519080825280601f01601f19166020018201604052801561226b5781602001600182028038833980820191505090505b509050600c6101000a82026020820152919050565b600063691f34317c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806122f657506122f582612445565b5b9050919050565b6000808290505b60011561234e5783518110151561231757fe5b600061232c82866124fa90919063ffffffff16565b60ff16905060018101820191506000811415612348575061234e565b50612304565b82810391505092915050565b606083518284011115151561236e57600080fd5b6060826040519080825280601f01601f1916602001820160405280156123a35781602001600182028038833980820191505090505b50905060008060208301915085602088010190506123c2828287612580565b8293505050509392505050565b60006123dc8484846125cb565b6123e78787856125cb565b14905095945050505050565b60008251600283011115151561240857600080fd5b61ffff8260028501015116905092915050565b60008251600483011115151561243057600080fd5b63ffffffff8260048501015116905092915050565b600060405180807f696e74657266616365496d706c656d656e74657228627974657333322c62797481526020017f6573342900000000000000000000000000000000000000000000000000000000815250602401905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806124f357506124f2826125f0565b5b9050919050565b6000828281518110151561250a57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027f01000000000000000000000000000000000000000000000000000000000000009004905092915050565b5b6020811015156125a65781518352602083019250602082019150602081039050612581565b60006001826020036101000a0390508019835116818551168181178652505050505050565b60008351828401111515156125df57600080fd5b818360208601012090509392505050565b600063a8fa56827c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061266657506126658261266d565b5b9050919050565b600063bc1c58d17c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806126e357506126e2826126ea565b5b9050919050565b6000633b3b57de7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806127bb575063f1cb7e067c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b806127cb57506127ca826127d2565b5b9050919050565b6000632203ab567c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061284857506128478261284f565b5b9050919050565b60006301ffc9a77c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b60e0604051908101604052806060815260200160008152602001600061ffff168152602001600061ffff168152602001600063ffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061294957803560ff1916838001178555612977565b82800160010185558215612977579182015b8281111561297657823582559160200191906001019061295b565b5b5090506129849190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106129c957803560ff19168380011785556129f7565b828001600101855582156129f7579182015b828111156129f65782358255916020019190600101906129db565b5b509050612a049190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10612a4957805160ff1916838001178555612a77565b82800160010185558215612a77579182015b82811115612a76578251825591602001919060010190612a5b565b5b509050612a849190612ad0565b5090565b50805460018160011615610100020316600290046000825580601f10612aae5750612acd565b601f016020900490600052602060002090810190612acc9190612ad0565b5b50565b612af291905b80821115612aee576000816000905550600101612ad6565b5090565b90565b6000612b01823561375b565b905092915050565b6000612b15825161375b565b905092915050565b6000612b29823561376d565b905092915050565b6000612b3d8235613779565b905092915050565b6000612b518235613783565b905092915050565b60008083601f8401121515612b6d57600080fd5b8235905067ffffffffffffffff811115612b8657600080fd5b602083019150836001820283011115612b9e57600080fd5b9250929050565b600082601f8301121515612bb857600080fd5b8135612bcb612bc68261367b565b61364e565b91508082526020830160208301858383011115612be757600080fd5b612bf28382846137fd565b50505092915050565b60008083601f8401121515612c0f57600080fd5b8235905067ffffffffffffffff811115612c2857600080fd5b602083019150836001820283011115612c4057600080fd5b9250929050565b6000612c5382356137af565b905092915050565b6000612c6782356137bd565b905092915050565b600060208284031215612c8157600080fd5b6000612c8f84828501612b09565b91505092915050565b600060208284031215612caa57600080fd5b6000612cb884828501612b31565b91505092915050565b60008060408385031215612cd457600080fd5b6000612ce285828601612b31565b9250506020612cf385828601612af5565b9150509250929050565b600080600060608486031215612d1257600080fd5b6000612d2086828701612b31565b9350506020612d3186828701612af5565b9250506040612d4286828701612af5565b9150509250925092565b600080600060608486031215612d6157600080fd5b6000612d6f86828701612b31565b9350506020612d8086828701612af5565b9250506040612d9186828701612b1d565b9150509250925092565b60008060408385031215612dae57600080fd5b6000612dbc85828601612b31565b9250506020612dcd85828601612b31565b9150509250929050565b600080600060608486031215612dec57600080fd5b6000612dfa86828701612b31565b9350506020612e0b86828701612b31565b9250506040612e1c86828701612b31565b9150509250925092565b600080600060608486031215612e3b57600080fd5b6000612e4986828701612b31565b9350506020612e5a86828701612b31565b9250506040612e6b86828701612c47565b9150509250925092565b60008060408385031215612e8857600080fd5b6000612e9685828601612b31565b9250506020612ea785828601612b45565b9150509250929050565b600080600060608486031215612ec657600080fd5b6000612ed486828701612b31565b9350506020612ee586828701612b45565b9250506040612ef686828701612af5565b9150509250925092565b600080600060408486031215612f1557600080fd5b6000612f2386828701612b31565b935050602084013567ffffffffffffffff811115612f4057600080fd5b612f4c86828701612b59565b92509250509250925092565b600080600060408486031215612f6d57600080fd5b6000612f7b86828701612b31565b935050602084013567ffffffffffffffff811115612f9857600080fd5b612fa486828701612bfb565b92509250509250925092565b600080600080600060608688031215612fc857600080fd5b6000612fd688828901612b31565b955050602086013567ffffffffffffffff811115612ff357600080fd5b612fff88828901612bfb565b9450945050604086013567ffffffffffffffff81111561301e57600080fd5b61302a88828901612bfb565b92509250509295509295909350565b6000806040838503121561304c57600080fd5b600061305a85828601612b31565b925050602061306b85828601612c5b565b9150509250929050565b6000806000806060858703121561308b57600080fd5b600061309987828801612b31565b94505060206130aa87828801612c5b565b935050604085013567ffffffffffffffff8111156130c757600080fd5b6130d387828801612b59565b925092505092959194509250565b6000806000606084860312156130f657600080fd5b600061310486828701612b31565b935050602061311586828701612c5b565b925050604084013567ffffffffffffffff81111561313257600080fd5b61313e86828701612ba5565b9150509250925092565b60006020828403121561315a57600080fd5b600061316884828501612b45565b91505092915050565b61317a816137c7565b82525050565b613189816136cf565b82525050565b613198816136bd565b82525050565b6131a7816136e1565b82525050565b6131b6816136ed565b82525050565b6131c5816136f7565b82525050565b60008284526020840193506131e18385846137fd565b6131ea8361383f565b840190509392505050565b6000613200826136a7565b80845261321481602086016020860161380c565b61321d8161383f565b602085010191505092915050565b60008284526020840193506132418385846137fd565b61324a8361383f565b840190509392505050565b6000613260826136b2565b80845261327481602086016020860161380c565b61327d8161383f565b602085010191505092915050565b61329481613723565b82525050565b6132a381613751565b82525050565b60006020820190506132be600083018461318f565b92915050565b60006020820190506132d96000830184613180565b92915050565b60006020820190506132f4600083018461319e565b92915050565b600060208201905061330f60008301846131ad565b92915050565b600060408201905061332a60008301856131ad565b6133376020830184613171565b9392505050565b600060808201905061335360008301876131ad565b6133606020830186613171565b61336d604083018561318f565b61337a606083018461319e565b95945050505050565b600060408201905061339860008301856131ad565b6133a560208301846131ad565b9392505050565b60006060820190506133c160008301866131ad565b6133ce60208301856131ad565b6133db60408301846131ad565b949350505050565b60006060820190506133f860008301866131ad565b61340560208301856131bc565b613412604083018461318f565b949350505050565b600060408201905061342f60008301866131ad565b81810360208301526134428184866131cb565b9050949350505050565b600060608201905061346160008301866131ad565b818103602083015261347381856131f5565b9050613482604083018461328b565b949350505050565b600060808201905061349f60008301876131ad565b81810360208301526134b181866131f5565b90506134c0604083018561328b565b81810360608301526134d281846131f5565b905095945050505050565b60006040820190506134f260008301866131ad565b818103602083015261350581848661322b565b9050949350505050565b600060608201905061352460008301886131ad565b818103602083015261353781868861322b565b9050818103604083015261354c81848661322b565b90509695505050505050565b600060408201905061356d60008301856131ad565b61357a602083018461329a565b9392505050565b600060608201905061359660008301866131ad565b6135a3602083018561329a565b81810360408301526135b581846131f5565b9050949350505050565b60006020820190506135d460008301846131bc565b92915050565b600060208201905081810360008301526135f481846131f5565b905092915050565b600060208201905081810360008301526136168184613255565b905092915050565b6000604082019050613633600083018561329a565b818103602083015261364581846131f5565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561367157600080fd5b8060405250919050565b600067ffffffffffffffff82111561369257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b60006136c882613731565b9050919050565b60006136da82613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061376682613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b6000819050919050565b60006137d2826137d9565b9050919050565b60006137e4826137eb565b9050919050565b60006137f682613731565b9050919050565b82818337600083830152505050565b60005b8381101561382a57808201518184015260208101905061380f565b83811115613839576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820668668127482cd23a9f375761bf0b8d29fdbff7c261f4d2755ca9c73637d86bf6c6578706572696d656e74616cf50037' */
+    cpy_r_r48 = CPyStatic_contract_data___globals;
+    cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver_bytecode' */
+    cpy_r_r50 = CPyDict_SetItem(cpy_r_r48, cpy_r_r49, cpy_r_r47);
+    cpy_r_r51 = cpy_r_r50 >= 0;
+    if (unlikely(!cpy_r_r51)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '608060405260043610610133576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a7146101385780630af179d71461017557806310f13a8c1461019e578063124a319c146101c75780632203ab561461020457806329cd62ea14610242578063304e6ade1461026b5780633b3b57de146102945780633e9ce794146102d15780634cbf6ba4146102fa57806359d1d43c14610337578063623195b014610374578063691f34311461039d57806377372213146103da5780638b95dd7114610403578063a8fa56821461042c578063ad5780af14610469578063bc1c58d114610492578063c8690233146104cf578063d5fa2b001461050d578063e59d895d14610536578063f1cb7e061461055f578063f86bc8791461059c575b600080fd5b34801561014457600080fd5b5061015f600480360361015a9190810190613148565b6105d9565b60405161016c91906132df565b60405180910390f35b34801561018157600080fd5b5061019c60048036036101979190810190612f00565b610656565b005b3480156101aa57600080fd5b506101c560048036036101c09190810190612fb0565b6108d5565b005b3480156101d357600080fd5b506101ee60048036036101e99190810190612e75565b610979565b6040516101fb91906132a9565b60405180910390f35b34801561021057600080fd5b5061022b60048036036102269190810190613039565b610ede565b60405161023992919061361e565b60405180910390f35b34801561024e57600080fd5b5061026960048036036102649190810190612dd7565b611033565b005b34801561027757600080fd5b50610292600480360361028d9190810190612f00565b6110c8565b005b3480156102a057600080fd5b506102bb60048036036102b69190810190612c98565b611141565b6040516102c891906132c4565b60405180910390f35b3480156102dd57600080fd5b506102f860048036036102f39190810190612d4c565b611178565b005b34801561030657600080fd5b50610321600480360361031c9190810190612d9b565b61125f565b60405161032e91906132df565b60405180910390f35b34801561034357600080fd5b5061035e60048036036103599190810190612f58565b6112c7565b60405161036b91906135fc565b60405180910390f35b34801561038057600080fd5b5061039b60048036036103969190810190613075565b6113a3565b005b3480156103a957600080fd5b506103c460048036036103bf9190810190612c98565b61143f565b6040516103d191906135fc565b60405180910390f35b3480156103e657600080fd5b5061040160048036036103fc9190810190612f58565b6114f4565b005b34801561040f57600080fd5b5061042a600480360361042591908101906130e1565b61156d565b005b34801561043857600080fd5b50610453600480360361044e9190810190612e26565b611647565b60405161046091906135da565b60405180910390f35b34801561047557600080fd5b50610490600480360361048b9190810190612c98565b61174c565b005b34801561049e57600080fd5b506104b960048036036104b49190810190612c98565b6117bf565b6040516104c691906135da565b60405180910390f35b3480156104db57600080fd5b506104f660048036036104f19190810190612c98565b611874565b604051610504929190613383565b60405180910390f35b34801561051957600080fd5b50610534600480360361052f9190810190612cc1565b6118ae565b005b34801561054257600080fd5b5061055d60048036036105589190810190612eb1565b6118dc565b005b34801561056b57600080fd5b5061058660048036036105819190810190613039565b6119d3565b60405161059391906135da565b60405180910390f35b3480156105a857600080fd5b506105c360048036036105be9190810190612cfd565b611a9a565b6040516105d091906132df565b60405180910390f35b60006359d1d43c7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061064f575061064e82611ad6565b5b9050919050565b8261066081611b53565b151561066b57600080fd5b6000809050600080905060608060006106826128bc565b6106da60008a8a8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050611cf890919063ffffffff16565b90505b6106e681611d22565b15156108625760008661ffff161415610791578060400151955061070981611d38565b9350836040516020018082805190602001908083835b602083101515610744578051825260208201915060208101905060208303925061071f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405160208183030381529060405280519060200120915061078a81611d6f565b9250610854565b606061079c82611d38565b9050816040015161ffff168761ffff161415806107c957506107c78186611d9f90919063ffffffff16565b155b156108525761082b8b86898d8d8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050508a8b88602001510360008b5114611dc6565b81604001519650816020015195508094508480519060200120925061084f82611d6f565b93505b505b61085d816120fa565b6106dd565b506000835111156108ca576108c98984878b8b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505088898e8e9050036000895114611dc6565b5b505050505050505050565b846108df81611b53565b15156108ea57600080fd5b828260096000898152602001908152602001600020878760405180838380828437808301925050509250505090815260200160405180910390209190610931929190612908565b507fd8c9334b1a9c2f9da342a0a2b32629c1a229b6445dad78947f674b44444a7550868686888860405161096995949392919061350f565b60405180910390a1505050505050565b600080600660008581526020019081526020016000206000847bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610a405780915050610ed8565b6000610a4b85611141565b9050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610a8d57600092505050610ed8565b600060608273ffffffffffffffffffffffffffffffffffffffff166301ffc9a77c010000000000000000000000000000000000000000000000000000000002604051602401610adc91906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610b8e5780518252602082019150602081019050602083039250610b69565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610bee576040519150601f19603f3d011682016040523d82523d6000602084013e610bf3565b606091505b5091509150811580610c06575060208151105b80610cae575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610c3f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610cc0576000945050505050610ed8565b8273ffffffffffffffffffffffffffffffffffffffff1686604051602401610ce891906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610d9a5780518252602082019150602081019050602083039250610d75565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610dfa576040519150601f19603f3d011682016040523d82523d6000602084013e610dff565b606091505b508092508193505050811580610e16575060208151105b80610ebe575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610e4f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610ed0576000945050505050610ed8565b829450505050505b92915050565b60006060600080600086815260200190815260200160002090506000600190505b848111151561100f57600085821614158015610f4157506000826000838152602001908152602001600020805460018160011615610100020316600290049050115b156110005780826000838152602001908152602001600020808054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610fee5780601f10610fc357610100808354040283529160200191610fee565b820191906000526020600020905b815481529060010190602001808311610fd157829003601f168201915b5050505050905093509350505061102c565b6001819060020a029050610eff565b506000602060405190810160405280600081525081915092509250505b9250929050565b8261103d81611b53565b151561104857600080fd5b6040805190810160405280848152602001838152506008600086815260200190815260200160002060008201518160000155602082015181600101559050507f1d6f5e03d3f63eb58751986629a5439baee5079ff04f345becb66e23eb154e468484846040516110ba939291906133ac565b60405180910390a150505050565b826110d281611b53565b15156110dd57600080fd5b82826002600087815260200190815260200160002091906110ff929190612988565b507fe379c1624ed7e714cc0937528a32359d69d5281337765313dba4e081b72d75788484846040516111339392919061341a565b60405180910390a150505050565b6000606061115083603c6119d3565b9050600081511415611166576000915050611173565b61116f81612210565b9150505b919050565b80600b600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df83338484604051611252949392919061333e565b60405180910390a1505050565b60008060056000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060009054906101000a900461ffff1661ffff161415905092915050565b606060096000858152602001908152602001600020838360405180838380828437808301925050509250505090815260200160405180910390208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156113955780601f1061136a57610100808354040283529160200191611395565b820191906000526020600020905b81548152906001019060200180831161137857829003601f168201915b505050505090509392505050565b836113ad81611b53565b15156113b857600080fd5b60008460018603161415156113cc57600080fd5b8282600080888152602001908152602001600020600087815260200190815260200160002091906113fe929190612988565b507faa121bbeef5f32f5961a2a28966e769023910fc9479059ee3495d4c1a696efe38585604051611430929190613558565b60405180910390a15050505050565b6060600760008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156114e85780601f106114bd576101008083540402835291602001916114e8565b820191906000526020600020905b8154815290600101906020018083116114cb57829003601f168201915b50505050509050919050565b826114fe81611b53565b151561150957600080fd5b828260076000878152602001908152602001600020919061152b929190612908565b507fb7d29e911041e8d9b843369e890bcb72c9388692ba48b65ac54e7214c4c348f784848460405161155f939291906134dd565b60405180910390a150505050565b8261157781611b53565b151561158257600080fd5b7f65412581168e88a1e60c6459d7f44ae83ad0832e670826c05a4e2476b57af7528484846040516115b593929190613581565b60405180910390a1603c831415611608577f52d7d861f09ab3d26239d492e8968629f95e9e318cf0b73bfddc441522a15fd2846115f184612210565b6040516115ff929190613315565b60405180910390a15b816001600086815260200190815260200160002060008581526020019081526020016000209080519060200190611640929190612a08565b5050505050565b606060046000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060008361ffff1661ffff1681526020019081526020016000208054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561173e5780601f106117135761010080835404028352916020019161173e565b820191906000526020600020905b81548152906001019060200180831161172157829003601f168201915b505050505090509392505050565b8061175681611b53565b151561176157600080fd5b60036000838152602001908152602001600020600081548092919060010191905055507fb757169b8492ca2f1c6619d9d76ce22803035c3b1d5f6930dffe7b127c1a1983826040516117b391906132fa565b60405180910390a15050565b6060600260008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156118685780601f1061183d57610100808354040283529160200191611868565b820191906000526020600020905b81548152906001019060200180831161184b57829003601f168201915b50505050509050919050565b6000806008600084815260200190815260200160002060000154600860008581526020019081526020016000206001015491509150915091565b816118b881611b53565b15156118c357600080fd5b6118d783603c6118d285612235565b61156d565b505050565b826118e681611b53565b15156118f157600080fd5b81600660008681526020019081526020016000206000857bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7c69f06bea0bdef565b709e93a147836b0063ba2dd89f02d0b7e8d931e6a6daa8484846040516119c5939291906133e3565b60405180910390a150505050565b60606001600084815260200190815260200160002060008381526020019081526020016000208054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015611a8d5780601f10611a6257610100808354040283529160200191611a8d565b820191906000526020600020905b815481529060010190602001808311611a7057829003601f168201915b5050505050905092915050565b600b602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b600063c86902337c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480611b4c5750611b4b82612280565b5b9050919050565b600080600a60009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401611bcd91906132fa565b60206040518083038186803b158015611be557600080fd5b505afa158015611bf9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250611c1d9190810190612c6f565b90503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161480611cf05750600b600084815260200190815260200160002060008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff165b915050919050565b611d006128bc565b828160000181905250818160c0018181525050611d1c816120fa565b92915050565b6000816000015151826020015110159050919050565b6060611d688260200151611d54846000015185602001516122fd565b846000015161235a9092919063ffffffff16565b9050919050565b6060611d988260a001518360a001518460c0015103846000015161235a9092919063ffffffff16565b9050919050565b600081518351148015611dbe5750611dbd83600084600087516123cf565b5b905092915050565b6000600360008981526020019081526020016000205490506000878051906020012090506060611e0186868961235a9092919063ffffffff16565b90508315611f79576000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141515611edf57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff16809291906001900391906101000a81548161ffff021916908361ffff160217905550505b600460008b81526020019081526020016000206000848152602001908152602001600020600083815260200190815260200160002060008961ffff1661ffff1681526020019081526020016000206000611f399190612a88565b7f03528ed0c2a3ebc993b12ce3c16bb382f9c7d88ef7d8a1bf290eaf35955a12078a8a8a604051611f6c9392919061344c565b60405180910390a16120ee565b6000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141561204d57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550505b80600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff16815260200190815260200160002090805190602001906120af929190612a08565b507f52a608b3303a48862d07a73d82fa221318c0027fbbcfb1b2329bface3f19ff2b8a8a8a846040516120e5949392919061348a565b60405180910390a15b50505050505050505050565b8060c00151816020018181525050806000015151816020015110151561211f5761220d565b6000612133826000015183602001516122fd565b82602001510190506121528183600001516123f390919063ffffffff16565b826040019061ffff16908161ffff16815250506002810190506121828183600001516123f390919063ffffffff16565b826060019061ffff16908161ffff16815250506002810190506121b281836000015161241b90919063ffffffff16565b826080019063ffffffff16908163ffffffff168152505060048101905060006121e88284600001516123f390919063ffffffff16565b61ffff169050600282019150818360a00181815250508082018360c001818152505050505b50565b60006014825114151561222257600080fd5b600c6101000a6020830151049050919050565b606060146040519080825280601f01601f19166020018201604052801561226b5781602001600182028038833980820191505090505b509050600c6101000a82026020820152919050565b600063691f34317c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806122f657506122f582612445565b5b9050919050565b6000808290505b60011561234e5783518110151561231757fe5b600061232c82866124fa90919063ffffffff16565b60ff16905060018101820191506000811415612348575061234e565b50612304565b82810391505092915050565b606083518284011115151561236e57600080fd5b6060826040519080825280601f01601f1916602001820160405280156123a35781602001600182028038833980820191505090505b50905060008060208301915085602088010190506123c2828287612580565b8293505050509392505050565b60006123dc8484846125cb565b6123e78787856125cb565b14905095945050505050565b60008251600283011115151561240857600080fd5b61ffff8260028501015116905092915050565b60008251600483011115151561243057600080fd5b63ffffffff8260048501015116905092915050565b600060405180807f696e74657266616365496d706c656d656e74657228627974657333322c62797481526020017f6573342900000000000000000000000000000000000000000000000000000000815250602401905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806124f357506124f2826125f0565b5b9050919050565b6000828281518110151561250a57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027f01000000000000000000000000000000000000000000000000000000000000009004905092915050565b5b6020811015156125a65781518352602083019250602082019150602081039050612581565b60006001826020036101000a0390508019835116818551168181178652505050505050565b60008351828401111515156125df57600080fd5b818360208601012090509392505050565b600063a8fa56827c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061266657506126658261266d565b5b9050919050565b600063bc1c58d17c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806126e357506126e2826126ea565b5b9050919050565b6000633b3b57de7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806127bb575063f1cb7e067c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b806127cb57506127ca826127d2565b5b9050919050565b6000632203ab567c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061284857506128478261284f565b5b9050919050565b60006301ffc9a77c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b60e0604051908101604052806060815260200160008152602001600061ffff168152602001600061ffff168152602001600063ffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061294957803560ff1916838001178555612977565b82800160010185558215612977579182015b8281111561297657823582559160200191906001019061295b565b5b5090506129849190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106129c957803560ff19168380011785556129f7565b828001600101855582156129f7579182015b828111156129f65782358255916020019190600101906129db565b5b509050612a049190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10612a4957805160ff1916838001178555612a77565b82800160010185558215612a77579182015b82811115612a76578251825591602001919060010190612a5b565b5b509050612a849190612ad0565b5090565b50805460018160011615610100020316600290046000825580601f10612aae5750612acd565b601f016020900490600052602060002090810190612acc9190612ad0565b5b50565b612af291905b80821115612aee576000816000905550600101612ad6565b5090565b90565b6000612b01823561375b565b905092915050565b6000612b15825161375b565b905092915050565b6000612b29823561376d565b905092915050565b6000612b3d8235613779565b905092915050565b6000612b518235613783565b905092915050565b60008083601f8401121515612b6d57600080fd5b8235905067ffffffffffffffff811115612b8657600080fd5b602083019150836001820283011115612b9e57600080fd5b9250929050565b600082601f8301121515612bb857600080fd5b8135612bcb612bc68261367b565b61364e565b91508082526020830160208301858383011115612be757600080fd5b612bf28382846137fd565b50505092915050565b60008083601f8401121515612c0f57600080fd5b8235905067ffffffffffffffff811115612c2857600080fd5b602083019150836001820283011115612c4057600080fd5b9250929050565b6000612c5382356137af565b905092915050565b6000612c6782356137bd565b905092915050565b600060208284031215612c8157600080fd5b6000612c8f84828501612b09565b91505092915050565b600060208284031215612caa57600080fd5b6000612cb884828501612b31565b91505092915050565b60008060408385031215612cd457600080fd5b6000612ce285828601612b31565b9250506020612cf385828601612af5565b9150509250929050565b600080600060608486031215612d1257600080fd5b6000612d2086828701612b31565b9350506020612d3186828701612af5565b9250506040612d4286828701612af5565b9150509250925092565b600080600060608486031215612d6157600080fd5b6000612d6f86828701612b31565b9350506020612d8086828701612af5565b9250506040612d9186828701612b1d565b9150509250925092565b60008060408385031215612dae57600080fd5b6000612dbc85828601612b31565b9250506020612dcd85828601612b31565b9150509250929050565b600080600060608486031215612dec57600080fd5b6000612dfa86828701612b31565b9350506020612e0b86828701612b31565b9250506040612e1c86828701612b31565b9150509250925092565b600080600060608486031215612e3b57600080fd5b6000612e4986828701612b31565b9350506020612e5a86828701612b31565b9250506040612e6b86828701612c47565b9150509250925092565b60008060408385031215612e8857600080fd5b6000612e9685828601612b31565b9250506020612ea785828601612b45565b9150509250929050565b600080600060608486031215612ec657600080fd5b6000612ed486828701612b31565b9350506020612ee586828701612b45565b9250506040612ef686828701612af5565b9150509250925092565b600080600060408486031215612f1557600080fd5b6000612f2386828701612b31565b935050602084013567ffffffffffffffff811115612f4057600080fd5b612f4c86828701612b59565b92509250509250925092565b600080600060408486031215612f6d57600080fd5b6000612f7b86828701612b31565b935050602084013567ffffffffffffffff811115612f9857600080fd5b612fa486828701612bfb565b92509250509250925092565b600080600080600060608688031215612fc857600080fd5b6000612fd688828901612b31565b955050602086013567ffffffffffffffff811115612ff357600080fd5b612fff88828901612bfb565b9450945050604086013567ffffffffffffffff81111561301e57600080fd5b61302a88828901612bfb565b92509250509295509295909350565b6000806040838503121561304c57600080fd5b600061305a85828601612b31565b925050602061306b85828601612c5b565b9150509250929050565b6000806000806060858703121561308b57600080fd5b600061309987828801612b31565b94505060206130aa87828801612c5b565b935050604085013567ffffffffffffffff8111156130c757600080fd5b6130d387828801612b59565b925092505092959194509250565b6000806000606084860312156130f657600080fd5b600061310486828701612b31565b935050602061311586828701612c5b565b925050604084013567ffffffffffffffff81111561313257600080fd5b61313e86828701612ba5565b9150509250925092565b60006020828403121561315a57600080fd5b600061316884828501612b45565b91505092915050565b61317a816137c7565b82525050565b613189816136cf565b82525050565b613198816136bd565b82525050565b6131a7816136e1565b82525050565b6131b6816136ed565b82525050565b6131c5816136f7565b82525050565b60008284526020840193506131e18385846137fd565b6131ea8361383f565b840190509392505050565b6000613200826136a7565b80845261321481602086016020860161380c565b61321d8161383f565b602085010191505092915050565b60008284526020840193506132418385846137fd565b61324a8361383f565b840190509392505050565b6000613260826136b2565b80845261327481602086016020860161380c565b61327d8161383f565b602085010191505092915050565b61329481613723565b82525050565b6132a381613751565b82525050565b60006020820190506132be600083018461318f565b92915050565b60006020820190506132d96000830184613180565b92915050565b60006020820190506132f4600083018461319e565b92915050565b600060208201905061330f60008301846131ad565b92915050565b600060408201905061332a60008301856131ad565b6133376020830184613171565b9392505050565b600060808201905061335360008301876131ad565b6133606020830186613171565b61336d604083018561318f565b61337a606083018461319e565b95945050505050565b600060408201905061339860008301856131ad565b6133a560208301846131ad565b9392505050565b60006060820190506133c160008301866131ad565b6133ce60208301856131ad565b6133db60408301846131ad565b949350505050565b60006060820190506133f860008301866131ad565b61340560208301856131bc565b613412604083018461318f565b949350505050565b600060408201905061342f60008301866131ad565b81810360208301526134428184866131cb565b9050949350505050565b600060608201905061346160008301866131ad565b818103602083015261347381856131f5565b9050613482604083018461328b565b949350505050565b600060808201905061349f60008301876131ad565b81810360208301526134b181866131f5565b90506134c0604083018561328b565b81810360608301526134d281846131f5565b905095945050505050565b60006040820190506134f260008301866131ad565b818103602083015261350581848661322b565b9050949350505050565b600060608201905061352460008301886131ad565b818103602083015261353781868861322b565b9050818103604083015261354c81848661322b565b90509695505050505050565b600060408201905061356d60008301856131ad565b61357a602083018461329a565b9392505050565b600060608201905061359660008301866131ad565b6135a3602083018561329a565b81810360408301526135b581846131f5565b9050949350505050565b60006020820190506135d460008301846131bc565b92915050565b600060208201905081810360008301526135f481846131f5565b905092915050565b600060208201905081810360008301526136168184613255565b905092915050565b6000604082019050613633600083018561329a565b818103602083015261364581846131f5565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561367157600080fd5b8060405250919050565b600067ffffffffffffffff82111561369257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b60006136c882613731565b9050919050565b60006136da82613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061376682613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b6000819050919050565b60006137d2826137d9565b9050919050565b60006137e4826137eb565b9050919050565b60006137f682613731565b9050919050565b82818337600083830152505050565b60005b8381101561382a57808201518184015260208101905061380f565b83811115613839576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820668668127482cd23a9f375761bf0b8d29fdbff7c261f4d2755ca9c73637d86bf6c6578706572696d656e74616cf50037' */
+    cpy_r_r53 = CPyStatic_contract_data___globals;
+    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'resolver_bytecode_runtime' */
+    cpy_r_r55 = CPyDict_SetItem(cpy_r_r53, cpy_r_r54, cpy_r_r52);
+    cpy_r_r56 = cpy_r_r55 >= 0;
+    if (unlikely(!cpy_r_r56)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r57 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '[{"constant":false,"inputs":[{"name":"owner","type":"address"},{"name":"resolver","type":"address"}],"name":"claimWithResolver","outputs":[{"name":"node","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"owner","type":"address"}],"name":"claim","outputs":[{"name":"node","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"ens","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"defaultResolver","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"addr","type":"address"}],"name":"node","outputs":[{"name":"ret","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"name","type":"string"}],"name":"setName","outputs":[{"name":"node","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"ensAddr","type":"address"},{"name":"resolverAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]' */
+    cpy_r_r58 = CPyModule_json;
+    cpy_r_r59 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'loads' */
+    cpy_r_r60 = CPyObject_GetAttr(cpy_r_r58, cpy_r_r59);
+    if (unlikely(cpy_r_r60 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    PyObject *cpy_r_r61[1] = {cpy_r_r57};
+    cpy_r_r62 = (PyObject **)&cpy_r_r61;
+    cpy_r_r63 = PyObject_Vectorcall(cpy_r_r60, cpy_r_r62, 1, 0);
+    CPy_DECREF(cpy_r_r60);
+    if (unlikely(cpy_r_r63 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r64 = CPyStatic_contract_data___globals;
+    cpy_r_r65 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_registrar_abi' */
+    cpy_r_r66 = CPyDict_SetItem(cpy_r_r64, cpy_r_r65, cpy_r_r63);
+    CPy_DECREF(cpy_r_r63);
+    cpy_r_r67 = cpy_r_r66 >= 0;
+    if (unlikely(!cpy_r_r67)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r68 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '6060604052341561000f57600080fd5b604051604080610d96833981016040528080519060200190919080519060200190919050506000826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be37f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b151561017a57600080fd5b6102c65a03f1151561018b57600080fd5b50505060405180519050905060008173ffffffffffffffffffffffffffffffffffffffff16141515610277578073ffffffffffffffffffffffffffffffffffffffff16631e83409a336000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561025a57600080fd5b6102c65a03f1151561026b57600080fd5b50505060405180519050505b505050610b0d806102896000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630f5a54661461007d5780631e83409a146100f15780633f15457f14610146578063828eab0e1461019b578063bffbe61c146101f0578063c47f002714610245575b600080fd5b341561008857600080fd5b6100d3600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102be565b60405180826000191660001916815260200191505060405180910390f35b34156100fc57600080fd5b610128600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061086e565b60405180826000191660001916815260200191505060405180910390f35b341561015157600080fd5b610159610882565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101a657600080fd5b6101ae6108a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101fb57600080fd5b610227600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506108cd565b60405180826000191660001916815260200191505060405180910390f35b341561025057600080fd5b6102a0600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061092f565b60405180826000191660001916815260200191505060405180910390f35b60008060006102cc33610a80565b91507f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010282604051808360001916600019168152602001826000191660001916815260200192505050604051809103902092506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156103c157600080fd5b6102c65a03f115156103d257600080fd5b50505060405180519050905060008473ffffffffffffffffffffffffffffffffffffffff16141580156104eb57506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16630178b8bf846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156104a057600080fd5b6102c65a03f115156104b157600080fd5b5050506040518051905073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614155b1561071b573073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561063b576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284306040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561062357600080fd5b6102c65a03f1151561063457600080fd5b5050503090505b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a84866040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b151561070657600080fd5b6102c65a03f1151561071757600080fd5b5050505b8473ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610863576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284886040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561084e57600080fd5b6102c65a03f1151561085f57600080fd5b5050505b829250505092915050565b600061087b8260006102be565b9050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60007f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026108fc83610a80565b60405180836000191660001916815260200182600019166000191681526020019250505060405180910390209050919050565b600061095d30600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102be565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637737221382846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610a185780820151818401526020810190506109fd565b50505050905090810190601f168015610a455780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1515610a6457600080fd5b6102c65a03f11515610a7557600080fd5b505050809050919050565b60007f303132333435363738396162636465660000000000000000000000000000000060285b60018103905081600f85161a815360108404935060018103905081600f85161a815360108404935080610aa6576028600020925050509190505600a165627a7a72305820a8513240f040cd9ded89ca4d0c5bda58536850e642e1d933ad64158ef4c820660029' */
+    cpy_r_r69 = CPyStatic_contract_data___globals;
+    cpy_r_r70 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_registrar_bytecode' */
+    cpy_r_r71 = CPyDict_SetItem(cpy_r_r69, cpy_r_r70, cpy_r_r68);
+    cpy_r_r72 = cpy_r_r71 >= 0;
+    if (unlikely(!cpy_r_r72)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r73 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630f5a54661461007d5780631e83409a146100f15780633f15457f14610146578063828eab0e1461019b578063bffbe61c146101f0578063c47f002714610245575b600080fd5b341561008857600080fd5b6100d3600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102be565b60405180826000191660001916815260200191505060405180910390f35b34156100fc57600080fd5b610128600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061086e565b60405180826000191660001916815260200191505060405180910390f35b341561015157600080fd5b610159610882565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101a657600080fd5b6101ae6108a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101fb57600080fd5b610227600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506108cd565b60405180826000191660001916815260200191505060405180910390f35b341561025057600080fd5b6102a0600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061092f565b60405180826000191660001916815260200191505060405180910390f35b60008060006102cc33610a80565b91507f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010282604051808360001916600019168152602001826000191660001916815260200192505050604051809103902092506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156103c157600080fd5b6102c65a03f115156103d257600080fd5b50505060405180519050905060008473ffffffffffffffffffffffffffffffffffffffff16141580156104eb57506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16630178b8bf846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156104a057600080fd5b6102c65a03f115156104b157600080fd5b5050506040518051905073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614155b1561071b573073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561063b576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284306040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561062357600080fd5b6102c65a03f1151561063457600080fd5b5050503090505b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a84866040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b151561070657600080fd5b6102c65a03f1151561071757600080fd5b5050505b8473ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610863576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284886040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561084e57600080fd5b6102c65a03f1151561085f57600080fd5b5050505b829250505092915050565b600061087b8260006102be565b9050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60007f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026108fc83610a80565b60405180836000191660001916815260200182600019166000191681526020019250505060405180910390209050919050565b600061095d30600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102be565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637737221382846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610a185780820151818401526020810190506109fd565b50505050905090810190601f168015610a455780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1515610a6457600080fd5b6102c65a03f11515610a7557600080fd5b505050809050919050565b60007f303132333435363738396162636465660000000000000000000000000000000060285b60018103905081600f85161a815360108404935060018103905081600f85161a815360108404935080610aa6576028600020925050509190505600a165627a7a72305820a8513240f040cd9ded89ca4d0c5bda58536850e642e1d933ad64158ef4c820660029' */
+    cpy_r_r74 = CPyStatic_contract_data___globals;
+    cpy_r_r75 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_registrar_bytecode_runtime' */
+    cpy_r_r76 = CPyDict_SetItem(cpy_r_r74, cpy_r_r75, cpy_r_r73);
+    cpy_r_r77 = cpy_r_r76 >= 0;
+    if (unlikely(!cpy_r_r77)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r78 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('[{"inputs":[{"internalType":"contract '
+                                    'ENS","name":"ensAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"constant":true,"inputs":[],"name":"ens","outputs":[{"internalType":"contract '
+                                    'ENS","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"bytes32","name":"node","type":"bytes32"},{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]') */
+    cpy_r_r79 = CPyModule_json;
+    cpy_r_r80 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'loads' */
+    cpy_r_r81 = CPyObject_GetAttr(cpy_r_r79, cpy_r_r80);
+    if (unlikely(cpy_r_r81 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    PyObject *cpy_r_r82[1] = {cpy_r_r78};
+    cpy_r_r83 = (PyObject **)&cpy_r_r82;
+    cpy_r_r84 = PyObject_Vectorcall(cpy_r_r81, cpy_r_r83, 1, 0);
+    CPy_DECREF(cpy_r_r81);
+    if (unlikely(cpy_r_r84 == NULL)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r85 = CPyStatic_contract_data___globals;
+    cpy_r_r86 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_resolver_abi' */
+    cpy_r_r87 = CPyDict_SetItem(cpy_r_r85, cpy_r_r86, cpy_r_r84);
+    CPy_DECREF(cpy_r_r84);
+    cpy_r_r88 = cpy_r_r87 >= 0;
+    if (unlikely(!cpy_r_r88)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r89 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '608060405234801561001057600080fd5b5060405160208061079f8339810180604052602081101561003057600080fd5b8101908080519060200190929190505050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be37f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b15801561013457600080fd5b505afa158015610148573d6000803e3d6000fd5b505050506040513d602081101561015e57600080fd5b81019080805190602001909291905050509050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561027f578073ffffffffffffffffffffffffffffffffffffffff16631e83409a336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561024257600080fd5b505af1158015610256573d6000803e3d6000fd5b505050506040513d602081101561026c57600080fd5b8101908080519060200190929190505050505b505061050f806102906000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f15457f1461005c578063691f3431146100b35780637737221314610167575b600080fd5b34801561006857600080fd5b50610071610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100bf57600080fd5b506100ec600480360360208110156100d657600080fd5b810190808035906020019092919050505061025e565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561012c578082015181840152602081019050610111565b50505050905090810190601f1680156101595780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561017357600080fd5b506102376004803603604081101561018a57600080fd5b8101908080359060200190929190803590602001906401000000008111156101b157600080fd5b8201836020820111156101c357600080fd5b803590602001918460018302840111640100000000831117156101e557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061030e565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103065780601f106102db57610100808354040283529160200191610306565b820191906000526020600020905b8154815290600101906020018083116102e957829003601f168201915b505050505081565b816000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3826040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b15801561039d57600080fd5b505afa1580156103b1573d6000803e3d6000fd5b505050506040513d60208110156103c757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041157600080fd5b8160016000858152602001908152602001600020908051906020019061043892919061043e565b50505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061047f57805160ff19168380011785556104ad565b828001600101855582156104ad579182015b828111156104ac578251825591602001919060010190610491565b5b5090506104ba91906104be565b5090565b6104e091905b808211156104dc5760008160009055506001016104c4565b5090565b9056fea165627a7a72305820f326fd97e1fac0bcd89f007846301e41c2ad494c12d70b2b50dd61e62ffc906a0029' */
+    cpy_r_r90 = CPyStatic_contract_data___globals;
+    cpy_r_r91 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_resolver_bytecode' */
+    cpy_r_r92 = CPyDict_SetItem(cpy_r_r90, cpy_r_r91, cpy_r_r89);
+    cpy_r_r93 = cpy_r_r92 >= 0;
+    if (unlikely(!cpy_r_r93)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    cpy_r_r94 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '608060405234801561001057600080fd5b506004361061004c5760003560e01c806301ffc9a7146100515780633e9ce794146100815780639061b9231461009d578063f86bc879146100cd575b600080fd5b61006b6004803603810190610066919061051e565b6100fd565b6040516100789190610566565b60405180910390f35b61009b60048036038101906100969190610641565b61015e565b005b6100b760048036038101906100b291906106f9565b610245565b6040516100c49190610813565b60405180910390f35b6100e760048036038101906100e29190610835565b61042f565b6040516100f49190610566565b60405180910390f35b6000639061b92360e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061015757506101568261046b565b5b9050919050565b806001600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df8333848460405161023894939291906108a6565b60405180910390a1505050565b60606040518060400160405280601781526020017f11657874656e6465642d7265736f6c766572036574680000000000000000000081525080519060200120858560405161029492919061092a565b60405180910390201480156102ad575060248383905010155b15610328577ff0a378cc2afe91730d0105e67d6bb037cc5b8b6bfec5b5962d9b637ff6497e5560001b83836004906024926102ea9392919061094d565b906102f591906109a0565b146102ff57600080fd5b61beef60405160200161031291906109ff565b6040516020818303038152906040529050610427565b60008585600081811061033e5761033d610a1a565b5b9050013560f81c60f81b60f81c60ff1690506040518060400160405280601781526020017f11657874656e6465642d7265736f6c766572036574680000000000000000000081525080519060200120868683600161039c9190610a82565b9080926103ab9392919061094d565b6040516103b9929190610ad8565b604051809103902014610401576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103f890610b28565b60405180910390fd5b61dead60405160200161041491906109ff565b6040516020818303038152906040529150505b949350505050565b6001602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b60006301ffc9a760e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b600080fd5b600080fd5b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b6104fb816104c6565b811461050657600080fd5b50565b600081359050610518816104f2565b92915050565b600060208284031215610534576105336104bc565b5b600061054284828501610509565b91505092915050565b60008115159050919050565b6105608161054b565b82525050565b600060208201905061057b6000830184610557565b92915050565b6000819050919050565b61059481610581565b811461059f57600080fd5b50565b6000813590506105b18161058b565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006105e2826105b7565b9050919050565b6105f2816105d7565b81146105fd57600080fd5b50565b60008135905061060f816105e9565b92915050565b61061e8161054b565b811461062957600080fd5b50565b60008135905061063b81610615565b92915050565b60008060006060848603121561065a576106596104bc565b5b6000610668868287016105a2565b935050602061067986828701610600565b925050604061068a8682870161062c565b9150509250925092565b600080fd5b600080fd5b600080fd5b60008083601f8401126106b9576106b8610694565b5b8235905067ffffffffffffffff8111156106d6576106d5610699565b5b6020830191508360018202830111156106f2576106f161069e565b5b9250929050565b60008060008060408587031215610713576107126104bc565b5b600085013567ffffffffffffffff811115610731576107306104c1565b5b61073d878288016106a3565b9450945050602085013567ffffffffffffffff8111156107605761075f6104c1565b5b61076c878288016106a3565b925092505092959194509250565b600081519050919050565b600082825260208201905092915050565b60005b838110156107b4578082015181840152602081019050610799565b838111156107c3576000848401525b50505050565b6000601f19601f8301169050919050565b60006107e58261077a565b6107ef8185610785565b93506107ff818560208601610796565b610808816107c9565b840191505092915050565b6000602082019050818103600083015261082d81846107da565b905092915050565b60008060006060848603121561084e5761084d6104bc565b5b600061085c868287016105a2565b935050602061086d86828701610600565b925050604061087e86828701610600565b9150509250925092565b61089181610581565b82525050565b6108a0816105d7565b82525050565b60006080820190506108bb6000830187610888565b6108c86020830186610897565b6108d56040830185610897565b6108e26060830184610557565b95945050505050565b600081905092915050565b82818337600083830152505050565b600061091183856108eb565b935061091e8385846108f6565b82840190509392505050565b6000610937828486610905565b91508190509392505050565b600080fd5b600080fd5b6000808585111561096157610960610943565b5b8386111561097257610971610948565b5b6001850283019150848603905094509492505050565b600082905092915050565b600082821b905092915050565b60006109ac8383610988565b826109b78135610581565b925060208210156109f7576109f27fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff83602003600802610993565b831692505b505092915050565b6000602082019050610a146000830184610897565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6000819050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610a8d82610a49565b9150610a9883610a49565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03821115610acd57610acc610a53565b5b828201905092915050565b6000610ae5828486610905565b91508190509392505050565b600082825260208201905092915050565b50565b6000610b12600083610af1565b9150610b1d82610b02565b600082019050919050565b60006020820190508181036000830152610b4181610b05565b905091905056fea264697066735822122053f3072486d953b17f72555d93bae38d3607f573e572c03ca3b10c082471640064736f6c634300080d0033' */
+    cpy_r_r95 = CPyStatic_contract_data___globals;
+    cpy_r_r96 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'reverse_resolver_bytecode_runtime' */
+    cpy_r_r97 = CPyDict_SetItem(cpy_r_r95, cpy_r_r96, cpy_r_r94);
+    cpy_r_r98 = cpy_r_r97 >= 0;
+    if (unlikely(!cpy_r_r98)) {
+        CPy_AddTraceback("faster_ens/contract_data.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_contract_data___globals);
+        goto CPyL25;
+    }
+    return 1;
+CPyL25: ;
+    cpy_r_r99 = 2;
+    return cpy_r_r99;
 }
 
 PyMemberDef exceptions___ENSValueError_members[] = {
@@ -132319,7 +148480,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -222398,6 +238559,12 @@ int CPyGlobalsInit(void)
     if (is_initialized) return 0;
     
     CPy_Init();
+    CPyModule_faster_ens = Py_None;
+    CPyModule_builtins = Py_None;
+    CPyModule_faster_ens___async_ens = Py_None;
+    CPyModule_faster_ens___base_ens = Py_None;
+    CPyModule_faster_ens___ens = Py_None;
+    CPyModule_faster_ens___exceptions = Py_None;
     CPyModule_faster_ens____normalization = Py_None;
     CPyModule_builtins = Py_None;
     CPyModule_json = Py_None;
@@ -222407,6 +238574,8 @@ int CPyGlobalsInit(void)
     CPyModule_typing = Py_None;
     CPyModule_pyunormalize = Py_None;
     CPyModule_faster_ens___exceptions = Py_None;
+    CPyModule_faster_ens___abis = Py_None;
+    CPyModule_builtins = Py_None;
     CPyModule_faster_ens___auto = Py_None;
     CPyModule_builtins = Py_None;
     CPyModule_typing = Py_None;
@@ -222424,6 +238593,9 @@ int CPyGlobalsInit(void)
     CPyModule_typing = Py_None;
     CPyModule_eth_typing = Py_None;
     CPyModule_faster_hexbytes = Py_None;
+    CPyModule_faster_ens___contract_data = Py_None;
+    CPyModule_builtins = Py_None;
+    CPyModule_json = Py_None;
     CPyModule_faster_ens___exceptions = Py_None;
     CPyModule_builtins = Py_None;
     CPyModule_typing = Py_None;
@@ -222733,10 +238905,13 @@ int CPyGlobalsInit(void)
 
 PyObject *CPyStatics[DIFFCHECK_PLACEHOLDER];
 const char * const CPyLit_Str[] = {
-    "\r\000\003chr\001.\003ord\003map\006wholes\005valid\bconfused\ndifference\006fenced\004type\005emoji\001_",
-    "\0039Underscores \'_\' may only occur at the start of a label: \'\001\'\002--",
-    "\002>A label\'s third and fourth characters cannot be hyphens \'-\': \'\005ascii",
-    "\001\022UnicodeDecodeError",
+    "\005\bbuiltins\bAsyncENS\024faster_ens.async_ens\aBaseENS\023faster_ens.base_ens",
+    "\006\003ENS\016faster_ens.ens\017AddressMismatch\tBidTooLow\fInvalidLabel\vInvalidName",
+    "\004\021UnauthorizedError\016UnderfundedBid\vUnownedName\025faster_ens.exceptions",
+    "\f\a__all__\000\003chr\001.\003ord\003map\006wholes\005valid\bconfused\ndifference\006fenced\004type",
+    "\004\005emoji\001_9Underscores \'_\' may only occur at the start of a label: \'\001\'",
+    "\002\002-->A label\'s third and fourth characters cannot be hyphens \'-\': \'",
+    "\002\005ascii\022UnicodeDecodeError",
     "\0014Label cannot start or end with a fenced codepoint: \'",
     "\0026Label cannot contain two fenced codepoints in a row: \'\002cm",
     "\001@At least one text token in label starts with a combining mark: \'",
@@ -222747,30 +238922,58 @@ const char * const CPyLit_Str[] = {
     "\005\fintersection)All characters in label are confusable: \'\003\' (\003 / \001)",
     "\005\026Label is confusable: \'\tbytearray\005utf-8\006decode\026Labels cannot be empty",
     "\004(Empty name after removing 65039 (0xFE0F)\aignored\006mapped\003get",
-    "\a\024Invalid character: \'\016\' | codepoint \002 (\003hex\bbuiltins\004json\003sys",
+    "\006\024Invalid character: \'\016\' | codepoint \002 (\003hex\004json\003sys",
     "\a\034faster_ens/_normalization.py\b<module>\004Enum\004enum\004Path\apathlib\003Any",
     "\n\bClassVar\004Dict\005Final\tFrozenSet\004List\aLiteral\bOptional\003Set\005Tuple\005Union",
-    "\a\005final\006typing\fpyunormalize\vInvalidName\025faster_ens.exceptions\003NFC\003NFD",
-    "\a\amodules\nfaster_ens\b__file__\006parent\005specs\bjoinpath\016specs_dir_path",
-    "\a\027normalization_spec.json\004open\b__exit__\t__enter__\004spec\004load\001f",
-    "\a\022NORMALIZATION_SPEC\030EMOJI_NORMALIZATION_SPEC\001e\anf.json\002nf\006decomp\002NF",
-    "\006\v__prepare__\tTokenType\005EMOJI\004TEXT\004text\017__annotations__",
-    "\004\026mypyc filler docstring\a__doc__\031faster_ens._normalization\n__module__",
-    "\003\017__mypyc_attrs__\016_original_text\024_original_codepoints",
-    "\006\026_normalized_codepoints\nrestricted\005Token\nEmojiToken\tTextToken\006tokens",
-    "\006\005Label\006labels\021ENSNormalizedName\030GROUP_COMBINED_VALID_CPS\001d\aprimary",
-    "\005\tsecondary\017VALID_BY_GROUPS\024WHOLE_CONFUSABLE_MAP\020VALID_CODEPOINTS\003len",
-    "\006\003max\025MAX_LEN_EMOJI_PATTERN\ansm_max\aNSM_MAX\003ENS\002ns",
+    "\t\005final\006typing\fpyunormalize\003NFC\003NFD\amodules\nfaster_ens\b__file__\006parent",
+    "\006\005specs\bjoinpath\016specs_dir_path\027normalization_spec.json\004open\b__exit__",
+    "\a\t__enter__\004spec\004load\001f\022NORMALIZATION_SPEC\030EMOJI_NORMALIZATION_SPEC\001e",
+    "\t\anf.json\002nf\006decomp\002NF\v__prepare__\tTokenType\005EMOJI\004TEXT\004text",
+    "\003\017__annotations__\026mypyc filler docstring\a__doc__",
+    "\004\031faster_ens._normalization\n__module__\017__mypyc_attrs__\016_original_text",
+    "\004\024_original_codepoints\026_normalized_codepoints\nrestricted\005Token",
+    "\006\nEmojiToken\tTextToken\006tokens\005Label\006labels\021ENSNormalizedName",
+    "\005\030GROUP_COMBINED_VALID_CPS\001d\aprimary\tsecondary\017VALID_BY_GROUPS",
+    "\005\024WHOLE_CONFUSABLE_MAP\020VALID_CODEPOINTS\003len\003max\025MAX_LEN_EMOJI_PATTERN",
+    "\t\ansm_max\aNSM_MAX\bconstant\006inputs\004node\abytes32\bresolver\aoutputs\aaddress",
+    "\b\apayable\bfunction\005owner\005label\017setSubnodeOwner\003ttl\006uint64\006setTTL",
+    "\a\vsetResolver\bsetOwner\tanonymous\aindexed\bTransfer\005event\bNewOwner",
+    "\a\vNewResolver\006NewTTL\005_hash\vreleaseDeed\016getAllowedTime\ttimestamp\auint256",
+    "\b\funhashedName\006string\016invalidateName\004hash\005value\004salt\006shaBid\tsealedBid",
+    "\t\006bidder\004seal\tcancelBid\aentries\005uint8\003ens\006_value\005_salt\tunsealBid",
+    "\006\022transferRegistrars\nsealedBids\005state\bnewOwner\btransfer\n_timestamp",
+    "\006\tisAllowed\aallowed\004bool\017finalizeAuction\017registryStarted\flaunchLength",
+    "\a\006uint32\006newBid\tbytes32[]\teraseNode\a_hashes\rstartAuctions\004deed",
+    "\005\020registrationDate\027acceptRegistrarTransfer\fstartAuction\brootNode\006hashes",
+    "\005\023startAuctionsAndBid\004_ens\t_rootNode\n_startDate\vconstructor",
+    "\006\016AuctionStarted\adeposit\006NewBid\006status\vBidRevealed\016HashRegistered",
+    "\004\fHashReleased\017HashInvalidated\021AUCTION_REGISTRAR\fcreationDate",
+    "\006\vdestroyDeed\tregistrar\vrefundRatio\tcloseDeed\fnewRegistrar\fsetRegistrar",
+    "\a\bnewValue\nsetBalance\bfallback\fOwnerChanged\nDeedClosed\004DEED\vexpiryTimes",
+    "\006\asubnode\bregister\aensAddr\016FIFS_REGISTRAR\finternalType\fcontract ENS",
+    "\006\017stateMutability\nnonpayable\vcontentType\nABIChanged\001a\vAddrChanged",
+    "\006\bcoinType\005bytes\nnewAddress\016AddressChanged\006target\fisAuthorised",
+    "\005\024AuthorisationChanged\022ContenthashChanged\006uint16\bresource\006record",
+    "\005\020DNSRecordChanged\020DNSRecordDeleted\016DNSZoneCleared\006bytes4\vinterfaceID",
+    "\a\vimplementer\020InterfaceChanged\vNameChanged\001x\001y\rPubkeyChanged\nindexedKey",
+    "\a\003key\vTextChanged\fcontentTypes\003ABI\004view\004addr\017address payable",
+    "\005\016authorisations\fclearDNSZone\vcontenthash\tdnsRecord\rhasDNSRecords",
+    "\a\024interfaceImplementer\abytes[]\004data\tmulticall\aresults\006pubkey\006setABI",
+    "\005\asetAddr\020setAuthorisation\016setContenthash\rsetDNSRecords\fsetInterface",
+    "\006\asetName\tsetPubkey\asetText\021supportsInterface\004pure\021PUBLIC_RESOLVER_2",
+    "\004\aresolve\bresponse\textraData\020resolveWithProof",
+    "\004\032PUBLIC_RESOLVER_2_EXTENDED\005_name\020REVERSE_RESOLVER\021claimWithResolver",
+    "\006\005claim\017defaultResolver\003ret\fresolverAddr\021REVERSE_REGISTRAR\002ns",
     "\002\032strict_bytes_type_checking*__mypyc_setter__strict_bytes_type_checking",
-    "\006\tlabelhash\bnamehash\bnameprep\ris_valid_name\016reverse_domain\004addr",
+    "\005\tlabelhash\bnamehash\bnameprep\ris_valid_name\016reverse_domain",
     "\004\raddr(bytes32)\031get_function_by_signature\024get_function_by_name\003abi",
-    "\004\024get_abi_output_types\005codec\034_decode_ensip10_resolve_data\aaddress",
+    "\003\024get_abi_output_types\005codec\034_decode_ensip10_resolve_data",
     "\005\024_type_aware_resolver\rTYPE_CHECKING\004Type\nAnyAddress\017ChecksumAddress",
     "\005\neth_typing\024faster_eth_utils.abi\bHexBytes\017faster_hexbytes\nmypyc_attr",
     "\003\017mypy_extensions\031address_to_reverse_domain\rlabel_to_hash",
-    "\004\016normalize_name\020raw_name_to_hash\020faster_ens.utils\023faster_ens.base_ens",
-    "\005\002w3\003ens\022_resolver_contract\032_reverse_resolver_contract\aBaseENS",
-    "\004\nHexAddress\006HexStr\026ACCEPTABLE_STALE_HOURS\032AUCTION_START_GAS_CONSTANT",
+    "\004\016normalize_name\020raw_name_to_hash\020faster_ens.utils\002w3",
+    "\004\022_resolver_contract\032_reverse_resolver_contract\nHexAddress\006HexStr",
+    "\002\026ACCEPTABLE_STALE_HOURS\032AUCTION_START_GAS_CONSTANT",
     "\002\032AUCTION_START_GAS_MARGINAL\020EMPTY_SHA3_BYTES",
     "\002*0x0000000000000000000000000000000000000000\016EMPTY_ADDR_HEX",
     "\002\faddr.reverse\030REVERSE_REGISTRAR_DOMAIN",
@@ -222780,12 +238983,35 @@ const char * const CPyLit_Str[] = {
     "\003\033ENS_PUBLIC_KEY_INTERFACE_ID\n0x59d1d43c\025ENS_TEXT_INTERFACE_ID",
     "\003\n0xbc1c58d1\035ENS_CONTENT_HASH_INTERFACE_ID\n0xf1cb7e06",
     "\002#ENS_MULTICHAIN_ADDRESS_INTERFACE_ID\n0x9061b923",
-    "\003\"ENS_EXTENDED_RESOLVER_INTERFACE_ID\004idna\030faster_ens/exceptions.py",
+    "\002\"ENS_EXTENDED_RESOLVER_INTERFACE_ID\033faster_ens/contract_data.py",
+    "\001\304m[{\"inputs\":[{\"internalType\":\"contract ENS\",\"name\":\"_ens\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_baseNode\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"controller\",\"type\":\"address\"}],\"name\":\"ControllerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"controller\",\"type\":\"address\"}],\"name\":\"ControllerRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"expires\",\"type\":\"uint256\"}],\"name\":\"NameMigrated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"expires\",\"type\":\"uint256\"}],\"name\":\"NameRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"expires\",\"type\":\"uint256\"}],\"name\":\"NameRenewed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"GRACE_PERIOD\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"controller\",\"type\":\"address\"}],\"name\":\"addController\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"available\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"baseNode\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"controllers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ens\",\"outputs\":[{\"internalType\":\"contract ENS\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"nameExpires\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"reclaim\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"register\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"registerOnly\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"controller\",\"type\":\"address\"}],\"name\":\"removeController\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"renew\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"resolver\",\"type\":\"address\"}],\"name\":\"setResolver\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+    "\002\005loads\rregistrar_abi",
+    "\001\201\271b60806040523480156200001157600080fd5b5060405160408062002e71833981018060405260408110156200003357600080fd5b8101908080519060200190929190805190602001909291905050506200008b6301ffc9a77c010000000000000000000000000000000000000000000000000000000002620001d6640100000000026401000000009004565b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3620001866380ac58cd7c010000000000000000000000000000000000000000000000000000000002620001d6640100000000026401000000009004565b81600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600381905550505062000294565b63ffffffff7c010000000000000000000000000000000000000000000000000000000002817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916141515156200022857600080fd5b6001600080837bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b612bcd80620002a46000396000f3fe60806040526004361061015f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a714610164578063081812fc146101d6578063095ea7b3146102515780630e297b45146102ac57806323b872dd1461032557806328ed4f6c146103a05780633f15457f146103fb57806342842e0e146104525780634e543b26146104cd5780636352211e1461051e57806370a0823114610599578063715018a6146105fe5780638da5cb5b146106155780638f32d59b1461066c57806396e494e81461069b578063a22cb465146106ee578063a7fc7a071461074b578063b88d4fde1461079c578063c1a287e2146108ae578063c475abff146108d9578063d6e4fa8614610932578063da8c229e14610981578063ddf7fcb0146109ea578063e985e9c514610a15578063f2fde38b14610a9e578063f6a74ed714610aef578063fca247ac14610b40575b600080fd5b34801561017057600080fd5b506101bc6004803603602081101561018757600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190505050610bb9565b604051808215151515815260200191505060405180910390f35b3480156101e257600080fd5b5061020f600480360360208110156101f957600080fd5b8101908080359060200190929190505050610f82565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561025d57600080fd5b506102aa6004803603604081101561027457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610fd3565b005b3480156102b857600080fd5b5061030f600480360360608110156102cf57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611118565b6040518082815260200191505060405180910390f35b34801561033157600080fd5b5061039e6004803603606081101561034857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611130565b005b3480156103ac57600080fd5b506103f9600480360360408110156103c357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611155565b005b34801561040757600080fd5b50610410611381565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561045e57600080fd5b506104cb6004803603606081101561047557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506113a7565b005b3480156104d957600080fd5b5061051c600480360360208110156104f057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113c8565b005b34801561052a57600080fd5b506105576004803603602081101561054157600080fd5b81019080803590602001909291905050506114bd565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156105a557600080fd5b506105e8600480360360208110156105bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f0565b6040518082815260200191505060405180910390f35b34801561060a57600080fd5b50610613611574565b005b34801561062157600080fd5b5061062a611648565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561067857600080fd5b50610681611672565b604051808215151515815260200191505060405180910390f35b3480156106a757600080fd5b506106d4600480360360208110156106be57600080fd5b81019080803590602001909291905050506116ca565b604051808215151515815260200191505060405180910390f35b3480156106fa57600080fd5b506107496004803603604081101561071157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506116ee565b005b34801561075757600080fd5b5061079a6004803603602081101561076e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061182a565b005b3480156107a857600080fd5b506108ac600480360360808110156107bf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019064010000000081111561082657600080fd5b82018360208201111561083857600080fd5b8035906020019184600183028401116401000000008311171561085a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506118db565b005b3480156108ba57600080fd5b506108c3611903565b6040518082815260200191505060405180910390f35b3480156108e557600080fd5b5061091c600480360360408110156108fc57600080fd5b81019080803590602001909291908035906020019092919050505061190a565b6040518082815260200191505060405180910390f35b34801561093e57600080fd5b5061096b6004803603602081101561095557600080fd5b8101908080359060200190929190505050611b45565b6040518082815260200191505060405180910390f35b34801561098d57600080fd5b506109d0600480360360208110156109a457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b62565b604051808215151515815260200191505060405180910390f35b3480156109f657600080fd5b506109ff611b82565b6040518082815260200191505060405180910390f35b348015610a2157600080fd5b50610a8460048036036040811015610a3857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b88565b604051808215151515815260200191505060405180910390f35b348015610aaa57600080fd5b50610aed60048036036020811015610ac157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c1c565b005b348015610afb57600080fd5b50610b3e60048036036020811015610b1257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c3b565b005b348015610b4c57600080fd5b50610ba360048036036060811015610b6357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611cec565b6040518082815260200191505060405180910390f35b600060405180807f737570706f727473496e74657266616365286279746573342900000000000000815250601901905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480610efe575060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362c6279746573290000000000000000000000000000000000815250602f019050604051809103902060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362900000000000000000000000000000000000000000000008152506029019050604051809103902060405180807f7472616e7366657246726f6d28616464726573732c616464726573732c75696e81526020017f74323536290000000000000000000000000000000000000000000000000000008152506025019050604051809103902060405180807f6973417070726f766564466f72416c6c28616464726573732c6164647265737381526020017f29000000000000000000000000000000000000000000000000000000000000008152506021019050604051809103902060405180807f736574417070726f76616c466f72416c6c28616464726573732c626f6f6c2900815250601f019050604051809103902060405180807f676574417070726f7665642875696e74323536290000000000000000000000008152506014019050604051809103902060405180807f617070726f766528616464726573732c75696e743235362900000000000000008152506018019050604051809103902060405180807f6f776e65724f662875696e7432353629000000000000000000000000000000008152506010019050604051809103902060405180807f62616c616e63654f6628616464726573732900000000000000000000000000008152506012019050604051809103902018181818181818187bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b80610f7b575060405180807f7265636c61696d2875696e743235362c61646472657373290000000000000000815250601801905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b9050919050565b6000610f8d82611d04565b1515610f9857600080fd5b6006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000610fde826114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561101b57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061105b575061105a8133611b88565b5b151561106657600080fd5b826006600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92560405160405180910390a4505050565b60006111278484846000611d76565b90509392505050565b61113a33826120b2565b151561114557600080fd5b611150838383612147565b505050565b3073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156111fd57600080fd5b505afa158015611211573d6000803e3d6000fd5b505050506040513d602081101561122757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff1614151561125a57600080fd5b61126433836120b2565b151561126f57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035484600102846040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561134157600080fd5b505af1158015611355573d6000803e3d6000fd5b505050506040513d602081101561136b57600080fd5b8101908080519060200190929190505050505050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6113c383838360206040519081016040528060008152506118db565b505050565b6113d0611672565b15156113db57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a600354836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b1580156114a257600080fd5b505af11580156114b6573d6000803e3d6000fd5b5050505050565b60004260096000848152602001908152602001600020541115156114e057600080fd5b6114e9826123ac565b9050919050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561152d57600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b61157c611672565b151561158757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000426276a700600960008581526020019081526020016000205401109050919050565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561172957600080fd5b80600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c3183604051808215151515815260200191505060405180910390a35050565b611832611672565b151561183d57600080fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f0a8bb31534c0ed46f380cb867bd5c803a189ced9a764e30b3a4991a9901d747460405160405180910390a250565b6118e6848484611130565b6118f28484848461242a565b15156118fd57600080fd5b50505050565b6276a70081565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156119b457600080fd5b505afa1580156119c8573d6000803e3d6000fd5b505050506040513d60208110156119de57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611a1157600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611a6957600080fd5b426276a70060096000868152602001908152602001600020540110151515611a9057600080fd5b6276a70082016276a7008360096000878152602001908152602001600020540101111515611abd57600080fd5b816009600085815260200190815260200160002060008282540192505081905550827f9b87a00e30f1ac65d898f070f8a3488fe60517182d0a2098e1b4b93a54aa9bd660096000868152602001908152602001600020546040518082815260200191505060405180910390a26009600084815260200190815260200160002054905092915050565b600060096000838152602001908152602001600020549050919050565b60046020528060005260406000206000915054906101000a900460ff1681565b60035481565b6000600860008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b611c24611672565b1515611c2f57600080fd5b611c388161264d565b50565b611c43611672565b1515611c4e57600080fd5b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f33d83959be2573f5453b12eb9d43b3499bc57d96bd2f067ba44803c859e8111360405160405180910390a250565b6000611cfb8484846001611d76565b90509392505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415915050919050565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b158015611e2057600080fd5b505afa158015611e34573d6000803e3d6000fd5b505050506040513d6020811015611e4a57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611e7d57600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611ed557600080fd5b611ede856116ca565b1515611ee957600080fd5b6276a70042016276a70084420101111515611f0357600080fd5b8242016009600087815260200190815260200160002081905550611f2685611d04565b15611f3557611f3485612749565b5b611f3f848661275e565b811561205457600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035487600102876040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561201757600080fd5b505af115801561202b573d6000803e3d6000fd5b505050506040513d602081101561204157600080fd5b8101908080519060200190929190505050505b8373ffffffffffffffffffffffffffffffffffffffff16857fb3d987963d01b2f68493b4bdb130988f157ea43070d4ad840fee0466ed9370d98542016040518082815260200191505060405180910390a38242019050949350505050565b6000806120be836114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16148061212d57508373ffffffffffffffffffffffffffffffffffffffff1661211584610f82565b73ffffffffffffffffffffffffffffffffffffffff16145b8061213e575061213d8185611b88565b5b91505092915050565b8273ffffffffffffffffffffffffffffffffffffffff16612167826114bd565b73ffffffffffffffffffffffffffffffffffffffff1614151561218957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156121c557600080fd5b6121ce816128f7565b6122216001600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506122b76001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561242157600080fd5b80915050919050565b600061244b8473ffffffffffffffffffffffffffffffffffffffff166129fa565b151561245a5760019050612645565b60008473ffffffffffffffffffffffffffffffffffffffff1663150b7a02338887876040518563ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015612551578082015181840152602081019050612536565b50505050905090810190601f16801561257e5780820380516001836020036101000a031916815260200191505b5095505050505050602060405180830381600087803b1580156125a057600080fd5b505af11580156125b4573d6000803e3d6000fd5b505050506040513d60208110156125ca57600080fd5b8101908080519060200190929190505050905063150b7a027c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149150505b949350505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561268957600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a380600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b61275b612755826114bd565b82612a0d565b50565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561279a57600080fd5b6127a381611d04565b1515156127af57600080fd5b816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506128546001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808273ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a45050565b600073ffffffffffffffffffffffffffffffffffffffff166006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156129b45760006006600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008282111515156129c857600080fd5b600082840390508091505092915050565b60008082840190508381101515156129f057600080fd5b8091505092915050565b600080823b905060008111915050919050565b8173ffffffffffffffffffffffffffffffffffffffff16612a2d826114bd565b73ffffffffffffffffffffffffffffffffffffffff16141515612a4f57600080fd5b612a58816128f7565b612aab6001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060006005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505056fea165627a7a72305820af9388697026a32fc11fae5e11a7544e431f49880e9dccb1eb61220f2ec18abc0029",
+    "\001\022registrar_bytecode",
+    "\001\201\257\03260806040526004361061015f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a714610164578063081812fc146101d6578063095ea7b3146102515780630e297b45146102ac57806323b872dd1461032557806328ed4f6c146103a05780633f15457f146103fb57806342842e0e146104525780634e543b26146104cd5780636352211e1461051e57806370a0823114610599578063715018a6146105fe5780638da5cb5b146106155780638f32d59b1461066c57806396e494e81461069b578063a22cb465146106ee578063a7fc7a071461074b578063b88d4fde1461079c578063c1a287e2146108ae578063c475abff146108d9578063d6e4fa8614610932578063da8c229e14610981578063ddf7fcb0146109ea578063e985e9c514610a15578063f2fde38b14610a9e578063f6a74ed714610aef578063fca247ac14610b40575b600080fd5b34801561017057600080fd5b506101bc6004803603602081101561018757600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190505050610bb9565b604051808215151515815260200191505060405180910390f35b3480156101e257600080fd5b5061020f600480360360208110156101f957600080fd5b8101908080359060200190929190505050610f82565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561025d57600080fd5b506102aa6004803603604081101561027457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610fd3565b005b3480156102b857600080fd5b5061030f600480360360608110156102cf57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611118565b6040518082815260200191505060405180910390f35b34801561033157600080fd5b5061039e6004803603606081101561034857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611130565b005b3480156103ac57600080fd5b506103f9600480360360408110156103c357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611155565b005b34801561040757600080fd5b50610410611381565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561045e57600080fd5b506104cb6004803603606081101561047557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506113a7565b005b3480156104d957600080fd5b5061051c600480360360208110156104f057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113c8565b005b34801561052a57600080fd5b506105576004803603602081101561054157600080fd5b81019080803590602001909291905050506114bd565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156105a557600080fd5b506105e8600480360360208110156105bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f0565b6040518082815260200191505060405180910390f35b34801561060a57600080fd5b50610613611574565b005b34801561062157600080fd5b5061062a611648565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561067857600080fd5b50610681611672565b604051808215151515815260200191505060405180910390f35b3480156106a757600080fd5b506106d4600480360360208110156106be57600080fd5b81019080803590602001909291905050506116ca565b604051808215151515815260200191505060405180910390f35b3480156106fa57600080fd5b506107496004803603604081101561071157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506116ee565b005b34801561075757600080fd5b5061079a6004803603602081101561076e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061182a565b005b3480156107a857600080fd5b506108ac600480360360808110156107bf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019064010000000081111561082657600080fd5b82018360208201111561083857600080fd5b8035906020019184600183028401116401000000008311171561085a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506118db565b005b3480156108ba57600080fd5b506108c3611903565b6040518082815260200191505060405180910390f35b3480156108e557600080fd5b5061091c600480360360408110156108fc57600080fd5b81019080803590602001909291908035906020019092919050505061190a565b6040518082815260200191505060405180910390f35b34801561093e57600080fd5b5061096b6004803603602081101561095557600080fd5b8101908080359060200190929190505050611b45565b6040518082815260200191505060405180910390f35b34801561098d57600080fd5b506109d0600480360360208110156109a457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b62565b604051808215151515815260200191505060405180910390f35b3480156109f657600080fd5b506109ff611b82565b6040518082815260200191505060405180910390f35b348015610a2157600080fd5b50610a8460048036036040811015610a3857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b88565b604051808215151515815260200191505060405180910390f35b348015610aaa57600080fd5b50610aed60048036036020811015610ac157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c1c565b005b348015610afb57600080fd5b50610b3e60048036036020811015610b1257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611c3b565b005b348015610b4c57600080fd5b50610ba360048036036060811015610b6357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611cec565b6040518082815260200191505060405180910390f35b600060405180807f737570706f727473496e74657266616365286279746573342900000000000000815250601901905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480610efe575060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362c6279746573290000000000000000000000000000000000815250602f019050604051809103902060405180807f736166655472616e7366657246726f6d28616464726573732c6164647265737381526020017f2c75696e743235362900000000000000000000000000000000000000000000008152506029019050604051809103902060405180807f7472616e7366657246726f6d28616464726573732c616464726573732c75696e81526020017f74323536290000000000000000000000000000000000000000000000000000008152506025019050604051809103902060405180807f6973417070726f766564466f72416c6c28616464726573732c6164647265737381526020017f29000000000000000000000000000000000000000000000000000000000000008152506021019050604051809103902060405180807f736574417070726f76616c466f72416c6c28616464726573732c626f6f6c2900815250601f019050604051809103902060405180807f676574417070726f7665642875696e74323536290000000000000000000000008152506014019050604051809103902060405180807f617070726f766528616464726573732c75696e743235362900000000000000008152506018019050604051809103902060405180807f6f776e65724f662875696e7432353629000000000000000000000000000000008152506010019050604051809103902060405180807f62616c616e63654f6628616464726573732900000000000000000000000000008152506012019050604051809103902018181818181818187bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b80610f7b575060405180807f7265636c61696d2875696e743235362c61646472657373290000000000000000815250601801905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b9050919050565b6000610f8d82611d04565b1515610f9857600080fd5b6006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000610fde826114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561101b57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061105b575061105a8133611b88565b5b151561106657600080fd5b826006600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92560405160405180910390a4505050565b60006111278484846000611d76565b90509392505050565b61113a33826120b2565b151561114557600080fd5b611150838383612147565b505050565b3073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156111fd57600080fd5b505afa158015611211573d6000803e3d6000fd5b505050506040513d602081101561122757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff1614151561125a57600080fd5b61126433836120b2565b151561126f57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035484600102846040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561134157600080fd5b505af1158015611355573d6000803e3d6000fd5b505050506040513d602081101561136b57600080fd5b8101908080519060200190929190505050505050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6113c383838360206040519081016040528060008152506118db565b505050565b6113d0611672565b15156113db57600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a600354836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b1580156114a257600080fd5b505af11580156114b6573d6000803e3d6000fd5b5050505050565b60004260096000848152602001908152602001600020541115156114e057600080fd5b6114e9826123ac565b9050919050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561152d57600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b61157c611672565b151561158757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000426276a700600960008581526020019081526020016000205401109050919050565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561172957600080fd5b80600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c3183604051808215151515815260200191505060405180910390a35050565b611832611672565b151561183d57600080fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f0a8bb31534c0ed46f380cb867bd5c803a189ced9a764e30b3a4991a9901d747460405160405180910390a250565b6118e6848484611130565b6118f28484848461242a565b15156118fd57600080fd5b50505050565b6276a70081565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b1580156119b457600080fd5b505afa1580156119c8573d6000803e3d6000fd5b505050506040513d60208110156119de57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611a1157600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611a6957600080fd5b426276a70060096000868152602001908152602001600020540110151515611a9057600080fd5b6276a70082016276a7008360096000878152602001908152602001600020540101111515611abd57600080fd5b816009600085815260200190815260200160002060008282540192505081905550827f9b87a00e30f1ac65d898f070f8a3488fe60517182d0a2098e1b4b93a54aa9bd660096000868152602001908152602001600020546040518082815260200191505060405180910390a26009600084815260200190815260200160002054905092915050565b600060096000838152602001908152602001600020549050919050565b60046020528060005260406000206000915054906101000a900460ff1681565b60035481565b6000600860008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b611c24611672565b1515611c2f57600080fd5b611c388161264d565b50565b611c43611672565b1515611c4e57600080fd5b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff167f33d83959be2573f5453b12eb9d43b3499bc57d96bd2f067ba44803c859e8111360405160405180910390a250565b6000611cfb8484846001611d76565b90509392505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415915050919050565b60003073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be36003546040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b158015611e2057600080fd5b505afa158015611e34573d6000803e3d6000fd5b505050506040513d6020811015611e4a57600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff16141515611e7d57600080fd5b600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515611ed557600080fd5b611ede856116ca565b1515611ee957600080fd5b6276a70042016276a70084420101111515611f0357600080fd5b8242016009600087815260200190815260200160002081905550611f2685611d04565b15611f3557611f3485612749565b5b611f3f848661275e565b811561205457600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab592360035487600102876040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050602060405180830381600087803b15801561201757600080fd5b505af115801561202b573d6000803e3d6000fd5b505050506040513d602081101561204157600080fd5b8101908080519060200190929190505050505b8373ffffffffffffffffffffffffffffffffffffffff16857fb3d987963d01b2f68493b4bdb130988f157ea43070d4ad840fee0466ed9370d98542016040518082815260200191505060405180910390a38242019050949350505050565b6000806120be836114bd565b90508073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16148061212d57508373ffffffffffffffffffffffffffffffffffffffff1661211584610f82565b73ffffffffffffffffffffffffffffffffffffffff16145b8061213e575061213d8185611b88565b5b91505092915050565b8273ffffffffffffffffffffffffffffffffffffffff16612167826114bd565b73ffffffffffffffffffffffffffffffffffffffff1614151561218957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156121c557600080fd5b6121ce816128f7565b6122216001600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506122b76001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000806005600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561242157600080fd5b80915050919050565b600061244b8473ffffffffffffffffffffffffffffffffffffffff166129fa565b151561245a5760019050612645565b60008473ffffffffffffffffffffffffffffffffffffffff1663150b7a02338887876040518563ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015612551578082015181840152602081019050612536565b50505050905090810190601f16801561257e5780820380516001836020036101000a031916815260200191505b5095505050505050602060405180830381600087803b1580156125a057600080fd5b505af11580156125b4573d6000803e3d6000fd5b505050506040513d60208110156125ca57600080fd5b8101908080519060200190929190505050905063150b7a027c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916817bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149150505b949350505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561268957600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a380600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b61275b612755826114bd565b82612a0d565b50565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561279a57600080fd5b6127a381611d04565b1515156127af57600080fd5b816005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506128546001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129d990919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808273ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a45050565b600073ffffffffffffffffffffffffffffffffffffffff166006600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156129b45760006006600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008282111515156129c857600080fd5b600082840390508091505092915050565b60008082840190508381101515156129f057600080fd5b8091505092915050565b600080823b905060008111915050919050565b8173ffffffffffffffffffffffffffffffffffffffff16612a2d826114bd565b73ffffffffffffffffffffffffffffffffffffffff16141515612a4f57600080fd5b612a58816128f7565b612aab6001600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546129b790919063ffffffff16565b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060006005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505056fea165627a7a72305820af9388697026a32fc11fae5e11a7544e431f49880e9dccb1eb61220f2ec18abc0029",
+    "\001\032registrar_bytecode_runtime",
+    "\001\315X[{\"inputs\":[{\"internalType\":\"contract ENS\",\"name\":\"_ens\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"contentType\",\"type\":\"uint256\"}],\"name\":\"ABIChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"a\",\"type\":\"address\"}],\"name\":\"AddrChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"coinType\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"newAddress\",\"type\":\"bytes\"}],\"name\":\"AddressChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isAuthorised\",\"type\":\"bool\"}],\"name\":\"AuthorisationChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"hash\",\"type\":\"bytes\"}],\"name\":\"ContenthashChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"name\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"resource\",\"type\":\"uint16\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"record\",\"type\":\"bytes\"}],\"name\":\"DNSRecordChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"name\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"resource\",\"type\":\"uint16\"}],\"name\":\"DNSRecordDeleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"DNSZoneCleared\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"implementer\",\"type\":\"address\"}],\"name\":\"InterfaceChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"NameChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"x\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"y\",\"type\":\"bytes32\"}],\"name\":\"PubkeyChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"indexedKey\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"}],\"name\":\"TextChanged\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"contentTypes\",\"type\":\"uint256\"}],\"name\":\"ABI\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"coinType\",\"type\":\"uint256\"}],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"authorisations\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"clearDNSZone\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"contenthash\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"},{\"internalType\":\"uint16\",\"name\":\"resource\",\"type\":\"uint16\"}],\"name\":\"dnsRecord\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"}],\"name\":\"hasDNSRecords\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"}],\"name\":\"interfaceImplementer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"data\",\"type\":\"bytes[]\"}],\"name\":\"multicall\",\"outputs\":[{\"internalType\":\"bytes[]\",\"name\":\"results\",\"type\":\"bytes[]\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"}],\"name\":\"pubkey\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"x\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"y\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"contentType\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"setABI\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"coinType\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"a\",\"type\":\"bytes\"}],\"name\":\"setAddr\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"a\",\"type\":\"address\"}],\"name\":\"setAddr\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isAuthorised\",\"type\":\"bool\"}],\"name\":\"setAuthorisation\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"hash\",\"type\":\"bytes\"}],\"name\":\"setContenthash\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"setDNSRecords\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"},{\"internalType\":\"address\",\"name\":\"implementer\",\"type\":\"address\"}],\"name\":\"setInterface\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"setName\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"x\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"y\",\"type\":\"bytes32\"}],\"name\":\"setPubkey\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"}],\"name\":\"setText\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"}],\"name\":\"text\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]",
+    "\001\fresolver_abi",
+    "\001\201\346>60806040523480156200001157600080fd5b506040516020806200399f833981018060405262000033919081019062000091565b80600a60006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505062000105565b6000620000898251620000f1565b905092915050565b600060208284031215620000a457600080fd5b6000620000b4848285016200007b565b91505092915050565b6000620000ca82620000d1565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000620000fe82620000bd565b9050919050565b61388a80620001156000396000f3fe608060405260043610610133576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a7146101385780630af179d71461017557806310f13a8c1461019e578063124a319c146101c75780632203ab561461020457806329cd62ea14610242578063304e6ade1461026b5780633b3b57de146102945780633e9ce794146102d15780634cbf6ba4146102fa57806359d1d43c14610337578063623195b014610374578063691f34311461039d57806377372213146103da5780638b95dd7114610403578063a8fa56821461042c578063ad5780af14610469578063bc1c58d114610492578063c8690233146104cf578063d5fa2b001461050d578063e59d895d14610536578063f1cb7e061461055f578063f86bc8791461059c575b600080fd5b34801561014457600080fd5b5061015f600480360361015a9190810190613148565b6105d9565b60405161016c91906132df565b60405180910390f35b34801561018157600080fd5b5061019c60048036036101979190810190612f00565b610656565b005b3480156101aa57600080fd5b506101c560048036036101c09190810190612fb0565b6108d5565b005b3480156101d357600080fd5b506101ee60048036036101e99190810190612e75565b610979565b6040516101fb91906132a9565b60405180910390f35b34801561021057600080fd5b5061022b60048036036102269190810190613039565b610ede565b60405161023992919061361e565b60405180910390f35b34801561024e57600080fd5b5061026960048036036102649190810190612dd7565b611033565b005b34801561027757600080fd5b50610292600480360361028d9190810190612f00565b6110c8565b005b3480156102a057600080fd5b506102bb60048036036102b69190810190612c98565b611141565b6040516102c891906132c4565b60405180910390f35b3480156102dd57600080fd5b506102f860048036036102f39190810190612d4c565b611178565b005b34801561030657600080fd5b50610321600480360361031c9190810190612d9b565b61125f565b60405161032e91906132df565b60405180910390f35b34801561034357600080fd5b5061035e60048036036103599190810190612f58565b6112c7565b60405161036b91906135fc565b60405180910390f35b34801561038057600080fd5b5061039b60048036036103969190810190613075565b6113a3565b005b3480156103a957600080fd5b506103c460048036036103bf9190810190612c98565b61143f565b6040516103d191906135fc565b60405180910390f35b3480156103e657600080fd5b5061040160048036036103fc9190810190612f58565b6114f4565b005b34801561040f57600080fd5b5061042a600480360361042591908101906130e1565b61156d565b005b34801561043857600080fd5b50610453600480360361044e9190810190612e26565b611647565b60405161046091906135da565b60405180910390f35b34801561047557600080fd5b50610490600480360361048b9190810190612c98565b61174c565b005b34801561049e57600080fd5b506104b960048036036104b49190810190612c98565b6117bf565b6040516104c691906135da565b60405180910390f35b3480156104db57600080fd5b506104f660048036036104f19190810190612c98565b611874565b604051610504929190613383565b60405180910390f35b34801561051957600080fd5b50610534600480360361052f9190810190612cc1565b6118ae565b005b34801561054257600080fd5b5061055d60048036036105589190810190612eb1565b6118dc565b005b34801561056b57600080fd5b5061058660048036036105819190810190613039565b6119d3565b60405161059391906135da565b60405180910390f35b3480156105a857600080fd5b506105c360048036036105be9190810190612cfd565b611a9a565b6040516105d091906132df565b60405180910390f35b60006359d1d43c7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061064f575061064e82611ad6565b5b9050919050565b8261066081611b53565b151561066b57600080fd5b6000809050600080905060608060006106826128bc565b6106da60008a8a8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050611cf890919063ffffffff16565b90505b6106e681611d22565b15156108625760008661ffff161415610791578060400151955061070981611d38565b9350836040516020018082805190602001908083835b602083101515610744578051825260208201915060208101905060208303925061071f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405160208183030381529060405280519060200120915061078a81611d6f565b9250610854565b606061079c82611d38565b9050816040015161ffff168761ffff161415806107c957506107c78186611d9f90919063ffffffff16565b155b156108525761082b8b86898d8d8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050508a8b88602001510360008b5114611dc6565b81604001519650816020015195508094508480519060200120925061084f82611d6f565b93505b505b61085d816120fa565b6106dd565b506000835111156108ca576108c98984878b8b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505088898e8e9050036000895114611dc6565b5b505050505050505050565b846108df81611b53565b15156108ea57600080fd5b828260096000898152602001908152602001600020878760405180838380828437808301925050509250505090815260200160405180910390209190610931929190612908565b507fd8c9334b1a9c2f9da342a0a2b32629c1a229b6445dad78947f674b44444a7550868686888860405161096995949392919061350f565b60405180910390a1505050505050565b600080600660008581526020019081526020016000206000847bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610a405780915050610ed8565b6000610a4b85611141565b9050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610a8d57600092505050610ed8565b600060608273ffffffffffffffffffffffffffffffffffffffff166301ffc9a77c010000000000000000000000000000000000000000000000000000000002604051602401610adc91906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610b8e5780518252602082019150602081019050602083039250610b69565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610bee576040519150601f19603f3d011682016040523d82523d6000602084013e610bf3565b606091505b5091509150811580610c06575060208151105b80610cae575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610c3f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610cc0576000945050505050610ed8565b8273ffffffffffffffffffffffffffffffffffffffff1686604051602401610ce891906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610d9a5780518252602082019150602081019050602083039250610d75565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610dfa576040519150601f19603f3d011682016040523d82523d6000602084013e610dff565b606091505b508092508193505050811580610e16575060208151105b80610ebe575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610e4f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610ed0576000945050505050610ed8565b829450505050505b92915050565b60006060600080600086815260200190815260200160002090506000600190505b848111151561100f57600085821614158015610f4157506000826000838152602001908152602001600020805460018160011615610100020316600290049050115b156110005780826000838152602001908152602001600020808054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610fee5780601f10610fc357610100808354040283529160200191610fee565b820191906000526020600020905b815481529060010190602001808311610fd157829003601f168201915b5050505050905093509350505061102c565b6001819060020a029050610eff565b506000602060405190810160405280600081525081915092509250505b9250929050565b8261103d81611b53565b151561104857600080fd5b6040805190810160405280848152602001838152506008600086815260200190815260200160002060008201518160000155602082015181600101559050507f1d6f5e03d3f63eb58751986629a5439baee5079ff04f345becb66e23eb154e468484846040516110ba939291906133ac565b60405180910390a150505050565b826110d281611b53565b15156110dd57600080fd5b82826002600087815260200190815260200160002091906110ff929190612988565b507fe379c1624ed7e714cc0937528a32359d69d5281337765313dba4e081b72d75788484846040516111339392919061341a565b60405180910390a150505050565b6000606061115083603c6119d3565b9050600081511415611166576000915050611173565b61116f81612210565b9150505b919050565b80600b600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df83338484604051611252949392919061333e565b60405180910390a1505050565b60008060056000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060009054906101000a900461ffff1661ffff161415905092915050565b606060096000858152602001908152602001600020838360405180838380828437808301925050509250505090815260200160405180910390208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156113955780601f1061136a57610100808354040283529160200191611395565b820191906000526020600020905b81548152906001019060200180831161137857829003601f168201915b505050505090509392505050565b836113ad81611b53565b15156113b857600080fd5b60008460018603161415156113cc57600080fd5b8282600080888152602001908152602001600020600087815260200190815260200160002091906113fe929190612988565b507faa121bbeef5f32f5961a2a28966e769023910fc9479059ee3495d4c1a696efe38585604051611430929190613558565b60405180910390a15050505050565b6060600760008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156114e85780601f106114bd576101008083540402835291602001916114e8565b820191906000526020600020905b8154815290600101906020018083116114cb57829003601f168201915b50505050509050919050565b826114fe81611b53565b151561150957600080fd5b828260076000878152602001908152602001600020919061152b929190612908565b507fb7d29e911041e8d9b843369e890bcb72c9388692ba48b65ac54e7214c4c348f784848460405161155f939291906134dd565b60405180910390a150505050565b8261157781611b53565b151561158257600080fd5b7f65412581168e88a1e60c6459d7f44ae83ad0832e670826c05a4e2476b57af7528484846040516115b593929190613581565b60405180910390a1603c831415611608577f52d7d861f09ab3d26239d492e8968629f95e9e318cf0b73bfddc441522a15fd2846115f184612210565b6040516115ff929190613315565b60405180910390a15b816001600086815260200190815260200160002060008581526020019081526020016000209080519060200190611640929190612a08565b5050505050565b606060046000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060008361ffff1661ffff1681526020019081526020016000208054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561173e5780601f106117135761010080835404028352916020019161173e565b820191906000526020600020905b81548152906001019060200180831161172157829003601f168201915b505050505090509392505050565b8061175681611b53565b151561176157600080fd5b60036000838152602001908152602001600020600081548092919060010191905055507fb757169b8492ca2f1c6619d9d76ce22803035c3b1d5f6930dffe7b127c1a1983826040516117b391906132fa565b60405180910390a15050565b6060600260008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156118685780601f1061183d57610100808354040283529160200191611868565b820191906000526020600020905b81548152906001019060200180831161184b57829003601f168201915b50505050509050919050565b6000806008600084815260200190815260200160002060000154600860008581526020019081526020016000206001015491509150915091565b816118b881611b53565b15156118c357600080fd5b6118d783603c6118d285612235565b61156d565b505050565b826118e681611b53565b15156118f157600080fd5b81600660008681526020019081526020016000206000857bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7c69f06bea0bdef565b709e93a147836b0063ba2dd89f02d0b7e8d931e6a6daa8484846040516119c5939291906133e3565b60405180910390a150505050565b60606001600084815260200190815260200160002060008381526020019081526020016000208054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015611a8d5780601f10611a6257610100808354040283529160200191611a8d565b820191906000526020600020905b815481529060010190602001808311611a7057829003601f168201915b5050505050905092915050565b600b602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b600063c86902337c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480611b4c5750611b4b82612280565b5b9050919050565b600080600a60009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401611bcd91906132fa565b60206040518083038186803b158015611be557600080fd5b505afa158015611bf9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250611c1d9190810190612c6f565b90503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161480611cf05750600b600084815260200190815260200160002060008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff165b915050919050565b611d006128bc565b828160000181905250818160c0018181525050611d1c816120fa565b92915050565b6000816000015151826020015110159050919050565b6060611d688260200151611d54846000015185602001516122fd565b846000015161235a9092919063ffffffff16565b9050919050565b6060611d988260a001518360a001518460c0015103846000015161235a9092919063ffffffff16565b9050919050565b600081518351148015611dbe5750611dbd83600084600087516123cf565b5b905092915050565b6000600360008981526020019081526020016000205490506000878051906020012090506060611e0186868961235a9092919063ffffffff16565b90508315611f79576000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141515611edf57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff16809291906001900391906101000a81548161ffff021916908361ffff160217905550505b600460008b81526020019081526020016000206000848152602001908152602001600020600083815260200190815260200160002060008961ffff1661ffff1681526020019081526020016000206000611f399190612a88565b7f03528ed0c2a3ebc993b12ce3c16bb382f9c7d88ef7d8a1bf290eaf35955a12078a8a8a604051611f6c9392919061344c565b60405180910390a16120ee565b6000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141561204d57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550505b80600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff16815260200190815260200160002090805190602001906120af929190612a08565b507f52a608b3303a48862d07a73d82fa221318c0027fbbcfb1b2329bface3f19ff2b8a8a8a846040516120e5949392919061348a565b60405180910390a15b50505050505050505050565b8060c00151816020018181525050806000015151816020015110151561211f5761220d565b6000612133826000015183602001516122fd565b82602001510190506121528183600001516123f390919063ffffffff16565b826040019061ffff16908161ffff16815250506002810190506121828183600001516123f390919063ffffffff16565b826060019061ffff16908161ffff16815250506002810190506121b281836000015161241b90919063ffffffff16565b826080019063ffffffff16908163ffffffff168152505060048101905060006121e88284600001516123f390919063ffffffff16565b61ffff169050600282019150818360a00181815250508082018360c001818152505050505b50565b60006014825114151561222257600080fd5b600c6101000a6020830151049050919050565b606060146040519080825280601f01601f19166020018201604052801561226b5781602001600182028038833980820191505090505b509050600c6101000a82026020820152919050565b600063691f34317c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806122f657506122f582612445565b5b9050919050565b6000808290505b60011561234e5783518110151561231757fe5b600061232c82866124fa90919063ffffffff16565b60ff16905060018101820191506000811415612348575061234e565b50612304565b82810391505092915050565b606083518284011115151561236e57600080fd5b6060826040519080825280601f01601f1916602001820160405280156123a35781602001600182028038833980820191505090505b50905060008060208301915085602088010190506123c2828287612580565b8293505050509392505050565b60006123dc8484846125cb565b6123e78787856125cb565b14905095945050505050565b60008251600283011115151561240857600080fd5b61ffff8260028501015116905092915050565b60008251600483011115151561243057600080fd5b63ffffffff8260048501015116905092915050565b600060405180807f696e74657266616365496d706c656d656e74657228627974657333322c62797481526020017f6573342900000000000000000000000000000000000000000000000000000000815250602401905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806124f357506124f2826125f0565b5b9050919050565b6000828281518110151561250a57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027f01000000000000000000000000000000000000000000000000000000000000009004905092915050565b5b6020811015156125a65781518352602083019250602082019150602081039050612581565b60006001826020036101000a0390508019835116818551168181178652505050505050565b60008351828401111515156125df57600080fd5b818360208601012090509392505050565b600063a8fa56827c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061266657506126658261266d565b5b9050919050565b600063bc1c58d17c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806126e357506126e2826126ea565b5b9050919050565b6000633b3b57de7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806127bb575063f1cb7e067c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b806127cb57506127ca826127d2565b5b9050919050565b6000632203ab567c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061284857506128478261284f565b5b9050919050565b60006301ffc9a77c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b60e0604051908101604052806060815260200160008152602001600061ffff168152602001600061ffff168152602001600063ffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061294957803560ff1916838001178555612977565b82800160010185558215612977579182015b8281111561297657823582559160200191906001019061295b565b5b5090506129849190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106129c957803560ff19168380011785556129f7565b828001600101855582156129f7579182015b828111156129f65782358255916020019190600101906129db565b5b509050612a049190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10612a4957805160ff1916838001178555612a77565b82800160010185558215612a77579182015b82811115612a76578251825591602001919060010190612a5b565b5b509050612a849190612ad0565b5090565b50805460018160011615610100020316600290046000825580601f10612aae5750612acd565b601f016020900490600052602060002090810190612acc9190612ad0565b5b50565b612af291905b80821115612aee576000816000905550600101612ad6565b5090565b90565b6000612b01823561375b565b905092915050565b6000612b15825161375b565b905092915050565b6000612b29823561376d565b905092915050565b6000612b3d8235613779565b905092915050565b6000612b518235613783565b905092915050565b60008083601f8401121515612b6d57600080fd5b8235905067ffffffffffffffff811115612b8657600080fd5b602083019150836001820283011115612b9e57600080fd5b9250929050565b600082601f8301121515612bb857600080fd5b8135612bcb612bc68261367b565b61364e565b91508082526020830160208301858383011115612be757600080fd5b612bf28382846137fd565b50505092915050565b60008083601f8401121515612c0f57600080fd5b8235905067ffffffffffffffff811115612c2857600080fd5b602083019150836001820283011115612c4057600080fd5b9250929050565b6000612c5382356137af565b905092915050565b6000612c6782356137bd565b905092915050565b600060208284031215612c8157600080fd5b6000612c8f84828501612b09565b91505092915050565b600060208284031215612caa57600080fd5b6000612cb884828501612b31565b91505092915050565b60008060408385031215612cd457600080fd5b6000612ce285828601612b31565b9250506020612cf385828601612af5565b9150509250929050565b600080600060608486031215612d1257600080fd5b6000612d2086828701612b31565b9350506020612d3186828701612af5565b9250506040612d4286828701612af5565b9150509250925092565b600080600060608486031215612d6157600080fd5b6000612d6f86828701612b31565b9350506020612d8086828701612af5565b9250506040612d9186828701612b1d565b9150509250925092565b60008060408385031215612dae57600080fd5b6000612dbc85828601612b31565b9250506020612dcd85828601612b31565b9150509250929050565b600080600060608486031215612dec57600080fd5b6000612dfa86828701612b31565b9350506020612e0b86828701612b31565b9250506040612e1c86828701612b31565b9150509250925092565b600080600060608486031215612e3b57600080fd5b6000612e4986828701612b31565b9350506020612e5a86828701612b31565b9250506040612e6b86828701612c47565b9150509250925092565b60008060408385031215612e8857600080fd5b6000612e9685828601612b31565b9250506020612ea785828601612b45565b9150509250929050565b600080600060608486031215612ec657600080fd5b6000612ed486828701612b31565b9350506020612ee586828701612b45565b9250506040612ef686828701612af5565b9150509250925092565b600080600060408486031215612f1557600080fd5b6000612f2386828701612b31565b935050602084013567ffffffffffffffff811115612f4057600080fd5b612f4c86828701612b59565b92509250509250925092565b600080600060408486031215612f6d57600080fd5b6000612f7b86828701612b31565b935050602084013567ffffffffffffffff811115612f9857600080fd5b612fa486828701612bfb565b92509250509250925092565b600080600080600060608688031215612fc857600080fd5b6000612fd688828901612b31565b955050602086013567ffffffffffffffff811115612ff357600080fd5b612fff88828901612bfb565b9450945050604086013567ffffffffffffffff81111561301e57600080fd5b61302a88828901612bfb565b92509250509295509295909350565b6000806040838503121561304c57600080fd5b600061305a85828601612b31565b925050602061306b85828601612c5b565b9150509250929050565b6000806000806060858703121561308b57600080fd5b600061309987828801612b31565b94505060206130aa87828801612c5b565b935050604085013567ffffffffffffffff8111156130c757600080fd5b6130d387828801612b59565b925092505092959194509250565b6000806000606084860312156130f657600080fd5b600061310486828701612b31565b935050602061311586828701612c5b565b925050604084013567ffffffffffffffff81111561313257600080fd5b61313e86828701612ba5565b9150509250925092565b60006020828403121561315a57600080fd5b600061316884828501612b45565b91505092915050565b61317a816137c7565b82525050565b613189816136cf565b82525050565b613198816136bd565b82525050565b6131a7816136e1565b82525050565b6131b6816136ed565b82525050565b6131c5816136f7565b82525050565b60008284526020840193506131e18385846137fd565b6131ea8361383f565b840190509392505050565b6000613200826136a7565b80845261321481602086016020860161380c565b61321d8161383f565b602085010191505092915050565b60008284526020840193506132418385846137fd565b61324a8361383f565b840190509392505050565b6000613260826136b2565b80845261327481602086016020860161380c565b61327d8161383f565b602085010191505092915050565b61329481613723565b82525050565b6132a381613751565b82525050565b60006020820190506132be600083018461318f565b92915050565b60006020820190506132d96000830184613180565b92915050565b60006020820190506132f4600083018461319e565b92915050565b600060208201905061330f60008301846131ad565b92915050565b600060408201905061332a60008301856131ad565b6133376020830184613171565b9392505050565b600060808201905061335360008301876131ad565b6133606020830186613171565b61336d604083018561318f565b61337a606083018461319e565b95945050505050565b600060408201905061339860008301856131ad565b6133a560208301846131ad565b9392505050565b60006060820190506133c160008301866131ad565b6133ce60208301856131ad565b6133db60408301846131ad565b949350505050565b60006060820190506133f860008301866131ad565b61340560208301856131bc565b613412604083018461318f565b949350505050565b600060408201905061342f60008301866131ad565b81810360208301526134428184866131cb565b9050949350505050565b600060608201905061346160008301866131ad565b818103602083015261347381856131f5565b9050613482604083018461328b565b949350505050565b600060808201905061349f60008301876131ad565b81810360208301526134b181866131f5565b90506134c0604083018561328b565b81810360608301526134d281846131f5565b905095945050505050565b60006040820190506134f260008301866131ad565b818103602083015261350581848661322b565b9050949350505050565b600060608201905061352460008301886131ad565b818103602083015261353781868861322b565b9050818103604083015261354c81848661322b565b90509695505050505050565b600060408201905061356d60008301856131ad565b61357a602083018461329a565b9392505050565b600060608201905061359660008301866131ad565b6135a3602083018561329a565b81810360408301526135b581846131f5565b9050949350505050565b60006020820190506135d460008301846131bc565b92915050565b600060208201905081810360008301526135f481846131f5565b905092915050565b600060208201905081810360008301526136168184613255565b905092915050565b6000604082019050613633600083018561329a565b818103602083015261364581846131f5565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561367157600080fd5b8060405250919050565b600067ffffffffffffffff82111561369257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b60006136c882613731565b9050919050565b60006136da82613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061376682613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b6000819050919050565b60006137d2826137d9565b9050919050565b60006137e4826137eb565b9050919050565b60006137f682613731565b9050919050565b82818337600083830152505050565b60005b8381101561382a57808201518184015260208101905061380f565b83811115613839576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820668668127482cd23a9f375761bf0b8d29fdbff7c261f4d2755ca9c73637d86bf6c6578706572696d656e74616cf50037",
+    "\001\021resolver_bytecode",
+    "\001\201\342\024608060405260043610610133576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301ffc9a7146101385780630af179d71461017557806310f13a8c1461019e578063124a319c146101c75780632203ab561461020457806329cd62ea14610242578063304e6ade1461026b5780633b3b57de146102945780633e9ce794146102d15780634cbf6ba4146102fa57806359d1d43c14610337578063623195b014610374578063691f34311461039d57806377372213146103da5780638b95dd7114610403578063a8fa56821461042c578063ad5780af14610469578063bc1c58d114610492578063c8690233146104cf578063d5fa2b001461050d578063e59d895d14610536578063f1cb7e061461055f578063f86bc8791461059c575b600080fd5b34801561014457600080fd5b5061015f600480360361015a9190810190613148565b6105d9565b60405161016c91906132df565b60405180910390f35b34801561018157600080fd5b5061019c60048036036101979190810190612f00565b610656565b005b3480156101aa57600080fd5b506101c560048036036101c09190810190612fb0565b6108d5565b005b3480156101d357600080fd5b506101ee60048036036101e99190810190612e75565b610979565b6040516101fb91906132a9565b60405180910390f35b34801561021057600080fd5b5061022b60048036036102269190810190613039565b610ede565b60405161023992919061361e565b60405180910390f35b34801561024e57600080fd5b5061026960048036036102649190810190612dd7565b611033565b005b34801561027757600080fd5b50610292600480360361028d9190810190612f00565b6110c8565b005b3480156102a057600080fd5b506102bb60048036036102b69190810190612c98565b611141565b6040516102c891906132c4565b60405180910390f35b3480156102dd57600080fd5b506102f860048036036102f39190810190612d4c565b611178565b005b34801561030657600080fd5b50610321600480360361031c9190810190612d9b565b61125f565b60405161032e91906132df565b60405180910390f35b34801561034357600080fd5b5061035e60048036036103599190810190612f58565b6112c7565b60405161036b91906135fc565b60405180910390f35b34801561038057600080fd5b5061039b60048036036103969190810190613075565b6113a3565b005b3480156103a957600080fd5b506103c460048036036103bf9190810190612c98565b61143f565b6040516103d191906135fc565b60405180910390f35b3480156103e657600080fd5b5061040160048036036103fc9190810190612f58565b6114f4565b005b34801561040f57600080fd5b5061042a600480360361042591908101906130e1565b61156d565b005b34801561043857600080fd5b50610453600480360361044e9190810190612e26565b611647565b60405161046091906135da565b60405180910390f35b34801561047557600080fd5b50610490600480360361048b9190810190612c98565b61174c565b005b34801561049e57600080fd5b506104b960048036036104b49190810190612c98565b6117bf565b6040516104c691906135da565b60405180910390f35b3480156104db57600080fd5b506104f660048036036104f19190810190612c98565b611874565b604051610504929190613383565b60405180910390f35b34801561051957600080fd5b50610534600480360361052f9190810190612cc1565b6118ae565b005b34801561054257600080fd5b5061055d60048036036105589190810190612eb1565b6118dc565b005b34801561056b57600080fd5b5061058660048036036105819190810190613039565b6119d3565b60405161059391906135da565b60405180910390f35b3480156105a857600080fd5b506105c360048036036105be9190810190612cfd565b611a9a565b6040516105d091906132df565b60405180910390f35b60006359d1d43c7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061064f575061064e82611ad6565b5b9050919050565b8261066081611b53565b151561066b57600080fd5b6000809050600080905060608060006106826128bc565b6106da60008a8a8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050611cf890919063ffffffff16565b90505b6106e681611d22565b15156108625760008661ffff161415610791578060400151955061070981611d38565b9350836040516020018082805190602001908083835b602083101515610744578051825260208201915060208101905060208303925061071f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405160208183030381529060405280519060200120915061078a81611d6f565b9250610854565b606061079c82611d38565b9050816040015161ffff168761ffff161415806107c957506107c78186611d9f90919063ffffffff16565b155b156108525761082b8b86898d8d8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050508a8b88602001510360008b5114611dc6565b81604001519650816020015195508094508480519060200120925061084f82611d6f565b93505b505b61085d816120fa565b6106dd565b506000835111156108ca576108c98984878b8b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505088898e8e9050036000895114611dc6565b5b505050505050505050565b846108df81611b53565b15156108ea57600080fd5b828260096000898152602001908152602001600020878760405180838380828437808301925050509250505090815260200160405180910390209190610931929190612908565b507fd8c9334b1a9c2f9da342a0a2b32629c1a229b6445dad78947f674b44444a7550868686888860405161096995949392919061350f565b60405180910390a1505050505050565b600080600660008581526020019081526020016000206000847bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610a405780915050610ed8565b6000610a4b85611141565b9050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610a8d57600092505050610ed8565b600060608273ffffffffffffffffffffffffffffffffffffffff166301ffc9a77c010000000000000000000000000000000000000000000000000000000002604051602401610adc91906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610b8e5780518252602082019150602081019050602083039250610b69565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610bee576040519150601f19603f3d011682016040523d82523d6000602084013e610bf3565b606091505b5091509150811580610c06575060208151105b80610cae575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610c3f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610cc0576000945050505050610ed8565b8273ffffffffffffffffffffffffffffffffffffffff1686604051602401610ce891906135bf565b6040516020818303038152906040527f01ffc9a7000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b602083101515610d9a5780518252602082019150602081019050602083039250610d75565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855afa9150503d8060008114610dfa576040519150601f19603f3d011682016040523d82523d6000602084013e610dff565b606091505b508092508193505050811580610e16575060208151105b80610ebe575060007f01000000000000000000000000000000000000000000000000000000000000000281601f815181101515610e4f57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b15610ed0576000945050505050610ed8565b829450505050505b92915050565b60006060600080600086815260200190815260200160002090506000600190505b848111151561100f57600085821614158015610f4157506000826000838152602001908152602001600020805460018160011615610100020316600290049050115b156110005780826000838152602001908152602001600020808054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610fee5780601f10610fc357610100808354040283529160200191610fee565b820191906000526020600020905b815481529060010190602001808311610fd157829003601f168201915b5050505050905093509350505061102c565b6001819060020a029050610eff565b506000602060405190810160405280600081525081915092509250505b9250929050565b8261103d81611b53565b151561104857600080fd5b6040805190810160405280848152602001838152506008600086815260200190815260200160002060008201518160000155602082015181600101559050507f1d6f5e03d3f63eb58751986629a5439baee5079ff04f345becb66e23eb154e468484846040516110ba939291906133ac565b60405180910390a150505050565b826110d281611b53565b15156110dd57600080fd5b82826002600087815260200190815260200160002091906110ff929190612988565b507fe379c1624ed7e714cc0937528a32359d69d5281337765313dba4e081b72d75788484846040516111339392919061341a565b60405180910390a150505050565b6000606061115083603c6119d3565b9050600081511415611166576000915050611173565b61116f81612210565b9150505b919050565b80600b600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df83338484604051611252949392919061333e565b60405180910390a1505050565b60008060056000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060009054906101000a900461ffff1661ffff161415905092915050565b606060096000858152602001908152602001600020838360405180838380828437808301925050509250505090815260200160405180910390208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156113955780601f1061136a57610100808354040283529160200191611395565b820191906000526020600020905b81548152906001019060200180831161137857829003601f168201915b505050505090509392505050565b836113ad81611b53565b15156113b857600080fd5b60008460018603161415156113cc57600080fd5b8282600080888152602001908152602001600020600087815260200190815260200160002091906113fe929190612988565b507faa121bbeef5f32f5961a2a28966e769023910fc9479059ee3495d4c1a696efe38585604051611430929190613558565b60405180910390a15050505050565b6060600760008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156114e85780601f106114bd576101008083540402835291602001916114e8565b820191906000526020600020905b8154815290600101906020018083116114cb57829003601f168201915b50505050509050919050565b826114fe81611b53565b151561150957600080fd5b828260076000878152602001908152602001600020919061152b929190612908565b507fb7d29e911041e8d9b843369e890bcb72c9388692ba48b65ac54e7214c4c348f784848460405161155f939291906134dd565b60405180910390a150505050565b8261157781611b53565b151561158257600080fd5b7f65412581168e88a1e60c6459d7f44ae83ad0832e670826c05a4e2476b57af7528484846040516115b593929190613581565b60405180910390a1603c831415611608577f52d7d861f09ab3d26239d492e8968629f95e9e318cf0b73bfddc441522a15fd2846115f184612210565b6040516115ff929190613315565b60405180910390a15b816001600086815260200190815260200160002060008581526020019081526020016000209080519060200190611640929190612a08565b5050505050565b606060046000858152602001908152602001600020600060036000878152602001908152602001600020548152602001908152602001600020600084815260200190815260200160002060008361ffff1661ffff1681526020019081526020016000208054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561173e5780601f106117135761010080835404028352916020019161173e565b820191906000526020600020905b81548152906001019060200180831161172157829003601f168201915b505050505090509392505050565b8061175681611b53565b151561176157600080fd5b60036000838152602001908152602001600020600081548092919060010191905055507fb757169b8492ca2f1c6619d9d76ce22803035c3b1d5f6930dffe7b127c1a1983826040516117b391906132fa565b60405180910390a15050565b6060600260008381526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156118685780601f1061183d57610100808354040283529160200191611868565b820191906000526020600020905b81548152906001019060200180831161184b57829003601f168201915b50505050509050919050565b6000806008600084815260200190815260200160002060000154600860008581526020019081526020016000206001015491509150915091565b816118b881611b53565b15156118c357600080fd5b6118d783603c6118d285612235565b61156d565b505050565b826118e681611b53565b15156118f157600080fd5b81600660008681526020019081526020016000206000857bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7c69f06bea0bdef565b709e93a147836b0063ba2dd89f02d0b7e8d931e6a6daa8484846040516119c5939291906133e3565b60405180910390a150505050565b60606001600084815260200190815260200160002060008381526020019081526020016000208054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015611a8d5780601f10611a6257610100808354040283529160200191611a8d565b820191906000526020600020905b815481529060010190602001808311611a7057829003601f168201915b5050505050905092915050565b600b602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b600063c86902337c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19161480611b4c5750611b4b82612280565b5b9050919050565b600080600a60009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401611bcd91906132fa565b60206040518083038186803b158015611be557600080fd5b505afa158015611bf9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250611c1d9190810190612c6f565b90503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161480611cf05750600b600084815260200190815260200160002060008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff165b915050919050565b611d006128bc565b828160000181905250818160c0018181525050611d1c816120fa565b92915050565b6000816000015151826020015110159050919050565b6060611d688260200151611d54846000015185602001516122fd565b846000015161235a9092919063ffffffff16565b9050919050565b6060611d988260a001518360a001518460c0015103846000015161235a9092919063ffffffff16565b9050919050565b600081518351148015611dbe5750611dbd83600084600087516123cf565b5b905092915050565b6000600360008981526020019081526020016000205490506000878051906020012090506060611e0186868961235a9092919063ffffffff16565b90508315611f79576000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141515611edf57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff16809291906001900391906101000a81548161ffff021916908361ffff160217905550505b600460008b81526020019081526020016000206000848152602001908152602001600020600083815260200190815260200160002060008961ffff1661ffff1681526020019081526020016000206000611f399190612a88565b7f03528ed0c2a3ebc993b12ce3c16bb382f9c7d88ef7d8a1bf290eaf35955a12078a8a8a604051611f6c9392919061344c565b60405180910390a16120ee565b6000600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff168152602001908152602001600020805460018160011615610100020316600290049050141561204d57600560008b815260200190815260200160002060008481526020019081526020016000206000838152602001908152602001600020600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550505b80600460008c81526020019081526020016000206000858152602001908152602001600020600084815260200190815260200160002060008a61ffff1661ffff16815260200190815260200160002090805190602001906120af929190612a08565b507f52a608b3303a48862d07a73d82fa221318c0027fbbcfb1b2329bface3f19ff2b8a8a8a846040516120e5949392919061348a565b60405180910390a15b50505050505050505050565b8060c00151816020018181525050806000015151816020015110151561211f5761220d565b6000612133826000015183602001516122fd565b82602001510190506121528183600001516123f390919063ffffffff16565b826040019061ffff16908161ffff16815250506002810190506121828183600001516123f390919063ffffffff16565b826060019061ffff16908161ffff16815250506002810190506121b281836000015161241b90919063ffffffff16565b826080019063ffffffff16908163ffffffff168152505060048101905060006121e88284600001516123f390919063ffffffff16565b61ffff169050600282019150818360a00181815250508082018360c001818152505050505b50565b60006014825114151561222257600080fd5b600c6101000a6020830151049050919050565b606060146040519080825280601f01601f19166020018201604052801561226b5781602001600182028038833980820191505090505b509050600c6101000a82026020820152919050565b600063691f34317c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806122f657506122f582612445565b5b9050919050565b6000808290505b60011561234e5783518110151561231757fe5b600061232c82866124fa90919063ffffffff16565b60ff16905060018101820191506000811415612348575061234e565b50612304565b82810391505092915050565b606083518284011115151561236e57600080fd5b6060826040519080825280601f01601f1916602001820160405280156123a35781602001600182028038833980820191505090505b50905060008060208301915085602088010190506123c2828287612580565b8293505050509392505050565b60006123dc8484846125cb565b6123e78787856125cb565b14905095945050505050565b60008251600283011115151561240857600080fd5b61ffff8260028501015116905092915050565b60008251600483011115151561243057600080fd5b63ffffffff8260048501015116905092915050565b600060405180807f696e74657266616365496d706c656d656e74657228627974657333322c62797481526020017f6573342900000000000000000000000000000000000000000000000000000000815250602401905060405180910390207bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806124f357506124f2826125f0565b5b9050919050565b6000828281518110151561250a57fe5b9060200101517f010000000000000000000000000000000000000000000000000000000000000090047f0100000000000000000000000000000000000000000000000000000000000000027f01000000000000000000000000000000000000000000000000000000000000009004905092915050565b5b6020811015156125a65781518352602083019250602082019150602081039050612581565b60006001826020036101000a0390508019835116818551168181178652505050505050565b60008351828401111515156125df57600080fd5b818360208601012090509392505050565b600063a8fa56827c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061266657506126658261266d565b5b9050919050565b600063bc1c58d17c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806126e357506126e2826126ea565b5b9050919050565b6000633b3b57de7c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191614806127bb575063f1cb7e067c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916145b806127cb57506127ca826127d2565b5b9050919050565b6000632203ab567c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061284857506128478261284f565b5b9050919050565b60006301ffc9a77c0100000000000000000000000000000000000000000000000000000000027bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b60e0604051908101604052806060815260200160008152602001600061ffff168152602001600061ffff168152602001600063ffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061294957803560ff1916838001178555612977565b82800160010185558215612977579182015b8281111561297657823582559160200191906001019061295b565b5b5090506129849190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106129c957803560ff19168380011785556129f7565b828001600101855582156129f7579182015b828111156129f65782358255916020019190600101906129db565b5b509050612a049190612ad0565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10612a4957805160ff1916838001178555612a77565b82800160010185558215612a77579182015b82811115612a76578251825591602001919060010190612a5b565b5b509050612a849190612ad0565b5090565b50805460018160011615610100020316600290046000825580601f10612aae5750612acd565b601f016020900490600052602060002090810190612acc9190612ad0565b5b50565b612af291905b80821115612aee576000816000905550600101612ad6565b5090565b90565b6000612b01823561375b565b905092915050565b6000612b15825161375b565b905092915050565b6000612b29823561376d565b905092915050565b6000612b3d8235613779565b905092915050565b6000612b518235613783565b905092915050565b60008083601f8401121515612b6d57600080fd5b8235905067ffffffffffffffff811115612b8657600080fd5b602083019150836001820283011115612b9e57600080fd5b9250929050565b600082601f8301121515612bb857600080fd5b8135612bcb612bc68261367b565b61364e565b91508082526020830160208301858383011115612be757600080fd5b612bf28382846137fd565b50505092915050565b60008083601f8401121515612c0f57600080fd5b8235905067ffffffffffffffff811115612c2857600080fd5b602083019150836001820283011115612c4057600080fd5b9250929050565b6000612c5382356137af565b905092915050565b6000612c6782356137bd565b905092915050565b600060208284031215612c8157600080fd5b6000612c8f84828501612b09565b91505092915050565b600060208284031215612caa57600080fd5b6000612cb884828501612b31565b91505092915050565b60008060408385031215612cd457600080fd5b6000612ce285828601612b31565b9250506020612cf385828601612af5565b9150509250929050565b600080600060608486031215612d1257600080fd5b6000612d2086828701612b31565b9350506020612d3186828701612af5565b9250506040612d4286828701612af5565b9150509250925092565b600080600060608486031215612d6157600080fd5b6000612d6f86828701612b31565b9350506020612d8086828701612af5565b9250506040612d9186828701612b1d565b9150509250925092565b60008060408385031215612dae57600080fd5b6000612dbc85828601612b31565b9250506020612dcd85828601612b31565b9150509250929050565b600080600060608486031215612dec57600080fd5b6000612dfa86828701612b31565b9350506020612e0b86828701612b31565b9250506040612e1c86828701612b31565b9150509250925092565b600080600060608486031215612e3b57600080fd5b6000612e4986828701612b31565b9350506020612e5a86828701612b31565b9250506040612e6b86828701612c47565b9150509250925092565b60008060408385031215612e8857600080fd5b6000612e9685828601612b31565b9250506020612ea785828601612b45565b9150509250929050565b600080600060608486031215612ec657600080fd5b6000612ed486828701612b31565b9350506020612ee586828701612b45565b9250506040612ef686828701612af5565b9150509250925092565b600080600060408486031215612f1557600080fd5b6000612f2386828701612b31565b935050602084013567ffffffffffffffff811115612f4057600080fd5b612f4c86828701612b59565b92509250509250925092565b600080600060408486031215612f6d57600080fd5b6000612f7b86828701612b31565b935050602084013567ffffffffffffffff811115612f9857600080fd5b612fa486828701612bfb565b92509250509250925092565b600080600080600060608688031215612fc857600080fd5b6000612fd688828901612b31565b955050602086013567ffffffffffffffff811115612ff357600080fd5b612fff88828901612bfb565b9450945050604086013567ffffffffffffffff81111561301e57600080fd5b61302a88828901612bfb565b92509250509295509295909350565b6000806040838503121561304c57600080fd5b600061305a85828601612b31565b925050602061306b85828601612c5b565b9150509250929050565b6000806000806060858703121561308b57600080fd5b600061309987828801612b31565b94505060206130aa87828801612c5b565b935050604085013567ffffffffffffffff8111156130c757600080fd5b6130d387828801612b59565b925092505092959194509250565b6000806000606084860312156130f657600080fd5b600061310486828701612b31565b935050602061311586828701612c5b565b925050604084013567ffffffffffffffff81111561313257600080fd5b61313e86828701612ba5565b9150509250925092565b60006020828403121561315a57600080fd5b600061316884828501612b45565b91505092915050565b61317a816137c7565b82525050565b613189816136cf565b82525050565b613198816136bd565b82525050565b6131a7816136e1565b82525050565b6131b6816136ed565b82525050565b6131c5816136f7565b82525050565b60008284526020840193506131e18385846137fd565b6131ea8361383f565b840190509392505050565b6000613200826136a7565b80845261321481602086016020860161380c565b61321d8161383f565b602085010191505092915050565b60008284526020840193506132418385846137fd565b61324a8361383f565b840190509392505050565b6000613260826136b2565b80845261327481602086016020860161380c565b61327d8161383f565b602085010191505092915050565b61329481613723565b82525050565b6132a381613751565b82525050565b60006020820190506132be600083018461318f565b92915050565b60006020820190506132d96000830184613180565b92915050565b60006020820190506132f4600083018461319e565b92915050565b600060208201905061330f60008301846131ad565b92915050565b600060408201905061332a60008301856131ad565b6133376020830184613171565b9392505050565b600060808201905061335360008301876131ad565b6133606020830186613171565b61336d604083018561318f565b61337a606083018461319e565b95945050505050565b600060408201905061339860008301856131ad565b6133a560208301846131ad565b9392505050565b60006060820190506133c160008301866131ad565b6133ce60208301856131ad565b6133db60408301846131ad565b949350505050565b60006060820190506133f860008301866131ad565b61340560208301856131bc565b613412604083018461318f565b949350505050565b600060408201905061342f60008301866131ad565b81810360208301526134428184866131cb565b9050949350505050565b600060608201905061346160008301866131ad565b818103602083015261347381856131f5565b9050613482604083018461328b565b949350505050565b600060808201905061349f60008301876131ad565b81810360208301526134b181866131f5565b90506134c0604083018561328b565b81810360608301526134d281846131f5565b905095945050505050565b60006040820190506134f260008301866131ad565b818103602083015261350581848661322b565b9050949350505050565b600060608201905061352460008301886131ad565b818103602083015261353781868861322b565b9050818103604083015261354c81848661322b565b90509695505050505050565b600060408201905061356d60008301856131ad565b61357a602083018461329a565b9392505050565b600060608201905061359660008301866131ad565b6135a3602083018561329a565b81810360408301526135b581846131f5565b9050949350505050565b60006020820190506135d460008301846131bc565b92915050565b600060208201905081810360008301526135f481846131f5565b905092915050565b600060208201905081810360008301526136168184613255565b905092915050565b6000604082019050613633600083018561329a565b818103602083015261364581846131f5565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561367157600080fd5b8060405250919050565b600067ffffffffffffffff82111561369257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b60006136c882613731565b9050919050565b60006136da82613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061376682613731565b9050919050565b60008115159050919050565b6000819050919050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b600061ffff82169050919050565b6000819050919050565b60006137d2826137d9565b9050919050565b60006137e4826137eb565b9050919050565b60006137f682613731565b9050919050565b82818337600083830152505050565b60005b8381101561382a57808201518184015260208101905061380f565b83811115613839576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820668668127482cd23a9f375761bf0b8d29fdbff7c261f4d2755ca9c73637d86bf6c6578706572696d656e74616cf50037",
+    "\001\031resolver_bytecode_runtime",
+    "\001\211d[{\"constant\":false,\"inputs\":[{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"resolver\",\"type\":\"address\"}],\"name\":\"claimWithResolver\",\"outputs\":[{\"name\":\"node\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"claim\",\"outputs\":[{\"name\":\"node\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ens\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"defaultResolver\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"node\",\"outputs\":[{\"name\":\"ret\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"name\",\"type\":\"string\"}],\"name\":\"setName\",\"outputs\":[{\"name\":\"node\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"ensAddr\",\"type\":\"address\"},{\"name\":\"resolverAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}]",
+    "\001\025reverse_registrar_abi",
+    "\001\266,6060604052341561000f57600080fd5b604051604080610d96833981016040528080519060200190919080519060200190919050506000826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be37f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b151561017a57600080fd5b6102c65a03f1151561018b57600080fd5b50505060405180519050905060008173ffffffffffffffffffffffffffffffffffffffff16141515610277578073ffffffffffffffffffffffffffffffffffffffff16631e83409a336000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561025a57600080fd5b6102c65a03f1151561026b57600080fd5b50505060405180519050505b505050610b0d806102896000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630f5a54661461007d5780631e83409a146100f15780633f15457f14610146578063828eab0e1461019b578063bffbe61c146101f0578063c47f002714610245575b600080fd5b341561008857600080fd5b6100d3600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102be565b60405180826000191660001916815260200191505060405180910390f35b34156100fc57600080fd5b610128600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061086e565b60405180826000191660001916815260200191505060405180910390f35b341561015157600080fd5b610159610882565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101a657600080fd5b6101ae6108a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101fb57600080fd5b610227600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506108cd565b60405180826000191660001916815260200191505060405180910390f35b341561025057600080fd5b6102a0600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061092f565b60405180826000191660001916815260200191505060405180910390f35b60008060006102cc33610a80565b91507f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010282604051808360001916600019168152602001826000191660001916815260200192505050604051809103902092506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156103c157600080fd5b6102c65a03f115156103d257600080fd5b50505060405180519050905060008473ffffffffffffffffffffffffffffffffffffffff16141580156104eb57506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16630178b8bf846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156104a057600080fd5b6102c65a03f115156104b157600080fd5b5050506040518051905073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614155b1561071b573073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561063b576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284306040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561062357600080fd5b6102c65a03f1151561063457600080fd5b5050503090505b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a84866040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b151561070657600080fd5b6102c65a03f1151561071757600080fd5b5050505b8473ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610863576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284886040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561084e57600080fd5b6102c65a03f1151561085f57600080fd5b5050505b829250505092915050565b600061087b8260006102be565b9050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60007f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026108fc83610a80565b60405180836000191660001916815260200182600019166000191681526020019250505060405180910390209050919050565b600061095d30600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102be565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637737221382846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610a185780820151818401526020810190506109fd565b50505050905090810190601f168015610a455780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1515610a6457600080fd5b6102c65a03f11515610a7557600080fd5b505050809050919050565b60007f303132333435363738396162636465660000000000000000000000000000000060285b60018103905081600f85161a815360108404935060018103905081600f85161a815360108404935080610aa6576028600020925050509190505600a165627a7a72305820a8513240f040cd9ded89ca4d0c5bda58536850e642e1d933ad64158ef4c820660029",
+    "\001\032reverse_registrar_bytecode",
+    "\001\254\032606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630f5a54661461007d5780631e83409a146100f15780633f15457f14610146578063828eab0e1461019b578063bffbe61c146101f0578063c47f002714610245575b600080fd5b341561008857600080fd5b6100d3600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102be565b60405180826000191660001916815260200191505060405180910390f35b34156100fc57600080fd5b610128600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061086e565b60405180826000191660001916815260200191505060405180910390f35b341561015157600080fd5b610159610882565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101a657600080fd5b6101ae6108a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101fb57600080fd5b610227600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506108cd565b60405180826000191660001916815260200191505060405180910390f35b341561025057600080fd5b6102a0600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061092f565b60405180826000191660001916815260200191505060405180910390f35b60008060006102cc33610a80565b91507f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010282604051808360001916600019168152602001826000191660001916815260200192505050604051809103902092506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156103c157600080fd5b6102c65a03f115156103d257600080fd5b50505060405180519050905060008473ffffffffffffffffffffffffffffffffffffffff16141580156104eb57506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16630178b8bf846000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15156104a057600080fd5b6102c65a03f115156104b157600080fd5b5050506040518051905073ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614155b1561071b573073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561063b576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284306040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561062357600080fd5b6102c65a03f1151561063457600080fd5b5050503090505b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631896f70a84866040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b151561070657600080fd5b6102c65a03f1151561071757600080fd5b5050505b8473ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610863576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166306ab59237f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e260010284886040518463ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180846000191660001916815260200183600019166000191681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050600060405180830381600087803b151561084e57600080fd5b6102c65a03f1151561085f57600080fd5b5050505b829250505092915050565b600061087b8260006102be565b9050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60007f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026108fc83610a80565b60405180836000191660001916815260200182600019166000191681526020019250505060405180910390209050919050565b600061095d30600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102be565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637737221382846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610a185780820151818401526020810190506109fd565b50505050905090810190601f168015610a455780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1515610a6457600080fd5b6102c65a03f11515610a7557600080fd5b505050809050919050565b60007f303132333435363738396162636465660000000000000000000000000000000060285b60018103905081600f85161a815360108404935060018103905081600f85161a815360108404935080610aa6576028600020925050509190505600a165627a7a72305820a8513240f040cd9ded89ca4d0c5bda58536850e642e1d933ad64158ef4c820660029",
+    "\001\"reverse_registrar_bytecode_runtime",
+    "\001\206\r[{\"inputs\":[{\"internalType\":\"contract ENS\",\"name\":\"ensAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"ens\",\"outputs\":[{\"internalType\":\"contract ENS\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"setName\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+    "\001\024reverse_resolver_abi",
+    "\001\236>608060405234801561001057600080fd5b5060405160208061079f8339810180604052602081101561003057600080fd5b8101908080519060200190929190505050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be37f91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e26001026040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b15801561013457600080fd5b505afa158015610148573d6000803e3d6000fd5b505050506040513d602081101561015e57600080fd5b81019080805190602001909291905050509050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561027f578073ffffffffffffffffffffffffffffffffffffffff16631e83409a336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561024257600080fd5b505af1158015610256573d6000803e3d6000fd5b505050506040513d602081101561026c57600080fd5b8101908080519060200190929190505050505b505061050f806102906000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f15457f1461005c578063691f3431146100b35780637737221314610167575b600080fd5b34801561006857600080fd5b50610071610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100bf57600080fd5b506100ec600480360360208110156100d657600080fd5b810190808035906020019092919050505061025e565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561012c578082015181840152602081019050610111565b50505050905090810190601f1680156101595780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561017357600080fd5b506102376004803603604081101561018a57600080fd5b8101908080359060200190929190803590602001906401000000008111156101b157600080fd5b8201836020820111156101c357600080fd5b803590602001918460018302840111640100000000831117156101e557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061030e565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103065780601f106102db57610100808354040283529160200191610306565b820191906000526020600020905b8154815290600101906020018083116102e957829003601f168201915b505050505081565b816000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166302571be3826040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200191505060206040518083038186803b15801561039d57600080fd5b505afa1580156103b1573d6000803e3d6000fd5b505050506040513d60208110156103c757600080fd5b810190808051906020019092919050505073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041157600080fd5b8160016000858152602001908152602001600020908051906020019061043892919061043e565b50505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061047f57805160ff19168380011785556104ad565b828001600101855582156104ad579182015b828111156104ac578251825591602001919060010190610491565b5b5090506104ba91906104be565b5090565b6104e091905b808211156104dc5760008160009055506001016104c4565b5090565b9056fea165627a7a72305820f326fd97e1fac0bcd89f007846301e41c2ad494c12d70b2b50dd61e62ffc906a0029",
+    "\001\031reverse_resolver_bytecode",
+    "\001\255|608060405234801561001057600080fd5b506004361061004c5760003560e01c806301ffc9a7146100515780633e9ce794146100815780639061b9231461009d578063f86bc879146100cd575b600080fd5b61006b6004803603810190610066919061051e565b6100fd565b6040516100789190610566565b60405180910390f35b61009b60048036038101906100969190610641565b61015e565b005b6100b760048036038101906100b291906106f9565b610245565b6040516100c49190610813565b60405180910390f35b6100e760048036038101906100e29190610835565b61042f565b6040516100f49190610566565b60405180910390f35b6000639061b92360e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916148061015757506101568261046b565b5b9050919050565b806001600085815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fe1c5610a6e0cbe10764ecd182adcef1ec338dc4e199c99c32ce98f38e12791df8333848460405161023894939291906108a6565b60405180910390a1505050565b60606040518060400160405280601781526020017f11657874656e6465642d7265736f6c766572036574680000000000000000000081525080519060200120858560405161029492919061092a565b60405180910390201480156102ad575060248383905010155b15610328577ff0a378cc2afe91730d0105e67d6bb037cc5b8b6bfec5b5962d9b637ff6497e5560001b83836004906024926102ea9392919061094d565b906102f591906109a0565b146102ff57600080fd5b61beef60405160200161031291906109ff565b6040516020818303038152906040529050610427565b60008585600081811061033e5761033d610a1a565b5b9050013560f81c60f81b60f81c60ff1690506040518060400160405280601781526020017f11657874656e6465642d7265736f6c766572036574680000000000000000000081525080519060200120868683600161039c9190610a82565b9080926103ab9392919061094d565b6040516103b9929190610ad8565b604051809103902014610401576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103f890610b28565b60405180910390fd5b61dead60405160200161041491906109ff565b6040516020818303038152906040529150505b949350505050565b6001602052826000526040600020602052816000526040600020602052806000526040600020600092509250509054906101000a900460ff1681565b60006301ffc9a760e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b600080fd5b600080fd5b60007fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b6104fb816104c6565b811461050657600080fd5b50565b600081359050610518816104f2565b92915050565b600060208284031215610534576105336104bc565b5b600061054284828501610509565b91505092915050565b60008115159050919050565b6105608161054b565b82525050565b600060208201905061057b6000830184610557565b92915050565b6000819050919050565b61059481610581565b811461059f57600080fd5b50565b6000813590506105b18161058b565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006105e2826105b7565b9050919050565b6105f2816105d7565b81146105fd57600080fd5b50565b60008135905061060f816105e9565b92915050565b61061e8161054b565b811461062957600080fd5b50565b60008135905061063b81610615565b92915050565b60008060006060848603121561065a576106596104bc565b5b6000610668868287016105a2565b935050602061067986828701610600565b925050604061068a8682870161062c565b9150509250925092565b600080fd5b600080fd5b600080fd5b60008083601f8401126106b9576106b8610694565b5b8235905067ffffffffffffffff8111156106d6576106d5610699565b5b6020830191508360018202830111156106f2576106f161069e565b5b9250929050565b60008060008060408587031215610713576107126104bc565b5b600085013567ffffffffffffffff811115610731576107306104c1565b5b61073d878288016106a3565b9450945050602085013567ffffffffffffffff8111156107605761075f6104c1565b5b61076c878288016106a3565b925092505092959194509250565b600081519050919050565b600082825260208201905092915050565b60005b838110156107b4578082015181840152602081019050610799565b838111156107c3576000848401525b50505050565b6000601f19601f8301169050919050565b60006107e58261077a565b6107ef8185610785565b93506107ff818560208601610796565b610808816107c9565b840191505092915050565b6000602082019050818103600083015261082d81846107da565b905092915050565b60008060006060848603121561084e5761084d6104bc565b5b600061085c868287016105a2565b935050602061086d86828701610600565b925050604061087e86828701610600565b9150509250925092565b61089181610581565b82525050565b6108a0816105d7565b82525050565b60006080820190506108bb6000830187610888565b6108c86020830186610897565b6108d56040830185610897565b6108e26060830184610557565b95945050505050565b600081905092915050565b82818337600083830152505050565b600061091183856108eb565b935061091e8385846108f6565b82840190509392505050565b6000610937828486610905565b91508190509392505050565b600080fd5b600080fd5b6000808585111561096157610960610943565b5b8386111561097257610971610948565b5b6001850283019150848603905094509492505050565b600082905092915050565b600082821b905092915050565b60006109ac8383610988565b826109b78135610581565b925060208210156109f7576109f27fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff83602003600802610993565b831692505b505092915050565b6000602082019050610a146000830184610897565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6000819050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610a8d82610a49565b9150610a9883610a49565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03821115610acd57610acc610a53565b5b828201905092915050565b6000610ae5828486610905565b91508190509392505050565b600082825260208201905092915050565b50565b6000610b12600083610af1565b9150610b1d82610b02565b600082019050919050565b60006020820190508181036000830152610b4181610b05565b905091905056fea264697066735822122053f3072486d953b17f72555d93bae38d3607f573e572c03ca3b10c082471640064736f6c634300080d0033",
+    "\003!reverse_resolver_bytecode_runtime\004idna\030faster_ens/exceptions.py",
     "\006\tException\fENSException\fnative_class\nValueError\b__dict__\rENSValueError",
-    "\005\tTypeError\fENSTypeError\017AddressMismatch\021UnauthorizedError\vUnownedName",
-    "\004\020ResolverNotFound\023UnsupportedFunction\tBidTooLow\016InvalidBidHash",
-    "\004\fInvalidLabel\023OversizeTransaction\016UnderfundedBid\022ENSValidationError",
-    "\a\004Web3\bWeb3Main\vfaster_web3\003Eth\aEthMain\017faster_web3.eth\003eth",
+    "\004\tTypeError\fENSTypeError\020ResolverNotFound\023UnsupportedFunction",
+    "\005\016InvalidBidHash\023OversizeTransaction\022ENSValidationError\004Web3\bWeb3Main",
+    "\005\vfaster_web3\003Eth\aEthMain\017faster_web3.eth\003eth",
     "\003\033StalecheckMiddlewareBuilder\026faster_web3.middleware\020middleware_onion",
     "\005\023ens_name_to_address\006remove\nstalecheck\005build\003add",
     "\003\026normalize_name_ensip15\022Label at position \031 too long after encoding.",
@@ -222799,7 +239025,7 @@ const char * const CPyLit_Str[] = {
     "\006\nmiddleware\nCollection\bSequence\004cast\bwarnings\023faster_ens/utils.py",
     "\005\aAddress\020faster_eth_utils\024faster_ens.constants\006object\adefault",
     "\003\vAsyncBeacon\037faster_web3.beacon.async_beacon\006Beacon",
-    "\004\031faster_web3.beacon.beacon\a__all__\026/eth/v1/beacon/genesis\vGET_GENESIS",
+    "\003\031faster_web3.beacon.beacon\026/eth/v1/beacon/genesis\vGET_GENESIS",
     "\002\036/eth/v1/beacon/states/{0}/root\rGET_HASH_ROOT",
     "\002\036/eth/v1/beacon/states/{0}/fork\rGET_FORK_DATA",
     "\001./eth/v1/beacon/states/{0}/finality_checkpoints",
@@ -222839,13 +239065,13 @@ const char * const CPyLit_Str[] = {
     "\002%/eth/v1/validator/duties/proposer/{0}\032GET_BLOCK_PROPOSERS_DUTIES",
     "\002!/eth/v1/validator/duties/sync/{0}\031GET_SYNC_COMMITTEE_DUTIES",
     "\002\'/eth/v1/beacon/rewards/attestations/{0}\030GET_ATTESTATIONS_REWARDS",
-    "\a\rClientTimeout\006params\atimeout\rGeneratorExit\rStopIteration\004head\006status",
-    "\005\aindices\001,\aaiohttp\003URI\022HTTPSessionManager",
+    "\a\rClientTimeout\006params\atimeout\rGeneratorExit\rStopIteration\004head\aindices",
+    "\004\001,\aaiohttp\003URI\022HTTPSessionManager",
     "\001\'faster_web3._utils.http_session_manager",
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
-    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\tfinalized",
-    "\006\bearliest\004safe\006latest\apending\tis_string\006is_hex",
+    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\006latest",
+    "\006\apending\004safe\tfinalized\bearliest\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_eth_utils.toolz\026faster_web3.exceptions",
     "\003\vRPCEndpoint\021faster_web3.types\"select_method_for_block_identifier",
@@ -222870,8 +239096,8 @@ const char * const CPyLit_Str[] = {
     "\005\021faster_web3.utils\023iscoroutinefunction\003md5\tget_ident\nis_boolean",
     "\005\ais_dict\fis_list_like\ais_null\tis_number\023response_formatters",
     "\002\017subscription_id\036middleware_response_processors",
-    "\b\034DEFAULT_VALIDATION_THRESHOLD\003ETH\005value\004ARB1\006ZKSYNC\004OETH\005MATIC\005ZKEVM",
-    "\a\004BASE\003SCR\003GNO\004AVAX\003BNB\003FTM#CHAIN_VALIDATION_THRESHOLD_DEFAULTS",
+    "\b\034DEFAULT_VALIDATION_THRESHOLD\003ETH\004ARB1\006ZKSYNC\004OETH\005MATIC\005ZKEVM\004BASE",
+    "\006\003SCR\003GNO\004AVAX\003BNB\003FTM#CHAIN_VALIDATION_THRESHOLD_DEFAULTS",
     "\004\022web3_clientVersion\vnet_version\fALWAYS_CACHE\024eth_getBlockByNumber",
     "\001*eth_getRawTransactionByBlockNumberAndIndex",
     "\001$eth_getBlockTransactionCountByNumber",
@@ -222885,30 +239111,29 @@ const char * const CPyLit_Str[] = {
     "\003\023BLOCKHASH_IN_PARAMS\027INTERNAL_VALIDATION_MAP\021AsyncBaseProvider",
     "\003\024ASYNC_VALIDATOR_TYPE\035ASYNC_INTERNAL_VALIDATION_MAP\006logger",
     "\0031There was an exception while caching the request.\bexc_info\006number",
-    "\002\ttimestamp\004time",
+    "\001\004time",
     "\001vInvalid request_cache_validation_threshold value. This should not have happened. Request not cached.\n    threshold: %s",
     "\001\vblockNumber",
     "\001hCould not find block number in result. This should not have happened. Request not cached.\n    result: %s",
     "\0028faster_web3/_utils/caching/request_caching_validation.py\aTypeVar",
-    "\005\005bound\fBaseProvider\022filter_abi_by_type\005event\apartial",
-    "\003\022filter_abi_by_name\027filter_by_argument_name\004pipe",
-    "\003\030No matching events found\025Multiple events found\023get_abi_input_types",
+    "\005\005bound\fBaseProvider\022filter_abi_by_type\apartial\022filter_abi_by_name",
+    "\003\027filter_by_argument_name\004pipe\030No matching events found",
+    "\002\025Multiple events found\023get_abi_input_types",
     "\002!check_if_arguments_can_be_encoded\tabi_codec",
     "\001ZOne or more arguments could not be encoded to the necessary ABI type. Expected types are: ",
     "\004\002, \022abi_address_to_hex\022abi_bytes_to_bytes\022abi_string_to_text",
     "\006\020abi_ens_resolver\fmap_abi_data\006encode\006to_hex\nencode_hex\001(",
     "\003\031get_abi_element_signature\nfallback()\treceive()",
-    "\003$get_name_from_abi_element_identifier\017get_abi_element\004data",
-    "\0032Transaction parameter may not contain a \'data\' key\002to\bfallback",
-    "\004\areceive\024get_abi_element_info\bselector\targuments",
+    "\002$get_name_from_abi_element_identifier\017get_abi_element",
+    "\0032Transaction parameter may not contain a \'data\' key\002to\areceive",
+    "\003\024get_abi_element_info\bselector\targuments",
     "\003\037Unsupported function identifier\radd_0x_prefix\020default_registry",
-    "\006\bABICodec\006inputs\nnamed_tree\vconstructor\apayable\017stateMutability",
-    "\001\nnonpayable",
+    "\002\bABICodec\nnamed_tree",
     "\001nSending non-zero ether to a contract function with payable=False. Please ensure that transaction\'s value is 0.",
     "\004\023Web3ValidationError\rdefault_block\tget_block\025BlockNumberOutOfRange",
     "\006\004copy\004args\006kwargs\022_set_function_info\017_set_event_info\tfunctools",
-    "\004\037faster_web3/_utils/contracts.py\003ABI\vABICallable\016ABIConstructor",
-    "\006\nABIElement\bABIEvent\vABIFallback\vABIFunction\nABIReceive\aTypeStr",
+    "\004\037faster_web3/_utils/contracts.py\vABICallable\016ABIConstructor\nABIElement",
+    "\005\bABIEvent\vABIFallback\vABIFunction\nABIReceive\aTypeStr",
     "\003\024faster_eth_abi.codec\bregistry\027faster_eth_abi.registry",
     "\002\026faster_web3._utils.abi\031is_hex_encoded_block_hash",
     "\002\031faster_web3._utils.blocks\033faster_web3._utils.encoding",
@@ -222928,25 +239153,23 @@ const char * const CPyLit_Str[] = {
     "\b\026Unsupported ABI type: \001L\005zfill\0030x0\005^0x0+\0020x\003sub\005rjust",
     "\0032when sending a str, it must be a hex string. Got: \006hexstr\v: because (",
     "\006\005dumps\003cls\005items\002; %dict had unencodable value at keys: {\001}",
-    "\004&list had unencodable value at index: [\001]\005loads\adecoder",
-    "\005\017JSONDecodeError\021Could not decode \f because of \003doc\003pos",
-    "\002\032Could not encode to JSON: \rhexstr_if_str",
-    "\004%expected value of size 4 bytes. Got: \006 bytes\017encode_elements\006codecs",
-    "\004\agrammar\017abi_type_parser\016faster_eth_abi\vhas_arrlist",
-    "\005\026faster_eth_abi.grammar\005parse\titem_type\vto_type_str\vget_encoder",
-    "\002\aarrlist\fitem_encoder",
+    "\004&list had unencodable value at index: [\001]\adecoder\017JSONDecodeError",
+    "\005\021Could not decode \f because of \003doc\003pos\032Could not encode to JSON: ",
+    "\003\rhexstr_if_str%expected value of size 4 bytes. Got: \006 bytes",
+    "\005\017encode_elements\006codecs\agrammar\017abi_type_parser\016faster_eth_abi",
+    "\005\vhas_arrlist\026faster_eth_abi.grammar\005parse\titem_type\vto_type_str",
+    "\003\vget_encoder\aarrlist\fitem_encoder",
     "\001AFixed arrays are not implemented in this packed encoder prototype",
-    "\a\023NotImplementedError\004base\006string\004utf8\005bytes\rAttributeDict\tBaseModel",
-    "\005\nmodel_dump\bby_alias\vJSONEncoder\002re\036faster_web3/_utils/encoding.py",
-    "\005\bIterable\aMapping\020BaseArrayEncoder\027faster_eth_abi.encoding\nPrimitives",
-    "\003\bpydantic\021validate_abi_type\022validate_abi_value",
-    "\003\035faster_web3._utils.validation\032faster_web3.datastructures\aTReturn",
-    "\005\tpad_bytes\nzpad_bytes\vtext_if_str\021FriendlyJsonSerde\nis_dynamic",
-    "\005\031DynamicArrayPackedEncoder\017Web3JsonEncoder\006reward\003sum\005round",
-    "\005\vfee_history\nFeeHistory\003Wei\020PRIORITY_FEE_MAX\020PRIORITY_FEE_MIN",
-    "\003\033PRIORITY_FEE_HISTORY_PARAMS\030apply_formatter_at_index\acompose",
-    "\004\rrecursive_map\006dissoc\017collections.abc\bIterator",
-    "\002\030faster_eth_utils.curried\030reject_recursive_repeats",
+    "\006\023NotImplementedError\004base\004utf8\rAttributeDict\tBaseModel\nmodel_dump",
+    "\005\bby_alias\vJSONEncoder\002re\036faster_web3/_utils/encoding.py\bIterable",
+    "\005\aMapping\020BaseArrayEncoder\027faster_eth_abi.encoding\nPrimitives\bpydantic",
+    "\003\021validate_abi_type\022validate_abi_value\035faster_web3._utils.validation",
+    "\005\032faster_web3.datastructures\aTReturn\tpad_bytes\nzpad_bytes\vtext_if_str",
+    "\003\021FriendlyJsonSerde\nis_dynamic\031DynamicArrayPackedEncoder",
+    "\a\017Web3JsonEncoder\006reward\003sum\005round\vfee_history\nFeeHistory\003Wei",
+    "\003\020PRIORITY_FEE_MAX\020PRIORITY_FEE_MIN\033PRIORITY_FEE_HISTORY_PARAMS",
+    "\005\030apply_formatter_at_index\acompose\rrecursive_map\006dissoc\017collections.abc",
+    "\003\bIterator\030faster_eth_utils.curried\030reject_recursive_repeats",
     "\004\035faster_web3._utils.decorators\vRPCResponse\006TValue\016integer_to_hex",
     "\005\rremove_key_if\v__version__\fweb3_version\017faster_web3.py/\001/",
     "\004\024DEFAULT_HTTP_TIMEOUT\022ThreadPoolExecutor\vmax_workers\aenviron",
@@ -223008,16 +239231,16 @@ const char * const CPyLit_Str[] = {
     "\003\025ACCESS_LIST_FORMATTER\naccessList\agasUsed",
     "\006\036ACCESS_LIST_RESPONSE_FORMATTER\achainId\ayParity\001r\017variable_length\001s",
     "\004\032AUTH_LIST_RESULT_FORMATTER\tblockHash\020transactionIndex\003gas",
-    "\a\fmaxFeePerGas\024maxPriorityFeePerGas\tpublicKey\003raw\004hash\001v\tstandardV",
-    "\004\005input\020maxFeePerBlobGas\023blobVersionedHashes\021authorizationList",
+    "\a\fmaxFeePerGas\024maxPriorityFeePerGas\tpublicKey\003raw\001v\tstandardV\005input",
+    "\003\020maxFeePerBlobGas\023blobVersionedHashes\021authorizationList",
     "\003\035TRANSACTION_RESULT_FORMATTERS\034transaction_result_formatter\005index",
     "\003\016validatorIndex\006amount\034WITHDRAWAL_RESULT_FORMATTERS",
     "\004\033withdrawal_result_formatter\017transactionHash\blogIndex\006topics",
     "\003\024LOG_ENTRY_FORMATTERS\023log_entry_formatter\021cumulativeGasUsed",
     "\005\017contractAddress\004logs\tlogsBloom\021effectiveGasPrice\fblobGasPrice",
     "\004\vblobGasUsed\022RECEIPT_FORMATTERS\021receipt_formatter\rbaseFeePerGas",
-    "\a\textraData\bgasLimit\004size\005miner\amixHash\nparentHash\nsha3Uncles",
-    "\005\ndifficulty\freceiptsRoot\tstateRoot\017totalDifficulty\020transactionsRoot",
+    "\a\bgasLimit\004size\005miner\amixHash\nparentHash\nsha3Uncles\ndifficulty",
+    "\004\freceiptsRoot\tstateRoot\017totalDifficulty\020transactionsRoot",
     "\003\017withdrawalsRoot\025parentBeaconBlockRoot\frequestsHash",
     "\004\030BLOCK_REQUEST_FORMATTERS\027block_request_formatter\006uncles\ftransactions",
     "\003\vwithdrawals\rexcessBlobGas\027BLOCK_RESULT_FORMATTERS",
@@ -223028,7 +239251,7 @@ const char * const CPyLit_Str[] = {
     "\001\"transaction_pool_content_formatter",
     "\001#TRANSACTION_POOL_INSPECT_FORMATTERS",
     "\003\"transaction_pool_inspect_formatter\fgasUsedRatio\voldestBlock",
-    "\004\026FEE_HISTORY_FORMATTERS\025fee_history_formatter\003key\005proof",
+    "\003\026FEE_HISTORY_FORMATTERS\025fee_history_formatter\005proof",
     "\004\030STORAGE_PROOF_FORMATTERS\faccountProof\bcodeHash\vstorageHash",
     "\004\fstorageProof\030ACCOUNT_PROOF_FORMATTERS\017proof_formatter\tfromBlock",
     "\003\atoBlock\030FILTER_PARAMS_FORMATTERS\027filter_params_formatter",
@@ -223076,7 +239299,7 @@ const char * const CPyLit_Str[] = {
     "\003%faster_web3/_utils/type_conversion.py\006TxData\020abi_to_signature",
     "\003\017 have selector \005 and\n\023\'abi\' is not a list",
     "\001#\'abi\' is not a list of dictionaries",
-    "\0026\'abi\' must contain a list of elements each with a type\bfunction",
+    "\0016\'abi\' must contain a list of elements each with a type",
     "\003\036function_abi_to_4byte_selector\agroupby\tvalfilter",
     "\001;Abi contains functions with colliding selectors. Functions ",
     "\003\022is_recognized_type\027Unrecognized abi_type: \024length_of_array_type",
@@ -223121,8 +239344,8 @@ const char * const CPyLit_Str[] = {
     "\005\031faster_web3.providers.ipc\006inject\005layer\basync_w3\rDecodingError",
     "\002+Could not decode contract function call to \023 with return data: ",
     "\003\020, output_types: \025BadFunctionCallOutput\027BASE_RETURN_NORMALIZERS",
-    "\004\aoutputs\034recursive_dict_to_namedtuple\004call\020block_identifier",
-    "\004\016state_override\021ccip_read_enabled\bprovider\f_is_batching",
+    "\004\034recursive_dict_to_namedtuple\004call\020block_identifier\016state_override",
+    "\003\021ccip_read_enabled\bprovider\f_is_batching",
     "\002(format_contract_call_return_data_curried\bget_code",
     "\001`Could not transact with/call contract function, is contract deployed correctly and chain synced\?",
     "\003\020send_transaction\festimate_gas\031fill_transaction_defaults",
@@ -223184,19 +239407,19 @@ const char * const CPyLit_Str[] = {
     "\002 FormattedEthSubscriptionResponse\030CreateAccessListResponse",
     "\003\rMakeRequestFn\022MakeBatchRequestFn\022AsyncMakeRequestFn",
     "\003\027AsyncMakeBatchRequestFn\016FormattersDict\020error_formatters",
-    "\005\022request_formatters\021result_formatters\fFilterParams\005state\tstateDiff",
-    "\006\tTxReceipt\004root\rBlockReceipts\bSignedTx\fStorageProof\vMerkleProof",
-    "\t\bProtocol\anetwork\aversion\bNodeInfo\005enode\002ip\nlistenAddr\005ports\tprotocols",
-    "\a\004Peer\004caps\nSyncStatus\005Uncle\nsealFields\tPendingTx\rTxPoolContent",
-    "\005\rTxPoolInspect\fTxPoolStatus\vTraceConfig\016disableStorage\fdisableStack",
-    "\005\fenableMemory\020enableReturnData\006tracer\ftracerConfig\fCallTraceLog",
-    "\005\tCallTrace\frevertReason\tTraceData\rDiffModeTrace\rPrestateTrace",
-    "\b\rFourByteTrace\tStructLog\002op\005depth\005stack\vOpcodeTrace\006failed\vreturnValue",
-    "\004\nstructLogs\020BlockStateCallV1\nvalidation\016traceTransfers",
-    "\004\024SimulateV1CallResult\020SimulateV1Result\nGethWallet\003url",
-    "\005\024BaseContractFunction\021BaseContractEvent\nBlockTrace\vFilterTrace\avmTrace",
-    "\006\tTraceMode\021TraceFilterParams\005after\005count\vfromAddress\ttoAddress",
-    "\004\bnewHeads\026newPendingTransactions\020SubscriptionType\023LogsSubscriptionArg",
+    "\005\022request_formatters\021result_formatters\fFilterParams\tstateDiff\tTxReceipt",
+    "\a\004root\rBlockReceipts\bSignedTx\fStorageProof\vMerkleProof\bProtocol\anetwork",
+    "\t\aversion\bNodeInfo\005enode\002ip\nlistenAddr\005ports\tprotocols\004Peer\004caps",
+    "\006\nSyncStatus\005Uncle\nsealFields\tPendingTx\rTxPoolContent\rTxPoolInspect",
+    "\005\fTxPoolStatus\vTraceConfig\016disableStorage\fdisableStack\fenableMemory",
+    "\005\020enableReturnData\006tracer\ftracerConfig\fCallTraceLog\tCallTrace",
+    "\005\frevertReason\tTraceData\rDiffModeTrace\rPrestateTrace\rFourByteTrace",
+    "\b\tStructLog\002op\005depth\005stack\vOpcodeTrace\006failed\vreturnValue\nstructLogs",
+    "\004\020BlockStateCallV1\nvalidation\016traceTransfers\024SimulateV1CallResult",
+    "\004\020SimulateV1Result\nGethWallet\003url\024BaseContractFunction",
+    "\005\021BaseContractEvent\nBlockTrace\vFilterTrace\avmTrace\tTraceMode",
+    "\006\021TraceFilterParams\005after\005count\vfromAddress\ttoAddress\bnewHeads",
+    "\003\026newPendingTransactions\020SubscriptionType\023LogsSubscriptionArg",
     "",
 };
 const char * const CPyLit_Bytes[] = {
@@ -223213,94 +239436,102 @@ const char * const CPyLit_Int[] = {
 const double CPyLit_Float[] = {0};
 const double CPyLit_Complex[] = {0};
 const int CPyLit_Tuple[] = {
-    257, 3, 53, 53, 53, 3, 54, 54, 54, 2, 1548, 1549, 1, 57, 1, 59, 12,
-    61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 3, 74, 74, 74, 1,
-    1554, 1, 75, 1, 64, 1, 134, 1, 151, 5, 153, 61, 68, 154, 71, 2, 155,
-    156, 1, 148, 1, 159, 1, 161, 5, 163, 141, 164, 165, 166, 3, 156, 174,
-    175, 1, 72, 3, 202, 202, 202, 1, 1568, 1, 206, 1, 223, 1, 224, 1, 226,
-    1, 227, 2, 170, 79, 1, 230, 1, 29, 1, 238, 1, 104, 1, 245, 1, 264, 1,
-    265, 1, 266, 1, 267, 3, 268, 170, 79, 2, 246, 247, 10, 153, 61, 269,
-    64, 68, 270, 70, 154, 71, 271, 3, 272, 272, 272, 1, 1588, 5, 274, 155,
-    156, 174, 175, 4, 255, 257, 241, 256, 2, 211, 209, 6, 176, 177, 178,
-    181, 179, 183, 2, 222, 75, 1, 279, 1, 281, 7, 61, 63, 64, 66, 68, 71,
-    72, 1, 370, 2, 380, 175, 1, 381, 43, 329, 369, 363, 331, 347, 345,
-    315, 319, 309, 313, 307, 305, 365, 311, 337, 343, 299, 303, 301, 291,
-    289, 339, 285, 287, 357, 321, 325, 327, 323, 349, 353, 355, 351, 333,
-    317, 341, 367, 361, 295, 297, 293, 359, 335, 8, 61, 63, 64, 66, 68,
-    71, 271, 72, 2, 61, 68, 6, 390, 401, 392, 400, 389, 257, 1, 404, 2,
-    394, 403, 1, 407, 2, 410, 411, 6, 413, 414, 415, 416, 417, 418, 3,
-    443, 443, 443, 3, 444, 444, 444, 3, 445, 445, 445, 3, 1610, 1611,
-    1612, 13, 153, 61, 447, 448, 63, 64, 422, 66, 68, 270, 70, 71, 72, 3,
-    275, 275, 275, 1, 1615, 1, 449, 8, 451, 452, 453, 454, 455, 456, 457,
-    458, 1, 428, 1, 460, 1, 394, 1, 462, 1, 515, 3, 518, 518, 518, 1,
-    1624, 8, 153, 61, 63, 64, 68, 270, 523, 71, 1, 524, 3, 576, 576, 576,
-    3, 581, 581, 581, 2, 1628, 1629, 10, 153, 61, 447, 63, 66, 68, 270,
-    70, 71, 271, 12, 583, 584, 585, 586, 587, 588, 589, 590, 274, 156,
-    175, 591, 1, 564, 1, 593, 1, 563, 5, 562, 546, 529, 526, 534, 1, 531,
-    5, 530, 548, 551, 543, 566, 1, 596, 1, 545, 1, 599, 4, 539, 540, 542,
-    541, 4, 575, 394, 572, 403, 6, 602, 603, 604, 605, 606, 607, 3, 535,
-    552, 558, 7, 61, 269, 63, 64, 68, 70, 154, 3, 405, 275, 275, 2, 1615,
-    1647, 1, 614, 2, 632, 245, 2, 1629, 1612, 7, 61, 447, 64, 69, 70, 523,
-    271, 1, 403, 1, 655, 1, 658, 1, 678, 1, 679, 2, 681, 593, 1, 698, 3,
-    700, 700, 700, 2, 1548, 1660, 12, 61, 447, 63, 64, 702, 703, 68, 270,
-    154, 523, 71, 72, 1, 704, 3, 175, 706, 591, 8, 562, 546, 390, 401,
-    469, 257, 241, 545, 1, 696, 9, 643, 638, 640, 644, 642, 645, 641, 637,
-    639, 2, 708, 709, 1, 695, 4, 153, 64, 71, 271, 2, 724, 725, 1, 703, 8,
-    61, 447, 63, 702, 734, 68, 523, 71, 1, 175, 3, 468, 469, 400, 1, 729,
-    3, 730, 404, 732, 1, 736, 1, 738, 1, 742, 1, 743, 1, 748, 1, 577, 2,
-    771, 772, 2, 760, 774, 1, 1610, 1, 747, 3, 797, 797, 797, 3, 798, 798,
-    798, 4, 1688, 1689, 1612, 1624, 4, 799, 773, 370, 770, 1, 380, 3, 800,
-    800, 800, 1, 1693, 1, 769, 1, 415, 1, 746, 1, 766, 1, 803, 1, 270, 2,
-    812, 403, 1, 854, 3, 677, 677, 677, 3, 865, 865, 865, 2, 1703, 1704,
-    13, 153, 61, 447, 269, 63, 64, 702, 67, 867, 70, 523, 71, 271, 1, 835,
-    15, 729, 832, 820, 619, 868, 869, 870, 831, 390, 392, 470, 400, 826,
-    821, 871, 5, 872, 730, 873, 404, 528, 1, 874, 1, 876, 3, 877, 878,
-    879, 6, 853, 860, 857, 855, 861, 858, 5, 882, 740, 883, 884, 741, 4,
-    539, 886, 887, 888, 3, 460, 889, 890, 1, 891, 1, 893, 2, 695, 895, 4,
-    842, 848, 394, 403, 9, 603, 896, 407, 738, 897, 898, 712, 607, 899, 1,
-    917, 2, 64, 71, 5, 61, 702, 703, 69, 71, 2, 1127, 607, 2, 1187, 1188,
-    1, 1187, 3, 1196, 1196, 1196, 2, 1728, 1688, 6, 61, 447, 63, 64, 867,
-    68, 4, 583, 589, 175, 591, 13, 1128, 526, 1135, 870, 1154, 467, 390,
-    1149, 468, 1150, 392, 469, 400, 1, 820, 1, 546, 4, 730, 1136, 1137,
-    988, 1, 1199, 10, 643, 638, 640, 644, 642, 1139, 645, 641, 1141, 639,
-    1, 1200, 8, 1172, 1153, 1191, 1193, 848, 1194, 394, 403, 4, 1204, 264,
-    1205, 223, 1, 1206, 1, 1207, 1, 1210, 3, 1221, 1222, 1223, 1, 998, 5,
-    169, 1235, 151, 1236, 147, 4, 169, 1235, 151, 147, 11, 153, 61, 447,
-    64, 66, 68, 270, 70, 154, 71, 271, 1, 1212, 7, 583, 584, 587, 589,
-    274, 156, 591, 3, 1128, 526, 148, 2, 730, 404, 3, 543, 566, 1219, 1,
-    1242, 1, 1245, 1, 1247, 1, 1217, 1, 1231, 2, 1216, 403, 6, 602, 603,
-    1250, 605, 606, 607, 1, 552, 1, 68, 2, 607, 725, 1, 1254, 2, 998,
-    1260, 2, 1267, 1268, 3, 1269, 1269, 1269, 3, 1270, 1270, 1270, 3,
-    1767, 1768, 1704, 5, 64, 702, 68, 270, 70, 1, 156, 1, 871, 3, 404,
-    1136, 1262, 1, 1272, 2, 812, 572, 5, 604, 1274, 1127, 607, 725, 2,
-    1279, 1268, 2, 1320, 1321, 3, 1320, 1323, 1321, 3, 1294, 1294, 1294,
-    2, 1689, 1780, 3, 1318, 1322, 1319, 1, 1284, 5, 61, 64, 422, 270, 72,
-    3, 1327, 1327, 1327, 1, 1785, 2, 1301, 1303, 1, 1329, 1, 1348, 2, 61,
-    63, 3, 1362, 1362, 1362, 4, 1610, 1791, 1780, 1624, 1, 61, 3, 379,
-    379, 379, 2, 1794, 1693, 1, 1365, 1, 1364, 9, 61, 63, 64, 1370, 66,
-    68, 70, 523, 72, 15, 153, 61, 447, 448, 63, 66, 67, 1384, 68, 270, 70,
-    154, 1385, 523, 71, 1, 1386, 5, 274, 604, 156, 1388, 175, 2, 1389,
-    1390, 1, 1392, 1, 785
+    261, 1, 4, 1, 6, 1, 8, 7, 10, 11, 12, 13, 14, 15, 16, 3, 68, 68, 68,
+    3, 69, 69, 69, 2, 1733, 1734, 1, 72, 1, 74, 12, 76, 77, 78, 79, 80,
+    81, 82, 83, 84, 85, 86, 87, 3, 89, 89, 89, 1, 1739, 1, 13, 1, 79, 1,
+    153, 5, 339, 76, 83, 340, 86, 2, 341, 342, 1, 335, 1, 345, 1, 347, 5,
+    349, 329, 350, 351, 352, 3, 342, 357, 358, 1, 1733, 1, 87, 3, 411,
+    411, 411, 1, 1753, 1, 415, 1, 426, 1, 427, 1, 429, 1, 430, 2, 189, 92,
+    1, 433, 1, 45, 1, 441, 1, 117, 1, 448, 1, 467, 1, 468, 1, 469, 1, 470,
+    3, 471, 189, 92, 2, 449, 450, 10, 339, 76, 472, 79, 83, 473, 85, 340,
+    86, 474, 3, 475, 475, 475, 1, 1773, 5, 477, 341, 342, 357, 358, 4,
+    458, 460, 444, 459, 2, 420, 418, 6, 359, 360, 361, 364, 362, 366, 2,
+    425, 13, 1, 482, 1, 484, 7, 76, 78, 79, 81, 83, 86, 87, 1, 572, 2,
+    581, 358, 1, 582, 43, 531, 571, 565, 533, 549, 547, 517, 521, 511,
+    515, 509, 507, 567, 513, 539, 545, 501, 505, 503, 493, 491, 541, 487,
+    489, 559, 523, 527, 529, 525, 551, 555, 557, 553, 535, 519, 543, 569,
+    563, 497, 499, 495, 561, 537, 8, 76, 78, 79, 81, 83, 86, 474, 87, 2,
+    76, 83, 6, 591, 602, 593, 601, 590, 460, 1, 605, 2, 595, 604, 1, 608,
+    2, 611, 612, 6, 614, 615, 616, 617, 618, 619, 3, 644, 644, 644, 3,
+    645, 645, 645, 3, 646, 646, 646, 3, 1795, 1796, 1797, 13, 339, 76,
+    648, 649, 78, 79, 623, 81, 83, 473, 85, 86, 87, 3, 478, 478, 478, 1,
+    1800, 1, 650, 8, 652, 653, 654, 655, 656, 657, 658, 659, 1, 629, 1,
+    661, 1, 595, 1, 663, 1, 715, 3, 717, 717, 717, 1, 1809, 8, 339, 76,
+    78, 79, 83, 473, 722, 86, 1, 723, 3, 767, 767, 767, 3, 772, 772, 772,
+    2, 1813, 1814, 10, 339, 76, 648, 78, 81, 83, 473, 85, 86, 474, 12,
+    283, 774, 775, 776, 777, 778, 779, 780, 477, 342, 358, 781, 1, 760, 1,
+    783, 1, 759, 5, 758, 744, 727, 725, 732, 1, 729, 5, 728, 746, 749,
+    741, 761, 1, 786, 1, 743, 1, 789, 4, 737, 738, 740, 739, 4, 766, 595,
+    763, 604, 6, 792, 793, 794, 795, 796, 797, 3, 733, 750, 754, 7, 76,
+    472, 78, 79, 83, 85, 340, 3, 606, 478, 478, 2, 1800, 1832, 1, 804, 2,
+    822, 448, 2, 1814, 1797, 7, 76, 648, 79, 84, 85, 722, 474, 1, 604, 1,
+    845, 1, 848, 1, 867, 1, 868, 2, 870, 783, 1, 885, 3, 887, 887, 887, 2,
+    1733, 1845, 12, 76, 648, 78, 79, 889, 890, 83, 473, 340, 722, 86, 87,
+    1, 891, 3, 358, 893, 781, 8, 758, 744, 591, 602, 670, 460, 444, 743,
+    1, 883, 9, 833, 828, 830, 834, 832, 835, 831, 827, 829, 2, 895, 896,
+    1, 882, 4, 339, 79, 86, 474, 2, 911, 912, 1, 890, 8, 76, 648, 78, 889,
+    921, 83, 722, 86, 1, 358, 3, 669, 670, 601, 1, 916, 3, 917, 605, 919,
+    1, 923, 1, 925, 1, 929, 1, 930, 1, 935, 1, 768, 2, 958, 959, 2, 947,
+    961, 1, 1795, 1, 934, 3, 984, 984, 984, 3, 985, 985, 985, 4, 1873,
+    1874, 1797, 1809, 4, 986, 960, 572, 957, 1, 581, 3, 987, 987, 987, 1,
+    1878, 1, 956, 1, 616, 1, 933, 1, 953, 1, 990, 1, 473, 2, 999, 604, 1,
+    1041, 3, 866, 866, 866, 3, 1052, 1052, 1052, 2, 1888, 1889, 13, 339,
+    76, 648, 472, 78, 79, 889, 82, 1054, 85, 722, 86, 474, 1, 1022, 15,
+    916, 1019, 1007, 809, 1055, 1056, 1057, 1018, 591, 593, 671, 601,
+    1013, 1008, 1058, 5, 1059, 917, 1060, 605, 726, 1, 1061, 1, 1063, 3,
+    1064, 1065, 1066, 6, 1040, 1047, 1044, 1042, 1048, 1045, 5, 1069, 927,
+    1070, 1071, 928, 4, 737, 1073, 1074, 1075, 3, 661, 1076, 1077, 1,
+    1078, 1, 1080, 2, 882, 1082, 4, 1029, 1035, 595, 604, 9, 793, 1083,
+    608, 925, 1084, 1085, 899, 797, 1086, 1, 1104, 2, 79, 86, 5, 76, 889,
+    890, 84, 86, 2, 1311, 797, 2, 1370, 1371, 1, 1370, 3, 1379, 1379,
+    1379, 2, 1913, 1873, 6, 76, 648, 78, 79, 1054, 83, 4, 283, 779, 358,
+    781, 13, 1312, 725, 1318, 1057, 1337, 668, 591, 1332, 669, 1333, 593,
+    670, 601, 1, 1007, 1, 744, 4, 917, 1319, 1320, 1173, 1, 1382, 10, 833,
+    828, 830, 834, 832, 1322, 835, 831, 1324, 829, 1, 1383, 8, 1355, 1336,
+    1374, 1376, 1035, 1377, 595, 604, 4, 1387, 467, 1388, 426, 1, 1389, 1,
+    1390, 1, 1393, 3, 1403, 1404, 1405, 1, 280, 5, 354, 1417, 153, 1418,
+    334, 4, 354, 1417, 153, 334, 11, 339, 76, 648, 79, 81, 83, 473, 85,
+    340, 86, 474, 1, 1395, 7, 283, 774, 777, 779, 477, 342, 781, 3, 1312,
+    725, 335, 2, 917, 605, 3, 741, 761, 1401, 1, 1424, 1, 1427, 1, 1429,
+    1, 1400, 1, 1413, 2, 1399, 604, 6, 792, 793, 1432, 795, 796, 797, 1,
+    750, 1, 83, 2, 797, 912, 1, 1436, 2, 280, 1442, 2, 1449, 1450, 3,
+    1451, 1451, 1451, 3, 1452, 1452, 1452, 3, 1952, 1953, 1889, 5, 79,
+    889, 83, 473, 85, 1, 342, 1, 1058, 3, 605, 1319, 1444, 1, 1454, 2,
+    999, 763, 5, 794, 1456, 1311, 797, 912, 2, 1461, 1450, 2, 1502, 1503,
+    3, 1502, 1505, 1503, 3, 1476, 1476, 1476, 2, 1874, 1965, 3, 1500,
+    1504, 1501, 1, 1466, 5, 76, 79, 623, 473, 87, 3, 1509, 1509, 1509, 1,
+    1970, 2, 1483, 1485, 1, 1511, 1, 1530, 2, 76, 78, 3, 1544, 1544, 1544,
+    4, 1795, 1976, 1965, 1809, 1, 76, 3, 580, 580, 580, 2, 1979, 1878, 1,
+    1547, 1, 1546, 9, 76, 78, 79, 1552, 81, 83, 85, 722, 87, 15, 339, 76,
+    648, 649, 78, 81, 82, 1566, 83, 473, 85, 340, 1567, 722, 86, 1, 1568,
+    5, 477, 794, 342, 1570, 358, 2, 1571, 1572, 1, 1574, 1, 972
 };
-const int CPyLit_FrozenSet[] = {3, 5, 395, 396, 397, 398, 399, 3, 3, 1514, 0, 2, 836, 376};
+const int CPyLit_FrozenSet[] = {3, 5, 596, 597, 598, 599, 600, 3, 19, 1695, 0, 2, 225, 1023};
+CPyModule *CPyModule_faster_ens__internal = NULL;
+CPyModule *CPyModule_faster_ens;
+PyObject *CPyStatic_faster_ens___globals;
+CPyModule *CPyModule_builtins;
+CPyModule *CPyModule_faster_ens___async_ens;
+CPyModule *CPyModule_faster_ens___base_ens__internal = NULL;
+CPyModule *CPyModule_faster_ens___base_ens;
+CPyModule *CPyModule_faster_ens___ens;
+CPyModule *CPyModule_faster_ens___exceptions__internal = NULL;
+CPyModule *CPyModule_faster_ens___exceptions;
 CPyModule *CPyModule_faster_ens____normalization__internal = NULL;
 CPyModule *CPyModule_faster_ens____normalization;
 PyObject *CPyStatic__normalization___globals;
-CPyModule *CPyModule_builtins;
 CPyModule *CPyModule_json;
 CPyModule *CPyModule_sys;
 CPyModule *CPyModule_enum;
 CPyModule *CPyModule_pathlib;
 CPyModule *CPyModule_typing;
 CPyModule *CPyModule_pyunormalize;
-CPyModule *CPyModule_faster_ens___exceptions__internal = NULL;
-CPyModule *CPyModule_faster_ens___exceptions;
+CPyModule *CPyModule_faster_ens___abis__internal = NULL;
+CPyModule *CPyModule_faster_ens___abis;
+PyObject *CPyStatic_abis___globals;
 CPyModule *CPyModule_faster_ens___auto__internal = NULL;
 CPyModule *CPyModule_faster_ens___auto;
 PyObject *CPyStatic_faster_ens___auto___globals;
-CPyModule *CPyModule_faster_ens;
-CPyModule *CPyModule_faster_ens___base_ens__internal = NULL;
-CPyModule *CPyModule_faster_ens___base_ens;
 PyObject *CPyStatic_base_ens___globals;
 CPyModule *CPyModule_eth_typing;
 CPyModule *CPyModule_faster_eth_utils___abi;
@@ -223311,6 +239542,9 @@ CPyModule *CPyModule_faster_ens___utils;
 CPyModule *CPyModule_faster_ens___constants__internal = NULL;
 CPyModule *CPyModule_faster_ens___constants;
 PyObject *CPyStatic_faster_ens___constants___globals;
+CPyModule *CPyModule_faster_ens___contract_data__internal = NULL;
+CPyModule *CPyModule_faster_ens___contract_data;
+PyObject *CPyStatic_contract_data___globals;
 PyObject *CPyStatic_exceptions___globals;
 CPyModule *CPyModule_idna;
 PyObject *CPyStatic_faster_ens___utils___globals;
@@ -223471,6 +239705,7 @@ PyObject *CPyStatic_types___globals;
 CPyModule *CPyModule_eth_account___datastructures;
 CPyModule *CPyModule_faster_web3____utils___abi_element_identifiers;
 CPyModule *CPyModule_faster_web3____utils___compat;
+char CPyDef_faster_ens_____top_level__(void);
 PyObject *CPyStatic__normalization___NFC = NULL;
 PyObject *CPyStatic__normalization___NFD = NULL;
 PyObject *CPyStatic__normalization___NORMALIZATION_SPEC = NULL;
@@ -223533,6 +239768,7 @@ PyObject *CPyPy__normalization____buffer_codepoints_to_chars(PyObject *self, PyO
 PyObject *CPyDef__normalization___normalize_name_ensip15(PyObject *cpy_r_name);
 PyObject *CPyPy__normalization___normalize_name_ensip15(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef__normalization_____top_level__(void);
+char CPyDef_abis_____top_level__(void);
 PyObject *CPyStatic_faster_ens___auto___ns = NULL;
 char CPyDef_faster_ens___auto_____top_level__(void);
 PyTypeObject *CPyType_base_ens___BaseENS;
@@ -223592,6 +239828,7 @@ PyObject *CPyStatic_faster_ens___constants___ENS_CONTENT_HASH_INTERFACE_ID = NUL
 PyObject *CPyStatic_faster_ens___constants___ENS_MULTICHAIN_ADDRESS_INTERFACE_ID = NULL;
 PyObject *CPyStatic_faster_ens___constants___ENS_EXTENDED_RESOLVER_INTERFACE_ID = NULL;
 char CPyDef_faster_ens___constants_____top_level__(void);
+char CPyDef_contract_data_____top_level__(void);
 PyTypeObject *CPyType_exceptions___ENSException;
 PyTypeObject *CPyType_exceptions___ENSValueError;
 PyTypeObject *CPyType_exceptions___ENSTypeError;
@@ -225914,14 +242151,25 @@ PyTypeObject *CPyType_types___TraceFilterParams;
 PyTypeObject *CPyType_types___LogsSubscriptionArg;
 char CPyDef_types_____top_level__(void);
 
-static int exec_eb6785419c767236c259__mypyc(PyObject *module)
+static int exec_a275922bdb158aae1fea__mypyc(PyObject *module)
 {
     int res;
     PyObject *capsule;
     PyObject *tmp;
     
+    extern PyObject *CPyInit_faster_ens(void);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens, "a275922bdb158aae1fea__mypyc.init_faster_ens", NULL);
+    if (!capsule) {
+        goto fail;
+    }
+    res = PyObject_SetAttrString(module, "init_faster_ens", capsule);
+    Py_DECREF(capsule);
+    if (res < 0) {
+        goto fail;
+    }
+    
     extern PyObject *CPyInit_faster_ens____normalization(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens____normalization, "eb6785419c767236c259__mypyc.init_faster_ens____normalization", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens____normalization, "a275922bdb158aae1fea__mypyc.init_faster_ens____normalization", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225931,8 +242179,19 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
         goto fail;
     }
     
+    extern PyObject *CPyInit_faster_ens___abis(void);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___abis, "a275922bdb158aae1fea__mypyc.init_faster_ens___abis", NULL);
+    if (!capsule) {
+        goto fail;
+    }
+    res = PyObject_SetAttrString(module, "init_faster_ens___abis", capsule);
+    Py_DECREF(capsule);
+    if (res < 0) {
+        goto fail;
+    }
+    
     extern PyObject *CPyInit_faster_ens___auto(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___auto, "eb6785419c767236c259__mypyc.init_faster_ens___auto", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___auto, "a275922bdb158aae1fea__mypyc.init_faster_ens___auto", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225943,7 +242202,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_ens___base_ens(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___base_ens, "eb6785419c767236c259__mypyc.init_faster_ens___base_ens", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___base_ens, "a275922bdb158aae1fea__mypyc.init_faster_ens___base_ens", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225954,7 +242213,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_ens___constants(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___constants, "eb6785419c767236c259__mypyc.init_faster_ens___constants", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___constants, "a275922bdb158aae1fea__mypyc.init_faster_ens___constants", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225964,8 +242223,19 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
         goto fail;
     }
     
+    extern PyObject *CPyInit_faster_ens___contract_data(void);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___contract_data, "a275922bdb158aae1fea__mypyc.init_faster_ens___contract_data", NULL);
+    if (!capsule) {
+        goto fail;
+    }
+    res = PyObject_SetAttrString(module, "init_faster_ens___contract_data", capsule);
+    Py_DECREF(capsule);
+    if (res < 0) {
+        goto fail;
+    }
+    
     extern PyObject *CPyInit_faster_ens___exceptions(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___exceptions, "eb6785419c767236c259__mypyc.init_faster_ens___exceptions", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___exceptions, "a275922bdb158aae1fea__mypyc.init_faster_ens___exceptions", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225976,7 +242246,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_ens___utils(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___utils, "eb6785419c767236c259__mypyc.init_faster_ens___utils", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_ens___utils, "a275922bdb158aae1fea__mypyc.init_faster_ens___utils", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225987,7 +242257,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___beacon(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon, "eb6785419c767236c259__mypyc.init_faster_web3___beacon", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon, "a275922bdb158aae1fea__mypyc.init_faster_web3___beacon", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -225998,7 +242268,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___beacon___api_endpoints(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___api_endpoints, "eb6785419c767236c259__mypyc.init_faster_web3___beacon___api_endpoints", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___api_endpoints, "a275922bdb158aae1fea__mypyc.init_faster_web3___beacon___api_endpoints", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226009,7 +242279,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___beacon___async_beacon(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___async_beacon, "eb6785419c767236c259__mypyc.init_faster_web3___beacon___async_beacon", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___async_beacon, "a275922bdb158aae1fea__mypyc.init_faster_web3___beacon___async_beacon", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226020,7 +242290,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___beacon___beacon(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___beacon, "eb6785419c767236c259__mypyc.init_faster_web3___beacon___beacon", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___beacon___beacon, "a275922bdb158aae1fea__mypyc.init_faster_web3___beacon___beacon", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226031,7 +242301,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___blocks(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___blocks, "eb6785419c767236c259__mypyc.init_faster_web3____utils___blocks", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___blocks, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___blocks", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226042,7 +242312,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___caching(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching, "eb6785419c767236c259__mypyc.init_faster_web3____utils___caching", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___caching", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226053,7 +242323,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___caching___caching_utils(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching___caching_utils, "eb6785419c767236c259__mypyc.init_faster_web3____utils___caching___caching_utils", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching___caching_utils, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___caching___caching_utils", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226064,7 +242334,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___caching___request_caching_validation(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching___request_caching_validation, "eb6785419c767236c259__mypyc.init_faster_web3____utils___caching___request_caching_validation", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___caching___request_caching_validation, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___caching___request_caching_validation", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226075,7 +242345,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___contracts(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contracts, "eb6785419c767236c259__mypyc.init_faster_web3____utils___contracts", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contracts, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___contracts", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226086,7 +242356,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___datatypes(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___datatypes, "eb6785419c767236c259__mypyc.init_faster_web3____utils___datatypes", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___datatypes, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___datatypes", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226097,7 +242367,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___decorators(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___decorators, "eb6785419c767236c259__mypyc.init_faster_web3____utils___decorators", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___decorators, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___decorators", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226108,7 +242378,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___encoding(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___encoding, "eb6785419c767236c259__mypyc.init_faster_web3____utils___encoding", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___encoding, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___encoding", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226119,7 +242389,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___fee_utils(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___fee_utils, "eb6785419c767236c259__mypyc.init_faster_web3____utils___fee_utils", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___fee_utils, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___fee_utils", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226130,7 +242400,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___formatters(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___formatters, "eb6785419c767236c259__mypyc.init_faster_web3____utils___formatters", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___formatters, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___formatters", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226141,7 +242411,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___http(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___http, "eb6785419c767236c259__mypyc.init_faster_web3____utils___http", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___http, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___http", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226152,7 +242422,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___http_session_manager(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___http_session_manager, "eb6785419c767236c259__mypyc.init_faster_web3____utils___http_session_manager", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___http_session_manager, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___http_session_manager", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226163,7 +242433,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___math(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___math, "eb6785419c767236c259__mypyc.init_faster_web3____utils___math", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___math, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___math", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226174,7 +242444,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___method_formatters(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___method_formatters, "eb6785419c767236c259__mypyc.init_faster_web3____utils___method_formatters", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___method_formatters, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___method_formatters", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226185,7 +242455,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___type_conversion(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___type_conversion, "eb6785419c767236c259__mypyc.init_faster_web3____utils___type_conversion", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___type_conversion, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___type_conversion", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226196,7 +242466,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___utility_methods(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___utility_methods, "eb6785419c767236c259__mypyc.init_faster_web3____utils___utility_methods", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___utility_methods, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___utility_methods", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226207,7 +242477,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3____utils___validation(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___validation, "eb6785419c767236c259__mypyc.init_faster_web3____utils___validation", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___validation, "a275922bdb158aae1fea__mypyc.init_faster_web3____utils___validation", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226218,7 +242488,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___auto(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___auto, "eb6785419c767236c259__mypyc.init_faster_web3___auto", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___auto, "a275922bdb158aae1fea__mypyc.init_faster_web3___auto", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226229,7 +242499,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___auto___gethdev(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___auto___gethdev, "eb6785419c767236c259__mypyc.init_faster_web3___auto___gethdev", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___auto___gethdev, "a275922bdb158aae1fea__mypyc.init_faster_web3___auto___gethdev", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226240,7 +242510,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___contract___utils(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___contract___utils, "eb6785419c767236c259__mypyc.init_faster_web3___contract___utils", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___contract___utils, "a275922bdb158aae1fea__mypyc.init_faster_web3___contract___utils", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226251,7 +242521,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___gas_strategies(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies, "eb6785419c767236c259__mypyc.init_faster_web3___gas_strategies", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies, "a275922bdb158aae1fea__mypyc.init_faster_web3___gas_strategies", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226262,7 +242532,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___gas_strategies___rpc(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies___rpc, "eb6785419c767236c259__mypyc.init_faster_web3___gas_strategies___rpc", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies___rpc, "a275922bdb158aae1fea__mypyc.init_faster_web3___gas_strategies___rpc", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226273,7 +242543,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___gas_strategies___time_based(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies___time_based, "eb6785419c767236c259__mypyc.init_faster_web3___gas_strategies___time_based", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___gas_strategies___time_based, "a275922bdb158aae1fea__mypyc.init_faster_web3___gas_strategies___time_based", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226284,7 +242554,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___tools___benchmark___node(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___node, "eb6785419c767236c259__mypyc.init_faster_web3___tools___benchmark___node", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___node, "a275922bdb158aae1fea__mypyc.init_faster_web3___tools___benchmark___node", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226295,7 +242565,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___tools___benchmark___reporting(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___reporting, "eb6785419c767236c259__mypyc.init_faster_web3___tools___benchmark___reporting", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___reporting, "a275922bdb158aae1fea__mypyc.init_faster_web3___tools___benchmark___reporting", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226306,7 +242576,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___tools___benchmark___utils(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___utils, "eb6785419c767236c259__mypyc.init_faster_web3___tools___benchmark___utils", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___tools___benchmark___utils, "a275922bdb158aae1fea__mypyc.init_faster_web3___tools___benchmark___utils", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226317,7 +242587,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___utils___caching(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___utils___caching, "eb6785419c767236c259__mypyc.init_faster_web3___utils___caching", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___utils___caching, "a275922bdb158aae1fea__mypyc.init_faster_web3___utils___caching", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226328,7 +242598,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___constants(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___constants, "eb6785419c767236c259__mypyc.init_faster_web3___constants", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___constants, "a275922bdb158aae1fea__mypyc.init_faster_web3___constants", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226339,7 +242609,7 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     }
     
     extern PyObject *CPyInit_faster_web3___types(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3___types, "eb6785419c767236c259__mypyc.init_faster_web3___types", NULL);
+    capsule = PyCapsule_New((void *)CPyInit_faster_web3___types, "a275922bdb158aae1fea__mypyc.init_faster_web3___types", NULL);
     if (!capsule) {
         goto fail;
     }
@@ -226353,24 +242623,24 @@ static int exec_eb6785419c767236c259__mypyc(PyObject *module)
     fail:
     return -1;
 }
-static PyModuleDef module_def_eb6785419c767236c259__mypyc = {
+static PyModuleDef module_def_a275922bdb158aae1fea__mypyc = {
     PyModuleDef_HEAD_INIT,
-    .m_name = "eb6785419c767236c259__mypyc",
+    .m_name = "a275922bdb158aae1fea__mypyc",
     .m_doc = NULL,
     .m_size = -1,
     .m_methods = NULL,
 };
-PyMODINIT_FUNC PyInit_eb6785419c767236c259__mypyc(void) {
+PyMODINIT_FUNC PyInit_a275922bdb158aae1fea__mypyc(void) {
     static PyObject *module = NULL;
     if (module) {
         Py_INCREF(module);
         return module;
     }
-    module = PyModule_Create(&module_def_eb6785419c767236c259__mypyc);
+    module = PyModule_Create(&module_def_a275922bdb158aae1fea__mypyc);
     if (!module) {
         return NULL;
     }
-    if (exec_eb6785419c767236c259__mypyc(module) < 0) {
+    if (exec_a275922bdb158aae1fea__mypyc(module) < 0) {
         Py_DECREF(module);
         return NULL;
     }

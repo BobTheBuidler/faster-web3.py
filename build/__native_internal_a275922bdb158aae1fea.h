@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_eb6785419c767236c259_H
-#define MYPYC_NATIVE_INTERNAL_eb6785419c767236c259_H
+#ifndef MYPYC_NATIVE_INTERNAL_a275922bdb158aae1fea_H
+#define MYPYC_NATIVE_INTERNAL_a275922bdb158aae1fea_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_eb6785419c767236c259.h"
+#include "__native_a275922bdb158aae1fea.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[1808];
+extern PyObject *CPyStatics[1993];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -14,24 +14,31 @@ extern const double CPyLit_Float[];
 extern const double CPyLit_Complex[];
 extern const int CPyLit_Tuple[];
 extern const int CPyLit_FrozenSet[];
+extern CPyModule *CPyModule_faster_ens__internal;
+extern CPyModule *CPyModule_faster_ens;
+extern PyObject *CPyStatic_faster_ens___globals;
+extern CPyModule *CPyModule_builtins;
+extern CPyModule *CPyModule_faster_ens___async_ens;
+extern CPyModule *CPyModule_faster_ens___base_ens__internal;
+extern CPyModule *CPyModule_faster_ens___base_ens;
+extern CPyModule *CPyModule_faster_ens___ens;
+extern CPyModule *CPyModule_faster_ens___exceptions__internal;
+extern CPyModule *CPyModule_faster_ens___exceptions;
 extern CPyModule *CPyModule_faster_ens____normalization__internal;
 extern CPyModule *CPyModule_faster_ens____normalization;
 extern PyObject *CPyStatic__normalization___globals;
-extern CPyModule *CPyModule_builtins;
 extern CPyModule *CPyModule_json;
 extern CPyModule *CPyModule_sys;
 extern CPyModule *CPyModule_enum;
 extern CPyModule *CPyModule_pathlib;
 extern CPyModule *CPyModule_typing;
 extern CPyModule *CPyModule_pyunormalize;
-extern CPyModule *CPyModule_faster_ens___exceptions__internal;
-extern CPyModule *CPyModule_faster_ens___exceptions;
+extern CPyModule *CPyModule_faster_ens___abis__internal;
+extern CPyModule *CPyModule_faster_ens___abis;
+extern PyObject *CPyStatic_abis___globals;
 extern CPyModule *CPyModule_faster_ens___auto__internal;
 extern CPyModule *CPyModule_faster_ens___auto;
 extern PyObject *CPyStatic_faster_ens___auto___globals;
-extern CPyModule *CPyModule_faster_ens;
-extern CPyModule *CPyModule_faster_ens___base_ens__internal;
-extern CPyModule *CPyModule_faster_ens___base_ens;
 extern PyObject *CPyStatic_base_ens___globals;
 extern CPyModule *CPyModule_eth_typing;
 extern CPyModule *CPyModule_faster_eth_utils___abi;
@@ -42,6 +49,9 @@ extern CPyModule *CPyModule_faster_ens___utils;
 extern CPyModule *CPyModule_faster_ens___constants__internal;
 extern CPyModule *CPyModule_faster_ens___constants;
 extern PyObject *CPyStatic_faster_ens___constants___globals;
+extern CPyModule *CPyModule_faster_ens___contract_data__internal;
+extern CPyModule *CPyModule_faster_ens___contract_data;
+extern PyObject *CPyStatic_contract_data___globals;
 extern PyObject *CPyStatic_exceptions___globals;
 extern CPyModule *CPyModule_idna;
 extern PyObject *CPyStatic_faster_ens___utils___globals;
@@ -202,6 +212,7 @@ extern PyObject *CPyStatic_types___globals;
 extern CPyModule *CPyModule_eth_account___datastructures;
 extern CPyModule *CPyModule_faster_web3____utils___abi_element_identifiers;
 extern CPyModule *CPyModule_faster_web3____utils___compat;
+extern char CPyDef_faster_ens_____top_level__(void);
 extern PyObject *CPyStatic__normalization___NFC;
 extern PyObject *CPyStatic__normalization___NFD;
 extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC;
@@ -264,6 +275,7 @@ extern PyObject *CPyPy__normalization____buffer_codepoints_to_chars(PyObject *se
 extern PyObject *CPyDef__normalization___normalize_name_ensip15(PyObject *cpy_r_name);
 extern PyObject *CPyPy__normalization___normalize_name_ensip15(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef__normalization_____top_level__(void);
+extern char CPyDef_abis_____top_level__(void);
 extern PyObject *CPyStatic_faster_ens___auto___ns;
 extern char CPyDef_faster_ens___auto_____top_level__(void);
 extern PyTypeObject *CPyType_base_ens___BaseENS;
@@ -323,6 +335,7 @@ extern PyObject *CPyStatic_faster_ens___constants___ENS_CONTENT_HASH_INTERFACE_I
 extern PyObject *CPyStatic_faster_ens___constants___ENS_MULTICHAIN_ADDRESS_INTERFACE_ID;
 extern PyObject *CPyStatic_faster_ens___constants___ENS_EXTENDED_RESOLVER_INTERFACE_ID;
 extern char CPyDef_faster_ens___constants_____top_level__(void);
+extern char CPyDef_contract_data_____top_level__(void);
 extern PyTypeObject *CPyType_exceptions___ENSException;
 extern PyTypeObject *CPyType_exceptions___ENSValueError;
 extern PyTypeObject *CPyType_exceptions___ENSTypeError;
