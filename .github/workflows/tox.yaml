@@ -74,9 +74,16 @@ jobs:
           path: ~/.cache/ccache
           key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
           restore-key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
-
-      - name: Install ccache
+          
+      - name: Install ccache on Linux
+        if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y ccache
+      - name: Install ccache on macOS
+        if: runner.os == 'macOS'
+        run: brew install ccache
+      - name: Install ccache on Windows
+        if: runner.os == 'Windows'
+        run: choco install ccache --no-progress
         
       - name: Show ccache config and stats before build
         run: ccache --version && ccache -p -s
