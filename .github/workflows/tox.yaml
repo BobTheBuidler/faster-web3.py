@@ -77,6 +77,9 @@ jobs:
 
       - name: Install ccache
         run: sudo apt-get update && sudo apt-get install -y ccache
+
+      - name: Print ccache config
+        run: ccache --print-config
         
       - name: Show ccache stats before build
         run: ccache -s
@@ -85,6 +88,12 @@ jobs:
         env:
           CC: ccache gcc
         run: python -m tox run  ${{ env.TOX_RECREATE_FLAG }}
+        
+      - name: Show ccache stats after build
+        run: ccache -s
+        
+      - name: Show ccache stats before build
+        run: ccache -s
       
       - name: Save ccache cache
         uses: actions/cache/save@v4
