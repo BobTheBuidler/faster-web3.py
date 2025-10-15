@@ -2,7 +2,8 @@ from typing import (
     final,
 )
 
-import idna
+# https://github.com/mypyc/mypyc/issues/1155
+import idna.core
 from mypy_extensions import (
     mypyc_attr,
 )
@@ -43,7 +44,7 @@ class AddressMismatch(ENSException):
 
 @final
 @mypyc_attr(native_class=False)
-class InvalidName(idna.IDNAError, ENSException):
+class InvalidName(idna.core.IDNAError, ENSException):
     """
     Raised if the provided name does not meet the normalization
     standards specified in `ENSIP-15`

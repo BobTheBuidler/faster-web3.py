@@ -59,7 +59,6 @@ from faster_web3.exceptions import (
 )
 from faster_web3.types import (
     LogReceipt,
-    RPCResponse,
     TParams,
     TReturn,
     TValue,
