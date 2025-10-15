@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_fee_utils(void)
+PyInit_async_transactions(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("7b1a218420bffc98637a__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___fee_utils");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___async_transactions");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "7b1a218420bffc98637a__mypyc.init_faster_web3____utils___fee_utils");
+    void *init_func = PyCapsule_GetPointer(capsule, "7b1a218420bffc98637a__mypyc.init_faster_web3____utils___async_transactions");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_fee_utils(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_fee_utils(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_async_transactions(); }
