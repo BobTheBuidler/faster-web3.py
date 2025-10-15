@@ -142,7 +142,7 @@ class ENS(BaseENS):
 
     def address(
         self,
-        name: str,
+        name: Union[str, None],
         coin_type: Optional[int] = None,
     ) -> Optional[ChecksumAddress]:
         """

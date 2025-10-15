@@ -144,7 +144,7 @@ class AsyncENS(BaseENS):
 
     async def address(
         self,
-        name: str,
+        name: Union[str, None],
         coin_type: Optional[int] = None,
     ) -> Optional[ChecksumAddress]:
         """
