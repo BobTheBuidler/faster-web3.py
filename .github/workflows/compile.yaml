@@ -46,6 +46,7 @@ jobs:
       - name: Run Mypyc
         env:
           MYPYC_STRICT_DUNDER_TYPING: 1
+          CC: ccache gcc
         run: pip install .
 
       - name: Normalize C files for diffchecking
