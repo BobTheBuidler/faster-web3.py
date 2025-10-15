@@ -350,12 +350,11 @@ class ENS(BaseENS):
             return None
         elif current_owner == _new_owner:
             return current_owner
-        else:
-            self._assert_control(super_owner, name, owned)
-            self._claim_ownership(
-                _new_owner, unowned, owned, super_owner, transact=transact
-            )
-            return _new_owner
+        self._assert_control(super_owner, name, owned)
+        self._claim_ownership(
+            _new_owner, unowned, owned, super_owner, transact=transact
+        )
+        return _new_owner
 
     def resolver(self, name: str) -> Optional["Contract"]:
         """
