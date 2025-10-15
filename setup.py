@@ -103,29 +103,29 @@ else:
     data_files = [
         "faster_ens/abis.py",
         "faster_ens/contract_data.py",
-        "faster_web3/_utils/contract_sources/contract_data/_custom_contract_data.py"
-        "faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/arrays_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/bytes_contracts.py"
-        "faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py"
-        "faster_web3/_utils/contract_sources/contract_data/contract_caller_tester.py"
-        "faster_web3/_utils/contract_sources/contract_data/emitter_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/event_contracts.py"
-        "faster_web3/_utils/contract_sources/contract_data/extended_resolver.py"
-        "faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/function_name_tester_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/math_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/offchain_lookup.py"
-        "faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py"
-        "faster_web3/_utils/contract_sources/contract_data/panic_errors_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/payable_tester.py"
-        "faster_web3/_utils/contract_sources/contract_data/receive_function_contracts.py"
-        "faster_web3/_utils/contract_sources/contract_data/reflector_contracts.py"
-        "faster_web3/_utils/contract_sources/contract_data/revert_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/simple_resolver.py"
-        "faster_web3/_utils/contract_sources/contract_data/storage_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/string_contract.py"
-        "faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py"
+        "faster_web3/_utils/contract_sources/contract_data/_custom_contract_data.py",
+        "faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/arrays_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/bytes_contracts.py",
+        "faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py",
+        "faster_web3/_utils/contract_sources/contract_data/contract_caller_tester.py",
+        "faster_web3/_utils/contract_sources/contract_data/emitter_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/event_contracts.py",
+        "faster_web3/_utils/contract_sources/contract_data/extended_resolver.py",
+        "faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/function_name_tester_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/math_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/offchain_lookup.py",
+        "faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py",
+        "faster_web3/_utils/contract_sources/contract_data/panic_errors_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/payable_tester.py",
+        "faster_web3/_utils/contract_sources/contract_data/receive_function_contracts.py",
+        "faster_web3/_utils/contract_sources/contract_data/reflector_contracts.py",
+        "faster_web3/_utils/contract_sources/contract_data/revert_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/simple_resolver.py",
+        "faster_web3/_utils/contract_sources/contract_data/storage_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/string_contract.py",
+        "faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py",
     ]
 
     flags = [
