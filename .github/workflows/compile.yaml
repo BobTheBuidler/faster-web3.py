@@ -48,8 +48,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ~/.ccache
-          key: ccache-${{ runner.os }}-x64-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
-          restore-key: ccache-${{ runner.os }}-x64-${{ hashFiles('setup.py', 'pyproject.toml') }}-
+          key: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          restore-key: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
 
       - name: Install ccache
         if: ${{ steps.restore-ccache.outputs.cache-hit == 'true' }}
@@ -58,7 +58,7 @@ jobs:
       - name: Run Mypyc
         env:
           MYPYC_STRICT_DUNDER_TYPING: 1
-          CC: ${{ steps.restore-ccache.outputs.cache-hit == 'true' && 'ccache gcc' || '' }}
+          CC: ${{ steps.restore-ccache.outputs.cache-hit == 'true' && 'ccache gcc' || 'gcc' }}
         run: pip install .
 
       - name: Normalize C files for diffchecking
@@ -96,4 +96,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ~/.ccache
-          key: ccache-${{ runner.os }}-x64-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          key: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
