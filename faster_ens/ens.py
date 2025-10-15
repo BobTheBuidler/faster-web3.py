@@ -173,7 +173,7 @@ class ENS(BaseENS):
     def setup_address(
         self,
         name: str,
-        address: Union[Address, ChecksumAddress, HexAddress, _Default] = default,
+        address: Union[AnyAddress, _Default] = default,
         coin_type: Optional[int] = None,
         transact: Optional["TxParams"] = None,
     ) -> Optional[HexBytes]:
