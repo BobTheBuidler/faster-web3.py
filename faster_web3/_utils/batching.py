@@ -7,12 +7,14 @@ from typing import (
     Callable,
     Coroutine,
     Dict,
+    Final,
     Generic,
     List,
     Tuple,
     Type,
     Union,
     cast,
+    final,
 )
 import warnings
 
@@ -57,10 +59,10 @@ if TYPE_CHECKING:
     )
 
 
-BATCH_REQUEST_ID = "batch_request"  # for use as the cache key for batch requests
+BATCH_REQUEST_ID: Final = "batch_request"  # for use as the cache key for batch requests
 
 BatchRequestInformation = Tuple[Tuple["RPCEndpoint", Any], Tuple[Any, ...]]
-RPC_METHODS_UNSUPPORTED_DURING_BATCH = {
+RPC_METHODS_UNSUPPORTED_DURING_BATCH: Final = {
     "eth_subscribe",
     "eth_unsubscribe",
     "eth_sendRawTransaction",
@@ -71,12 +73,13 @@ RPC_METHODS_UNSUPPORTED_DURING_BATCH = {
 }
 
 
+@final
 class RequestBatcher(Generic[TFunc]):
     def __init__(self, web3: Union["AsyncWeb3", "Web3"]) -> None:
-        self.web3 = web3
-        self._requests_info: List[BatchRequestInformation] = []
-        self._async_requests_info: List[
-            Coroutine[Any, Any, BatchRequestInformation]
+        self.web3: Final = web3
+        self._requests_info: Final[List[BatchRequestInformation]] = []
+        self._async_requests_info: Final[
+            List[Coroutine[Any, Any, BatchRequestInformation]]
         ] = []
         self._initialize_batching()
 
@@ -143,8 +146,8 @@ class RequestBatcher(Generic[TFunc]):
         return responses
 
     def clear(self) -> None:
-        self._requests_info = []
-        self._async_requests_info = []
+        self._requests_info.clear()
+        self._async_requests_info.clear()
 
     def cancel(self) -> None:
         self._end_batching()
