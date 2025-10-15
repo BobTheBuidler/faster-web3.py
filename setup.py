@@ -100,14 +100,10 @@ else:
     ]
 
     # these do not need to be part of the same compilation unit as the rest of the library
-    data_files = [
-        "faster_ens/abis.py",
-        "faster_ens/contract_data.py",
-        *sorted(
-            str(p.as_posix())
-            for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
-        ),
-    ]
+    web3_data_files = sorted(
+        str(p.as_posix()) for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
+    )
+    ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
 
     flags = [
         "--pretty",
@@ -138,7 +134,7 @@ else:
     ext_modules.extend(main_unit)
     
     # these do not need to be part of the same compilation unit as the rest of the library
-    for data_file in data_files:
+    for data_file in web3_data_files + ens_data_files:
         data_unit = mypycify([data_file] + flags)
         ext_modules.extend(data_unit)
         
