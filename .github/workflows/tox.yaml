@@ -85,7 +85,7 @@ jobs:
 
       - name: Run tox
         env:
-          CC: ${{ steps.restore-ccache.outputs.cache-hit == 'true' && 'ccache gcc' || '' }}
+          CC: ${{ steps.restore-ccache.outputs.cache-hit == 'true' && 'ccache gcc' || 'gcc' }}
         run: python -m tox run  ${{ env.TOX_RECREATE_FLAG }}
       
       - name: Save ccache cache
