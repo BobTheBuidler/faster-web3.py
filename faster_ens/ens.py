@@ -98,7 +98,7 @@ class ENS(BaseENS):
 
     def __init__(
         self,
-        provider: Optional["BaseProvider"] = None,
+        provider: Union["BaseProvider", _Default] = default,
         addr: Optional[ChecksumAddress] = None,
         middleware: Optional[Sequence[Tuple["Middleware", str]]] = None,
     ) -> None:
@@ -109,7 +109,6 @@ class ENS(BaseENS):
             If not provided, ENS.py will default to the mainnet ENS
             registry address.
         """
-        provider = provider or cast("BaseProvider", default)
         self.w3 = init_web3(provider, middleware)
 
         ens_addr = addr if addr else ENS_MAINNET_ADDR
