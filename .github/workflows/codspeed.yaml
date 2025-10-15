@@ -43,6 +43,7 @@ jobs:
           key: mypy-cache-${{ runner.os }}-${{ hashFiles('**/*.py', 'pyproject.toml') }}
         
       - name: Restore ccache cache
+        id: restore-ccache
         uses: actions/cache/restore@v4
         with:
           path: ~/.ccache
