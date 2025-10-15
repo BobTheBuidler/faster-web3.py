@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_blocks(void)
+PyInit_async_ens(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("7851e3006a0e003ffac8__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___blocks");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_ens___async_ens");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "7851e3006a0e003ffac8__mypyc.init_faster_web3____utils___blocks");
+    void *init_func = PyCapsule_GetPointer(capsule, "7851e3006a0e003ffac8__mypyc.init_faster_ens___async_ens");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_blocks(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_blocks(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_async_ens(); }
