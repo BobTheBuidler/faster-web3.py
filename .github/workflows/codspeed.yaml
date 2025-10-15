@@ -51,6 +51,7 @@ jobs:
           restore-key: ccache-${{ runner.os }}-x64-${{ hashFiles('setup.py', 'pyproject.toml') }}-
 
       - name: Install ccache
+        if: ${{ steps.restore-ccache.outputs.cache-hit == 'true' }}
         run: sudo apt-get update && sudo apt-get install -y ccache
           
       - name: Install dependencies
