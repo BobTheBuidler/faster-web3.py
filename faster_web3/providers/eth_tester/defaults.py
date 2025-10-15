@@ -86,7 +86,7 @@ def call_eth_tester(
     eth_tester: "EthereumTester",
     fn_args: Any,
     fn_kwargs: Optional[Any] = None,
-) -> RPCResponse:
+) -> Any:
     if fn_kwargs is None:
         fn_kwargs = {}
 
@@ -100,9 +100,8 @@ def call_eth_tester(
                 # b"Uo\x180" is the first 4 bytes of the keccak hash for:
                 # OffchainLookup(address,string[],bytes,bytes4,bytes)
                 parsed_data_as_bytes = ast.literal_eval(possible_data)
-                data_payload = parsed_data_as_bytes[
-                    4:
-                ]  # everything but the function selector
+                # everything but the function selector
+                data_payload = parsed_data_as_bytes[4:]
                 abi_decoded_data = abi.decode(
                     list(OFFCHAIN_LOOKUP_FIELDS.values()), data_payload
                 )
