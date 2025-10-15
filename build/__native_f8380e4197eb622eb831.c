@@ -132504,7 +132504,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -223037,8 +223037,8 @@ const char * const CPyLit_Str[] = {
     "\001\'faster_web3._utils.http_session_manager",
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
-    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\apending",
-    "\006\bearliest\tfinalized\004safe\006latest\tis_string\006is_hex",
+    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\006latest",
+    "\006\bearliest\004safe\tfinalized\apending\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_eth_utils.toolz\026faster_web3.exceptions",
     "\003\vRPCEndpoint\021faster_web3.types\"select_method_for_block_identifier",
@@ -223476,7 +223476,7 @@ const int CPyLit_Tuple[] = {
     526, 86, 1, 1389, 5, 278, 607, 168, 1391, 185, 2, 1392, 1393, 1, 1395,
     1, 788
 };
-const int CPyLit_FrozenSet[] = {3, 5, 398, 399, 400, 401, 402, 3, 19, 1517, 0, 2, 839, 379};
+const int CPyLit_FrozenSet[] = {3, 5, 398, 399, 400, 401, 402, 3, 19, 1517, 0, 2, 379, 839};
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
 PyObject *CPyStatic_faster_ens___globals;
