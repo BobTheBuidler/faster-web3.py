@@ -1215,7 +1215,7 @@ typedef struct {
     PyObject *___mypyc_temp__4;
     tuple_T3OOO ___mypyc_temp__5;
     PyObject *___mypyc_generator_attribute__last_block;
-    CPyTagged ___mypyc_generator_attribute__last_block_num;
+    PyObject *___mypyc_generator_attribute__last_block_num;
 } faster_web3____utils___contracts___async_parse_block_identifier_int_genObject;
 
 typedef struct {
