@@ -13,6 +13,7 @@ from typing import (
 
 from eth_typing import (
     Address,
+    AnyAddress,
     ChecksumAddress,
     HexAddress,
     HexStr,
@@ -53,6 +54,7 @@ from .exceptions import (
     UnsupportedFunction,
 )
 from .utils import (
+    _Default,
     address_in,
     address_to_reverse_domain,
     default,
@@ -98,7 +100,7 @@ class ENS(BaseENS):
 
     def __init__(
         self,
-        provider: Optional["BaseProvider"] = None,
+        provider: Union["BaseProvider", _Default] = default,
         addr: Optional[ChecksumAddress] = None,
         middleware: Optional[Sequence[Tuple["Middleware", str]]] = None,
     ) -> None:
@@ -109,7 +111,6 @@ class ENS(BaseENS):
             If not provided, ENS.py will default to the mainnet ENS
             registry address.
         """
-        provider = provider or cast("BaseProvider", default)
         self.w3 = init_web3(provider, middleware)
 
         ens_addr = addr if addr else ENS_MAINNET_ADDR
@@ -141,7 +142,7 @@ class ENS(BaseENS):
 
     def address(
         self,
-        name: str,
+        name: Union[str, None],
         coin_type: Optional[int] = None,
     ) -> Optional[ChecksumAddress]:
         """
@@ -157,7 +158,7 @@ class ENS(BaseENS):
         if coin_type is None:
             # don't validate `addr(bytes32)` interface id since extended resolvers
             # can implement a "resolve" function as of ENSIP-10
-            return cast(ChecksumAddress, self._resolve(name, "addr"))
+            return cast(Optional[ChecksumAddress], self._resolve(name, "addr"))
         else:
             r = self.resolver(name)
             _validate_resolver_and_interface_id(
@@ -172,9 +173,7 @@ class ENS(BaseENS):
     def setup_address(
         self,
         name: str,
-        address: Union[Address, ChecksumAddress, HexAddress] = cast(  # noqa: B008
-            ChecksumAddress, default
-        ),
+        address: Union[AnyAddress, _Default] = default,
         coin_type: Optional[int] = None,
         transact: Optional["TxParams"] = None,
     ) -> Optional[HexBytes]:
@@ -204,26 +203,28 @@ class ENS(BaseENS):
         owner = self.setup_owner(name, transact=transact)
         self._assert_control(owner, name)
         if address is default:
-            address = owner
+            address_ = owner
         elif is_none_or_zero_address(address):
-            address = None
+            address_ = None
         elif is_binary_address(address):
-            address = to_checksum_address(address)
-        elif not is_checksum_address(address):
+            address_ = to_checksum_address(address)
+        elif is_checksum_address(address):
+            address_ = address
+        else:
             raise ENSValueError("You must supply the address in checksum format")
-        if self.address(name) == address:
+        if self.address(name) == address_:
             return None
-        if address is None:
-            address = EMPTY_ADDR_HEX
+        if address_ is None:
+            address_ = EMPTY_ADDR_HEX
         transact["from"] = owner
 
         resolver: "Contract" = self._set_resolver(name, transact=transact)
         node = raw_name_to_hash(name)
 
         if coin_type is None:
-            return resolver.functions.setAddr(node, address).transact(transact)
+            return resolver.functions.setAddr(node, address_).transact(transact)
         else:
-            return resolver.functions.setAddr(node, coin_type, address).transact(
+            return resolver.functions.setAddr(node, coin_type, address_).transact(
                 transact
             )
 
@@ -245,7 +246,7 @@ class ENS(BaseENS):
     def setup_name(
         self,
         name: str,
-        address: Optional[ChecksumAddress] = None,
+        address: Optional[Union[ChecksumAddress, Address]] = None,
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         """
@@ -309,7 +310,7 @@ class ENS(BaseENS):
     def setup_owner(
         self,
         name: str,
-        new_owner: Optional[ChecksumAddress] = None,
+        new_owner: Union[AnyAddress, _Default] = default,
         transact: Optional["TxParams"] = None,
     ) -> Optional[ChecksumAddress]:
         """
@@ -336,29 +337,27 @@ class ENS(BaseENS):
         :raises UnauthorizedError: if ``'from'`` in `transact` does not own `name`
         :returns: the new owner's address
         """
-        new_owner = new_owner or cast(ChecksumAddress, default)
         if not transact:
             transact = {}
 
         transact = deepcopy(transact)
         (super_owner, unowned, owned) = self._first_owner(name)
         if new_owner is default:
-            new_owner = super_owner
+            new_owner_ = super_owner
         elif not new_owner:
-            new_owner = ChecksumAddress(EMPTY_ADDR_HEX)
+            new_owner_ = ChecksumAddress(EMPTY_ADDR_HEX)
         else:
-            new_owner = to_checksum_address(new_owner)
+            new_owner_ = to_checksum_address(new_owner)
         current_owner = self.owner(name)
-        if new_owner == EMPTY_ADDR_HEX and not current_owner:
+        if new_owner_ == EMPTY_ADDR_HEX and not current_owner:
             return None
-        elif current_owner == new_owner:
+        elif current_owner == new_owner_:
             return current_owner
-        else:
-            self._assert_control(super_owner, name, owned)
-            self._claim_ownership(
-                new_owner, unowned, owned, super_owner, transact=transact
-            )
-            return new_owner
+        self._assert_control(super_owner, name, owned)
+        self._claim_ownership(
+            new_owner_, unowned, owned, super_owner, transact=transact
+        )
+        return new_owner_
 
     def resolver(self, name: str) -> Optional["Contract"]:
         """
@@ -499,7 +498,7 @@ class ENS(BaseENS):
 
     def _assert_control(
         self,
-        account: ChecksumAddress,
+        account: Union[ChecksumAddress, Address],
         name: str,
         parent_owned: Optional[str] = None,
     ) -> None:
@@ -550,7 +549,7 @@ class ENS(BaseENS):
     def _setup_reverse(
         self,
         name: Optional[str],
-        address: ChecksumAddress,
+        address: Union[ChecksumAddress, Address],
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         name = normalize_name(name) if name else ""

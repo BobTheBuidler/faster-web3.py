@@ -8,8 +8,10 @@ from typing import (
     Dict,
     Final,
     Iterable,
+    List,
     Literal,
     NoReturn,
+    Sequence,
     Tuple,
     TypeVar,
     Union,
@@ -114,6 +116,7 @@ from faster_web3.types import (
     SimulateV1Payload,
     StateOverrideParams,
     TReturn,
+    TValue,
     TxParams,
     _Hash32,
 )
@@ -206,7 +209,7 @@ def type_aware_apply_formatters_to_dict_keys_and_values(
     )
 
 
-def apply_list_to_array_formatter(formatter: Any) -> Callable[..., Any]:
+def apply_list_to_array_formatter(formatter: Callable[[TValue], TReturn]) -> Callable[[Sequence[TValue]], List[TReturn]]:
     return to_list(apply_formatter_to_array(formatter))
 
 

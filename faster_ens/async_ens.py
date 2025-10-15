@@ -15,6 +15,7 @@ from typing import (
 
 from eth_typing import (
     Address,
+    AnyAddress,
     ChecksumAddress,
     HexAddress,
     HexStr,
@@ -55,6 +56,7 @@ from faster_ens.exceptions import (
     UnsupportedFunction,
 )
 from faster_ens.utils import (
+    _Default,
     address_in,
     address_to_reverse_domain,
     default,
@@ -101,7 +103,7 @@ class AsyncENS(BaseENS):
 
     def __init__(
         self,
-        provider: Optional["AsyncBaseProvider"] = None,
+        provider: Union["AsyncBaseProvider", _Default] = default,
         addr: Optional[ChecksumAddress] = None,
         middleware: Optional[Sequence[Tuple["Middleware", str]]] = None,
     ) -> None:
@@ -111,7 +113,6 @@ class AsyncENS(BaseENS):
         :param hex-string addr: the address of the ENS registry on-chain.
             If not provided, ENS.py will default to the mainnet ENS registry address.
         """
-        provider = provider or cast("AsyncBaseProvider", default)
         self.w3 = init_async_web3(provider, middleware)
 
         ens_addr = addr if addr else ENS_MAINNET_ADDR
@@ -143,7 +144,7 @@ class AsyncENS(BaseENS):
 
     async def address(
         self,
-        name: str,
+        name: Union[str, None],
         coin_type: Optional[int] = None,
     ) -> Optional[ChecksumAddress]:
         """
@@ -156,7 +157,7 @@ class AsyncENS(BaseENS):
         if coin_type is None:
             # don't validate `addr(bytes32)` interface id since extended resolvers
             # can implement a "resolve" function as of ENSIP-10
-            return cast(ChecksumAddress, await self._resolve(name, "addr"))
+            return cast(Optional[ChecksumAddress], await self._resolve(name, "addr"))
         else:
             r = await self.resolver(name)
             await _async_validate_resolver_and_interface_id(
@@ -171,9 +172,7 @@ class AsyncENS(BaseENS):
     async def setup_address(
         self,
         name: str,
-        address: Union[Address, ChecksumAddress, HexAddress] = cast(  # noqa: B008
-            ChecksumAddress, default
-        ),
+        address: Union[AnyAddress, _Default] = default,
         coin_type: Optional[int] = None,
         transact: Optional["TxParams"] = None,
     ) -> Optional[HexBytes]:
@@ -202,26 +201,28 @@ class AsyncENS(BaseENS):
         owner = await self.setup_owner(name, transact=transact)
         await self._assert_control(owner, name)
         if address is default:
-            address = owner
+            address_ = owner
         elif is_none_or_zero_address(address):
-            address = None
+            address_ = None
         elif is_binary_address(address):
-            address = to_checksum_address(address)
-        elif not is_checksum_address(address):
+            address_ = to_checksum_address(address)
+        elif is_checksum_address(address):
+            address_ = address
+        else:
             raise ENSValueError("You must supply the address in checksum format")
-        if await self.address(name) == address:
+        if await self.address(name) == address_:
             return None
-        if address is None:
-            address = EMPTY_ADDR_HEX
+        if address_ is None:
+            address_ = EMPTY_ADDR_HEX
         transact["from"] = owner
 
         resolver: "AsyncContract" = await self._set_resolver(name, transact=transact)
         node = raw_name_to_hash(name)
 
         if coin_type is None:
-            return await resolver.functions.setAddr(node, address).transact(transact)
+            return await resolver.functions.setAddr(node, address_).transact(transact)
         else:
-            return await resolver.functions.setAddr(node, coin_type, address).transact(
+            return await resolver.functions.setAddr(node, coin_type, address_).transact(
                 transact
             )
 
@@ -309,7 +310,7 @@ class AsyncENS(BaseENS):
     async def setup_owner(
         self,
         name: str,
-        new_owner: Optional[ChecksumAddress] = None,
+        new_owner: Union[AnyAddress, _Default] = default,
         transact: Optional["TxParams"] = None,
     ) -> Optional[ChecksumAddress]:
         """
@@ -336,28 +337,26 @@ class AsyncENS(BaseENS):
         :raises UnauthorizedError: if ``'from'`` in `transact` does not own `name`
         :returns: the new owner's address
         """
-        new_owner = new_owner or cast(ChecksumAddress, default)
         if not transact:
             transact = {}
         transact = deepcopy(transact)
         (super_owner, unowned, owned) = await self._first_owner(name)
         if new_owner is default:
-            new_owner = super_owner
+            new_owner_ = super_owner
         elif not new_owner:
-            new_owner = ChecksumAddress(EMPTY_ADDR_HEX)
+            new_owner_ = ChecksumAddress(EMPTY_ADDR_HEX)
         else:
-            new_owner = to_checksum_address(new_owner)
+            new_owner_ = to_checksum_address(new_owner)
         current_owner = await self.owner(name)
-        if new_owner == EMPTY_ADDR_HEX and not current_owner:
+        if new_owner_ == EMPTY_ADDR_HEX and not current_owner:
             return None
-        elif current_owner == new_owner:
+        elif current_owner == new_owner_:
             return current_owner
-        else:
-            await self._assert_control(super_owner, name, owned)
-            await self._claim_ownership(
-                new_owner, unowned, owned, super_owner, transact=transact
-            )
-            return new_owner
+        await self._assert_control(super_owner, name, owned)
+        await self._claim_ownership(
+            new_owner_, unowned, owned, super_owner, transact=transact
+        )
+        return new_owner_
 
     async def resolver(self, name: str) -> Optional["AsyncContract"]:
         """
@@ -518,7 +517,7 @@ class AsyncENS(BaseENS):
 
     async def _assert_control(
         self,
-        account: ChecksumAddress,
+        account: Union[ChecksumAddress, Address],
         name: str,
         parent_owned: Optional[str] = None,
     ) -> None:
@@ -573,7 +572,7 @@ class AsyncENS(BaseENS):
     async def _setup_reverse(
         self,
         name: Optional[str],
-        address: ChecksumAddress,
+        address: Union[ChecksumAddress, Address],
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         name = normalize_name(name) if name else ""
