@@ -18016,98 +18016,98 @@ PyObject *CPyDef_async_ens___setup_address_AsyncENS_gen_____mypyc_generator_help
     char cpy_r_r144;
     PyObject *cpy_r_r145;
     PyObject *cpy_r_r146;
-    PyObject **cpy_r_r148;
+    char cpy_r_r147;
+    PyObject *cpy_r_r148;
     PyObject *cpy_r_r149;
-    PyObject *cpy_r_r150;
-    PyObject *cpy_r_r151;
+    PyObject **cpy_r_r151;
     PyObject *cpy_r_r152;
     PyObject *cpy_r_r153;
     PyObject *cpy_r_r154;
-    char cpy_r_r155;
+    PyObject *cpy_r_r155;
     PyObject *cpy_r_r156;
     PyObject *cpy_r_r157;
-    PyObject *cpy_r_r158;
-    PyObject **cpy_r_r159;
+    char cpy_r_r158;
+    PyObject *cpy_r_r159;
     PyObject *cpy_r_r160;
-    char cpy_r_r161;
-    PyObject *cpy_r_r162;
+    PyObject *cpy_r_r161;
+    PyObject **cpy_r_r162;
     PyObject *cpy_r_r163;
     char cpy_r_r164;
     PyObject *cpy_r_r165;
-    char cpy_r_r166;
-    PyObject *cpy_r_r167;
-    char cpy_r_r168;
-    tuple_T3OOO cpy_r_r169;
-    char cpy_r_r170;
-    PyObject **cpy_r_r171;
-    PyObject *cpy_r_r172;
+    PyObject *cpy_r_r166;
+    char cpy_r_r167;
+    PyObject *cpy_r_r168;
+    char cpy_r_r169;
+    PyObject *cpy_r_r170;
+    char cpy_r_r171;
+    tuple_T3OOO cpy_r_r172;
     char cpy_r_r173;
-    tuple_T3OOO cpy_r_r174;
-    tuple_T3OOO cpy_r_r175;
-    tuple_T3OOO cpy_r_r176;
-    char cpy_r_r177;
-    PyObject *cpy_r_r178;
-    PyObject *cpy_r_r179;
-    PyObject *cpy_r_r180;
+    PyObject **cpy_r_r174;
+    PyObject *cpy_r_r175;
+    char cpy_r_r176;
+    tuple_T3OOO cpy_r_r177;
+    tuple_T3OOO cpy_r_r178;
+    tuple_T3OOO cpy_r_r179;
+    char cpy_r_r180;
     PyObject *cpy_r_r181;
     PyObject *cpy_r_r182;
     PyObject *cpy_r_r183;
-    char cpy_r_r184;
+    PyObject *cpy_r_r184;
     PyObject *cpy_r_r185;
-    char cpy_r_r186;
+    PyObject *cpy_r_r186;
     char cpy_r_r187;
     PyObject *cpy_r_r188;
     char cpy_r_r189;
-    PyObject *cpy_r_r190;
+    char cpy_r_r190;
     PyObject *cpy_r_r191;
     char cpy_r_r192;
     PyObject *cpy_r_r193;
-    char cpy_r_r194;
-    PyObject *cpy_r_r195;
+    PyObject *cpy_r_r194;
+    char cpy_r_r195;
     PyObject *cpy_r_r196;
     char cpy_r_r197;
     PyObject *cpy_r_r198;
-    char cpy_r_r199;
+    PyObject *cpy_r_r199;
     char cpy_r_r200;
     PyObject *cpy_r_r201;
-    PyObject *cpy_r_r202;
-    PyObject *cpy_r_r203;
+    char cpy_r_r202;
+    char cpy_r_r203;
     PyObject *cpy_r_r204;
-    int32_t cpy_r_r205;
-    char cpy_r_r206;
+    PyObject *cpy_r_r205;
+    PyObject *cpy_r_r206;
     PyObject *cpy_r_r207;
-    PyObject *cpy_r_r208;
-    PyObject *cpy_r_r209;
+    int32_t cpy_r_r208;
+    char cpy_r_r209;
     PyObject *cpy_r_r210;
     PyObject *cpy_r_r211;
     PyObject *cpy_r_r212;
-    char cpy_r_r213;
+    PyObject *cpy_r_r213;
     PyObject *cpy_r_r214;
     PyObject *cpy_r_r215;
-    PyObject *cpy_r_r216;
-    PyObject **cpy_r_r217;
+    char cpy_r_r216;
+    PyObject *cpy_r_r217;
     PyObject *cpy_r_r218;
-    char cpy_r_r219;
-    PyObject *cpy_r_r220;
+    PyObject *cpy_r_r219;
+    PyObject **cpy_r_r220;
     PyObject *cpy_r_r221;
     char cpy_r_r222;
     PyObject *cpy_r_r223;
-    char cpy_r_r224;
-    PyObject *cpy_r_r225;
-    char cpy_r_r226;
-    tuple_T3OOO cpy_r_r227;
-    char cpy_r_r228;
-    PyObject **cpy_r_r229;
-    PyObject *cpy_r_r230;
+    PyObject *cpy_r_r224;
+    char cpy_r_r225;
+    PyObject *cpy_r_r226;
+    char cpy_r_r227;
+    PyObject *cpy_r_r228;
+    char cpy_r_r229;
+    tuple_T3OOO cpy_r_r230;
     char cpy_r_r231;
-    tuple_T3OOO cpy_r_r232;
-    tuple_T3OOO cpy_r_r233;
-    tuple_T3OOO cpy_r_r234;
-    char cpy_r_r235;
-    PyObject *cpy_r_r236;
-    PyObject *cpy_r_r237;
-    PyObject *cpy_r_r238;
-    char cpy_r_r239;
+    PyObject **cpy_r_r232;
+    PyObject *cpy_r_r233;
+    char cpy_r_r234;
+    tuple_T3OOO cpy_r_r235;
+    tuple_T3OOO cpy_r_r236;
+    tuple_T3OOO cpy_r_r237;
+    char cpy_r_r238;
+    PyObject *cpy_r_r239;
     PyObject *cpy_r_r240;
     PyObject *cpy_r_r241;
     char cpy_r_r242;
@@ -18116,92 +18116,95 @@ PyObject *CPyDef_async_ens___setup_address_AsyncENS_gen_____mypyc_generator_help
     char cpy_r_r245;
     PyObject *cpy_r_r246;
     PyObject *cpy_r_r247;
-    PyObject *cpy_r_r248;
+    char cpy_r_r248;
     PyObject *cpy_r_r249;
     PyObject *cpy_r_r250;
     PyObject *cpy_r_r251;
-    PyObject **cpy_r_r253;
+    PyObject *cpy_r_r252;
+    PyObject *cpy_r_r253;
     PyObject *cpy_r_r254;
-    PyObject *cpy_r_r255;
-    PyObject *cpy_r_r256;
+    PyObject **cpy_r_r256;
     PyObject *cpy_r_r257;
-    PyObject **cpy_r_r259;
+    PyObject *cpy_r_r258;
+    PyObject *cpy_r_r259;
     PyObject *cpy_r_r260;
-    PyObject *cpy_r_r261;
-    char cpy_r_r262;
+    PyObject **cpy_r_r262;
     PyObject *cpy_r_r263;
     PyObject *cpy_r_r264;
-    PyObject *cpy_r_r265;
+    char cpy_r_r265;
     PyObject *cpy_r_r266;
     PyObject *cpy_r_r267;
-    char cpy_r_r268;
+    PyObject *cpy_r_r268;
     PyObject *cpy_r_r269;
-    char cpy_r_r270;
-    PyObject *cpy_r_r271;
-    char cpy_r_r272;
-    tuple_T3OOO cpy_r_r273;
-    char cpy_r_r274;
-    PyObject **cpy_r_r275;
-    PyObject *cpy_r_r276;
+    PyObject *cpy_r_r270;
+    char cpy_r_r271;
+    PyObject *cpy_r_r272;
+    char cpy_r_r273;
+    PyObject *cpy_r_r274;
+    char cpy_r_r275;
+    tuple_T3OOO cpy_r_r276;
     char cpy_r_r277;
-    tuple_T3OOO cpy_r_r278;
-    tuple_T3OOO cpy_r_r279;
-    tuple_T3OOO cpy_r_r280;
-    char cpy_r_r281;
-    PyObject *cpy_r_r282;
-    PyObject *cpy_r_r283;
-    PyObject *cpy_r_r284;
-    char cpy_r_r285;
+    PyObject **cpy_r_r278;
+    PyObject *cpy_r_r279;
+    char cpy_r_r280;
+    tuple_T3OOO cpy_r_r281;
+    tuple_T3OOO cpy_r_r282;
+    tuple_T3OOO cpy_r_r283;
+    char cpy_r_r284;
+    PyObject *cpy_r_r285;
     PyObject *cpy_r_r286;
     PyObject *cpy_r_r287;
-    PyObject *cpy_r_r288;
+    char cpy_r_r288;
     PyObject *cpy_r_r289;
     PyObject *cpy_r_r290;
-    CPyTagged cpy_r_r291;
+    PyObject *cpy_r_r291;
     PyObject *cpy_r_r292;
     PyObject *cpy_r_r293;
-    PyObject *cpy_r_r294;
-    PyObject **cpy_r_r296;
+    CPyTagged cpy_r_r294;
+    PyObject *cpy_r_r295;
+    PyObject *cpy_r_r296;
     PyObject *cpy_r_r297;
-    PyObject *cpy_r_r298;
-    PyObject *cpy_r_r299;
+    PyObject **cpy_r_r299;
     PyObject *cpy_r_r300;
-    PyObject **cpy_r_r302;
+    PyObject *cpy_r_r301;
+    PyObject *cpy_r_r302;
     PyObject *cpy_r_r303;
-    PyObject *cpy_r_r304;
-    char cpy_r_r305;
+    PyObject **cpy_r_r305;
     PyObject *cpy_r_r306;
     PyObject *cpy_r_r307;
-    PyObject *cpy_r_r308;
+    char cpy_r_r308;
     PyObject *cpy_r_r309;
     PyObject *cpy_r_r310;
-    char cpy_r_r311;
+    PyObject *cpy_r_r311;
     PyObject *cpy_r_r312;
-    char cpy_r_r313;
-    PyObject *cpy_r_r314;
-    char cpy_r_r315;
-    tuple_T3OOO cpy_r_r316;
-    char cpy_r_r317;
-    PyObject **cpy_r_r318;
-    PyObject *cpy_r_r319;
+    PyObject *cpy_r_r313;
+    char cpy_r_r314;
+    PyObject *cpy_r_r315;
+    char cpy_r_r316;
+    PyObject *cpy_r_r317;
+    char cpy_r_r318;
+    tuple_T3OOO cpy_r_r319;
     char cpy_r_r320;
-    tuple_T3OOO cpy_r_r321;
-    tuple_T3OOO cpy_r_r322;
-    tuple_T3OOO cpy_r_r323;
-    char cpy_r_r324;
-    PyObject *cpy_r_r325;
-    PyObject *cpy_r_r326;
-    PyObject *cpy_r_r327;
-    char cpy_r_r328;
-    char cpy_r_r329;
-    char cpy_r_r330;
+    PyObject **cpy_r_r321;
+    PyObject *cpy_r_r322;
+    char cpy_r_r323;
+    tuple_T3OOO cpy_r_r324;
+    tuple_T3OOO cpy_r_r325;
+    tuple_T3OOO cpy_r_r326;
+    char cpy_r_r327;
+    PyObject *cpy_r_r328;
+    PyObject *cpy_r_r329;
+    PyObject *cpy_r_r330;
     char cpy_r_r331;
     char cpy_r_r332;
     char cpy_r_r333;
     char cpy_r_r334;
     char cpy_r_r335;
     char cpy_r_r336;
-    PyObject *cpy_r_r337;
+    char cpy_r_r337;
+    char cpy_r_r338;
+    char cpy_r_r339;
+    PyObject *cpy_r_r340;
     cpy_r_r0 = NULL;
     cpy_r_r1 = cpy_r_r0;
     CPy_XDECREF(cpy_r_r1);
@@ -18227,7 +18230,7 @@ PyObject *CPyDef_async_ens___setup_address_AsyncENS_gen_____mypyc_generator_help
     cpy_r_r18 = NULL;
     cpy_r_r19 = cpy_r_r18;
     cpy_r_r20 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL289;
+    goto CPyL292;
 CPyL1: ;
     cpy_r_r21 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r22 = cpy_r_type != cpy_r_r21;
@@ -18235,25 +18238,25 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r23 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r23 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 198, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r23);
 CPyL5: ;
     cpy_r_r24 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r25 = cpy_r_r23 != cpy_r_r24;
-    if (!cpy_r_r25) goto CPyL299;
+    if (!cpy_r_r25) goto CPyL302;
     if (likely(cpy_r_r23 != Py_None))
         cpy_r_r26 = cpy_r_r23;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 198, CPyStatic_async_ens___globals, "dict", cpy_r_r23);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r27 = PyDict_Size(cpy_r_r26);
     CPy_DECREF(cpy_r_r26);
@@ -18264,7 +18267,7 @@ CPyL8: ;
     cpy_r_r30 = PyDict_New();
     if (unlikely(cpy_r_r30 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact);
@@ -18273,13 +18276,13 @@ CPyL8: ;
     cpy_r_r31 = 1;
     if (unlikely(!cpy_r_r31)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
 CPyL10: ;
     cpy_r_r32 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 200, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r32);
 CPyL11: ;
@@ -18287,14 +18290,14 @@ CPyL11: ;
         cpy_r_r33 = cpy_r_r32;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 200, CPyStatic_async_ens___globals, "dict", cpy_r_r32);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r34 = CPyStatic_async_ens___globals;
     cpy_r_r35 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'deepcopy' */
     cpy_r_r36 = CPyDict_GetItem(cpy_r_r34, cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL300;
+        goto CPyL303;
     }
     PyObject *cpy_r_r37[1] = {cpy_r_r33};
     cpy_r_r38 = (PyObject **)&cpy_r_r37;
@@ -18302,14 +18305,14 @@ CPyL11: ;
     CPy_DECREF(cpy_r_r36);
     if (unlikely(cpy_r_r39 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL300;
+        goto CPyL303;
     }
     CPy_DECREF(cpy_r_r33);
     if (likely(PyDict_Check(cpy_r_r39)))
         cpy_r_r40 = cpy_r_r39;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 200, CPyStatic_async_ens___globals, "dict", cpy_r_r39);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact);
@@ -18318,26 +18321,26 @@ CPyL11: ;
     cpy_r_r41 = 1;
     if (unlikely(!cpy_r_r41)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r42 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r42 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 201, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF_NO_IMM(cpy_r_r42);
 CPyL17: ;
     cpy_r_r43 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r43 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 201, CPyStatic_async_ens___globals);
-        goto CPyL301;
+        goto CPyL304;
     }
     CPy_INCREF(cpy_r_r43);
 CPyL18: ;
     cpy_r_r44 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r44 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 201, CPyStatic_async_ens___globals);
-        goto CPyL302;
+        goto CPyL305;
     }
     CPy_INCREF(cpy_r_r44);
 CPyL19: ;
@@ -18345,7 +18348,7 @@ CPyL19: ;
         cpy_r_r45 = cpy_r_r44;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 201, CPyStatic_async_ens___globals, "dict", cpy_r_r44);
-        goto CPyL302;
+        goto CPyL305;
     }
     cpy_r_r46 = NULL;
     cpy_r_r47 = CPyDef_async_ens___AsyncENS___setup_owner(cpy_r_r42, cpy_r_r43, cpy_r_r46, cpy_r_r45);
@@ -18354,7 +18357,7 @@ CPyL19: ;
     CPy_DECREF_NO_IMM(cpy_r_r42);
     if (unlikely(cpy_r_r47 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8 != NULL) {
         CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8);
@@ -18363,12 +18366,12 @@ CPyL19: ;
     cpy_r_r48 = 1;
     if (unlikely(!cpy_r_r48)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r49 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r49 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__8", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF_NO_IMM(cpy_r_r49);
 CPyL23: ;
@@ -18378,11 +18381,11 @@ CPyL23: ;
     cpy_r_r52 = (PyObject **)&cpy_r_r1;
     cpy_r_r53 = CPyDef_async_ens___setup_owner_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r49, cpy_r_r50, cpy_r_r50, cpy_r_r50, cpy_r_r50, cpy_r_r52);
     CPy_DECREF_NO_IMM(cpy_r_r49);
-    if (cpy_r_r53 != NULL) goto CPyL303;
+    if (cpy_r_r53 != NULL) goto CPyL306;
     cpy_r_r54 = cpy_r_r1 != 0;
     if (unlikely(!cpy_r_r54)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL304;
+        goto CPyL307;
     }
     cpy_r_r55 = cpy_r_r1;
     cpy_r_r56 = NULL;
@@ -18393,7 +18396,7 @@ CPyL23: ;
     cpy_r_r57 = 1;
     if (unlikely(!cpy_r_r57)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL305;
+        goto CPyL308;
     } else
         goto CPyL48;
 CPyL26: ;
@@ -18404,13 +18407,13 @@ CPyL27: ;
 CPyL28: ;
     cpy_r_r60 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r61 = cpy_r_type != cpy_r_r60;
-    if (!cpy_r_r61) goto CPyL306;
+    if (!cpy_r_r61) goto CPyL309;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
         goto CPyL32;
     } else
-        goto CPyL307;
+        goto CPyL310;
 CPyL30: ;
     CPy_Unreachable();
 CPyL31: ;
@@ -18427,13 +18430,13 @@ CPyL32: ;
     cpy_r_r63 = 1;
     if (unlikely(!cpy_r_r63)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL308;
+        goto CPyL311;
     }
     cpy_r_r64 = (PyObject **)&cpy_r_r3;
     cpy_r_r65 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r65 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__8", -1, CPyStatic_async_ens___globals);
-        goto CPyL308;
+        goto CPyL311;
     }
     CPy_INCREF_NO_IMM(cpy_r_r65);
 CPyL34: ;
@@ -18441,14 +18444,14 @@ CPyL34: ;
     CPy_DecRef(cpy_r_r65);
     if (unlikely(cpy_r_r66 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL308;
+        goto CPyL311;
     }
     if (cpy_r_r66) goto CPyL38;
     cpy_r_r58 = cpy_r_r3;
     cpy_r_r67 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r67.f0 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__9", -1, CPyStatic_async_ens___globals);
-        goto CPyL309;
+        goto CPyL312;
     }
     CPy_INCREF(cpy_r_r67.f0);
     CPy_INCREF(cpy_r_r67.f1);
@@ -18464,7 +18467,7 @@ CPyL38: ;
     cpy_r_r68 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r68.f0 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__9", -1, CPyStatic_async_ens___globals);
-        goto CPyL310;
+        goto CPyL313;
     }
     CPy_INCREF(cpy_r_r68.f0);
     CPy_INCREF(cpy_r_r68.f1);
@@ -18479,7 +18482,7 @@ CPyL40: ;
     cpy_r_r69 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r69.f0 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__9", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r69.f0);
     CPy_INCREF(cpy_r_r69.f1);
@@ -18490,13 +18493,13 @@ CPyL41: ;
     CPy_DecRef(cpy_r_r69.f1);
     CPy_DecRef(cpy_r_r69.f2);
     cpy_r_r70 = CPy_KeepPropagating();
-    if (!cpy_r_r70) goto CPyL298;
+    if (!cpy_r_r70) goto CPyL301;
     CPy_Unreachable();
 CPyL43: ;
     cpy_r_r71 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r71 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__8", -1, CPyStatic_async_ens___globals);
-        goto CPyL311;
+        goto CPyL314;
     }
     CPy_INCREF_NO_IMM(cpy_r_r71);
 CPyL44: ;
@@ -18510,7 +18513,7 @@ CPyL46: ;
     cpy_r_r73 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r73 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r55 = cpy_r_r73;
 CPyL48: ;
@@ -18527,7 +18530,7 @@ CPyL48: ;
     }
     if (cpy_r_r74 != NULL) goto __LL36;
     CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 201, CPyStatic_async_ens___globals, "str or None", cpy_r_r55);
-    goto CPyL298;
+    goto CPyL301;
 __LL36: ;
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner);
@@ -18536,26 +18539,26 @@ __LL36: ;
     cpy_r_r75 = 1;
     if (unlikely(!cpy_r_r75)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r76 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r76 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 202, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF_NO_IMM(cpy_r_r76);
 CPyL51: ;
     cpy_r_r77 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r77 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "owner", 202, CPyStatic_async_ens___globals);
-        goto CPyL312;
+        goto CPyL315;
     }
     CPy_INCREF(cpy_r_r77);
 CPyL52: ;
     cpy_r_r78 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r78 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 202, CPyStatic_async_ens___globals);
-        goto CPyL313;
+        goto CPyL316;
     }
     CPy_INCREF(cpy_r_r78);
 CPyL53: ;
@@ -18572,7 +18575,7 @@ CPyL53: ;
     }
     if (cpy_r_r79 != NULL) goto __LL37;
     CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 202, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r77);
-    goto CPyL314;
+    goto CPyL317;
 __LL37: ;
     cpy_r_r80 = NULL;
     cpy_r_r81 = CPyDef_async_ens___AsyncENS____assert_control(cpy_r_r76, cpy_r_r79, cpy_r_r78, cpy_r_r80);
@@ -18581,7 +18584,7 @@ __LL37: ;
     CPy_DECREF_NO_IMM(cpy_r_r76);
     if (unlikely(cpy_r_r81 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10 != NULL) {
         CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10);
@@ -18590,12 +18593,12 @@ __LL37: ;
     cpy_r_r82 = 1;
     if (unlikely(!cpy_r_r82)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r83 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r83 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__10", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF_NO_IMM(cpy_r_r83);
 CPyL57: ;
@@ -18605,11 +18608,11 @@ CPyL57: ;
     cpy_r_r86 = (PyObject **)&cpy_r_r5;
     cpy_r_r87 = CPyDef_async_ens____assert_control_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r83, cpy_r_r84, cpy_r_r84, cpy_r_r84, cpy_r_r84, cpy_r_r86);
     CPy_DECREF_NO_IMM(cpy_r_r83);
-    if (cpy_r_r87 != NULL) goto CPyL315;
+    if (cpy_r_r87 != NULL) goto CPyL318;
     cpy_r_r88 = cpy_r_r5 != 0;
     if (unlikely(!cpy_r_r88)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL316;
+        goto CPyL319;
     }
     cpy_r_r89 = cpy_r_r5;
     CPy_DECREF(cpy_r_r89);
@@ -18621,7 +18624,7 @@ CPyL57: ;
     cpy_r_r91 = 1;
     if (unlikely(!cpy_r_r91)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     } else
         goto CPyL82;
 CPyL60: ;
@@ -18632,13 +18635,13 @@ CPyL61: ;
 CPyL62: ;
     cpy_r_r94 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r95 = cpy_r_type != cpy_r_r94;
-    if (!cpy_r_r95) goto CPyL317;
+    if (!cpy_r_r95) goto CPyL320;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
         goto CPyL66;
     } else
-        goto CPyL318;
+        goto CPyL321;
 CPyL64: ;
     CPy_Unreachable();
 CPyL65: ;
@@ -18655,13 +18658,13 @@ CPyL66: ;
     cpy_r_r97 = 1;
     if (unlikely(!cpy_r_r97)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL319;
+        goto CPyL322;
     }
     cpy_r_r98 = (PyObject **)&cpy_r_r7;
     cpy_r_r99 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r99 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__10", -1, CPyStatic_async_ens___globals);
-        goto CPyL319;
+        goto CPyL322;
     }
     CPy_INCREF_NO_IMM(cpy_r_r99);
 CPyL68: ;
@@ -18669,14 +18672,14 @@ CPyL68: ;
     CPy_DecRef(cpy_r_r99);
     if (unlikely(cpy_r_r100 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL319;
+        goto CPyL322;
     }
     if (cpy_r_r100) goto CPyL72;
     cpy_r_r92 = cpy_r_r7;
     cpy_r_r101 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
     if (unlikely(cpy_r_r101.f0 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__11", -1, CPyStatic_async_ens___globals);
-        goto CPyL320;
+        goto CPyL323;
     }
     CPy_INCREF(cpy_r_r101.f0);
     CPy_INCREF(cpy_r_r101.f1);
@@ -18708,7 +18711,7 @@ CPyL74: ;
     cpy_r_r103 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
     if (unlikely(cpy_r_r103.f0 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__11", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r103.f0);
     CPy_INCREF(cpy_r_r103.f1);
@@ -18719,13 +18722,13 @@ CPyL75: ;
     CPy_DecRef(cpy_r_r103.f1);
     CPy_DecRef(cpy_r_r103.f2);
     cpy_r_r104 = CPy_KeepPropagating();
-    if (!cpy_r_r104) goto CPyL298;
+    if (!cpy_r_r104) goto CPyL301;
     CPy_Unreachable();
 CPyL77: ;
     cpy_r_r105 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r105 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__10", -1, CPyStatic_async_ens___globals);
-        goto CPyL321;
+        goto CPyL324;
     }
     CPy_INCREF_NO_IMM(cpy_r_r105);
 CPyL78: ;
@@ -18739,7 +18742,7 @@ CPyL80: ;
     cpy_r_r107 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r107 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r89 = cpy_r_r107;
     CPy_DECREF(cpy_r_r89);
@@ -18747,13 +18750,13 @@ CPyL82: ;
     cpy_r_r108 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r108 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 203, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r108);
 CPyL83: ;
     cpy_r_r109 = CPyStatic_faster_ens___utils___default;
     if (unlikely(cpy_r_r109 == NULL)) {
-        goto CPyL322;
+        goto CPyL325;
     } else
         goto CPyL86;
 CPyL84: ;
@@ -18761,7 +18764,7 @@ CPyL84: ;
     cpy_r_r110 = 0;
     if (unlikely(!cpy_r_r110)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_Unreachable();
 CPyL86: ;
@@ -18771,7 +18774,7 @@ CPyL86: ;
     cpy_r_r112 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r112 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "owner", 204, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r112);
 CPyL88: ;
@@ -18782,14 +18785,14 @@ CPyL88: ;
     cpy_r_r113 = 1;
     if (unlikely(!cpy_r_r113)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     } else
-        goto CPyL114;
+        goto CPyL117;
 CPyL89: ;
     cpy_r_r114 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r114 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 205, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r114);
 CPyL90: ;
@@ -18812,13 +18815,13 @@ CPyL90: ;
     }
     if (cpy_r_r115 != NULL) goto __LL38;
     CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 205, CPyStatic_async_ens___globals, "union[bytes, str, None]", cpy_r_r114);
-    goto CPyL298;
+    goto CPyL301;
 __LL38: ;
     cpy_r_r116 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r115);
     CPy_DECREF(cpy_r_r115);
     if (unlikely(cpy_r_r116 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (!cpy_r_r116) goto CPyL94;
     cpy_r_r117 = Py_None;
@@ -18829,14 +18832,14 @@ __LL38: ;
     cpy_r_r118 = 1;
     if (unlikely(!cpy_r_r118)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     } else
-        goto CPyL114;
+        goto CPyL117;
 CPyL94: ;
     cpy_r_r119 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r119 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 207, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r119);
 CPyL95: ;
@@ -18845,7 +18848,7 @@ CPyL95: ;
     cpy_r_r122 = CPyDict_GetItem(cpy_r_r120, cpy_r_r121);
     if (unlikely(cpy_r_r122 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL323;
+        goto CPyL326;
     }
     PyObject *cpy_r_r123[1] = {cpy_r_r119};
     cpy_r_r124 = (PyObject **)&cpy_r_r123;
@@ -18853,7 +18856,7 @@ CPyL95: ;
     CPy_DECREF(cpy_r_r122);
     if (unlikely(cpy_r_r125 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL323;
+        goto CPyL326;
     }
     CPy_DECREF(cpy_r_r119);
     if (unlikely(!PyBool_Check(cpy_r_r125))) {
@@ -18863,13 +18866,13 @@ CPyL95: ;
     CPy_DECREF(cpy_r_r125);
     if (unlikely(cpy_r_r126 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (!cpy_r_r126) goto CPyL105;
     cpy_r_r127 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r127 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 208, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r127);
 CPyL100: ;
@@ -18877,14 +18880,14 @@ CPyL100: ;
         cpy_r_r128 = cpy_r_r127;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 208, CPyStatic_async_ens___globals, "bytes", cpy_r_r127);
-        goto CPyL298;
+        goto CPyL301;
     }
     cpy_r_r129 = CPyStatic_async_ens___globals;
     cpy_r_r130 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to_checksum_address' */
     cpy_r_r131 = CPyDict_GetItem(cpy_r_r129, cpy_r_r130);
     if (unlikely(cpy_r_r131 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL324;
+        goto CPyL327;
     }
     PyObject *cpy_r_r132[1] = {cpy_r_r128};
     cpy_r_r133 = (PyObject **)&cpy_r_r132;
@@ -18892,14 +18895,14 @@ CPyL100: ;
     CPy_DECREF(cpy_r_r131);
     if (unlikely(cpy_r_r134 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL324;
+        goto CPyL327;
     }
     CPy_DECREF(cpy_r_r128);
     if (likely(PyUnicode_Check(cpy_r_r134)))
         cpy_r_r135 = cpy_r_r134;
     else {
         CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 208, CPyStatic_async_ens___globals, "str", cpy_r_r134);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_);
@@ -18908,14 +18911,14 @@ CPyL100: ;
     cpy_r_r136 = 1;
     if (unlikely(!cpy_r_r136)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     } else
-        goto CPyL114;
+        goto CPyL117;
 CPyL105: ;
     cpy_r_r137 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r137 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 209, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r137);
 CPyL106: ;
@@ -18924,7 +18927,7 @@ CPyL106: ;
     cpy_r_r140 = CPyDict_GetItem(cpy_r_r138, cpy_r_r139);
     if (unlikely(cpy_r_r140 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL325;
+        goto CPyL328;
     }
     PyObject *cpy_r_r141[1] = {cpy_r_r137};
     cpy_r_r142 = (PyObject **)&cpy_r_r141;
@@ -18932,7 +18935,7 @@ CPyL106: ;
     CPy_DECREF(cpy_r_r140);
     if (unlikely(cpy_r_r143 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL325;
+        goto CPyL328;
     }
     CPy_DECREF(cpy_r_r137);
     if (unlikely(!PyBool_Check(cpy_r_r143))) {
@@ -18942,1335 +18945,1359 @@ CPyL106: ;
     CPy_DECREF(cpy_r_r143);
     if (unlikely(cpy_r_r144 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
-    if (cpy_r_r144) goto CPyL114;
-    cpy_r_r145 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'You must supply the address in checksum format' */
-    cpy_r_r146 = (PyObject *)CPyType_exceptions___ENSValueError;
-    PyObject *cpy_r_r147[1] = {cpy_r_r145};
-    cpy_r_r148 = (PyObject **)&cpy_r_r147;
-    cpy_r_r149 = PyObject_Vectorcall(cpy_r_r146, cpy_r_r148, 1, 0);
-    if (unlikely(cpy_r_r149 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+    if (!cpy_r_r144) goto CPyL113;
+    cpy_r_r145 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
+    if (unlikely(cpy_r_r145 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address", 210, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    if (likely(Py_TYPE(cpy_r_r149) == CPyType_exceptions___ENSValueError))
-        cpy_r_r150 = cpy_r_r149;
+    CPy_INCREF(cpy_r_r145);
+CPyL111: ;
+    if (likely(PyUnicode_Check(cpy_r_r145)))
+        cpy_r_r146 = cpy_r_r145;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 210, CPyStatic_async_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r149);
-        goto CPyL298;
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 210, CPyStatic_async_ens___globals, "str", cpy_r_r145);
+        goto CPyL301;
     }
-    CPy_Raise(cpy_r_r150);
-    CPy_DECREF_NO_IMM(cpy_r_r150);
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ != NULL) {
+        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ = cpy_r_r146;
+    cpy_r_r147 = 1;
+    if (unlikely(!cpy_r_r147)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    } else
+        goto CPyL117;
+CPyL113: ;
+    cpy_r_r148 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'You must supply the address in checksum format' */
+    cpy_r_r149 = (PyObject *)CPyType_exceptions___ENSValueError;
+    PyObject *cpy_r_r150[1] = {cpy_r_r148};
+    cpy_r_r151 = (PyObject **)&cpy_r_r150;
+    cpy_r_r152 = PyObject_Vectorcall(cpy_r_r149, cpy_r_r151, 1, 0);
+    if (unlikely(cpy_r_r152 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    if (likely(Py_TYPE(cpy_r_r152) == CPyType_exceptions___ENSValueError))
+        cpy_r_r153 = cpy_r_r152;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 212, CPyStatic_async_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r152);
+        goto CPyL301;
+    }
+    CPy_Raise(cpy_r_r153);
+    CPy_DECREF_NO_IMM(cpy_r_r153);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_Unreachable();
-CPyL114: ;
-    cpy_r_r151 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
-    if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 211, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r151);
-CPyL115: ;
-    cpy_r_r152 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
-    if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 211, CPyStatic_async_ens___globals);
-        goto CPyL326;
-    }
-    CPy_INCREF(cpy_r_r152);
-CPyL116: ;
-    cpy_r_r153 = NULL;
-    cpy_r_r154 = CPyDef_async_ens___AsyncENS___address(cpy_r_r151, cpy_r_r152, cpy_r_r153);
-    CPy_DECREF(cpy_r_r152);
-    CPy_DECREF_NO_IMM(cpy_r_r151);
+CPyL117: ;
+    cpy_r_r154 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r154 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 213, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r154;
-    cpy_r_r155 = 1;
-    if (unlikely(!cpy_r_r155)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r156 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
-    if (unlikely(cpy_r_r156 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__12", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r156);
-CPyL119: ;
-    cpy_r_r157 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r158 = NULL;
-    cpy_r_r9 = cpy_r_r158;
-    cpy_r_r159 = (PyObject **)&cpy_r_r9;
-    cpy_r_r160 = CPyDef_async_ens___address_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r156, cpy_r_r157, cpy_r_r157, cpy_r_r157, cpy_r_r157, cpy_r_r159);
-    CPy_DECREF_NO_IMM(cpy_r_r156);
-    if (cpy_r_r160 != NULL) goto CPyL327;
-    cpy_r_r161 = cpy_r_r9 != 0;
-    if (unlikely(!cpy_r_r161)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL328;
-    }
-    cpy_r_r162 = cpy_r_r9;
-    cpy_r_r163 = NULL;
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r163;
-    cpy_r_r164 = 1;
-    if (unlikely(!cpy_r_r164)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+    CPy_INCREF_NO_IMM(cpy_r_r154);
+CPyL118: ;
+    cpy_r_r155 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
+    if (unlikely(cpy_r_r155 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 213, CPyStatic_async_ens___globals);
         goto CPyL329;
-    } else
-        goto CPyL144;
+    }
+    CPy_INCREF(cpy_r_r155);
+CPyL119: ;
+    cpy_r_r156 = NULL;
+    cpy_r_r157 = CPyDef_async_ens___AsyncENS___address(cpy_r_r154, cpy_r_r155, cpy_r_r156);
+    CPy_DECREF(cpy_r_r155);
+    CPy_DECREF_NO_IMM(cpy_r_r154);
+    if (unlikely(cpy_r_r157 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r157;
+    cpy_r_r158 = 1;
+    if (unlikely(!cpy_r_r158)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r159 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
+    if (unlikely(cpy_r_r159 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__12", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF_NO_IMM(cpy_r_r159);
 CPyL122: ;
-    cpy_r_r165 = cpy_r_r160;
-CPyL123: ;
+    cpy_r_r160 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r161 = NULL;
+    cpy_r_r9 = cpy_r_r161;
+    cpy_r_r162 = (PyObject **)&cpy_r_r9;
+    cpy_r_r163 = CPyDef_async_ens___address_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r159, cpy_r_r160, cpy_r_r160, cpy_r_r160, cpy_r_r160, cpy_r_r162);
+    CPy_DECREF_NO_IMM(cpy_r_r159);
+    if (cpy_r_r163 != NULL) goto CPyL330;
+    cpy_r_r164 = cpy_r_r9 != 0;
+    if (unlikely(!cpy_r_r164)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL331;
+    }
+    cpy_r_r165 = cpy_r_r9;
+    cpy_r_r166 = NULL;
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r166;
+    cpy_r_r167 = 1;
+    if (unlikely(!cpy_r_r167)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL332;
+    } else
+        goto CPyL147;
+CPyL125: ;
+    cpy_r_r168 = cpy_r_r163;
+CPyL126: ;
     ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 3;
-    return cpy_r_r165;
-CPyL124: ;
-    cpy_r_r167 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r168 = cpy_r_type != cpy_r_r167;
-    if (!cpy_r_r168) goto CPyL330;
+    return cpy_r_r168;
+CPyL127: ;
+    cpy_r_r170 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r171 = cpy_r_type != cpy_r_r170;
+    if (!cpy_r_r171) goto CPyL333;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL128;
+        goto CPyL131;
     } else
-        goto CPyL331;
-CPyL126: ;
+        goto CPyL334;
+CPyL129: ;
     CPy_Unreachable();
-CPyL127: ;
+CPyL130: ;
     CPy_INCREF(cpy_r_arg);
-    goto CPyL139;
-CPyL128: ;
-    cpy_r_r169 = CPy_CatchError();
+    goto CPyL142;
+CPyL131: ;
+    cpy_r_r172 = CPy_CatchError();
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13.f0 != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13.f0);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13.f1);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13.f2);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r169;
-    cpy_r_r170 = 1;
-    if (unlikely(!cpy_r_r170)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r172;
+    cpy_r_r173 = 1;
+    if (unlikely(!cpy_r_r173)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL332;
+        goto CPyL335;
     }
-    cpy_r_r171 = (PyObject **)&cpy_r_r11;
-    cpy_r_r172 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
-    if (unlikely(cpy_r_r172 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__12", -1, CPyStatic_async_ens___globals);
-        goto CPyL332;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r172);
-CPyL130: ;
-    cpy_r_r173 = CPy_YieldFromErrorHandle(cpy_r_r172, cpy_r_r171);
-    CPy_DecRef(cpy_r_r172);
-    if (unlikely(cpy_r_r173 == 2)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL332;
-    }
-    if (cpy_r_r173) goto CPyL134;
-    cpy_r_r165 = cpy_r_r11;
-    cpy_r_r174 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r174.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
-        goto CPyL333;
-    }
-    CPy_INCREF(cpy_r_r174.f0);
-    CPy_INCREF(cpy_r_r174.f1);
-    CPy_INCREF(cpy_r_r174.f2);
-CPyL133: ;
-    CPy_RestoreExcInfo(cpy_r_r174);
-    CPy_DecRef(cpy_r_r174.f0);
-    CPy_DecRef(cpy_r_r174.f1);
-    CPy_DecRef(cpy_r_r174.f2);
-    goto CPyL123;
-CPyL134: ;
-    cpy_r_r162 = cpy_r_r11;
-    cpy_r_r175 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r175.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
-        goto CPyL334;
-    }
-    CPy_INCREF(cpy_r_r175.f0);
-    CPy_INCREF(cpy_r_r175.f1);
-    CPy_INCREF(cpy_r_r175.f2);
-CPyL135: ;
-    CPy_RestoreExcInfo(cpy_r_r175);
-    CPy_DecRef(cpy_r_r175.f0);
-    CPy_DecRef(cpy_r_r175.f1);
-    CPy_DecRef(cpy_r_r175.f2);
-    goto CPyL144;
-CPyL136: ;
-    cpy_r_r176 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r176.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r176.f0);
-    CPy_INCREF(cpy_r_r176.f1);
-    CPy_INCREF(cpy_r_r176.f2);
-CPyL137: ;
-    CPy_RestoreExcInfo(cpy_r_r176);
-    CPy_DecRef(cpy_r_r176.f0);
-    CPy_DecRef(cpy_r_r176.f1);
-    CPy_DecRef(cpy_r_r176.f2);
-    cpy_r_r177 = CPy_KeepPropagating();
-    if (!cpy_r_r177) goto CPyL298;
-    CPy_Unreachable();
-CPyL139: ;
-    cpy_r_r178 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
-    if (unlikely(cpy_r_r178 == NULL)) {
+    cpy_r_r174 = (PyObject **)&cpy_r_r11;
+    cpy_r_r175 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
+    if (unlikely(cpy_r_r175 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__12", -1, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
-    CPy_INCREF_NO_IMM(cpy_r_r178);
-CPyL140: ;
-    cpy_r_r179 = CPyIter_Send(cpy_r_r178, cpy_r_arg);
-    CPy_DECREF_NO_IMM(cpy_r_r178);
-    CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r179 == NULL) goto CPyL142;
-    cpy_r_r165 = cpy_r_r179;
-    goto CPyL123;
-CPyL142: ;
-    cpy_r_r180 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r180 == NULL)) {
+    CPy_INCREF_NO_IMM(cpy_r_r175);
+CPyL133: ;
+    cpy_r_r176 = CPy_YieldFromErrorHandle(cpy_r_r175, cpy_r_r174);
+    CPy_DecRef(cpy_r_r175);
+    if (unlikely(cpy_r_r176 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL335;
     }
-    cpy_r_r162 = cpy_r_r180;
-CPyL144: ;
-    if (PyUnicode_Check(cpy_r_r162))
-        cpy_r_r181 = cpy_r_r162;
-    else {
-        cpy_r_r181 = NULL;
-    }
-    if (cpy_r_r181 != NULL) goto __LL39;
-    if (cpy_r_r162 == Py_None)
-        cpy_r_r181 = cpy_r_r162;
-    else {
-        cpy_r_r181 = NULL;
-    }
-    if (cpy_r_r181 != NULL) goto __LL39;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 211, CPyStatic_async_ens___globals, "str or None", cpy_r_r162);
-    goto CPyL298;
-__LL39: ;
-    cpy_r_r182 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
-    if (unlikely(cpy_r_r182 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 211, CPyStatic_async_ens___globals);
+    if (cpy_r_r176) goto CPyL137;
+    cpy_r_r168 = cpy_r_r11;
+    cpy_r_r177 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r177.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
         goto CPyL336;
     }
-    CPy_INCREF(cpy_r_r182);
-CPyL146: ;
-    cpy_r_r183 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r184 = cpy_r_r181 == cpy_r_r183;
-    if (!cpy_r_r184) goto CPyL148;
-    cpy_r_r185 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r186 = cpy_r_r182 == cpy_r_r185;
-    cpy_r_r187 = cpy_r_r186;
-    goto CPyL151;
-CPyL148: ;
-    cpy_r_r188 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r189 = cpy_r_r182 == cpy_r_r188;
-    if (!cpy_r_r189) goto CPyL150;
-    cpy_r_r187 = 0;
-    goto CPyL151;
-CPyL150: ;
-    cpy_r_r190 = cpy_r_r181;
-    cpy_r_r191 = cpy_r_r182;
-    cpy_r_r192 = CPyStr_Equal(cpy_r_r190, cpy_r_r191);
-    cpy_r_r187 = cpy_r_r192;
-CPyL151: ;
-    CPy_DECREF(cpy_r_r181);
-    CPy_DECREF(cpy_r_r182);
-    if (!cpy_r_r187) goto CPyL157;
-    cpy_r_r193 = Py_None;
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL156;
-    CPyGen_SetStopIterationValue(cpy_r_r193);
-    if (!0) goto CPyL298;
-    CPy_Unreachable();
-CPyL156: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r193;
-    return 0;
-CPyL157: ;
-    cpy_r_r195 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
-    if (unlikely(cpy_r_r195 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 213, CPyStatic_async_ens___globals);
-        goto CPyL298;
+    CPy_INCREF(cpy_r_r177.f0);
+    CPy_INCREF(cpy_r_r177.f1);
+    CPy_INCREF(cpy_r_r177.f2);
+CPyL136: ;
+    CPy_RestoreExcInfo(cpy_r_r177);
+    CPy_DecRef(cpy_r_r177.f0);
+    CPy_DecRef(cpy_r_r177.f1);
+    CPy_DecRef(cpy_r_r177.f2);
+    goto CPyL126;
+CPyL137: ;
+    cpy_r_r165 = cpy_r_r11;
+    cpy_r_r178 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r178.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
+        goto CPyL337;
     }
-    CPy_INCREF(cpy_r_r195);
-CPyL158: ;
-    cpy_r_r196 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r197 = cpy_r_r195 == cpy_r_r196;
-    CPy_DECREF(cpy_r_r195);
-    if (!cpy_r_r197) goto CPyL163;
-    cpy_r_r198 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
-    if (likely(cpy_r_r198 != NULL)) goto CPyL162;
-    PyErr_SetString(PyExc_NameError, "value for final name \"EMPTY_ADDR_HEX\" was not set");
-    cpy_r_r199 = 0;
-    if (unlikely(!cpy_r_r199)) {
+    CPy_INCREF(cpy_r_r178.f0);
+    CPy_INCREF(cpy_r_r178.f1);
+    CPy_INCREF(cpy_r_r178.f2);
+CPyL138: ;
+    CPy_RestoreExcInfo(cpy_r_r178);
+    CPy_DecRef(cpy_r_r178.f0);
+    CPy_DecRef(cpy_r_r178.f1);
+    CPy_DecRef(cpy_r_r178.f2);
+    goto CPyL147;
+CPyL139: ;
+    cpy_r_r179 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r179.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__13", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r179.f0);
+    CPy_INCREF(cpy_r_r179.f1);
+    CPy_INCREF(cpy_r_r179.f2);
+CPyL140: ;
+    CPy_RestoreExcInfo(cpy_r_r179);
+    CPy_DecRef(cpy_r_r179.f0);
+    CPy_DecRef(cpy_r_r179.f1);
+    CPy_DecRef(cpy_r_r179.f2);
+    cpy_r_r180 = CPy_KeepPropagating();
+    if (!cpy_r_r180) goto CPyL301;
+    CPy_Unreachable();
+CPyL142: ;
+    cpy_r_r181 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
+    if (unlikely(cpy_r_r181 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__12", -1, CPyStatic_async_ens___globals);
+        goto CPyL338;
+    }
+    CPy_INCREF_NO_IMM(cpy_r_r181);
+CPyL143: ;
+    cpy_r_r182 = CPyIter_Send(cpy_r_r181, cpy_r_arg);
+    CPy_DECREF_NO_IMM(cpy_r_r181);
+    CPy_DECREF(cpy_r_arg);
+    if (cpy_r_r182 == NULL) goto CPyL145;
+    cpy_r_r168 = cpy_r_r182;
+    goto CPyL126;
+CPyL145: ;
+    cpy_r_r183 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r183 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
+    }
+    cpy_r_r165 = cpy_r_r183;
+CPyL147: ;
+    if (PyUnicode_Check(cpy_r_r165))
+        cpy_r_r184 = cpy_r_r165;
+    else {
+        cpy_r_r184 = NULL;
+    }
+    if (cpy_r_r184 != NULL) goto __LL39;
+    if (cpy_r_r165 == Py_None)
+        cpy_r_r184 = cpy_r_r165;
+    else {
+        cpy_r_r184 = NULL;
+    }
+    if (cpy_r_r184 != NULL) goto __LL39;
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 213, CPyStatic_async_ens___globals, "str or None", cpy_r_r165);
+    goto CPyL301;
+__LL39: ;
+    cpy_r_r185 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
+    if (unlikely(cpy_r_r185 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 213, CPyStatic_async_ens___globals);
+        goto CPyL339;
+    }
+    CPy_INCREF(cpy_r_r185);
+CPyL149: ;
+    cpy_r_r186 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r187 = cpy_r_r184 == cpy_r_r186;
+    if (!cpy_r_r187) goto CPyL151;
+    cpy_r_r188 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r189 = cpy_r_r185 == cpy_r_r188;
+    cpy_r_r190 = cpy_r_r189;
+    goto CPyL154;
+CPyL151: ;
+    cpy_r_r191 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r192 = cpy_r_r185 == cpy_r_r191;
+    if (!cpy_r_r192) goto CPyL153;
+    cpy_r_r190 = 0;
+    goto CPyL154;
+CPyL153: ;
+    cpy_r_r193 = cpy_r_r184;
+    cpy_r_r194 = cpy_r_r185;
+    cpy_r_r195 = CPyStr_Equal(cpy_r_r193, cpy_r_r194);
+    cpy_r_r190 = cpy_r_r195;
+CPyL154: ;
+    CPy_DECREF(cpy_r_r184);
+    CPy_DECREF(cpy_r_r185);
+    if (!cpy_r_r190) goto CPyL160;
+    cpy_r_r196 = Py_None;
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL159;
+    CPyGen_SetStopIterationValue(cpy_r_r196);
+    if (!0) goto CPyL301;
+    CPy_Unreachable();
+CPyL159: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r196;
+    return 0;
+CPyL160: ;
+    cpy_r_r198 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
+    if (unlikely(cpy_r_r198 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 215, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r198);
+CPyL161: ;
+    cpy_r_r199 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r200 = cpy_r_r198 == cpy_r_r199;
+    CPy_DECREF(cpy_r_r198);
+    if (!cpy_r_r200) goto CPyL166;
+    cpy_r_r201 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
+    if (likely(cpy_r_r201 != NULL)) goto CPyL165;
+    PyErr_SetString(PyExc_NameError, "value for final name \"EMPTY_ADDR_HEX\" was not set");
+    cpy_r_r202 = 0;
+    if (unlikely(!cpy_r_r202)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
     CPy_Unreachable();
-CPyL162: ;
-    CPy_INCREF(cpy_r_r198);
+CPyL165: ;
+    CPy_INCREF(cpy_r_r201);
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ = cpy_r_r198;
-    cpy_r_r200 = 1;
-    if (unlikely(!cpy_r_r200)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_ = cpy_r_r201;
+    cpy_r_r203 = 1;
+    if (unlikely(!cpy_r_r203)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
-CPyL163: ;
-    cpy_r_r201 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
-    if (unlikely(cpy_r_r201 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "owner", 215, CPyStatic_async_ens___globals);
-        goto CPyL298;
+CPyL166: ;
+    cpy_r_r204 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
+    if (unlikely(cpy_r_r204 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "owner", 217, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    CPy_INCREF(cpy_r_r201);
-CPyL164: ;
-    cpy_r_r202 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
-    if (unlikely(cpy_r_r202 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 215, CPyStatic_async_ens___globals);
-        goto CPyL337;
-    }
-    CPy_INCREF(cpy_r_r202);
-CPyL165: ;
-    if (likely(cpy_r_r202 != Py_None))
-        cpy_r_r203 = cpy_r_r202;
-    else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 215, CPyStatic_async_ens___globals, "dict", cpy_r_r202);
-        goto CPyL337;
-    }
-    cpy_r_r204 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
-    cpy_r_r205 = CPyDict_SetItem(cpy_r_r203, cpy_r_r204, cpy_r_r201);
-    CPy_DECREF(cpy_r_r203);
-    CPy_DECREF(cpy_r_r201);
-    cpy_r_r206 = cpy_r_r205 >= 0;
-    if (unlikely(!cpy_r_r206)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r207 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
-    if (unlikely(cpy_r_r207 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 217, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r207);
-CPyL168: ;
-    cpy_r_r208 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
-    if (unlikely(cpy_r_r208 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 217, CPyStatic_async_ens___globals);
-        goto CPyL338;
-    }
-    CPy_INCREF(cpy_r_r208);
-CPyL169: ;
-    cpy_r_r209 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
-    if (unlikely(cpy_r_r209 == NULL)) {
+    CPy_INCREF(cpy_r_r204);
+CPyL167: ;
+    cpy_r_r205 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
+    if (unlikely(cpy_r_r205 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 217, CPyStatic_async_ens___globals);
-        goto CPyL339;
+        goto CPyL340;
     }
-    CPy_INCREF(cpy_r_r209);
-CPyL170: ;
-    if (likely(cpy_r_r209 != Py_None))
-        cpy_r_r210 = cpy_r_r209;
+    CPy_INCREF(cpy_r_r205);
+CPyL168: ;
+    if (likely(cpy_r_r205 != Py_None))
+        cpy_r_r206 = cpy_r_r205;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 217, CPyStatic_async_ens___globals, "dict", cpy_r_r209);
-        goto CPyL339;
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 217, CPyStatic_async_ens___globals, "dict", cpy_r_r205);
+        goto CPyL340;
     }
-    cpy_r_r211 = NULL;
-    cpy_r_r212 = CPyDef_async_ens___AsyncENS____set_resolver(cpy_r_r207, cpy_r_r208, cpy_r_r211, cpy_r_r210);
-    CPy_DECREF(cpy_r_r208);
-    CPy_DECREF(cpy_r_r210);
-    CPy_DECREF_NO_IMM(cpy_r_r207);
-    if (unlikely(cpy_r_r212 == NULL)) {
+    cpy_r_r207 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
+    cpy_r_r208 = CPyDict_SetItem(cpy_r_r206, cpy_r_r207, cpy_r_r204);
+    CPy_DECREF(cpy_r_r206);
+    CPy_DECREF(cpy_r_r204);
+    cpy_r_r209 = cpy_r_r208 >= 0;
+    if (unlikely(!cpy_r_r209)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14);
+    cpy_r_r210 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
+    if (unlikely(cpy_r_r210 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "self", 219, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r212;
-    cpy_r_r213 = 1;
-    if (unlikely(!cpy_r_r213)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r214 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r214 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__14", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r214);
-CPyL174: ;
-    cpy_r_r215 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r216 = NULL;
-    cpy_r_r13 = cpy_r_r216;
-    cpy_r_r217 = (PyObject **)&cpy_r_r13;
-    cpy_r_r218 = CPyDef_async_ens____set_resolver_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r214, cpy_r_r215, cpy_r_r215, cpy_r_r215, cpy_r_r215, cpy_r_r217);
-    CPy_DECREF_NO_IMM(cpy_r_r214);
-    if (cpy_r_r218 != NULL) goto CPyL340;
-    cpy_r_r219 = cpy_r_r13 != 0;
-    if (unlikely(!cpy_r_r219)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+    CPy_INCREF_NO_IMM(cpy_r_r210);
+CPyL171: ;
+    cpy_r_r211 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
+    if (unlikely(cpy_r_r211 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 219, CPyStatic_async_ens___globals);
         goto CPyL341;
     }
-    cpy_r_r220 = cpy_r_r13;
-    cpy_r_r221 = NULL;
+    CPy_INCREF(cpy_r_r211);
+CPyL172: ;
+    cpy_r_r212 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
+    if (unlikely(cpy_r_r212 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 219, CPyStatic_async_ens___globals);
+        goto CPyL342;
+    }
+    CPy_INCREF(cpy_r_r212);
+CPyL173: ;
+    if (likely(cpy_r_r212 != Py_None))
+        cpy_r_r213 = cpy_r_r212;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 219, CPyStatic_async_ens___globals, "dict", cpy_r_r212);
+        goto CPyL342;
+    }
+    cpy_r_r214 = NULL;
+    cpy_r_r215 = CPyDef_async_ens___AsyncENS____set_resolver(cpy_r_r210, cpy_r_r211, cpy_r_r214, cpy_r_r213);
+    CPy_DECREF(cpy_r_r211);
+    CPy_DECREF(cpy_r_r213);
+    CPy_DECREF_NO_IMM(cpy_r_r210);
+    if (unlikely(cpy_r_r215 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 != NULL) {
         CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r221;
-    cpy_r_r222 = 1;
-    if (unlikely(!cpy_r_r222)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL342;
-    } else
-        goto CPyL199;
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r215;
+    cpy_r_r216 = 1;
+    if (unlikely(!cpy_r_r216)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r217 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r217 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__14", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF_NO_IMM(cpy_r_r217);
 CPyL177: ;
-    cpy_r_r223 = cpy_r_r218;
-CPyL178: ;
+    cpy_r_r218 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r219 = NULL;
+    cpy_r_r13 = cpy_r_r219;
+    cpy_r_r220 = (PyObject **)&cpy_r_r13;
+    cpy_r_r221 = CPyDef_async_ens____set_resolver_AsyncENS_gen_____mypyc_generator_helper__(cpy_r_r217, cpy_r_r218, cpy_r_r218, cpy_r_r218, cpy_r_r218, cpy_r_r220);
+    CPy_DECREF_NO_IMM(cpy_r_r217);
+    if (cpy_r_r221 != NULL) goto CPyL343;
+    cpy_r_r222 = cpy_r_r13 != 0;
+    if (unlikely(!cpy_r_r222)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL344;
+    }
+    cpy_r_r223 = cpy_r_r13;
+    cpy_r_r224 = NULL;
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r224;
+    cpy_r_r225 = 1;
+    if (unlikely(!cpy_r_r225)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL345;
+    } else
+        goto CPyL202;
+CPyL180: ;
+    cpy_r_r226 = cpy_r_r221;
+CPyL181: ;
     ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 4;
-    return cpy_r_r223;
-CPyL179: ;
-    cpy_r_r225 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r226 = cpy_r_type != cpy_r_r225;
-    if (!cpy_r_r226) goto CPyL343;
+    return cpy_r_r226;
+CPyL182: ;
+    cpy_r_r228 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r229 = cpy_r_type != cpy_r_r228;
+    if (!cpy_r_r229) goto CPyL346;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL183;
+        goto CPyL186;
     } else
-        goto CPyL344;
-CPyL181: ;
+        goto CPyL347;
+CPyL184: ;
     CPy_Unreachable();
-CPyL182: ;
+CPyL185: ;
     CPy_INCREF(cpy_r_arg);
-    goto CPyL194;
-CPyL183: ;
-    cpy_r_r227 = CPy_CatchError();
+    goto CPyL197;
+CPyL186: ;
+    cpy_r_r230 = CPy_CatchError();
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15.f0 != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15.f0);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15.f1);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15.f2);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15 = cpy_r_r227;
-    cpy_r_r228 = 1;
-    if (unlikely(!cpy_r_r228)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15 = cpy_r_r230;
+    cpy_r_r231 = 1;
+    if (unlikely(!cpy_r_r231)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL345;
+        goto CPyL348;
     }
-    cpy_r_r229 = (PyObject **)&cpy_r_r15;
-    cpy_r_r230 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r230 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__14", -1, CPyStatic_async_ens___globals);
-        goto CPyL345;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r230);
-CPyL185: ;
-    cpy_r_r231 = CPy_YieldFromErrorHandle(cpy_r_r230, cpy_r_r229);
-    CPy_DecRef(cpy_r_r230);
-    if (unlikely(cpy_r_r231 == 2)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL345;
-    }
-    if (cpy_r_r231) goto CPyL189;
-    cpy_r_r223 = cpy_r_r15;
-    cpy_r_r232 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
-    if (unlikely(cpy_r_r232.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
-        goto CPyL346;
-    }
-    CPy_INCREF(cpy_r_r232.f0);
-    CPy_INCREF(cpy_r_r232.f1);
-    CPy_INCREF(cpy_r_r232.f2);
-CPyL188: ;
-    CPy_RestoreExcInfo(cpy_r_r232);
-    CPy_DecRef(cpy_r_r232.f0);
-    CPy_DecRef(cpy_r_r232.f1);
-    CPy_DecRef(cpy_r_r232.f2);
-    goto CPyL178;
-CPyL189: ;
-    cpy_r_r220 = cpy_r_r15;
-    cpy_r_r233 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
-    if (unlikely(cpy_r_r233.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
-        goto CPyL347;
-    }
-    CPy_INCREF(cpy_r_r233.f0);
-    CPy_INCREF(cpy_r_r233.f1);
-    CPy_INCREF(cpy_r_r233.f2);
-CPyL190: ;
-    CPy_RestoreExcInfo(cpy_r_r233);
-    CPy_DecRef(cpy_r_r233.f0);
-    CPy_DecRef(cpy_r_r233.f1);
-    CPy_DecRef(cpy_r_r233.f2);
-    goto CPyL199;
-CPyL191: ;
-    cpy_r_r234 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
-    if (unlikely(cpy_r_r234.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r234.f0);
-    CPy_INCREF(cpy_r_r234.f1);
-    CPy_INCREF(cpy_r_r234.f2);
-CPyL192: ;
-    CPy_RestoreExcInfo(cpy_r_r234);
-    CPy_DecRef(cpy_r_r234.f0);
-    CPy_DecRef(cpy_r_r234.f1);
-    CPy_DecRef(cpy_r_r234.f2);
-    cpy_r_r235 = CPy_KeepPropagating();
-    if (!cpy_r_r235) goto CPyL298;
-    CPy_Unreachable();
-CPyL194: ;
-    cpy_r_r236 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r236 == NULL)) {
+    cpy_r_r232 = (PyObject **)&cpy_r_r15;
+    cpy_r_r233 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r233 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__14", -1, CPyStatic_async_ens___globals);
         goto CPyL348;
     }
-    CPy_INCREF_NO_IMM(cpy_r_r236);
-CPyL195: ;
-    cpy_r_r237 = CPyIter_Send(cpy_r_r236, cpy_r_arg);
-    CPy_DECREF_NO_IMM(cpy_r_r236);
-    CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r237 == NULL) goto CPyL197;
-    cpy_r_r223 = cpy_r_r237;
-    goto CPyL178;
-CPyL197: ;
-    cpy_r_r238 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r238 == NULL)) {
+    CPy_INCREF_NO_IMM(cpy_r_r233);
+CPyL188: ;
+    cpy_r_r234 = CPy_YieldFromErrorHandle(cpy_r_r233, cpy_r_r232);
+    CPy_DecRef(cpy_r_r233);
+    if (unlikely(cpy_r_r234 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL348;
     }
-    cpy_r_r220 = cpy_r_r238;
-CPyL199: ;
+    if (cpy_r_r234) goto CPyL192;
+    cpy_r_r226 = cpy_r_r15;
+    cpy_r_r235 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
+    if (unlikely(cpy_r_r235.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
+        goto CPyL349;
+    }
+    CPy_INCREF(cpy_r_r235.f0);
+    CPy_INCREF(cpy_r_r235.f1);
+    CPy_INCREF(cpy_r_r235.f2);
+CPyL191: ;
+    CPy_RestoreExcInfo(cpy_r_r235);
+    CPy_DecRef(cpy_r_r235.f0);
+    CPy_DecRef(cpy_r_r235.f1);
+    CPy_DecRef(cpy_r_r235.f2);
+    goto CPyL181;
+CPyL192: ;
+    cpy_r_r223 = cpy_r_r15;
+    cpy_r_r236 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
+    if (unlikely(cpy_r_r236.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
+        goto CPyL350;
+    }
+    CPy_INCREF(cpy_r_r236.f0);
+    CPy_INCREF(cpy_r_r236.f1);
+    CPy_INCREF(cpy_r_r236.f2);
+CPyL193: ;
+    CPy_RestoreExcInfo(cpy_r_r236);
+    CPy_DecRef(cpy_r_r236.f0);
+    CPy_DecRef(cpy_r_r236.f1);
+    CPy_DecRef(cpy_r_r236.f2);
+    goto CPyL202;
+CPyL194: ;
+    cpy_r_r237 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
+    if (unlikely(cpy_r_r237.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__15", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r237.f0);
+    CPy_INCREF(cpy_r_r237.f1);
+    CPy_INCREF(cpy_r_r237.f2);
+CPyL195: ;
+    CPy_RestoreExcInfo(cpy_r_r237);
+    CPy_DecRef(cpy_r_r237.f0);
+    CPy_DecRef(cpy_r_r237.f1);
+    CPy_DecRef(cpy_r_r237.f2);
+    cpy_r_r238 = CPy_KeepPropagating();
+    if (!cpy_r_r238) goto CPyL301;
+    CPy_Unreachable();
+CPyL197: ;
+    cpy_r_r239 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r239 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__14", -1, CPyStatic_async_ens___globals);
+        goto CPyL351;
+    }
+    CPy_INCREF_NO_IMM(cpy_r_r239);
+CPyL198: ;
+    cpy_r_r240 = CPyIter_Send(cpy_r_r239, cpy_r_arg);
+    CPy_DECREF_NO_IMM(cpy_r_r239);
+    CPy_DECREF(cpy_r_arg);
+    if (cpy_r_r240 == NULL) goto CPyL200;
+    cpy_r_r226 = cpy_r_r240;
+    goto CPyL181;
+CPyL200: ;
+    cpy_r_r241 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r241 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r223 = cpy_r_r241;
+CPyL202: ;
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver = cpy_r_r220;
-    cpy_r_r239 = 1;
-    if (unlikely(!cpy_r_r239)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver = cpy_r_r223;
+    cpy_r_r242 = 1;
+    if (unlikely(!cpy_r_r242)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
-    cpy_r_r240 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
-    if (unlikely(cpy_r_r240 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 218, CPyStatic_async_ens___globals);
-        goto CPyL298;
+    cpy_r_r243 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
+    if (unlikely(cpy_r_r243 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "name", 220, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    CPy_INCREF(cpy_r_r240);
-CPyL201: ;
-    cpy_r_r241 = CPyDef_faster_ens___utils___raw_name_to_hash(cpy_r_r240);
-    CPy_DECREF(cpy_r_r240);
-    if (unlikely(cpy_r_r241 == NULL)) {
+    CPy_INCREF(cpy_r_r243);
+CPyL204: ;
+    cpy_r_r244 = CPyDef_faster_ens___utils___raw_name_to_hash(cpy_r_r243);
+    CPy_DECREF(cpy_r_r243);
+    if (unlikely(cpy_r_r244 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node = cpy_r_r241;
-    cpy_r_r242 = 1;
-    if (unlikely(!cpy_r_r242)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node = cpy_r_r244;
+    cpy_r_r245 = 1;
+    if (unlikely(!cpy_r_r245)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
-    cpy_r_r243 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coin_type;
-    if (unlikely(cpy_r_r243 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "coin_type", 220, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r243);
-CPyL204: ;
-    cpy_r_r244 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r245 = cpy_r_r243 == cpy_r_r244;
-    CPy_DECREF(cpy_r_r243);
-    if (!cpy_r_r245) goto CPyL246;
-    cpy_r_r246 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
+    cpy_r_r246 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coin_type;
     if (unlikely(cpy_r_r246 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "resolver", 221, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "coin_type", 222, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r246);
-CPyL206: ;
-    cpy_r_r247 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
-    cpy_r_r248 = CPyObject_GetAttr(cpy_r_r246, cpy_r_r247);
+CPyL207: ;
+    cpy_r_r247 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r248 = cpy_r_r246 == cpy_r_r247;
     CPy_DECREF(cpy_r_r246);
-    if (unlikely(cpy_r_r248 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r249 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
+    if (!cpy_r_r248) goto CPyL249;
+    cpy_r_r249 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r249 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "node", 221, CPyStatic_async_ens___globals);
-        goto CPyL349;
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "resolver", 223, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
     CPy_INCREF(cpy_r_r249);
-CPyL208: ;
-    cpy_r_r250 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
-    if (unlikely(cpy_r_r250 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 221, CPyStatic_async_ens___globals);
-        goto CPyL350;
-    }
-    CPy_INCREF(cpy_r_r250);
 CPyL209: ;
-    cpy_r_r251 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
-    PyObject *cpy_r_r252[3] = {cpy_r_r248, cpy_r_r249, cpy_r_r250};
-    cpy_r_r253 = (PyObject **)&cpy_r_r252;
-    cpy_r_r254 = PyObject_VectorcallMethod(cpy_r_r251, cpy_r_r253, 9223372036854775811ULL, 0);
-    if (unlikely(cpy_r_r254 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL351;
-    }
-    CPy_DECREF(cpy_r_r248);
+    cpy_r_r250 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
+    cpy_r_r251 = CPyObject_GetAttr(cpy_r_r249, cpy_r_r250);
     CPy_DECREF(cpy_r_r249);
-    CPy_DECREF(cpy_r_r250);
-    cpy_r_r255 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
-    if (unlikely(cpy_r_r255 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 221, CPyStatic_async_ens___globals);
-        goto CPyL352;
-    }
-    CPy_INCREF(cpy_r_r255);
-CPyL211: ;
-    if (likely(cpy_r_r255 != Py_None))
-        cpy_r_r256 = cpy_r_r255;
-    else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 221, CPyStatic_async_ens___globals, "dict", cpy_r_r255);
-        goto CPyL352;
-    }
-    cpy_r_r257 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
-    PyObject *cpy_r_r258[2] = {cpy_r_r254, cpy_r_r256};
-    cpy_r_r259 = (PyObject **)&cpy_r_r258;
-    cpy_r_r260 = PyObject_VectorcallMethod(cpy_r_r257, cpy_r_r259, 9223372036854775810ULL, 0);
-    if (unlikely(cpy_r_r260 == NULL)) {
+    if (unlikely(cpy_r_r251 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r252 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
+    if (unlikely(cpy_r_r252 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "node", 223, CPyStatic_async_ens___globals);
+        goto CPyL352;
+    }
+    CPy_INCREF(cpy_r_r252);
+CPyL211: ;
+    cpy_r_r253 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
+    if (unlikely(cpy_r_r253 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 223, CPyStatic_async_ens___globals);
         goto CPyL353;
     }
-    CPy_DECREF(cpy_r_r254);
-    CPy_DECREF(cpy_r_r256);
-    cpy_r_r261 = CPy_GetCoro(cpy_r_r260);
-    CPy_DECREF(cpy_r_r260);
-    if (unlikely(cpy_r_r261 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 != NULL) {
-        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 = cpy_r_r261;
-    cpy_r_r262 = 1;
-    if (unlikely(!cpy_r_r262)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r263 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
-    if (unlikely(cpy_r_r263 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__16", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r263);
-CPyL216: ;
-    cpy_r_r264 = CPyIter_Next(cpy_r_r263);
-    CPy_DECREF(cpy_r_r263);
-    if (cpy_r_r264 != NULL) goto CPyL219;
-    cpy_r_r265 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r265 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r266 = cpy_r_r265;
-    cpy_r_r267 = NULL;
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 != NULL) {
-        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 = cpy_r_r267;
-    cpy_r_r268 = 1;
-    if (unlikely(!cpy_r_r268)) {
+    CPy_INCREF(cpy_r_r253);
+CPyL212: ;
+    cpy_r_r254 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    PyObject *cpy_r_r255[3] = {cpy_r_r251, cpy_r_r252, cpy_r_r253};
+    cpy_r_r256 = (PyObject **)&cpy_r_r255;
+    cpy_r_r257 = PyObject_VectorcallMethod(cpy_r_r254, cpy_r_r256, 9223372036854775811ULL, 0);
+    if (unlikely(cpy_r_r257 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
         goto CPyL354;
-    } else
-        goto CPyL241;
+    }
+    CPy_DECREF(cpy_r_r251);
+    CPy_DECREF(cpy_r_r252);
+    CPy_DECREF(cpy_r_r253);
+    cpy_r_r258 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
+    if (unlikely(cpy_r_r258 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 223, CPyStatic_async_ens___globals);
+        goto CPyL355;
+    }
+    CPy_INCREF(cpy_r_r258);
+CPyL214: ;
+    if (likely(cpy_r_r258 != Py_None))
+        cpy_r_r259 = cpy_r_r258;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 223, CPyStatic_async_ens___globals, "dict", cpy_r_r258);
+        goto CPyL355;
+    }
+    cpy_r_r260 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
+    PyObject *cpy_r_r261[2] = {cpy_r_r257, cpy_r_r259};
+    cpy_r_r262 = (PyObject **)&cpy_r_r261;
+    cpy_r_r263 = PyObject_VectorcallMethod(cpy_r_r260, cpy_r_r262, 9223372036854775810ULL, 0);
+    if (unlikely(cpy_r_r263 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL356;
+    }
+    CPy_DECREF(cpy_r_r257);
+    CPy_DECREF(cpy_r_r259);
+    cpy_r_r264 = CPy_GetCoro(cpy_r_r263);
+    CPy_DECREF(cpy_r_r263);
+    if (unlikely(cpy_r_r264 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 != NULL) {
+        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 = cpy_r_r264;
+    cpy_r_r265 = 1;
+    if (unlikely(!cpy_r_r265)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r266 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
+    if (unlikely(cpy_r_r266 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__16", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r266);
 CPyL219: ;
-    cpy_r_r269 = cpy_r_r264;
-CPyL220: ;
+    cpy_r_r267 = CPyIter_Next(cpy_r_r266);
+    CPy_DECREF(cpy_r_r266);
+    if (cpy_r_r267 != NULL) goto CPyL222;
+    cpy_r_r268 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r268 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r269 = cpy_r_r268;
+    cpy_r_r270 = NULL;
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 != NULL) {
+        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16 = cpy_r_r270;
+    cpy_r_r271 = 1;
+    if (unlikely(!cpy_r_r271)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL357;
+    } else
+        goto CPyL244;
+CPyL222: ;
+    cpy_r_r272 = cpy_r_r267;
+CPyL223: ;
     ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 5;
-    return cpy_r_r269;
-CPyL221: ;
-    cpy_r_r271 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r272 = cpy_r_type != cpy_r_r271;
-    if (!cpy_r_r272) goto CPyL355;
+    return cpy_r_r272;
+CPyL224: ;
+    cpy_r_r274 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r275 = cpy_r_type != cpy_r_r274;
+    if (!cpy_r_r275) goto CPyL358;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL225;
+        goto CPyL228;
     } else
-        goto CPyL356;
-CPyL223: ;
+        goto CPyL359;
+CPyL226: ;
     CPy_Unreachable();
-CPyL224: ;
+CPyL227: ;
     CPy_INCREF(cpy_r_arg);
-    goto CPyL236;
-CPyL225: ;
-    cpy_r_r273 = CPy_CatchError();
+    goto CPyL239;
+CPyL228: ;
+    cpy_r_r276 = CPy_CatchError();
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17.f0 != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17.f0);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17.f1);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17.f2);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17 = cpy_r_r273;
-    cpy_r_r274 = 1;
-    if (unlikely(!cpy_r_r274)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17 = cpy_r_r276;
+    cpy_r_r277 = 1;
+    if (unlikely(!cpy_r_r277)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL357;
+        goto CPyL360;
     }
-    cpy_r_r275 = (PyObject **)&cpy_r_r17;
-    cpy_r_r276 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
-    if (unlikely(cpy_r_r276 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__16", -1, CPyStatic_async_ens___globals);
-        goto CPyL357;
-    }
-    CPy_INCREF(cpy_r_r276);
-CPyL227: ;
-    cpy_r_r277 = CPy_YieldFromErrorHandle(cpy_r_r276, cpy_r_r275);
-    CPy_DecRef(cpy_r_r276);
-    if (unlikely(cpy_r_r277 == 2)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL357;
-    }
-    if (cpy_r_r277) goto CPyL231;
-    cpy_r_r269 = cpy_r_r17;
-    cpy_r_r278 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
-    if (unlikely(cpy_r_r278.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
-        goto CPyL358;
-    }
-    CPy_INCREF(cpy_r_r278.f0);
-    CPy_INCREF(cpy_r_r278.f1);
-    CPy_INCREF(cpy_r_r278.f2);
-CPyL230: ;
-    CPy_RestoreExcInfo(cpy_r_r278);
-    CPy_DecRef(cpy_r_r278.f0);
-    CPy_DecRef(cpy_r_r278.f1);
-    CPy_DecRef(cpy_r_r278.f2);
-    goto CPyL220;
-CPyL231: ;
-    cpy_r_r266 = cpy_r_r17;
-    cpy_r_r279 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
-    if (unlikely(cpy_r_r279.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
-        goto CPyL359;
-    }
-    CPy_INCREF(cpy_r_r279.f0);
-    CPy_INCREF(cpy_r_r279.f1);
-    CPy_INCREF(cpy_r_r279.f2);
-CPyL232: ;
-    CPy_RestoreExcInfo(cpy_r_r279);
-    CPy_DecRef(cpy_r_r279.f0);
-    CPy_DecRef(cpy_r_r279.f1);
-    CPy_DecRef(cpy_r_r279.f2);
-    goto CPyL241;
-CPyL233: ;
-    cpy_r_r280 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
-    if (unlikely(cpy_r_r280.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r280.f0);
-    CPy_INCREF(cpy_r_r280.f1);
-    CPy_INCREF(cpy_r_r280.f2);
-CPyL234: ;
-    CPy_RestoreExcInfo(cpy_r_r280);
-    CPy_DecRef(cpy_r_r280.f0);
-    CPy_DecRef(cpy_r_r280.f1);
-    CPy_DecRef(cpy_r_r280.f2);
-    cpy_r_r281 = CPy_KeepPropagating();
-    if (!cpy_r_r281) goto CPyL298;
-    CPy_Unreachable();
-CPyL236: ;
-    cpy_r_r282 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
-    if (unlikely(cpy_r_r282 == NULL)) {
+    cpy_r_r278 = (PyObject **)&cpy_r_r17;
+    cpy_r_r279 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
+    if (unlikely(cpy_r_r279 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__16", -1, CPyStatic_async_ens___globals);
         goto CPyL360;
     }
-    CPy_INCREF(cpy_r_r282);
-CPyL237: ;
-    cpy_r_r283 = CPyIter_Send(cpy_r_r282, cpy_r_arg);
-    CPy_DECREF(cpy_r_r282);
-    CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r283 == NULL) goto CPyL239;
-    cpy_r_r269 = cpy_r_r283;
-    goto CPyL220;
-CPyL239: ;
-    cpy_r_r284 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r284 == NULL)) {
+    CPy_INCREF(cpy_r_r279);
+CPyL230: ;
+    cpy_r_r280 = CPy_YieldFromErrorHandle(cpy_r_r279, cpy_r_r278);
+    CPy_DecRef(cpy_r_r279);
+    if (unlikely(cpy_r_r280 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL360;
     }
-    cpy_r_r266 = cpy_r_r284;
-CPyL241: ;
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL245;
-    CPyGen_SetStopIterationValue(cpy_r_r266);
-    CPy_DECREF(cpy_r_r266);
-    if (!0) goto CPyL298;
-    CPy_Unreachable();
-CPyL245: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r266;
-    return 0;
-CPyL246: ;
-    cpy_r_r286 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
-    if (unlikely(cpy_r_r286 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "resolver", 223, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r286);
-CPyL247: ;
-    cpy_r_r287 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
-    cpy_r_r288 = CPyObject_GetAttr(cpy_r_r286, cpy_r_r287);
-    CPy_DECREF(cpy_r_r286);
-    if (unlikely(cpy_r_r288 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r289 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
-    if (unlikely(cpy_r_r289 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "node", 223, CPyStatic_async_ens___globals);
+    if (cpy_r_r280) goto CPyL234;
+    cpy_r_r272 = cpy_r_r17;
+    cpy_r_r281 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
+    if (unlikely(cpy_r_r281.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
         goto CPyL361;
     }
-    CPy_INCREF(cpy_r_r289);
-CPyL249: ;
-    cpy_r_r290 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coin_type;
-    if (unlikely(cpy_r_r290 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "coin_type", 223, CPyStatic_async_ens___globals);
+    CPy_INCREF(cpy_r_r281.f0);
+    CPy_INCREF(cpy_r_r281.f1);
+    CPy_INCREF(cpy_r_r281.f2);
+CPyL233: ;
+    CPy_RestoreExcInfo(cpy_r_r281);
+    CPy_DecRef(cpy_r_r281.f0);
+    CPy_DecRef(cpy_r_r281.f1);
+    CPy_DecRef(cpy_r_r281.f2);
+    goto CPyL223;
+CPyL234: ;
+    cpy_r_r269 = cpy_r_r17;
+    cpy_r_r282 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
+    if (unlikely(cpy_r_r282.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
         goto CPyL362;
     }
-    CPy_INCREF(cpy_r_r290);
-CPyL250: ;
-    if (likely(PyLong_Check(cpy_r_r290)))
-        cpy_r_r291 = CPyTagged_FromObject(cpy_r_r290);
-    else {
-        CPy_TypeError("int", cpy_r_r290); cpy_r_r291 = CPY_INT_TAG;
+    CPy_INCREF(cpy_r_r282.f0);
+    CPy_INCREF(cpy_r_r282.f1);
+    CPy_INCREF(cpy_r_r282.f2);
+CPyL235: ;
+    CPy_RestoreExcInfo(cpy_r_r282);
+    CPy_DecRef(cpy_r_r282.f0);
+    CPy_DecRef(cpy_r_r282.f1);
+    CPy_DecRef(cpy_r_r282.f2);
+    goto CPyL244;
+CPyL236: ;
+    cpy_r_r283 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
+    if (unlikely(cpy_r_r283.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__17", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
     }
-    CPy_DECREF(cpy_r_r290);
-    if (unlikely(cpy_r_r291 == CPY_INT_TAG)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL362;
-    }
-    cpy_r_r292 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
-    if (unlikely(cpy_r_r292 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 223, CPyStatic_async_ens___globals);
+    CPy_INCREF(cpy_r_r283.f0);
+    CPy_INCREF(cpy_r_r283.f1);
+    CPy_INCREF(cpy_r_r283.f2);
+CPyL237: ;
+    CPy_RestoreExcInfo(cpy_r_r283);
+    CPy_DecRef(cpy_r_r283.f0);
+    CPy_DecRef(cpy_r_r283.f1);
+    CPy_DecRef(cpy_r_r283.f2);
+    cpy_r_r284 = CPy_KeepPropagating();
+    if (!cpy_r_r284) goto CPyL301;
+    CPy_Unreachable();
+CPyL239: ;
+    cpy_r_r285 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
+    if (unlikely(cpy_r_r285 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__16", -1, CPyStatic_async_ens___globals);
         goto CPyL363;
+    }
+    CPy_INCREF(cpy_r_r285);
+CPyL240: ;
+    cpy_r_r286 = CPyIter_Send(cpy_r_r285, cpy_r_arg);
+    CPy_DECREF(cpy_r_r285);
+    CPy_DECREF(cpy_r_arg);
+    if (cpy_r_r286 == NULL) goto CPyL242;
+    cpy_r_r272 = cpy_r_r286;
+    goto CPyL223;
+CPyL242: ;
+    cpy_r_r287 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r287 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r269 = cpy_r_r287;
+CPyL244: ;
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL248;
+    CPyGen_SetStopIterationValue(cpy_r_r269);
+    CPy_DECREF(cpy_r_r269);
+    if (!0) goto CPyL301;
+    CPy_Unreachable();
+CPyL248: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r269;
+    return 0;
+CPyL249: ;
+    cpy_r_r289 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
+    if (unlikely(cpy_r_r289 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "resolver", 225, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r289);
+CPyL250: ;
+    cpy_r_r290 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
+    cpy_r_r291 = CPyObject_GetAttr(cpy_r_r289, cpy_r_r290);
+    CPy_DECREF(cpy_r_r289);
+    if (unlikely(cpy_r_r291 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r292 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
+    if (unlikely(cpy_r_r292 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "node", 225, CPyStatic_async_ens___globals);
+        goto CPyL364;
     }
     CPy_INCREF(cpy_r_r292);
 CPyL252: ;
-    cpy_r_r293 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
-    cpy_r_r294 = CPyTagged_StealAsObject(cpy_r_r291);
-    PyObject *cpy_r_r295[4] = {cpy_r_r288, cpy_r_r289, cpy_r_r294, cpy_r_r292};
-    cpy_r_r296 = (PyObject **)&cpy_r_r295;
-    cpy_r_r297 = PyObject_VectorcallMethod(cpy_r_r293, cpy_r_r296, 9223372036854775812ULL, 0);
-    if (unlikely(cpy_r_r297 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL364;
-    }
-    CPy_DECREF(cpy_r_r288);
-    CPy_DECREF(cpy_r_r289);
-    CPy_DECREF(cpy_r_r294);
-    CPy_DECREF(cpy_r_r292);
-    cpy_r_r298 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
-    if (unlikely(cpy_r_r298 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 224, CPyStatic_async_ens___globals);
+    cpy_r_r293 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coin_type;
+    if (unlikely(cpy_r_r293 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "coin_type", 225, CPyStatic_async_ens___globals);
         goto CPyL365;
     }
-    CPy_INCREF(cpy_r_r298);
-CPyL254: ;
-    if (likely(cpy_r_r298 != Py_None))
-        cpy_r_r299 = cpy_r_r298;
+    CPy_INCREF(cpy_r_r293);
+CPyL253: ;
+    if (likely(PyLong_Check(cpy_r_r293)))
+        cpy_r_r294 = CPyTagged_FromObject(cpy_r_r293);
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 224, CPyStatic_async_ens___globals, "dict", cpy_r_r298);
+        CPy_TypeError("int", cpy_r_r293); cpy_r_r294 = CPY_INT_TAG;
+    }
+    CPy_DECREF(cpy_r_r293);
+    if (unlikely(cpy_r_r294 == CPY_INT_TAG)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
         goto CPyL365;
     }
-    cpy_r_r300 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
-    PyObject *cpy_r_r301[2] = {cpy_r_r297, cpy_r_r299};
-    cpy_r_r302 = (PyObject **)&cpy_r_r301;
-    cpy_r_r303 = PyObject_VectorcallMethod(cpy_r_r300, cpy_r_r302, 9223372036854775810ULL, 0);
-    if (unlikely(cpy_r_r303 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+    cpy_r_r295 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address_;
+    if (unlikely(cpy_r_r295 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "address_", 225, CPyStatic_async_ens___globals);
         goto CPyL366;
     }
-    CPy_DECREF(cpy_r_r297);
-    CPy_DECREF(cpy_r_r299);
-    cpy_r_r304 = CPy_GetCoro(cpy_r_r303);
-    CPy_DECREF(cpy_r_r303);
-    if (unlikely(cpy_r_r304 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 != NULL) {
-        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 = cpy_r_r304;
-    cpy_r_r305 = 1;
-    if (unlikely(!cpy_r_r305)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r306 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
-    if (unlikely(cpy_r_r306 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__18", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r306);
-CPyL259: ;
-    cpy_r_r307 = CPyIter_Next(cpy_r_r306);
-    CPy_DECREF(cpy_r_r306);
-    if (cpy_r_r307 != NULL) goto CPyL262;
-    cpy_r_r308 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r308 == NULL)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    cpy_r_r309 = cpy_r_r308;
-    cpy_r_r310 = NULL;
-    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 != NULL) {
-        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18);
-    }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 = cpy_r_r310;
-    cpy_r_r311 = 1;
-    if (unlikely(!cpy_r_r311)) {
+    CPy_INCREF(cpy_r_r295);
+CPyL255: ;
+    cpy_r_r296 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    cpy_r_r297 = CPyTagged_StealAsObject(cpy_r_r294);
+    PyObject *cpy_r_r298[4] = {cpy_r_r291, cpy_r_r292, cpy_r_r297, cpy_r_r295};
+    cpy_r_r299 = (PyObject **)&cpy_r_r298;
+    cpy_r_r300 = PyObject_VectorcallMethod(cpy_r_r296, cpy_r_r299, 9223372036854775812ULL, 0);
+    if (unlikely(cpy_r_r300 == NULL)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
         goto CPyL367;
-    } else
-        goto CPyL284;
+    }
+    CPy_DECREF(cpy_r_r291);
+    CPy_DECREF(cpy_r_r292);
+    CPy_DECREF(cpy_r_r297);
+    CPy_DECREF(cpy_r_r295);
+    cpy_r_r301 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
+    if (unlikely(cpy_r_r301 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "transact", 226, CPyStatic_async_ens___globals);
+        goto CPyL368;
+    }
+    CPy_INCREF(cpy_r_r301);
+CPyL257: ;
+    if (likely(cpy_r_r301 != Py_None))
+        cpy_r_r302 = cpy_r_r301;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_address", 226, CPyStatic_async_ens___globals, "dict", cpy_r_r301);
+        goto CPyL368;
+    }
+    cpy_r_r303 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
+    PyObject *cpy_r_r304[2] = {cpy_r_r300, cpy_r_r302};
+    cpy_r_r305 = (PyObject **)&cpy_r_r304;
+    cpy_r_r306 = PyObject_VectorcallMethod(cpy_r_r303, cpy_r_r305, 9223372036854775810ULL, 0);
+    if (unlikely(cpy_r_r306 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL369;
+    }
+    CPy_DECREF(cpy_r_r300);
+    CPy_DECREF(cpy_r_r302);
+    cpy_r_r307 = CPy_GetCoro(cpy_r_r306);
+    CPy_DECREF(cpy_r_r306);
+    if (unlikely(cpy_r_r307 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 != NULL) {
+        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 = cpy_r_r307;
+    cpy_r_r308 = 1;
+    if (unlikely(!cpy_r_r308)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r309 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
+    if (unlikely(cpy_r_r309 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__18", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r309);
 CPyL262: ;
-    cpy_r_r312 = cpy_r_r307;
-CPyL263: ;
+    cpy_r_r310 = CPyIter_Next(cpy_r_r309);
+    CPy_DECREF(cpy_r_r309);
+    if (cpy_r_r310 != NULL) goto CPyL265;
+    cpy_r_r311 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r311 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r312 = cpy_r_r311;
+    cpy_r_r313 = NULL;
+    if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 != NULL) {
+        CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18);
+    }
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18 = cpy_r_r313;
+    cpy_r_r314 = 1;
+    if (unlikely(!cpy_r_r314)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL370;
+    } else
+        goto CPyL287;
+CPyL265: ;
+    cpy_r_r315 = cpy_r_r310;
+CPyL266: ;
     ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 6;
-    return cpy_r_r312;
-CPyL264: ;
-    cpy_r_r314 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r315 = cpy_r_type != cpy_r_r314;
-    if (!cpy_r_r315) goto CPyL368;
+    return cpy_r_r315;
+CPyL267: ;
+    cpy_r_r317 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r318 = cpy_r_type != cpy_r_r317;
+    if (!cpy_r_r318) goto CPyL371;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL268;
+        goto CPyL271;
     } else
-        goto CPyL369;
-CPyL266: ;
+        goto CPyL372;
+CPyL269: ;
     CPy_Unreachable();
-CPyL267: ;
+CPyL270: ;
     CPy_INCREF(cpy_r_arg);
-    goto CPyL279;
-CPyL268: ;
-    cpy_r_r316 = CPy_CatchError();
+    goto CPyL282;
+CPyL271: ;
+    cpy_r_r319 = CPy_CatchError();
     if (((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19.f0 != NULL) {
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19.f0);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19.f1);
         CPy_DECREF(((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19.f2);
     }
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19 = cpy_r_r316;
-    cpy_r_r317 = 1;
-    if (unlikely(!cpy_r_r317)) {
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19 = cpy_r_r319;
+    cpy_r_r320 = 1;
+    if (unlikely(!cpy_r_r320)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", -1, CPyStatic_async_ens___globals);
-        goto CPyL370;
+        goto CPyL373;
     }
-    cpy_r_r318 = (PyObject **)&cpy_r_r19;
-    cpy_r_r319 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
-    if (unlikely(cpy_r_r319 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__18", -1, CPyStatic_async_ens___globals);
-        goto CPyL370;
-    }
-    CPy_INCREF(cpy_r_r319);
-CPyL270: ;
-    cpy_r_r320 = CPy_YieldFromErrorHandle(cpy_r_r319, cpy_r_r318);
-    CPy_DecRef(cpy_r_r319);
-    if (unlikely(cpy_r_r320 == 2)) {
-        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL370;
-    }
-    if (cpy_r_r320) goto CPyL274;
-    cpy_r_r312 = cpy_r_r19;
-    cpy_r_r321 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
-    if (unlikely(cpy_r_r321.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
-        goto CPyL371;
-    }
-    CPy_INCREF(cpy_r_r321.f0);
-    CPy_INCREF(cpy_r_r321.f1);
-    CPy_INCREF(cpy_r_r321.f2);
-CPyL273: ;
-    CPy_RestoreExcInfo(cpy_r_r321);
-    CPy_DecRef(cpy_r_r321.f0);
-    CPy_DecRef(cpy_r_r321.f1);
-    CPy_DecRef(cpy_r_r321.f2);
-    goto CPyL263;
-CPyL274: ;
-    cpy_r_r309 = cpy_r_r19;
-    cpy_r_r322 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
-    if (unlikely(cpy_r_r322.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
-        goto CPyL372;
-    }
-    CPy_INCREF(cpy_r_r322.f0);
-    CPy_INCREF(cpy_r_r322.f1);
-    CPy_INCREF(cpy_r_r322.f2);
-CPyL275: ;
-    CPy_RestoreExcInfo(cpy_r_r322);
-    CPy_DecRef(cpy_r_r322.f0);
-    CPy_DecRef(cpy_r_r322.f1);
-    CPy_DecRef(cpy_r_r322.f2);
-    goto CPyL284;
-CPyL276: ;
-    cpy_r_r323 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
-    if (unlikely(cpy_r_r323.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
-        goto CPyL298;
-    }
-    CPy_INCREF(cpy_r_r323.f0);
-    CPy_INCREF(cpy_r_r323.f1);
-    CPy_INCREF(cpy_r_r323.f2);
-CPyL277: ;
-    CPy_RestoreExcInfo(cpy_r_r323);
-    CPy_DecRef(cpy_r_r323.f0);
-    CPy_DecRef(cpy_r_r323.f1);
-    CPy_DecRef(cpy_r_r323.f2);
-    cpy_r_r324 = CPy_KeepPropagating();
-    if (!cpy_r_r324) goto CPyL298;
-    CPy_Unreachable();
-CPyL279: ;
-    cpy_r_r325 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
-    if (unlikely(cpy_r_r325 == NULL)) {
+    cpy_r_r321 = (PyObject **)&cpy_r_r19;
+    cpy_r_r322 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
+    if (unlikely(cpy_r_r322 == NULL)) {
         CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__18", -1, CPyStatic_async_ens___globals);
         goto CPyL373;
     }
-    CPy_INCREF(cpy_r_r325);
-CPyL280: ;
-    cpy_r_r326 = CPyIter_Send(cpy_r_r325, cpy_r_arg);
-    CPy_DECREF(cpy_r_r325);
-    CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r326 == NULL) goto CPyL282;
-    cpy_r_r312 = cpy_r_r326;
-    goto CPyL263;
-CPyL282: ;
-    cpy_r_r327 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r327 == NULL)) {
+    CPy_INCREF(cpy_r_r322);
+CPyL273: ;
+    cpy_r_r323 = CPy_YieldFromErrorHandle(cpy_r_r322, cpy_r_r321);
+    CPy_DecRef(cpy_r_r322);
+    if (unlikely(cpy_r_r323 == 2)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL373;
     }
-    cpy_r_r309 = cpy_r_r327;
-CPyL284: ;
-    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL288;
-    CPyGen_SetStopIterationValue(cpy_r_r309);
-    CPy_DECREF(cpy_r_r309);
-    if (!0) goto CPyL298;
-    CPy_Unreachable();
-CPyL288: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r309;
-    return 0;
-CPyL289: ;
-    cpy_r_r329 = cpy_r_r20 == 0;
-    if (cpy_r_r329) goto CPyL374;
-    cpy_r_r330 = cpy_r_r20 == 1;
-    if (cpy_r_r330) {
+    if (cpy_r_r323) goto CPyL277;
+    cpy_r_r315 = cpy_r_r19;
+    cpy_r_r324 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
+    if (unlikely(cpy_r_r324.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
+        goto CPyL374;
+    }
+    CPy_INCREF(cpy_r_r324.f0);
+    CPy_INCREF(cpy_r_r324.f1);
+    CPy_INCREF(cpy_r_r324.f2);
+CPyL276: ;
+    CPy_RestoreExcInfo(cpy_r_r324);
+    CPy_DecRef(cpy_r_r324.f0);
+    CPy_DecRef(cpy_r_r324.f1);
+    CPy_DecRef(cpy_r_r324.f2);
+    goto CPyL266;
+CPyL277: ;
+    cpy_r_r312 = cpy_r_r19;
+    cpy_r_r325 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
+    if (unlikely(cpy_r_r325.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
         goto CPyL375;
-    } else
+    }
+    CPy_INCREF(cpy_r_r325.f0);
+    CPy_INCREF(cpy_r_r325.f1);
+    CPy_INCREF(cpy_r_r325.f2);
+CPyL278: ;
+    CPy_RestoreExcInfo(cpy_r_r325);
+    CPy_DecRef(cpy_r_r325.f0);
+    CPy_DecRef(cpy_r_r325.f1);
+    CPy_DecRef(cpy_r_r325.f2);
+    goto CPyL287;
+CPyL279: ;
+    cpy_r_r326 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
+    if (unlikely(cpy_r_r326.f0 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__19", -1, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    CPy_INCREF(cpy_r_r326.f0);
+    CPy_INCREF(cpy_r_r326.f1);
+    CPy_INCREF(cpy_r_r326.f2);
+CPyL280: ;
+    CPy_RestoreExcInfo(cpy_r_r326);
+    CPy_DecRef(cpy_r_r326.f0);
+    CPy_DecRef(cpy_r_r326.f1);
+    CPy_DecRef(cpy_r_r326.f2);
+    cpy_r_r327 = CPy_KeepPropagating();
+    if (!cpy_r_r327) goto CPyL301;
+    CPy_Unreachable();
+CPyL282: ;
+    cpy_r_r328 = ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
+    if (unlikely(cpy_r_r328 == NULL)) {
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_address", "setup_address_AsyncENS_gen", "__mypyc_temp__18", -1, CPyStatic_async_ens___globals);
         goto CPyL376;
+    }
+    CPy_INCREF(cpy_r_r328);
+CPyL283: ;
+    cpy_r_r329 = CPyIter_Send(cpy_r_r328, cpy_r_arg);
+    CPy_DECREF(cpy_r_r328);
+    CPy_DECREF(cpy_r_arg);
+    if (cpy_r_r329 == NULL) goto CPyL285;
+    cpy_r_r315 = cpy_r_r329;
+    goto CPyL266;
+CPyL285: ;
+    cpy_r_r330 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r330 == NULL)) {
+        CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
+        goto CPyL301;
+    }
+    cpy_r_r312 = cpy_r_r330;
+CPyL287: ;
+    ((faster_ens___async_ens___setup_address_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL291;
+    CPyGen_SetStopIterationValue(cpy_r_r312);
+    CPy_DECREF(cpy_r_r312);
+    if (!0) goto CPyL301;
+    CPy_Unreachable();
 CPyL291: ;
-    cpy_r_r331 = cpy_r_r20 == 2;
-    if (cpy_r_r331) {
-        goto CPyL377;
-    } else
-        goto CPyL378;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r312;
+    return 0;
 CPyL292: ;
-    cpy_r_r332 = cpy_r_r20 == 3;
-    if (cpy_r_r332) {
-        goto CPyL379;
-    } else
-        goto CPyL380;
-CPyL293: ;
-    cpy_r_r333 = cpy_r_r20 == 4;
+    cpy_r_r332 = cpy_r_r20 == 0;
+    if (cpy_r_r332) goto CPyL377;
+    cpy_r_r333 = cpy_r_r20 == 1;
     if (cpy_r_r333) {
-        goto CPyL381;
+        goto CPyL378;
     } else
-        goto CPyL382;
+        goto CPyL379;
 CPyL294: ;
-    cpy_r_r334 = cpy_r_r20 == 5;
+    cpy_r_r334 = cpy_r_r20 == 2;
     if (cpy_r_r334) {
-        goto CPyL383;
+        goto CPyL380;
     } else
-        goto CPyL384;
+        goto CPyL381;
 CPyL295: ;
-    cpy_r_r335 = cpy_r_r20 == 6;
+    cpy_r_r335 = cpy_r_r20 == 3;
     if (cpy_r_r335) {
-        goto CPyL264;
+        goto CPyL382;
+    } else
+        goto CPyL383;
+CPyL296: ;
+    cpy_r_r336 = cpy_r_r20 == 4;
+    if (cpy_r_r336) {
+        goto CPyL384;
     } else
         goto CPyL385;
-CPyL296: ;
+CPyL297: ;
+    cpy_r_r337 = cpy_r_r20 == 5;
+    if (cpy_r_r337) {
+        goto CPyL386;
+    } else
+        goto CPyL387;
+CPyL298: ;
+    cpy_r_r338 = cpy_r_r20 == 6;
+    if (cpy_r_r338) {
+        goto CPyL267;
+    } else
+        goto CPyL388;
+CPyL299: ;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r336 = 0;
-    if (unlikely(!cpy_r_r336)) {
+    cpy_r_r339 = 0;
+    if (unlikely(!cpy_r_r339)) {
         CPy_AddTraceback("faster_ens/async_ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_async_ens___globals);
-        goto CPyL298;
+        goto CPyL301;
     }
     CPy_Unreachable();
-CPyL298: ;
-    cpy_r_r337 = NULL;
-    return cpy_r_r337;
-CPyL299: ;
+CPyL301: ;
+    cpy_r_r340 = NULL;
+    return cpy_r_r340;
+CPyL302: ;
     CPy_DECREF(cpy_r_r23);
     goto CPyL8;
-CPyL300: ;
+CPyL303: ;
     CPy_DecRef(cpy_r_r33);
-    goto CPyL298;
-CPyL301: ;
+    goto CPyL301;
+CPyL304: ;
     CPy_DecRef(cpy_r_r42);
-    goto CPyL298;
-CPyL302: ;
+    goto CPyL301;
+CPyL305: ;
     CPy_DecRef(cpy_r_r42);
     CPy_DecRef(cpy_r_r43);
-    goto CPyL298;
-CPyL303: ;
+    goto CPyL301;
+CPyL306: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL26;
-CPyL304: ;
+CPyL307: ;
     CPy_XDecRef(cpy_r_r1);
-    goto CPyL298;
-CPyL305: ;
+    goto CPyL301;
+CPyL308: ;
     CPy_DecRef(cpy_r_r55);
-    goto CPyL298;
-CPyL306: ;
+    goto CPyL301;
+CPyL309: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL31;
-CPyL307: ;
+CPyL310: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL30;
-CPyL308: ;
+CPyL311: ;
     CPy_XDecRef(cpy_r_r3);
     goto CPyL40;
-CPyL309: ;
+CPyL312: ;
     CPy_DecRef(cpy_r_r58);
     goto CPyL40;
-CPyL310: ;
+CPyL313: ;
     CPy_DecRef(cpy_r_r55);
     goto CPyL40;
-CPyL311: ;
+CPyL314: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
-CPyL312: ;
+    goto CPyL301;
+CPyL315: ;
     CPy_DecRef(cpy_r_r76);
-    goto CPyL298;
-CPyL313: ;
+    goto CPyL301;
+CPyL316: ;
     CPy_DecRef(cpy_r_r76);
     CPy_DecRef(cpy_r_r77);
-    goto CPyL298;
-CPyL314: ;
+    goto CPyL301;
+CPyL317: ;
     CPy_DecRef(cpy_r_r76);
     CPy_DecRef(cpy_r_r78);
-    goto CPyL298;
-CPyL315: ;
+    goto CPyL301;
+CPyL318: ;
     CPy_XDECREF(cpy_r_r5);
     goto CPyL60;
-CPyL316: ;
+CPyL319: ;
     CPy_XDecRef(cpy_r_r5);
-    goto CPyL298;
-CPyL317: ;
+    goto CPyL301;
+CPyL320: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL65;
-CPyL318: ;
+CPyL321: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL64;
-CPyL319: ;
+CPyL322: ;
     CPy_XDecRef(cpy_r_r7);
     goto CPyL74;
-CPyL320: ;
+CPyL323: ;
     CPy_DecRef(cpy_r_r92);
     goto CPyL74;
-CPyL321: ;
+CPyL324: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
-CPyL322: ;
+    goto CPyL301;
+CPyL325: ;
     CPy_DecRef(cpy_r_r108);
     goto CPyL84;
-CPyL323: ;
-    CPy_DecRef(cpy_r_r119);
-    goto CPyL298;
-CPyL324: ;
-    CPy_DecRef(cpy_r_r128);
-    goto CPyL298;
-CPyL325: ;
-    CPy_DecRef(cpy_r_r137);
-    goto CPyL298;
 CPyL326: ;
-    CPy_DecRef(cpy_r_r151);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r119);
+    goto CPyL301;
 CPyL327: ;
-    CPy_XDECREF(cpy_r_r9);
-    goto CPyL122;
+    CPy_DecRef(cpy_r_r128);
+    goto CPyL301;
 CPyL328: ;
-    CPy_XDecRef(cpy_r_r9);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r137);
+    goto CPyL301;
 CPyL329: ;
-    CPy_DecRef(cpy_r_r162);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r154);
+    goto CPyL301;
 CPyL330: ;
-    CPy_XDECREF(cpy_r_r11);
-    goto CPyL127;
+    CPy_XDECREF(cpy_r_r9);
+    goto CPyL125;
 CPyL331: ;
-    CPy_XDECREF(cpy_r_r11);
-    goto CPyL126;
+    CPy_XDecRef(cpy_r_r9);
+    goto CPyL301;
 CPyL332: ;
-    CPy_XDecRef(cpy_r_r11);
-    goto CPyL136;
-CPyL333: ;
     CPy_DecRef(cpy_r_r165);
-    goto CPyL136;
+    goto CPyL301;
+CPyL333: ;
+    CPy_XDECREF(cpy_r_r11);
+    goto CPyL130;
 CPyL334: ;
-    CPy_DecRef(cpy_r_r162);
-    goto CPyL136;
+    CPy_XDECREF(cpy_r_r11);
+    goto CPyL129;
 CPyL335: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
+    CPy_XDecRef(cpy_r_r11);
+    goto CPyL139;
 CPyL336: ;
-    CPy_DecRef(cpy_r_r181);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r168);
+    goto CPyL139;
 CPyL337: ;
-    CPy_DecRef(cpy_r_r201);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r165);
+    goto CPyL139;
 CPyL338: ;
-    CPy_DecRef(cpy_r_r207);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL301;
 CPyL339: ;
-    CPy_DecRef(cpy_r_r207);
-    CPy_DecRef(cpy_r_r208);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r184);
+    goto CPyL301;
 CPyL340: ;
-    CPy_XDECREF(cpy_r_r13);
-    goto CPyL177;
+    CPy_DecRef(cpy_r_r204);
+    goto CPyL301;
 CPyL341: ;
-    CPy_XDecRef(cpy_r_r13);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r210);
+    goto CPyL301;
 CPyL342: ;
-    CPy_DecRef(cpy_r_r220);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r210);
+    CPy_DecRef(cpy_r_r211);
+    goto CPyL301;
 CPyL343: ;
-    CPy_XDECREF(cpy_r_r15);
-    goto CPyL182;
+    CPy_XDECREF(cpy_r_r13);
+    goto CPyL180;
 CPyL344: ;
-    CPy_XDECREF(cpy_r_r15);
-    goto CPyL181;
+    CPy_XDecRef(cpy_r_r13);
+    goto CPyL301;
 CPyL345: ;
-    CPy_XDecRef(cpy_r_r15);
-    goto CPyL191;
-CPyL346: ;
     CPy_DecRef(cpy_r_r223);
-    goto CPyL191;
+    goto CPyL301;
+CPyL346: ;
+    CPy_XDECREF(cpy_r_r15);
+    goto CPyL185;
 CPyL347: ;
-    CPy_DecRef(cpy_r_r220);
-    goto CPyL191;
+    CPy_XDECREF(cpy_r_r15);
+    goto CPyL184;
 CPyL348: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
+    CPy_XDecRef(cpy_r_r15);
+    goto CPyL194;
 CPyL349: ;
-    CPy_DecRef(cpy_r_r248);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r226);
+    goto CPyL194;
 CPyL350: ;
-    CPy_DecRef(cpy_r_r248);
-    CPy_DecRef(cpy_r_r249);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r223);
+    goto CPyL194;
 CPyL351: ;
-    CPy_DecRef(cpy_r_r248);
-    CPy_DecRef(cpy_r_r249);
-    CPy_DecRef(cpy_r_r250);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL301;
 CPyL352: ;
-    CPy_DecRef(cpy_r_r254);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r251);
+    goto CPyL301;
 CPyL353: ;
-    CPy_DecRef(cpy_r_r254);
-    CPy_DecRef(cpy_r_r256);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r251);
+    CPy_DecRef(cpy_r_r252);
+    goto CPyL301;
 CPyL354: ;
-    CPy_DecRef(cpy_r_r266);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r251);
+    CPy_DecRef(cpy_r_r252);
+    CPy_DecRef(cpy_r_r253);
+    goto CPyL301;
 CPyL355: ;
-    CPy_XDECREF(cpy_r_r17);
-    goto CPyL224;
+    CPy_DecRef(cpy_r_r257);
+    goto CPyL301;
 CPyL356: ;
-    CPy_XDECREF(cpy_r_r17);
-    goto CPyL223;
+    CPy_DecRef(cpy_r_r257);
+    CPy_DecRef(cpy_r_r259);
+    goto CPyL301;
 CPyL357: ;
-    CPy_XDecRef(cpy_r_r17);
-    goto CPyL233;
-CPyL358: ;
     CPy_DecRef(cpy_r_r269);
-    goto CPyL233;
+    goto CPyL301;
+CPyL358: ;
+    CPy_XDECREF(cpy_r_r17);
+    goto CPyL227;
 CPyL359: ;
-    CPy_DecRef(cpy_r_r266);
-    goto CPyL233;
+    CPy_XDECREF(cpy_r_r17);
+    goto CPyL226;
 CPyL360: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
+    CPy_XDecRef(cpy_r_r17);
+    goto CPyL236;
 CPyL361: ;
-    CPy_DecRef(cpy_r_r288);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r272);
+    goto CPyL236;
 CPyL362: ;
-    CPy_DecRef(cpy_r_r288);
-    CPy_DecRef(cpy_r_r289);
-    goto CPyL298;
+    CPy_DecRef(cpy_r_r269);
+    goto CPyL236;
 CPyL363: ;
-    CPy_DecRef(cpy_r_r288);
-    CPy_DecRef(cpy_r_r289);
-    CPyTagged_DecRef(cpy_r_r291);
-    goto CPyL298;
-CPyL364: ;
-    CPy_DecRef(cpy_r_r288);
-    CPy_DecRef(cpy_r_r289);
-    CPy_DecRef(cpy_r_r292);
-    CPy_DecRef(cpy_r_r294);
-    goto CPyL298;
-CPyL365: ;
-    CPy_DecRef(cpy_r_r297);
-    goto CPyL298;
-CPyL366: ;
-    CPy_DecRef(cpy_r_r297);
-    CPy_DecRef(cpy_r_r299);
-    goto CPyL298;
-CPyL367: ;
-    CPy_DecRef(cpy_r_r309);
-    goto CPyL298;
-CPyL368: ;
-    CPy_XDECREF(cpy_r_r19);
-    goto CPyL267;
-CPyL369: ;
-    CPy_XDECREF(cpy_r_r19);
-    goto CPyL266;
-CPyL370: ;
-    CPy_XDecRef(cpy_r_r19);
-    goto CPyL276;
-CPyL371: ;
-    CPy_DecRef(cpy_r_r312);
-    goto CPyL276;
-CPyL372: ;
-    CPy_DecRef(cpy_r_r309);
-    goto CPyL276;
-CPyL373: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL298;
+    goto CPyL301;
+CPyL364: ;
+    CPy_DecRef(cpy_r_r291);
+    goto CPyL301;
+CPyL365: ;
+    CPy_DecRef(cpy_r_r291);
+    CPy_DecRef(cpy_r_r292);
+    goto CPyL301;
+CPyL366: ;
+    CPy_DecRef(cpy_r_r291);
+    CPy_DecRef(cpy_r_r292);
+    CPyTagged_DecRef(cpy_r_r294);
+    goto CPyL301;
+CPyL367: ;
+    CPy_DecRef(cpy_r_r291);
+    CPy_DecRef(cpy_r_r292);
+    CPy_DecRef(cpy_r_r295);
+    CPy_DecRef(cpy_r_r297);
+    goto CPyL301;
+CPyL368: ;
+    CPy_DecRef(cpy_r_r300);
+    goto CPyL301;
+CPyL369: ;
+    CPy_DecRef(cpy_r_r300);
+    CPy_DecRef(cpy_r_r302);
+    goto CPyL301;
+CPyL370: ;
+    CPy_DecRef(cpy_r_r312);
+    goto CPyL301;
+CPyL371: ;
+    CPy_XDECREF(cpy_r_r19);
+    goto CPyL270;
+CPyL372: ;
+    CPy_XDECREF(cpy_r_r19);
+    goto CPyL269;
+CPyL373: ;
+    CPy_XDecRef(cpy_r_r19);
+    goto CPyL279;
 CPyL374: ;
+    CPy_DecRef(cpy_r_r315);
+    goto CPyL279;
+CPyL375: ;
+    CPy_DecRef(cpy_r_r312);
+    goto CPyL279;
+CPyL376: ;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL301;
+CPyL377: ;
     CPy_XDECREF(cpy_r_r3);
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r11);
@@ -20278,49 +20305,49 @@ CPyL374: ;
     CPy_XDECREF(cpy_r_r17);
     CPy_XDECREF(cpy_r_r19);
     goto CPyL1;
-CPyL375: ;
+CPyL378: ;
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     CPy_XDECREF(cpy_r_r17);
     CPy_XDECREF(cpy_r_r19);
     goto CPyL28;
-CPyL376: ;
+CPyL379: ;
     CPy_XDECREF(cpy_r_r3);
-    goto CPyL291;
-CPyL377: ;
+    goto CPyL294;
+CPyL380: ;
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     CPy_XDECREF(cpy_r_r17);
     CPy_XDECREF(cpy_r_r19);
     goto CPyL62;
-CPyL378: ;
-    CPy_XDECREF(cpy_r_r7);
-    goto CPyL292;
-CPyL379: ;
-    CPy_XDECREF(cpy_r_r15);
-    CPy_XDECREF(cpy_r_r17);
-    CPy_XDECREF(cpy_r_r19);
-    goto CPyL124;
-CPyL380: ;
-    CPy_XDECREF(cpy_r_r11);
-    goto CPyL293;
 CPyL381: ;
-    CPy_XDECREF(cpy_r_r17);
-    CPy_XDECREF(cpy_r_r19);
-    goto CPyL179;
+    CPy_XDECREF(cpy_r_r7);
+    goto CPyL295;
 CPyL382: ;
     CPy_XDECREF(cpy_r_r15);
-    goto CPyL294;
-CPyL383: ;
+    CPy_XDECREF(cpy_r_r17);
     CPy_XDECREF(cpy_r_r19);
-    goto CPyL221;
+    goto CPyL127;
+CPyL383: ;
+    CPy_XDECREF(cpy_r_r11);
+    goto CPyL296;
 CPyL384: ;
     CPy_XDECREF(cpy_r_r17);
-    goto CPyL295;
-CPyL385: ;
     CPy_XDECREF(cpy_r_r19);
-    goto CPyL296;
+    goto CPyL182;
+CPyL385: ;
+    CPy_XDECREF(cpy_r_r15);
+    goto CPyL297;
+CPyL386: ;
+    CPy_XDECREF(cpy_r_r19);
+    goto CPyL224;
+CPyL387: ;
+    CPy_XDECREF(cpy_r_r17);
+    goto CPyL298;
+CPyL388: ;
+    CPy_XDECREF(cpy_r_r19);
+    goto CPyL299;
 }
 
 PyObject *CPyDef_async_ens___setup_address_AsyncENS_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -20963,7 +20990,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r11 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "address", 235, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "address", 237, CPyStatic_async_ens___globals);
         goto CPyL91;
     }
     CPy_INCREF(cpy_r_r11);
@@ -20985,14 +21012,14 @@ CPyL5: ;
     }
     cpy_r_r14 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "self", 236, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "self", 238, CPyStatic_async_ens___globals);
         goto CPyL91;
     }
     CPy_INCREF_NO_IMM(cpy_r_r14);
 CPyL8: ;
     cpy_r_r15 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__reversed_domain;
     if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "reversed_domain", 236, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "reversed_domain", 238, CPyStatic_async_ens___globals);
         goto CPyL92;
     }
     CPy_INCREF(cpy_r_r15);
@@ -21175,7 +21202,7 @@ CPyL37: ;
         cpy_r_r44 = NULL;
     }
     if (cpy_r_r44 != NULL) goto __LL45;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "name", 236, CPyStatic_async_ens___globals, "str or None", cpy_r_r25);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "name", 238, CPyStatic_async_ens___globals, "str or None", cpy_r_r25);
     goto CPyL91;
 __LL45: ;
     if (((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name != NULL) {
@@ -21189,7 +21216,7 @@ __LL45: ;
     }
     cpy_r_r46 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "address", 241, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "address", 243, CPyStatic_async_ens___globals);
         goto CPyL91;
     }
     CPy_INCREF(cpy_r_r46);
@@ -21227,14 +21254,14 @@ CPyL40: ;
     }
     cpy_r_r55 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "self", 241, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "self", 243, CPyStatic_async_ens___globals);
         goto CPyL103;
     }
     CPy_INCREF_NO_IMM(cpy_r_r55);
 CPyL44: ;
     cpy_r_r56 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r56 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "name", 241, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "name", 243, CPyStatic_async_ens___globals);
         goto CPyL104;
     }
     CPy_INCREF(cpy_r_r56);
@@ -21425,7 +21452,7 @@ CPyL73: ;
         cpy_r_r85 = NULL;
     }
     if (cpy_r_r85 != NULL) goto __LL46;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "name", 241, CPyStatic_async_ens___globals, "str or None", cpy_r_r66);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "name", 243, CPyStatic_async_ens___globals, "str or None", cpy_r_r66);
     goto CPyL103;
 __LL46: ;
     cpy_r_r86 = (PyObject *)&_Py_NoneStruct;
@@ -21459,7 +21486,7 @@ CPyL77: ;
     if (!cpy_r_r88) goto CPyL80;
     cpy_r_r94 = ((faster_ens___async_ens___name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r94 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "name", 241, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "name", "name_AsyncENS_gen", "name", 243, CPyStatic_async_ens___globals);
         goto CPyL91;
     }
     CPy_INCREF(cpy_r_r94);
@@ -22416,7 +22443,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r31 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r31 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 264, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 266, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r31);
@@ -22427,7 +22454,7 @@ CPyL5: ;
     if (likely(cpy_r_r31 != Py_None))
         cpy_r_r34 = cpy_r_r31;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 264, CPyStatic_async_ens___globals, "dict", cpy_r_r31);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 266, CPyStatic_async_ens___globals, "dict", cpy_r_r31);
         goto CPyL335;
     }
     cpy_r_r35 = PyDict_Size(cpy_r_r34);
@@ -22453,7 +22480,7 @@ CPyL8: ;
 CPyL10: ;
     cpy_r_r40 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r40 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 266, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 268, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r40);
@@ -22461,7 +22488,7 @@ CPyL11: ;
     if (likely(cpy_r_r40 != Py_None))
         cpy_r_r41 = cpy_r_r40;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 266, CPyStatic_async_ens___globals, "dict", cpy_r_r40);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 268, CPyStatic_async_ens___globals, "dict", cpy_r_r40);
         goto CPyL335;
     }
     cpy_r_r42 = CPyStatic_async_ens___globals;
@@ -22483,7 +22510,7 @@ CPyL11: ;
     if (likely(PyDict_Check(cpy_r_r47)))
         cpy_r_r48 = cpy_r_r47;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 266, CPyStatic_async_ens___globals, "dict", cpy_r_r47);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 268, CPyStatic_async_ens___globals, "dict", cpy_r_r47);
         goto CPyL335;
     }
     if (((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
@@ -22497,7 +22524,7 @@ CPyL11: ;
     }
     cpy_r_r50 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r50 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 267, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 269, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r50);
@@ -22507,14 +22534,14 @@ CPyL17: ;
     if (cpy_r_r51) goto CPyL87;
     cpy_r_r52 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r52 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 268, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 270, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r52);
 CPyL19: ;
     cpy_r_r53 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 268, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 270, CPyStatic_async_ens___globals);
         goto CPyL338;
     }
     CPy_INCREF(cpy_r_r53);
@@ -22532,7 +22559,7 @@ CPyL20: ;
         cpy_r_r55 = NULL;
     }
     if (cpy_r_r55 != NULL) goto __LL49;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 268, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r53);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 270, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r53);
     goto CPyL338;
 __LL49: ;
     cpy_r_r56 = NULL;
@@ -22706,21 +22733,21 @@ CPyL47: ;
 CPyL49: ;
     cpy_r_r84 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r84 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 269, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 271, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r84);
 CPyL50: ;
     cpy_r_r85 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r85 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 269, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 271, CPyStatic_async_ens___globals);
         goto CPyL346;
     }
     CPy_INCREF(cpy_r_r85);
 CPyL51: ;
     cpy_r_r86 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r86 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 269, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 271, CPyStatic_async_ens___globals);
         goto CPyL347;
     }
     CPy_INCREF(cpy_r_r86);
@@ -22728,7 +22755,7 @@ CPyL52: ;
     if (likely(cpy_r_r86 != Py_None))
         cpy_r_r87 = cpy_r_r86;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 269, CPyStatic_async_ens___globals, "dict", cpy_r_r86);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 271, CPyStatic_async_ens___globals, "dict", cpy_r_r86);
         goto CPyL347;
     }
     cpy_r_r88 = Py_None;
@@ -22744,7 +22771,7 @@ CPyL52: ;
         cpy_r_r89 = NULL;
     }
     if (cpy_r_r89 != NULL) goto __LL50;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 269, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r85);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 271, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r85);
     goto CPyL348;
 __LL50: ;
     cpy_r_r90 = CPyDef_async_ens___AsyncENS____setup_reverse(cpy_r_r84, cpy_r_r88, cpy_r_r89, cpy_r_r87);
@@ -22925,14 +22952,14 @@ CPyL86: ;
 CPyL87: ;
     cpy_r_r118 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r118 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 271, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 273, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r118);
 CPyL88: ;
     cpy_r_r119 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r119 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 271, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 273, CPyStatic_async_ens___globals);
         goto CPyL358;
     }
     CPy_INCREF(cpy_r_r119);
@@ -23115,7 +23142,7 @@ CPyL117: ;
         cpy_r_r148 = NULL;
     }
     if (cpy_r_r148 != NULL) goto __LL51;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 271, CPyStatic_async_ens___globals, "str or None", cpy_r_r129);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 273, CPyStatic_async_ens___globals, "str or None", cpy_r_r129);
     goto CPyL335;
 __LL51: ;
     if (((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved != NULL) {
@@ -23129,7 +23156,7 @@ __LL51: ;
     }
     cpy_r_r150 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r150 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 272, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 274, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r150);
@@ -23143,7 +23170,7 @@ CPyL120: ;
     if (!cpy_r_r151) goto CPyL124;
     cpy_r_r152 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 273, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 275, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r152);
@@ -23161,7 +23188,7 @@ CPyL123: ;
 CPyL124: ;
     cpy_r_r154 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r154 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 274, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 276, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r154);
@@ -23172,7 +23199,7 @@ CPyL125: ;
     if (likely(cpy_r_r154 != Py_None))
         cpy_r_r157 = cpy_r_r154;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 274, CPyStatic_async_ens___globals, "str", cpy_r_r154);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 276, CPyStatic_async_ens___globals, "str", cpy_r_r154);
         goto CPyL335;
     }
     cpy_r_r158 = CPyStr_IsTrue(cpy_r_r157);
@@ -23180,14 +23207,14 @@ CPyL125: ;
     if (!cpy_r_r158) goto CPyL154;
     cpy_r_r159 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r159 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 274, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 276, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r159);
 CPyL129: ;
     cpy_r_r160 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r160 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 274, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 276, CPyStatic_async_ens___globals);
         goto CPyL369;
     }
     CPy_INCREF(cpy_r_r160);
@@ -23195,7 +23222,7 @@ CPyL130: ;
     if (likely(cpy_r_r160 != Py_None))
         cpy_r_r161 = cpy_r_r160;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 274, CPyStatic_async_ens___globals, "str", cpy_r_r160);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 276, CPyStatic_async_ens___globals, "str", cpy_r_r160);
         goto CPyL369;
     }
     cpy_r_r162 = (PyObject *)&_Py_NoneStruct;
@@ -23218,7 +23245,7 @@ CPyL134: ;
     if (!cpy_r_r164) goto CPyL154;
     cpy_r_r168 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r168 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 274, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 276, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r168);
@@ -23226,7 +23253,7 @@ CPyL136: ;
     if (likely(cpy_r_r168 != Py_None))
         cpy_r_r169 = cpy_r_r168;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 274, CPyStatic_async_ens___globals, "str", cpy_r_r168);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 276, CPyStatic_async_ens___globals, "str", cpy_r_r168);
         goto CPyL335;
     }
     cpy_r_r170 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
@@ -23252,7 +23279,7 @@ CPyL140: ;
     cpy_r_r176 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r177 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r177 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 276, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 278, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r177);
@@ -23270,14 +23297,14 @@ CPyL142: ;
     if (likely(PyUnicode_Check(cpy_r_r182)))
         cpy_r_r183 = cpy_r_r182;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 276, CPyStatic_async_ens___globals, "str", cpy_r_r182);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 278, CPyStatic_async_ens___globals, "str", cpy_r_r182);
         goto CPyL335;
     }
     cpy_r_r184 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' to point to name, because the name resolves to ' */
     cpy_r_r185 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r186 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r186 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 277, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 279, CPyStatic_async_ens___globals);
         goto CPyL373;
     }
     CPy_INCREF(cpy_r_r186);
@@ -23285,7 +23312,7 @@ CPyL145: ;
     if (likely(cpy_r_r186 != Py_None))
         cpy_r_r187 = cpy_r_r186;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 277, CPyStatic_async_ens___globals, "str", cpy_r_r186);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 279, CPyStatic_async_ens___globals, "str", cpy_r_r186);
         goto CPyL373;
     }
     cpy_r_r188 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
@@ -23301,7 +23328,7 @@ CPyL145: ;
     if (likely(PyUnicode_Check(cpy_r_r192)))
         cpy_r_r193 = cpy_r_r192;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 277, CPyStatic_async_ens___globals, "str", cpy_r_r192);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 279, CPyStatic_async_ens___globals, "str", cpy_r_r192);
         goto CPyL373;
     }
     cpy_r_r194 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('. To change the name for an existing address, call '
@@ -23343,7 +23370,7 @@ CPyL145: ;
     if (likely(Py_TYPE(cpy_r_r206) == CPyType_exceptions___AddressMismatch))
         cpy_r_r207 = cpy_r_r206;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 275, CPyStatic_async_ens___globals, "faster_ens.exceptions.AddressMismatch", cpy_r_r206);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 277, CPyStatic_async_ens___globals, "faster_ens.exceptions.AddressMismatch", cpy_r_r206);
         goto CPyL335;
     }
     CPy_Raise(cpy_r_r207);
@@ -23356,7 +23383,7 @@ CPyL145: ;
 CPyL154: ;
     cpy_r_r208 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r208 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 281, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 283, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r208);
@@ -23370,14 +23397,14 @@ CPyL155: ;
     if (!cpy_r_r209) goto CPyL189;
     cpy_r_r210 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r210 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 282, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 284, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r210);
 CPyL158: ;
     cpy_r_r211 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r211 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 282, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 284, CPyStatic_async_ens___globals);
         goto CPyL377;
     }
     CPy_INCREF(cpy_r_r211);
@@ -23550,7 +23577,7 @@ CPyL187: ;
     if (likely(PyUnicode_Check(cpy_r_r220)))
         cpy_r_r239 = cpy_r_r220;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 282, CPyStatic_async_ens___globals, "str", cpy_r_r220);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 284, CPyStatic_async_ens___globals, "str", cpy_r_r220);
         goto CPyL335;
     }
     if (((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address != NULL) {
@@ -23565,7 +23592,7 @@ CPyL187: ;
 CPyL189: ;
     cpy_r_r241 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r241 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 283, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 285, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r241);
@@ -23589,7 +23616,7 @@ CPyL190: ;
     if (likely(Py_TYPE(cpy_r_r247) == CPyType_exceptions___UnownedName))
         cpy_r_r248 = cpy_r_r247;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 284, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnownedName", cpy_r_r247);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 286, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnownedName", cpy_r_r247);
         goto CPyL335;
     }
     CPy_Raise(cpy_r_r248);
@@ -23602,7 +23629,7 @@ CPyL190: ;
 CPyL196: ;
     cpy_r_r249 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r249 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 285, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 287, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r249);
@@ -23635,7 +23662,7 @@ CPyL197: ;
     if (!cpy_r_r256) goto CPyL207;
     cpy_r_r257 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r257 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 286, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 288, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r257);
@@ -23643,7 +23670,7 @@ CPyL202: ;
     if (likely(PyBytes_Check(cpy_r_r257) || PyByteArray_Check(cpy_r_r257)))
         cpy_r_r258 = cpy_r_r257;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 286, CPyStatic_async_ens___globals, "bytes", cpy_r_r257);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 288, CPyStatic_async_ens___globals, "bytes", cpy_r_r257);
         goto CPyL335;
     }
     cpy_r_r259 = CPyStatic_async_ens___globals;
@@ -23665,7 +23692,7 @@ CPyL202: ;
     if (likely(PyUnicode_Check(cpy_r_r264)))
         cpy_r_r265 = cpy_r_r264;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 286, CPyStatic_async_ens___globals, "str", cpy_r_r264);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 288, CPyStatic_async_ens___globals, "str", cpy_r_r264);
         goto CPyL335;
     }
     if (((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address != NULL) {
@@ -23680,7 +23707,7 @@ CPyL202: ;
 CPyL207: ;
     cpy_r_r267 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r267 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 287, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 289, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r267);
@@ -23723,7 +23750,7 @@ CPyL208: ;
     if (likely(Py_TYPE(cpy_r_r279) == CPyType_exceptions___ENSValueError))
         cpy_r_r280 = cpy_r_r279;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 288, CPyStatic_async_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r279);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 290, CPyStatic_async_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r279);
         goto CPyL335;
     }
     CPy_Raise(cpy_r_r280);
@@ -23736,14 +23763,14 @@ CPyL208: ;
 CPyL216: ;
     cpy_r_r281 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r281 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 289, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 291, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r281);
 CPyL217: ;
     cpy_r_r282 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r282 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 289, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 291, CPyStatic_async_ens___globals);
         goto CPyL390;
     }
     CPy_INCREF(cpy_r_r282);
@@ -23751,12 +23778,12 @@ CPyL218: ;
     if (likely(cpy_r_r282 != Py_None))
         cpy_r_r283 = cpy_r_r282;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 289, CPyStatic_async_ens___globals, "str", cpy_r_r282);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 291, CPyStatic_async_ens___globals, "str", cpy_r_r282);
         goto CPyL390;
     }
     cpy_r_r284 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r284 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 289, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 291, CPyStatic_async_ens___globals);
         goto CPyL391;
     }
     CPy_INCREF(cpy_r_r284);
@@ -23933,7 +23960,7 @@ CPyL246: ;
 CPyL248: ;
     cpy_r_r313 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolved;
     if (unlikely(cpy_r_r313 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 290, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "resolved", 292, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF(cpy_r_r313);
@@ -23944,7 +23971,7 @@ CPyL249: ;
     if (likely(cpy_r_r313 != Py_None))
         cpy_r_r316 = cpy_r_r313;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 290, CPyStatic_async_ens___globals, "str", cpy_r_r313);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 292, CPyStatic_async_ens___globals, "str", cpy_r_r313);
         goto CPyL335;
     }
     cpy_r_r317 = CPyStr_IsTrue(cpy_r_r316);
@@ -23953,21 +23980,21 @@ CPyL249: ;
 CPyL252: ;
     cpy_r_r318 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r318 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 291, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 293, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r318);
 CPyL253: ;
     cpy_r_r319 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r319 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 291, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 293, CPyStatic_async_ens___globals);
         goto CPyL400;
     }
     CPy_INCREF(cpy_r_r319);
 CPyL254: ;
     cpy_r_r320 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r320 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 291, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 293, CPyStatic_async_ens___globals);
         goto CPyL401;
     }
     CPy_INCREF(cpy_r_r320);
@@ -23975,12 +24002,12 @@ CPyL255: ;
     if (likely(cpy_r_r320 != Py_None))
         cpy_r_r321 = cpy_r_r320;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 291, CPyStatic_async_ens___globals, "str", cpy_r_r320);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 293, CPyStatic_async_ens___globals, "str", cpy_r_r320);
         goto CPyL401;
     }
     cpy_r_r322 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r322 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 291, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 293, CPyStatic_async_ens___globals);
         goto CPyL402;
     }
     CPy_INCREF(cpy_r_r322);
@@ -23988,7 +24015,7 @@ CPyL257: ;
     if (likely(cpy_r_r322 != Py_None))
         cpy_r_r323 = cpy_r_r322;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 291, CPyStatic_async_ens___globals, "dict", cpy_r_r322);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 293, CPyStatic_async_ens___globals, "dict", cpy_r_r322);
         goto CPyL402;
     }
     cpy_r_r324 = NULL;
@@ -24164,21 +24191,21 @@ CPyL284: ;
 CPyL286: ;
     cpy_r_r352 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r352 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 292, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "self", 294, CPyStatic_async_ens___globals);
         goto CPyL335;
     }
     CPy_INCREF_NO_IMM(cpy_r_r352);
 CPyL287: ;
     cpy_r_r353 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r353 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 292, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "name", 294, CPyStatic_async_ens___globals);
         goto CPyL410;
     }
     CPy_INCREF(cpy_r_r353);
 CPyL288: ;
     cpy_r_r354 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r354 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 292, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "address", 294, CPyStatic_async_ens___globals);
         goto CPyL411;
     }
     CPy_INCREF(cpy_r_r354);
@@ -24186,12 +24213,12 @@ CPyL289: ;
     if (likely(cpy_r_r354 != Py_None))
         cpy_r_r355 = cpy_r_r354;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 292, CPyStatic_async_ens___globals, "str", cpy_r_r354);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 294, CPyStatic_async_ens___globals, "str", cpy_r_r354);
         goto CPyL411;
     }
     cpy_r_r356 = ((faster_ens___async_ens___setup_name_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r356 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 292, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_name", "setup_name_AsyncENS_gen", "transact", 294, CPyStatic_async_ens___globals);
         goto CPyL412;
     }
     CPy_INCREF(cpy_r_r356);
@@ -24199,7 +24226,7 @@ CPyL291: ;
     if (likely(cpy_r_r356 != Py_None))
         cpy_r_r357 = cpy_r_r356;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 292, CPyStatic_async_ens___globals, "dict", cpy_r_r356);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_name", 294, CPyStatic_async_ens___globals, "dict", cpy_r_r356);
         goto CPyL412;
     }
     cpy_r_r358 = CPyDef_async_ens___AsyncENS____setup_reverse(cpy_r_r352, cpy_r_r353, cpy_r_r355, cpy_r_r357);
@@ -25282,7 +25309,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_ens___async_ens___owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "name", 305, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "name", 307, CPyStatic_async_ens___globals);
         goto CPyL50;
     }
     CPy_INCREF(cpy_r_r5);
@@ -25304,7 +25331,7 @@ CPyL5: ;
     }
     cpy_r_r8 = ((faster_ens___async_ens___owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "self", 306, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "self", 308, CPyStatic_async_ens___globals);
         goto CPyL50;
     }
     CPy_INCREF_NO_IMM(cpy_r_r8);
@@ -25323,7 +25350,7 @@ CPyL8: ;
     cpy_r_r13 = cpy_r_r12;
     cpy_r_r14 = ((faster_ens___async_ens___owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "node", 306, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "owner", "owner_AsyncENS_gen", "node", 308, CPyStatic_async_ens___globals);
         goto CPyL51;
     }
     CPy_INCREF(cpy_r_r14);
@@ -26182,7 +26209,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r19 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 338, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 340, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r19);
@@ -26193,7 +26220,7 @@ CPyL5: ;
     if (likely(cpy_r_r19 != Py_None))
         cpy_r_r22 = cpy_r_r19;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 338, CPyStatic_async_ens___globals, "dict", cpy_r_r19);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 340, CPyStatic_async_ens___globals, "dict", cpy_r_r19);
         goto CPyL210;
     }
     cpy_r_r23 = PyDict_Size(cpy_r_r22);
@@ -26219,7 +26246,7 @@ CPyL8: ;
 CPyL10: ;
     cpy_r_r28 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r28 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 340, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 342, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r28);
@@ -26227,7 +26254,7 @@ CPyL11: ;
     if (likely(cpy_r_r28 != Py_None))
         cpy_r_r29 = cpy_r_r28;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 340, CPyStatic_async_ens___globals, "dict", cpy_r_r28);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 342, CPyStatic_async_ens___globals, "dict", cpy_r_r28);
         goto CPyL210;
     }
     cpy_r_r30 = CPyStatic_async_ens___globals;
@@ -26249,7 +26276,7 @@ CPyL11: ;
     if (likely(PyDict_Check(cpy_r_r35)))
         cpy_r_r36 = cpy_r_r35;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 340, CPyStatic_async_ens___globals, "dict", cpy_r_r35);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 342, CPyStatic_async_ens___globals, "dict", cpy_r_r35);
         goto CPyL210;
     }
     if (((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
@@ -26263,14 +26290,14 @@ CPyL11: ;
     }
     cpy_r_r38 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 341, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 343, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF_NO_IMM(cpy_r_r38);
 CPyL17: ;
     cpy_r_r39 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r39 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 341, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 343, CPyStatic_async_ens___globals);
         goto CPyL213;
     }
     CPy_INCREF(cpy_r_r39);
@@ -26548,7 +26575,7 @@ __LL63: ;
     }
     cpy_r_r77 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner;
     if (unlikely(cpy_r_r77 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 342, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 344, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r77);
@@ -26572,7 +26599,7 @@ CPyL54: ;
     if (!cpy_r_r80) goto CPyL57;
     cpy_r_r81 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__super_owner;
     if (unlikely(cpy_r_r81 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 343, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 345, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r81);
@@ -26590,7 +26617,7 @@ CPyL56: ;
 CPyL57: ;
     cpy_r_r83 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner;
     if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 344, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 346, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r83);
@@ -26628,7 +26655,7 @@ CPyL63: ;
 CPyL64: ;
     cpy_r_r90 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner;
     if (unlikely(cpy_r_r90 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 347, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner", 349, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r90);
@@ -26652,7 +26679,7 @@ CPyL65: ;
     if (likely(PyUnicode_Check(cpy_r_r96)))
         cpy_r_r97 = cpy_r_r96;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 347, CPyStatic_async_ens___globals, "str", cpy_r_r96);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 349, CPyStatic_async_ens___globals, "str", cpy_r_r96);
         goto CPyL210;
     }
     if (((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner_ != NULL) {
@@ -26667,14 +26694,14 @@ CPyL65: ;
 CPyL69: ;
     cpy_r_r99 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r99 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 348, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 350, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF_NO_IMM(cpy_r_r99);
 CPyL70: ;
     cpy_r_r100 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r100 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 348, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 350, CPyStatic_async_ens___globals);
         goto CPyL225;
     }
     CPy_INCREF(cpy_r_r100);
@@ -26847,7 +26874,7 @@ CPyL99: ;
     if (likely(PyUnicode_Check(cpy_r_r109)))
         cpy_r_r128 = cpy_r_r109;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 348, CPyStatic_async_ens___globals, "str", cpy_r_r109);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 350, CPyStatic_async_ens___globals, "str", cpy_r_r109);
         goto CPyL210;
     }
     if (((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_owner != NULL) {
@@ -26861,7 +26888,7 @@ CPyL99: ;
     }
     cpy_r_r130 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner_;
     if (unlikely(cpy_r_r130 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 349, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 351, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r130);
@@ -26894,7 +26921,7 @@ CPyL108: ;
     if (!cpy_r_r135) goto CPyL116;
     cpy_r_r138 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_owner;
     if (unlikely(cpy_r_r138 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 349, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 351, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r138);
@@ -26914,14 +26941,14 @@ CPyL115: ;
 CPyL116: ;
     cpy_r_r142 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_owner;
     if (unlikely(cpy_r_r142 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 351, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 353, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r142);
 CPyL117: ;
     cpy_r_r143 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner_;
     if (unlikely(cpy_r_r143 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 351, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 353, CPyStatic_async_ens___globals);
         goto CPyL236;
     }
     CPy_INCREF(cpy_r_r143);
@@ -26945,7 +26972,7 @@ CPyL121: ;
     if (!cpy_r_r146) goto CPyL128;
     cpy_r_r149 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_owner;
     if (unlikely(cpy_r_r149 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 352, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "current_owner", 354, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r149);
@@ -26962,28 +26989,28 @@ CPyL127: ;
 CPyL128: ;
     cpy_r_r151 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 353, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 355, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF_NO_IMM(cpy_r_r151);
 CPyL129: ;
     cpy_r_r152 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__super_owner;
     if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 353, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 355, CPyStatic_async_ens___globals);
         goto CPyL238;
     }
     CPy_INCREF(cpy_r_r152);
 CPyL130: ;
     cpy_r_r153 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r153 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 353, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "name", 355, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r153);
 CPyL131: ;
     cpy_r_r154 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owned;
     if (unlikely(cpy_r_r154 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "owned", 353, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "owned", 355, CPyStatic_async_ens___globals);
         goto CPyL240;
     }
     CPy_INCREF(cpy_r_r154);
@@ -27000,7 +27027,7 @@ CPyL132: ;
         cpy_r_r155 = NULL;
     }
     if (cpy_r_r155 != NULL) goto __LL68;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 353, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r152);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 355, CPyStatic_async_ens___globals, "union[str, bytes]", cpy_r_r152);
     goto CPyL241;
 __LL68: ;
     cpy_r_r156 = CPyDef_async_ens___AsyncENS____assert_control(cpy_r_r151, cpy_r_r155, cpy_r_r153, cpy_r_r154);
@@ -27175,42 +27202,42 @@ CPyL159: ;
 CPyL161: ;
     cpy_r_r183 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r183 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 354, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "self", 356, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF_NO_IMM(cpy_r_r183);
 CPyL162: ;
     cpy_r_r184 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner_;
     if (unlikely(cpy_r_r184 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 355, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 357, CPyStatic_async_ens___globals);
         goto CPyL249;
     }
     CPy_INCREF(cpy_r_r184);
 CPyL163: ;
     cpy_r_r185 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__unowned;
     if (unlikely(cpy_r_r185 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "unowned", 355, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "unowned", 357, CPyStatic_async_ens___globals);
         goto CPyL250;
     }
     CPy_INCREF(cpy_r_r185);
 CPyL164: ;
     cpy_r_r186 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owned;
     if (unlikely(cpy_r_r186 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "owned", 355, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "owned", 357, CPyStatic_async_ens___globals);
         goto CPyL251;
     }
     CPy_INCREF(cpy_r_r186);
 CPyL165: ;
     cpy_r_r187 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__super_owner;
     if (unlikely(cpy_r_r187 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 355, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "super_owner", 357, CPyStatic_async_ens___globals);
         goto CPyL252;
     }
     CPy_INCREF(cpy_r_r187);
 CPyL166: ;
     cpy_r_r188 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r188 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 355, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "transact", 357, CPyStatic_async_ens___globals);
         goto CPyL253;
     }
     CPy_INCREF(cpy_r_r188);
@@ -27218,13 +27245,13 @@ CPyL167: ;
     if (likely(cpy_r_r188 != Py_None))
         cpy_r_r189 = cpy_r_r188;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 355, CPyStatic_async_ens___globals, "dict", cpy_r_r188);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 357, CPyStatic_async_ens___globals, "dict", cpy_r_r188);
         goto CPyL253;
     }
     if (likely(cpy_r_r184 != Py_None))
         cpy_r_r190 = cpy_r_r184;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 354, CPyStatic_async_ens___globals, "str", cpy_r_r184);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "setup_owner", 356, CPyStatic_async_ens___globals, "str", cpy_r_r184);
         goto CPyL254;
     }
     cpy_r_r191 = CPyDef_async_ens___AsyncENS____claim_ownership(cpy_r_r183, cpy_r_r190, cpy_r_r185, cpy_r_r186, cpy_r_r187, cpy_r_r189);
@@ -27401,7 +27428,7 @@ CPyL195: ;
 CPyL197: ;
     cpy_r_r218 = ((faster_ens___async_ens___setup_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_owner_;
     if (unlikely(cpy_r_r218 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 357, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "setup_owner", "setup_owner_AsyncENS_gen", "new_owner_", 359, CPyStatic_async_ens___globals);
         goto CPyL210;
     }
     CPy_INCREF(cpy_r_r218);
@@ -28182,7 +28209,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r7 = ((faster_ens___async_ens___resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "name", 365, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "name", 367, CPyStatic_async_ens___globals);
         goto CPyL49;
     }
     CPy_INCREF(cpy_r_r7);
@@ -28204,14 +28231,14 @@ CPyL5: ;
     }
     cpy_r_r10 = ((faster_ens___async_ens___resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r10 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "self", 366, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "self", 368, CPyStatic_async_ens___globals);
         goto CPyL49;
     }
     CPy_INCREF_NO_IMM(cpy_r_r10);
 CPyL8: ;
     cpy_r_r11 = ((faster_ens___async_ens___resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "normal_name", 366, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "normal_name", 368, CPyStatic_async_ens___globals);
         goto CPyL50;
     }
     CPy_INCREF(cpy_r_r11);
@@ -28452,7 +28479,7 @@ __LL78: ;
     }
     cpy_r_r42 = ((faster_ens___async_ens___resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r42.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "resolver", 367, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "resolver", "resolver_AsyncENS_gen", "resolver", 369, CPyStatic_async_ens___globals);
         goto CPyL49;
     }
     CPy_INCREF(cpy_r_r42.f0);
@@ -28951,7 +28978,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r7 = ((faster_ens___async_ens___reverser_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__target_address;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "target_address", 372, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "target_address", 374, CPyStatic_async_ens___globals);
         goto CPyL46;
     }
     CPy_INCREF(cpy_r_r7);
@@ -28973,14 +29000,14 @@ CPyL5: ;
     }
     cpy_r_r10 = ((faster_ens___async_ens___reverser_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r10 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "self", 373, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "self", 375, CPyStatic_async_ens___globals);
         goto CPyL46;
     }
     CPy_INCREF_NO_IMM(cpy_r_r10);
 CPyL8: ;
     cpy_r_r11 = ((faster_ens___async_ens___reverser_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__reversed_domain;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "reversed_domain", 373, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "reverser", "reverser_AsyncENS_gen", "reversed_domain", 375, CPyStatic_async_ens___globals);
         goto CPyL47;
     }
     CPy_INCREF(cpy_r_r11);
@@ -29722,7 +29749,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r13 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r13 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 389, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 391, CPyStatic_async_ens___globals);
         goto CPyL117;
     }
     CPy_INCREF(cpy_r_r13);
@@ -29744,14 +29771,14 @@ CPyL5: ;
     }
     cpy_r_r16 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "self", 391, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "self", 393, CPyStatic_async_ens___globals);
         goto CPyL117;
     }
     CPy_INCREF_NO_IMM(cpy_r_r16);
 CPyL8: ;
     cpy_r_r17 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r17 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 391, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 393, CPyStatic_async_ens___globals);
         goto CPyL118;
     }
     CPy_INCREF(cpy_r_r17);
@@ -29932,14 +29959,14 @@ CPyL37: ;
     }
     cpy_r_r46 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 393, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "name", 395, CPyStatic_async_ens___globals);
         goto CPyL117;
     }
     CPy_INCREF(cpy_r_r46);
 CPyL39: ;
     cpy_r_r47 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__r;
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "r", 393, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "r", 395, CPyStatic_async_ens___globals);
         goto CPyL128;
     }
     CPy_INCREF(cpy_r_r47);
@@ -30129,7 +30156,7 @@ CPyL69: ;
 CPyL71: ;
     cpy_r_r78 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__r;
     if (unlikely(cpy_r_r78 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "r", 395, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "r", 397, CPyStatic_async_ens___globals);
         goto CPyL117;
     }
     CPy_INCREF(cpy_r_r78);
@@ -30145,14 +30172,14 @@ CPyL72: ;
     cpy_r_r82 = cpy_r_r81;
     cpy_r_r83 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
     if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "node", 395, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "node", 397, CPyStatic_async_ens___globals);
         goto CPyL137;
     }
     CPy_INCREF(cpy_r_r83);
 CPyL75: ;
     cpy_r_r84 = ((faster_ens___async_ens___get_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r84 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "key", 395, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "get_text", "get_text_AsyncENS_gen", "key", 397, CPyStatic_async_ens___globals);
         goto CPyL138;
     }
     CPy_INCREF(cpy_r_r84);
@@ -31021,14 +31048,14 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r15 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "self", 418, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "self", 420, CPyStatic_async_ens___globals);
         goto CPyL121;
     }
     CPy_INCREF_NO_IMM(cpy_r_r15);
 CPyL5: ;
     cpy_r_r16 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 418, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 420, CPyStatic_async_ens___globals);
         goto CPyL122;
     }
     CPy_INCREF(cpy_r_r16);
@@ -31209,14 +31236,14 @@ CPyL34: ;
     }
     cpy_r_r45 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r45 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 420, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 422, CPyStatic_async_ens___globals);
         goto CPyL121;
     }
     CPy_INCREF(cpy_r_r45);
 CPyL36: ;
     cpy_r_r46 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__r;
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "r", 420, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "r", 422, CPyStatic_async_ens___globals);
         goto CPyL132;
     }
     CPy_INCREF(cpy_r_r46);
@@ -31406,7 +31433,7 @@ CPyL66: ;
 CPyL68: ;
     cpy_r_r77 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r77 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 422, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 424, CPyStatic_async_ens___globals);
         goto CPyL121;
     }
     CPy_INCREF(cpy_r_r77);
@@ -31428,21 +31455,21 @@ CPyL69: ;
     }
     cpy_r_r80 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r80 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "self", 424, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "self", 426, CPyStatic_async_ens___globals);
         goto CPyL121;
     }
     CPy_INCREF_NO_IMM(cpy_r_r80);
 CPyL72: ;
     cpy_r_r81 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r81 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "name", 427, CPyStatic_async_ens___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r81);
 CPyL73: ;
     cpy_r_r82 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__r;
     if (unlikely(cpy_r_r82 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "r", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "r", 427, CPyStatic_async_ens___globals);
         goto CPyL142;
     }
     CPy_INCREF(cpy_r_r82);
@@ -31466,21 +31493,21 @@ CPyL74: ;
     }
     cpy_r_r90 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
     if (unlikely(cpy_r_r90 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "node", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "node", 427, CPyStatic_async_ens___globals);
         goto CPyL143;
     }
     CPy_INCREF(cpy_r_r90);
 CPyL79: ;
     cpy_r_r91 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r91 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "key", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "key", 427, CPyStatic_async_ens___globals);
         goto CPyL144;
     }
     CPy_INCREF(cpy_r_r91);
 CPyL80: ;
     cpy_r_r92 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__value;
     if (unlikely(cpy_r_r92 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "value", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "value", 427, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r92);
@@ -31490,7 +31517,7 @@ CPyL81: ;
     cpy_r_r93.f2 = cpy_r_r92;
     cpy_r_r94 = ((faster_ens___async_ens___set_text_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r94 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "transact", 425, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "set_text", "set_text_AsyncENS_gen", "transact", 427, CPyStatic_async_ens___globals);
         goto CPyL146;
     }
     CPy_INCREF(cpy_r_r94);
@@ -32387,7 +32414,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "normal_name", 435, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "normal_name", 437, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF(cpy_r_r5);
@@ -32405,7 +32432,7 @@ CPyL6: ;
     if (!1) goto CPyL73;
     cpy_r_r7 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 440, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 442, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF(cpy_r_r7);
@@ -32419,7 +32446,7 @@ CPyL8: ;
     if (!cpy_r_r8) goto CPyL16;
     cpy_r_r9 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r9 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 443, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 445, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF(cpy_r_r9);
@@ -32446,7 +32473,7 @@ CPyL15: ;
 CPyL16: ;
     cpy_r_r13 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r13 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 445, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 447, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF_NO_IMM(cpy_r_r13);
@@ -32465,7 +32492,7 @@ CPyL17: ;
     cpy_r_r18 = cpy_r_r17;
     cpy_r_r19 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 446, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 448, CPyStatic_async_ens___globals);
         goto CPyL83;
     }
     CPy_INCREF(cpy_r_r19);
@@ -32658,7 +32685,7 @@ CPyL51: ;
     }
     cpy_r_r51 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r51 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver_addr", 448, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver_addr", 450, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF(cpy_r_r51);
@@ -32681,7 +32708,7 @@ CPyL53: ;
         cpy_r_r52 = NULL;
     }
     if (cpy_r_r52 != NULL) goto __LL95;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_get_resolver", 448, CPyStatic_async_ens___globals, "union[bytes, str, None]", cpy_r_r51);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_get_resolver", 450, CPyStatic_async_ens___globals, "union[bytes, str, None]", cpy_r_r51);
     goto CPyL82;
 __LL95: ;
     cpy_r_r53 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r52);
@@ -32693,21 +32720,21 @@ __LL95: ;
     if (cpy_r_r53) goto CPyL69;
     cpy_r_r54 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r54 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 451, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 453, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF_NO_IMM(cpy_r_r54);
 CPyL57: ;
     cpy_r_r55 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver_addr", 451, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver_addr", 453, CPyStatic_async_ens___globals);
         goto CPyL92;
     }
     CPy_INCREF(cpy_r_r55);
 CPyL58: ;
     cpy_r_r56 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fn_name;
     if (unlikely(cpy_r_r56 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "fn_name", 451, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "fn_name", 453, CPyStatic_async_ens___globals);
         goto CPyL93;
     }
     CPy_INCREF(cpy_r_r56);
@@ -32715,7 +32742,7 @@ CPyL59: ;
     if (likely(PyUnicode_Check(cpy_r_r55)))
         cpy_r_r57 = cpy_r_r55;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_get_resolver", 451, CPyStatic_async_ens___globals, "str", cpy_r_r55);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_get_resolver", 453, CPyStatic_async_ens___globals, "str", cpy_r_r55);
         goto CPyL94;
     }
     cpy_r_r58 = CPyDef_base_ens___BaseENS____type_aware_resolver(cpy_r_r54, cpy_r_r57, cpy_r_r56);
@@ -32737,14 +32764,14 @@ CPyL59: ;
     }
     cpy_r_r60 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r60 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver", 453, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "resolver", 455, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF(cpy_r_r60);
 CPyL63: ;
     cpy_r_r61 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 453, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 455, CPyStatic_async_ens___globals);
         goto CPyL95;
     }
     CPy_INCREF(cpy_r_r61);
@@ -32770,14 +32797,14 @@ CPyL68: ;
 CPyL69: ;
     cpy_r_r65 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r65 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 456, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "self", 458, CPyStatic_async_ens___globals);
         goto CPyL82;
     }
     CPy_INCREF_NO_IMM(cpy_r_r65);
 CPyL70: ;
     cpy_r_r66 = ((faster_ens___async_ens____get_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r66 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 456, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_get_resolver", "_get_resolver_AsyncENS_gen", "current_name", 458, CPyStatic_async_ens___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r66);
@@ -33462,7 +33489,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r11 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 464, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 466, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r11);
@@ -33473,7 +33500,7 @@ CPyL5: ;
     if (likely(cpy_r_r11 != Py_None))
         cpy_r_r14 = cpy_r_r11;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 464, CPyStatic_async_ens___globals, "dict", cpy_r_r11);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 466, CPyStatic_async_ens___globals, "dict", cpy_r_r11);
         goto CPyL145;
     }
     cpy_r_r15 = PyDict_Size(cpy_r_r14);
@@ -33499,7 +33526,7 @@ CPyL8: ;
 CPyL10: ;
     cpy_r_r20 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 466, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 468, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r20);
@@ -33507,7 +33534,7 @@ CPyL11: ;
     if (likely(cpy_r_r20 != Py_None))
         cpy_r_r21 = cpy_r_r20;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 466, CPyStatic_async_ens___globals, "dict", cpy_r_r20);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 468, CPyStatic_async_ens___globals, "dict", cpy_r_r20);
         goto CPyL145;
     }
     cpy_r_r22 = CPyStatic_async_ens___globals;
@@ -33529,7 +33556,7 @@ CPyL11: ;
     if (likely(PyDict_Check(cpy_r_r27)))
         cpy_r_r28 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 466, CPyStatic_async_ens___globals, "dict", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 468, CPyStatic_async_ens___globals, "dict", cpy_r_r27);
         goto CPyL145;
     }
     if (((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
@@ -33543,7 +33570,7 @@ CPyL11: ;
     }
     cpy_r_r30 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r30 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 467, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 469, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r30);
@@ -33557,7 +33584,7 @@ CPyL17: ;
     if (!cpy_r_r31) goto CPyL50;
     cpy_r_r32 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r32 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 468, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 470, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF_NO_IMM(cpy_r_r32);
@@ -33740,7 +33767,7 @@ CPyL48: ;
         cpy_r_r62 = NULL;
     }
     if (cpy_r_r62 != NULL) goto __LL100;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 468, CPyStatic_async_ens___globals, "str or None", cpy_r_r43);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 470, CPyStatic_async_ens___globals, "str or None", cpy_r_r43);
     goto CPyL145;
 __LL100: ;
     if (((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr != NULL) {
@@ -33755,7 +33782,7 @@ __LL100: ;
 CPyL50: ;
     cpy_r_r64 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r64 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "name", 469, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "name", 471, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r64);
@@ -33777,7 +33804,7 @@ CPyL51: ;
     }
     cpy_r_r67 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r67 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 470, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 472, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF_NO_IMM(cpy_r_r67);
@@ -33796,7 +33823,7 @@ CPyL54: ;
     cpy_r_r72 = cpy_r_r71;
     cpy_r_r73 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__namehash;
     if (unlikely(cpy_r_r73 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "namehash", 470, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "namehash", 472, CPyStatic_async_ens___globals);
         goto CPyL157;
     }
     CPy_INCREF(cpy_r_r73);
@@ -33974,7 +34001,7 @@ CPyL85: ;
 CPyL87: ;
     cpy_r_r103 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r103 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 470, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 472, CPyStatic_async_ens___globals);
         goto CPyL159;
     }
     CPy_INCREF(cpy_r_r103);
@@ -33997,7 +34024,7 @@ CPyL88: ;
     if (!cpy_r_r107) goto CPyL131;
     cpy_r_r108 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r108 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 473, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 475, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF_NO_IMM(cpy_r_r108);
@@ -34016,14 +34043,14 @@ CPyL92: ;
     cpy_r_r113 = cpy_r_r112;
     cpy_r_r114 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__namehash;
     if (unlikely(cpy_r_r114 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "namehash", 473, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "namehash", 475, CPyStatic_async_ens___globals);
         goto CPyL166;
     }
     CPy_INCREF(cpy_r_r114);
 CPyL95: ;
     cpy_r_r115 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r115 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 473, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 475, CPyStatic_async_ens___globals);
         goto CPyL167;
     }
     CPy_INCREF(cpy_r_r115);
@@ -34042,7 +34069,7 @@ CPyL96: ;
     CPy_DECREF(cpy_r_r115);
     cpy_r_r121 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r121 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 474, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "transact", 476, CPyStatic_async_ens___globals);
         goto CPyL169;
     }
     CPy_INCREF(cpy_r_r121);
@@ -34050,7 +34077,7 @@ CPyL99: ;
     if (likely(cpy_r_r121 != Py_None))
         cpy_r_r122 = cpy_r_r121;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 474, CPyStatic_async_ens___globals, "dict", cpy_r_r121);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_resolver", 476, CPyStatic_async_ens___globals, "dict", cpy_r_r121);
         goto CPyL169;
     }
     cpy_r_r123 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -34074,7 +34101,7 @@ CPyL99: ;
     }
     cpy_r_r128 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coro;
     if (unlikely(cpy_r_r128 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "coro", 477, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "coro", 479, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF(cpy_r_r128);
@@ -34244,14 +34271,14 @@ CPyL129: ;
 CPyL131: ;
     cpy_r_r153 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r153 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 478, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "self", 480, CPyStatic_async_ens___globals);
         goto CPyL145;
     }
     CPy_INCREF_NO_IMM(cpy_r_r153);
 CPyL132: ;
     cpy_r_r154 = ((faster_ens___async_ens____set_resolver_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver_addr;
     if (unlikely(cpy_r_r154 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 478, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_resolver", "_set_resolver_AsyncENS_gen", "resolver_addr", 480, CPyStatic_async_ens___globals);
         goto CPyL176;
     }
     CPy_INCREF(cpy_r_r154);
@@ -35160,7 +35187,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r15 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "name", 485, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "name", 487, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r15);
@@ -35182,21 +35209,21 @@ CPyL5: ;
     }
     cpy_r_r18 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 487, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 489, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF_NO_IMM(cpy_r_r18);
 CPyL8: ;
     cpy_r_r19 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 487, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 489, CPyStatic_async_ens___globals);
         goto CPyL240;
     }
     CPy_INCREF(cpy_r_r19);
 CPyL9: ;
     cpy_r_r20 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fn_name;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 487, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 489, CPyStatic_async_ens___globals);
         goto CPyL241;
     }
     CPy_INCREF(cpy_r_r20);
@@ -35449,7 +35476,7 @@ __LL110: ;
     }
     cpy_r_r55 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 488, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 490, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r55);
@@ -35480,14 +35507,14 @@ CPyL50: ;
 CPyL51: ;
     cpy_r_r64 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r64 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 491, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 493, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF_NO_IMM(cpy_r_r64);
 CPyL52: ;
     cpy_r_r65 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r65 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 491, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 493, CPyStatic_async_ens___globals);
         goto CPyL252;
     }
     CPy_INCREF(cpy_r_r65);
@@ -35510,7 +35537,7 @@ CPyL53: ;
     }
     cpy_r_r68 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r68 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 495, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 497, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r68);
@@ -35705,14 +35732,14 @@ CPyL87: ;
     if (!cpy_r_r98) goto CPyL159;
     cpy_r_r99 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fn_name;
     if (unlikely(cpy_r_r99 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 497, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 499, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r99);
 CPyL90: ;
     cpy_r_r100 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
     if (unlikely(cpy_r_r100 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "node", 497, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "node", 499, CPyStatic_async_ens___globals);
         goto CPyL263;
     }
     CPy_INCREF(cpy_r_r100);
@@ -35739,14 +35766,14 @@ CPyL91: ;
     }
     cpy_r_r106 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r106 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 499, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 501, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r106);
 CPyL94: ;
     cpy_r_r107 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__contract_func_with_args;
     if (unlikely(cpy_r_r107.f0 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "contract_func_with_args", 499, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "contract_func_with_args", 501, CPyStatic_async_ens___globals);
         goto CPyL265;
     }
     CPy_INCREF(cpy_r_r107.f0);
@@ -35784,7 +35811,7 @@ CPyL95: ;
     }
     cpy_r_r113 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r113 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 500, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 502, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r113);
@@ -35800,7 +35827,7 @@ CPyL99: ;
     cpy_r_r117 = cpy_r_r116;
     cpy_r_r118 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r118 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 501, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 503, CPyStatic_async_ens___globals);
         goto CPyL267;
     }
     CPy_INCREF(cpy_r_r118);
@@ -35813,7 +35840,7 @@ CPyL102: ;
     }
     cpy_r_r120 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__calldata;
     if (unlikely(cpy_r_r120 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "calldata", 502, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "calldata", 504, CPyStatic_async_ens___globals);
         goto CPyL268;
     }
     CPy_INCREF(cpy_r_r120);
@@ -36001,28 +36028,28 @@ CPyL134: ;
     }
     cpy_r_r151 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 504, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "self", 506, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF_NO_IMM(cpy_r_r151);
 CPyL136: ;
     cpy_r_r152 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__contract_call_result;
     if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "contract_call_result", 505, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "contract_call_result", 507, CPyStatic_async_ens___globals);
         goto CPyL277;
     }
     CPy_INCREF(cpy_r_r152);
 CPyL137: ;
     cpy_r_r153 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r153 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 505, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 507, CPyStatic_async_ens___globals);
         goto CPyL278;
     }
     CPy_INCREF(cpy_r_r153);
 CPyL138: ;
     cpy_r_r154 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fn_name;
     if (unlikely(cpy_r_r154 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 505, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 507, CPyStatic_async_ens___globals);
         goto CPyL279;
     }
     CPy_INCREF(cpy_r_r154);
@@ -36030,7 +36057,7 @@ CPyL139: ;
     if (likely(PyBytes_Check(cpy_r_r152) || PyByteArray_Check(cpy_r_r152)))
         cpy_r_r155 = cpy_r_r152;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 504, CPyStatic_async_ens___globals, "bytes", cpy_r_r152);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 506, CPyStatic_async_ens___globals, "bytes", cpy_r_r152);
         goto CPyL280;
     }
     cpy_r_r156 = CPyDef_base_ens___BaseENS____decode_ensip10_resolve_data(cpy_r_r151, cpy_r_r155, cpy_r_r153, cpy_r_r154);
@@ -36053,7 +36080,7 @@ CPyL139: ;
     }
     cpy_r_r158 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r158 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 507, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 509, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r158);
@@ -36086,7 +36113,7 @@ CPyL143: ;
     if (!cpy_r_r165) goto CPyL152;
     cpy_r_r166 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r166 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 507, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 509, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r166);
@@ -36110,7 +36137,7 @@ CPyL148: ;
     if (likely(PyUnicode_Check(cpy_r_r172)))
         cpy_r_r173 = cpy_r_r172;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 507, CPyStatic_async_ens___globals, "str", cpy_r_r172);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 509, CPyStatic_async_ens___globals, "str", cpy_r_r172);
         goto CPyL239;
     }
     cpy_r_r174 = cpy_r_r173;
@@ -36118,7 +36145,7 @@ CPyL148: ;
 CPyL152: ;
     cpy_r_r175 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r175 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 507, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 509, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r175);
@@ -36137,14 +36164,14 @@ CPyL158: ;
 CPyL159: ;
     cpy_r_r177 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__normal_name;
     if (unlikely(cpy_r_r177 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 508, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "normal_name", 510, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r177);
 CPyL160: ;
     cpy_r_r178 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_name;
     if (unlikely(cpy_r_r178 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "current_name", 508, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "current_name", 510, CPyStatic_async_ens___globals);
         goto CPyL283;
     }
     CPy_INCREF(cpy_r_r178);
@@ -36155,7 +36182,7 @@ CPyL161: ;
     if (!cpy_r_r179) goto CPyL227;
     cpy_r_r180 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r180 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 509, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "resolver", 511, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r180);
@@ -36171,7 +36198,7 @@ CPyL163: ;
     cpy_r_r184 = cpy_r_r183;
     cpy_r_r185 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fn_name;
     if (unlikely(cpy_r_r185 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 509, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "fn_name", 511, CPyStatic_async_ens___globals);
         goto CPyL284;
     }
     CPy_INCREF(cpy_r_r185);
@@ -36194,14 +36221,14 @@ CPyL166: ;
     }
     cpy_r_r188 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__node;
     if (unlikely(cpy_r_r188 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "node", 510, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "node", 512, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r188);
 CPyL169: ;
     cpy_r_r189 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__lookup_function;
     if (unlikely(cpy_r_r189 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "lookup_function", 510, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "lookup_function", 512, CPyStatic_async_ens___globals);
         goto CPyL285;
     }
     CPy_INCREF(cpy_r_r189);
@@ -36395,7 +36422,7 @@ CPyL200: ;
     }
     cpy_r_r222 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r222 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 511, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 513, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r222);
@@ -36418,7 +36445,7 @@ CPyL202: ;
         cpy_r_r223 = NULL;
     }
     if (cpy_r_r223 != NULL) goto __LL115;
-    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 511, CPyStatic_async_ens___globals, "union[bytes, str, None]", cpy_r_r222);
+    CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 513, CPyStatic_async_ens___globals, "union[bytes, str, None]", cpy_r_r222);
     goto CPyL239;
 __LL115: ;
     cpy_r_r224 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r223);
@@ -36440,7 +36467,7 @@ CPyL209: ;
 CPyL210: ;
     cpy_r_r227 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r227 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 513, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 515, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r227);
@@ -36473,7 +36500,7 @@ CPyL211: ;
     if (!cpy_r_r234) goto CPyL220;
     cpy_r_r235 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r235 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 513, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 515, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r235);
@@ -36497,7 +36524,7 @@ CPyL216: ;
     if (likely(PyUnicode_Check(cpy_r_r241)))
         cpy_r_r242 = cpy_r_r241;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 513, CPyStatic_async_ens___globals, "str", cpy_r_r241);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_resolve", 515, CPyStatic_async_ens___globals, "str", cpy_r_r241);
         goto CPyL239;
     }
     cpy_r_r243 = cpy_r_r242;
@@ -36505,7 +36532,7 @@ CPyL216: ;
 CPyL220: ;
     cpy_r_r244 = ((faster_ens___async_ens____resolve_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r244 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 513, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_resolve", "_resolve_AsyncENS_gen", "result", 515, CPyStatic_async_ens___globals);
         goto CPyL239;
     }
     CPy_INCREF(cpy_r_r244);
@@ -37306,7 +37333,7 @@ CPyL4: ;
 CPyL5: ;
     cpy_r_r7 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "self", 522, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "self", 524, CPyStatic_async_ens___globals);
         goto CPyL71;
     }
     CPy_INCREF_NO_IMM(cpy_r_r7);
@@ -37499,7 +37526,7 @@ CPyL36: ;
     if (likely(PyList_Check(cpy_r_r18)))
         cpy_r_r37 = cpy_r_r18;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 522, CPyStatic_async_ens___globals, "list", cpy_r_r18);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 524, CPyStatic_async_ens___globals, "list", cpy_r_r18);
         goto CPyL71;
     }
     cpy_r_r38 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
@@ -37527,7 +37554,7 @@ CPyL36: ;
     cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r45 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r45 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "name", 524, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "name", 526, CPyStatic_async_ens___globals);
         goto CPyL70;
     }
     CPy_INCREF(cpy_r_r45);
@@ -37545,14 +37572,14 @@ CPyL40: ;
     if (likely(PyUnicode_Check(cpy_r_r50)))
         cpy_r_r51 = cpy_r_r50;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 524, CPyStatic_async_ens___globals, "str", cpy_r_r50);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 526, CPyStatic_async_ens___globals, "str", cpy_r_r50);
         goto CPyL70;
     }
     cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', you must control account ' */
     cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r54 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__account;
     if (unlikely(cpy_r_r54 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "account", 525, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "account", 527, CPyStatic_async_ens___globals);
         goto CPyL83;
     }
     CPy_INCREF(cpy_r_r54);
@@ -37570,14 +37597,14 @@ CPyL43: ;
     if (likely(PyUnicode_Check(cpy_r_r59)))
         cpy_r_r60 = cpy_r_r59;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 525, CPyStatic_async_ens___globals, "str", cpy_r_r59);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 527, CPyStatic_async_ens___globals, "str", cpy_r_r59);
         goto CPyL83;
     }
     cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', which owns ' */
     cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r63 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__parent_owned;
     if (unlikely(cpy_r_r63 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "parent_owned", 525, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "parent_owned", 527, CPyStatic_async_ens___globals);
         goto CPyL85;
     }
     CPy_INCREF(cpy_r_r63);
@@ -37589,7 +37616,7 @@ CPyL46: ;
     if (likely(cpy_r_r63 != Py_None))
         cpy_r_r66 = cpy_r_r63;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 525, CPyStatic_async_ens___globals, "str", cpy_r_r63);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 527, CPyStatic_async_ens___globals, "str", cpy_r_r63);
         goto CPyL87;
     }
     cpy_r_r67 = CPyStr_IsTrue(cpy_r_r66);
@@ -37598,7 +37625,7 @@ CPyL46: ;
     if (likely(cpy_r_r63 != Py_None))
         cpy_r_r68 = cpy_r_r63;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 525, CPyStatic_async_ens___globals, "str", cpy_r_r63);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 527, CPyStatic_async_ens___globals, "str", cpy_r_r63);
         goto CPyL85;
     }
     cpy_r_r69 = cpy_r_r68;
@@ -37606,7 +37633,7 @@ CPyL46: ;
 CPyL51: ;
     cpy_r_r70 = ((faster_ens___async_ens____assert_control_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r70 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "name", 525, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_assert_control", "_assert_control_AsyncENS_gen", "name", 527, CPyStatic_async_ens___globals);
         goto CPyL85;
     }
     CPy_INCREF(cpy_r_r70);
@@ -37626,7 +37653,7 @@ CPyL53: ;
     if (likely(PyUnicode_Check(cpy_r_r75)))
         cpy_r_r76 = cpy_r_r75;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 525, CPyStatic_async_ens___globals, "str", cpy_r_r75);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 527, CPyStatic_async_ens___globals, "str", cpy_r_r75);
         goto CPyL85;
     }
     cpy_r_r77 = PyList_New(6);
@@ -37668,7 +37695,7 @@ CPyL53: ;
     if (likely(Py_TYPE(cpy_r_r89) == CPyType_exceptions___UnauthorizedError))
         cpy_r_r90 = cpy_r_r89;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 523, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnauthorizedError", cpy_r_r89);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_assert_control", 525, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnauthorizedError", cpy_r_r89);
         goto CPyL70;
     }
     CPy_Raise(cpy_r_r90);
@@ -38351,7 +38378,7 @@ CPyL4: ;
     }
     cpy_r_r11 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 538, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 540, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF(cpy_r_r11);
@@ -38381,7 +38408,7 @@ CPyL8: ;
 CPyL11: ;
     cpy_r_r16 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__pieces;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 539, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 541, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF_NO_IMM(cpy_r_r16);
@@ -38394,7 +38421,7 @@ CPyL12: ;
     if (!cpy_r_r20) goto CPyL60;
     cpy_r_r21 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r21 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 539, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 541, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF(cpy_r_r21);
@@ -38409,7 +38436,7 @@ CPyL14: ;
     cpy_r_r23 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '.' */
     cpy_r_r24 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__pieces;
     if (unlikely(cpy_r_r24 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 540, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 542, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF_NO_IMM(cpy_r_r24);
@@ -38431,14 +38458,14 @@ CPyL17: ;
     }
     cpy_r_r27 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r27 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "self", 541, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "self", 543, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF_NO_IMM(cpy_r_r27);
 CPyL20: ;
     cpy_r_r28 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r28 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 541, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 543, CPyStatic_async_ens___globals);
         goto CPyL73;
     }
     CPy_INCREF(cpy_r_r28);
@@ -38611,7 +38638,7 @@ CPyL49: ;
     if (likely(PyUnicode_Check(cpy_r_r37)))
         cpy_r_r56 = cpy_r_r37;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 541, CPyStatic_async_ens___globals, "str", cpy_r_r37);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 543, CPyStatic_async_ens___globals, "str", cpy_r_r37);
         goto CPyL72;
     }
     if (((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner != NULL) {
@@ -38625,7 +38652,7 @@ CPyL49: ;
     }
     cpy_r_r58 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r58 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 542, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 544, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF(cpy_r_r58);
@@ -38633,7 +38660,7 @@ CPyL52: ;
     if (likely(cpy_r_r58 != Py_None))
         cpy_r_r59 = cpy_r_r58;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 542, CPyStatic_async_ens___globals, "str", cpy_r_r58);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 544, CPyStatic_async_ens___globals, "str", cpy_r_r58);
         goto CPyL72;
     }
     cpy_r_r60 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r59);
@@ -38645,14 +38672,14 @@ CPyL52: ;
     if (!cpy_r_r60) goto CPyL11;
     cpy_r_r61 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__unowned;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "unowned", 543, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "unowned", 545, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF_NO_IMM(cpy_r_r61);
 CPyL56: ;
     cpy_r_r62 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__pieces;
     if (unlikely(cpy_r_r62 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 543, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "pieces", 545, CPyStatic_async_ens___globals);
         goto CPyL83;
     }
     CPy_INCREF_NO_IMM(cpy_r_r62);
@@ -38666,7 +38693,7 @@ CPyL57: ;
     if (likely(PyUnicode_Check(cpy_r_r63)))
         cpy_r_r64 = cpy_r_r63;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 543, CPyStatic_async_ens___globals, "str", cpy_r_r63);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_first_owner", 545, CPyStatic_async_ens___globals, "str", cpy_r_r63);
         goto CPyL83;
     }
     cpy_r_r65 = PyList_Append(cpy_r_r61, cpy_r_r64);
@@ -38681,21 +38708,21 @@ CPyL57: ;
 CPyL60: ;
     cpy_r_r67 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r67 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 544, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "owner", 546, CPyStatic_async_ens___globals);
         goto CPyL72;
     }
     CPy_INCREF(cpy_r_r67);
 CPyL61: ;
     cpy_r_r68 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__unowned;
     if (unlikely(cpy_r_r68 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "unowned", 544, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "unowned", 546, CPyStatic_async_ens___globals);
         goto CPyL84;
     }
     CPy_INCREF_NO_IMM(cpy_r_r68);
 CPyL62: ;
     cpy_r_r69 = ((faster_ens___async_ens____first_owner_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r69 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 544, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_first_owner", "_first_owner_AsyncENS_gen", "name", 546, CPyStatic_async_ens___globals);
         goto CPyL85;
     }
     CPy_INCREF(cpy_r_r69);
@@ -39271,7 +39298,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 554, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 556, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r5);
@@ -39282,7 +39309,7 @@ CPyL5: ;
     if (likely(cpy_r_r5 != Py_None))
         cpy_r_r8 = cpy_r_r5;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 554, CPyStatic_async_ens___globals, "dict", cpy_r_r5);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 556, CPyStatic_async_ens___globals, "dict", cpy_r_r5);
         goto CPyL94;
     }
     cpy_r_r9 = PyDict_Size(cpy_r_r8);
@@ -39308,7 +39335,7 @@ CPyL8: ;
 CPyL10: ;
     cpy_r_r14 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 556, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 558, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r14);
@@ -39316,7 +39343,7 @@ CPyL11: ;
     if (likely(cpy_r_r14 != Py_None))
         cpy_r_r15 = cpy_r_r14;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 556, CPyStatic_async_ens___globals, "dict", cpy_r_r14);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 558, CPyStatic_async_ens___globals, "dict", cpy_r_r14);
         goto CPyL94;
     }
     cpy_r_r16 = CPyStatic_async_ens___globals;
@@ -39338,7 +39365,7 @@ CPyL11: ;
     if (likely(PyDict_Check(cpy_r_r21)))
         cpy_r_r22 = cpy_r_r21;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 556, CPyStatic_async_ens___globals, "dict", cpy_r_r21);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 558, CPyStatic_async_ens___globals, "dict", cpy_r_r21);
         goto CPyL94;
     }
     if (((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
@@ -39352,7 +39379,7 @@ CPyL11: ;
     }
     cpy_r_r24 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__old_owner;
     if (unlikely(cpy_r_r24 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "old_owner", 557, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "old_owner", 559, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r24);
@@ -39364,7 +39391,7 @@ CPyL17: ;
     if (likely(cpy_r_r24 != Py_None))
         cpy_r_r27 = cpy_r_r24;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 557, CPyStatic_async_ens___globals, "str", cpy_r_r24);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 559, CPyStatic_async_ens___globals, "str", cpy_r_r24);
         goto CPyL98;
     }
     cpy_r_r28 = CPyStr_IsTrue(cpy_r_r27);
@@ -39373,7 +39400,7 @@ CPyL17: ;
     if (likely(cpy_r_r24 != Py_None))
         cpy_r_r29 = cpy_r_r24;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 557, CPyStatic_async_ens___globals, "str", cpy_r_r24);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 559, CPyStatic_async_ens___globals, "str", cpy_r_r24);
         goto CPyL94;
     }
     cpy_r_r30 = cpy_r_r29;
@@ -39381,7 +39408,7 @@ CPyL17: ;
 CPyL22: ;
     cpy_r_r31 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r31 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owner", 557, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owner", 559, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r31);
@@ -39390,7 +39417,7 @@ CPyL23: ;
 CPyL24: ;
     cpy_r_r32 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r32 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 557, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 559, CPyStatic_async_ens___globals);
         goto CPyL99;
     }
     CPy_INCREF(cpy_r_r32);
@@ -39398,7 +39425,7 @@ CPyL25: ;
     if (likely(cpy_r_r32 != Py_None))
         cpy_r_r33 = cpy_r_r32;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 557, CPyStatic_async_ens___globals, "dict", cpy_r_r32);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 559, CPyStatic_async_ens___globals, "dict", cpy_r_r32);
         goto CPyL99;
     }
     cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
@@ -39412,7 +39439,7 @@ CPyL25: ;
     }
     cpy_r_r37 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__unowned;
     if (unlikely(cpy_r_r37 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "unowned", 558, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "unowned", 560, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r37);
@@ -39459,7 +39486,7 @@ CPyL28: ;
 CPyL33: ;
     cpy_r_r47 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__85;
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "__mypyc_temp__85", 558, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "__mypyc_temp__85", 560, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r47);
@@ -39470,7 +39497,7 @@ CPyL34: ;
     if (likely(PyUnicode_Check(cpy_r_r48)))
         cpy_r_r49 = cpy_r_r48;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 558, CPyStatic_async_ens___globals, "str", cpy_r_r48);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 560, CPyStatic_async_ens___globals, "str", cpy_r_r48);
         goto CPyL94;
     }
     if (((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__label != NULL) {
@@ -39484,7 +39511,7 @@ CPyL34: ;
     }
     cpy_r_r51 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r51 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "self", 561, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "self", 563, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF_NO_IMM(cpy_r_r51);
@@ -39503,7 +39530,7 @@ CPyL38: ;
     cpy_r_r56 = cpy_r_r55;
     cpy_r_r57 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owned;
     if (unlikely(cpy_r_r57 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owned", 562, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owned", 564, CPyStatic_async_ens___globals);
         goto CPyL103;
     }
     CPy_INCREF(cpy_r_r57);
@@ -39516,7 +39543,7 @@ CPyL41: ;
     }
     cpy_r_r59 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__label;
     if (unlikely(cpy_r_r59 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "label", 563, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "label", 565, CPyStatic_async_ens___globals);
         goto CPyL104;
     }
     CPy_INCREF(cpy_r_r59);
@@ -39529,7 +39556,7 @@ CPyL43: ;
     }
     cpy_r_r61 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owner", 564, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owner", 566, CPyStatic_async_ens___globals);
         goto CPyL105;
     }
     CPy_INCREF(cpy_r_r61);
@@ -39549,7 +39576,7 @@ CPyL45: ;
     CPy_DECREF(cpy_r_r61);
     cpy_r_r67 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r67 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 565, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "transact", 567, CPyStatic_async_ens___globals);
         goto CPyL107;
     }
     CPy_INCREF(cpy_r_r67);
@@ -39557,7 +39584,7 @@ CPyL48: ;
     if (likely(cpy_r_r67 != Py_None))
         cpy_r_r68 = cpy_r_r67;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 565, CPyStatic_async_ens___globals, "dict", cpy_r_r67);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_claim_ownership", 567, CPyStatic_async_ens___globals, "dict", cpy_r_r67);
         goto CPyL107;
     }
     cpy_r_r69 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -39581,7 +39608,7 @@ CPyL48: ;
     }
     cpy_r_r74 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__coro;
     if (unlikely(cpy_r_r74 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "coro", 567, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "coro", 569, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r74);
@@ -39751,7 +39778,7 @@ CPyL78: ;
 CPyL80: ;
     cpy_r_r99 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__label;
     if (unlikely(cpy_r_r99 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "label", 568, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "label", 570, CPyStatic_async_ens___globals);
         goto CPyL94;
     }
     CPy_INCREF(cpy_r_r99);
@@ -39759,7 +39786,7 @@ CPyL81: ;
     cpy_r_r100 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '.' */
     cpy_r_r101 = ((faster_ens___async_ens____claim_ownership_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owned;
     if (unlikely(cpy_r_r101 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owned", 568, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_claim_ownership", "_claim_ownership_AsyncENS_gen", "owned", 570, CPyStatic_async_ens___globals);
         goto CPyL114;
     }
     CPy_INCREF(cpy_r_r101);
@@ -40510,7 +40537,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r9 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r9 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 576, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 578, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r9);
@@ -40521,7 +40548,7 @@ CPyL5: ;
     if (likely(cpy_r_r9 != Py_None))
         cpy_r_r12 = cpy_r_r9;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 576, CPyStatic_async_ens___globals, "str", cpy_r_r9);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 578, CPyStatic_async_ens___globals, "str", cpy_r_r9);
         goto CPyL106;
     }
     cpy_r_r13 = CPyStr_IsTrue(cpy_r_r12);
@@ -40529,7 +40556,7 @@ CPyL5: ;
     if (!cpy_r_r13) goto CPyL12;
     cpy_r_r14 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 576, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 578, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r14);
@@ -40537,7 +40564,7 @@ CPyL9: ;
     if (likely(cpy_r_r14 != Py_None))
         cpy_r_r15 = cpy_r_r14;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 576, CPyStatic_async_ens___globals, "str", cpy_r_r14);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 578, CPyStatic_async_ens___globals, "str", cpy_r_r14);
         goto CPyL106;
     }
     cpy_r_r16 = CPyDef_faster_ens___utils___normalize_name(cpy_r_r15);
@@ -40564,7 +40591,7 @@ CPyL13: ;
     }
     cpy_r_r20 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 577, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 579, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r20);
@@ -40575,7 +40602,7 @@ CPyL15: ;
     if (likely(cpy_r_r20 != Py_None))
         cpy_r_r23 = cpy_r_r20;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 577, CPyStatic_async_ens___globals, "dict", cpy_r_r20);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 579, CPyStatic_async_ens___globals, "dict", cpy_r_r20);
         goto CPyL106;
     }
     cpy_r_r24 = PyDict_Size(cpy_r_r23);
@@ -40601,7 +40628,7 @@ CPyL18: ;
 CPyL20: ;
     cpy_r_r29 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r29 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 579, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 581, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r29);
@@ -40609,7 +40636,7 @@ CPyL21: ;
     if (likely(cpy_r_r29 != Py_None))
         cpy_r_r30 = cpy_r_r29;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 579, CPyStatic_async_ens___globals, "dict", cpy_r_r29);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 581, CPyStatic_async_ens___globals, "dict", cpy_r_r29);
         goto CPyL106;
     }
     cpy_r_r31 = CPyStatic_async_ens___globals;
@@ -40631,7 +40658,7 @@ CPyL21: ;
     if (likely(PyDict_Check(cpy_r_r36)))
         cpy_r_r37 = cpy_r_r36;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 579, CPyStatic_async_ens___globals, "dict", cpy_r_r36);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 581, CPyStatic_async_ens___globals, "dict", cpy_r_r36);
         goto CPyL106;
     }
     if (((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact != NULL) {
@@ -40645,14 +40672,14 @@ CPyL21: ;
     }
     cpy_r_r39 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__address;
     if (unlikely(cpy_r_r39 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "address", 580, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "address", 582, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r39);
 CPyL27: ;
     cpy_r_r40 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r40 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 580, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 582, CPyStatic_async_ens___globals);
         goto CPyL110;
     }
     CPy_INCREF(cpy_r_r40);
@@ -40660,7 +40687,7 @@ CPyL28: ;
     if (likely(cpy_r_r40 != Py_None))
         cpy_r_r41 = cpy_r_r40;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 580, CPyStatic_async_ens___globals, "dict", cpy_r_r40);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 582, CPyStatic_async_ens___globals, "dict", cpy_r_r40);
         goto CPyL110;
     }
     cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
@@ -40674,7 +40701,7 @@ CPyL28: ;
     }
     cpy_r_r45 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r45 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "self", 581, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "self", 583, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF_NO_IMM(cpy_r_r45);
@@ -40854,7 +40881,7 @@ CPyL59: ;
     }
     cpy_r_r74 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__reverse_registrar;
     if (unlikely(cpy_r_r74 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "reverse_registrar", 582, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "reverse_registrar", 584, CPyStatic_async_ens___globals);
         goto CPyL106;
     }
     CPy_INCREF(cpy_r_r74);
@@ -40868,7 +40895,7 @@ CPyL61: ;
     }
     cpy_r_r77 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r77 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 582, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "name", 584, CPyStatic_async_ens___globals);
         goto CPyL120;
     }
     CPy_INCREF(cpy_r_r77);
@@ -40876,7 +40903,7 @@ CPyL63: ;
     if (likely(cpy_r_r77 != Py_None))
         cpy_r_r78 = cpy_r_r77;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 582, CPyStatic_async_ens___globals, "str", cpy_r_r77);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 584, CPyStatic_async_ens___globals, "str", cpy_r_r77);
         goto CPyL120;
     }
     cpy_r_r79 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setName' */
@@ -40891,7 +40918,7 @@ CPyL63: ;
     CPy_DECREF(cpy_r_r78);
     cpy_r_r83 = ((faster_ens___async_ens____setup_reverse_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 582, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_setup_reverse", "_setup_reverse_AsyncENS_gen", "transact", 584, CPyStatic_async_ens___globals);
         goto CPyL122;
     }
     CPy_INCREF(cpy_r_r83);
@@ -40899,7 +40926,7 @@ CPyL66: ;
     if (likely(cpy_r_r83 != Py_None))
         cpy_r_r84 = cpy_r_r83;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 582, CPyStatic_async_ens___globals, "dict", cpy_r_r83);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_setup_reverse", 584, CPyStatic_async_ens___globals, "dict", cpy_r_r83);
         goto CPyL122;
     }
     cpy_r_r85 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -41716,7 +41743,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_ens___async_ens____reverse_registrar_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "self", 585, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "self", 587, CPyStatic_async_ens___globals);
         goto CPyL55;
     }
     CPy_INCREF_NO_IMM(cpy_r_r5);
@@ -41921,7 +41948,7 @@ CPyL38: ;
     }
     cpy_r_r43 = ((faster_ens___async_ens____reverse_registrar_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r43 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "self", 588, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "self", 590, CPyStatic_async_ens___globals);
         goto CPyL55;
     }
     CPy_INCREF_NO_IMM(cpy_r_r43);
@@ -41938,7 +41965,7 @@ CPyL40: ;
     }
     cpy_r_r47 = ((faster_ens___async_ens____reverse_registrar_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__addr;
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "addr", 588, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_reverse_registrar", "_reverse_registrar_AsyncENS_gen", "addr", 590, CPyStatic_async_ens___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r47);
@@ -41960,7 +41987,7 @@ CPyL42: ;
     if (likely(PyList_Check(cpy_r_r52)))
         cpy_r_r53 = cpy_r_r52;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_reverse_registrar", 588, CPyStatic_async_ens___globals, "list", cpy_r_r52);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_reverse_registrar", 590, CPyStatic_async_ens___globals, "list", cpy_r_r52);
         goto CPyL66;
     }
     cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contract' */
@@ -42511,7 +42538,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r9 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r9 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact", 597, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact", 599, CPyStatic_async_ens___globals);
         goto CPyL93;
     }
     CPy_INCREF(cpy_r_r9);
@@ -42522,7 +42549,7 @@ CPyL5: ;
     if (likely(cpy_r_r9 != Py_None))
         cpy_r_r12 = cpy_r_r9;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 597, CPyStatic_async_ens___globals, "dict", cpy_r_r9);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 599, CPyStatic_async_ens___globals, "dict", cpy_r_r9);
         goto CPyL93;
     }
     cpy_r_r13 = PyDict_Size(cpy_r_r12);
@@ -42548,14 +42575,14 @@ CPyL8: ;
 CPyL10: ;
     cpy_r_r18 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "self", 600, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "self", 602, CPyStatic_async_ens___globals);
         goto CPyL93;
     }
     CPy_INCREF_NO_IMM(cpy_r_r18);
 CPyL11: ;
     cpy_r_r19 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__name;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "name", 600, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "name", 602, CPyStatic_async_ens___globals);
         goto CPyL95;
     }
     CPy_INCREF(cpy_r_r19);
@@ -42728,7 +42755,7 @@ CPyL40: ;
     if (likely(PyUnicode_Check(cpy_r_r28)))
         cpy_r_r47 = cpy_r_r28;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 600, CPyStatic_async_ens___globals, "str", cpy_r_r28);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 602, CPyStatic_async_ens___globals, "str", cpy_r_r28);
         goto CPyL93;
     }
     if (((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner != NULL) {
@@ -42743,7 +42770,7 @@ CPyL40: ;
     cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
     cpy_r_r50 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__owner;
     if (unlikely(cpy_r_r50 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "owner", 601, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "owner", 603, CPyStatic_async_ens___globals);
         goto CPyL93;
     }
     CPy_INCREF(cpy_r_r50);
@@ -42756,7 +42783,7 @@ CPyL43: ;
     }
     cpy_r_r52 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact;
     if (unlikely(cpy_r_r52 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact", 601, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact", 603, CPyStatic_async_ens___globals);
         goto CPyL105;
     }
     CPy_INCREF(cpy_r_r52);
@@ -42764,7 +42791,7 @@ CPyL45: ;
     if (likely(cpy_r_r52 != Py_None))
         cpy_r_r53 = cpy_r_r52;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 601, CPyStatic_async_ens___globals, "dict", cpy_r_r52);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_set_property", 603, CPyStatic_async_ens___globals, "dict", cpy_r_r52);
         goto CPyL105;
     }
     cpy_r_r54 = CPyStatic_async_ens___globals;
@@ -42795,14 +42822,14 @@ CPyL45: ;
     }
     cpy_r_r61 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__args;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "args", 603, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "args", 605, CPyStatic_async_ens___globals);
         goto CPyL93;
     }
     CPy_INCREF(cpy_r_r61);
 CPyL50: ;
     cpy_r_r62 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__func;
     if (unlikely(cpy_r_r62 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "func", 603, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "func", 605, CPyStatic_async_ens___globals);
         goto CPyL107;
     }
     CPy_INCREF(cpy_r_r62);
@@ -42822,7 +42849,7 @@ CPyL51: ;
     }
     cpy_r_r65 = ((faster_ens___async_ens____set_property_AsyncENS_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transact_from_owner;
     if (unlikely(cpy_r_r65 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact_from_owner", 603, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_set_property", "_set_property_AsyncENS_gen", "transact_from_owner", 605, CPyStatic_async_ens___globals);
         goto CPyL109;
     }
     CPy_INCREF(cpy_r_r65);
@@ -43669,7 +43696,7 @@ CPyL4: ;
     cpy_r_r5 = 0;
     cpy_r_r6 = ((faster_ens___async_ens____async_resolver_supports_interface_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "resolver", 611, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "resolver", 613, CPyStatic_async_ens___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r6);
@@ -43709,7 +43736,7 @@ CPyL5: ;
 CPyL9: ;
     cpy_r_r14 = ((faster_ens___async_ens____async_resolver_supports_interface_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__99;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "__mypyc_temp__99", 610, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "__mypyc_temp__99", 612, CPyStatic_async_ens___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r14);
@@ -43729,7 +43756,7 @@ CPyL10: ;
     cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'supportsInterface' */
     cpy_r_r18 = ((faster_ens___async_ens____async_resolver_supports_interface_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__func;
     if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "func", 611, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "func", 613, CPyStatic_async_ens___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r18);
@@ -43765,7 +43792,7 @@ CPyL18: ;
 CPyL20: ;
     cpy_r_r26 = ((faster_ens___async_ens____async_resolver_supports_interface_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r26 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "resolver", 612, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "resolver", 614, CPyStatic_async_ens___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r26);
@@ -43779,7 +43806,7 @@ CPyL21: ;
     }
     cpy_r_r29 = ((faster_ens___async_ens____async_resolver_supports_interface_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__interface_id;
     if (unlikely(cpy_r_r29 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "interface_id", 612, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_resolver_supports_interface", "_async_resolver_supports_interface_gen", "interface_id", 614, CPyStatic_async_ens___globals);
         goto CPyL66;
     }
     CPy_INCREF(cpy_r_r29);
@@ -44467,7 +44494,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r7 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "resolver", 621, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "resolver", 623, CPyStatic_async_ens___globals);
         goto CPyL61;
     }
     CPy_INCREF(cpy_r_r7);
@@ -44484,7 +44511,7 @@ CPyL5: ;
     cpy_r_r11 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'No resolver found for name `' */
     cpy_r_r12 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__ens_name;
     if (unlikely(cpy_r_r12 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_name", 623, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_name", 625, CPyStatic_async_ens___globals);
         goto CPyL61;
     }
     CPy_INCREF(cpy_r_r12);
@@ -44509,7 +44536,7 @@ CPyL8: ;
     if (likely(Py_TYPE(cpy_r_r18) == CPyType_exceptions___ResolverNotFound))
         cpy_r_r19 = cpy_r_r18;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", 622, CPyStatic_async_ens___globals, "faster_ens.exceptions.ResolverNotFound", cpy_r_r18);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", 624, CPyStatic_async_ens___globals, "faster_ens.exceptions.ResolverNotFound", cpy_r_r18);
         goto CPyL61;
     }
     CPy_Raise(cpy_r_r19);
@@ -44522,14 +44549,14 @@ CPyL8: ;
 CPyL13: ;
     cpy_r_r20 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__resolver;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "resolver", 626, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "resolver", 628, CPyStatic_async_ens___globals);
         goto CPyL61;
     }
     CPy_INCREF(cpy_r_r20);
 CPyL14: ;
     cpy_r_r21 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__ens_interface_id;
     if (unlikely(cpy_r_r21 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_interface_id", 626, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_interface_id", 628, CPyStatic_async_ens___globals);
         goto CPyL63;
     }
     CPy_INCREF(cpy_r_r21);
@@ -44712,7 +44739,7 @@ CPyL43: ;
     cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Resolver for name `' */
     cpy_r_r51 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__ens_name;
     if (unlikely(cpy_r_r51 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_name", 628, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "ens_name", 630, CPyStatic_async_ens___globals);
         goto CPyL61;
     }
     CPy_INCREF(cpy_r_r51);
@@ -44720,7 +44747,7 @@ CPyL46: ;
     cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '` does not support the `' */
     cpy_r_r53 = ((faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__interface_name;
     if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "interface_name", 628, CPyStatic_async_ens___globals);
+        CPy_AttributeError("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", "_async_validate_resolver_and_interface_id_gen", "interface_name", 630, CPyStatic_async_ens___globals);
         goto CPyL73;
     }
     CPy_INCREF(cpy_r_r53);
@@ -44745,7 +44772,7 @@ CPyL47: ;
     if (likely(Py_TYPE(cpy_r_r59) == CPyType_exceptions___UnsupportedFunction))
         cpy_r_r60 = cpy_r_r59;
     else {
-        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", 627, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnsupportedFunction", cpy_r_r59);
+        CPy_TypeErrorTraceback("faster_ens/async_ens.py", "_async_validate_resolver_and_interface_id", 629, CPyStatic_async_ens___globals, "faster_ens.exceptions.UnsupportedFunction", cpy_r_r59);
         goto CPyL61;
     }
     CPy_Raise(cpy_r_r60);
@@ -48991,56 +49018,56 @@ fail: ;
 
 PyObject *CPyDef_ens___ENS___setup_address(PyObject *cpy_r_self, PyObject *cpy_r_name, PyObject *cpy_r_address, PyObject *cpy_r_coin_type, PyObject *cpy_r_transact) {
     PyObject *cpy_r_r0;
-    PyObject *cpy_r_address_;
-    PyObject *cpy_r_r1;
-    char cpy_r_r2;
+    char cpy_r_r1;
+    PyObject *cpy_r_r2;
     PyObject *cpy_r_r3;
     PyObject *cpy_r_r4;
-    PyObject *cpy_r_r5;
-    char cpy_r_r6;
-    PyObject *cpy_r_r7;
-    int64_t cpy_r_r8;
-    CPyTagged cpy_r_r9;
-    char cpy_r_r10;
+    char cpy_r_r5;
+    PyObject *cpy_r_r6;
+    int64_t cpy_r_r7;
+    CPyTagged cpy_r_r8;
+    char cpy_r_r9;
+    PyObject *cpy_r_r10;
     PyObject *cpy_r_r11;
     PyObject *cpy_r_r12;
     PyObject *cpy_r_r13;
     PyObject *cpy_r_r14;
-    PyObject *cpy_r_r15;
-    PyObject **cpy_r_r17;
+    PyObject **cpy_r_r16;
+    PyObject *cpy_r_r17;
     PyObject *cpy_r_r18;
     PyObject *cpy_r_r19;
     PyObject *cpy_r_r20;
     PyObject *cpy_r_r21;
     PyObject *cpy_r_r22;
     PyObject *cpy_r_r23;
-    PyObject *cpy_r_r24;
-    char cpy_r_r25;
-    PyObject *cpy_r_r26;
+    char cpy_r_r24;
+    PyObject *cpy_r_r25;
+    char cpy_r_r26;
     char cpy_r_r27;
-    char cpy_r_r28;
-    PyObject *cpy_r_r29;
-    char cpy_r_r30;
+    PyObject *cpy_r_address_;
+    PyObject *cpy_r_r28;
+    char cpy_r_r29;
+    PyObject *cpy_r_r30;
     PyObject *cpy_r_r31;
     PyObject *cpy_r_r32;
     PyObject *cpy_r_r33;
-    PyObject *cpy_r_r34;
-    PyObject **cpy_r_r36;
-    PyObject *cpy_r_r37;
-    char cpy_r_r38;
+    PyObject **cpy_r_r35;
+    PyObject *cpy_r_r36;
+    char cpy_r_r37;
+    PyObject *cpy_r_r38;
     PyObject *cpy_r_r39;
     PyObject *cpy_r_r40;
     PyObject *cpy_r_r41;
-    PyObject *cpy_r_r42;
-    PyObject **cpy_r_r44;
+    PyObject **cpy_r_r43;
+    PyObject *cpy_r_r44;
     PyObject *cpy_r_r45;
     PyObject *cpy_r_r46;
     PyObject *cpy_r_r47;
     PyObject *cpy_r_r48;
-    PyObject *cpy_r_r49;
-    PyObject **cpy_r_r51;
-    PyObject *cpy_r_r52;
-    char cpy_r_r53;
+    PyObject **cpy_r_r50;
+    PyObject *cpy_r_r51;
+    char cpy_r_r52;
+    PyObject *cpy_r_r53;
     PyObject *cpy_r_r54;
     PyObject *cpy_r_r55;
     PyObject **cpy_r_r57;
@@ -49053,327 +49080,312 @@ PyObject *CPyDef_ens___ENS___setup_address(PyObject *cpy_r_self, PyObject *cpy_r
     PyObject *cpy_r_r64;
     char cpy_r_r65;
     char cpy_r_r66;
-    char cpy_r_r67;
-    PyObject *cpy_r_r68;
-    char cpy_r_r69;
-    char cpy_r_r70;
-    PyObject *cpy_r_r71;
-    char cpy_r_r72;
+    PyObject *cpy_r_r67;
+    char cpy_r_r68;
+    PyObject *cpy_r_r69;
+    PyObject *cpy_r_r70;
+    char cpy_r_r71;
+    PyObject *cpy_r_r72;
     PyObject *cpy_r_r73;
     char cpy_r_r74;
-    char cpy_r_r75;
-    PyObject *cpy_r_r76;
+    PyObject *cpy_r_r75;
+    char cpy_r_r76;
     PyObject *cpy_r_r77;
-    char cpy_r_r78;
-    char cpy_r_r79;
-    PyObject *cpy_r_r80;
-    char cpy_r_r81;
+    PyObject *cpy_r_r78;
+    int32_t cpy_r_r79;
+    char cpy_r_r80;
+    PyObject *cpy_r_r81;
     PyObject *cpy_r_r82;
     PyObject *cpy_r_r83;
-    int32_t cpy_r_r84;
-    char cpy_r_r85;
-    PyObject *cpy_r_r86;
+    PyObject *cpy_r_r84;
+    PyObject *cpy_r_r85;
+    char cpy_r_r86;
     PyObject *cpy_r_r87;
     PyObject *cpy_r_r88;
     PyObject *cpy_r_r89;
-    PyObject *cpy_r_r90;
-    char cpy_r_r91;
+    PyObject **cpy_r_r91;
     PyObject *cpy_r_r92;
     PyObject *cpy_r_r93;
     PyObject *cpy_r_r94;
-    char cpy_r_r95;
-    PyObject **cpy_r_r97;
+    PyObject **cpy_r_r96;
+    PyObject *cpy_r_r97;
     PyObject *cpy_r_r98;
-    char cpy_r_r99;
-    PyObject *cpy_r_r100;
+    PyObject *cpy_r_r99;
+    CPyTagged cpy_r_r100;
     PyObject *cpy_r_r101;
-    PyObject **cpy_r_r103;
-    PyObject *cpy_r_r104;
+    PyObject *cpy_r_r102;
+    PyObject **cpy_r_r104;
     PyObject *cpy_r_r105;
     PyObject *cpy_r_r106;
-    CPyTagged cpy_r_r107;
-    PyObject *cpy_r_r108;
-    PyObject *cpy_r_r109;
-    char cpy_r_r110;
-    PyObject **cpy_r_r112;
-    PyObject *cpy_r_r113;
-    char cpy_r_r114;
-    PyObject *cpy_r_r115;
-    PyObject *cpy_r_r116;
-    PyObject **cpy_r_r118;
-    PyObject *cpy_r_r119;
-    PyObject *cpy_r_r120;
-    cpy_r_r0 = NULL;
-    cpy_r_address_ = cpy_r_r0;
-    if (cpy_r_address != NULL) goto CPyL106;
-    cpy_r_r1 = CPyStatic_faster_ens___utils___default;
-    if (unlikely(cpy_r_r1 == NULL)) {
-        goto CPyL107;
-    } else
-        goto CPyL4;
-CPyL2: ;
+    PyObject *cpy_r_r107;
+    PyObject **cpy_r_r109;
+    PyObject *cpy_r_r110;
+    PyObject *cpy_r_r111;
+    if (cpy_r_address != NULL) goto CPyL81;
+    cpy_r_r0 = CPyStatic_faster_ens___utils___default;
+    if (likely(cpy_r_r0 != NULL)) goto CPyL4;
     PyErr_SetString(PyExc_NameError, "value for final name \"default\" was not set");
-    cpy_r_r2 = 0;
-    if (unlikely(!cpy_r_r2)) {
+    cpy_r_r1 = 0;
+    if (unlikely(!cpy_r_r1)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
+        goto CPyL80;
     }
     CPy_Unreachable();
 CPyL4: ;
-    CPy_INCREF_NO_IMM(cpy_r_r1);
-    cpy_r_address = cpy_r_r1;
+    CPy_INCREF_NO_IMM(cpy_r_r0);
+    cpy_r_address = cpy_r_r0;
 CPyL5: ;
-    if (cpy_r_coin_type != NULL) goto CPyL108;
-    cpy_r_r3 = Py_None;
-    cpy_r_coin_type = cpy_r_r3;
+    if (cpy_r_coin_type != NULL) goto CPyL82;
+    cpy_r_r2 = Py_None;
+    cpy_r_coin_type = cpy_r_r2;
 CPyL7: ;
-    if (cpy_r_transact != NULL) goto CPyL109;
-    cpy_r_r4 = Py_None;
-    cpy_r_transact = cpy_r_r4;
+    if (cpy_r_transact != NULL) goto CPyL83;
+    cpy_r_r3 = Py_None;
+    cpy_r_transact = cpy_r_r3;
 CPyL9: ;
-    cpy_r_r5 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r6 = cpy_r_transact != cpy_r_r5;
-    if (!cpy_r_r6) goto CPyL110;
+    cpy_r_r4 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r5 = cpy_r_transact != cpy_r_r4;
+    if (!cpy_r_r5) goto CPyL84;
     CPy_INCREF(cpy_r_transact);
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r7 = cpy_r_transact;
+        cpy_r_r6 = cpy_r_transact;
     else {
         CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 178, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL111;
+        goto CPyL85;
     }
-    cpy_r_r8 = PyDict_Size(cpy_r_r7);
-    CPy_DECREF(cpy_r_r7);
-    cpy_r_r9 = cpy_r_r8 << 1;
-    cpy_r_r10 = cpy_r_r9 != 0;
-    if (cpy_r_r10) {
+    cpy_r_r7 = PyDict_Size(cpy_r_r6);
+    CPy_DECREF(cpy_r_r6);
+    cpy_r_r8 = cpy_r_r7 << 1;
+    cpy_r_r9 = cpy_r_r8 != 0;
+    if (cpy_r_r9) {
         goto CPyL14;
     } else
-        goto CPyL110;
+        goto CPyL84;
 CPyL12: ;
-    cpy_r_r11 = PyDict_New();
-    if (unlikely(cpy_r_r11 == NULL)) {
+    cpy_r_r10 = PyDict_New();
+    if (unlikely(cpy_r_r10 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL112;
+        goto CPyL86;
     }
-    cpy_r_transact = cpy_r_r11;
+    cpy_r_transact = cpy_r_r10;
 CPyL14: ;
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r12 = cpy_r_transact;
+        cpy_r_r11 = cpy_r_transact;
     else {
         CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 202, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL112;
+        goto CPyL86;
     }
-    cpy_r_r13 = CPyStatic_ens___globals;
-    cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'deepcopy' */
-    cpy_r_r15 = CPyDict_GetItem(cpy_r_r13, cpy_r_r14);
-    if (unlikely(cpy_r_r15 == NULL)) {
+    cpy_r_r12 = CPyStatic_ens___globals;
+    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'deepcopy' */
+    cpy_r_r14 = CPyDict_GetItem(cpy_r_r12, cpy_r_r13);
+    if (unlikely(cpy_r_r14 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL113;
+        goto CPyL87;
     }
-    PyObject *cpy_r_r16[1] = {cpy_r_r12};
-    cpy_r_r17 = (PyObject **)&cpy_r_r16;
-    cpy_r_r18 = PyObject_Vectorcall(cpy_r_r15, cpy_r_r17, 1, 0);
-    CPy_DECREF(cpy_r_r15);
-    if (unlikely(cpy_r_r18 == NULL)) {
+    PyObject *cpy_r_r15[1] = {cpy_r_r11};
+    cpy_r_r16 = (PyObject **)&cpy_r_r15;
+    cpy_r_r17 = PyObject_Vectorcall(cpy_r_r14, cpy_r_r16, 1, 0);
+    CPy_DECREF(cpy_r_r14);
+    if (unlikely(cpy_r_r17 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL113;
+        goto CPyL87;
     }
-    CPy_DECREF(cpy_r_r12);
-    if (likely(PyDict_Check(cpy_r_r18)))
-        cpy_r_r19 = cpy_r_r18;
+    CPy_DECREF(cpy_r_r11);
+    if (likely(PyDict_Check(cpy_r_r17)))
+        cpy_r_r18 = cpy_r_r17;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 202, CPyStatic_ens___globals, "dict", cpy_r_r18);
-        goto CPyL112;
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 202, CPyStatic_ens___globals, "dict", cpy_r_r17);
+        goto CPyL86;
     }
-    cpy_r_transact = cpy_r_r19;
+    cpy_r_transact = cpy_r_r18;
     CPy_INCREF(cpy_r_transact);
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r20 = cpy_r_transact;
+        cpy_r_r19 = cpy_r_transact;
     else {
         CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 203, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL111;
+        goto CPyL85;
     }
-    cpy_r_r21 = NULL;
-    cpy_r_r22 = CPyDef_ens___ENS___setup_owner(cpy_r_self, cpy_r_name, cpy_r_r21, cpy_r_r20);
-    CPy_DECREF(cpy_r_r20);
-    if (unlikely(cpy_r_r22 == NULL)) {
+    cpy_r_r20 = NULL;
+    cpy_r_r21 = CPyDef_ens___ENS___setup_owner(cpy_r_self, cpy_r_name, cpy_r_r20, cpy_r_r19);
+    CPy_DECREF(cpy_r_r19);
+    if (unlikely(cpy_r_r21 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL111;
+        goto CPyL85;
     }
-    CPy_INCREF(cpy_r_r22);
-    if (PyUnicode_Check(cpy_r_r22))
-        cpy_r_r23 = cpy_r_r22;
+    CPy_INCREF(cpy_r_r21);
+    if (PyUnicode_Check(cpy_r_r21))
+        cpy_r_r22 = cpy_r_r21;
     else {
-        cpy_r_r23 = NULL;
+        cpy_r_r22 = NULL;
     }
-    if (cpy_r_r23 != NULL) goto __LL159;
-    if (PyBytes_Check(cpy_r_r22) || PyByteArray_Check(cpy_r_r22))
-        cpy_r_r23 = cpy_r_r22;
+    if (cpy_r_r22 != NULL) goto __LL159;
+    if (PyBytes_Check(cpy_r_r21) || PyByteArray_Check(cpy_r_r21))
+        cpy_r_r22 = cpy_r_r21;
     else {
-        cpy_r_r23 = NULL;
+        cpy_r_r22 = NULL;
     }
-    if (cpy_r_r23 != NULL) goto __LL159;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 204, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_r22);
-    goto CPyL114;
+    if (cpy_r_r22 != NULL) goto __LL159;
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 204, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_r21);
+    goto CPyL88;
 __LL159: ;
-    cpy_r_r24 = NULL;
-    cpy_r_r25 = CPyDef_ens___ENS____assert_control(cpy_r_self, cpy_r_r23, cpy_r_name, cpy_r_r24);
-    CPy_DECREF(cpy_r_r23);
-    if (unlikely(cpy_r_r25 == 2)) {
+    cpy_r_r23 = NULL;
+    cpy_r_r24 = CPyDef_ens___ENS____assert_control(cpy_r_self, cpy_r_r22, cpy_r_name, cpy_r_r23);
+    CPy_DECREF(cpy_r_r22);
+    if (unlikely(cpy_r_r24 == 2)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    cpy_r_r26 = CPyStatic_faster_ens___utils___default;
-    if (unlikely(cpy_r_r26 == NULL)) {
-        goto CPyL115;
+    cpy_r_r25 = CPyStatic_faster_ens___utils___default;
+    if (unlikely(cpy_r_r25 == NULL)) {
+        goto CPyL89;
     } else
         goto CPyL25;
 CPyL23: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"default\" was not set");
-    cpy_r_r27 = 0;
-    if (unlikely(!cpy_r_r27)) {
+    cpy_r_r26 = 0;
+    if (unlikely(!cpy_r_r26)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
+        goto CPyL80;
     }
     CPy_Unreachable();
 CPyL25: ;
-    cpy_r_r28 = cpy_r_address == cpy_r_r26;
-    if (cpy_r_r28) {
-        goto CPyL116;
+    cpy_r_r27 = cpy_r_address == cpy_r_r25;
+    if (cpy_r_r27) {
+        goto CPyL90;
     } else
         goto CPyL27;
 CPyL26: ;
-    CPy_INCREF(cpy_r_r22);
-    cpy_r_address_ = cpy_r_r22;
-    goto CPyL48;
+    CPy_INCREF(cpy_r_r21);
+    cpy_r_address_ = cpy_r_r21;
+    goto CPyL50;
 CPyL27: ;
     CPy_INCREF(cpy_r_address);
     if (PyBytes_Check(cpy_r_address) || PyByteArray_Check(cpy_r_address))
-        cpy_r_r29 = cpy_r_address;
+        cpy_r_r28 = cpy_r_address;
     else {
-        cpy_r_r29 = NULL;
+        cpy_r_r28 = NULL;
     }
-    if (cpy_r_r29 != NULL) goto __LL160;
+    if (cpy_r_r28 != NULL) goto __LL160;
     if (PyUnicode_Check(cpy_r_address))
-        cpy_r_r29 = cpy_r_address;
+        cpy_r_r28 = cpy_r_address;
     else {
-        cpy_r_r29 = NULL;
+        cpy_r_r28 = NULL;
     }
-    if (cpy_r_r29 != NULL) goto __LL160;
+    if (cpy_r_r28 != NULL) goto __LL160;
     if (cpy_r_address == Py_None)
-        cpy_r_r29 = cpy_r_address;
+        cpy_r_r28 = cpy_r_address;
     else {
-        cpy_r_r29 = NULL;
+        cpy_r_r28 = NULL;
     }
-    if (cpy_r_r29 != NULL) goto __LL160;
+    if (cpy_r_r28 != NULL) goto __LL160;
     CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 207, CPyStatic_ens___globals, "union[bytes, str, None]", cpy_r_address);
-    goto CPyL114;
+    goto CPyL88;
 __LL160: ;
-    cpy_r_r30 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r29);
-    CPy_DECREF(cpy_r_r29);
-    if (unlikely(cpy_r_r30 == 2)) {
+    cpy_r_r29 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r28);
+    CPy_DECREF(cpy_r_r28);
+    if (unlikely(cpy_r_r29 == 2)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    if (cpy_r_r30) {
-        goto CPyL117;
+    if (cpy_r_r29) {
+        goto CPyL91;
     } else
         goto CPyL31;
 CPyL30: ;
-    cpy_r_r31 = Py_None;
-    cpy_r_address_ = cpy_r_r31;
-    goto CPyL48;
+    cpy_r_r30 = Py_None;
+    cpy_r_address_ = cpy_r_r30;
+    goto CPyL50;
 CPyL31: ;
-    cpy_r_r32 = CPyStatic_ens___globals;
-    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_binary_address' */
-    cpy_r_r34 = CPyDict_GetItem(cpy_r_r32, cpy_r_r33);
-    if (unlikely(cpy_r_r34 == NULL)) {
+    cpy_r_r31 = CPyStatic_ens___globals;
+    cpy_r_r32 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_binary_address' */
+    cpy_r_r33 = CPyDict_GetItem(cpy_r_r31, cpy_r_r32);
+    if (unlikely(cpy_r_r33 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    PyObject *cpy_r_r35[1] = {cpy_r_address};
-    cpy_r_r36 = (PyObject **)&cpy_r_r35;
-    cpy_r_r37 = PyObject_Vectorcall(cpy_r_r34, cpy_r_r36, 1, 0);
-    CPy_DECREF(cpy_r_r34);
-    if (unlikely(cpy_r_r37 == NULL)) {
+    PyObject *cpy_r_r34[1] = {cpy_r_address};
+    cpy_r_r35 = (PyObject **)&cpy_r_r34;
+    cpy_r_r36 = PyObject_Vectorcall(cpy_r_r33, cpy_r_r35, 1, 0);
+    CPy_DECREF(cpy_r_r33);
+    if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    if (unlikely(!PyBool_Check(cpy_r_r37))) {
-        CPy_TypeError("bool", cpy_r_r37); cpy_r_r38 = 2;
+    if (unlikely(!PyBool_Check(cpy_r_r36))) {
+        CPy_TypeError("bool", cpy_r_r36); cpy_r_r37 = 2;
     } else
-        cpy_r_r38 = cpy_r_r37 == Py_True;
-    CPy_DECREF(cpy_r_r37);
-    if (unlikely(cpy_r_r38 == 2)) {
+        cpy_r_r37 = cpy_r_r36 == Py_True;
+    CPy_DECREF(cpy_r_r36);
+    if (unlikely(cpy_r_r37 == 2)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    if (cpy_r_r38) {
-        goto CPyL118;
-    } else
-        goto CPyL40;
-CPyL35: ;
+    if (!cpy_r_r37) goto CPyL40;
     if (likely(PyBytes_Check(cpy_r_address) || PyByteArray_Check(cpy_r_address)))
-        cpy_r_r39 = cpy_r_address;
+        cpy_r_r38 = cpy_r_address;
     else {
         CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 210, CPyStatic_ens___globals, "bytes", cpy_r_address);
-        goto CPyL119;
+        goto CPyL92;
     }
-    cpy_r_r40 = CPyStatic_ens___globals;
-    cpy_r_r41 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to_checksum_address' */
-    cpy_r_r42 = CPyDict_GetItem(cpy_r_r40, cpy_r_r41);
-    if (unlikely(cpy_r_r42 == NULL)) {
+    cpy_r_r39 = CPyStatic_ens___globals;
+    cpy_r_r40 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to_checksum_address' */
+    cpy_r_r41 = CPyDict_GetItem(cpy_r_r39, cpy_r_r40);
+    if (unlikely(cpy_r_r41 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL120;
+        goto CPyL93;
     }
-    PyObject *cpy_r_r43[1] = {cpy_r_r39};
-    cpy_r_r44 = (PyObject **)&cpy_r_r43;
-    cpy_r_r45 = PyObject_Vectorcall(cpy_r_r42, cpy_r_r44, 1, 0);
-    CPy_DECREF(cpy_r_r42);
-    if (unlikely(cpy_r_r45 == NULL)) {
+    PyObject *cpy_r_r42[1] = {cpy_r_r38};
+    cpy_r_r43 = (PyObject **)&cpy_r_r42;
+    cpy_r_r44 = PyObject_Vectorcall(cpy_r_r41, cpy_r_r43, 1, 0);
+    CPy_DECREF(cpy_r_r41);
+    if (unlikely(cpy_r_r44 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL120;
+        goto CPyL93;
     }
-    CPy_DECREF(cpy_r_r39);
-    if (likely(PyUnicode_Check(cpy_r_r45)))
-        cpy_r_r46 = cpy_r_r45;
+    CPy_DECREF(cpy_r_r38);
+    if (likely(PyUnicode_Check(cpy_r_r44)))
+        cpy_r_r45 = cpy_r_r44;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 210, CPyStatic_ens___globals, "str", cpy_r_r45);
-        goto CPyL119;
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 210, CPyStatic_ens___globals, "str", cpy_r_r44);
+        goto CPyL92;
     }
-    cpy_r_address_ = cpy_r_r46;
-    goto CPyL48;
+    cpy_r_address_ = cpy_r_r45;
+    goto CPyL50;
 CPyL40: ;
-    cpy_r_r47 = CPyStatic_ens___globals;
-    cpy_r_r48 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_checksum_address' */
-    cpy_r_r49 = CPyDict_GetItem(cpy_r_r47, cpy_r_r48);
-    if (unlikely(cpy_r_r49 == NULL)) {
+    cpy_r_r46 = CPyStatic_ens___globals;
+    cpy_r_r47 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_checksum_address' */
+    cpy_r_r48 = CPyDict_GetItem(cpy_r_r46, cpy_r_r47);
+    if (unlikely(cpy_r_r48 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    PyObject *cpy_r_r50[1] = {cpy_r_address};
-    cpy_r_r51 = (PyObject **)&cpy_r_r50;
-    cpy_r_r52 = PyObject_Vectorcall(cpy_r_r49, cpy_r_r51, 1, 0);
-    CPy_DECREF(cpy_r_r49);
-    if (unlikely(cpy_r_r52 == NULL)) {
+    PyObject *cpy_r_r49[1] = {cpy_r_address};
+    cpy_r_r50 = (PyObject **)&cpy_r_r49;
+    cpy_r_r51 = PyObject_Vectorcall(cpy_r_r48, cpy_r_r50, 1, 0);
+    CPy_DECREF(cpy_r_r48);
+    if (unlikely(cpy_r_r51 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL114;
+        goto CPyL88;
     }
-    CPy_DECREF(cpy_r_address);
-    if (unlikely(!PyBool_Check(cpy_r_r52))) {
-        CPy_TypeError("bool", cpy_r_r52); cpy_r_r53 = 2;
+    if (unlikely(!PyBool_Check(cpy_r_r51))) {
+        CPy_TypeError("bool", cpy_r_r51); cpy_r_r52 = 2;
     } else
-        cpy_r_r53 = cpy_r_r52 == Py_True;
-    CPy_DECREF(cpy_r_r52);
-    if (unlikely(cpy_r_r53 == 2)) {
+        cpy_r_r52 = cpy_r_r51 == Py_True;
+    CPy_DECREF(cpy_r_r51);
+    if (unlikely(cpy_r_r52 == 2)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL121;
+        goto CPyL88;
     }
-    if (cpy_r_r53) {
-        goto CPyL48;
-    } else
-        goto CPyL122;
-CPyL44: ;
+    if (!cpy_r_r52) goto CPyL94;
+    if (likely(PyUnicode_Check(cpy_r_address)))
+        cpy_r_r53 = cpy_r_address;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 212, CPyStatic_ens___globals, "str", cpy_r_address);
+        goto CPyL92;
+    }
+    cpy_r_address_ = cpy_r_r53;
+    goto CPyL50;
+CPyL46: ;
     cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'You must supply the address in checksum format' */
     cpy_r_r55 = (PyObject *)CPyType_exceptions___ENSValueError;
     PyObject *cpy_r_r56[1] = {cpy_r_r54};
@@ -49381,530 +49393,347 @@ CPyL44: ;
     cpy_r_r58 = PyObject_Vectorcall(cpy_r_r55, cpy_r_r57, 1, 0);
     if (unlikely(cpy_r_r58 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
+        goto CPyL80;
     }
     if (likely(Py_TYPE(cpy_r_r58) == CPyType_exceptions___ENSValueError))
         cpy_r_r59 = cpy_r_r58;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 212, CPyStatic_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r58);
-        goto CPyL105;
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 214, CPyStatic_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r58);
+        goto CPyL80;
     }
     CPy_Raise(cpy_r_r59);
     CPy_DECREF_NO_IMM(cpy_r_r59);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
+        goto CPyL80;
     }
     CPy_Unreachable();
-CPyL48: ;
+CPyL50: ;
     cpy_r_r60 = NULL;
     cpy_r_r61 = CPyDef_ens___ENS___address(cpy_r_self, cpy_r_name, cpy_r_r60);
     if (unlikely(cpy_r_r61 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL121;
+        goto CPyL95;
     }
     cpy_r_r62 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r63 = cpy_r_r61 == cpy_r_r62;
-    if (!cpy_r_r63) goto CPyL54;
+    if (!cpy_r_r63) goto CPyL53;
     cpy_r_r64 = (PyObject *)&_Py_NoneStruct;
-    if (cpy_r_address_ == NULL) {
-        goto CPyL123;
-    } else
-        goto CPyL53;
-CPyL51: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r65 = 0;
-    if (unlikely(!cpy_r_r65)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
+    cpy_r_r65 = cpy_r_address_ == cpy_r_r64;
+    cpy_r_r66 = cpy_r_r65;
+    goto CPyL56;
 CPyL53: ;
-    cpy_r_r66 = cpy_r_address_ == cpy_r_r64;
-    cpy_r_r67 = cpy_r_r66;
-    goto CPyL63;
-CPyL54: ;
-    cpy_r_r68 = (PyObject *)&_Py_NoneStruct;
-    if (cpy_r_address_ == NULL) {
-        goto CPyL124;
-    } else
-        goto CPyL57;
+    cpy_r_r67 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r68 = cpy_r_address_ == cpy_r_r67;
+    if (!cpy_r_r68) goto CPyL55;
+    cpy_r_r66 = 0;
+    goto CPyL56;
 CPyL55: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r69 = 0;
-    if (unlikely(!cpy_r_r69)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
+    cpy_r_r69 = cpy_r_r61;
+    cpy_r_r70 = cpy_r_address_;
+    cpy_r_r71 = CPyStr_Equal(cpy_r_r69, cpy_r_r70);
+    cpy_r_r66 = cpy_r_r71;
+CPyL56: ;
+    CPy_DECREF(cpy_r_r61);
+    if (cpy_r_r66) {
+        goto CPyL96;
+    } else
+        goto CPyL58;
 CPyL57: ;
-    cpy_r_r70 = cpy_r_address_ == cpy_r_r68;
-    if (!cpy_r_r70) goto CPyL59;
-    cpy_r_r67 = 0;
-    goto CPyL63;
+    cpy_r_r72 = Py_None;
+    return cpy_r_r72;
+CPyL58: ;
+    cpy_r_r73 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r74 = cpy_r_address_ == cpy_r_r73;
+    if (cpy_r_r74) {
+        goto CPyL97;
+    } else
+        goto CPyL63;
 CPyL59: ;
-    cpy_r_r71 = cpy_r_r61;
-    if (cpy_r_address_ == NULL) {
-        goto CPyL125;
+    cpy_r_r75 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
+    if (unlikely(cpy_r_r75 == NULL)) {
+        goto CPyL98;
     } else
         goto CPyL62;
 CPyL60: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r72 = 0;
-    if (unlikely(!cpy_r_r72)) {
+    PyErr_SetString(PyExc_NameError, "value for final name \"EMPTY_ADDR_HEX\" was not set");
+    cpy_r_r76 = 0;
+    if (unlikely(!cpy_r_r76)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
+        goto CPyL80;
     }
     CPy_Unreachable();
 CPyL62: ;
-    cpy_r_r73 = cpy_r_address_;
-    cpy_r_r74 = CPyStr_Equal(cpy_r_r71, cpy_r_r73);
-    cpy_r_r67 = cpy_r_r74;
+    CPy_INCREF(cpy_r_r75);
+    cpy_r_address_ = cpy_r_r75;
 CPyL63: ;
-    if (cpy_r_address_ == NULL) {
-        goto CPyL126;
-    } else
-        goto CPyL66;
-CPyL64: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r75 = 0;
-    if (unlikely(!cpy_r_r75)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", -1, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL66: ;
-    CPy_DECREF(cpy_r_r61);
-    if (cpy_r_r67) {
-        goto CPyL127;
-    } else
-        goto CPyL68;
-CPyL67: ;
-    cpy_r_r76 = Py_None;
-    return cpy_r_r76;
-CPyL68: ;
-    cpy_r_r77 = (PyObject *)&_Py_NoneStruct;
-    if (cpy_r_address_ == NULL) {
-        goto CPyL128;
-    } else
-        goto CPyL71;
-CPyL69: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r78 = 0;
-    if (unlikely(!cpy_r_r78)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL71: ;
-    cpy_r_r79 = cpy_r_address_ == cpy_r_r77;
-    if (cpy_r_r79) {
-        goto CPyL129;
-    } else
-        goto CPyL76;
-CPyL72: ;
-    cpy_r_r80 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
-    if (unlikely(cpy_r_r80 == NULL)) {
-        goto CPyL130;
-    } else
-        goto CPyL75;
-CPyL73: ;
-    PyErr_SetString(PyExc_NameError, "value for final name \"EMPTY_ADDR_HEX\" was not set");
-    cpy_r_r81 = 0;
-    if (unlikely(!cpy_r_r81)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL75: ;
-    CPy_INCREF(cpy_r_r80);
-    cpy_r_address_ = cpy_r_r80;
-CPyL76: ;
     CPy_INCREF(cpy_r_transact);
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r82 = cpy_r_transact;
-    else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 217, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL121;
-    }
-    cpy_r_r83 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
-    cpy_r_r84 = CPyDict_SetItem(cpy_r_r82, cpy_r_r83, cpy_r_r22);
-    CPy_DECREF(cpy_r_r82);
-    CPy_DECREF(cpy_r_r22);
-    cpy_r_r85 = cpy_r_r84 >= 0;
-    if (unlikely(!cpy_r_r85)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL131;
-    }
-    CPy_INCREF(cpy_r_transact);
-    if (likely(cpy_r_transact != Py_None))
-        cpy_r_r86 = cpy_r_transact;
+        cpy_r_r77 = cpy_r_transact;
     else {
         CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 219, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL131;
+        goto CPyL95;
     }
-    cpy_r_r87 = NULL;
-    cpy_r_r88 = CPyDef_ens___ENS____set_resolver(cpy_r_self, cpy_r_name, cpy_r_r87, cpy_r_r86);
-    CPy_DECREF(cpy_r_r86);
+    cpy_r_r78 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
+    cpy_r_r79 = CPyDict_SetItem(cpy_r_r77, cpy_r_r78, cpy_r_r21);
+    CPy_DECREF(cpy_r_r77);
+    CPy_DECREF(cpy_r_r21);
+    cpy_r_r80 = cpy_r_r79 >= 0;
+    if (unlikely(!cpy_r_r80)) {
+        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
+        goto CPyL99;
+    }
+    CPy_INCREF(cpy_r_transact);
+    if (likely(cpy_r_transact != Py_None))
+        cpy_r_r81 = cpy_r_transact;
+    else {
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 221, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        goto CPyL99;
+    }
+    cpy_r_r82 = NULL;
+    cpy_r_r83 = CPyDef_ens___ENS____set_resolver(cpy_r_self, cpy_r_name, cpy_r_r82, cpy_r_r81);
+    CPy_DECREF(cpy_r_r81);
+    if (unlikely(cpy_r_r83 == NULL)) {
+        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
+        goto CPyL99;
+    }
+    cpy_r_r84 = CPyDef_faster_ens___utils___raw_name_to_hash(cpy_r_name);
+    if (unlikely(cpy_r_r84 == NULL)) {
+        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
+        goto CPyL100;
+    }
+    cpy_r_r85 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r86 = cpy_r_coin_type == cpy_r_r85;
+    if (cpy_r_r86) {
+        goto CPyL101;
+    } else
+        goto CPyL74;
+CPyL69: ;
+    cpy_r_r87 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
+    cpy_r_r88 = CPyObject_GetAttr(cpy_r_r83, cpy_r_r87);
+    CPy_DECREF(cpy_r_r83);
     if (unlikely(cpy_r_r88 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL131;
+        goto CPyL102;
     }
-    cpy_r_r89 = CPyDef_faster_ens___utils___raw_name_to_hash(cpy_r_name);
-    if (unlikely(cpy_r_r89 == NULL)) {
+    cpy_r_r89 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    PyObject *cpy_r_r90[3] = {cpy_r_r88, cpy_r_r84, cpy_r_address_};
+    cpy_r_r91 = (PyObject **)&cpy_r_r90;
+    cpy_r_r92 = PyObject_VectorcallMethod(cpy_r_r89, cpy_r_r91, 9223372036854775811ULL, 0);
+    if (unlikely(cpy_r_r92 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL132;
+        goto CPyL103;
     }
-    cpy_r_r90 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r91 = cpy_r_coin_type == cpy_r_r90;
-    if (cpy_r_r91) {
-        goto CPyL133;
-    } else
-        goto CPyL93;
-CPyL82: ;
-    cpy_r_r92 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
-    cpy_r_r93 = CPyObject_GetAttr(cpy_r_r88, cpy_r_r92);
     CPy_DECREF(cpy_r_r88);
-    if (unlikely(cpy_r_r93 == NULL)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL134;
-    }
-    cpy_r_r94 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
-    if (cpy_r_address_ == NULL) {
-        goto CPyL135;
-    } else
-        goto CPyL86;
-CPyL84: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r95 = 0;
-    if (unlikely(!cpy_r_r95)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", -1, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL86: ;
-    PyObject *cpy_r_r96[3] = {cpy_r_r93, cpy_r_r89, cpy_r_address_};
-    cpy_r_r97 = (PyObject **)&cpy_r_r96;
-    cpy_r_r98 = PyObject_VectorcallMethod(cpy_r_r94, cpy_r_r97, 9223372036854775811ULL, 0);
-    if (unlikely(cpy_r_r98 == NULL)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL136;
-    }
-    if (cpy_r_address_ == NULL) {
-        goto CPyL137;
-    } else
-        goto CPyL90;
-CPyL88: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r99 = 0;
-    if (unlikely(!cpy_r_r99)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", -1, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL90: ;
-    CPy_DECREF(cpy_r_r93);
-    CPy_DECREF(cpy_r_r89);
-    CPy_XDECREF(cpy_r_address_);
+    CPy_DECREF(cpy_r_r84);
+    CPy_DECREF(cpy_r_address_);
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r100 = cpy_r_transact;
+        cpy_r_r93 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 223, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL138;
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 225, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        goto CPyL104;
     }
-    cpy_r_r101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
-    PyObject *cpy_r_r102[2] = {cpy_r_r98, cpy_r_r100};
-    cpy_r_r103 = (PyObject **)&cpy_r_r102;
-    cpy_r_r104 = PyObject_VectorcallMethod(cpy_r_r101, cpy_r_r103, 9223372036854775810ULL, 0);
-    if (unlikely(cpy_r_r104 == NULL)) {
+    cpy_r_r94 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
+    PyObject *cpy_r_r95[2] = {cpy_r_r92, cpy_r_r93};
+    cpy_r_r96 = (PyObject **)&cpy_r_r95;
+    cpy_r_r97 = PyObject_VectorcallMethod(cpy_r_r94, cpy_r_r96, 9223372036854775810ULL, 0);
+    if (unlikely(cpy_r_r97 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL139;
+        goto CPyL105;
     }
-    CPy_DECREF(cpy_r_r98);
-    CPy_DECREF(cpy_r_r100);
-    return cpy_r_r104;
-CPyL93: ;
-    cpy_r_r105 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
-    cpy_r_r106 = CPyObject_GetAttr(cpy_r_r88, cpy_r_r105);
-    CPy_DECREF(cpy_r_r88);
-    if (unlikely(cpy_r_r106 == NULL)) {
+    CPy_DECREF(cpy_r_r92);
+    CPy_DECREF(cpy_r_r93);
+    return cpy_r_r97;
+CPyL74: ;
+    cpy_r_r98 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'functions' */
+    cpy_r_r99 = CPyObject_GetAttr(cpy_r_r83, cpy_r_r98);
+    CPy_DECREF(cpy_r_r83);
+    if (unlikely(cpy_r_r99 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL140;
+        goto CPyL106;
     }
     if (likely(PyLong_Check(cpy_r_coin_type)))
-        cpy_r_r107 = CPyTagged_FromObject(cpy_r_coin_type);
+        cpy_r_r100 = CPyTagged_FromObject(cpy_r_coin_type);
     else {
-        CPy_TypeError("int", cpy_r_coin_type); cpy_r_r107 = CPY_INT_TAG;
+        CPy_TypeError("int", cpy_r_coin_type); cpy_r_r100 = CPY_INT_TAG;
     }
     CPy_DECREF(cpy_r_coin_type);
-    if (unlikely(cpy_r_r107 == CPY_INT_TAG)) {
+    if (unlikely(cpy_r_r100 == CPY_INT_TAG)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL141;
+        goto CPyL107;
     }
-    cpy_r_r108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
-    cpy_r_r109 = CPyTagged_StealAsObject(cpy_r_r107);
-    if (cpy_r_address_ == NULL) {
-        goto CPyL142;
-    } else
-        goto CPyL98;
-CPyL96: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r110 = 0;
-    if (unlikely(!cpy_r_r110)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", -1, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL98: ;
-    PyObject *cpy_r_r111[4] = {cpy_r_r106, cpy_r_r89, cpy_r_r109, cpy_r_address_};
-    cpy_r_r112 = (PyObject **)&cpy_r_r111;
-    cpy_r_r113 = PyObject_VectorcallMethod(cpy_r_r108, cpy_r_r112, 9223372036854775812ULL, 0);
-    if (unlikely(cpy_r_r113 == NULL)) {
+    cpy_r_r101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setAddr' */
+    cpy_r_r102 = CPyTagged_StealAsObject(cpy_r_r100);
+    PyObject *cpy_r_r103[4] = {cpy_r_r99, cpy_r_r84, cpy_r_r102, cpy_r_address_};
+    cpy_r_r104 = (PyObject **)&cpy_r_r103;
+    cpy_r_r105 = PyObject_VectorcallMethod(cpy_r_r101, cpy_r_r104, 9223372036854775812ULL, 0);
+    if (unlikely(cpy_r_r105 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL143;
+        goto CPyL108;
     }
-    if (cpy_r_address_ == NULL) {
-        goto CPyL144;
-    } else
-        goto CPyL102;
-CPyL100: ;
-    PyErr_SetString(PyExc_UnboundLocalError, "local variable \"address_\" referenced before assignment");
-    cpy_r_r114 = 0;
-    if (unlikely(!cpy_r_r114)) {
-        CPy_AddTraceback("faster_ens/ens.py", "setup_address", -1, CPyStatic_ens___globals);
-        goto CPyL105;
-    }
-    CPy_Unreachable();
-CPyL102: ;
-    CPy_DECREF(cpy_r_r106);
-    CPy_DECREF(cpy_r_r89);
-    CPy_DECREF(cpy_r_r109);
-    CPy_XDECREF(cpy_r_address_);
+    CPy_DECREF(cpy_r_r99);
+    CPy_DECREF(cpy_r_r84);
+    CPy_DECREF(cpy_r_r102);
+    CPy_DECREF(cpy_r_address_);
     if (likely(cpy_r_transact != Py_None))
-        cpy_r_r115 = cpy_r_transact;
+        cpy_r_r106 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 226, CPyStatic_ens___globals, "dict", cpy_r_transact);
-        goto CPyL145;
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_address", 228, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        goto CPyL109;
     }
-    cpy_r_r116 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
-    PyObject *cpy_r_r117[2] = {cpy_r_r113, cpy_r_r115};
-    cpy_r_r118 = (PyObject **)&cpy_r_r117;
-    cpy_r_r119 = PyObject_VectorcallMethod(cpy_r_r116, cpy_r_r118, 9223372036854775810ULL, 0);
-    if (unlikely(cpy_r_r119 == NULL)) {
+    cpy_r_r107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
+    PyObject *cpy_r_r108[2] = {cpy_r_r105, cpy_r_r106};
+    cpy_r_r109 = (PyObject **)&cpy_r_r108;
+    cpy_r_r110 = PyObject_VectorcallMethod(cpy_r_r107, cpy_r_r109, 9223372036854775810ULL, 0);
+    if (unlikely(cpy_r_r110 == NULL)) {
         CPy_AddTraceback("faster_ens/ens.py", "setup_address", DIFFCHECK_PLACEHOLDER, CPyStatic_ens___globals);
-        goto CPyL146;
+        goto CPyL110;
     }
-    CPy_DECREF(cpy_r_r113);
-    CPy_DECREF(cpy_r_r115);
-    return cpy_r_r119;
-CPyL105: ;
-    cpy_r_r120 = NULL;
-    return cpy_r_r120;
-CPyL106: ;
+    CPy_DECREF(cpy_r_r105);
+    CPy_DECREF(cpy_r_r106);
+    return cpy_r_r110;
+CPyL80: ;
+    cpy_r_r111 = NULL;
+    return cpy_r_r111;
+CPyL81: ;
     CPy_INCREF(cpy_r_address);
     goto CPyL5;
-CPyL107: ;
-    CPy_XDecRef(cpy_r_address_);
-    goto CPyL2;
-CPyL108: ;
+CPyL82: ;
     CPy_INCREF(cpy_r_coin_type);
     goto CPyL7;
-CPyL109: ;
+CPyL83: ;
     CPy_INCREF(cpy_r_transact);
     goto CPyL9;
-CPyL110: ;
+CPyL84: ;
     CPy_DECREF(cpy_r_transact);
     goto CPyL12;
-CPyL111: ;
+CPyL85: ;
     CPy_DecRef(cpy_r_address);
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    goto CPyL105;
-CPyL112: ;
+    goto CPyL80;
+CPyL86: ;
     CPy_DecRef(cpy_r_address);
     CPy_DecRef(cpy_r_coin_type);
-    CPy_XDecRef(cpy_r_address_);
-    goto CPyL105;
-CPyL113: ;
+    goto CPyL80;
+CPyL87: ;
     CPy_DecRef(cpy_r_address);
     CPy_DecRef(cpy_r_coin_type);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r12);
-    goto CPyL105;
-CPyL114: ;
+    CPy_DecRef(cpy_r_r11);
+    goto CPyL80;
+CPyL88: ;
     CPy_DecRef(cpy_r_address);
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r22);
-    goto CPyL105;
-CPyL115: ;
+    CPy_DecRef(cpy_r_r21);
+    goto CPyL80;
+CPyL89: ;
     CPy_DecRef(cpy_r_address);
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r22);
+    CPy_DecRef(cpy_r_r21);
     goto CPyL23;
-CPyL116: ;
+CPyL90: ;
     CPy_DECREF(cpy_r_address);
-    CPy_XDECREF(cpy_r_address_);
     goto CPyL26;
-CPyL117: ;
+CPyL91: ;
     CPy_DECREF(cpy_r_address);
-    CPy_XDECREF(cpy_r_address_);
     goto CPyL30;
-CPyL118: ;
-    CPy_XDECREF(cpy_r_address_);
-    goto CPyL35;
-CPyL119: ;
+CPyL92: ;
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_DecRef(cpy_r_r22);
-    goto CPyL105;
-CPyL120: ;
+    CPy_DecRef(cpy_r_r21);
+    goto CPyL80;
+CPyL93: ;
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_DecRef(cpy_r_r22);
-    CPy_DecRef(cpy_r_r39);
-    goto CPyL105;
-CPyL121: ;
+    CPy_DecRef(cpy_r_r21);
+    CPy_DecRef(cpy_r_r38);
+    goto CPyL80;
+CPyL94: ;
+    CPy_DECREF(cpy_r_address);
+    CPy_DECREF(cpy_r_coin_type);
+    CPy_DECREF(cpy_r_transact);
+    CPy_DECREF(cpy_r_r21);
+    goto CPyL46;
+CPyL95: ;
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r22);
-    goto CPyL105;
-CPyL122: ;
+    CPy_DecRef(cpy_r_r21);
+    CPy_DecRef(cpy_r_address_);
+    goto CPyL80;
+CPyL96: ;
     CPy_DECREF(cpy_r_coin_type);
     CPy_DECREF(cpy_r_transact);
-    CPy_XDECREF(cpy_r_address_);
-    CPy_DECREF(cpy_r_r22);
-    goto CPyL44;
-CPyL123: ;
-    CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r22);
-    CPy_DECREF(cpy_r_r61);
-    goto CPyL51;
-CPyL124: ;
-    CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r22);
-    CPy_DECREF(cpy_r_r61);
-    goto CPyL55;
-CPyL125: ;
-    CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r22);
-    CPy_DECREF(cpy_r_r61);
+    CPy_DECREF(cpy_r_r21);
+    CPy_DECREF(cpy_r_address_);
+    goto CPyL57;
+CPyL97: ;
+    CPy_DECREF(cpy_r_address_);
+    goto CPyL59;
+CPyL98: ;
+    CPy_DecRef(cpy_r_coin_type);
+    CPy_DecRef(cpy_r_transact);
+    CPy_DecRef(cpy_r_r21);
     goto CPyL60;
-CPyL126: ;
+CPyL99: ;
+    CPy_DecRef(cpy_r_coin_type);
+    CPy_DecRef(cpy_r_transact);
+    CPy_DecRef(cpy_r_address_);
+    goto CPyL80;
+CPyL100: ;
+    CPy_DecRef(cpy_r_coin_type);
+    CPy_DecRef(cpy_r_transact);
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r83);
+    goto CPyL80;
+CPyL101: ;
     CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r22);
-    CPy_DECREF(cpy_r_r61);
-    goto CPyL64;
-CPyL127: ;
-    CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_XDECREF(cpy_r_address_);
-    CPy_DECREF(cpy_r_r22);
-    goto CPyL67;
-CPyL128: ;
-    CPy_DECREF(cpy_r_coin_type);
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r22);
     goto CPyL69;
-CPyL129: ;
-    CPy_XDECREF(cpy_r_address_);
-    goto CPyL72;
-CPyL130: ;
-    CPy_DecRef(cpy_r_coin_type);
+CPyL102: ;
     CPy_DecRef(cpy_r_transact);
-    CPy_DecRef(cpy_r_r22);
-    goto CPyL73;
-CPyL131: ;
-    CPy_DecRef(cpy_r_coin_type);
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r84);
+    goto CPyL80;
+CPyL103: ;
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    goto CPyL105;
-CPyL132: ;
-    CPy_DecRef(cpy_r_coin_type);
-    CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r84);
     CPy_DecRef(cpy_r_r88);
-    goto CPyL105;
-CPyL133: ;
-    CPy_DECREF(cpy_r_coin_type);
-    goto CPyL82;
-CPyL134: ;
-    CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r89);
-    goto CPyL105;
-CPyL135: ;
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r89);
-    CPy_DECREF(cpy_r_r93);
-    goto CPyL84;
-CPyL136: ;
-    CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r89);
+    goto CPyL80;
+CPyL104: ;
+    CPy_DecRef(cpy_r_r92);
+    goto CPyL80;
+CPyL105: ;
+    CPy_DecRef(cpy_r_r92);
     CPy_DecRef(cpy_r_r93);
-    goto CPyL105;
-CPyL137: ;
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r89);
-    CPy_DECREF(cpy_r_r93);
-    CPy_DECREF(cpy_r_r98);
-    goto CPyL88;
-CPyL138: ;
-    CPy_DecRef(cpy_r_r98);
-    goto CPyL105;
-CPyL139: ;
-    CPy_DecRef(cpy_r_r98);
-    CPy_DecRef(cpy_r_r100);
-    goto CPyL105;
-CPyL140: ;
+    goto CPyL80;
+CPyL106: ;
     CPy_DecRef(cpy_r_coin_type);
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r89);
-    goto CPyL105;
-CPyL141: ;
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r84);
+    goto CPyL80;
+CPyL107: ;
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r89);
-    CPy_DecRef(cpy_r_r106);
-    goto CPyL105;
-CPyL142: ;
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r89);
-    CPy_DECREF(cpy_r_r106);
-    CPy_DECREF(cpy_r_r109);
-    goto CPyL96;
-CPyL143: ;
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r84);
+    CPy_DecRef(cpy_r_r99);
+    goto CPyL80;
+CPyL108: ;
     CPy_DecRef(cpy_r_transact);
-    CPy_XDecRef(cpy_r_address_);
-    CPy_DecRef(cpy_r_r89);
+    CPy_DecRef(cpy_r_address_);
+    CPy_DecRef(cpy_r_r84);
+    CPy_DecRef(cpy_r_r99);
+    CPy_DecRef(cpy_r_r102);
+    goto CPyL80;
+CPyL109: ;
+    CPy_DecRef(cpy_r_r105);
+    goto CPyL80;
+CPyL110: ;
+    CPy_DecRef(cpy_r_r105);
     CPy_DecRef(cpy_r_r106);
-    CPy_DecRef(cpy_r_r109);
-    goto CPyL105;
-CPyL144: ;
-    CPy_DECREF(cpy_r_transact);
-    CPy_DECREF(cpy_r_r89);
-    CPy_DECREF(cpy_r_r106);
-    CPy_DECREF(cpy_r_r109);
-    CPy_DECREF(cpy_r_r113);
-    goto CPyL100;
-CPyL145: ;
-    CPy_DecRef(cpy_r_r113);
-    goto CPyL105;
-CPyL146: ;
-    CPy_DecRef(cpy_r_r113);
-    CPy_DecRef(cpy_r_r115);
-    goto CPyL105;
+    goto CPyL80;
 }
 
 PyObject *CPyPy_ens___ENS___setup_address(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -50045,7 +49874,7 @@ PyObject *CPyDef_ens___ENS___name(PyObject *cpy_r_self, PyObject *cpy_r_address)
     if (likely(PyUnicode_Check(cpy_r_r8)))
         cpy_r_r9 = cpy_r_r8;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "name", 242, CPyStatic_ens___globals, "str", cpy_r_r8);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "name", 244, CPyStatic_ens___globals, "str", cpy_r_r8);
         goto CPyL14;
     }
     cpy_r_r10 = NULL;
@@ -50257,7 +50086,7 @@ CPyL4: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r4 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 248, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 250, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL90;
     }
     cpy_r_r5 = PyDict_Size(cpy_r_r4);
@@ -50279,7 +50108,7 @@ CPyL9: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r9 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 266, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 268, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL91;
     }
     cpy_r_r10 = CPyStatic_ens___globals;
@@ -50301,7 +50130,7 @@ CPyL9: ;
     if (likely(PyDict_Check(cpy_r_r15)))
         cpy_r_r16 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 266, CPyStatic_ens___globals, "dict", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 268, CPyStatic_ens___globals, "dict", cpy_r_r15);
         goto CPyL91;
     }
     cpy_r_transact = cpy_r_r16;
@@ -50321,7 +50150,7 @@ CPyL9: ;
         cpy_r_r19 = NULL;
     }
     if (cpy_r_r19 != NULL) goto __LL164;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 268, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_address);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 270, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_address);
     goto CPyL90;
 __LL164: ;
     cpy_r_r20 = NULL;
@@ -50334,7 +50163,7 @@ __LL164: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r22 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 269, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 271, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL91;
     }
     cpy_r_r23 = Py_None;
@@ -50350,7 +50179,7 @@ __LL164: ;
         cpy_r_r24 = NULL;
     }
     if (cpy_r_r24 != NULL) goto __LL165;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 269, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_address);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 271, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_address);
     goto CPyL93;
 __LL165: ;
     cpy_r_r25 = CPyDef_ens___ENS____setup_reverse(cpy_r_self, cpy_r_r23, cpy_r_r24, cpy_r_r22);
@@ -50389,7 +50218,7 @@ CPyL24: ;
     if (likely(cpy_r_r27 != Py_None))
         cpy_r_r31 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 271, CPyStatic_ens___globals, "str", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 273, CPyStatic_ens___globals, "str", cpy_r_r27);
         goto CPyL94;
     }
     cpy_r_r32 = CPyStr_IsTrue(cpy_r_r31);
@@ -50399,7 +50228,7 @@ CPyL24: ;
     if (likely(cpy_r_r27 != Py_None))
         cpy_r_r33 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 274, CPyStatic_ens___globals, "str", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 276, CPyStatic_ens___globals, "str", cpy_r_r27);
         goto CPyL94;
     }
     cpy_r_r34 = PyObject_RichCompare(cpy_r_address, cpy_r_r33, 3);
@@ -50422,7 +50251,7 @@ CPyL24: ;
     if (likely(cpy_r_r27 != Py_None))
         cpy_r_r36 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 274, CPyStatic_ens___globals, "str", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 276, CPyStatic_ens___globals, "str", cpy_r_r27);
         goto CPyL94;
     }
     cpy_r_r37 = CPyStatic_faster_ens___constants___EMPTY_ADDR_HEX;
@@ -50463,7 +50292,7 @@ CPyL36: ;
     if (likely(PyUnicode_Check(cpy_r_r48)))
         cpy_r_r49 = cpy_r_r48;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 276, CPyStatic_ens___globals, "str", cpy_r_r48);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 278, CPyStatic_ens___globals, "str", cpy_r_r48);
         goto CPyL99;
     }
     cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' to point to name, because the name resolves to ' */
@@ -50471,7 +50300,7 @@ CPyL36: ;
     if (likely(cpy_r_r27 != Py_None))
         cpy_r_r52 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 277, CPyStatic_ens___globals, "str", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 279, CPyStatic_ens___globals, "str", cpy_r_r27);
         goto CPyL100;
     }
     cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '' */
@@ -50487,7 +50316,7 @@ CPyL36: ;
     if (likely(PyUnicode_Check(cpy_r_r57)))
         cpy_r_r58 = cpy_r_r57;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 277, CPyStatic_ens___globals, "str", cpy_r_r57);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 279, CPyStatic_ens___globals, "str", cpy_r_r57);
         goto CPyL100;
     }
     cpy_r_r59 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('. To change the name for an existing address, call '
@@ -50529,7 +50358,7 @@ CPyL36: ;
     if (likely(Py_TYPE(cpy_r_r71) == CPyType_exceptions___AddressMismatch))
         cpy_r_r72 = cpy_r_r71;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 275, CPyStatic_ens___globals, "faster_ens.exceptions.AddressMismatch", cpy_r_r71);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 277, CPyStatic_ens___globals, "faster_ens.exceptions.AddressMismatch", cpy_r_r71);
         goto CPyL86;
     }
     CPy_Raise(cpy_r_r72);
@@ -50579,7 +50408,7 @@ CPyL53: ;
     if (likely(Py_TYPE(cpy_r_r80) == CPyType_exceptions___UnownedName))
         cpy_r_r81 = cpy_r_r80;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 284, CPyStatic_ens___globals, "faster_ens.exceptions.UnownedName", cpy_r_r80);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 286, CPyStatic_ens___globals, "faster_ens.exceptions.UnownedName", cpy_r_r80);
         goto CPyL86;
     }
     CPy_Raise(cpy_r_r81);
@@ -50618,7 +50447,7 @@ CPyL57: ;
     if (likely(PyBytes_Check(cpy_r_address) || PyByteArray_Check(cpy_r_address)))
         cpy_r_r89 = cpy_r_address;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 286, CPyStatic_ens___globals, "bytes", cpy_r_address);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 288, CPyStatic_ens___globals, "bytes", cpy_r_address);
         goto CPyL105;
     }
     cpy_r_r90 = CPyStatic_ens___globals;
@@ -50640,7 +50469,7 @@ CPyL57: ;
     if (likely(PyUnicode_Check(cpy_r_r95)))
         cpy_r_r96 = cpy_r_r95;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 286, CPyStatic_ens___globals, "str", cpy_r_r95);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 288, CPyStatic_ens___globals, "str", cpy_r_r95);
         goto CPyL105;
     }
     cpy_r_address = cpy_r_r96;
@@ -50686,7 +50515,7 @@ CPyL70: ;
     if (likely(Py_TYPE(cpy_r_r108) == CPyType_exceptions___ENSValueError))
         cpy_r_r109 = cpy_r_r108;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 288, CPyStatic_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r108);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 290, CPyStatic_ens___globals, "faster_ens.exceptions.ENSValueError", cpy_r_r108);
         goto CPyL86;
     }
     CPy_Raise(cpy_r_r109);
@@ -50701,7 +50530,7 @@ CPyL74: ;
     if (likely(PyUnicode_Check(cpy_r_address)))
         cpy_r_r110 = cpy_r_address;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 289, CPyStatic_ens___globals, "str", cpy_r_address);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 291, CPyStatic_ens___globals, "str", cpy_r_address);
         goto CPyL94;
     }
     cpy_r_r111 = NULL;
@@ -50717,7 +50546,7 @@ CPyL74: ;
     if (likely(cpy_r_r27 != Py_None))
         cpy_r_r115 = cpy_r_r27;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 271, CPyStatic_ens___globals, "str", cpy_r_r27);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 273, CPyStatic_ens___globals, "str", cpy_r_r27);
         goto CPyL90;
     }
     cpy_r_r116 = CPyStr_IsTrue(cpy_r_r115);
@@ -50728,14 +50557,14 @@ CPyL79: ;
     if (likely(PyUnicode_Check(cpy_r_address)))
         cpy_r_r117 = cpy_r_address;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 291, CPyStatic_ens___globals, "str", cpy_r_address);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 293, CPyStatic_ens___globals, "str", cpy_r_address);
         goto CPyL90;
     }
     CPy_INCREF(cpy_r_transact);
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r118 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 291, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 293, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL110;
     }
     cpy_r_r119 = NULL;
@@ -50751,13 +50580,13 @@ CPyL82: ;
     if (likely(PyUnicode_Check(cpy_r_address)))
         cpy_r_r121 = cpy_r_address;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 292, CPyStatic_ens___globals, "str", cpy_r_address);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 294, CPyStatic_ens___globals, "str", cpy_r_address);
         goto CPyL112;
     }
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r122 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 292, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_name", 294, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL113;
     }
     cpy_r_r123 = CPyDef_ens___ENS____setup_reverse(cpy_r_self, cpy_r_name, cpy_r_r121, cpy_r_r122);
@@ -50993,7 +50822,7 @@ PyObject *CPyDef_ens___ENS___owner(PyObject *cpy_r_self, PyObject *cpy_r_name) {
     if (likely(PyUnicode_Check(cpy_r_r10)))
         cpy_r_r11 = cpy_r_r10;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "owner", 306, CPyStatic_ens___globals, "str", cpy_r_r10);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "owner", 308, CPyStatic_ens___globals, "str", cpy_r_r10);
         goto CPyL7;
     }
     return cpy_r_r11;
@@ -51122,7 +50951,7 @@ CPyL7: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r5 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 312, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 314, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL55;
     }
     cpy_r_r6 = PyDict_Size(cpy_r_r5);
@@ -51144,7 +50973,7 @@ CPyL12: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r10 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 341, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 343, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL56;
     }
     cpy_r_r11 = CPyStatic_ens___globals;
@@ -51166,7 +50995,7 @@ CPyL12: ;
     if (likely(PyDict_Check(cpy_r_r16)))
         cpy_r_r17 = cpy_r_r16;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 341, CPyStatic_ens___globals, "dict", cpy_r_r16);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 343, CPyStatic_ens___globals, "dict", cpy_r_r16);
         goto CPyL56;
     }
     cpy_r_transact = cpy_r_r17;
@@ -51254,7 +51083,7 @@ CPyL28: ;
     if (likely(PyUnicode_Check(cpy_r_r38)))
         cpy_r_r39 = cpy_r_r38;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 348, CPyStatic_ens___globals, "str", cpy_r_r38);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 350, CPyStatic_ens___globals, "str", cpy_r_r38);
         goto CPyL63;
     }
     cpy_r_new_owner_ = cpy_r_r39;
@@ -51329,7 +51158,7 @@ CPyL45: ;
         cpy_r_r53 = NULL;
     }
     if (cpy_r_r53 != NULL) goto __LL168;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 354, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_r22);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 356, CPyStatic_ens___globals, "union[str, bytes]", cpy_r_r22);
     goto CPyL64;
 __LL168: ;
     cpy_r_r54 = CPyDef_ens___ENS____assert_control(cpy_r_self, cpy_r_r53, cpy_r_name, cpy_r_r24);
@@ -51341,14 +51170,14 @@ __LL168: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r55 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 356, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 358, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL69;
     }
     CPy_INCREF(cpy_r_new_owner_);
     if (likely(cpy_r_new_owner_ != Py_None))
         cpy_r_r56 = cpy_r_new_owner_;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 355, CPyStatic_ens___globals, "str", cpy_r_new_owner_);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "setup_owner", 357, CPyStatic_ens___globals, "str", cpy_r_new_owner_);
         goto CPyL70;
     }
     cpy_r_r57 = CPyDef_ens___ENS____claim_ownership(cpy_r_self, cpy_r_r56, cpy_r_r23, cpy_r_r24, cpy_r_r22, cpy_r_r55);
@@ -51712,7 +51541,7 @@ CPyL5: ;
     if (likely(PyUnicode_Check(cpy_r_r14)))
         cpy_r_r15 = cpy_r_r14;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "get_text", 391, CPyStatic_ens___globals, "str", cpy_r_r14);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "get_text", 393, CPyStatic_ens___globals, "str", cpy_r_r14);
         goto CPyL12;
     }
     return cpy_r_r15;
@@ -52054,7 +51883,7 @@ CPyL7: ;
         cpy_r_r17 = NULL;
     }
     if (cpy_r_r17 != NULL) goto __LL175;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "_get_resolver", 440, CPyStatic_ens___globals, "union[bytes, str, None]", cpy_r_r16);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "_get_resolver", 442, CPyStatic_ens___globals, "union[bytes, str, None]", cpy_r_r16);
     goto CPyL28;
 __LL175: ;
     cpy_r_r18 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r17);
@@ -52067,7 +51896,7 @@ __LL175: ;
     if (likely(PyUnicode_Check(cpy_r_r16)))
         cpy_r_r19 = cpy_r_r16;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_get_resolver", 443, CPyStatic_ens___globals, "str", cpy_r_r16);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_get_resolver", 445, CPyStatic_ens___globals, "str", cpy_r_r16);
         goto CPyL24;
     }
     cpy_r_r20 = CPyDef_base_ens___BaseENS____type_aware_resolver(cpy_r_self, cpy_r_r19, cpy_r_fn_name);
@@ -52261,7 +52090,7 @@ CPyL4: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r4 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 454, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 456, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL38;
     }
     cpy_r_r5 = PyDict_Size(cpy_r_r4);
@@ -52283,7 +52112,7 @@ CPyL9: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r9 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 458, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 460, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL39;
     }
     cpy_r_r10 = CPyStatic_ens___globals;
@@ -52305,7 +52134,7 @@ CPyL9: ;
     if (likely(PyDict_Check(cpy_r_r15)))
         cpy_r_r16 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 458, CPyStatic_ens___globals, "dict", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 460, CPyStatic_ens___globals, "dict", cpy_r_r15);
         goto CPyL39;
     }
     cpy_r_transact = cpy_r_r16;
@@ -52394,7 +52223,7 @@ CPyL17: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r46 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 463, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_resolver", 465, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL47;
     }
     cpy_r_r47 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -52771,7 +52600,7 @@ CPyL15: ;
     if (likely(PyBytes_Check(cpy_r_r35) || PyByteArray_Check(cpy_r_r35)))
         cpy_r_r36 = cpy_r_r35;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 485, CPyStatic_ens___globals, "bytes", cpy_r_r35);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 487, CPyStatic_ens___globals, "bytes", cpy_r_r35);
         goto CPyL73;
     }
     cpy_r_r37 = CPyDef_base_ens___BaseENS____decode_ensip10_resolve_data(cpy_r_self, cpy_r_r36, cpy_r_r5, cpy_r_fn_name);
@@ -52827,7 +52656,7 @@ CPyL15: ;
     if (likely(PyUnicode_Check(cpy_r_r50)))
         cpy_r_r51 = cpy_r_r50;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 488, CPyStatic_ens___globals, "str", cpy_r_r50);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 490, CPyStatic_ens___globals, "str", cpy_r_r50);
         goto CPyL58;
     }
     cpy_r_r52 = cpy_r_r51;
@@ -52847,7 +52676,7 @@ CPyL34: ;
         cpy_r_r53 = NULL;
     }
     if (cpy_r_r53 != NULL) goto __LL183;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 488, CPyStatic_ens___globals, "str or None", cpy_r_r52);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 490, CPyStatic_ens___globals, "str or None", cpy_r_r52);
     goto CPyL58;
 __LL183: ;
     return cpy_r_r53;
@@ -52909,7 +52738,7 @@ CPyL36: ;
         cpy_r_r66 = NULL;
     }
     if (cpy_r_r66 != NULL) goto __LL184;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 492, CPyStatic_ens___globals, "union[bytes, str, None]", cpy_r_result);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 494, CPyStatic_ens___globals, "union[bytes, str, None]", cpy_r_result);
     goto CPyL74;
 __LL184: ;
     cpy_r_r67 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r66);
@@ -52970,7 +52799,7 @@ CPyL46: ;
     if (likely(PyUnicode_Check(cpy_r_r81)))
         cpy_r_r82 = cpy_r_r81;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 494, CPyStatic_ens___globals, "str", cpy_r_r81);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 496, CPyStatic_ens___globals, "str", cpy_r_r81);
         goto CPyL58;
     }
     cpy_r_r83 = cpy_r_r82;
@@ -52990,7 +52819,7 @@ CPyL55: ;
         cpy_r_r84 = NULL;
     }
     if (cpy_r_r84 != NULL) goto __LL185;
-    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 494, CPyStatic_ens___globals, "str or None", cpy_r_r83);
+    CPy_TypeErrorTraceback("faster_ens/ens.py", "_resolve", 496, CPyStatic_ens___globals, "str or None", cpy_r_r83);
     goto CPyL58;
 __LL185: ;
     return cpy_r_r84;
@@ -53216,7 +53045,7 @@ CPyL2: ;
     if (likely(PyList_Check(cpy_r_r5)))
         cpy_r_r6 = cpy_r_r5;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 503, CPyStatic_ens___globals, "list", cpy_r_r5);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 505, CPyStatic_ens___globals, "list", cpy_r_r5);
         goto CPyL28;
     }
     cpy_r_r7 = CPyDef_faster_ens___utils___address_in(cpy_r_account, cpy_r_r6);
@@ -53241,7 +53070,7 @@ CPyL2: ;
     if (likely(PyUnicode_Check(cpy_r_r15)))
         cpy_r_r16 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 505, CPyStatic_ens___globals, "str", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 507, CPyStatic_ens___globals, "str", cpy_r_r15);
         goto CPyL28;
     }
     cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', you must control account ' */
@@ -53258,7 +53087,7 @@ CPyL2: ;
     if (likely(PyUnicode_Check(cpy_r_r23)))
         cpy_r_r24 = cpy_r_r23;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 506, CPyStatic_ens___globals, "str", cpy_r_r23);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 508, CPyStatic_ens___globals, "str", cpy_r_r23);
         goto CPyL30;
     }
     cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', which owns ' */
@@ -53270,7 +53099,7 @@ CPyL2: ;
     if (likely(cpy_r_parent_owned != Py_None))
         cpy_r_r29 = cpy_r_parent_owned;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 501, CPyStatic_ens___globals, "str", cpy_r_parent_owned);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 503, CPyStatic_ens___globals, "str", cpy_r_parent_owned);
         goto CPyL32;
     }
     cpy_r_r30 = CPyStr_IsTrue(cpy_r_r29);
@@ -53279,7 +53108,7 @@ CPyL2: ;
     if (likely(cpy_r_parent_owned != Py_None))
         cpy_r_r31 = cpy_r_parent_owned;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 506, CPyStatic_ens___globals, "str", cpy_r_parent_owned);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 508, CPyStatic_ens___globals, "str", cpy_r_parent_owned);
         goto CPyL33;
     }
     cpy_r_r32 = cpy_r_r31;
@@ -53301,7 +53130,7 @@ CPyL17: ;
     if (likely(PyUnicode_Check(cpy_r_r37)))
         cpy_r_r38 = cpy_r_r37;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 506, CPyStatic_ens___globals, "str", cpy_r_r37);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 508, CPyStatic_ens___globals, "str", cpy_r_r37);
         goto CPyL33;
     }
     cpy_r_r39 = PyList_New(6);
@@ -53343,7 +53172,7 @@ CPyL17: ;
     if (likely(Py_TYPE(cpy_r_r51) == CPyType_exceptions___UnauthorizedError))
         cpy_r_r52 = cpy_r_r51;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 504, CPyStatic_ens___globals, "faster_ens.exceptions.UnauthorizedError", cpy_r_r51);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_assert_control", 506, CPyStatic_ens___globals, "faster_ens.exceptions.UnauthorizedError", cpy_r_r51);
         goto CPyL26;
     }
     CPy_Raise(cpy_r_r52);
@@ -53550,7 +53379,7 @@ CPyL7: ;
     if (likely(cpy_r_owner != Py_None))
         cpy_r_r13 = cpy_r_owner;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_first_owner", 523, CPyStatic_ens___globals, "str", cpy_r_owner);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_first_owner", 525, CPyStatic_ens___globals, "str", cpy_r_owner);
         goto CPyL21;
     }
     cpy_r_r14 = CPyDef_faster_ens___utils___is_none_or_zero_address(cpy_r_r13);
@@ -53568,7 +53397,7 @@ CPyL7: ;
     if (likely(PyUnicode_Check(cpy_r_r15)))
         cpy_r_r16 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_first_owner", 524, CPyStatic_ens___globals, "str", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_first_owner", 526, CPyStatic_ens___globals, "str", cpy_r_r15);
         goto CPyL21;
     }
     cpy_r_r17 = PyList_Append(cpy_r_r1, cpy_r_r16);
@@ -53744,7 +53573,7 @@ CPyL4: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r4 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 533, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 535, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL42;
     }
     cpy_r_r5 = PyDict_Size(cpy_r_r4);
@@ -53766,7 +53595,7 @@ CPyL9: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r9 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 537, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 539, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL43;
     }
     cpy_r_r10 = CPyStatic_ens___globals;
@@ -53788,7 +53617,7 @@ CPyL9: ;
     if (likely(PyDict_Check(cpy_r_r15)))
         cpy_r_r16 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 537, CPyStatic_ens___globals, "dict", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 539, CPyStatic_ens___globals, "dict", cpy_r_r15);
         goto CPyL43;
     }
     cpy_r_transact = cpy_r_r16;
@@ -53799,7 +53628,7 @@ CPyL9: ;
     if (likely(cpy_r_old_owner != Py_None))
         cpy_r_r19 = cpy_r_old_owner;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 532, CPyStatic_ens___globals, "str", cpy_r_old_owner);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 534, CPyStatic_ens___globals, "str", cpy_r_old_owner);
         goto CPyL42;
     }
     cpy_r_r20 = CPyStr_IsTrue(cpy_r_r19);
@@ -53808,7 +53637,7 @@ CPyL9: ;
     if (likely(cpy_r_old_owner != Py_None))
         cpy_r_r21 = cpy_r_old_owner;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 538, CPyStatic_ens___globals, "str", cpy_r_old_owner);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 540, CPyStatic_ens___globals, "str", cpy_r_old_owner);
         goto CPyL46;
     }
     cpy_r_r22 = cpy_r_r21;
@@ -53821,7 +53650,7 @@ CPyL19: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r23 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 538, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 540, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL47;
     }
     cpy_r_r24 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
@@ -53861,7 +53690,7 @@ CPyL24: ;
     if (likely(PyUnicode_Check(cpy_r_r34)))
         cpy_r_r35 = cpy_r_r34;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 539, CPyStatic_ens___globals, "str", cpy_r_r34);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 541, CPyStatic_ens___globals, "str", cpy_r_r34);
         goto CPyL50;
     }
     cpy_r_r36 = ((faster_ens___ens___ENSObject *)cpy_r_self)->_ens;
@@ -53901,7 +53730,7 @@ CPyL24: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r48 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 544, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_claim_ownership", 546, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL55;
     }
     cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -54170,7 +53999,7 @@ CPyL2: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r3 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 549, CPyStatic_ens___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 551, CPyStatic_ens___globals, "str", cpy_r_name);
         goto CPyL29;
     }
     cpy_r_r4 = CPyStr_IsTrue(cpy_r_r3);
@@ -54180,7 +54009,7 @@ CPyL2: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r5 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 553, CPyStatic_ens___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 555, CPyStatic_ens___globals, "str", cpy_r_name);
         goto CPyL29;
     }
     cpy_r_r6 = CPyDef_faster_ens___utils___normalize_name(cpy_r_r5);
@@ -54204,7 +54033,7 @@ CPyL9: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r11 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 551, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 553, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL31;
     }
     cpy_r_r12 = PyDict_Size(cpy_r_r11);
@@ -54226,7 +54055,7 @@ CPyL14: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r16 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 556, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 558, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL32;
     }
     cpy_r_r17 = CPyStatic_ens___globals;
@@ -54248,7 +54077,7 @@ CPyL14: ;
     if (likely(PyDict_Check(cpy_r_r22)))
         cpy_r_r23 = cpy_r_r22;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 556, CPyStatic_ens___globals, "dict", cpy_r_r22);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 558, CPyStatic_ens___globals, "dict", cpy_r_r22);
         goto CPyL32;
     }
     cpy_r_transact = cpy_r_r23;
@@ -54256,7 +54085,7 @@ CPyL14: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r24 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 557, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 559, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL31;
     }
     cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
@@ -54282,7 +54111,7 @@ CPyL14: ;
     if (likely(cpy_r_name != Py_None))
         cpy_r_r31 = cpy_r_name;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 558, CPyStatic_ens___globals, "str", cpy_r_name);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 560, CPyStatic_ens___globals, "str", cpy_r_name);
         goto CPyL34;
     }
     cpy_r_r32 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'setName' */
@@ -54298,7 +54127,7 @@ CPyL14: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r36 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 558, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_setup_reverse", 560, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL36;
     }
     cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transact' */
@@ -54509,7 +54338,7 @@ PyObject *CPyDef_ens___ENS____reverse_registrar(PyObject *cpy_r_self) {
     if (likely(PyList_Check(cpy_r_r19)))
         cpy_r_r20 = cpy_r_r19;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_reverse_registrar", 562, CPyStatic_ens___globals, "list", cpy_r_r19);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_reverse_registrar", 564, CPyStatic_ens___globals, "list", cpy_r_r19);
         goto CPyL15;
     }
     cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'contract' */
@@ -54605,7 +54434,7 @@ CPyL2: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r3 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_property", 569, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_property", 571, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL19;
     }
     cpy_r_r4 = PyDict_Size(cpy_r_r3);
@@ -54639,7 +54468,7 @@ CPyL7: ;
     if (likely(cpy_r_transact != Py_None))
         cpy_r_r11 = cpy_r_transact;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_property", 575, CPyStatic_ens___globals, "dict", cpy_r_transact);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_set_property", 577, CPyStatic_ens___globals, "dict", cpy_r_transact);
         goto CPyL20;
     }
     cpy_r_r12 = CPyStatic_ens___globals;
@@ -54851,7 +54680,7 @@ char CPyDef_ens____validate_resolver_and_interface_id(PyObject *cpy_r_ens_name, 
     if (likely(Py_TYPE(cpy_r_r9) == CPyType_exceptions___ResolverNotFound))
         cpy_r_r10 = cpy_r_r9;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_validate_resolver_and_interface_id", 587, CPyStatic_ens___globals, "faster_ens.exceptions.ResolverNotFound", cpy_r_r9);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_validate_resolver_and_interface_id", 589, CPyStatic_ens___globals, "faster_ens.exceptions.ResolverNotFound", cpy_r_r9);
         goto CPyL15;
     }
     CPy_Raise(cpy_r_r10);
@@ -54888,7 +54717,7 @@ CPyL7: ;
     if (likely(Py_TYPE(cpy_r_r19) == CPyType_exceptions___UnsupportedFunction))
         cpy_r_r20 = cpy_r_r19;
     else {
-        CPy_TypeErrorTraceback("faster_ens/ens.py", "_validate_resolver_and_interface_id", 592, CPyStatic_ens___globals, "faster_ens.exceptions.UnsupportedFunction", cpy_r_r19);
+        CPy_TypeErrorTraceback("faster_ens/ens.py", "_validate_resolver_and_interface_id", 594, CPyStatic_ens___globals, "faster_ens.exceptions.UnsupportedFunction", cpy_r_r19);
         goto CPyL15;
     }
     CPy_Raise(cpy_r_r20);
@@ -264862,8 +264691,8 @@ const char * const CPyLit_Str[] = {
     "\002\022HTTPSessionManager\'faster_web3._utils.http_session_manager",
     "\004 faster_web3.beacon.api_endpoints\bis_async\bbase_url\017request_timeout",
     "\005\030_request_session_manager\vstatus_code\ais_text\bis_bytes\alatin-1",
-    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\bearliest",
-    "\006\tfinalized\006latest\004safe\apending\tis_string\006is_hex",
+    "\004\nis_integer\036unrecognized block reference: \rWeb3TypeError\apending",
+    "\006\bearliest\004safe\tfinalized\006latest\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\016Web3ValueError\005curry\026faster_web3.exceptions\vRPCEndpoint",
     "\002\021faster_web3.types\"select_method_for_block_identifier",
