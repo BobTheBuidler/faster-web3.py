@@ -75,8 +75,9 @@ class AsyncBaseProvider:
     logger: logging.Logger = logging.getLogger(
         "faster_web3.providers.async_base.AsyncBaseProvider"
     )
-    _request_func_cache: Tuple[
-        Tuple[Middleware, ...], Callable[..., Coroutine[Any, Any, RPCResponse]]
+    _request_func_cache: Union[
+        Tuple[Tuple[Middleware, ...], Callable[..., Coroutine[Any, Any, RPCResponse]]],
+        Tuple[None, None]
     ] = (None, None)
 
     is_async = True
@@ -102,10 +103,14 @@ class AsyncBaseProvider:
         self._batching_context: contextvars.ContextVar[
             Optional["RequestBatcher[Any]"]
         ] = contextvars.ContextVar("batching_context", default=None)
-        self._batch_request_func_cache: Tuple[
-            Tuple[Middleware, ...],
-            Callable[..., Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]]],
+        self._batch_request_func_cache: Union[
+            Tuple[
+                Tuple[Middleware, ...],
+                Callable[..., Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]]],
+            ],
+            Tuple[None, None],
         ] = (None, None)
+
 
     @property
     def _is_batching(self) -> bool:
@@ -116,16 +121,14 @@ class AsyncBaseProvider:
     ) -> Callable[..., Coroutine[Any, Any, RPCResponse]]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                await async_combine_middleware(
-                    middleware=middleware,
-                    async_w3=async_w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = await async_combine_middleware(
+                middleware=middleware,
+                async_w3=async_w3,
+                provider_request_fn=self.make_request,
             )
+            self._request_func_cache = middleware, func
         return self._request_func_cache[-1]
 
     async def batch_request_func(
@@ -133,7 +136,7 @@ class AsyncBaseProvider:
     ) -> Callable[..., Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]]]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._batch_request_func_cache[0]
+        cache_key, accumulator_fn = self._batch_request_func_cache
         if cache_key != middleware:
             accumulator_fn = self.make_batch_request
             for mw in reversed(middleware):
@@ -145,7 +148,7 @@ class AsyncBaseProvider:
                     accumulator_fn
                 )
             self._batch_request_func_cache = (middleware, accumulator_fn)
-        return self._batch_request_func_cache[-1]
+        return accumulator_fn
 
     async def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         raise NotImplementedError("Providers must implement this method")

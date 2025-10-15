@@ -90,17 +90,15 @@ class AsyncEthereumTesterProvider(AsyncBaseProvider):
 
         middleware = middleware_onion.as_tuple_of_middleware() + tuple(self._middleware)
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                await async_combine_middleware(
-                    middleware=middleware,
-                    async_w3=async_w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = await async_combine_middleware(
+                middleware=middleware,
+                async_w3=async_w3,
+                provider_request_fn=self.make_request,
             )
-        return self._request_func_cache[-1]
+            self._request_func_cache = middleware, func
+        return cast(Callable[..., Coroutine[Any, Any, RPCResponse]], func)
 
     async def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         response = _make_request(
@@ -178,17 +176,15 @@ class EthereumTesterProvider(BaseProvider):
 
         middleware = middleware_onion.as_tuple_of_middleware() + tuple(self._middleware)
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                combine_middleware(
-                    middleware=middleware,
-                    w3=w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = combine_middleware(
+                middleware=middleware,
+                w3=w3,
+                provider_request_fn=self.make_request,
             )
-        return self._request_func_cache[-1]
+            self._request_func_cache = middleware, func
+        return func
 
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         response = _make_request(
