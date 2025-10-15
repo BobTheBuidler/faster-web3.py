@@ -99,6 +99,7 @@ else:
         "faster_web3/types.py",
     ]
 
+    # these do not need to be part of the same compilation unit as the rest of the library
     data_files = [
         "faster_ens/abis.py",
         "faster_ens/contract_data.py",
@@ -126,12 +127,16 @@ else:
         "--disable-error-code=misc",
         "--disable-error-code=unused-ignore",
     ]
-    
-    ext_modules = mypycify(main_files + flags)
 
+    ext_modules = []
+    
+    main_unit = mypycify(main_files + flags)
+    ext_modules.extend(main_unit)
+    
     # these do not need to be part of the same compilation unit as the rest of the library
     for data_file in data_files:
-        ext_modules += mypycify([data_file])
+        data_unit = mypycify([data_file] + flags)
+        ext_modules.extend(data_unit)
         
 
 setup(
