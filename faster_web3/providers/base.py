@@ -60,10 +60,10 @@ class BaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
     logger: logging.Logger = logging.getLogger("faster_web3.providers.base.BaseProvider")
     # a tuple of (middleware, request_func)
-    _request_func_cache: Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]] = (
-        None,
-        None,
-    )
+    _request_func_cache: Union[
+        Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]],
+        Tuple[None, None],
+    ] = (None, None)
 
     is_async = False
     has_persistent_connection = False
