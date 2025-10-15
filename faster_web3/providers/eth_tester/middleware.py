@@ -6,6 +6,7 @@ from typing import (
     Dict,
     Final,
     Optional,
+    Sequence,
     final,
 )
 
@@ -356,7 +357,7 @@ result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
 
 
 def guess_from(w3: "Web3", _: TxParams) -> ChecksumAddress:
-    accounts = w3.eth.accounts
+    accounts: Sequence[ChecksumAddress] = w3.eth.accounts
     return accounts[0] if len(accounts) > 0 else None
 
 
@@ -378,7 +379,7 @@ def fill_default(
 async def async_guess_from(
     async_w3: "AsyncWeb3", _: TxParams
 ) -> Optional[ChecksumAddress]:
-    accounts = await async_w3.eth.accounts
+    accounts: Sequence[ChecksumAddress] = await async_w3.eth.accounts
     if accounts is not None and len(accounts) > 0:
         return accounts[0]
     return None

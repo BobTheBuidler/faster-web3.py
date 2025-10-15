@@ -33,7 +33,6 @@ from faster_eth_utils import (
     encode_hex,
     is_null,
     keccak,
-    to_tuple,
 )
 from faster_eth_utils.curried import (
     apply_formatter_if,
@@ -253,7 +252,7 @@ API_ENDPOINTS: Final = {
         "maxPriorityFeePerGas": static_return(10**9),
         "blobBaseFee": static_return(10**9),
         "gasPrice": static_return(10**9),  # must be >= base fee post-London
-        "accounts": to_tuple(call_eth_tester("get_accounts")),
+        "accounts": call_eth_tester("get_accounts"),
         "blockNumber": compose(
             operator.itemgetter("number"),
             call_eth_tester(
