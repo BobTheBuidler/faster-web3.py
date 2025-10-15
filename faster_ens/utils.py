@@ -13,6 +13,7 @@ from typing import (
     Type,
     Union,
     cast,
+    final,
 )
 import warnings
 
@@ -51,7 +52,18 @@ from .exceptions import (
     InvalidName,
 )
 
-default: Final = object()
+
+@final
+class _Default:
+    """An internal sentinal type used as a default value
+    for kwargs that should specially `None` as an input.
+    """
+
+
+default: Final = _Default()
+"""An internal sentinal used as a default value
+for kwargs that should specially `None` as an input.
+"""
 
 
 if TYPE_CHECKING:
