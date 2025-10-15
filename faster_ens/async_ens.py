@@ -157,7 +157,7 @@ class AsyncENS(BaseENS):
         if coin_type is None:
             # don't validate `addr(bytes32)` interface id since extended resolvers
             # can implement a "resolve" function as of ENSIP-10
-            return cast(ChecksumAddress, await self._resolve(name, "addr"))
+            return cast(Optional[ChecksumAddress], await self._resolve(name, "addr"))
         else:
             r = await self.resolver(name)
             await _async_validate_resolver_and_interface_id(
