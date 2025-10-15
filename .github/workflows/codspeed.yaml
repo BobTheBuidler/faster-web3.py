@@ -57,3 +57,9 @@ jobs:
         with:
           mode: instrumentation
           run: pytest --codspeed -k "test_faster_" benchmarks/
+
+      - name: Save ccache cache
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.ccache
+          key: ccache-${{ runner.os }}-x64-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
