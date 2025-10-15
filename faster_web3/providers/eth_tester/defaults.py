@@ -194,8 +194,7 @@ def get_transaction_by_block_hash_and_index(
 ) -> TxReceipt:
     block_hash, transaction_index = params
     block = eth_tester.get_block_by_hash(block_hash, full_transactions=True)
-    transaction = block["transactions"][transaction_index]
-    return transaction
+    return block["transactions"][transaction_index]
 
 
 @null_if_indexerror
@@ -205,20 +204,17 @@ def get_transaction_by_block_number_and_index(
 ) -> TxReceipt:
     block_number, transaction_index = params
     block = eth_tester.get_block_by_number(block_number, full_transactions=True)
-    transaction = block["transactions"][transaction_index]
-    return transaction
+    return block["transactions"][transaction_index]
 
 
 def create_log_filter(eth_tester: "EthereumTester", params: Any) -> int:
     filter_params = params[0]
-    filter_id = eth_tester.create_log_filter(**filter_params)
-    return filter_id
+    return eth_tester.create_log_filter(**filter_params)
 
 
 def get_logs(eth_tester: "EthereumTester", params: Any) -> List[LogReceipt]:
     filter_params = params[0]
-    logs = eth_tester.get_logs(**filter_params)
-    return logs
+    return list(eth_tester.get_logs(**filter_params))
 
 
 def _generate_random_private_key() -> HexStr:
