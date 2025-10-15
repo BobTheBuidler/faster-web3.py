@@ -106,11 +106,12 @@ else:
     web3_data_files = sorted(
         str(p.as_posix()) for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
     )
+    ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
+    
     if sys.platform.startswith('win'):
         # error C2026: string too big, trailing characters truncated
         web3_data_files.remove("faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py")
-        
-    ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
+        ens_data_files.remove("faster_ens/contract_data.py")
 
     flags = [
         "--pretty",
