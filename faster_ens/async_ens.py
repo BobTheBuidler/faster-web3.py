@@ -201,26 +201,26 @@ class AsyncENS(BaseENS):
         owner = await self.setup_owner(name, transact=transact)
         await self._assert_control(owner, name)
         if address is default:
-            address = owner
+            address_ = owner
         elif is_none_or_zero_address(address):
-            address = None
+            address_ = None
         elif is_binary_address(address):
-            address = to_checksum_address(address)
+            address_ = to_checksum_address(address)
         elif not is_checksum_address(address):
             raise ENSValueError("You must supply the address in checksum format")
-        if await self.address(name) == address:
+        if await self.address(name) == address_:
             return None
-        if address is None:
-            address = EMPTY_ADDR_HEX
+        if address_ is None:
+            address_ = EMPTY_ADDR_HEX
         transact["from"] = owner
 
         resolver: "AsyncContract" = await self._set_resolver(name, transact=transact)
         node = raw_name_to_hash(name)
 
         if coin_type is None:
-            return await resolver.functions.setAddr(node, address).transact(transact)
+            return await resolver.functions.setAddr(node, address_).transact(transact)
         else:
-            return await resolver.functions.setAddr(node, coin_type, address).transact(
+            return await resolver.functions.setAddr(node, coin_type, address_).transact(
                 transact
             )
 
@@ -340,21 +340,21 @@ class AsyncENS(BaseENS):
         transact = deepcopy(transact)
         (super_owner, unowned, owned) = await self._first_owner(name)
         if new_owner is default:
-            _new_owner = super_owner
+            new_owner_ = super_owner
         elif not new_owner:
-            _new_owner = ChecksumAddress(EMPTY_ADDR_HEX)
+            new_owner_ = ChecksumAddress(EMPTY_ADDR_HEX)
         else:
-            _new_owner = to_checksum_address(new_owner)
+            new_owner_ = to_checksum_address(new_owner)
         current_owner = await self.owner(name)
-        if _new_owner == EMPTY_ADDR_HEX and not current_owner:
+        if new_owner_ == EMPTY_ADDR_HEX and not current_owner:
             return None
-        elif current_owner == _new_owner:
+        elif current_owner == new_owner_:
             return current_owner
         await self._assert_control(super_owner, name, owned)
         await self._claim_ownership(
-            _new_owner, unowned, owned, super_owner, transact=transact
+            new_owner_, unowned, owned, super_owner, transact=transact
         )
-        return _new_owner
+        return new_owner_
 
     async def resolver(self, name: str) -> Optional["AsyncContract"]:
         """
