@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_f8380e4197eb622eb831_H
-#define MYPYC_NATIVE_f8380e4197eb622eb831_H
+#ifndef MYPYC_NATIVE_5eb755c420396fbb03a5_H
+#define MYPYC_NATIVE_5eb755c420396fbb03a5_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -52,6 +52,14 @@ typedef struct tuple_T0 {
 } tuple_T0;
 #endif
 
+#ifndef MYPYC_DECLARED_tuple_T2T2OOO
+#define MYPYC_DECLARED_tuple_T2T2OOO
+typedef struct tuple_T2T2OOO {
+    tuple_T2OO f0;
+    PyObject *f1;
+} tuple_T2T2OOO;
+#endif
+
 #ifndef MYPYC_DECLARED_tuple_T3IOO
 #define MYPYC_DECLARED_tuple_T3IOO
 typedef struct tuple_T3IOO {
@@ -84,14 +92,6 @@ typedef struct tuple_T3T2OOT2OOT2OO {
     tuple_T2OO f1;
     tuple_T2OO f2;
 } tuple_T3T2OOT2OOT2OO;
-#endif
-
-#ifndef MYPYC_DECLARED_tuple_T2T2OOO
-#define MYPYC_DECLARED_tuple_T2T2OOO
-typedef struct tuple_T2T2OOO {
-    tuple_T2OO f0;
-    PyObject *f1;
-} tuple_T2T2OOO;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T2OT3OOO
@@ -723,6 +723,58 @@ typedef struct {
     double _request_timeout;
     PyObject *__request_session_manager;
 } faster_web3___beacon___beacon___BeaconObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_web3;
+    PyObject *__requests_info;
+    PyObject *__async_requests_info;
+} faster_web3____utils___batching___RequestBatcherObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__responses;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+} faster_web3____utils___batching___async_execute_RequestBatcher_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+} faster_web3____utils___batching_____aenter___3_RequestBatcher_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__exc_type;
+    PyObject *___mypyc_generator_attribute__exc_val;
+    PyObject *___mypyc_generator_attribute__exc_tb;
+    int32_t ___mypyc_next_label__;
+} faster_web3____utils___batching_____aexit___3_RequestBatcher_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_responses;
+    PyObject *_response;
+} faster_web3____utils___batching___sort_batch_response_by_response_ids_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___batching_____mypyc_lambda__0_sort_batch_response_by_response_ids_objObject;
 
 typedef struct {
     PyObject_HEAD
