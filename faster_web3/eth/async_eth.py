@@ -452,7 +452,7 @@ class AsyncEth(BaseEth):
 
     async def get_block(
         self, block_identifier: BlockIdentifier, full_transactions: bool = False
-    ) -> BlockData:
+    ) -> Union[BlockData, AttributeDict]:
         return await self._get_block(block_identifier, full_transactions)
 
     # eth_getBlockReceipts
