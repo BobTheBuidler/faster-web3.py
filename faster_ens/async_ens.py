@@ -206,7 +206,9 @@ class AsyncENS(BaseENS):
             address_ = None
         elif is_binary_address(address):
             address_ = to_checksum_address(address)
-        elif not is_checksum_address(address):
+        elif is_checksum_address(address):
+            address_ = address
+        else:
             raise ENSValueError("You must supply the address in checksum format")
         if await self.address(name) == address_:
             return None
