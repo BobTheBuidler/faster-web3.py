@@ -1,6 +1,7 @@
 from typing import (
     TYPE_CHECKING,
     Dict,
+    Final,
     Optional,
     Union,
     cast,
@@ -73,7 +74,7 @@ async def _chain_id(
     return await async_w3.eth.chain_id
 
 
-TRANSACTION_DEFAULTS = {
+TRANSACTION_DEFAULTS: Final = {
     "value": 0,
     "data": b"",
     "gas": _estimate_gas,
