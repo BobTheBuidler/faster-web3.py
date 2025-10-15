@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_f8380e4197eb622eb831_H
-#define MYPYC_NATIVE_f8380e4197eb622eb831_H
+#ifndef MYPYC_NATIVE_7851e3006a0e003ffac8_H
+#define MYPYC_NATIVE_7851e3006a0e003ffac8_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -36,6 +36,14 @@ typedef struct tuple_T3OOO {
     PyObject *f1;
     PyObject *f2;
 } tuple_T3OOO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2CO
+#define MYPYC_DECLARED_tuple_T2CO
+typedef struct tuple_T2CO {
+    char f0;
+    PyObject *f1;
+} tuple_T2CO;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T1O
@@ -203,7 +211,374 @@ typedef struct {
     PyObject *_ens;
     PyObject *__resolver_contract;
     PyObject *__reverse_resolver_contract;
+} faster_ens___async_ens___AsyncENSObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__coin_type;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__r;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__6;
+    tuple_T3OOO ___mypyc_temp__7;
+    PyObject *___mypyc_generator_attribute__address_as_bytes;
+} faster_ens___async_ens___address_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__address;
+    PyObject *___mypyc_generator_attribute__coin_type;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__8;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__owner;
+    PyObject *___mypyc_temp__10;
+    tuple_T3OOO ___mypyc_temp__11;
+    PyObject *___mypyc_generator_attribute__address_;
+    PyObject *___mypyc_temp__12;
+    tuple_T3OOO ___mypyc_temp__13;
+    PyObject *___mypyc_temp__14;
+    tuple_T3OOO ___mypyc_temp__15;
+    PyObject *___mypyc_generator_attribute__resolver;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__16;
+    tuple_T3OOO ___mypyc_temp__17;
+    PyObject *___mypyc_temp__18;
+    tuple_T3OOO ___mypyc_temp__19;
+} faster_ens___async_ens___setup_address_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__address;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__reversed_domain;
+    PyObject *___mypyc_temp__20;
+    tuple_T3OOO ___mypyc_temp__21;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_temp__22;
+    tuple_T3OOO ___mypyc_temp__23;
+    PyObject *___mypyc_temp__2_0;
+} faster_ens___async_ens___name_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__address;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__24;
+    tuple_T3OOO ___mypyc_temp__25;
+    PyObject *___mypyc_temp__26;
+    tuple_T3OOO ___mypyc_temp__27;
+    PyObject *___mypyc_temp__28;
+    tuple_T3OOO ___mypyc_temp__29;
+    PyObject *___mypyc_generator_attribute__resolved;
+    PyObject *___mypyc_temp__30;
+    tuple_T3OOO ___mypyc_temp__31;
+    PyObject *___mypyc_temp__32;
+    tuple_T3OOO ___mypyc_temp__33;
+    PyObject *___mypyc_temp__34;
+    tuple_T3OOO ___mypyc_temp__35;
+    PyObject *___mypyc_temp__36;
+    tuple_T3OOO ___mypyc_temp__37;
+} faster_ens___async_ens___setup_name_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__38;
+    tuple_T3OOO ___mypyc_temp__39;
+} faster_ens___async_ens___owner_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__new_owner;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__40;
+    tuple_T3OOO ___mypyc_temp__41;
+    PyObject *___mypyc_generator_attribute__super_owner;
+    PyObject *___mypyc_generator_attribute__unowned;
+    PyObject *___mypyc_generator_attribute__owned;
+    PyObject *___mypyc_generator_attribute__new_owner_;
+    PyObject *___mypyc_temp__42;
+    tuple_T3OOO ___mypyc_temp__43;
+    PyObject *___mypyc_generator_attribute__current_owner;
+    PyObject *___mypyc_temp__44;
+    tuple_T3OOO ___mypyc_temp__45;
+    PyObject *___mypyc_temp__46;
+    tuple_T3OOO ___mypyc_temp__47;
+} faster_ens___async_ens___setup_owner_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__normal_name;
+    PyObject *___mypyc_temp__48;
+    tuple_T3OOO ___mypyc_temp__49;
+    tuple_T2OO ___mypyc_generator_attribute__resolver;
+} faster_ens___async_ens___resolver_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__target_address;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__reversed_domain;
+    PyObject *___mypyc_temp__50;
+    tuple_T3OOO ___mypyc_temp__51;
+} faster_ens___async_ens___reverser_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__key;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__52;
+    tuple_T3OOO ___mypyc_temp__53;
+    PyObject *___mypyc_generator_attribute__r;
+    PyObject *___mypyc_temp__54;
+    tuple_T3OOO ___mypyc_temp__55;
+    PyObject *___mypyc_temp__56;
+    tuple_T3OOO ___mypyc_temp__57;
+} faster_ens___async_ens___get_text_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__key;
+    PyObject *___mypyc_generator_attribute__value;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__58;
+    tuple_T3OOO ___mypyc_temp__59;
+    PyObject *___mypyc_generator_attribute__r;
+    PyObject *___mypyc_temp__60;
+    tuple_T3OOO ___mypyc_temp__61;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__62;
+    tuple_T3OOO ___mypyc_temp__63;
+} faster_ens___async_ens___set_text_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__normal_name;
+    PyObject *___mypyc_generator_attribute__fn_name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__current_name;
+    PyObject *___mypyc_temp__64;
+    tuple_T3OOO ___mypyc_temp__65;
+    PyObject *___mypyc_generator_attribute__resolver_addr;
+    PyObject *___mypyc_generator_attribute__resolver;
+} faster_ens___async_ens____get_resolver_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__resolver_addr;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__66;
+    tuple_T3OOO ___mypyc_temp__67;
+    PyObject *___mypyc_generator_attribute__namehash;
+    PyObject *___mypyc_temp__68;
+    tuple_T3OOO ___mypyc_temp__69;
+    PyObject *___mypyc_generator_attribute__coro;
+    PyObject *___mypyc_temp__70;
+    tuple_T3OOO ___mypyc_temp__71;
+} faster_ens___async_ens____set_resolver_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__fn_name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__normal_name;
+    PyObject *___mypyc_temp__72;
+    tuple_T3OOO ___mypyc_temp__73;
+    PyObject *___mypyc_generator_attribute__resolver;
+    PyObject *___mypyc_generator_attribute__current_name;
+    PyObject *___mypyc_generator_attribute__node;
+    PyObject *___mypyc_temp__74;
+    tuple_T3OOO ___mypyc_temp__75;
+    tuple_T2OO ___mypyc_generator_attribute__contract_func_with_args;
+    PyObject *___mypyc_generator_attribute__calldata;
+    PyObject *___mypyc_temp__76;
+    tuple_T3OOO ___mypyc_temp__77;
+    PyObject *___mypyc_generator_attribute__contract_call_result;
+    PyObject *___mypyc_generator_attribute__result;
+    PyObject *___mypyc_generator_attribute__lookup_function;
+    PyObject *___mypyc_temp__78;
+    tuple_T3OOO ___mypyc_temp__79;
+} faster_ens___async_ens____resolve_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__account;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__parent_owned;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__80;
+    tuple_T3OOO ___mypyc_temp__81;
+    PyObject *___mypyc_temp__2_0;
+} faster_ens___async_ens____assert_control_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__owner;
+    PyObject *___mypyc_generator_attribute__unowned;
+    PyObject *___mypyc_generator_attribute__pieces;
+    PyObject *___mypyc_temp__82;
+    tuple_T3OOO ___mypyc_temp__83;
+} faster_ens___async_ens____first_owner_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__owner;
+    PyObject *___mypyc_generator_attribute__unowned;
+    PyObject *___mypyc_generator_attribute__owned;
+    PyObject *___mypyc_generator_attribute__old_owner;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__84;
+    PyObject *___mypyc_temp__85;
+    PyObject *___mypyc_generator_attribute__label;
+    PyObject *___mypyc_generator_attribute__coro;
+    PyObject *___mypyc_temp__86;
+    tuple_T3OOO ___mypyc_temp__87;
+} faster_ens___async_ens____claim_ownership_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__address;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__88;
+    tuple_T3OOO ___mypyc_temp__89;
+    PyObject *___mypyc_generator_attribute__reverse_registrar;
+    PyObject *___mypyc_temp__90;
+    tuple_T3OOO ___mypyc_temp__91;
+} faster_ens___async_ens____setup_reverse_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__92;
+    tuple_T3OOO ___mypyc_temp__93;
+    PyObject *___mypyc_generator_attribute__addr;
+} faster_ens___async_ens____reverse_registrar_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__name;
+    PyObject *___mypyc_generator_attribute__func;
+    PyObject *___mypyc_generator_attribute__args;
+    PyObject *___mypyc_generator_attribute__transact;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__94;
+    tuple_T3OOO ___mypyc_temp__95;
+    PyObject *___mypyc_generator_attribute__owner;
+    PyObject *___mypyc_generator_attribute__transact_from_owner;
+    PyObject *___mypyc_temp__96;
+    tuple_T3OOO ___mypyc_temp__97;
+} faster_ens___async_ens____set_property_AsyncENS_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__resolver;
+    PyObject *___mypyc_generator_attribute__interface_id;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__98;
+    PyObject *___mypyc_temp__99;
+    PyObject *___mypyc_generator_attribute__func;
+    PyObject *___mypyc_temp__100;
+    tuple_T3OOO ___mypyc_temp__101;
+} faster_ens___async_ens____async_resolver_supports_interface_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__ens_name;
+    PyObject *___mypyc_generator_attribute__resolver;
+    PyObject *___mypyc_generator_attribute__ens_interface_id;
+    PyObject *___mypyc_generator_attribute__interface_name;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__102;
+    tuple_T3OOO ___mypyc_temp__103;
+} faster_ens___async_ens____async_validate_resolver_and_interface_id_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_w3;
+    PyObject *_ens;
+    PyObject *__resolver_contract;
+    PyObject *__reverse_resolver_contract;
 } faster_ens___base_ens___BaseENSObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_w3;
+    PyObject *_ens;
+    PyObject *__resolver_contract;
+    PyObject *__reverse_resolver_contract;
+} faster_ens___ens___ENSObject;
 
 typedef struct {
     PyObject_HEAD
@@ -264,6 +639,11 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
 } faster_ens___exceptions___ENSValidationErrorObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_ens___utils____DefaultObject;
 
 typedef struct {
     PyObject_HEAD
