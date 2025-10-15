@@ -266,7 +266,8 @@ def raw_name_to_hash(name: str) -> HexBytes:
 
 
 def address_in(
-    address: ChecksumAddress, addresses: Collection[ChecksumAddress]
+    address: Union[ChecksumAddress, Address],
+    addresses: Collection[Union[ChecksumAddress, Address]],
 ) -> bool:
     return any(is_same_address(address, item) for item in addresses)
 

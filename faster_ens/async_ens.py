@@ -515,7 +515,7 @@ class AsyncENS(BaseENS):
 
     async def _assert_control(
         self,
-        account: ChecksumAddress,
+        account: Union[ChecksumAddress, Address],
         name: str,
         parent_owned: Optional[str] = None,
     ) -> None:
@@ -570,7 +570,7 @@ class AsyncENS(BaseENS):
     async def _setup_reverse(
         self,
         name: Optional[str],
-        address: ChecksumAddress,
+        address: Union[ChecksumAddress, Address],
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         name = normalize_name(name) if name else ""

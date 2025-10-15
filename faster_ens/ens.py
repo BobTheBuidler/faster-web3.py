@@ -158,7 +158,7 @@ class ENS(BaseENS):
         if coin_type is None:
             # don't validate `addr(bytes32)` interface id since extended resolvers
             # can implement a "resolve" function as of ENSIP-10
-            return cast(ChecksumAddress, self._resolve(name, "addr"))
+            return cast(Optional[ChecksumAddress], self._resolve(name, "addr"))
         else:
             r = self.resolver(name)
             _validate_resolver_and_interface_id(
@@ -244,7 +244,7 @@ class ENS(BaseENS):
     def setup_name(
         self,
         name: str,
-        address: Optional[ChecksumAddress] = None,
+        address: Optional[Union[ChecksumAddress, Address]] = None,
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         """
@@ -496,7 +496,7 @@ class ENS(BaseENS):
 
     def _assert_control(
         self,
-        account: ChecksumAddress,
+        account: Union[ChecksumAddress, Address],
         name: str,
         parent_owned: Optional[str] = None,
     ) -> None:
@@ -547,7 +547,7 @@ class ENS(BaseENS):
     def _setup_reverse(
         self,
         name: Optional[str],
-        address: ChecksumAddress,
+        address: Union[ChecksumAddress, Address],
         transact: Optional["TxParams"] = None,
     ) -> HexBytes:
         name = normalize_name(name) if name else ""
