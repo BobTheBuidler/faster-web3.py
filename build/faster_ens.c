@@ -7,11 +7,11 @@ PyMODINIT_FUNC
 PyInit_faster_ens(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("5eb755c420396fbb03a5__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("7b1a218420bffc98637a__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_ens");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "5eb755c420396fbb03a5__mypyc.init_faster_ens");
+    void *init_func = PyCapsule_GetPointer(capsule, "7b1a218420bffc98637a__mypyc.init_faster_ens");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;

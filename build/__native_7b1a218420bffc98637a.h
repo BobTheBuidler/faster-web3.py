@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_5eb755c420396fbb03a5_H
-#define MYPYC_NATIVE_5eb755c420396fbb03a5_H
+#ifndef MYPYC_NATIVE_7b1a218420bffc98637a_H
+#define MYPYC_NATIVE_7b1a218420bffc98637a_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -727,6 +727,138 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__tx;
+    PyObject *___mypyc_generator_attribute___defaults;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+} faster_web3____utils___async_transactions____estimate_gas_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__tx;
+    PyObject *___mypyc_generator_attribute__defaults;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__block;
+    PyObject *___mypyc_generator_attribute__max_priority_fee;
+} faster_web3____utils___async_transactions____max_fee_per_gas_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute___tx;
+    PyObject *___mypyc_generator_attribute___defaults;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
+} faster_web3____utils___async_transactions____max_priority_fee_gas_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute___tx;
+    PyObject *___mypyc_generator_attribute___defaults;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__6;
+    tuple_T3OOO ___mypyc_temp__7;
+} faster_web3____utils___async_transactions____chain_id_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___async_transactions_____mypyc_lambda__0_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__web3_eth;
+    PyObject *___mypyc_generator_attribute__block_identifier;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__8;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__block;
+} faster_web3____utils___async_transactions___get_block_gas_limit_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__transaction;
+    CPyTagged ___mypyc_generator_attribute__gas_buffer;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__gas_estimate_transaction;
+    PyObject *___mypyc_temp__10;
+    tuple_T3OOO ___mypyc_temp__11;
+    CPyTagged ___mypyc_generator_attribute__gas_estimate;
+    PyObject *___mypyc_temp__12;
+    tuple_T3OOO ___mypyc_temp__13;
+    CPyTagged ___mypyc_generator_attribute__gas_limit;
+} faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__transaction;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__14;
+    tuple_T3OOO ___mypyc_temp__15;
+    CPyTagged ___mypyc_generator_attribute__tx_count;
+} faster_web3____utils___async_transactions___async_fill_nonce_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__transaction;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__strategy_based_gas_price;
+    char ___mypyc_generator_attribute__is_dynamic_fee_transaction;
+    PyObject *___mypyc_generator_attribute__defaults;
+    PyObject *___mypyc_temp__16;
+    CPyTagged ___mypyc_temp__17;
+    int64_t ___mypyc_temp__18;
+    PyObject *___mypyc_temp__19;
+    PyObject *___mypyc_generator_attribute__key;
+    PyObject *___mypyc_generator_attribute__default_getter;
+    PyObject *___mypyc_generator_attribute__default_val;
+    PyObject *___mypyc_temp__20;
+    tuple_T3OOO ___mypyc_temp__21;
+} faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__transaction_hash;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__22;
+    tuple_T3OOO ___mypyc_temp__23;
+    PyObject *___mypyc_generator_attribute__current_transaction;
+} faster_web3____utils___async_transactions___async_get_required_transaction_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__current_transaction;
+    PyObject *___mypyc_generator_attribute__new_transaction;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__24;
+    tuple_T3OOO ___mypyc_temp__25;
+} faster_web3____utils___async_transactions___async_replace_transaction_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     PyObject *_web3;
     PyObject *__requests_info;
     PyObject *__async_requests_info;
@@ -1083,7 +1215,7 @@ typedef struct {
     PyObject *___mypyc_temp__4;
     tuple_T3OOO ___mypyc_temp__5;
     PyObject *___mypyc_generator_attribute__last_block;
-    CPyTagged ___mypyc_generator_attribute__last_block_num;
+    PyObject *___mypyc_generator_attribute__last_block_num;
 } faster_web3____utils___contracts___async_parse_block_identifier_int_genObject;
 
 typedef struct {
