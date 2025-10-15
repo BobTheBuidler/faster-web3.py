@@ -108,7 +108,7 @@ else:
     )
     if sys.platform.startswith('win'):
         # error C2026: string too big, trailing characters truncated
-        web3_data_files.remove("faster_web3/_utils/contract_sources/contract_data/_custom_contract_data.py")
+        web3_data_files.remove("faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py")
         
     ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
 
