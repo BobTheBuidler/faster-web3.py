@@ -68,6 +68,7 @@ jobs:
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
       
       - name: Restore ccache cache
+        id: restore-ccache
         uses: actions/cache/restore@v4
         with:
           path: ~/.ccache
@@ -75,6 +76,7 @@ jobs:
           restore-key: ccache-${{ runner.os }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
 
       - name: Install ccache
+        if: ${{ steps.restore-ccache.outputs.cache-hit == 'true' }}
         run: sudo apt-get update && sudo apt-get install -y ccache
         
       - name: Show ccache stats before build
