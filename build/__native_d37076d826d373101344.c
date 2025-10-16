@@ -285875,7 +285875,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\004safe\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
     "\002\tis_string\006is_hex",
     "\002=Value did not match any of the recognized block identifiers: \005curry",
     "\003\tTypeGuard\021typing_extensions\"select_method_for_block_identifier",
@@ -286528,8 +286528,8 @@ const int CPyLit_Tuple[] = {
     78, 79, 359, 81, 83, 85, 508, 87
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 388, 288, 389, 300, 390, 3, 19, 1975, 0, 2, 880, 881, 4, 1084,
-    1083, 372, 1081
+    4, 5, 388, 389, 300, 390, 288, 3, 19, 1975, 0, 2, 880, 881, 4, 1081,
+    1084, 372, 1083
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
