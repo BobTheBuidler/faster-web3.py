@@ -60,10 +60,10 @@ class BaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
     logger: logging.Logger = logging.getLogger("faster_web3.providers.base.BaseProvider")
     # a tuple of (middleware, request_func)
-    _request_func_cache: Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]] = (
-        None,
-        None,
-    )
+    _request_func_cache: Union[
+        Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]],
+        Tuple[None, None],
+    ] = (None, None)
 
     is_async = False
     has_persistent_connection = False
@@ -111,18 +111,15 @@ class BaseProvider:
         """
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                combine_middleware(
-                    middleware=middleware,
-                    w3=w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = combine_middleware(
+                middleware=middleware,
+                w3=w3,
+                provider_request_fn=self.make_request,
             )
-
-        return self._request_func_cache[-1]
+            self._request_func_cache = middleware, func
+        return func
 
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         raise NotImplementedError("Providers must implement this method")

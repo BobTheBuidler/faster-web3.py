@@ -115,13 +115,13 @@ class Eth(BaseEth):
 
     # eth_accounts
 
-    _accounts: Method[Callable[[], Tuple[ChecksumAddress]]] = Method(
+    _accounts: Method[Callable[[], Tuple[ChecksumAddress, ...]]] = Method(
         RPC.eth_accounts,
         is_property=True,
     )
 
     @property
-    def accounts(self) -> Tuple[ChecksumAddress]:
+    def accounts(self) -> Sequence[ChecksumAddress]:
         return self._accounts()
 
     # eth_blobBaseFee
