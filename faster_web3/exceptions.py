@@ -10,6 +10,10 @@ from typing import (
     final,
 )
 
+from mypy_extensions import (
+    mypyc_attr,
+)
+
 from faster_web3.types import (
     BlockData,
     RPCResponse,
@@ -19,6 +23,7 @@ if TYPE_CHECKING:
     import asyncio
 
 
+@mypyc_attr(allow_interpreted_subclasses=True)
 class Web3Exception(Exception):
     """
     Exception mixin inherited by all exceptions of web3.py
@@ -47,6 +52,7 @@ class Web3Exception(Exception):
 
 
 @final
+@mypyc_attr(native_class=False)
 class Web3AssertionError(Web3Exception, AssertionError):
     """
     A web3.py exception wrapper for `AssertionError`, for better control over
@@ -62,6 +68,7 @@ class Web3ValueError(Web3Exception, ValueError):
 
 
 @final
+@mypyc_attr(native_class=False)
 class Web3AttributeError(Web3Exception, AttributeError):
     """
     A web3.py exception wrapper for `AttributeError`, for better control over
@@ -70,6 +77,7 @@ class Web3AttributeError(Web3Exception, AttributeError):
 
 
 @final
+@mypyc_attr(native_class=False)
 class Web3TypeError(Web3Exception, TypeError):
     """
     A web3.py exception wrapper for `TypeError`, for better control over
@@ -169,6 +177,7 @@ class StaleBlockchain(Web3Exception):
 
 
 @final
+@mypyc_attr(allow_interpreted_subclasses=True)
 class MismatchedABI(Web3Exception):
     """
     Raised when an ABI does not match with supplied parameters, or when an
@@ -177,6 +186,7 @@ class MismatchedABI(Web3Exception):
 
 
 @final
+@mypyc_attr(native_class=False)
 class ABIEventNotFound(AttributeError, MismatchedABI):
     """
     Raised when an attempt is made to access an event
@@ -185,6 +195,7 @@ class ABIEventNotFound(AttributeError, MismatchedABI):
 
 
 @final
+@mypyc_attr(native_class=False)
 class ABIFunctionNotFound(AttributeError, MismatchedABI):
     """
     Raised when an attempt is made to access a function
