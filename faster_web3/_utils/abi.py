@@ -15,6 +15,7 @@ from typing import (
     Dict,
     Iterable,
     List,
+    Literal,
     Mapping,
     Optional,
     Sequence,
@@ -74,6 +75,9 @@ from faster_eth_utils import (
 from faster_eth_utils.toolz import (
     curry,
     pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.abi_element_identifiers import (
@@ -474,7 +478,7 @@ def is_recognized_type(abi_type: TypeStr) -> bool:
     return bool(re.match(TYPE_REGEX, abi_type))
 
 
-def is_bool_type(abi_type: TypeStr) -> bool:
+def is_bool_type(abi_type: TypeStr) -> TypeGuard[Literal["bool"]]:
     return abi_type == "bool"
 
 
@@ -486,7 +490,7 @@ def is_int_type(abi_type: TypeStr) -> bool:
     return abi_type in INT_TYPES
 
 
-def is_address_type(abi_type: TypeStr) -> bool:
+def is_address_type(abi_type: TypeStr) -> TypeGuard[Literal["address"]]:
     return abi_type == "address"
 
 
@@ -494,7 +498,7 @@ def is_bytes_type(abi_type: TypeStr) -> bool:
     return abi_type in BYTES_TYPES + ["bytes"]
 
 
-def is_string_type(abi_type: TypeStr) -> bool:
+def is_string_type(abi_type: TypeStr) -> TypeGuard[Literal["string"]]:
     return abi_type == "string"
 
 

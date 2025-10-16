@@ -1,8 +1,12 @@
 from typing import (
     Any,
     Optional,
+    Union,
 )
 
+from eth_typing import (
+    HexStr,
+)
 from faster_eth_utils import (
     is_bytes,
     is_hex,
@@ -14,6 +18,9 @@ from faster_eth_utils import (
 from faster_eth_utils.toolz import (
     curry,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_web3.exceptions import (
     Web3TypeError,
@@ -24,7 +31,7 @@ from faster_web3.types import (
 )
 
 
-def is_predefined_block_number(value: Any) -> bool:
+def is_predefined_block_number(value: Any) -> TypeGuard[Union[str, bytes]]:
     if is_text(value):
         value_text = value
     elif is_bytes(value):
@@ -41,13 +48,13 @@ def is_predefined_block_number(value: Any) -> bool:
     return value_text in {"latest", "pending", "earliest", "safe", "finalized"}
 
 
-def is_hex_encoded_block_hash(value: Any) -> bool:
+def is_hex_encoded_block_hash(value: Any) -> TypeGuard[HexStr]:
     if not is_string(value):
         return False
     return len(remove_0x_prefix(value)) == 64 and is_hex(value)
 
 
-def is_hex_encoded_block_number(value: Any) -> bool:
+def is_hex_encoded_block_number(value: Any) -> TypeGuard[HexStr]:
     if not is_string(value):
         return False
     elif is_hex_encoded_block_hash(value):

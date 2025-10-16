@@ -59,6 +59,9 @@ from faster_eth_utils.toolz import (
     curry,
     valfilter,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 import faster_web3
 from faster_web3._utils.abi import (
@@ -324,10 +327,8 @@ normalize_topic_list = compose(
 )
 
 
-def is_indexed(arg: Any) -> bool:
-    if isinstance(arg, TopicArgumentFilter):
-        return True
-    return False
+def is_indexed(arg: Any) -> TypeGuard["TopicArgumentFilter"]:
+    return isinstance(arg, TopicArgumentFilter)
 
 
 is_not_indexed = complement(is_indexed)

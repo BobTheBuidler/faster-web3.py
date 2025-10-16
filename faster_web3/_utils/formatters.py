@@ -2,13 +2,13 @@ from collections.abc import (
     Mapping,
 )
 from typing import (
+    TYPE_CHECKING,
     Any,
     Callable,
     Dict,
     Iterable,
-    Iterator,
     Optional,
-    TypeVar,
+    Sequence,
     Union,
 )
 
@@ -28,6 +28,9 @@ from faster_eth_utils.toolz import (
     curry,
     dissoc,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_web3._utils.decorators import (
     reject_recursive_repeats,
@@ -36,8 +39,11 @@ from faster_web3.types import (
     RPCResponse,
 )
 
-TReturn = TypeVar("TReturn")
-TValue = TypeVar("TValue")
+if TYPE_CHECKING:
+    from faster_web3.types import (
+        TReturn,
+        TValue,
+    )
 
 
 def hex_to_integer(value: HexStr) -> int:
@@ -118,11 +124,11 @@ def apply_key_map(
     return apply_key_map_curried
 
 
-def is_array_of_strings(value: Any) -> bool:
+def is_array_of_strings(value: Any) -> TypeGuard[Sequence[str]]:
     return is_list_like(value) and all(map(is_string, value))
 
 
-def is_array_of_dicts(value: Any) -> bool:
+def is_array_of_dicts(value: Any) -> TypeGuard[Sequence[Dict[Any, Any]]]:
     return is_list_like(value) and all(map(is_dict, value))
 
 
