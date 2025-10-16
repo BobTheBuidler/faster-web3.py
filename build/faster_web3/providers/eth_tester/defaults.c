@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_exceptions(void)
+PyInit_defaults(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("8c504c6646ee7e149ee1__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_ens___exceptions");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___providers___eth_tester___defaults");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "8c504c6646ee7e149ee1__mypyc.init_faster_ens___exceptions");
+    void *init_func = PyCapsule_GetPointer(capsule, "8c504c6646ee7e149ee1__mypyc.init_faster_web3___providers___eth_tester___defaults");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_exceptions(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_exceptions(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_defaults(); }
