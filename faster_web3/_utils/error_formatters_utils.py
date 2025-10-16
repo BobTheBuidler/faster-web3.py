@@ -1,6 +1,7 @@
 import warnings
 from typing import (
     Final,
+    Optional,
 )
 
 import faster_eth_abi.abi
@@ -16,6 +17,7 @@ from faster_web3.exceptions import (
     Web3ValueError,
 )
 from faster_web3.types import (
+    RPCError,
     RPCResponse,
 )
 
@@ -140,7 +142,7 @@ def raise_contract_logic_error_on_revert(response: RPCResponse) -> RPCResponse:
 
     See also https://solidity.readthedocs.io/en/v0.6.3/control-structures.html#revert
     """
-    error = response.get("error")
+    error: Optional[RPCError] = response.get("error")
     if error is None or isinstance(error, str):
         raise Web3ValueError(error)
 
