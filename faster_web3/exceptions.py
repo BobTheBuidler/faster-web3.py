@@ -23,7 +23,7 @@ if TYPE_CHECKING:
     import asyncio
 
 
-@mypyc_attr(allow_interpreted_subclasses=True)
+@mypyc_attr(native_class=False)
 class Web3Exception(Exception):
     """
     Exception mixin inherited by all exceptions of web3.py
@@ -177,7 +177,7 @@ class StaleBlockchain(Web3Exception):
 
 
 @final
-@mypyc_attr(allow_interpreted_subclasses=True)
+@mypyc_attr(native_class=False)
 class MismatchedABI(Web3Exception):
     """
     Raised when an ABI does not match with supplied parameters, or when an
