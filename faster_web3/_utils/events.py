@@ -454,7 +454,7 @@ class EventFilterBuilder(BaseEventFilterBuilder):
 
 
 class AsyncEventFilterBuilder(BaseEventFilterBuilder):
-    async def deploy(self, async_w3: "AsyncWeb3") -> "AsyncLogFilter":
+    async def deploy(self, async_w3: "AsyncWeb3[Any]") -> "AsyncLogFilter":
         if not isinstance(async_w3, faster_web3.AsyncWeb3):
             raise Web3ValueError(f"Invalid web3 argument: got: {async_w3!r}")
 

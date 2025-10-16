@@ -169,7 +169,7 @@ class BaseContractEvent:
     name: Optional[str] = None
     abi_element_identifier: Optional[ABIElementIdentifier] = None
     signature: Optional[str] = None
-    w3: Optional[Union["Web3", "AsyncWeb3"]] = None
+    w3: Optional[Union["Web3", "AsyncWeb3[Any]"]] = None
     contract_abi: Optional[ABI] = None
     abi: ABIEvent = None
     argument_names: Tuple[str, ...] = tuple()
@@ -477,7 +477,7 @@ class BaseContractEvents(Generic[TContractEvent]):
     def __init__(
         self,
         abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         contract_event_type: Type[TContractEvent],
         address: Optional[ChecksumAddress] = None,
     ) -> None:
@@ -569,7 +569,7 @@ class BaseContractFunction:
     name: Optional[str] = None
     signature: Optional[str] = None
     abi_element_identifier: Optional[ABIElementIdentifier] = None
-    w3: Optional[Union["Web3", "AsyncWeb3"]] = None
+    w3: Optional[Union["Web3", "AsyncWeb3[Any]"]] = None
     contract_abi: Optional[ABI] = None
     abi: Optional[ABIFunction] = None
     transaction: Optional[TxParams] = None
@@ -894,7 +894,7 @@ class BaseContractFunctions(Generic[TContractFn]):
     def __init__(
         self,
         abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         contract_function_class: Type[TContractFn],
         address: Optional[ChecksumAddress] = None,
         decode_tuples: Optional[bool] = False,
@@ -1001,7 +1001,7 @@ class BaseContract:
     """
 
     # set during class construction
-    w3: Optional[Union["Web3", "AsyncWeb3"]] = None
+    w3: Optional[Union["Web3", "AsyncWeb3[Any]"]] = None
 
     # instance level properties
     address: Optional[ChecksumAddress] = None
@@ -1285,7 +1285,7 @@ class BaseContract:
     def find_functions_by_identifier(
         cls,
         contract_abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         address: ChecksumAddress,
         callable_check: Callable[..., Any],
     ) -> List[Any]:
@@ -1305,7 +1305,7 @@ class BaseContract:
     def find_events_by_identifier(
         cls,
         contract_abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         address: ChecksumAddress,
         callable_check: Callable[..., Any],
     ) -> List[Any]:
@@ -1324,7 +1324,7 @@ class BaseContract:
     @staticmethod
     def get_fallback_function(
         abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         function_type: Type["BaseContractFunction"],
         address: Optional[ChecksumAddress] = None,
     ) -> "BaseContractFunction":
@@ -1344,7 +1344,7 @@ class BaseContract:
     @staticmethod
     def get_receive_function(
         abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         function_type: Type["BaseContractFunction"],
         address: Optional[ChecksumAddress] = None,
     ) -> "BaseContractFunction":
@@ -1468,7 +1468,7 @@ class BaseContractCaller:
     def __init__(
         self,
         abi: ABI,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         address: ChecksumAddress,
         decode_tuples: Optional[bool] = False,
     ) -> None:
@@ -1541,7 +1541,7 @@ class BaseContractConstructor:
 
     def __init__(
         self,
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
         abi: ABI,
         bytecode: HexStr,
         *args: Any,

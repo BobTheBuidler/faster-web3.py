@@ -33,7 +33,7 @@ class PersistentConnection:
     via a `AsyncWeb3` instance instantiated with a `PersistentConnectionProvider` class.
     """
 
-    def __init__(self, w3: "AsyncWeb3"):
+    def __init__(self, w3: "AsyncWeb3[Any]"):
         self._manager: Final = w3.manager
         self.provider: Final = cast("PersistentConnectionProvider", self._manager.provider)
 

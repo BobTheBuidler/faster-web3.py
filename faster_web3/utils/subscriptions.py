@@ -54,7 +54,7 @@ TSubscription = TypeVar("TSubscription", bound="EthSubscription[Any]")
 class EthSubscriptionContext(Generic[TSubscription, TSubscriptionResult]):
     def __init__(
         self,
-        async_w3: "AsyncWeb3",
+        async_w3: "AsyncWeb3[Any]",
         subscription: TSubscription,
         result: TSubscriptionResult,
         **kwargs: Any,

@@ -56,7 +56,7 @@ class SubscriptionManager:
         "faster_web3.providers.persistent.subscription_manager"
     )
 
-    def __init__(self, w3: "AsyncWeb3") -> None:
+    def __init__(self, w3: "AsyncWeb3[Any]") -> None:
         self._w3: Final = w3
         self._provider: Final = cast("PersistentConnectionProvider", w3.provider)
         self._subscription_container: Final = SubscriptionContainer()
