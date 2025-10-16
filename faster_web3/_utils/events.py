@@ -15,6 +15,7 @@ from typing import (
     Final,
     Iterable,
     List,
+    Literal,
     Optional,
     Sequence,
     Tuple,
@@ -230,8 +231,8 @@ def get_event_abi_types_for_decoding(
 def get_event_data(
     abi_codec: ABICodec,
     event_abi: ABIEvent,
-    log_entry: LogReceipt,
-) -> EventData:
+    log_entry: Union[LogReceipt, AttributeDict],
+) -> Union[EventData, AttributeDict]:
     """
     Given an event ABI and a log entry for that event, return the decoded
     event data
@@ -300,7 +301,7 @@ def get_event_data(
     )
 
     if isinstance(log_entry, AttributeDict):
-        return cast(EventData, AttributeDict.recursive(event_data))
+        return AttributeDict.recursive(event_data)
 
     return event_data
 
@@ -383,7 +384,7 @@ class BaseEventFilterBuilder:
             )
 
     @property
-    def address(self) -> ChecksumAddress:
+    def address(self) -> Optional[ChecksumAddress]:
         return self._address
 
     @address.setter
@@ -536,7 +537,10 @@ class BaseArgumentFilter(ABC):
 class DataArgumentFilter(BaseArgumentFilter):
     # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
-    def match_values(self) -> Tuple[TypeStr, Tuple[Any, ...]]:  # type: ignore
+    def match_values(self) -> Union[
+        Tuple[TypeStr, Tuple[Any, ...]],
+        Tuple[TypeStr, Literal[None]],
+    ]:
         return self.arg_type, self._match_values
 
 
