@@ -5,7 +5,6 @@ from typing import (
     Callable,
     Dict,
     Final,
-    Literal,
     Optional,
     final,
 )
@@ -54,6 +53,7 @@ from faster_web3.middleware.formatting import (
     FormattingMiddlewareBuilder,
 )
 from faster_web3.types import (
+    BlockParams,
     RPCEndpoint,
     TxParams,
 )
@@ -65,9 +65,7 @@ if TYPE_CHECKING:
     )
 
 
-def is_named_block(
-    value: Any
-) -> TypeGuard[Literal["latest", "earliest", "safe", "pending", "finalized"]]:
+def is_named_block(value: Any) -> TypeGuard[BlockParams]:
     return value in {"latest", "earliest", "safe", "pending", "finalized"}
 
 
