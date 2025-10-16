@@ -398,6 +398,7 @@ class ReadBufferLimitReached(PersistentConnectionError, Web3ValueError):
 
 
 @final
+@mypyc_attr(native_class=False)
 class PersistentConnectionClosedOK(PersistentConnectionError):
     """
     Raised when a persistent connection is closed gracefully by the server.
@@ -405,6 +406,7 @@ class PersistentConnectionClosedOK(PersistentConnectionError):
 
 
 @final
+@mypyc_attr(native_class=False)
 class SubscriptionProcessingFinished(PersistentConnectionError):
     """
     Raised to alert the subscription manager that the processing of subscriptions
