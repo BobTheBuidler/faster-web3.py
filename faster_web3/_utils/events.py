@@ -11,6 +11,7 @@ from typing import (
     Any,
     Collection,
     Dict,
+    Final,
     Iterable,
     List,
     Optional,
@@ -18,6 +19,7 @@ from typing import (
     Tuple,
     Union,
     cast,
+    final,
 )
 
 from faster_eth_abi import (
@@ -42,7 +44,6 @@ from faster_eth_utils import (
     to_bytes,
     to_dict,
     to_hex,
-    to_tuple,
 )
 from faster_eth_utils.abi import (
     collapse_if_tuple,
@@ -152,8 +153,7 @@ def construct_event_topic_set(
         for arg, arg_options in zipped_abi_and_args
     ]
 
-    topics = list(normalize_topic_list([event_topic] + encoded_args))
-    return topics
+    return list(normalize_topic_list([event_topic] + encoded_args))
 
 
 def construct_event_data_set(
@@ -196,11 +196,10 @@ def construct_event_data_set(
         for arg, arg_options in zipped_abi_and_args
     ]
 
-    data = [
+    return [
         list(permutation) if any(value is not None for value in permutation) else []
         for permutation in itertools.product(*encoded_args)
     ]
-    return data
 
 
 def is_dynamic_sized_type(type_str: TypeStr) -> bool:
@@ -208,7 +207,6 @@ def is_dynamic_sized_type(type_str: TypeStr) -> bool:
     return abi_type.is_dynamic
 
 
-@to_tuple
 def get_event_abi_types_for_decoding(
     event_inputs: Sequence[Union[ABIComponent, ABIComponentIndexed]],
 ) -> Iterable[TypeStr]:
@@ -217,11 +215,14 @@ def get_event_abi_types_for_decoding(
     `string`.  Because of this we need to modify the types so that we can
     decode the log entries using the correct types.
     """
-    for input_abi in event_inputs:
-        if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"]):
-            yield "bytes32"
-        else:
-            yield collapse_if_tuple(input_abi)
+    return tuple(
+        (
+            "bytes32"
+            if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"])
+            else collapse_if_tuple(input_abi)
+        )
+        for input_abi in event_inputs
+    )
 
 
 @curry
@@ -258,8 +259,7 @@ def get_event_data(
 
     # sanity check that there are not name intersections between the topic
     # names and the data argument names.
-    duplicate_names = set(log_topic_names).intersection(log_data_names)
-    if duplicate_names:
+    if duplicate_names := set(log_topic_names).intersection(log_data_names):
         raise InvalidEventABI(
             "The following argument names are duplicated "
             f"between event inputs: '{', '.join(duplicate_names)}'"
@@ -283,10 +283,8 @@ def get_event_data(
     )
 
     event_args = dict(
-        itertools.chain(
-            zip(log_topic_names, normalized_topic_data),
-            named_log_data.items(),
-        )
+        zip(log_topic_names, normalized_topic_data),
+        **named_log_data,
     )
 
     event_data = EventData(
@@ -306,9 +304,8 @@ def get_event_data(
     return event_data
 
 
-@to_tuple
 def pop_singlets(seq: Sequence[Any]) -> Iterable[Any]:
-    yield from (i[0] if is_list_like(i) and len(i) == 1 else i for i in seq)
+    return tuple(i[0] if is_list_like(i) and len(i) == 1 else i for i in seq)
 
 
 @curry
@@ -321,7 +318,7 @@ def remove_trailing_from_seq(
     return seq[:index]
 
 
-normalize_topic_list = compose(
+normalize_topic_list: Final = compose(
     remove_trailing_from_seq(remove_value=None),
     pop_singlets,
 )
@@ -331,15 +328,10 @@ def is_indexed(arg: Any) -> TypeGuard["TopicArgumentFilter"]:
     return isinstance(arg, TopicArgumentFilter)
 
 
-is_not_indexed = complement(is_indexed)
+is_not_indexed: Final = complement(is_indexed)
 
 
 class BaseEventFilterBuilder:
-    formatter = None
-    _from_block = None
-    _to_block = None
-    _address = None
-    _immutable = False
 
     def __init__(
         self,
@@ -347,14 +339,19 @@ class BaseEventFilterBuilder:
         abi_codec: ABICodec,
         formatter: Optional[EventData] = None,
     ) -> None:
-        self.event_abi = event_abi
-        self.abi_codec = abi_codec
-        self.formatter = formatter
-        self.event_topic = initialize_event_topics(self.event_abi)
-        self.args = AttributeDict(
+        self.event_abi: Final = event_abi
+        self.abi_codec: Final = abi_codec
+        self.formatter: Final = formatter
+        self.event_topic: Final = initialize_event_topics(self.event_abi)
+        self.args: Final = AttributeDict(
             _build_argument_filters_from_event_abi(event_abi, abi_codec)
         )
-        self._ordered_arg_names = tuple(arg["name"] for arg in event_abi["inputs"])
+        self._ordered_arg_names: Final = tuple(arg["name"] for arg in event_abi["inputs"])
+        
+        self._from_block: Optional[BlockIdentifier] = None
+        self._to_block: Optional[BlockIdentifier] = None
+        self._address: Optional[ChecksumAddress] = None
+        self._immutable: bool = False
 
     @property
     def from_block(self) -> BlockIdentifier:
@@ -403,12 +400,10 @@ class BaseEventFilterBuilder:
         return tuple(map(self.args.__getitem__, self._ordered_arg_names))
 
     @property
-    @to_tuple
     def indexed_args(self) -> Tuple[Any, ...]:
         return tuple(filter(is_indexed, self.ordered_args))
 
     @property
-    @to_tuple
     def data_args(self) -> Tuple[Any, ...]:
         return tuple(filter(is_not_indexed, self.ordered_args))
 
@@ -432,9 +427,10 @@ class BaseEventFilterBuilder:
             "toBlock": self.to_block,
             "address": self.address,
         }
-        return valfilter(lambda x: x is not None, params)
+        return {k: v for k, v in params.items() if v is not None}
 
 
+@final
 class EventFilterBuilder(BaseEventFilterBuilder):
     def deploy(self, w3: "Web3") -> "LogFilter":
         if not isinstance(w3, faster_web3.Web3):
@@ -453,6 +449,7 @@ class EventFilterBuilder(BaseEventFilterBuilder):
         return log_filter
 
 
+@final
 class AsyncEventFilterBuilder(BaseEventFilterBuilder):
     async def deploy(self, async_w3: "AsyncWeb3[Any]") -> "AsyncLogFilter":
         if not isinstance(async_w3, faster_web3.AsyncWeb3):
@@ -476,7 +473,7 @@ def initialize_event_topics(event_abi: ABIEvent) -> Union[bytes, List[Any]]:
     if event_abi["anonymous"] is False:
         return event_abi_to_log_topic(event_abi)
     else:
-        return list()
+        return []
 
 
 @to_dict
@@ -495,21 +492,18 @@ def _build_argument_filters_from_event_abi(
         yield key, value
 
 
-array_to_tuple = apply_formatter_if(is_list_like, tuple)
+array_to_tuple: Final = apply_formatter_if(is_list_like, tuple)
 
 
-@to_tuple
 def _normalize_match_values(match_values: Collection[Any]) -> Iterable[Any]:
-    for value in match_values:
-        yield array_to_tuple(value)
+    return tuple(map(array_to_tuple, match_values))
 
 
 class BaseArgumentFilter(ABC):
-    _match_values: Optional[Tuple[Any, ...]] = None
-    _immutable = False
-
     def __init__(self, arg_type: TypeStr) -> None:
-        self.arg_type = arg_type
+        self.arg_type: Final = arg_type
+        self._match_values: Optional[Tuple[Any, ...]] = None
+        self._immutable = False
 
     def match_single(self, value: Any) -> None:
         if self._immutable:
@@ -537,6 +531,7 @@ class BaseArgumentFilter(ABC):
         pass
 
 
+@final
 class DataArgumentFilter(BaseArgumentFilter):
     # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
@@ -544,22 +539,19 @@ class DataArgumentFilter(BaseArgumentFilter):
         return self.arg_type, self._match_values
 
 
+@final
 class TopicArgumentFilter(BaseArgumentFilter):
     def __init__(self, arg_type: TypeStr, abi_codec: ABICodec) -> None:
-        self.abi_codec = abi_codec
-        self.arg_type = arg_type
+        super().__init__(arg_type)
+        self.abi_codec: Final = abi_codec
 
-    @to_tuple
     def _get_match_values(self) -> Iterable[HexStr]:
-        yield from (self._encode(value) for value in self._match_values)
+        return tuple(map(self._encode, cast(Tuple[Any, ...], self._match_values)))
 
     # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
     def match_values(self) -> Optional[Tuple[HexStr, ...]]:  # type: ignore
-        if self._match_values is not None:
-            return self._get_match_values()
-        else:
-            return None
+        return self._get_match_values() if self._match_values is not None else None
 
     def _encode(self, value: Any) -> HexStr:
         if is_dynamic_sized_type(self.arg_type):
@@ -568,12 +560,13 @@ class TopicArgumentFilter(BaseArgumentFilter):
             return to_hex(self.abi_codec.encode([self.arg_type], [value]))
 
 
+@final
 class EventLogErrorFlags(Enum):
-    Discard = "discard"
-    Ignore = "ignore"
-    Strict = "strict"
-    Warn = "warn"
+    Discard: Final = "discard"
+    Ignore: Final = "ignore"
+    Strict: Final = "strict"
+    Warn: Final = "warn"
 
     @classmethod
-    def flag_options(self) -> List[str]:
-        return [key.upper() for key in self.__members__.keys()]
+    def flag_options(cls) -> List[str]:
+        return [key.upper() for key in cls.__members__.keys()]
