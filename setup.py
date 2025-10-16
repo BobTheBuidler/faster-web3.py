@@ -97,6 +97,7 @@ else:
         "faster_web3/beacon",
         "faster_web3/constants.py",
         "faster_web3/contract/utils.py",
+        "faster_web3/exceptions.py",
         "faster_web3/gas_strategies",
         "faster_web3/providers/eth_tester",
         "faster_web3/tools/benchmark/node.py",

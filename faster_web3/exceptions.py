@@ -4,8 +4,10 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Dict,
+    Final,
     Optional,
     Union,
+    final,
 )
 
 from faster_web3.types import (
@@ -31,7 +33,7 @@ class Web3Exception(Exception):
             # deal with other exceptions
     """
 
-    user_message: Optional[str] = None
+    user_message: Final[Optional[str]]
 
     def __init__(
         self,
@@ -44,6 +46,7 @@ class Web3Exception(Exception):
         self.user_message = user_message
 
 
+@final
 class Web3AssertionError(Web3Exception, AssertionError):
     """
     A web3.py exception wrapper for `AssertionError`, for better control over
@@ -58,6 +61,7 @@ class Web3ValueError(Web3Exception, ValueError):
     """
 
 
+@final
 class Web3AttributeError(Web3Exception, AttributeError):
     """
     A web3.py exception wrapper for `AttributeError`, for better control over
@@ -65,6 +69,7 @@ class Web3AttributeError(Web3Exception, AttributeError):
     """
 
 
+@final
 class Web3TypeError(Web3Exception, TypeError):
     """
     A web3.py exception wrapper for `TypeError`, for better control over
@@ -72,12 +77,14 @@ class Web3TypeError(Web3Exception, TypeError):
     """
 
 
+@final
 class MethodNotSupported(Web3Exception):
     """
     Raised when a method is not supported by the provider.
     """
 
 
+@final
 class BadFunctionCallOutput(Web3Exception):
     """
     We failed to decode ABI output.
@@ -86,18 +93,21 @@ class BadFunctionCallOutput(Web3Exception):
     """
 
 
+@final
 class BlockNumberOutOfRange(Web3Exception):
     """
     block_identifier passed does not match known block.
     """
 
 
+@final
 class ProviderConnectionError(Web3Exception):
     """
     Raised when unable to connect to a provider
     """
 
 
+@final
 class CannotHandleRequest(Web3Exception):
     """
     Raised by a provider to signal that it cannot handle an RPC request and
@@ -105,12 +115,14 @@ class CannotHandleRequest(Web3Exception):
     """
 
 
+@final
 class TooManyRequests(Web3Exception):
     """
     Raised by a provider to signal that too many requests have been made consecutively.
     """
 
 
+@final
 class MultipleFailedRequests(Web3Exception):
     """
     Raised by a provider to signal that multiple requests to retrieve the same
@@ -118,12 +130,14 @@ class MultipleFailedRequests(Web3Exception):
     """
 
 
+@final
 class InvalidAddress(Web3Exception):
     """
     The supplied address does not have a valid checksum, as defined in EIP-55
     """
 
 
+@final
 class NameNotFound(Web3Exception):
     """
     Raised when a caller provides an Ethereum Name Service name that
@@ -131,6 +145,7 @@ class NameNotFound(Web3Exception):
     """
 
 
+@final
 class StaleBlockchain(Web3Exception):
     """
     Raised by the stalecheck_middleware when the latest block is too old.
@@ -153,6 +168,7 @@ class StaleBlockchain(Web3Exception):
         return self.args[0]
 
 
+@final
 class MismatchedABI(Web3Exception):
     """
     Raised when an ABI does not match with supplied parameters, or when an
@@ -160,6 +176,7 @@ class MismatchedABI(Web3Exception):
     """
 
 
+@final
 class ABIEventNotFound(AttributeError, MismatchedABI):
     """
     Raised when an attempt is made to access an event
@@ -167,6 +184,7 @@ class ABIEventNotFound(AttributeError, MismatchedABI):
     """
 
 
+@final
 class ABIFunctionNotFound(AttributeError, MismatchedABI):
     """
     Raised when an attempt is made to access a function
@@ -174,18 +192,21 @@ class ABIFunctionNotFound(AttributeError, MismatchedABI):
     """
 
 
+@final
 class ABIConstructorNotFound(Web3Exception):
     """
     Raised when a constructor function doesn't exist in contract.
     """
 
 
+@final
 class ABIFallbackNotFound(Web3Exception):
     """
     Raised when a fallback function doesn't exist in contract.
     """
 
 
+@final
 class ABIReceiveNotFound(Web3Exception):
     """
     Raised when a receive function doesn't exist in contract.
@@ -198,30 +219,35 @@ class Web3ValidationError(Web3Exception):
     """
 
 
+@final
 class ExtraDataLengthError(Web3ValidationError):
     """
     Raised when an RPC call returns >32 bytes of extraData.
     """
 
 
+@final
 class NoABIFunctionsFound(Web3Exception):
     """
     Raised when an ABI is present, but doesn't contain any functions.
     """
 
 
+@final
 class NoABIFound(Web3Exception):
     """
     Raised when no ABI is present.
     """
 
 
+@final
 class NoABIEventsFound(Web3Exception):
     """
     Raised when an ABI doesn't contain any events.
     """
 
 
+@final
 class InsufficientData(Web3Exception):
     """
     Raised when there are insufficient data points to
@@ -229,6 +255,7 @@ class InsufficientData(Web3Exception):
     """
 
 
+@final
 class TimeExhausted(Web3Exception):
     """
     Raised when a method has not retrieved the desired
@@ -236,18 +263,21 @@ class TimeExhausted(Web3Exception):
     """
 
 
+@final
 class InfuraProjectIdNotFound(Web3Exception):
     """
     Raised when there is no Infura Project Id set.
     """
 
 
+@final
 class LogTopicError(Web3Exception):
     """
     Raised when the number of log topics is mismatched.
     """
 
 
+@final
 class InvalidEventABI(Web3Exception):
     """
     Raised when the event ABI is invalid.
@@ -265,30 +295,33 @@ class ContractLogicError(Web3Exception):
         data: Optional[Union[str, Dict[str, str]]] = None,
     ):
         super().__init__(message, data)
-        self.message = message
-        self.data = data
+        self.message: Final = message
+        self.data: Final = data
 
 
+@final
 class ContractCustomError(ContractLogicError):
     """
     Raised on a contract revert custom error
     """
 
 
+@final
 class ContractPanicError(ContractLogicError):
     """
     Raised when a contract reverts with Panic, as of Solidity 0.8.0
     """
 
 
+@final
 class OffchainLookup(ContractLogicError):
     """
     Raised when a contract reverts with OffchainLookup as described in EIP-3668
     """
 
     def __init__(self, payload: Dict[str, Any], data: Optional[str] = None) -> None:
-        self.payload = payload
-        self.data = data
+        self.payload: Final = payload
+        self.data: Final = data
         super().__init__(data=data)
 
 
@@ -301,6 +334,7 @@ class InvalidTransaction(Web3Exception):
         super().__init__(message)
 
 
+@final
 class TransactionTypeMismatch(InvalidTransaction):
     """
     Raised when legacy transaction values are used alongside dynamic
@@ -312,6 +346,7 @@ class TransactionTypeMismatch(InvalidTransaction):
         super().__init__(message)
 
 
+@final
 class BadResponseFormat(Web3Exception):
     """
     Raised when a JSON-RPC response comes back in an unexpected format
@@ -327,10 +362,10 @@ class TaskNotRunning(Web3Exception):
     def __init__(
         self, task: "asyncio.Task[Any]", message: Optional[str] = None
     ) -> None:
-        self.task = task
+        self.task: Final = task
         if message is None:
             message = f"Task {task} is not running."
-        self.message = message
+        self.message: Final = message
         super().__init__(message)
 
 
@@ -340,6 +375,7 @@ class PersistentConnectionError(Web3Exception):
     """
 
 
+@final
 class ReadBufferLimitReached(PersistentConnectionError, Web3ValueError):
     """
     Raised when the read buffer limit is reached while reading data from a persistent
@@ -347,12 +383,14 @@ class ReadBufferLimitReached(PersistentConnectionError, Web3ValueError):
     """
 
 
+@final
 class PersistentConnectionClosedOK(PersistentConnectionError):
     """
     Raised when a persistent connection is closed gracefully by the server.
     """
 
 
+@final
 class SubscriptionProcessingFinished(PersistentConnectionError):
     """
     Raised to alert the subscription manager that the processing of subscriptions
@@ -360,6 +398,7 @@ class SubscriptionProcessingFinished(PersistentConnectionError):
     """
 
 
+@final
 class SubscriptionHandlerTaskException(TaskNotRunning):
     """
     Raised to alert the subscription manager that an exception occurred in the
@@ -388,28 +427,32 @@ class Web3RPCError(Web3Exception):
             message,
             user_message=user_message,
         )
-        self.message = message
-        self.rpc_response = rpc_response
+        self.message: Final = message
+        self.rpc_response: Final = rpc_response
 
 
+@final
 class MethodUnavailable(Web3RPCError):
     """
     Raised when the method is not available on the node
     """
 
 
+@final
 class RequestTimedOut(Web3RPCError):
     """
     Raised when a request to the node times out.
     """
 
 
+@final
 class TransactionNotFound(Web3RPCError):
     """
     Raised when a tx hash used to look up a tx in a jsonrpc call cannot be found.
     """
 
 
+@final
 class TransactionIndexingInProgress(Web3RPCError):
     """
     Raised when a transaction receipt is not yet available due to transaction indexing
@@ -417,6 +460,7 @@ class TransactionIndexingInProgress(Web3RPCError):
     """
 
 
+@final
 class BlockNotFound(Web3RPCError):
     """
     Raised when the block id used to look up a block in a jsonrpc call cannot be found.
