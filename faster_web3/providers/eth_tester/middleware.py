@@ -5,6 +5,7 @@ from typing import (
     Callable,
     Dict,
     Final,
+    Literal,
     Optional,
     final,
 )
@@ -64,8 +65,10 @@ if TYPE_CHECKING:
     )
 
 
-def is_named_block(value: Any) -> TypeGuard[str]:
-    return value in {"latest", "earliest", "safe", "finalized"}
+def is_named_block(
+    value: Any
+) -> TypeGuard[Literal["latest", "earliest", "safe", "pending", "finalized"]]:
+    return value in {"latest", "earliest", "safe", "pending", "finalized"}
 
 
 def is_hexstr(value: Any) -> TypeGuard[HexStr]:
