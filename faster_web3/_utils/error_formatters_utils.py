@@ -148,7 +148,7 @@ def raise_contract_logic_error_on_revert(response: RPCResponse) -> RPCResponse:
 
     message = error.get("message")
     message_present = message is not None and message != ""
-    data = error.get("data", MISSING_DATA)
+    data: Optional[str] = error.get("data", MISSING_DATA)
 
     if data is None:
         if not message_present:

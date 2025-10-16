@@ -106,8 +106,8 @@ class EventData(TypedDict):
 
 class RPCError(TypedDict):
     code: int
-    message: Optional[str]
-    data: NotRequired[Optional[str]]
+    message: Union[str, None]
+    data: NotRequired[Union[str, Dict[str, Any], None]]
 
 
 class SetCodeAuthorizationData(TypedDict):
