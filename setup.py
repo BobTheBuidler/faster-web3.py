@@ -150,7 +150,6 @@ else:
     
     ext_modules = mypycify(
         main_files + flags,
-        group_name="faster_web3",
         separate=main_group + data_file_groups,
         strict_dunder_typing=True,
     )
