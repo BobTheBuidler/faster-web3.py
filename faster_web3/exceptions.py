@@ -380,6 +380,7 @@ class TaskNotRunning(Web3Exception):
         super().__init__(message)
 
 
+@mypyc_attr(native_class=False)
 class PersistentConnectionError(Web3Exception):
     """
     Raised when a persistent connection encounters an error.
