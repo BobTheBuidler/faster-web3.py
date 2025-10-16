@@ -140,16 +140,16 @@ else:
         "--disable-error-code=unused-ignore",
     ]
 
-    ext_modules = []
+    # data files are compiled as separate compilation groups because they are not needed for typical users
+    data_file_groups = [([data_file], None) for data_file in web3_data_files + ens_data_files]
     
-    main_unit = mypycify(main_files + flags)
-    ext_modules.extend(main_unit)
-    
-    # these do not need to be part of the same compilation unit as the rest of the library
-    for data_file in web3_data_files + ens_data_files:
-        data_unit = mypycify([data_file] + flags)
-        ext_modules.extend(data_unit)
-        
+    ext_modules = mypycify(
+        main_files + flags,
+        group_name="faster_web3",
+        separate=data_file_groups,
+        strict_dunder_typing=True,
+    )
+
 
 setup(
     name="faster_web3",
