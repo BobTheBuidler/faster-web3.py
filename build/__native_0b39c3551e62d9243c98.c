@@ -227215,7 +227215,8 @@ char CPyDef_middleware___is_named_block(PyObject *cpy_r_value) {
     char cpy_r_r2;
     char cpy_r_r3;
     char cpy_r_r4;
-    cpy_r_r0 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'latest', 'safe', 'finalized', 'earliest'}) */
+    cpy_r_r0 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'earliest', 'finalized', 'latest', 'pending',
+                                              'safe'}) */
     cpy_r_r1 = PySet_Contains(cpy_r_r0, cpy_r_value);
     cpy_r_r2 = cpy_r_r1 >= 0;
     if (unlikely(!cpy_r_r2)) {
@@ -227408,7 +227409,7 @@ CPyL7: ;
     if (likely(PyUnicode_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 364, CPyStatic_middleware___globals, "str", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 365, CPyStatic_middleware___globals, "str", cpy_r_r13);
         goto CPyL14;
     }
     cpy_r_r15 = cpy_r_r14;
@@ -227420,7 +227421,7 @@ CPyL12: ;
     if (likely(cpy_r_r15 != Py_None))
         cpy_r_r17 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 364, CPyStatic_middleware___globals, "str", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 365, CPyStatic_middleware___globals, "str", cpy_r_r15);
         goto CPyL14;
     }
     return cpy_r_r17;
@@ -227520,7 +227521,7 @@ CPyL5: ;
     if (likely(PyDict_Check(cpy_r_r14)))
         cpy_r_r15 = cpy_r_r14;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", 376, CPyStatic_middleware___globals, "dict", cpy_r_r14);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", 377, CPyStatic_middleware___globals, "dict", cpy_r_r14);
         goto CPyL10;
     }
     return cpy_r_r15;
@@ -227641,7 +227642,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "async_w3", 385, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "async_w3", 386, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r5);
@@ -227831,7 +227832,7 @@ CPyL35: ;
     }
     cpy_r_r35 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
     if (unlikely(cpy_r_r35 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 386, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 387, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r35);
@@ -227842,7 +227843,7 @@ CPyL37: ;
     if (!cpy_r_r37) goto CPyL53;
     cpy_r_r38 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
     if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 386, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 387, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r38);
@@ -227871,7 +227872,7 @@ CPyL44: ;
     if (!cpy_r_r45) goto CPyL53;
     cpy_r_r47 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 387, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 388, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r47);
@@ -227886,7 +227887,7 @@ CPyL46: ;
     if (likely(PyUnicode_Check(cpy_r_r49)))
         cpy_r_r50 = cpy_r_r49;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", 387, CPyStatic_middleware___globals, "str", cpy_r_r49);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", 388, CPyStatic_middleware___globals, "str", cpy_r_r49);
         goto CPyL62;
     }
     ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
@@ -228386,14 +228387,14 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 399, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 400, CPyStatic_middleware___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r5);
 CPyL5: ;
     cpy_r_r6 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 399, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 400, CPyStatic_middleware___globals);
         goto CPyL66;
     }
     CPy_INCREF(cpy_r_r6);
@@ -228410,14 +228411,14 @@ CPyL6: ;
     if (!cpy_r_r9) goto CPyL18;
     cpy_r_r10 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r10 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 399, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 400, CPyStatic_middleware___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r10);
 CPyL9: ;
     cpy_r_r11 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 399, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 400, CPyStatic_middleware___globals);
         goto CPyL67;
     }
     CPy_INCREF(cpy_r_r11);
@@ -228435,7 +228436,7 @@ CPyL10: ;
     if (!cpy_r_r14) goto CPyL18;
     cpy_r_r15 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 400, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 401, CPyStatic_middleware___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r15);
@@ -228452,21 +228453,21 @@ CPyL17: ;
 CPyL18: ;
     cpy_r_r17 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r17 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "async_w3", 402, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "async_w3", 403, CPyStatic_middleware___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r17);
 CPyL19: ;
     cpy_r_r18 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 402, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 403, CPyStatic_middleware___globals);
         goto CPyL68;
     }
     CPy_INCREF(cpy_r_r18);
 CPyL20: ;
     cpy_r_r19 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_func;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_func", 402, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_func", 403, CPyStatic_middleware___globals);
         goto CPyL69;
     }
     CPy_INCREF(cpy_r_r19);
@@ -228652,21 +228653,21 @@ CPyL50: ;
     }
     cpy_r_r48 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r48 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 403, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 404, CPyStatic_middleware___globals);
         goto CPyL65;
     }
     CPy_INCREF(cpy_r_r48);
 CPyL52: ;
     cpy_r_r49 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
     if (unlikely(cpy_r_r49 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 403, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 404, CPyStatic_middleware___globals);
         goto CPyL77;
     }
     CPy_INCREF(cpy_r_r49);
 CPyL53: ;
     cpy_r_r50 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val;
     if (unlikely(cpy_r_r50 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_val", 403, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_val", 404, CPyStatic_middleware___globals);
         goto CPyL78;
     }
     CPy_INCREF(cpy_r_r50);
@@ -229274,7 +229275,7 @@ PyObject *CPyDef_middleware___DefaultTransactionFieldsMiddleware___request_proce
     if (likely(PyList_Check(cpy_r_r28)))
         cpy_r_r29 = cpy_r_r28;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "request_processor", 423, CPyStatic_middleware___globals, "list", cpy_r_r28);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "request_processor", 424, CPyStatic_middleware___globals, "list", cpy_r_r28);
         goto CPyL23;
     }
     cpy_r_r30 = PySequence_Concat(cpy_r_r24, cpy_r_r29);
@@ -229445,7 +229446,7 @@ CPyL4: ;
                                               'eth_estimateGas', 'eth_sendTransaction'}) */
     cpy_r_r6 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__method;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 429, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 430, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r6);
@@ -229469,7 +229470,7 @@ CPyL5: ;
     }
     cpy_r_r14 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "self", 436, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "self", 437, CPyStatic_middleware___globals);
         goto CPyL63;
     }
     CPy_INCREF_NO_IMM(cpy_r_r14);
@@ -229483,7 +229484,7 @@ CPyL9: ;
     }
     cpy_r_r17 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r17 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 436, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 437, CPyStatic_middleware___globals);
         goto CPyL64;
     }
     CPy_INCREF(cpy_r_r17);
@@ -229684,7 +229685,7 @@ CPyL42: ;
     }
     cpy_r_r51 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__filled_transaction;
     if (unlikely(cpy_r_r51 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "filled_transaction", 438, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "filled_transaction", 439, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r51);
@@ -229699,7 +229700,7 @@ CPyL44: ;
     *(PyObject * *)cpy_r_r54 = cpy_r_r51;
     cpy_r_r55 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 438, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 439, CPyStatic_middleware___globals);
         goto CPyL74;
     }
     CPy_INCREF(cpy_r_r55);
@@ -229719,7 +229720,7 @@ CPyL46: ;
     if (likely(PyList_Check(cpy_r_r57)))
         cpy_r_r58 = cpy_r_r57;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", 438, CPyStatic_middleware___globals, "list", cpy_r_r57);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", 439, CPyStatic_middleware___globals, "list", cpy_r_r57);
         goto CPyL74;
     }
     cpy_r_r59 = PySequence_Concat(cpy_r_r52, cpy_r_r58);
@@ -229741,14 +229742,14 @@ CPyL46: ;
 CPyL51: ;
     cpy_r_r61 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__method;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 440, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 441, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r61);
 CPyL52: ;
     cpy_r_r62 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r62 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 440, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 441, CPyStatic_middleware___globals);
         goto CPyL75;
     }
     CPy_INCREF(cpy_r_r62);
@@ -231281,7 +231282,7 @@ CPyL3: ;
     CPyModule_faster_web3___middleware___formatting = cpy_r_r54;
     CPy_INCREF(CPyModule_faster_web3___middleware___formatting);
     CPy_DECREF(cpy_r_r54);
-    cpy_r_r55 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('RPCEndpoint', 'TxParams') */
+    cpy_r_r55 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BlockParams', 'RPCEndpoint', 'TxParams') */
     cpy_r_r56 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
     cpy_r_r57 = CPyStatic_middleware___globals;
     cpy_r_r58 = CPyImport_ImportFromMany(cpy_r_r56, cpy_r_r55, cpy_r_r55, cpy_r_r57);
@@ -267575,16 +267576,16 @@ const char * const CPyLit_Str[] = {
     "\003\030apply_formatters_to_args\rapply_key_map\rstatic_return",
     "\002\035apply_list_to_array_formatter\016Web3Middleware",
     "\002\033faster_web3.middleware.base\033FormattingMiddlewareBuilder",
-    "\003!faster_web3.middleware.formatting\016is_named_block\022is_not_named_block",
-    "\003\025blob_versioned_hashes\024max_fee_per_blob_gas\017max_fee_per_gas",
-    "\003\030max_priority_fee_per_gas\vaccess_list\022authorization_list",
-    "\002\037TRANSACTION_REQUEST_KEY_MAPPING\034transaction_request_remapper",
-    "\003\fstorage_keys\by_parity\036TRANSACTION_REQUEST_FORMATTERS",
-    "\003\037transaction_request_transformer\nfrom_block\bto_block",
-    "\002\032FILTER_REQUEST_KEY_MAPPING\027filter_request_remapper",
-    "\002\031FILTER_REQUEST_FORMATTERS\030filter_request_formatter",
-    "\003\032filter_request_transformer\nblock_hash\020transaction_hash",
-    "\002\021transaction_index\036TRANSACTION_RESULT_KEY_MAPPING",
+    "\003!faster_web3.middleware.formatting\vBlockParams\016is_named_block",
+    "\003\022is_not_named_block\025blob_versioned_hashes\024max_fee_per_blob_gas",
+    "\003\017max_fee_per_gas\030max_priority_fee_per_gas\vaccess_list",
+    "\002\022authorization_list\037TRANSACTION_REQUEST_KEY_MAPPING",
+    "\003\034transaction_request_remapper\fstorage_keys\by_parity",
+    "\002\036TRANSACTION_REQUEST_FORMATTERS\037transaction_request_transformer",
+    "\003\nfrom_block\bto_block\032FILTER_REQUEST_KEY_MAPPING",
+    "\002\027filter_request_remapper\031FILTER_REQUEST_FORMATTERS",
+    "\003\030filter_request_formatter\032filter_request_transformer\nblock_hash",
+    "\003\020transaction_hash\021transaction_index\036TRANSACTION_RESULT_KEY_MAPPING",
     "\004\033transaction_result_remapper\002eq\tlog_index\026LOG_RESULT_KEY_MAPPING",
     "\004\023log_result_remapper\020contract_address\bgas_used\023cumulative_gas_used",
     "\003\023effective_gas_price\rblob_gas_used\016blob_gas_price",
@@ -267617,7 +267618,7 @@ const char * const CPyLit_Str[] = {
     "\005\tterminate\004kill\006signal$faster_web3/tools/benchmark/utils.py\aNewType",
     "\003\tTypedDict\032SignedSetCodeAuthorization\032eth_account.datastructures",
     "\003\006Hash32\nFallbackFn\tReceiveFn",
-    "\003*faster_web3._utils.abi_element_identifiers\vNotRequired\vBlockParams",
+    "\002*faster_web3._utils.abi_element_identifiers\vNotRequired",
     "\a\020LatestBlockParam\vTopicFilter\bEnodeURI\005Nonce\tTimestamp\004Gwei\n_TypedDict",
     "\004\016_TypedDictMeta\017AccessListEntry\nAccessList\tEventData",
     "\003\030SetCodeAuthorizationData\032SetCodeAuthorizationParams\016WithdrawalData",
@@ -267735,19 +267736,19 @@ const int CPyLit_Tuple[] = {
     83, 86, 277, 1, 383, 1, 510, 1, 495, 3, 363, 728, 729, 2, 1567, 1573,
     2, 1579, 1580, 1, 2084, 7, 165, 76, 357, 78, 79, 83, 87, 2, 168, 185,
     3, 454, 392, 391, 2, 876, 600, 7, 303, 916, 774, 394, 1592, 513, 516,
-    6, 1593, 1594, 924, 781, 925, 1595, 1, 1596, 1, 1597, 1, 1599, 2, 363,
-    324, 2, 1664, 1665, 2, 1702, 1703, 3, 1702, 1705, 1703, 3, 1676, 1676,
-    1676, 2, 2068, 2205, 3, 1700, 1704, 1701, 1, 1667, 5, 76, 79, 410,
-    276, 87, 3, 1709, 1709, 1709, 1, 2210, 2, 1683, 1685, 1, 1711, 1,
-    1730, 2, 76, 78, 3, 1744, 1744, 1744, 4, 1985, 2216, 2205, 1999, 1,
-    76, 3, 843, 843, 843, 2, 2219, 2073, 15, 165, 76, 357, 358, 78, 81,
-    82, 1746, 83, 276, 85, 166, 1747, 508, 86, 1, 1748, 5, 280, 586, 168,
-    1750, 185, 2, 1751, 1752, 1, 1754, 1, 827, 1, 1865, 1, 1864, 9, 76,
-    78, 79, 359, 81, 83, 85, 508, 87
+    6, 1593, 1594, 924, 781, 925, 1595, 1, 1596, 1, 1597, 1, 1599, 3,
+    1601, 363, 324, 2, 1665, 1666, 2, 1703, 1704, 3, 1703, 1706, 1704, 3,
+    1677, 1677, 1677, 2, 2068, 2205, 3, 1701, 1705, 1702, 1, 1668, 5, 76,
+    79, 410, 276, 87, 3, 1710, 1710, 1710, 1, 2210, 2, 1684, 1686, 1,
+    1712, 1, 1731, 2, 76, 78, 3, 1745, 1745, 1745, 4, 1985, 2216, 2205,
+    1999, 1, 76, 3, 843, 843, 843, 2, 2219, 2073, 15, 165, 76, 357, 358,
+    78, 81, 82, 1747, 83, 276, 85, 166, 1748, 508, 86, 1, 1749, 5, 280,
+    586, 168, 1751, 185, 2, 1752, 1753, 1, 1755, 1, 827, 1, 1865, 1, 1864,
+    9, 76, 78, 79, 359, 81, 83, 85, 508, 87
 };
 const int CPyLit_FrozenSet[] = {
-    5, 5, 388, 389, 300, 288, 390, 3, 19, 1875, 0, 2, 880, 881, 4, 288,
-    389, 390, 388, 4, 372, 1081, 1083, 1084
+    4, 5, 288, 388, 300, 389, 390, 3, 19, 1875, 0, 2, 880, 881, 4, 1081,
+    372, 1083, 1084
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
