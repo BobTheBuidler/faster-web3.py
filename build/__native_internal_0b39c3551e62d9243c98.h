@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_8c504c6646ee7e149ee1_H
-#define MYPYC_NATIVE_INTERNAL_8c504c6646ee7e149ee1_H
+#ifndef MYPYC_NATIVE_INTERNAL_0b39c3551e62d9243c98_H
+#define MYPYC_NATIVE_INTERNAL_0b39c3551e62d9243c98_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_8c504c6646ee7e149ee1.h"
+#include "__native_0b39c3551e62d9243c98.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2178];
+extern PyObject *CPyStatics[2235];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -120,6 +120,10 @@ extern CPyModule *CPyModule_faster_web3____utils___validation;
 extern CPyModule *CPyModule_faster_web3___datastructures;
 extern CPyModule *CPyModule_codecs;
 extern CPyModule *CPyModule_faster_eth_abi;
+extern CPyModule *CPyModule_faster_web3____utils___error_formatters_utils__internal;
+extern CPyModule *CPyModule_faster_web3____utils___error_formatters_utils;
+extern PyObject *CPyStatic_error_formatters_utils___globals;
+extern CPyModule *CPyModule_faster_eth_abi___abi;
 extern CPyModule *CPyModule_faster_web3____utils___fee_utils__internal;
 extern CPyModule *CPyModule_faster_web3____utils___fee_utils;
 extern PyObject *CPyStatic_fee_utils___globals;
@@ -148,7 +152,6 @@ extern PyObject *CPyStatic_math___globals;
 extern PyObject *CPyStatic_method_formatters___globals;
 extern CPyModule *CPyModule_operator;
 extern CPyModule *CPyModule_typing_extensions;
-extern CPyModule *CPyModule_faster_web3____utils___error_formatters_utils;
 extern CPyModule *CPyModule_faster_web3____utils___filters;
 extern CPyModule *CPyModule_faster_web3____utils___type_conversion__internal;
 extern CPyModule *CPyModule_faster_web3____utils___type_conversion;
@@ -1157,6 +1160,23 @@ extern PyObject *CPyPy_encoding___Web3JsonEncoder___default(PyObject *self, PyOb
 extern PyObject *CPyDef_encoding___to_json(PyObject *cpy_r_obj);
 extern PyObject *CPyPy_encoding___to_json(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_encoding_____top_level__(void);
+extern PyObject *CPyStatic_error_formatters_utils___decode;
+extern PyObject *CPyStatic_error_formatters_utils___to_bytes;
+extern tuple_T5OOOOO CPyStatic_error_formatters_utils___OFFCHAIN_LOOKUP_FIELD_NAMES;
+extern tuple_T5OOOOO CPyStatic_error_formatters_utils___OFFCHAIN_LOOKUP_FIELD_TYPES;
+extern PyObject *CPyStatic_error_formatters_utils___OFFCHAIN_LOOKUP_FIELDS;
+extern PyObject *CPyStatic_error_formatters_utils___PANIC_ERROR_CODES;
+extern PyObject *CPyDef_error_formatters_utils____parse_error_with_reverted_prefix(PyObject *cpy_r_data);
+extern PyObject *CPyPy_error_formatters_utils____parse_error_with_reverted_prefix(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_error_formatters_utils____raise_contract_error(PyObject *cpy_r_response_error_data);
+extern PyObject *CPyPy_error_formatters_utils____raise_contract_error(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_error_formatters_utils___raise_contract_logic_error_on_revert(PyObject *cpy_r_response);
+extern PyObject *CPyPy_error_formatters_utils___raise_contract_logic_error_on_revert(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_error_formatters_utils___raise_transaction_indexing_error_if_indexing(PyObject *cpy_r_response);
+extern PyObject *CPyPy_error_formatters_utils___raise_transaction_indexing_error_if_indexing(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_error_formatters_utils___raise_block_not_found_on_error(PyObject *cpy_r_response);
+extern PyObject *CPyPy_error_formatters_utils___raise_block_not_found_on_error(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_error_formatters_utils_____top_level__(void);
 extern CPyTagged CPyStatic_fee_utils___PRIORITY_FEE_MAX;
 extern CPyTagged CPyStatic_fee_utils___PRIORITY_FEE_MIN;
 extern tuple_T3IOO CPyStatic_fee_utils___PRIORITY_FEE_HISTORY_PARAMS;
