@@ -178,8 +178,7 @@ def construct_event_data_set(
 
     normalized_args = {
         key: value if is_list_like(value) else [value]
-        # type ignored b/c at this point arguments is always a dict
-        for key, value in arguments.items()  # type: ignore
+        for key, value in arguments.items()
     }
 
     non_indexed_args = exclude_indexed_event_inputs(event_abi)
@@ -497,7 +496,7 @@ def _build_argument_filters_from_event_abi(
 array_to_tuple: Final = apply_formatter_if(is_list_like, tuple)
 
 
-def _normalize_match_values(match_values: Collection[Any]) -> Iterable[Any]:
+def _normalize_match_values(match_values: Collection[Any]) -> Tuple[Any, ...]:
     return tuple(map(array_to_tuple, match_values))
 
 
@@ -535,7 +534,6 @@ class BaseArgumentFilter(ABC):
 
 @final
 class DataArgumentFilter(BaseArgumentFilter):
-    # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
     def match_values(self) -> Union[
         Tuple[TypeStr, Tuple[Any, ...]],
@@ -550,12 +548,11 @@ class TopicArgumentFilter(BaseArgumentFilter):
         super().__init__(arg_type)
         self.abi_codec: Final = abi_codec
 
-    def _get_match_values(self) -> Iterable[HexStr]:
+    def _get_match_values(self) -> Tuple[HexStr, ...]:
         return tuple(map(self._encode, cast(Tuple[Any, ...], self._match_values)))
 
-    # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
-    def match_values(self) -> Optional[Tuple[HexStr, ...]]:  # type: ignore
+    def match_values(self) -> Optional[Tuple[HexStr, ...]]:
         return self._get_match_values() if self._match_values is not None else None
 
     def _encode(self, value: Any) -> HexStr:

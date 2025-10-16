@@ -9,7 +9,12 @@ def test_filtering_sequential_blocks_with_bounded_range(
 
     initial_block_number = w3.eth.block_number
 
-    builder.toBlock = initial_block_number + 100
+    # this line doesn't actually do anything but we had to change it because
+    # you can't assign a non-existent attribute to a compiled class.
+    # I'm not sure what the original intent was but the test passes with or
+    # without it.
+    builder.to_block = initial_block_number + 100
+
     filter_ = builder.deploy(w3)
     for _ in range(100):
         emitter.functions.logNoArgs(which=1).transact()
@@ -45,7 +50,13 @@ async def test_async_filtering_sequential_blocks_with_bounded_range(
     builder = async_emitter.events.LogNoArguments.build_filter()
     builder.from_block = "latest"
     initial_block_number = await async_w3.eth.block_number
-    builder.toBlock = initial_block_number + 100
+
+    # this line doesn't actually do anything but we had to change it because
+    # you can't assign a non-existent attribute to a compiled class.
+    # I'm not sure what the original intent was but the test passes with or
+    # without it.
+    builder.to_block = initial_block_number + 100
+    
     filter_ = await builder.deploy(async_w3)
     for _ in range(100):
         await async_emitter.functions.logNoArgs(which=1).transact()
