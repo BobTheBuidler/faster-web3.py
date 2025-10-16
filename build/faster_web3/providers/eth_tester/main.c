@@ -4,11 +4,11 @@ PyMODINIT_FUNC
 PyInit_main(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("0b39c3551e62d9243c98__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("faster_web3.providers.eth_tester.main__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___providers___eth_tester___main");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "0b39c3551e62d9243c98__mypyc.init_faster_web3___providers___eth_tester___main");
+    void *init_func = PyCapsule_GetPointer(capsule, "faster_web3.providers.eth_tester.main__mypyc.init_faster_web3___providers___eth_tester___main");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;

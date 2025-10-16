@@ -1,0 +1,106 @@
+#ifndef MYPYC_NATIVE_INTERNAL_faster_web3___gas_strategies___time_based_H
+#define MYPYC_NATIVE_INTERNAL_faster_web3___gas_strategies___time_based_H
+#include <Python.h>
+#include <CPy.h>
+#include "__native_time_based.h"
+
+int CPyGlobalsInit(void);
+
+#include <__native_faster_web3.h>
+struct export_table_faster_web3 exports_faster_web3;
+extern PyObject *CPyStatics[107];
+extern const char * const CPyLit_Str[];
+extern const char * const CPyLit_Bytes[];
+extern const char * const CPyLit_Int[];
+extern const double CPyLit_Float[];
+extern const double CPyLit_Complex[];
+extern const int CPyLit_Tuple[];
+extern const int CPyLit_FrozenSet[];
+extern CPyModule *CPyModule_faster_web3___gas_strategies___time_based__internal;
+extern CPyModule *CPyModule_faster_web3___gas_strategies___time_based;
+extern PyObject *CPyStatic_faster_web3___gas_strategies___time_based___globals;
+extern CPyModule *CPyModule_builtins;
+extern CPyModule *CPyModule_collections;
+extern CPyModule *CPyModule_math;
+extern CPyModule *CPyModule_operator;
+extern CPyModule *CPyModule_typing;
+extern CPyModule *CPyModule_eth_typing;
+extern CPyModule *CPyModule_faster_eth_utils;
+extern CPyModule *CPyModule_faster_eth_utils___toolz;
+extern CPyModule *CPyModule_faster_hexbytes;
+extern CPyModule *CPyModule_faster_web3;
+extern CPyModule *CPyModule_faster_web3____utils___math;
+extern CPyModule *CPyModule_faster_web3___exceptions;
+extern CPyModule *CPyModule_faster_web3___types;
+extern PyObject *CPyStatic_faster_web3___gas_strategies___time_based___fast_gas_price_strategy;
+extern PyObject *CPyStatic_faster_web3___gas_strategies___time_based___medium_gas_price_strategy;
+extern PyObject *CPyStatic_faster_web3___gas_strategies___time_based___slow_gas_price_strategy;
+extern PyObject *CPyStatic_faster_web3___gas_strategies___time_based___glacial_gas_price_strategy;
+extern PyTypeObject *CPyType_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen;
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen(void);
+extern CPyThreadLocal faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_free_instance;
+extern PyTypeObject *CPyType_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen;
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen(void);
+extern CPyThreadLocal faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_free_instance;
+extern PyTypeObject *CPyType_faster_web3___gas_strategies___time_based____compute_probabilities_gen;
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen(void);
+extern CPyThreadLocal faster_web3___gas_strategies___time_based____compute_probabilities_genObject *faster_web3___gas_strategies___time_based____compute_probabilities_gen_free_instance;
+extern PyTypeObject *CPyType_faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_env;
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_env(void);
+extern CPyThreadLocal faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_env_free_instance;
+extern PyTypeObject *CPyType_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj;
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj(void);
+extern CPyThreadLocal faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_objObject *faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj_free_instance;
+extern double CPyDef_faster_web3___gas_strategies___time_based____get_avg_block_time(PyObject *cpy_r_w3, CPyTagged cpy_r_sample_size);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_avg_block_time(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern double CPyDef_faster_web3___gas_strategies___time_based____get_weighted_avg_block_time(PyObject *cpy_r_w3, CPyTagged cpy_r_sample_size);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_weighted_avg_block_time(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____get_raw_miner_data(PyObject *cpy_r_w3, CPyTagged cpy_r_sample_size);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____get_raw_miner_data(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____aggregate_miner_data(PyObject *cpy_r_raw_data);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____aggregate_miner_data(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based____compute_probabilities(PyObject *cpy_r_miner_data, CPyTagged cpy_r_wait_blocks, CPyTagged cpy_r_sample_size);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_probabilities(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern CPyTagged CPyDef_faster_web3___gas_strategies___time_based____compute_gas_price(PyObject *cpy_r_probabilities, double cpy_r_desired_probability);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based____compute_gas_price(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern CPyTagged CPyDef_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_w3, PyObject *cpy_r_transaction_params);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy(CPyTagged cpy_r_max_wait_seconds, CPyTagged cpy_r_sample_size, CPyTagged cpy_r_probability, char cpy_r_weighted);
+extern PyObject *CPyPy_faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_faster_web3___gas_strategies___time_based_____top_level__(void);
+#endif
