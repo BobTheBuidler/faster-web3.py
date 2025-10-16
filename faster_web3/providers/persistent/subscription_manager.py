@@ -3,11 +3,13 @@ import logging
 from typing import (
     TYPE_CHECKING,
     Any,
+    Final,
     List,
     Sequence,
     Set,
     Union,
     cast,
+    final,
     overload,
 )
 
@@ -42,6 +44,7 @@ if TYPE_CHECKING:
     )
 
 
+@final
 class SubscriptionManager:
     """
     The ``SubscriptionManager`` is responsible for subscribing, unsubscribing, and
@@ -49,14 +52,14 @@ class SubscriptionManager:
     used for processing all subscriptions that have handler functions.
     """
 
-    logger: logging.Logger = logging.getLogger(
+    logger: Final = logging.getLogger(
         "faster_web3.providers.persistent.subscription_manager"
     )
 
     def __init__(self, w3: "AsyncWeb3") -> None:
-        self._w3 = w3
-        self._provider = cast("PersistentConnectionProvider", w3.provider)
-        self._subscription_container = SubscriptionContainer()
+        self._w3: Final = w3
+        self._provider: Final = cast("PersistentConnectionProvider", w3.provider)
+        self._subscription_container: Final = SubscriptionContainer()
 
         # parallelize all subscription handler calls
         self.parallelize = False

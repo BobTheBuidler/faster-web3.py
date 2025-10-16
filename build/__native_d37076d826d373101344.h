@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_82a2e4b9b5b389b600b2_H
-#define MYPYC_NATIVE_82a2e4b9b5b389b600b2_H
+#ifndef MYPYC_NATIVE_d37076d826d373101344_H
+#define MYPYC_NATIVE_d37076d826d373101344_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -2060,6 +2060,111 @@ typedef struct {
     tuple_T3OOO ___mypyc_temp__9;
     PyObject *___mypyc_generator_attribute__raw_response;
 } faster_web3___providers___persistent___request_processor___pop_raw_response_RequestProcessor_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_logger;
+    PyObject *__w3;
+    PyObject *__provider;
+    PyObject *__subscription_container;
+    char _parallelize;
+    CPyTagged _task_timeout;
+    PyObject *__tasks;
+    CPyTagged _total_handler_calls;
+} faster_web3___providers___persistent___subscription_manager___SubscriptionManagerObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    PyObject *___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__task;
+} faster_web3___providers___persistent___subscription_manager____cleanup_remaining_tasks_SubscriptionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__subscriptions;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__sub_id;
+    PyObject *___mypyc_generator_attribute__sub_ids;
+    PyObject *___mypyc_temp__4;
+    PyObject *___mypyc_temp__5;
+    PyObject *___mypyc_generator_attribute__sub;
+    PyObject *___mypyc_temp__6;
+    tuple_T3OOO ___mypyc_temp__7;
+    PyObject *___mypyc_temp__2_0;
+} faster_web3___providers___persistent___subscription_manager___subscribe_SubscriptionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__subscriptions;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__subscription_id;
+    PyObject *___mypyc_temp__8;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__queue;
+    PyObject *___mypyc_temp__10;
+    tuple_T3OOO ___mypyc_temp__11;
+    PyObject *___mypyc_generator_attribute__unsubscribed;
+    PyObject *___mypyc_generator_attribute__subs;
+    PyObject *___mypyc_temp__12;
+    int64_t ___mypyc_temp__13;
+    PyObject *___mypyc_generator_attribute__sub;
+    PyObject *___mypyc_temp__14;
+    tuple_T3OOO ___mypyc_temp__15;
+    PyObject *___mypyc_temp__2_0;
+} faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__16;
+    int64_t ___mypyc_temp__17;
+    PyObject *___mypyc_generator_attribute__sub;
+    PyObject *___mypyc_temp__18;
+    tuple_T3OOO ___mypyc_temp__19;
+    PyObject *___mypyc_generator_attribute__unsubscribed;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
+} faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    char ___mypyc_generator_attribute__run_forever;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__queue;
+    PyObject *___mypyc_temp__20;
+    tuple_T3OOO ___mypyc_temp__21;
+    PyObject *___mypyc_generator_attribute__response;
+    PyObject *___mypyc_temp__22;
+    tuple_T3OOO ___mypyc_temp__23;
+    PyObject *___mypyc_generator_attribute__formatted_sub_response;
+    PyObject *___mypyc_generator_attribute__sub_id;
+    PyObject *___mypyc_generator_attribute__sub;
+    PyObject *___mypyc_generator_attribute__sub_context;
+    PyObject *___mypyc_generator_attribute__task;
+    PyObject *___mypyc_temp__24;
+    tuple_T3OOO ___mypyc_temp__25;
+    tuple_T3OOO ___mypyc_temp__26;
+    PyObject *___mypyc_temp__27;
+    tuple_T3OOO ___mypyc_temp__28;
+    PyObject *___mypyc_generator_attribute__e;
+    PyObject *___mypyc_temp__29;
+    tuple_T3OOO ___mypyc_temp__30;
+} faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject;
 
 typedef struct {
     PyObject_HEAD
