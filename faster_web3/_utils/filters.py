@@ -238,7 +238,7 @@ class LogFilter(Filter):
     data_filter_set = None
     data_filter_set_regex = None
     data_filter_set_function = None
-    log_entry_formatter = None
+    log_entry_formatter: Optional[Callable[[LogReceipt], LogReceipt]] = None
     filter_params: Optional[FilterParams] = None
     builder: Optional[EventFilterBuilder] = None
 
@@ -252,9 +252,8 @@ class LogFilter(Filter):
         super().__init__(*args, **kwargs)
 
     def format_entry(self, entry: LogReceipt) -> LogReceipt:
-        if self.log_entry_formatter:
-            return self.log_entry_formatter(entry)
-        return entry
+        formatter = self.log_entry_formatter
+        return formatter(entry) if formatter else entry
 
     def set_data_filters(
         self, data_filter_set: Collection[Tuple[TypeStr, Any]]

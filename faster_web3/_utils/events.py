@@ -9,6 +9,7 @@ import itertools
 from typing import (
     TYPE_CHECKING,
     Any,
+    Callable,
     Collection,
     Dict,
     Final,
@@ -337,7 +338,7 @@ class BaseEventFilterBuilder:
         self,
         event_abi: ABIEvent,
         abi_codec: ABICodec,
-        formatter: Optional[EventData] = None,
+        formatter: Optional[Callable[[LogReceipt], LogReceipt]] = None,
     ) -> None:
         self.event_abi: Final = event_abi
         self.abi_codec: Final = abi_codec
@@ -408,7 +409,7 @@ class BaseEventFilterBuilder:
         return tuple(filter(is_not_indexed, self.ordered_args))
 
     @property
-    def topics(self) -> List[HexStr]:
+    def topics(self) -> Tuple[HexStr, ...]:
         arg_topics = tuple(arg.match_values for arg in self.indexed_args)
         return normalize_topic_list(cons(to_hex(self.event_topic), arg_topics))
 
