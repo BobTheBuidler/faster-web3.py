@@ -1,7 +1,10 @@
 import warnings
 from typing import (
+    Any,
+    Dict,
     Final,
     Optional,
+    Union,
 )
 
 import faster_eth_abi.abi
@@ -148,7 +151,7 @@ def raise_contract_logic_error_on_revert(response: RPCResponse) -> RPCResponse:
 
     message = error.get("message")
     message_present = message is not None and message != ""
-    data: Optional[str] = error.get("data", MISSING_DATA)
+    data: Union[str, Dict[str, Any], None] = error.get("data", MISSING_DATA)
 
     if data is None:
         if not message_present:
