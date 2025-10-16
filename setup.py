@@ -83,6 +83,7 @@ else:
         "faster_web3/_utils/datatypes.py",
         "faster_web3/_utils/decorators.py",
         "faster_web3/_utils/encoding.py",
+        "faster_web3/_utils/error_formatters_utils.py",
         "faster_web3/_utils/fee_utils.py",
         "faster_web3/_utils/formatters.py",
         "faster_web3/_utils/http.py",
