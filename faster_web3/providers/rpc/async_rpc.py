@@ -189,7 +189,7 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
 
     async def disconnect(self) -> None:
         cache = self._request_session_manager.session_cache
-        for _, session in cache.items():
+        for session in cache.values():
             await session.close()
         cache.clear()
 

@@ -398,9 +398,7 @@ def async_handle_send_caching(
     ) -> "RPCRequest":
         if is_cacheable_request(provider, method, params):
             request_cache = provider._request_cache
-            cache_key = generate_cache_key(
-                f"{get_ident()}:{(method, params)}"
-            )
+            cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
             cached_response = request_cache.get_cache_entry(cache_key)
             if cached_response is not None:
                 # The request data isn't used, this just prevents a cached request from

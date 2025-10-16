@@ -56,22 +56,25 @@ class SimpleCache(Generic[T]):
         # need to reach back into the cache to grab the value.
         return value, evicted_items or None
 
-    def get_cache_entry(self, key: str) -> Optional[Any]:
+    def get_cache_entry(self, key: str) -> Optional[T]:
         return self._data[key] if key in self._data else None
 
     def clear(self) -> None:
         self._data.clear()
 
-    def items(self) -> List[Tuple[str, Any]]:
+    def items(self) -> List[Tuple[str, T]]:
         return list(self._data.items())
 
-    def pop(self, key: str) -> Optional[Any]:
+    def values(self) -> List[T]:
+        return list(self._data.values())
+
+    def pop(self, key: str) -> Optional[T]:
         if key not in self._data:
             return None
 
         return self._data.pop(key)
 
-    def popitem(self, last: bool = True) -> Tuple[str, Any]:
+    def popitem(self, last: bool = True) -> Tuple[str, T]:
         return self._data.popitem(last=last)
 
     def is_full(self) -> bool:
@@ -81,7 +84,7 @@ class SimpleCache(Generic[T]):
 
     async def async_await_and_popitem(
         self, last: bool = True, timeout: float = 10.0
-    ) -> Tuple[str, Any]:
+    ) -> Tuple[str, T]:
         start = time.time()
         end_time = start + timeout
         while True:

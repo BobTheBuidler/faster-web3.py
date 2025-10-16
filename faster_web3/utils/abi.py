@@ -480,7 +480,7 @@ def get_abi_element_info(
 
     .. doctest::
 
-        >>> from web3.utils.abi import get_abi_element_info
+        >>> from faster_web3.utils.abi import get_abi_element_info
         >>> abi = [
         ...     {
         ...         "constant": False,
@@ -564,7 +564,7 @@ def get_abi_element(
 
     .. doctest::
 
-        >>> from web3.utils.abi import get_abi_element
+        >>> from faster_web3.utils.abi import get_abi_element
         >>> abi = [
         ...     {
         ...         "constant": False,
@@ -642,7 +642,7 @@ def check_if_arguments_can_be_encoded(
 
     .. doctest::
 
-            >>> from web3.utils.abi import check_if_arguments_can_be_encoded
+            >>> from faster_web3.utils.abi import check_if_arguments_can_be_encoded
             >>> abi = {
             ...     "constant": False,
             ...     "inputs": [
@@ -706,7 +706,7 @@ def get_event_abi(
 
     .. doctest::
 
-        >>> from web3.utils import get_event_abi
+        >>> from faster_web3.utils import get_event_abi
         >>> abi = [
         ...   {"type": "function", "name": "myFunction", "inputs": [], "outputs": []},
         ...   {"type": "function", "name": "myFunction2", "inputs": [], "outputs": []},
@@ -755,7 +755,7 @@ def get_event_log_topics(
 
     .. doctest::
 
-        >>> from web3.utils import get_event_log_topics
+        >>> from faster_web3.utils import get_event_log_topics
         >>> abi = {
         ...   'type': 'event',
         ...   'anonymous': False,
@@ -794,7 +794,7 @@ def log_topic_to_bytes(
 
     .. doctest::
 
-        >>> from web3.utils import log_topic_to_bytes
+        >>> from faster_web3.utils import log_topic_to_bytes
         >>> log_topic_to_bytes('0xa12fd1')
         b'\xa1/\xd1'
     """
