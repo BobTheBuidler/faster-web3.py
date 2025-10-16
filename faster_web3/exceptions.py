@@ -60,6 +60,7 @@ class Web3AssertionError(Web3Exception, AssertionError):
     """
 
 
+@mypyc_attr(native_class=False)
 class Web3ValueError(Web3Exception, ValueError):
     """
     A web3.py exception wrapper for `ValueError`, for better control over
