@@ -121,7 +121,7 @@ class Eth(BaseEth):
     )
 
     @property
-    def accounts(self) -> Tuple[ChecksumAddress, ...]:
+    def accounts(self) -> Sequence[ChecksumAddress]:
         return self._accounts()
 
     # eth_blobBaseFee

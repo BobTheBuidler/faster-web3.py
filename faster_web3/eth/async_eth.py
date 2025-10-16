@@ -137,7 +137,7 @@ class AsyncEth(BaseEth):
     )
 
     @property
-    async def accounts(self) -> Tuple[ChecksumAddress, ...]:
+    async def accounts(self) -> Sequence[ChecksumAddress]:
         return await self._accounts()
 
     # eth_blobBaseFee
