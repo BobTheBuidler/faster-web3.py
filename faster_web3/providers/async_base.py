@@ -8,6 +8,7 @@ from typing import (
     Callable,
     Coroutine,
     Dict,
+    Final,
     List,
     Optional,
     Set,
@@ -93,8 +94,8 @@ class AsyncBaseProvider:
             Union[RequestCacheValidationThreshold, int, Empty]
         ] = empty,
     ) -> None:
-        self._request_cache = SimpleCache(1000)
-        self._request_cache_lock: asyncio.Lock = asyncio.Lock()
+        self._request_cache: Final[SimpleCache[RPCResponse]] = SimpleCache(1000)
+        self._request_cache_lock: Final = asyncio.Lock()
 
         self.cache_allowed_requests = cache_allowed_requests
         self.cacheable_requests = cacheable_requests or CACHEABLE_REQUESTS

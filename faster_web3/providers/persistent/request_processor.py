@@ -5,12 +5,17 @@ from typing import (
     Any,
     Callable,
     Dict,
-    Generic,
+    Final,
     List,
     Optional,
     Tuple,
     TypeVar,
     Union,
+    final,
+)
+
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.batching import (
@@ -45,6 +50,7 @@ if TYPE_CHECKING:
 T = TypeVar("T")
 
 
+@final
 class TaskReliantQueue(asyncio.Queue[T]):
     """
     A queue that relies on a task to be running to process items in the queue.
@@ -59,35 +65,34 @@ class TaskReliantQueue(asyncio.Queue[T]):
         return item
 
 
+@final
 class RequestProcessor:
-    _subscription_queue_synced_with_ws_stream: bool = False
-
-    # set by the subscription manager when it is initialized
-    _subscription_container: Optional[SubscriptionContainer] = None
-
     def __init__(
         self,
         provider: "PersistentConnectionProvider",
         subscription_response_queue_size: int = 500,
         request_information_cache_size: int = 500,
     ) -> None:
-        self._provider = provider
-        self._request_information_cache: SimpleCache = SimpleCache(
-            request_information_cache_size
-        )
-        self._request_response_cache: SimpleCache = SimpleCache(500)
+        self._provider: Final = provider
+        self._request_information_cache: Final[
+            SimpleCache[RequestInformation]
+        ] = SimpleCache(request_information_cache_size)
+        self._request_response_cache: Final[SimpleCache[Any]] = SimpleCache(500)
         self._subscription_response_queue: TaskReliantQueue[
             Union[RPCResponse, TaskNotRunning]
         ] = TaskReliantQueue(maxsize=subscription_response_queue_size)
-        self._handler_subscription_queue: TaskReliantQueue[
-            Union[RPCResponse, TaskNotRunning, SubscriptionProcessingFinished]
+        self._handler_subscription_queue: TaskReliantQueue[Union[RPCResponse, TaskNotRunning, SubscriptionProcessingFinished]
         ] = TaskReliantQueue(maxsize=subscription_response_queue_size)
+
+        self._subscription_queue_synced_with_ws_stream: bool = False
+        # set by the subscription manager when it is initialized
+        self._subscription_container: Optional[SubscriptionContainer] = None
 
     @property
     def active_subscriptions(self) -> Dict[str, Any]:
         return {
             value.subscription_id: {"params": value.params}
-            for key, value in self._request_information_cache.items()
+            for value in self._request_information_cache.values()
             if value.method == "eth_subscribe"
         }
 
@@ -118,11 +123,10 @@ class RequestProcessor:
                 )
                 return None
 
-        if request_id is None:
-            if not self._provider._is_batching:
-                raise Web3ValueError(
-                    "Request id must be provided when not batching requests."
-                )
+        if request_id is None and not self._provider._is_batching:
+            raise Web3ValueError(
+                "Request id must be provided when not batching requests."
+            )
 
         cache_key = generate_cache_key(request_id)
         request_info = RequestInformation(
@@ -169,13 +173,14 @@ class RequestProcessor:
         if "method" in response and response["method"] == "eth_subscription":
             if "params" not in response:
                 raise Web3ValueError("Subscription response must have params field")
-            if "subscription" not in response["params"]:
+            params = response["params"]
+            if "subscription" not in params:
                 raise Web3ValueError(
                     "Subscription response params must have subscription field"
                 )
 
             # retrieve the request info from the cache using the subscription id
-            cache_key = generate_cache_key(response["params"]["subscription"])
+            cache_key = generate_cache_key(params["subscription"])
             request_info = (
                 # don't pop the request info from the cache, since we need to keep it
                 # to process future subscription responses
@@ -246,7 +251,7 @@ class RequestProcessor:
 
     def _is_batch_response(
         self, raw_response: Union[List[RPCResponse], RPCResponse]
-    ) -> bool:
+    ) -> TypeGuard[Union[List[RPCResponse], RPCResponse]]:
         return isinstance(raw_response, list) or (
             isinstance(raw_response, dict)
             and raw_response.get("id") is None

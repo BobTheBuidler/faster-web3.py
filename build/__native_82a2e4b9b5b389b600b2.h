@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_0b39c3551e62d9243c98_H
-#define MYPYC_NATIVE_0b39c3551e62d9243c98_H
+#ifndef MYPYC_NATIVE_82a2e4b9b5b389b600b2_H
+#define MYPYC_NATIVE_82a2e4b9b5b389b600b2_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -659,7 +659,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_422Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_420Object;
 
 typedef struct {
     PyObject_HEAD
@@ -2001,6 +2001,65 @@ typedef struct {
     tuple_T3OOO ___mypyc_temp__5;
     PyObject *___mypyc_generator_attribute__filled_transaction;
 } faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___providers___persistent___request_processor___TaskReliantQueueObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__provider;
+    PyObject *__request_information_cache;
+    PyObject *__request_response_cache;
+    PyObject *__subscription_response_queue;
+    PyObject *__handler_subscription_queue;
+    char __subscription_queue_synced_with_ws_stream;
+    PyObject *__subscription_container;
+} faster_web3___providers___persistent___request_processor___RequestProcessorObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__item;
+} faster_web3___providers___persistent___request_processor___get_TaskReliantQueue_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__raw_response;
+    char ___mypyc_generator_attribute__subscription;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__subscription_id;
+    PyObject *___mypyc_generator_attribute__sub_container;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
+    PyObject *___mypyc_temp__6;
+    tuple_T3OOO ___mypyc_temp__7;
+    PyObject *___mypyc_generator_attribute__cache_key;
+    PyObject *___mypyc_generator_attribute__response_id;
+} faster_web3___providers___persistent___request_processor___cache_raw_response_RequestProcessor_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__cache_key;
+    char ___mypyc_generator_attribute__subscription;
+    int32_t ___mypyc_next_label__;
+    CPyTagged ___mypyc_generator_attribute__qsize;
+    PyObject *___mypyc_temp__8;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__raw_response;
+} faster_web3___providers___persistent___request_processor___pop_raw_response_RequestProcessor_genObject;
 
 typedef struct {
     PyObject_HEAD

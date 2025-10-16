@@ -99,6 +99,7 @@ else:
         "faster_web3/contract/utils.py",
         "faster_web3/gas_strategies",
         "faster_web3/providers/eth_tester",
+        "faster_web3/providers/persistent/request_processor.py",
         "faster_web3/tools/benchmark/node.py",
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
