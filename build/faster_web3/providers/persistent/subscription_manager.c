@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_batching(void)
+PyInit_subscription_manager(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("d37076d826d373101344__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___batching");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___providers___persistent___subscription_manager");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "d37076d826d373101344__mypyc.init_faster_web3____utils___batching");
+    void *init_func = PyCapsule_GetPointer(capsule, "d37076d826d373101344__mypyc.init_faster_web3___providers___persistent___subscription_manager");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_batching(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_batching(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_subscription_manager(); }
