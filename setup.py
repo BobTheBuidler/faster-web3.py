@@ -100,15 +100,18 @@ else:
         "faster_web3/gas_strategies",
         "faster_web3/providers/eth_tester",
         "faster_web3/providers/persistent/persistent_connection.py",
-        "faster_web3/providers/persistent/request_processor.py",
+        # "faster_web3/providers/persistent/request_processor.py",
         "faster_web3/providers/persistent/subscription_container.py",
         "faster_web3/providers/persistent/subscription_manager.py",
         "faster_web3/tools/benchmark/node.py",
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
         "faster_web3/types.py",
+        "faster_web3/utils/address.py",
+        "faster_web3/utils/async_exception_handling.py",
         "faster_web3/utils/caching.py",
-        "faster_web3/utils/subscriptions.py",
+        "faster_web3/utils/exception_handling.py",
+        # "faster_web3/utils/subscriptions.py",  compile this on mypyc 1.19
     ]
 
     # these do not need to be part of the same compilation unit as the rest of the library

@@ -1,6 +1,7 @@
 import pytest
 import asyncio
 import itertools
+import logging
 import time
 from typing import (
     cast,
@@ -24,6 +25,9 @@ from faster_web3.exceptions import (
 )
 from faster_web3.providers.persistent.request_processor import (
     TaskReliantQueue,
+)
+from faster_web3.providers.persistent.subscription_manager import (
+    SubscriptionManager,
 )
 from faster_web3.types import (
     RPCResponse,
@@ -237,8 +241,9 @@ async def test_unsubscribe_with_subscriptions_reference_does_not_mutate_the_list
 
 @pytest.mark.asyncio
 async def test_high_throughput_subscription_with_parallelize(
-    subscription_manager,
+    subscription_manager: SubscriptionManager,
 ) -> None:
+
     provider = subscription_manager._w3.provider
     num_msgs = 5_000
 
@@ -262,34 +267,42 @@ async def test_high_throughput_subscription_with_parallelize(
         handler_context.counter.val += 1
         if handler_context.counter.val == num_msgs:
             await handler_context.subscription.unsubscribe()
+    
+    # temporarily disable exception logs because we currently expect all tasks to fail
+    logger_level = subscription_manager.logger.level
+    subscription_manager.logger.setLevel(logging.NOTSET)
 
-    # build a meaningless subscription since we are fabricating the messages
-    sub_id = await subscription_manager.subscribe(
-        NewHeadsSubscription(
-            handler=high_throughput_handler, handler_context={"counter": counter}
-        ),
-    )
-    provider._request_processor.cache_request_information(
-        request_id=sub_id,
-        method="eth_subscribe",
-        params=[],
-        response_formatters=((), (), ()),
-    )
-
-    # put `num_msgs` messages in the queue
-    for _ in range(num_msgs):
-        provider._request_processor._handler_subscription_queue.put_nowait(
-            create_subscription_message(sub_id)
+    try:
+        # build a meaningless subscription since we are fabricating the messages
+        sub_id = await subscription_manager.subscribe(
+            NewHeadsSubscription(
+                handler=high_throughput_handler, handler_context={"counter": counter}
+            ),
+        )
+        provider._request_processor.cache_request_information(
+            request_id=sub_id,
+            method="eth_subscribe",
+            params=[],
+            response_formatters=((), (), ()),
         )
 
-    start = time.time()
-    await subscription_manager.handle_subscriptions()
-    stop = time.time()
+        # put `num_msgs` messages in the queue
+        for _ in range(num_msgs):
+            provider._request_processor._handler_subscription_queue.put_nowait(
+                create_subscription_message(sub_id)
+            )
 
-    assert counter.val == num_msgs
+        start = time.time()
+        await subscription_manager.handle_subscriptions()
+        stop = time.time()
 
-    assert subscription_manager.total_handler_calls == num_msgs
-    assert stop - start < 3
+        assert counter.val == num_msgs
+
+        assert subscription_manager.total_handler_calls == num_msgs
+        assert stop - start < 3
+
+    finally:
+        subscription_manager.logger.setLevel(logger_level)
 
 
 @pytest.mark.asyncio

@@ -49,8 +49,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
-          restore-keys: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
+          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
+          restore-keys: ccache-${{ runner.os }}-
 
       - name: Install ccache
         run: sudo apt-get update && sudo apt-get install -y ccache
@@ -96,4 +96,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}

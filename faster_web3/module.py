@@ -33,6 +33,7 @@ from faster_web3.providers.persistent import (
 )
 from faster_web3.types import (
     FormattedEthSubscriptionResponse,
+    RequestParams,
     RPCEndpoint,
     RPCResponse,
 )
@@ -64,12 +65,12 @@ def retrieve_request_information_for_batching(
     module: "Module",
     method: Method[Callable[..., Any]],
 ) -> Union[
-    Callable[..., Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]],
-    Callable[..., Coroutine[Any, Any, Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]]],
+    Callable[..., Tuple[RequestParams, Sequence[Any]]],
+    Callable[..., Coroutine[Any, Any, Tuple[RequestParams, Sequence[Any]]]],
 ]:
     async def async_inner(
         *args: Any, **kwargs: Any
-    ) -> Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]:
+    ) -> Tuple[RequestParams, Sequence[Any]]:
         (method_str, params), response_formatters = method.process_params(
             module, *args, **kwargs
         )
@@ -81,7 +82,7 @@ def retrieve_request_information_for_batching(
 
     def inner(
         *args: Any, **kwargs: Any
-    ) -> Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]:
+    ) -> Tuple[RequestParams, Sequence[Any]]:
         (method_str, params), response_formatters = method.process_params(
             module, *args, **kwargs
         )

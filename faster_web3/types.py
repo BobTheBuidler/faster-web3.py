@@ -336,15 +336,15 @@ class CreateAccessListResponse(TypedDict):
     gasUsed: int
 
 
+RequestParams = Tuple[RPCEndpoint, Any]
+BatchParams = List[RequestParams]
+
+BatchResponse = Union[List[RPCResponse], RPCResponse]
+
 MakeRequestFn = Callable[[RPCEndpoint, Any], RPCResponse]
-MakeBatchRequestFn = Callable[
-    [List[Tuple[RPCEndpoint, Any]]], Union[List[RPCResponse], RPCResponse]
-]
+MakeBatchRequestFn = Callable[[BatchParams], BatchResponse]
 AsyncMakeRequestFn = Callable[[RPCEndpoint, Any], Coroutine[Any, Any, RPCResponse]]
-AsyncMakeBatchRequestFn = Callable[
-    [List[Tuple[RPCEndpoint, Any]]],
-    Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]],
-]
+AsyncMakeBatchRequestFn = Callable[[BatchParams], Coroutine[Any, Any, BatchResponse]]
 
 
 class FormattersDict(TypedDict, total=False):

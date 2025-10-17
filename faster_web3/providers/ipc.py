@@ -16,7 +16,6 @@ from typing import (
     Any,
     List,
     Optional,
-    Tuple,
     Type,
     Union,
     cast,
@@ -26,6 +25,7 @@ from faster_web3._utils.threads import (
     Timeout,
 )
 from faster_web3.types import (
+    BatchParams,
     RPCEndpoint,
     RPCResponse,
 )
@@ -202,9 +202,7 @@ class IPCProvider(JSONBaseProvider):
         request = self.encode_rpc_request(method, params)
         return self._make_request(request)
 
-    def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> List[RPCResponse]:
+    def make_batch_request(self, requests: BatchParams) -> List[RPCResponse]:
         self.logger.debug("Making batch request IPC. Path: %s", self.ipc_path)
         request_data = self.encode_batch_rpc_request(requests)
         response = cast(List[RPCResponse], self._make_request(request_data))

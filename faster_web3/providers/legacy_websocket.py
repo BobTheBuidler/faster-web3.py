@@ -12,7 +12,6 @@ from typing import (
     Any,
     List,
     Optional,
-    Tuple,
     Type,
     Union,
     cast,
@@ -39,6 +38,7 @@ from faster_web3.providers.base import (
     JSONBaseProvider,
 )
 from faster_web3.types import (
+    BatchParams,
     RPCEndpoint,
     RPCResponse,
 )
@@ -143,9 +143,7 @@ class LegacyWebSocketProvider(JSONBaseProvider):
         )
         return future.result()
 
-    def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> List[RPCResponse]:
+    def make_batch_request(self, requests: BatchParams) -> List[RPCResponse]:
         self.logger.debug(
             "Making batch request WebSocket. URI: %s, Methods: %s",
             self.endpoint_uri,

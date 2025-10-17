@@ -216,7 +216,7 @@ async def async_is_beyond_validation_threshold(
 async def async_validate_from_block_id_in_params(
     provider: ASYNC_PROVIDER_TYPE,
     params: Sequence[Any],
-    _result: Dict[str, Any],
+    _result: Union[Dict[str, Any], str],  # mocked result can be str type here
 ) -> bool:
     block_id = params[0]
     if block_id == "earliest":
@@ -270,7 +270,9 @@ async def async_validate_from_blocknum_in_result(
 
 
 async def async_validate_from_blockhash_in_params(
-    provider: ASYNC_PROVIDER_TYPE, params: Sequence[Any], _result: Dict[str, Any]
+    provider: ASYNC_PROVIDER_TYPE,
+    params: Sequence[Any],
+    _result: Union[Dict[str, Any], str],  # mocked result can be str type here
 ) -> bool:
     cache_allowed_requests = provider.cache_allowed_requests
     try:

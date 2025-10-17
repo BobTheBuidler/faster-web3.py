@@ -40,10 +40,10 @@ class SubscriptionContainer:
         self.subscriptions_by_id.pop(subscription.id)
         self.subscriptions_by_label.pop(subscription.label)
 
-    def get_by_id(self, sub_id: HexStr) -> EthSubscription[Any]:
+    def get_by_id(self, sub_id: HexStr) -> Optional[EthSubscription[Any]]:
         return self.subscriptions_by_id.get(sub_id)
 
-    def get_by_label(self, label: str) -> EthSubscription[Any]:
+    def get_by_label(self, label: str) -> Optional[EthSubscription[Any]]:
         return self.subscriptions_by_label.get(label)
 
     @property
