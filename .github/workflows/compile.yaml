@@ -9,6 +9,7 @@ on:
       - '!.github/workflows/compile.yaml'
       - 'benchmarks/**'
       - 'tests/**'
+      - 'tox.ini'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
