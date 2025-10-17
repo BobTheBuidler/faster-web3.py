@@ -508,6 +508,7 @@ typedef struct {
     PyObject *___mypyc_temp__3;
     tuple_T3OOO ___mypyc_temp__4;
     PyObject *___mypyc_generator_attribute__cache_validator;
+    PyObject *___mypyc_generator_attribute__should_cache;
     PyObject *___mypyc_temp__5;
     tuple_T3OOO ___mypyc_temp__6;
 } faster_web3____utils___caching___caching_utils____async_should_cache_response_genObject;
@@ -567,7 +568,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_363Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_358Object;
 
 typedef struct {
     PyObject_HEAD
@@ -609,7 +610,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_396Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_391Object;
 
 typedef struct {
     PyObject_HEAD
@@ -667,7 +668,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_420Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_415Object;
 
 typedef struct {
     PyObject_HEAD
