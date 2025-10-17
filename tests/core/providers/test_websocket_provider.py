@@ -558,7 +558,7 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
             "some_id",
             RPCEndpoint("eth_getBlockByNumber"),
             ["latest"],
-            (),
+            ((), (), ()),
         )
 
         assert len(provider._request_processor._request_information_cache) == 1
