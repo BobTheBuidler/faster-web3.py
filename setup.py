@@ -107,7 +107,10 @@ else:
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
         "faster_web3/types.py",
+        "faster_web3/utils/address.py",
+        "faster_web3/utils/async_exception_handling.py",
         "faster_web3/utils/caching.py",
+        "faster_web3/utils/exception_handling.py",
         "faster_web3/utils/subscriptions.py",
     ]
 
