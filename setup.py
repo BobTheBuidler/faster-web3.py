@@ -81,6 +81,7 @@ skip_mypyc = any(
         "--version",
         "--help",
         "--help-commands",
+    )
 )
 
 if skip_mypyc:
