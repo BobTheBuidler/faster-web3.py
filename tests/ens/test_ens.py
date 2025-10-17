@@ -186,7 +186,9 @@ def test_ens_address_lookup_with_coin_type(ens):
     with patch("faster_ens.ENS.resolver") as resolver:
         resolver.return_value = mock_resolver
 
-        with patch("faster_ens.ens._validate_resolver_and_interface_id") as mock_validate:
+        with patch(
+            "faster_ens.ens._validate_resolver_and_interface_id"
+        ) as mock_validate:
             returned_address = ens.address(name, coin_type=coin_type)
 
             mock_validate.assert_called_once()

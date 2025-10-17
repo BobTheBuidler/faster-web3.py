@@ -93,7 +93,9 @@ def test_stalecheck_fail(request_middleware, now):
 def test_stalecheck_ignores_get_by_block_methods(request_middleware, rpc_method):
     # This is especially critical for get_block('latest')
     # which would cause infinite recursion
-    with patch("faster_web3.middleware.stalecheck._is_fresh", side_effect=[False, True]):
+    with patch(
+        "faster_web3.middleware.stalecheck._is_fresh", side_effect=[False, True]
+    ):
         inner = request_middleware.wrap_make_request(lambda *_: None)
         inner(rpc_method, [])
         assert not request_middleware._w3.eth.get_block.called
@@ -187,7 +189,9 @@ async def test_async_stalecheck_ignores_get_by_block_methods(
 ):
     # This is especially critical for get_block("latest") which would cause
     # infinite recursion
-    with patch("faster_web3.middleware.stalecheck._is_fresh", side_effect=[False, True]):
+    with patch(
+        "faster_web3.middleware.stalecheck._is_fresh", side_effect=[False, True]
+    ):
         inner = await async_request_middleware.async_wrap_make_request(_coro)
         await inner(rpc_method, [])
         assert not async_request_middleware._w3.eth.get_block.called

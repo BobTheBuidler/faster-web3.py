@@ -132,16 +132,13 @@ class HTTPProvider(JSONBaseProvider):
         session_manager = self._request_session_manager
         retry_config = self.exception_retry_configuration
         endpoint = self.endpoint_uri
-        if (
-            retry_config is None
-            or not check_if_retry_on_failure(
-                method, retry_config.method_allowlist
-            )
+        if retry_config is None or not check_if_retry_on_failure(
+            method, retry_config.method_allowlist
         ):
             return session_manager.make_post_request(
                 endpoint, request_data, **self.get_request_kwargs()
             )
-        
+
         retry_on_errs = tuple(retry_config.errors)
         for i in range(retries := retry_config.retries):
             try:
@@ -150,9 +147,7 @@ class HTTPProvider(JSONBaseProvider):
                 )
             except retry_on_errs as e:
                 if i < retries - 1:
-                    time.sleep(
-                        retry_config.backoff_factor * 2**i
-                    )
+                    time.sleep(retry_config.backoff_factor * 2**i)
                 else:
                     raise e
         return None

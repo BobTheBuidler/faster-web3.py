@@ -49,7 +49,9 @@ def test_ipc_no_path():
 
 
 def test_ipc_tilda_in_path():
-    expectedPath = str(pathlib.Path.home()) + ("\\foo" if sys.platform.startswith("win") else "/foo")
+    expectedPath = str(pathlib.Path.home()) + (
+        "\\foo" if sys.platform.startswith("win") else "/foo"
+    )
     assert IPCProvider("~/foo").ipc_path == expectedPath
     assert IPCProvider(pathlib.Path("~/foo")).ipc_path == expectedPath
 
@@ -57,9 +59,33 @@ def test_ipc_tilda_in_path():
 @pytest.mark.parametrize(
     "platform, expected_result, expected_error",
     [
-        ("darwin", "\\Library\\Ethereum\\geth.ipc" if sys.platform.startswith("win") else "/Library/Ethereum/geth.ipc", None),
-        ("linux", "\\.ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
-        ("freebsd", "\\.ethereum\\geth.ipc" if sys.platform.startswith("win") else "/.ethereum/geth.ipc", None),
+        (
+            "darwin",
+            (
+                "\\Library\\Ethereum\\geth.ipc"
+                if sys.platform.startswith("win")
+                else "/Library/Ethereum/geth.ipc"
+            ),
+            None,
+        ),
+        (
+            "linux",
+            (
+                "\\.ethereum\\geth.ipc"
+                if sys.platform.startswith("win")
+                else "/.ethereum/geth.ipc"
+            ),
+            None,
+        ),
+        (
+            "freebsd",
+            (
+                "\\.ethereum\\geth.ipc"
+                if sys.platform.startswith("win")
+                else "/.ethereum/geth.ipc"
+            ),
+            None,
+        ),
         ("win32", r"\\.\pipe\geth.ipc", None),
         (
             "unknown",
@@ -97,7 +123,11 @@ def test_get_default_ipc_path(platform, expected_result, expected_error):
     [
         ("darwin", "/var/path/to/tmp/T/geth.ipc", None),
         ("linux", "/var/path/to/tmp/T/geth.ipc", None),
-        ("freebsd", "/tmp\geth.ipc" if sys.platform.startswith("win") else "/tmp/geth.ipc", None),
+        (
+            "freebsd",
+            "/tmp\geth.ipc" if sys.platform.startswith("win") else "/tmp/geth.ipc",
+            None,
+        ),
         ("win32", r"\\.\pipe\geth.ipc", None),
         (
             "unknown",
@@ -166,7 +196,10 @@ def serve_empty_result(simple_ipc_server):
         thd.join()
 
 
-@pytest.mark.skipif(sys.platform.startswith("win"), reason="AF_UNIX sockets are not available on Windows")
+@pytest.mark.skipif(
+    sys.platform.startswith("win"),
+    reason="AF_UNIX sockets are not available on Windows",
+)
 def test_sync_waits_for_full_result(jsonrpc_ipc_pipe_path, serve_empty_result):
     provider = IPCProvider(pathlib.Path(jsonrpc_ipc_pipe_path), timeout=3)
     result = provider.make_request("method", [])
@@ -184,6 +217,7 @@ def test_web3_auto_gethdev(request_mocker):
     from faster_web3.auto.gethdev import (
         w3,
     )
+
     assert isinstance(w3.provider, IPCProvider)
     with request_mocker(
         w3,

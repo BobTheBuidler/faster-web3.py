@@ -116,13 +116,16 @@ else:
 
     # these do not need to be part of the same compilation unit as the rest of the library
     web3_data_files = sorted(
-        str(p.as_posix()) for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
+        str(p.as_posix())
+        for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
     )
     ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
-    
-    if sys.platform.startswith('win'):
+
+    if sys.platform.startswith("win"):
         # error C2026: string too big, trailing characters truncated
-        web3_data_files.remove("faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py")
+        web3_data_files.remove(
+            "faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py"
+        )
         ens_data_files.remove("faster_ens/contract_data.py")
 
     flags = [
@@ -149,15 +152,15 @@ else:
     ]
 
     ext_modules = []
-    
+
     main_unit = mypycify(main_files + flags)
     ext_modules.extend(main_unit)
-    
+
     # these do not need to be part of the same compilation unit as the rest of the library
     for data_file in web3_data_files + ens_data_files:
         data_unit = mypycify([data_file] + flags)
         ext_modules.extend(data_unit)
-        
+
 
 setup(
     name="faster_web3",
@@ -194,7 +197,16 @@ setup(
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
-    packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*", "benchmarks", "benchmarks.*"]),
+    packages=find_packages(
+        exclude=[
+            "scripts",
+            "scripts.*",
+            "tests",
+            "tests.*",
+            "benchmarks",
+            "benchmarks.*",
+        ]
+    ),
     ext_modules=ext_modules,
     package_data={"faster_web3": ["py.typed"], "faster_ens": ["py.typed"]},
     classifiers=[

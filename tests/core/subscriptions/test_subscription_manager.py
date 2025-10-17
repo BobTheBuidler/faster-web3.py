@@ -267,7 +267,7 @@ async def test_high_throughput_subscription_with_parallelize(
         handler_context.counter.val += 1
         if handler_context.counter.val == num_msgs:
             await handler_context.subscription.unsubscribe()
-    
+
     # temporarily disable exception logs because we currently expect all tasks to fail
     logger_level = subscription_manager.logger.level
     subscription_manager.logger.setLevel(logging.NOTSET)

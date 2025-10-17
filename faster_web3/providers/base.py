@@ -42,6 +42,7 @@ from faster_web3.middleware.base import (
 from faster_web3.types import (
     BatchParams,
     BatchResponse,
+    MakeBatchRequestFn,
     RPCEndpoint,
     RPCResponse,
 )
@@ -59,7 +60,9 @@ if TYPE_CHECKING:
 
 class BaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
-    logger: logging.Logger = logging.getLogger("faster_web3.providers.base.BaseProvider")
+    logger: logging.Logger = logging.getLogger(
+        "faster_web3.providers.base.BaseProvider"
+    )
     # a tuple of (middleware, request_func)
     _request_func_cache: Union[
         Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]],
@@ -90,7 +93,7 @@ class BaseProvider:
             Optional["RequestBatcher[Any]"]
         ] = contextvars.ContextVar("batching_context", default=None)
         self._batch_request_func_cache: Tuple[
-            Tuple[Middleware, ...], Callable[..., BatchResponse]
+            Tuple[Middleware, ...], MakeBatchRequestFn
         ] = (None, None)
 
     @property
@@ -179,7 +182,7 @@ class JSONBaseProvider(BaseProvider):
 
     def batch_request_func(
         self, w3: "Web3", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., BatchResponse]:
+    ) -> MakeBatchRequestFn:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
         cache_key = self._batch_request_func_cache[0]
@@ -206,7 +209,5 @@ class JSONBaseProvider(BaseProvider):
             + b"]"
         )
 
-    def make_batch_request(
-        self, requests: BatchParams
-    ) -> BatchResponse:
+    def make_batch_request(self, requests: BatchParams) -> BatchResponse:
         raise NotImplementedError("Providers must implement this method")

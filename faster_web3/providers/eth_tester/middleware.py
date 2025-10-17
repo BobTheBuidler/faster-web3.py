@@ -117,7 +117,9 @@ TRANSACTION_REQUEST_FORMATTERS: Final = {
         )
     ),
 }
-transaction_request_formatter: Final = apply_formatters_to_dict(TRANSACTION_REQUEST_FORMATTERS)
+transaction_request_formatter: Final = apply_formatters_to_dict(
+    TRANSACTION_REQUEST_FORMATTERS
+)
 
 transaction_request_transformer: Final = compose(
     transaction_request_remapper,
@@ -172,7 +174,9 @@ TRANSACTION_RESULT_FORMATTERS: Final = {
         apply_key_map({"chain_id": "chainId", "y_parity": "yParity"}),
     ),
 }
-transaction_result_formatter: Final = apply_formatters_to_dict(TRANSACTION_RESULT_FORMATTERS)
+transaction_result_formatter: Final = apply_formatters_to_dict(
+    TRANSACTION_RESULT_FORMATTERS
+)
 
 
 LOG_RESULT_KEY_MAPPING: Final = {

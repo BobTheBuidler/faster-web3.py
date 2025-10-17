@@ -34,9 +34,17 @@ SOLIDITY_ERROR_FUNC_SELECTOR: Final = "0x08c379a0"
 # the first 4 bytes of keccak hash (func selector) for:
 # "OffchainLookup(address,string[],bytes,bytes4,bytes)"
 OFFCHAIN_LOOKUP_FUNC_SELECTOR: Final = "0x556f1830"
-OFFCHAIN_LOOKUP_FIELD_NAMES : Final = "sender", "urls", "callData", "callbackFunction", "extraData"
+OFFCHAIN_LOOKUP_FIELD_NAMES: Final = (
+    "sender",
+    "urls",
+    "callData",
+    "callbackFunction",
+    "extraData",
+)
 OFFCHAIN_LOOKUP_FIELD_TYPES: Final = "address", "string[]", "bytes", "bytes4", "bytes"
-OFFCHAIN_LOOKUP_FIELDS: Final = dict(zip(OFFCHAIN_LOOKUP_FIELD_NAMES, OFFCHAIN_LOOKUP_FIELD_TYPES))
+OFFCHAIN_LOOKUP_FIELDS: Final = dict(
+    zip(OFFCHAIN_LOOKUP_FIELD_NAMES, OFFCHAIN_LOOKUP_FIELD_TYPES)
+)
 
 
 # --- Solidity Panic Error, as of Solidity 0.8.0 --- #
@@ -108,9 +116,7 @@ def _raise_contract_error(response_error_data: str) -> None:
     elif (fourbytes := response_error_data[:10]) == OFFCHAIN_LOOKUP_FUNC_SELECTOR:
         # --- EIP-3668 | CCIP read error --- #
         parsed_data_as_bytes = to_bytes(hexstr=response_error_data[10:])
-        abi_decoded_data = decode(
-            OFFCHAIN_LOOKUP_FIELD_TYPES, parsed_data_as_bytes
-        )
+        abi_decoded_data = decode(OFFCHAIN_LOOKUP_FIELD_TYPES, parsed_data_as_bytes)
         offchain_lookup_payload = dict(
             zip(OFFCHAIN_LOOKUP_FIELD_NAMES, abi_decoded_data)
         )
@@ -126,10 +132,7 @@ def _raise_contract_error(response_error_data: str) -> None:
     # Solidity 0.8.4 introduced custom error messages that allow args to
     # be passed in (or not). See:
     # https://blog.soliditylang.org/2021/04/21/custom-errors/
-    elif (
-        len(response_error_data) >= 10
-        and fourbytes != SOLIDITY_ERROR_FUNC_SELECTOR
-    ):
+    elif len(response_error_data) >= 10 and fourbytes != SOLIDITY_ERROR_FUNC_SELECTOR:
         # Raise with data as both the message and the data for backwards
         # compatibility and so that data can be accessed via 'data' attribute
         # on the ContractCustomError exception
@@ -196,8 +199,10 @@ def raise_block_not_found_on_error(response: RPCResponse) -> RPCResponse:
     error = response.get("error")
     if not isinstance(error, str) and error is not None:
         message = error.get("message")
-        if message is not None and "not found" in message.lower() and any(
-            key in message.lower() for key in ("block", "header")
+        if (
+            message is not None
+            and "not found" in message.lower()
+            and any(key in message.lower() for key in ("block", "header"))
         ):
             raise BlockNotFound(message)
 

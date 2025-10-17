@@ -234,7 +234,7 @@ def test_friendly_json_encode_with_web3_json_encoder(py_obj, exc_type, expected)
         ) == literal_eval(expected)
     else:
         with pytest.raises(
-            exc_type, 
+            exc_type,
             # faster-web3.py TypeError will have different text
             # than web3.py, but should still raise TypeError.
             match=None if exc_type is TypeError else expected,

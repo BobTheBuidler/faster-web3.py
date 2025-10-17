@@ -130,14 +130,13 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
         session_manager = self._request_session_manager
         retry_config = self.exception_retry_configuration
         endpoint = self.endpoint_uri
-        if (
-            retry_config is None
-            or not check_if_retry_on_failure(method, retry_config.method_allowlist)
+        if retry_config is None or not check_if_retry_on_failure(
+            method, retry_config.method_allowlist
         ):
             return await session_manager.async_make_post_request(
                 endpoint, request_data, **self.get_request_kwargs()
             )
-        
+
         retry_on_errs = tuple(retry_config.errors)
         for i in range(retries := retry_config.retries):
             try:
@@ -146,9 +145,7 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
                 )
             except retry_on_errs:
                 if i < retries - 1:
-                    await asyncio.sleep(
-                        retry_config.backoff_factor * 2**i
-                    )
+                    await asyncio.sleep(retry_config.backoff_factor * 2**i)
                 else:
                     raise
         return None

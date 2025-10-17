@@ -134,7 +134,9 @@ to_ascii_if_bytes: Final = apply_formatter_if(is_bytes, bytes_to_ascii)
 to_integer_if_hex: Final = apply_formatter_if(is_string, hex_to_integer)
 to_hex_if_integer: Final = apply_formatter_if(is_integer, integer_to_hex)
 
-is_false: Final[Callable[[Any], TypeGuard[Literal[False]]]] = partial(operator.is_, False)
+is_false: Final[Callable[[Any], TypeGuard[Literal[False]]]] = partial(
+    operator.is_, False
+)
 is_not_false: Final = complement(is_false)
 is_not_null: Final = complement(is_null)
 
@@ -370,7 +372,9 @@ BLOCK_REQUEST_FORMATTERS: Final = {
     "parentBeaconBlockRoot": to_hex_if_bytes,
     "requestsHash": to_hex_if_bytes,
 }
-block_request_formatter: Final = type_aware_apply_formatters_to_dict(BLOCK_REQUEST_FORMATTERS)
+block_request_formatter: Final = type_aware_apply_formatters_to_dict(
+    BLOCK_REQUEST_FORMATTERS
+)
 
 BLOCK_RESULT_FORMATTERS: Final = {
     "baseFeePerGas": to_integer_if_hex,
@@ -413,7 +417,9 @@ BLOCK_RESULT_FORMATTERS: Final = {
     "parentBeaconBlockRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
     "requestsHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
 }
-block_result_formatter: Final = type_aware_apply_formatters_to_dict(BLOCK_RESULT_FORMATTERS)
+block_result_formatter: Final = type_aware_apply_formatters_to_dict(
+    BLOCK_RESULT_FORMATTERS
+)
 
 
 SYNCING_FORMATTERS: Final = {
@@ -466,7 +472,9 @@ FEE_HISTORY_FORMATTERS: Final = {
     ),
 }
 
-fee_history_formatter: Final = type_aware_apply_formatters_to_dict(FEE_HISTORY_FORMATTERS)
+fee_history_formatter: Final = type_aware_apply_formatters_to_dict(
+    FEE_HISTORY_FORMATTERS
+)
 
 STORAGE_PROOF_FORMATTERS: Final = {
     "key": HexBytes,
@@ -494,7 +502,9 @@ FILTER_PARAMS_FORMATTERS: Final = {
 }
 
 
-filter_params_formatter: Final = type_aware_apply_formatters_to_dict(FILTER_PARAMS_FORMATTERS)
+filter_params_formatter: Final = type_aware_apply_formatters_to_dict(
+    FILTER_PARAMS_FORMATTERS
+)
 
 
 filter_result_formatter: Final = apply_one_of_formatters(
@@ -598,9 +608,9 @@ call_with_override: Final[
 )
 
 
-estimate_gas_without_block_id: Final[
-    Callable[[Dict[str, Any]], Dict[str, Any]]
-] = apply_formatter_at_index(transaction_param_formatter, 0)
+estimate_gas_without_block_id: Final[Callable[[Dict[str, Any]], Dict[str, Any]]] = (
+    apply_formatter_at_index(transaction_param_formatter, 0)
+)
 
 estimate_gas_with_block_id: Final[
     Callable[
@@ -633,22 +643,22 @@ estimate_gas_with_override: Final[
 
 # -- eth_simulateV1 -- #
 
-block_state_calls_formatter: Final[
-    Callable[[Dict[str, Any]], Dict[str, Any]]
-] = apply_formatter_to_array(
-    apply_formatters_to_dict(
-        {
-            "blockOverrides": block_request_formatter,
-            "stateOverrides": (
-                lambda val: type_aware_apply_formatters_to_dict_keys_and_values(
-                    to_checksum_address,
-                    state_override_formatter,
-                    val,
-                )
-            ),
-            "calls": apply_formatter_to_array(transaction_request_formatter),
-        },
-    ),
+block_state_calls_formatter: Final[Callable[[Dict[str, Any]], Dict[str, Any]]] = (
+    apply_formatter_to_array(
+        apply_formatters_to_dict(
+            {
+                "blockOverrides": block_request_formatter,
+                "stateOverrides": (
+                    lambda val: type_aware_apply_formatters_to_dict_keys_and_values(
+                        to_checksum_address,
+                        state_override_formatter,
+                        val,
+                    )
+                ),
+                "calls": apply_formatter_to_array(transaction_request_formatter),
+            },
+        ),
+    )
 )
 
 simulate_v1_request_formatter: Final[
@@ -702,13 +712,17 @@ FILTER_PARAM_NORMALIZERS: Final = type_aware_apply_formatters_to_dict(
 
 GETH_WALLET_FORMATTER: Final = {"address": to_checksum_address}
 
-geth_wallet_formatter: Final = type_aware_apply_formatters_to_dict(GETH_WALLET_FORMATTER)
+geth_wallet_formatter: Final = type_aware_apply_formatters_to_dict(
+    GETH_WALLET_FORMATTER
+)
 
 GETH_WALLETS_FORMATTER: Final = {
     "accounts": apply_list_to_array_formatter(geth_wallet_formatter),
 }
 
-geth_wallets_formatter: Final = type_aware_apply_formatters_to_dict(GETH_WALLETS_FORMATTER)
+geth_wallets_formatter: Final = type_aware_apply_formatters_to_dict(
+    GETH_WALLETS_FORMATTER
+)
 
 PYTHONIC_REQUEST_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
     # Eth
@@ -790,9 +804,9 @@ DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS: Final = apply_formatter_if(
 )
 
 
-debug_calltrace_log_list_result_formatter: Final[
-    Callable[[Formatters], Any]
-] = apply_formatter_to_array(DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS)
+debug_calltrace_log_list_result_formatter: Final[Callable[[Formatters], Any]] = (
+    apply_formatter_to_array(DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS)
+)
 
 
 PRETRACE_INNER_FORMATTERS: Final = {
@@ -860,7 +874,9 @@ DEBUG_TRACE_FORMATTERS: Final = {
 }
 
 
-trace_result_formatters: Final = type_aware_apply_formatters_to_dict(DEBUG_TRACE_FORMATTERS)
+trace_result_formatters: Final = type_aware_apply_formatters_to_dict(
+    DEBUG_TRACE_FORMATTERS
+)
 
 
 debug_calltrace_result_formatter: Final = type_aware_apply_formatters_to_dict(
@@ -868,9 +884,9 @@ debug_calltrace_result_formatter: Final = type_aware_apply_formatters_to_dict(
 )
 
 
-debug_calltrace_list_result_formatter: Final[
-    Callable[[Formatters], Any]
-] = apply_formatter_to_array(debug_calltrace_result_formatter)
+debug_calltrace_list_result_formatter: Final[Callable[[Formatters], Any]] = (
+    apply_formatter_to_array(debug_calltrace_result_formatter)
+)
 
 
 # -- tracing -- #
@@ -925,8 +941,10 @@ TRACE_FORMATTERS: Final[Callable[[TValue], Union[Any, TValue]]] = apply_formatte
 )
 
 # trace formatter for a list of traces
-trace_list_result_formatter: Final[Callable[[Formatters], Any]] = apply_formatter_to_array(
-    TRACE_FORMATTERS,
+trace_list_result_formatter: Final[Callable[[Formatters], Any]] = (
+    apply_formatter_to_array(
+        TRACE_FORMATTERS,
+    )
 )
 
 # shared formatter for common `tracing` module rpc responses
@@ -1142,7 +1160,7 @@ def raise_block_not_found(
         Tuple[BlockIdentifier],
         Tuple[BlockIdentifier, bool],
         Tuple[()],
-    ]
+    ],
 ) -> NoReturn:
     try:
         block_identifier = params[0]
@@ -1158,7 +1176,7 @@ def raise_block_not_found_for_uncle_at_index(
         Tuple[BlockIdentifier],
         Tuple[BlockIdentifier, Union[HexStr, int]],
         Tuple[()],
-    ]
+    ],
 ) -> NoReturn:
     try:
         block_identifier = params[0]

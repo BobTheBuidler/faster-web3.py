@@ -76,14 +76,15 @@ class RequestProcessor:
         request_information_cache_size: int = 500,
     ) -> None:
         self._provider: Final = provider
-        self._request_information_cache: Final[
-            SimpleCache[RequestInformation]
-        ] = SimpleCache(request_information_cache_size)
+        self._request_information_cache: Final[SimpleCache[RequestInformation]] = (
+            SimpleCache(request_information_cache_size)
+        )
         self._request_response_cache: Final[SimpleCache[Any]] = SimpleCache(500)
         self._subscription_response_queue: TaskReliantQueue[
             Union[RPCResponse, TaskNotRunning]
         ] = TaskReliantQueue(maxsize=subscription_response_queue_size)
-        self._handler_subscription_queue: TaskReliantQueue[Union[RPCResponse, TaskNotRunning, SubscriptionProcessingFinished]
+        self._handler_subscription_queue: TaskReliantQueue[
+            Union[RPCResponse, TaskNotRunning, SubscriptionProcessingFinished]
         ] = TaskReliantQueue(maxsize=subscription_response_queue_size)
 
         self._subscription_queue_synced_with_ws_stream: bool = False
@@ -252,7 +253,9 @@ class RequestProcessor:
 
     # raw response cache
 
-    def _is_batch_response(self, raw_response: BatchResponse) -> TypeGuard[BatchResponse]:
+    def _is_batch_response(
+        self, raw_response: BatchResponse
+    ) -> TypeGuard[BatchResponse]:
         return isinstance(raw_response, list) or (
             isinstance(raw_response, dict)
             and raw_response.get("id") is None

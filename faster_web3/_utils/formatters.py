@@ -112,12 +112,11 @@ def static_result(value: TValue) -> Callable[..., Dict[str, TValue]]:
 
 
 def apply_key_map(
-    key_mappings: Dict[Any, Any]
+    key_mappings: Dict[Any, Any],
 ) -> Callable[[Dict[Any, Any]], Dict[Any, Any]]:
-    
     def get_key(key: Any) -> Any:
         return key_mappings[key] if key in key_mappings else key
-    
+
     def apply_key_map_curried(value: Dict[Any, Any]) -> Dict[Any, Any]:
         return {get_key(k): v for k, v in value.items()}
 

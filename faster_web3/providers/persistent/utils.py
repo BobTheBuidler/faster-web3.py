@@ -19,7 +19,9 @@ if TYPE_CHECKING:
     )
 
 
-def persistent_connection_provider_method(message: Optional[str] = None) -> Callable[..., Any]:
+def persistent_connection_provider_method(
+    message: Optional[str] = None,
+) -> Callable[..., Any]:
     """
     Decorator that raises an exception if the provider is not an instance of
     ``PersistentConnectionProvider``.

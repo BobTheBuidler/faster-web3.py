@@ -51,10 +51,13 @@ from faster_web3.providers.persistent.request_processor import (
 )
 from faster_web3.types import (
     BatchParams,
+    BatchRequests,
+    BatchResponseCoro,
     RPCEndpoint,
     RPCId,
     RPCRequest,
     RPCResponse,
+    RPCResponseCoro,
 )
 
 if TYPE_CHECKING:
@@ -72,14 +75,15 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
     _send_func_cache: Tuple[
         Optional[int], Optional[Callable[..., Coroutine[Any, Any, RPCRequest]]]
     ] = (None, None)
-    _recv_func_cache: Tuple[
-        Optional[int], Optional[Callable[..., Coroutine[Any, Any, RPCResponse]]]
-    ] = (None, None)
+    _recv_func_cache: Tuple[Optional[int], Optional[Callable[..., RPCResponseCoro]]] = (
+        None,
+        None,
+    )
     _send_batch_func_cache: Tuple[
-        Optional[int], Optional[Callable[..., Coroutine[Any, Any, List[RPCRequest]]]]
+        Optional[int], Optional[Callable[..., Coroutine[Any, Any, BatchRequests]]]
     ] = (None, None)
     _recv_batch_func_cache: Tuple[
-        Optional[int], Optional[Callable[..., Coroutine[Any, Any, List[RPCResponse]]]]
+        Optional[int], Optional[Callable[..., BatchResponseCoro]]
     ] = (None, None)
 
     def __init__(
@@ -132,7 +136,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
 
     async def recv_func(
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: "MiddlewareOnion"
-    ) -> Callable[[RPCRequest], Coroutine[Any, Any, RPCResponse]]:
+    ) -> Callable[[RPCRequest], RPCResponseCoro]:
         """
         Cache and compose the middleware stack for `recv`.
         """
@@ -158,13 +162,13 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
 
     async def send_batch_func(
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: "MiddlewareOnion"
-    ) -> Callable[[BatchParams], Coroutine[Any, Any, List[RPCRequest]]]:
+    ) -> Callable[[BatchParams], Coroutine[Any, Any, BatchRequests]]:
         middleware = middleware_onion.as_tuple_of_middleware()
         cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._send_batch_func_cache[0]:
 
-            async def send_func(requests: BatchParams) -> List[RPCRequest]:
+            async def send_func(requests: BatchParams) -> BatchRequests:
                 for mw in middleware:
                     initialized = mw(async_w3)
                     requests = [
@@ -179,13 +183,13 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
 
     async def recv_batch_func(
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: "MiddlewareOnion"
-    ) -> Callable[..., Coroutine[Any, Any, List[RPCResponse]]]:
+    ) -> Callable[..., BatchResponseCoro]:
         middleware = middleware_onion.as_tuple_of_middleware()
         cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._recv_batch_func_cache[0]:
 
-            async def recv_function(rpc_requests: List[RPCRequest]) -> List[RPCResponse]:
+            async def recv_function(rpc_requests: BatchRequests) -> List[RPCResponse]:
                 methods = [rpc_request["method"] for rpc_request in rpc_requests]
                 responses = await self.recv_for_batch_request(rpc_requests)
                 for mw in reversed(middleware):
@@ -293,7 +297,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
 
     # -- batch requests -- #
 
-    async def send_batch_request(self, requests: BatchParams) -> List[RPCRequest]:
+    async def send_batch_request(self, requests: BatchParams) -> BatchRequests:
         request_dicts = [
             self.form_request(method, params) for (method, params) in requests
         ]
@@ -302,7 +306,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         return request_dicts
 
     async def recv_for_batch_request(
-        self, _request_dicts: List[RPCRequest]
+        self, _request_dicts: BatchRequests
     ) -> List[RPCResponse]:
         return cast(
             List[RPCResponse],

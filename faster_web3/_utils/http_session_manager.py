@@ -51,7 +51,9 @@ sleep: Final = asyncio.sleep
 
 @final
 class HTTPSessionManager:
-    logger: Final = logging.getLogger("faster_web3._utils.http_session_manager.HTTPSessionManager")
+    logger: Final = logging.getLogger(
+        "faster_web3._utils.http_session_manager.HTTPSessionManager"
+    )
     _lock: Final[threading.Lock] = threading.Lock()
 
     def __init__(
@@ -60,7 +62,9 @@ class HTTPSessionManager:
         session_pool_max_workers: int = 5,
     ) -> None:
         self.session_cache: Final = SimpleCache(cache_size)
-        self.session_pool: Final = ThreadPoolExecutor(max_workers=session_pool_max_workers)
+        self.session_pool: Final = ThreadPoolExecutor(
+            max_workers=session_pool_max_workers
+        )
 
     @staticmethod
     def get_default_http_endpoint() -> URI:

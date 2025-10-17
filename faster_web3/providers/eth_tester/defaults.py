@@ -177,6 +177,7 @@ def null_if_excepts(
             fn,
             static_return(None),
         )
+
     return null_if_excepts_decorator
 
 

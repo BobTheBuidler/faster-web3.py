@@ -91,7 +91,7 @@ _PrivateKey = Union[LocalAccount, PrivateKey, HexStr, bytes]
 
 
 def gen_normalized_accounts(
-    val: Union[_PrivateKey, Collection[_PrivateKey]]
+    val: Union[_PrivateKey, Collection[_PrivateKey]],
 ) -> Dict[ChecksumAddress, LocalAccount]:
     # sourcery skip: remove-unnecessary-else
     if isinstance(val, (list, tuple, set)):

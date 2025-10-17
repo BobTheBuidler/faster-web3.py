@@ -1,6 +1,8 @@
 import os
 
-WEB3_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..", "faster_web3")
+WEB3_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "../..", "faster_web3"
+)
 DEFAULT_EXCEPTIONS = (
     AssertionError,
     ValueError,

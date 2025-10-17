@@ -72,6 +72,7 @@ from faster_web3.providers.async_base import (
     AsyncJSONBaseProvider,
 )
 from faster_web3.types import (
+    BatchRequests,
     FormattedEthSubscriptionResponse,
     RequestParams,
     RPCEndpoint,
@@ -83,9 +84,6 @@ if TYPE_CHECKING:
     from faster_web3.main import (  # noqa: F401
         AsyncWeb3,
         Web3,
-    )
-    from faster_web3.middleware.base import (  # noqa: F401
-        Web3Middleware,
     )
     from faster_web3.providers import (  # noqa: F401
         AsyncBaseProvider,
@@ -292,9 +290,7 @@ class RequestManager:
 
     async def _async_make_batch_request(
         self,
-        requests_info: List[
-            Coroutine[Any, Any, Tuple[Tuple["RPCEndpoint", Any], Tuple[Any]]]
-        ],
+        requests_info: List[Coroutine[Any, Any, Tuple[RequestParams, Tuple[Any, ...]]]],
     ) -> List[RPCResponse]:
         """
         Make an asynchronous batch request using the provider
@@ -328,7 +324,7 @@ class RequestManager:
 
     async def _async_send_batch(
         self, requests: List[Tuple["RPCEndpoint", Any]]
-    ) -> List[RPCRequest]:
+    ) -> BatchRequests:
         """
         Send a batch request via socket.
         """
@@ -347,7 +343,7 @@ class RequestManager:
         )
         return await send_func(requests)
 
-    async def _async_recv_batch(self, requests: List[RPCRequest]) -> List[RPCResponse]:
+    async def _async_recv_batch(self, requests: BatchRequests) -> List[RPCResponse]:
         """
         Receive a batch request via socket.
         """
@@ -368,9 +364,7 @@ class RequestManager:
 
     async def _async_make_socket_batch_request(
         self,
-        requests_info: List[
-            Coroutine[Any, Any, Tuple[Tuple["RPCEndpoint", Any], Tuple[Any, ...]]]
-        ],
+        requests_info: List[Coroutine[Any, Any, Tuple[RequestParams, Tuple[Any, ...]]]],
     ) -> List[RPCResponse]:
         """
         Send and receive a batch request via a socket.
