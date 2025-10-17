@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_ecea8c0a67e0366f7dc2_H
-#define MYPYC_NATIVE_INTERNAL_ecea8c0a67e0366f7dc2_H
+#ifndef MYPYC_NATIVE_INTERNAL_287f7b1197a0b4e1236a_H
+#define MYPYC_NATIVE_INTERNAL_287f7b1197a0b4e1236a_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_ecea8c0a67e0366f7dc2.h"
+#include "__native_287f7b1197a0b4e1236a.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2375];
+extern PyObject *CPyStatics[2373];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -221,8 +221,10 @@ extern CPyModule *CPyModule_faster_web3___providers___persistent___request_proce
 extern PyObject *CPyStatic_request_processor___globals;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager__internal;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager;
-extern PyObject *CPyStatic_subscription_manager___globals;
+extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_container__internal;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_container;
+extern PyObject *CPyStatic_subscription_container___globals;
+extern PyObject *CPyStatic_subscription_manager___globals;
 extern CPyModule *CPyModule_faster_web3___utils___subscriptions__internal;
 extern CPyModule *CPyModule_faster_web3___utils___subscriptions;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node__internal;
@@ -3160,6 +3162,27 @@ extern PyObject *CPyPy_request_processor___RequestProcessor____reset_handler_sub
 extern char CPyDef_request_processor___RequestProcessor___clear_caches(PyObject *cpy_r_self);
 extern PyObject *CPyPy_request_processor___RequestProcessor___clear_caches(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_request_processor_____top_level__(void);
+extern PyTypeObject *CPyType_subscription_container___SubscriptionContainer;
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer(void);
+extern char CPyDef_subscription_container___SubscriptionContainer_____init__(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern CPyTagged CPyDef_subscription_container___SubscriptionContainer_____len__(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer_____len__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer_____iter__(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_subscription_container___SubscriptionContainer___add_subscription(PyObject *cpy_r_self, PyObject *cpy_r_subscription);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___add_subscription(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_subscription_container___SubscriptionContainer___remove_subscription(PyObject *cpy_r_self, PyObject *cpy_r_subscription);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___remove_subscription(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer___get_by_id(PyObject *cpy_r_self, PyObject *cpy_r_sub_id);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___get_by_id(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer___get_by_label(PyObject *cpy_r_self, PyObject *cpy_r_label);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___get_by_label(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer___handler_subscriptions(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___handler_subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscription_container___SubscriptionContainer___get_handler_subscription_by_id(PyObject *cpy_r_self, PyObject *cpy_r_sub_id);
+extern PyObject *CPyPy_subscription_container___SubscriptionContainer___get_handler_subscription_by_id(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_subscription_container_____top_level__(void);
 extern PyObject *CPyStatic_subscription_manager___SubscriptionManager___logger;
 extern PyTypeObject *CPyType_subscription_manager___SubscriptionManager;
 extern PyObject *CPyDef_subscription_manager___SubscriptionManager(PyObject *cpy_r_w3);

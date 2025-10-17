@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_ecea8c0a67e0366f7dc2_H
-#define MYPYC_NATIVE_ecea8c0a67e0366f7dc2_H
+#ifndef MYPYC_NATIVE_287f7b1197a0b4e1236a_H
+#define MYPYC_NATIVE_287f7b1197a0b4e1236a_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -2068,6 +2068,14 @@ typedef struct {
     tuple_T3OOO ___mypyc_temp__9;
     PyObject *___mypyc_generator_attribute__raw_response;
 } faster_web3___providers___persistent___request_processor___pop_raw_response_RequestProcessor_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_subscriptions;
+    PyObject *_subscriptions_by_id;
+    PyObject *_subscriptions_by_label;
+} faster_web3___providers___persistent___subscription_container___SubscriptionContainerObject;
 
 typedef struct {
     PyObject_HEAD
