@@ -56,7 +56,7 @@ def persistent_connection_provider_method(
 
         @functools.wraps(func)
         def inner(
-            self: "AsyncWeb3["AsyncProviderT"]", *args: P.args, **kwargs: P.kwargs
+            self: "AsyncWeb3[AsyncProviderT]", *args: P.args, **kwargs: P.kwargs
         ) -> TReturn:
             if not isinstance(self.provider, PersistentConnectionProvider):
                 raise Web3ValidationError(message_actual)
