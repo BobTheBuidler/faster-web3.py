@@ -289,7 +289,7 @@ def get_constructor_function_info(
             ABIConstructor, get_abi_element(contract_abi, "constructor")
         )
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return constructor_abi, fn_selector, fn_arguments
 
 
@@ -299,7 +299,7 @@ def get_fallback_function_info(
     if fallback_abi is None:
         fallback_abi = cast(ABIFallback, get_abi_element(contract_abi, "fallback"))
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return fallback_abi, fn_selector, fn_arguments
 
 
@@ -309,7 +309,7 @@ def get_receive_function_info(
     if receive_abi is None:
         receive_abi = cast(ABIReceive, get_abi_element(contract_abi, "receive"))
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return receive_abi, fn_selector, fn_arguments
 
 
@@ -399,8 +399,8 @@ def copy_contract_function(
     Copy a contract function instance.
     """
     clone = copy.copy(contract_function)
-    clone.args = args or tuple()
-    clone.kwargs = kwargs or dict()
+    clone.args = args
+    clone.kwargs = kwargs
 
     clone._set_function_info()
     return clone
@@ -413,8 +413,8 @@ def copy_contract_event(
     Copy a contract function instance.
     """
     clone = copy.copy(contract_event)
-    clone.args = args or tuple()
-    clone.kwargs = kwargs or dict()
+    clone.args = args
+    clone.kwargs = kwargs
 
     clone._set_event_info()
     return clone

@@ -1,6 +1,6 @@
-import asyncio
 import hashlib
 import threading
+from inspect import isawaitable
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -65,8 +65,6 @@ if TYPE_CHECKING:
         RPCResponse,
     )
 
-
-iscoroutinefunction: Final = asyncio.iscoroutinefunction
 
 md5: Final = hashlib.md5
 
@@ -347,11 +345,8 @@ async def _async_should_cache_response(
         and provider.request_cache_validation_threshold is not None
     ):
         cache_validator = ASYNC_INTERNAL_VALIDATION_MAP[method]
-        return (
-            await cache_validator(provider, params, result)
-            if iscoroutinefunction(cache_validator)
-            else cache_validator(provider, params, result)
-        )
+        should_cache = cache_validator(provider, params, result)
+        return await should_cache if isawaitable(should_cache) else should_cache
     return True
 
 

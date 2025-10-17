@@ -219,8 +219,8 @@ def _build_abi_input_error(
         abi_element_input_types = get_abi_input_types(abi_element)
         abi_signature = abi_to_signature(abi_element)
         abi_element_name = get_name_from_abi_element_identifier(abi_signature)
-        types: Tuple[str, ...] = tuple()
-        aligned_args: Tuple[Any, ...] = tuple()
+        types: Tuple[str, ...] = ()
+        aligned_args: Tuple[Any, ...] = ()
 
         if len(abi_element_input_types) == num_args:
             if num_args == 0:
@@ -510,10 +510,10 @@ def get_abi_element_info(
         abi, abi_element_identifier, *args, abi_codec=abi_codec, **kwargs
     )
     fn_selector = encode_hex(function_abi_to_4byte_selector(fn_abi))
-    fn_inputs: Tuple[Any, ...] = tuple()
+    fn_inputs: Tuple[Any, ...] = ()
 
     if fn_abi["type"] == "fallback" or fn_abi["type"] == "receive":
-        return ABIElementInfo(abi=fn_abi, selector=fn_selector, arguments=tuple())
+        return ABIElementInfo(abi=fn_abi, selector=fn_selector, arguments=())
     else:
         fn_inputs = get_normalized_abi_inputs(fn_abi, *args, **kwargs)
         _, aligned_fn_inputs = get_aligned_abi_inputs(fn_abi, fn_inputs)
