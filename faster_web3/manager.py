@@ -584,7 +584,7 @@ class RequestManager:
                         "    cache_key=%s,\n"
                         "    request_info=%s",
                         cache_key,
-                        request_info.__dict__,
+                        request_info,
                     )
                     self._request_processor._request_information_cache.cache(
                         cache_key, request_info

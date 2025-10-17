@@ -535,14 +535,16 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
         "faster_web3.providers.persistent.websocket.connect",
         new=lambda *_1, **_2: _mocked_ws_conn(),
     ):
-        async_w3 = await AsyncWeb3(
+        async_w3: AsyncWeb3 = await AsyncWeb3(
             WebSocketProvider("ws://mocked", request_information_cache_size=1)
         )
-        async_w3.provider._request_processor.cache_request_information(
+        provider: WebSocketProvider = async_w3.provider
+        provider._request_processor.cache_request_information(
+            None,
             RPCEndpoint("eth_getBlockByNumber"),
             ["latest"],
-            tuple(),
-            tuple(),
+            (),
+            (),
         )
 
         assert len(async_w3.provider._request_processor._request_information_cache) == 1

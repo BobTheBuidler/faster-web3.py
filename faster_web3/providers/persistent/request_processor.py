@@ -143,7 +143,7 @@ class RequestProcessor:
             "    cache_key=%s,\n    request_info=%s",
             request_id,
             cache_key,
-            request_info.__dict__,
+            request_info,
         )
         request_info_cache = self._request_information_cache
         request_info_cache.cache(cache_key, request_info)
@@ -164,7 +164,7 @@ class RequestProcessor:
                 "Request info popped from cache:\n"
                 "    cache_key=%s,\n    request_info=%s",
                 cache_key,
-                request_info.__dict__,
+                request_info,
             )
         return request_info
 

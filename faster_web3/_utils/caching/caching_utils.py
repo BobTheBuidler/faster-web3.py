@@ -119,6 +119,16 @@ class RequestInformation:
         self.response_formatters: Final = response_formatters
         self.subscription_id: Final = subscription_id
         self.middleware_response_processors: Final[List[Callable[..., Any]]] = []
+    
+    def __repr__(self) -> str:
+        attrs = {
+            "method": self.method,
+            "params": self.params,
+            "response_formatters": self.response_formatters,
+            "subscription_id": self.subscription_id,
+            "middleware_response_processors": self.middleware_response_processors
+        }
+        return f"RequestInformation({attrs!r})"
 
 
 DEFAULT_VALIDATION_THRESHOLD: Final = 60 * 60  # 1 hour

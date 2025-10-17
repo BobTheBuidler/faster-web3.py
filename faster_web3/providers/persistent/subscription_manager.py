@@ -214,27 +214,29 @@ class SubscriptionManager:
         if isinstance(subscriptions, EthSubscription) or isinstance(subscriptions, str):
             if isinstance(subscriptions, str):
                 subscription_id = subscriptions
-                subscriptions = self.get_by_id(subscription_id)
-                if subscriptions is None:
+                subscription = self.get_by_id(subscription_id)
+                if subscription is None:
                     raise Web3ValueError(
                         "Subscription not found or is not being managed by the "
                         f"subscription manager.\n    id: {subscription_id}"
                     )
+            else:
+                subscription = subscriptions
 
-            if subscriptions not in self.subscriptions:
+            if subscription not in self.subscriptions:
                 raise Web3ValueError(
                     "Subscription not found or is not being managed by the "
                     "subscription manager.\n    "
-                    f"label: {subscriptions.label}\n    id: {subscriptions._id}"
+                    f"label: {subscription.label}\n    id: {subscription._id}"
                 )
 
-            if await self._w3.eth._unsubscribe(subscriptions.id):
-                self._remove_subscription(subscriptions)
+            if await self._w3.eth._unsubscribe(subscription.id):
+                self._remove_subscription(subscription)
                 self.logger.info(
                     "Successfully unsubscribed from subscription:\n"
                     "    label: %s\n    id: %s",
-                    subscriptions.label,
-                    subscriptions.id,
+                    subscription.label,
+                    subscription.id,
                 )
 
                 if len(self._subscription_container.handler_subscriptions) == 0:
@@ -251,11 +253,8 @@ class SubscriptionManager:
             unsubscribed: List[bool] = []
             # re-create the subscription list to prevent modifying the original list
             # in case ``subscription_manager.subscriptions`` was passed in directly
-            subs = list(subscriptions)
-            for sub in subs:
-                if isinstance(sub, str):
-                    sub = HexStr(sub)
-                unsubscribed.append(await self.unsubscribe(sub))
+            for subscription in list(subscriptions):
+                unsubscribed.append(await self.unsubscribe(subscription))
             return all(unsubscribed)
 
         self.logger.warning(
