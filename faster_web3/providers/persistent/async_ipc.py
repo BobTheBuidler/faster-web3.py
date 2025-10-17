@@ -14,6 +14,7 @@ from typing import (
     Optional,
     Tuple,
     Union,
+    final,
 )
 
 from faster_web3.types import (
