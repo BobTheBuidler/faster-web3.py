@@ -80,9 +80,7 @@ def retrieve_request_information_for_batching(
             )
         return (cast(RPCEndpoint, method_str), params), response_formatters
 
-    def inner(
-        *args: Any, **kwargs: Any
-    ) -> Tuple[RequestParams, Sequence[Any]]:
+    def inner(*args: Any, **kwargs: Any) -> Tuple[RequestParams, Sequence[Any]]:
         (method_str, params), response_formatters = method.process_params(
             module, *args, **kwargs
         )

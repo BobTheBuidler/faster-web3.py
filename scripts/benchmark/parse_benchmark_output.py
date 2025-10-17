@@ -15,6 +15,7 @@ import re
 from collections import defaultdict
 from typing import Dict, Any
 
+
 def get_module_path(bench: dict) -> str:
     # Extracts the relative module path from the test file path.
     # E.g., benchmarks/ens/test_base_ens_benchmarks.py -> ens/base_ens
@@ -30,6 +31,7 @@ def get_module_path(bench: dict) -> str:
         return m2.group(1)
     return "unknown"
 
+
 def get_group_name(test_name: str) -> str:
     # Extract group from test name, e.g., test_foo, test_faster_foo -> group: foo
     m = re.match(r"test_faster_(.+)", test_name)
@@ -39,6 +41,7 @@ def get_group_name(test_name: str) -> str:
     if m:
         return m.group(1)
     return test_name
+
 
 def parse_pytest_benchmark_json(data: dict) -> Dict[str, Dict[str, Dict[str, Any]]]:
     """
@@ -62,6 +65,7 @@ def parse_pytest_benchmark_json(data: dict) -> Dict[str, Dict[str, Dict[str, Any
         }
     return results
 
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python parse_benchmark_output.py <benchmark.json> [output.json]")
@@ -74,6 +78,7 @@ def main() -> None:
     with open(outfile, "w") as f:
         json.dump(results, f, indent=2)
     print(f"Parsed results written to {outfile}")
+
 
 if __name__ == "__main__":
     main()

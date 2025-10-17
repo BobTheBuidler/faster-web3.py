@@ -53,7 +53,9 @@ class Tracing(Module):
         self._default_block = value
 
     def trace_replay_transaction_munger(
-        self, block_identifier: Union[_Hash32, BlockIdentifier], mode: Optional[TraceMode] = None
+        self,
+        block_identifier: Union[_Hash32, BlockIdentifier],
+        mode: Optional[TraceMode] = None,
     ) -> Tuple[Union[BlockIdentifier, _Hash32], TraceMode]:
         if mode is None:
             mode = ["trace"]

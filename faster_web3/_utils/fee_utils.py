@@ -24,7 +24,9 @@ PRIORITY_FEE_MIN: Final = Wei(1000000000)  # 1 gwei
 PRIORITY_FEE_HISTORY_PARAMS: Final = (10, "pending", [5.0])
 
 
-def _fee_history_priority_fee_estimate(fee_history: Union[FeeHistory, AttributeDict]) -> Wei:
+def _fee_history_priority_fee_estimate(
+    fee_history: Union[FeeHistory, AttributeDict],
+) -> Wei:
     if isinstance(fee_history, AttributeDict):
         # If we have an AttributeDict we can unwrap it for better type optimizations
         fee_history = cast(FeeHistory, fee_history.__dict__)

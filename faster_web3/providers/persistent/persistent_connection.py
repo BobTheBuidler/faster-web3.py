@@ -35,7 +35,9 @@ class PersistentConnection:
 
     def __init__(self, w3: "AsyncWeb3[Any]"):
         self._manager: Final = w3.manager
-        self.provider: Final = cast("PersistentConnectionProvider", self._manager.provider)
+        self.provider: Final = cast(
+            "PersistentConnectionProvider", self._manager.provider
+        )
 
     @property
     def subscriptions(self) -> Dict[str, Any]:

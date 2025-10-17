@@ -33,10 +33,14 @@ GET_REWARDS: Final = "/eth/v1/beacon/rewards/blocks/{0}"
 GET_BLOB_SIDECARS: Final = "/eth/v1/beacon/blob_sidecars/{0}"
 
 # light client
-GET_LIGHT_CLIENT_BOOTSTRAP_STRUCTURE: Final = "/eth/v1/beacon/light_client/bootstrap/{0}"
+GET_LIGHT_CLIENT_BOOTSTRAP_STRUCTURE: Final = (
+    "/eth/v1/beacon/light_client/bootstrap/{0}"
+)
 GET_LIGHT_CLIENT_UPDATES: Final = "/eth/v1/beacon/light_client/updates"
 GET_LIGHT_CLIENT_FINALITY_UPDATE: Final = "/eth/v1/beacon/light_client/finality_update"
-GET_LIGHT_CLIENT_OPTIMISTIC_UPDATE: Final = "/eth/v1/beacon/light_client/optimistic_update"
+GET_LIGHT_CLIENT_OPTIMISTIC_UPDATE: Final = (
+    "/eth/v1/beacon/light_client/optimistic_update"
+)
 
 # pool
 GET_ATTESTATIONS: Final = "/eth/v1/beacon/pool/attestations"

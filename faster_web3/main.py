@@ -163,7 +163,9 @@ from faster_web3.providers.persistent.subscription_manager import (
 if TYPE_CHECKING:
     from faster_web3._utils.batching import RequestBatcher  # noqa: F401
     from faster_web3._utils.empty import Empty  # noqa: F401
-    from faster_web3.providers.persistent import PersistentConnectionProvider  # noqa: F401
+    from faster_web3.providers.persistent import (
+        PersistentConnectionProvider,
+    )  # noqa: F401
 
 
 def get_async_default_modules() -> Dict[str, Union[Type[Module], Sequence[Any]]]:

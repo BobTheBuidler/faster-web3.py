@@ -642,7 +642,7 @@ def abi_data_tree(
 
 
 def data_tree_map(
-    func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]]
+    func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]],
 ) -> Callable[[Any], "ABITypedData"]:
     """
     Map func to every ABITypedData element in the tree. func will
@@ -650,7 +650,6 @@ def data_tree_map(
     """
 
     def data_tree_map_curried(data_tree: Any) -> "ABITypedData":
-
         def map_to_typed_data(elements: Any) -> "ABITypedData":
             if isinstance(elements, ABITypedData) and elements.abi_type is not None:
                 return ABITypedData(func(*elements))
@@ -658,7 +657,7 @@ def data_tree_map(
                 return elements
 
         return recursive_map(map_to_typed_data, data_tree)
-    
+
     return data_tree_map_curried
 
 

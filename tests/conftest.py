@@ -117,5 +117,5 @@ def request_mocker() -> Type[RequestMocker]:
         pytest.skip(
             reason="This test is broken on Python3.14 because itertools.Counter objects are no longer picklable"
         )
-    
+
     return RequestMocker

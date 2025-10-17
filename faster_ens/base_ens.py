@@ -44,7 +44,9 @@ class BaseENS:
     w3: Union["AsyncWeb3[Any]", "Web3"]
     ens: Optional[Union["Contract", "AsyncContract"]] = None
     _resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None
-    _reverse_resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None
+    _reverse_resolver_contract: Optional[
+        Union[Type["Contract"], Type["AsyncContract"]]
+    ] = None
 
     @property
     def strict_bytes_type_checking(self) -> bool:

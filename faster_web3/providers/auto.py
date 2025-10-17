@@ -120,7 +120,9 @@ class AutoProvider(JSONBaseProvider):
 
         return provider.make_request(method, params)
 
-    def _proxy_batch_request(self, requests: BatchParams, use_cache: bool = True) -> BatchResponse:
+    def _proxy_batch_request(
+        self, requests: BatchParams, use_cache: bool = True
+    ) -> BatchResponse:
         provider = self._get_active_provider(use_cache)
         if provider is None:
             raise CannotHandleRequest(

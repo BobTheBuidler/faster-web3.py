@@ -138,7 +138,8 @@ for d in NORMALIZATION_SPEC["groups"]:
     GROUP_COMBINED_VALID_CPS.extend(d["secondary"])
 
 VALID_BY_GROUPS: Final[Dict[str, FrozenSet[int]]] = {
-    d["name"]: frozenset(d["primary"] + d["secondary"]) for d in NORMALIZATION_SPEC["groups"]
+    d["name"]: frozenset(d["primary"] + d["secondary"])
+    for d in NORMALIZATION_SPEC["groups"]
 }
 
 
@@ -478,7 +479,9 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
                 if leading_codepoint in NORMALIZATION_SPEC["ignored"]:
                     pass
 
-                elif (mapped := NORMALIZATION_SPEC["mapped"].get(leading_codepoint)) is not None:
+                elif (
+                    mapped := NORMALIZATION_SPEC["mapped"].get(leading_codepoint)
+                ) is not None:
                     for cp in mapped:
                         buffer.append(cp)
 

@@ -116,7 +116,9 @@ async def test_async_parse_block_identifier_bytes_and_hex(async_w3):
         (-70, BlockNumberOutOfRange),
     ),
 )
-async def test_async_parse_block_identifier_error(async_w3, block_identifier, expected_exc):
+async def test_async_parse_block_identifier_error(
+    async_w3, block_identifier, expected_exc
+):
     with pytest.raises(expected_exc):
         await async_parse_block_identifier(async_w3, block_identifier)
 

@@ -111,9 +111,9 @@ class RequestMocker:
             self._send_request = w3.provider.send_request
             self._recv_for_request = w3.provider.recv_for_request
         else:
-            self._make_request: Union[
-                "AsyncMakeRequestFn", "MakeRequestFn"
-            ] = w3.provider.make_request
+            self._make_request: Union["AsyncMakeRequestFn", "MakeRequestFn"] = (
+                w3.provider.make_request
+            )
 
     def _build_request_id(self) -> int:
         request_id = (
@@ -132,11 +132,10 @@ class RequestMocker:
         return self
 
     def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
-        self.w3.provider.make_request = (  # type: ignore[method-assign]
-            self._make_request
-        )
+        provider = self.w3.provider
+        provider.make_request = self._make_request  # type: ignore[method-assign]
         # reset request func cache to re-build request_func with original make_request
-        self.w3.provider._request_func_cache = (None, None)
+        provider._request_func_cache = (None, None)
 
     def _mock_request_handler(
         self, method: "RPCEndpoint", params: Any
@@ -191,29 +190,31 @@ class RequestMocker:
     # -- async -- #
 
     async def __aenter__(self) -> "Self":
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        provider = self.w3.provider
+        if not isinstance(provider, PersistentConnectionProvider):
             # mypy error: Cannot assign to a method
-            self.w3.provider.make_request = self._async_mock_request_handler  # type: ignore[method-assign]  # noqa: E501
+            provider.make_request = self._async_mock_request_handler  # type: ignore[method-assign]  # noqa: E501
             # reset request func cache to re-build request_func w/ mocked make_request
-            self.w3.provider._request_func_cache = (None, None)
+            provider._request_func_cache = (None, None)
         else:
-            self.w3.provider.send_request = self._async_mock_send_handler  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider.recv_for_request = self._async_mock_recv_handler  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider._send_func_cache = (None, None)
-            self.w3.provider._recv_func_cache = (None, None)
+            provider.send_request = self._async_mock_send_handler  # type: ignore[method-assign]  # noqa: E501
+            provider.recv_for_request = self._async_mock_recv_handler  # type: ignore[method-assign]  # noqa: E501
+            provider._send_func_cache = (None, None)
+            provider._recv_func_cache = (None, None)
         return self
 
     async def __aexit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        provider = self.w3.provider
+        if not isinstance(provider, PersistentConnectionProvider):
             # mypy error: Cannot assign to a method
-            self.w3.provider.make_request = self._make_request  # type: ignore[method-assign]  # noqa: E501
+            provider.make_request = self._make_request  # type: ignore[method-assign]  # noqa: E501
             # reset request func cache to re-build request_func w/ original make_request
-            self.w3.provider._request_func_cache = (None, None)
+            provider._request_func_cache = (None, None)
         else:
-            self.w3.provider.send_request = self._send_request  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider.recv_for_request = self._recv_for_request  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider._send_func_cache = (None, None)
-            self.w3.provider._recv_func_cache = (None, None)
+            provider.send_request = self._send_request  # type: ignore[method-assign]  # noqa: E501
+            provider.recv_for_request = self._recv_for_request  # type: ignore[method-assign]  # noqa: E501
+            provider._send_func_cache = (None, None)
+            provider._recv_func_cache = (None, None)
 
     async def _async_build_mock_result(
         self, method: "RPCEndpoint", params: Any, request_id: Optional[int] = None

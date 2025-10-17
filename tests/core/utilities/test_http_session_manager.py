@@ -187,7 +187,7 @@ def test_session_manager_make_post_request_streaming(mocker, http_session_manage
     reason=(
         "This test occasionally doesn't raise the exc on Windows. "
         "I'll debug it if it gives somebody an issue."
-    )
+    ),
 )
 def test_session_manager_make_post_request_times_out_while_streaming(
     mocker, http_session_manager

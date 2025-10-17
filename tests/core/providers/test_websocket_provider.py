@@ -291,12 +291,12 @@ async def test_listen_event_awaits_msg_processing_when_subscription_queue_is_ful
             "object expected; got asyncio.queues.Queue"
         ),
     ):
-        async_w3.provider._request_processor._subscription_response_queue = asyncio.Queue(
-            maxsize=1
+        async_w3.provider._request_processor._subscription_response_queue = (
+            asyncio.Queue(maxsize=1)
         )
-    
-    async_w3.provider._request_processor._subscription_response_queue = TaskReliantQueue(
-        maxsize=1
+
+    async_w3.provider._request_processor._subscription_response_queue = (
+        TaskReliantQueue(maxsize=1)
     )
     assert not async_w3.provider._request_processor._subscription_response_queue.full()
 
@@ -558,7 +558,7 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
             "some_id",
             RPCEndpoint("eth_getBlockByNumber"),
             ["latest"],
-            (),
+            ((), (), ()),
         )
 
         assert len(provider._request_processor._request_information_cache) == 1

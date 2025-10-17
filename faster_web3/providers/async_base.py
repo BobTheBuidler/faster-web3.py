@@ -6,10 +6,8 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    Coroutine,
     Dict,
     Final,
-    List,
     Optional,
     Set,
     Tuple,
@@ -46,10 +44,13 @@ from faster_web3.middleware.base import (
 )
 from faster_web3.types import (
     BatchParams,
+    BatchRequests,
     BatchResponse,
+    BatchResponseCoro,
     RPCEndpoint,
     RPCRequest,
     RPCResponse,
+    RPCResponseCoro,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -79,8 +80,8 @@ class AsyncBaseProvider:
         "faster_web3.providers.async_base.AsyncBaseProvider"
     )
     _request_func_cache: Union[
-        Tuple[Tuple[Middleware, ...], Callable[..., Coroutine[Any, Any, RPCResponse]]],
-        Tuple[None, None]
+        Tuple[Tuple[Middleware, ...], Callable[..., RPCResponseCoro]],
+        Tuple[None, None],
     ] = (None, None)
 
     is_async = True
@@ -109,11 +110,10 @@ class AsyncBaseProvider:
         self._batch_request_func_cache: Union[
             Tuple[
                 Tuple[Middleware, ...],
-                Callable[..., Coroutine[Any, Any, BatchResponse]],
+                Callable[..., BatchResponseCoro],
             ],
             Tuple[None, None],
         ] = (None, None)
-
 
     @property
     def _is_batching(self) -> bool:
@@ -121,7 +121,7 @@ class AsyncBaseProvider:
 
     async def request_func(
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Coroutine[Any, Any, RPCResponse]]:
+    ) -> Callable[..., RPCResponseCoro]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
         cache_key, func = self._request_func_cache
@@ -136,7 +136,7 @@ class AsyncBaseProvider:
 
     async def batch_request_func(
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Coroutine[Any, Any, BatchResponse]]:
+    ) -> Callable[..., BatchResponseCoro]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
         cache_key, accumulator_fn = self._batch_request_func_cache
@@ -254,5 +254,5 @@ class AsyncJSONBaseProvider(AsyncBaseProvider):
             + b"]"
         )
 
-    def encode_batch_request_dicts(self, request_dicts: List[RPCRequest]) -> bytes:
+    def encode_batch_request_dicts(self, request_dicts: BatchRequests) -> bytes:
         return b"[" + b",".join(self.encode_rpc_dict(d) for d in request_dicts) + b"]"

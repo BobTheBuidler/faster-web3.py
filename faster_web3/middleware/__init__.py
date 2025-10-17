@@ -2,7 +2,6 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    Coroutine,
     Sequence,
 )
 
@@ -46,6 +45,7 @@ from .validation import (
 from ..types import (
     AsyncMakeRequestFn,
     MakeRequestFn,
+    RPCResponseCoro,
 )
 
 
@@ -80,7 +80,7 @@ async def async_combine_middleware(
     middleware: Sequence[Middleware],
     async_w3: "AsyncWeb3[Any]",
     provider_request_fn: AsyncMakeRequestFn,
-) -> Callable[..., Coroutine[Any, Any, "RPCResponse"]]:
+) -> Callable[..., RPCResponseCoro]:
     """
     Returns a callable function which takes method and params as positional arguments
     and passes these args through the request processors, makes the request, and passes
