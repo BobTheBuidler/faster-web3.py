@@ -35,8 +35,8 @@ AsyncWeb3Method = Callable[Concatenate["AsyncWeb3[AsyncProviderT]", P], TReturn]
 def persistent_connection_provider_method(
     message: Optional[str] = None,
 ) -> Callable[
-    [AsyncWeb3Method[AsyncProviderT, P, TReturn]],
-    AsyncWeb3Method[AsyncProviderT, P, TReturn],
+    [AsyncWeb3Method["AsyncProviderT", P, TReturn]],
+    AsyncWeb3Method["AsyncProviderT", P, TReturn],
 ]:
     """
     Decorator that raises an exception if the provider is not an instance of
@@ -44,8 +44,8 @@ def persistent_connection_provider_method(
     """
 
     def decorator(
-        func: AsyncWeb3Method[AsyncProviderT, P, TReturn],
-    ) -> AsyncWeb3Method[AsyncProviderT, P, TReturn]:
+        func: AsyncWeb3Method["AsyncProviderT", P, TReturn],
+    ) -> AsyncWeb3Method["AsyncProviderT", P, TReturn]:
         if message is None:
             message_actual = (
                 f"``{func.__name__}`` can only be called on a "
@@ -56,7 +56,7 @@ def persistent_connection_provider_method(
 
         @functools.wraps(func)
         def inner(
-            self: "AsyncWeb3[AsyncProviderT]", *args: P.args, **kwargs: P.kwargs
+            self: "AsyncWeb3["AsyncProviderT"]", *args: P.args, **kwargs: P.kwargs
         ) -> TReturn:
             if not isinstance(self.provider, PersistentConnectionProvider):
                 raise Web3ValidationError(message_actual)
