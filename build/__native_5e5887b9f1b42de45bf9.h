@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_826c207bc3cb90f09ef9_H
-#define MYPYC_NATIVE_826c207bc3cb90f09ef9_H
+#ifndef MYPYC_NATIVE_5e5887b9f1b42de45bf9_H
+#define MYPYC_NATIVE_5e5887b9f1b42de45bf9_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -867,6 +867,109 @@ typedef struct {
     tuple_T3OOO ___mypyc_temp__8;
     PyObject *___mypyc_generator_attribute__exc;
 } faster_web3____utils___encoding____json_list_errors_FriendlyJsonSerde_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_event_abi;
+    PyObject *_abi_codec;
+    PyObject *_formatter;
+    PyObject *_event_topic;
+    PyObject *_args;
+    PyObject *__ordered_arg_names;
+    PyObject *__from_block;
+    PyObject *__to_block;
+    PyObject *__address;
+    char __immutable;
+} faster_web3____utils___events___BaseEventFilterBuilderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_event_abi;
+    PyObject *_abi_codec;
+    PyObject *_formatter;
+    PyObject *_event_topic;
+    PyObject *_args;
+    PyObject *__ordered_arg_names;
+    PyObject *__from_block;
+    PyObject *__to_block;
+    PyObject *__address;
+    char __immutable;
+} faster_web3____utils___events___EventFilterBuilderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_event_abi;
+    PyObject *_abi_codec;
+    PyObject *_formatter;
+    PyObject *_event_topic;
+    PyObject *_args;
+    PyObject *__ordered_arg_names;
+    PyObject *__from_block;
+    PyObject *__to_block;
+    PyObject *__address;
+    char __immutable;
+} faster_web3____utils___events___AsyncEventFilterBuilderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_arg_type;
+    PyObject *__match_values;
+    char __immutable;
+} faster_web3____utils___events___BaseArgumentFilterObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_arg_type;
+    PyObject *__match_values;
+    char __immutable;
+} faster_web3____utils___events___DataArgumentFilterObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_arg_type;
+    PyObject *__match_values;
+    char __immutable;
+    PyObject *_abi_codec;
+} faster_web3____utils___events___TopicArgumentFilterObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    PyObject *___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__arg;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    PyObject *___mypyc_generator_attribute__log_filter;
+} faster_web3____utils___events___deploy_AsyncEventFilterBuilder_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__event_abi;
+    PyObject *___mypyc_generator_attribute__abi_codec;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__4;
+    PyObject *___mypyc_temp__5;
+    PyObject *___mypyc_generator_attribute__item;
+    PyObject *___mypyc_generator_attribute__key;
+    PyObject *___mypyc_generator_attribute__value;
+} faster_web3____utils___events____build_argument_filters_from_event_abi_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3____utils___events___flag_options_EventLogErrorFlags_objObject;
 
 typedef struct {
     PyObject_HEAD
@@ -2122,8 +2225,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    PyObject *___mypyc_temp__2_0;
-    int64_t ___mypyc_temp__2_1;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {

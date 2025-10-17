@@ -4,11 +4,11 @@ PyMODINIT_FUNC
 PyInit_time_based(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("826c207bc3cb90f09ef9__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("5e5887b9f1b42de45bf9__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___gas_strategies___time_based");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "826c207bc3cb90f09ef9__mypyc.init_faster_web3___gas_strategies___time_based");
+    void *init_func = PyCapsule_GetPointer(capsule, "5e5887b9f1b42de45bf9__mypyc.init_faster_web3___gas_strategies___time_based");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
