@@ -473,20 +473,21 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         async def _match_response_id_to_request_id() -> RPCResponse:
             request_cache_key = generate_cache_key(request_id)
 
+            request_processor = self._request_processor
+            logger = self.logger
             while True:
                 # check if an exception was recorded in the listener task and raise
                 # it in the main loop if so
                 self._handle_listener_task_exceptions()
 
-                if request_cache_key in self._request_processor._request_response_cache:
-                    self.logger.debug(
+                if request_cache_key in request_processor._request_response_cache:
+                    logger.debug(
                         "Popping response for id %s from cache.",
                         request_id,
                     )
-                    popped_response = await self._request_processor.pop_raw_response(
+                    return await request_processor.pop_raw_response(
                         cache_key=request_cache_key,
                     )
-                    return popped_response
                 else:
                     await asyncio.sleep(0)
 
