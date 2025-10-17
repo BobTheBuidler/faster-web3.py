@@ -824,6 +824,7 @@ async def test_async_validation_against_validation_threshold_time_based(
     request_mocker,
 ):
     async_w3 = await _async_w3_init(async_provider)
+    pytest.fail("the runner made it this far without blowing up. fix the test")
     blocknum = "0x2"
     # mock the timestamp so that we are at the threshold +/- the time_from_threshold
     mocked_time = hex(
