@@ -100,7 +100,7 @@ else:
         "faster_web3/gas_strategies",
         "faster_web3/providers/eth_tester",
         "faster_web3/providers/persistent/persistent_connection.py",
-        # "faster_web3/providers/persistent/request_processor.py",
+        "faster_web3/providers/persistent/request_processor.py",
         "faster_web3/providers/persistent/subscription_container.py",
         "faster_web3/providers/persistent/subscription_manager.py",
         "faster_web3/tools/benchmark/node.py",
