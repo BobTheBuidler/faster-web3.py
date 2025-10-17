@@ -97,7 +97,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
             subscription_response_queue_size=subscription_response_queue_size,
             request_information_cache_size=request_information_cache_size,
         )
-        self._message_listener_task: Optional["asyncio.Task[None]"] = None
+        self._message_listener_task: Optional[asyncio.Task[None]] = None
         self._listen_event: asyncio.Event = asyncio.Event()
         self._max_connection_retries = max_connection_retries
 
@@ -113,7 +113,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         Cache the middleware chain for `send`.
         """
         middleware = middleware_onion.as_tuple_of_middleware()
-        cache_key = hash(tuple(id(mw) for mw in middleware))
+        cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._send_func_cache[0]:
 
@@ -137,7 +137,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         Cache and compose the middleware stack for `recv`.
         """
         middleware = middleware_onion.as_tuple_of_middleware()
-        cache_key = hash(tuple(id(mw) for mw in middleware))
+        cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._recv_func_cache[0]:
 
@@ -160,7 +160,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: "MiddlewareOnion"
     ) -> Callable[[BatchParams], Coroutine[Any, Any, List[RPCRequest]]]:
         middleware = middleware_onion.as_tuple_of_middleware()
-        cache_key = hash(tuple(id(mw) for mw in middleware))
+        cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._send_batch_func_cache[0]:
 
@@ -181,13 +181,11 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         self, async_w3: "AsyncWeb3[Any]", middleware_onion: "MiddlewareOnion"
     ) -> Callable[..., Coroutine[Any, Any, List[RPCResponse]]]:
         middleware = middleware_onion.as_tuple_of_middleware()
-        cache_key = hash(tuple(id(mw) for mw in middleware))
+        cache_key = hash(tuple(map(id, middleware)))
 
         if cache_key != self._recv_batch_func_cache[0]:
 
-            async def recv_function(
-                rpc_requests: List[RPCRequest],
-            ) -> List[RPCResponse]:
+            async def recv_function(rpc_requests: List[RPCRequest]) -> List[RPCResponse]:
                 methods = [rpc_request["method"] for rpc_request in rpc_requests]
                 responses = await self.recv_for_batch_request(rpc_requests)
                 for mw in reversed(middleware):
@@ -225,10 +223,11 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         _backoff_rate_change = 1.75
         _backoff_time = 1.75
 
+        logger = self.logger
         while _connection_attempts != self._max_connection_retries:
             try:
                 _connection_attempts += 1
-                self.logger.info("Connecting to: %s", endpoint)
+                logger.info("Connecting to: %s", endpoint)
                 await self._provider_specific_connect()
                 self._message_listener_task = asyncio.create_task(
                     self._message_listener()
@@ -236,7 +235,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
                 self._message_listener_task.add_done_callback(
                     self._message_listener_callback
                 )
-                self.logger.info("Successfully connected to: %s", endpoint)
+                logger.info("Successfully connected to: %s", endpoint)
                 break
             except (WebSocketException, OSError) as e:
                 if _connection_attempts == self._max_connection_retries:
@@ -256,9 +255,9 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
     async def disconnect(self) -> None:
         # this should remain idempotent
         try:
-            if self._message_listener_task:
-                self._message_listener_task.cancel()
-                await self._message_listener_task
+            if task := self._message_listener_task:
+                task.cancel()
+                await task
         except (asyncio.CancelledError, StopAsyncIteration, ConnectionClosed):
             pass
         finally:
@@ -371,10 +370,11 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         # Puts a `TaskNotRunning` in appropriate queues to signal the end of the
         # listener task to any listeners relying on the queues.
         message = "Message listener task has ended."
-        self._request_processor._subscription_response_queue.put_nowait(
+        request_processor = self._request_processor
+        request_processor._subscription_response_queue.put_nowait(
             TaskNotRunning(message_listener_task, message=message)
         )
-        self._request_processor._handler_subscription_queue.put_nowait(
+        request_processor._handler_subscription_queue.put_nowait(
             TaskNotRunning(message_listener_task, message=message)
         )
 
@@ -399,6 +399,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
                         )
 
     async def _message_listener(self) -> None:
+        request_processor = self._request_processor
         self.logger.info(
             "%s listener background task started. Storing all messages in "
             "appropriate request processor queues / caches to be processed.",
@@ -420,7 +421,7 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
                     if not isinstance(response, list)
                     else False
                 )
-                await self._request_processor.cache_raw_response(
+                await request_processor.cache_raw_response(
                     response, subscription=subscription
                 )
                 self._raise_stray_errors_from_cache()
@@ -456,7 +457,9 @@ class PersistentConnectionProvider(AsyncJSONBaseProvider, ABC):
         messages in the main loop. If the message listener task has completed and an
         exception was recorded, raise the exception in the main loop.
         """
-        msg_listener_task = getattr(self, "_message_listener_task", None)
+        msg_listener_task: Optional[asyncio.Task[None]] = getattr(
+            self, "_message_listener_task", None
+        )
         if (
             msg_listener_task
             and msg_listener_task.done()

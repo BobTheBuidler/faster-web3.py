@@ -5,6 +5,7 @@ from typing import (
     Any,
     Final,
     List,
+    Optional,
     Sequence,
     Set,
     Union,
@@ -129,10 +130,10 @@ class SubscriptionManager:
     def subscriptions(self) -> List[EthSubscription[Any]]:
         return self._subscription_container.subscriptions
 
-    def get_by_id(self, sub_id: HexStr) -> EthSubscription[Any]:
+    def get_by_id(self, sub_id: HexStr) -> Optional[EthSubscription[Any]]:
         return self._subscription_container.get_by_id(sub_id)
 
-    def get_by_label(self, label: str) -> EthSubscription[Any]:
+    def get_by_label(self, label: str) -> Optional[EthSubscription[Any]]:
         return self._subscription_container.get_by_label(label)
 
     @overload
