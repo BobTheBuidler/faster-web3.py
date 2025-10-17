@@ -172,8 +172,8 @@ class BaseContractEvent:
     w3: Optional[Union["Web3", "AsyncWeb3[Any]"]] = None
     contract_abi: Optional[ABI] = None
     abi: ABIEvent = None
-    argument_names: Tuple[str, ...] = tuple()
-    argument_types: Tuple[str, ...] = tuple()
+    argument_names: Tuple[str, ...] = ()
+    argument_types: Tuple[str, ...] = ()
     args: Any = None
     kwargs: Any = None
     _topic: Optional[HexStr] = None
@@ -294,7 +294,7 @@ class BaseContractEvent:
             )
 
         if argument_filters is None:
-            argument_filters = dict()
+            argument_filters = {}
 
         _filters = dict(**argument_filters)
 
@@ -411,7 +411,7 @@ class BaseContractEvent:
             )
 
         if argument_filters is None:
-            argument_filters = dict()
+            argument_filters = {}
 
         _filters = dict(**argument_filters)
 
@@ -575,8 +575,8 @@ class BaseContractFunction:
     transaction: Optional[TxParams] = None
     arguments: Optional[Tuple[Any, ...]] = None
     decode_tuples: Optional[bool] = None
-    argument_names: Tuple[str, ...] = tuple()
-    argument_types: Tuple[str, ...] = tuple()
+    argument_names: Tuple[str, ...] = ()
+    argument_types: Tuple[str, ...] = ()
     args: Any = None
     kwargs: Any = None
 
@@ -760,7 +760,7 @@ class BaseContractFunction:
     def _encode_transaction_data(cls) -> HexStr:
         return add_0x_prefix(encode_abi(cls.w3, cls.abi, cls.arguments, cls.selector))
 
-    _return_data_normalizers: Optional[Tuple[Callable[..., Any], ...]] = tuple()
+    _return_data_normalizers: Optional[Tuple[Callable[..., Any], ...]] = ()
 
     def __repr__(self) -> str:
         if self.abi:
@@ -1041,7 +1041,7 @@ class BaseContract:
 
         :param data: defaults to function selector
         """
-        args = args or tuple()
+        args = args or ()
         kwargs = kwargs or {}
 
         element_info = get_abi_element_info(
@@ -1364,7 +1364,7 @@ class BaseContract:
     #
     # Private Helpers
     #
-    _return_data_normalizers: Tuple[Callable[..., Any], ...] = tuple()
+    _return_data_normalizers: Tuple[Callable[..., Any], ...] = ()
 
     @classmethod
     def _prepare_transaction(
@@ -1558,7 +1558,7 @@ class BaseContractConstructor:
 
         if constructor_abi:
             if not args:
-                args = tuple()
+                args = ()
             if not kwargs:
                 kwargs = {}
 

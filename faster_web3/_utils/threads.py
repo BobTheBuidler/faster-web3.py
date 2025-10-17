@@ -115,7 +115,7 @@ class ThreadWithReturn(threading.Thread, Generic[TReturn]):
     ) -> None:
         super().__init__(
             target=target,
-            args=args or tuple(),
+            args=args or (),
             kwargs=kwargs or {},
         )
         self.target = target
