@@ -54,6 +54,4 @@ class SubscriptionContainer:
         self, sub_id: HexStr
     ) -> Optional[EthSubscription[Any]]:
         sub = self.get_by_id(sub_id)
-        if sub and sub._handler:
-            return sub
-        return None
+        return sub if sub and sub._handler else None

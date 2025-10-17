@@ -612,7 +612,6 @@ class AsyncEth(BaseEth):
             current_transaction
         )
         new_transaction = merge(current_transaction_params, transaction_params)
-
         return await async_replace_transaction(w3, current_transaction, new_transaction)
 
     # eth_sign
@@ -730,7 +729,8 @@ class AsyncEth(BaseEth):
         label: Optional[str] = None,
         parallelize: Optional[bool] = None,
     ) -> HexStr:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        w3 = self.w3
+        if not isinstance(w3.provider, PersistentConnectionProvider):
             raise MethodNotSupported(
                 "eth_subscribe is only supported with providers that support "
                 "persistent connections."
@@ -743,7 +743,7 @@ class AsyncEth(BaseEth):
             label=label,
             parallelize=parallelize,
         )
-        return await self.w3.subscription_manager.subscribe(sub)
+        return await w3.subscription_manager.subscribe(sub)
 
     _unsubscribe: Method[Callable[[HexStr], Awaitable[bool]]] = Method(
         RPC.eth_unsubscribe,
@@ -751,13 +751,14 @@ class AsyncEth(BaseEth):
     )
 
     async def unsubscribe(self, subscription_id: HexStr) -> bool:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        w3 = self.w3
+        if not isinstance(w3.provider, PersistentConnectionProvider):
             raise MethodNotSupported(
                 "eth_unsubscribe is only supported with providers that support "
                 "persistent connections."
             )
 
-        for sub in self.w3.subscription_manager.subscriptions:
+        for sub in w3.subscription_manager.subscriptions:
             if sub._id == subscription_id:
                 return await sub.unsubscribe()
 
