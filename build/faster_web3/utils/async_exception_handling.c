@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_method_formatters(void)
+PyInit_async_exception_handling(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("95a20673e7d797e1b808__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___method_formatters");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___utils___async_exception_handling");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "95a20673e7d797e1b808__mypyc.init_faster_web3____utils___method_formatters");
+    void *init_func = PyCapsule_GetPointer(capsule, "95a20673e7d797e1b808__mypyc.init_faster_web3___utils___async_exception_handling");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_method_formatters(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_method_formatters(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_async_exception_handling(); }
