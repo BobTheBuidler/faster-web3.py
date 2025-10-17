@@ -598,7 +598,5 @@ class AsyncWeb3(BaseWeb3, Generic[AsyncProviderT]):
         while True:
             await provider.connect()
             yield self
-            logger.error(
-                "Connection interrupted, attempting to reconnect..."
-            )
+            logger.error("Connection interrupted, attempting to reconnect...")
             await provider.disconnect()
