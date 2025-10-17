@@ -547,7 +547,7 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
             (),
         )
 
-        assert len(async_w3.provider._request_processor._request_information_cache) == 1
+        assert len(provider._request_processor._request_information_cache) == 1
         assert (
             "Request information cache is full. This may result in unexpected "
             "behavior. Consider increasing the ``request_information_cache_size`` "

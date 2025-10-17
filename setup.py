@@ -111,7 +111,7 @@ else:
         "faster_web3/utils/async_exception_handling.py",
         "faster_web3/utils/caching.py",
         "faster_web3/utils/exception_handling.py",
-        "faster_web3/utils/subscriptions.py",
+        # "faster_web3/utils/subscriptions.py",  compile this on mypyc 1.19
     ]
 
     # these do not need to be part of the same compilation unit as the rest of the library
