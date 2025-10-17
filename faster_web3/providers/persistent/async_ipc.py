@@ -9,6 +9,7 @@ from pathlib import (
 import sys
 from typing import (
     Any,
+    Final,
     Optional,
     Tuple,
     Union,

@@ -50,6 +50,7 @@ from faster_web3.providers.persistent.request_processor import (
     RequestProcessor,
 )
 from faster_web3.types import (
+    BatchParams,
     RPCEndpoint,
     RPCId,
     RPCRequest,
