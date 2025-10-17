@@ -106,6 +106,7 @@ else:
         "faster_web3/tools/benchmark/utils.py",
         "faster_web3/types.py",
         "faster_web3/utils/caching.py",
+        "faster_web3/utils/subscriptions.py",
     ]
 
     # these do not need to be part of the same compilation unit as the rest of the library
