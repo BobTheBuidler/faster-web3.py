@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_9ea8c57ae8946f99b690_H
-#define MYPYC_NATIVE_INTERNAL_9ea8c57ae8946f99b690_H
+#ifndef MYPYC_NATIVE_INTERNAL_826c207bc3cb90f09ef9_H
+#define MYPYC_NATIVE_INTERNAL_826c207bc3cb90f09ef9_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_9ea8c57ae8946f99b690.h"
+#include "__native_826c207bc3cb90f09ef9.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2398];
+extern PyObject *CPyStatics[2359];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -220,14 +220,11 @@ extern CPyModule *CPyModule_faster_web3___middleware___formatting;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___persistent_connection__internal;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___persistent_connection;
 extern PyObject *CPyStatic_persistent_connection___globals;
-extern CPyModule *CPyModule_faster_web3___providers___persistent___request_processor__internal;
-extern CPyModule *CPyModule_faster_web3___providers___persistent___request_processor;
-extern PyObject *CPyStatic_request_processor___globals;
-extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager__internal;
-extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_container__internal;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_container;
 extern PyObject *CPyStatic_subscription_container___globals;
+extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager__internal;
+extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager;
 extern PyObject *CPyStatic_subscription_manager___globals;
 extern CPyModule *CPyModule_faster_web3___utils___subscriptions;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node__internal;
@@ -3161,84 +3158,6 @@ extern PyObject *CPyPy_persistent_connection___PersistentConnection___recv(PyObj
 extern PyObject *CPyDef_persistent_connection___PersistentConnection___process_subscriptions(PyObject *cpy_r_self);
 extern PyObject *CPyPy_persistent_connection___PersistentConnection___process_subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_persistent_connection_____top_level__(void);
-extern PyObject *CPyStatic_request_processor____get_next;
-extern PyTypeObject *CPyType_request_processor___TaskReliantQueue;
-extern PyObject *CPyDef_request_processor___TaskReliantQueue(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
-extern PyTypeObject *CPyType_request_processor___RequestProcessor;
-extern PyObject *CPyDef_request_processor___RequestProcessor(PyObject *cpy_r_provider, CPyTagged cpy_r_subscription_response_queue_size, CPyTagged cpy_r_request_information_cache_size);
-extern PyTypeObject *CPyType_request_processor___get_TaskReliantQueue_gen;
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen(void);
-extern CPyThreadLocal faster_web3___providers___persistent___request_processor___get_TaskReliantQueue_genObject *request_processor___get_TaskReliantQueue_gen_free_instance;
-extern PyTypeObject *CPyType_request_processor___cache_raw_response_RequestProcessor_gen;
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen(void);
-extern CPyThreadLocal faster_web3___providers___persistent___request_processor___cache_raw_response_RequestProcessor_genObject *request_processor___cache_raw_response_RequestProcessor_gen_free_instance;
-extern PyTypeObject *CPyType_request_processor___pop_raw_response_RequestProcessor_gen;
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen(void);
-extern CPyThreadLocal faster_web3___providers___persistent___request_processor___pop_raw_response_RequestProcessor_genObject *request_processor___pop_raw_response_RequestProcessor_gen_free_instance;
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen_____next__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen_____iter__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen___close(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___get_TaskReliantQueue_gen_____await__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___get_TaskReliantQueue_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___TaskReliantQueue___get(PyObject *cpy_r_self);
-extern PyObject *CPyPy_request_processor___TaskReliantQueue___get(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor___RequestProcessor_____init__(PyObject *cpy_r_self, PyObject *cpy_r_provider, CPyTagged cpy_r_subscription_response_queue_size, CPyTagged cpy_r_request_information_cache_size);
-extern PyObject *CPyPy_request_processor___RequestProcessor_____init__(PyObject *self, PyObject *args, PyObject *kw);
-extern PyObject *CPyDef_request_processor___RequestProcessor___active_subscriptions(PyObject *cpy_r_self);
-extern PyObject *CPyPy_request_processor___RequestProcessor___active_subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___RequestProcessor___cache_request_information(PyObject *cpy_r_self, PyObject *cpy_r_request_id, PyObject *cpy_r_method, PyObject *cpy_r_params, tuple_T3OOO cpy_r_response_formatters);
-extern PyObject *CPyPy_request_processor___RequestProcessor___cache_request_information(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___RequestProcessor___pop_cached_request_information(PyObject *cpy_r_self, PyObject *cpy_r_cache_key);
-extern PyObject *CPyPy_request_processor___RequestProcessor___pop_cached_request_information(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___RequestProcessor___get_request_information_for_response(PyObject *cpy_r_self, PyObject *cpy_r_response);
-extern PyObject *CPyPy_request_processor___RequestProcessor___get_request_information_for_response(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor___RequestProcessor___append_middleware_response_processor(PyObject *cpy_r_self, PyObject *cpy_r_response, PyObject *cpy_r_middleware_response_processor);
-extern PyObject *CPyPy_request_processor___RequestProcessor___append_middleware_response_processor(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor___RequestProcessor____is_batch_response(PyObject *cpy_r_self, PyObject *cpy_r_raw_response);
-extern PyObject *CPyPy_request_processor___RequestProcessor____is_batch_response(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen_____next__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen_____iter__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen___close(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___cache_raw_response_RequestProcessor_gen_____await__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___cache_raw_response_RequestProcessor_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___RequestProcessor___cache_raw_response(PyObject *cpy_r_self, PyObject *cpy_r_raw_response, char cpy_r_subscription);
-extern PyObject *CPyPy_request_processor___RequestProcessor___cache_raw_response(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen_____next__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen_____iter__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen___close(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___pop_raw_response_RequestProcessor_gen_____await__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_request_processor___pop_raw_response_RequestProcessor_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_request_processor___RequestProcessor___pop_raw_response(PyObject *cpy_r_self, PyObject *cpy_r_cache_key, char cpy_r_subscription);
-extern PyObject *CPyPy_request_processor___RequestProcessor___pop_raw_response(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor___RequestProcessor____reset_handler_subscription_queue(PyObject *cpy_r_self);
-extern PyObject *CPyPy_request_processor___RequestProcessor____reset_handler_subscription_queue(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor___RequestProcessor___clear_caches(PyObject *cpy_r_self);
-extern PyObject *CPyPy_request_processor___RequestProcessor___clear_caches(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef_request_processor_____top_level__(void);
 extern PyTypeObject *CPyType_subscription_container___SubscriptionContainer;
 extern PyObject *CPyDef_subscription_container___SubscriptionContainer(void);
 extern char CPyDef_subscription_container___SubscriptionContainer_____init__(PyObject *cpy_r_self);
