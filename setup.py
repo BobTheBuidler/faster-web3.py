@@ -60,16 +60,27 @@ with open("./README.md") as readme:
 skip_mypyc = any(
     cmd in sys.argv
     for cmd in (
-        "sdist",
+        # Main metadata/dep/build hooks
         "egg_info",
+        "sdist",
         "dist_info",
         "bdist_egg",
+        "prepare_metadata_for_build_wheel",
+        "get_requires_for_build_wheel",
+        "get_requires_for_build_sdist",
+        "get_requires_for_build_editable",
+        "pip-egg-info",
+        # Misc setuptools/pip commands
+        "clean",
+        "check",
+        "pyproject-build-requires",
+        "pyproject-hooks",
+        "pyproject-install-requires",
+        # Query modes/help/information calls
         "--name",
         "--version",
         "--help",
         "--help-commands",
-        "prepare_metadata_for_build_wheel",
-        "pip-egg-info",)
 )
 
 if skip_mypyc:
