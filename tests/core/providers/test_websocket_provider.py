@@ -555,7 +555,7 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
         )
         provider: WebSocketProvider = async_w3.provider
         provider._request_processor.cache_request_information(
-            None,
+            "some_id",
             RPCEndpoint("eth_getBlockByNumber"),
             ["latest"],
             (),

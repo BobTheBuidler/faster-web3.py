@@ -87,15 +87,14 @@ class SubscriptionManager:
             while self.get_by_label(subscription._label) is not None:
                 subscription._label = f"{subscription._default_label}#{i}"
                 i += 1
-        else:
-            if (
-                subscription._label
-                in self._subscription_container.subscriptions_by_label
-            ):
-                raise Web3ValueError(
-                    "Subscription label already exists. Subscriptions must have unique "
-                    f"labels.\n    label: {subscription._label}"
-                )
+        elif (
+            subscription._label
+            in self._subscription_container.subscriptions_by_label
+        ):
+            raise Web3ValueError(
+                "Subscription label already exists. Subscriptions must have unique "
+                f"labels.\n    label: {subscription._label}"
+            )
 
     def _handler_task_callback(self, task: asyncio.Task[None]) -> None:
         """
