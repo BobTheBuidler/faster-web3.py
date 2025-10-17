@@ -4,11 +4,11 @@ PyMODINIT_FUNC
 PyInit_method_formatters(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("287f7b1197a0b4e1236a__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("de4d801a05017542a8e3__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___method_formatters");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "287f7b1197a0b4e1236a__mypyc.init_faster_web3____utils___method_formatters");
+    void *init_func = PyCapsule_GetPointer(capsule, "de4d801a05017542a8e3__mypyc.init_faster_web3____utils___method_formatters");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
