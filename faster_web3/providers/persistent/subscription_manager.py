@@ -41,7 +41,6 @@ if TYPE_CHECKING:
     from faster_web3 import AsyncWeb3  # noqa: F401
     from faster_web3.providers.persistent import (  # noqa: F401
         PersistentConnectionProvider,
-        RequestProcessor,
     )
 
 

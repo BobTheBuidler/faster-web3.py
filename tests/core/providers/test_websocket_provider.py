@@ -32,6 +32,9 @@ from faster_web3.exceptions import (
 from faster_web3.providers.persistent import (
     WebSocketProvider,
 )
+from faster_web3.providers.persistent.request_processor import (
+    TaskReliantQueue,
+)
 from faster_web3.types import (
     RPCEndpoint,
 )
@@ -280,7 +283,19 @@ async def test_listen_event_awaits_msg_processing_when_subscription_queue_is_ful
         async_w3.provider._request_processor._subscription_response_queue,
         type(asyncio.Queue()),
     )
-    async_w3.provider._request_processor._subscription_response_queue = asyncio.Queue(
+
+    with pytest.raises(
+        TypeError,
+        match=(
+            "faster_web3.providers.persistent.request_processor.TaskReliantQueue "
+            "object expected; got asyncio.queues.Queue"
+        ),
+    ):
+        async_w3.provider._request_processor._subscription_response_queue = asyncio.Queue(
+            maxsize=1
+        )
+    
+    async_w3.provider._request_processor._subscription_response_queue = TaskReliantQueue(
         maxsize=1
     )
     assert not async_w3.provider._request_processor._subscription_response_queue.full()
@@ -543,7 +558,6 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
             None,
             RPCEndpoint("eth_getBlockByNumber"),
             ["latest"],
-            (),
             (),
         )
 
