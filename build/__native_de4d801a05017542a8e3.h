@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_287f7b1197a0b4e1236a_H
-#define MYPYC_NATIVE_287f7b1197a0b4e1236a_H
+#ifndef MYPYC_NATIVE_de4d801a05017542a8e3_H
+#define MYPYC_NATIVE_de4d801a05017542a8e3_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -2013,6 +2013,44 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *__manager;
+    PyObject *_provider;
+} faster_web3___providers___persistent___persistent_connection___PersistentConnectionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+} faster_web3___providers___persistent___persistent_connection___make_request_PersistentConnection_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+} faster_web3___providers___persistent___persistent_connection___send_PersistentConnection_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
+} faster_web3___providers___persistent___persistent_connection___recv_PersistentConnection_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
 } faster_web3___providers___persistent___request_processor___TaskReliantQueueObject;
 
 typedef struct {
@@ -2151,8 +2189,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    int64_t ___mypyc_temp__2_0;
-    PyObject *___mypyc_temp__2_1;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {

@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_287f7b1197a0b4e1236a_H
-#define MYPYC_NATIVE_INTERNAL_287f7b1197a0b4e1236a_H
+#ifndef MYPYC_NATIVE_INTERNAL_de4d801a05017542a8e3_H
+#define MYPYC_NATIVE_INTERNAL_de4d801a05017542a8e3_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_287f7b1197a0b4e1236a.h"
+#include "__native_de4d801a05017542a8e3.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2373];
+extern PyObject *CPyStatics[2381];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -216,6 +216,9 @@ extern CPyModule *CPyModule_eth_tester___backends___base;
 extern PyObject *CPyStatic_middleware___globals;
 extern CPyModule *CPyModule_faster_web3___middleware___base;
 extern CPyModule *CPyModule_faster_web3___middleware___formatting;
+extern CPyModule *CPyModule_faster_web3___providers___persistent___persistent_connection__internal;
+extern CPyModule *CPyModule_faster_web3___providers___persistent___persistent_connection;
+extern PyObject *CPyStatic_persistent_connection___globals;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___request_processor__internal;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___request_processor;
 extern PyObject *CPyStatic_request_processor___globals;
@@ -3085,6 +3088,69 @@ extern PyObject *CPyPy_middleware___async_request_processor_DefaultTransactionFi
 extern PyObject *CPyDef_middleware___DefaultTransactionFieldsMiddleware___async_request_processor(PyObject *cpy_r_self, PyObject *cpy_r_method, PyObject *cpy_r_params);
 extern PyObject *CPyPy_middleware___DefaultTransactionFieldsMiddleware___async_request_processor(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_middleware_____top_level__(void);
+extern PyTypeObject *CPyType_persistent_connection___PersistentConnection;
+extern PyObject *CPyDef_persistent_connection___PersistentConnection(PyObject *cpy_r_w3);
+extern PyTypeObject *CPyType_persistent_connection___make_request_PersistentConnection_gen;
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen(void);
+extern CPyThreadLocal faster_web3___providers___persistent___persistent_connection___make_request_PersistentConnection_genObject *persistent_connection___make_request_PersistentConnection_gen_free_instance;
+extern PyTypeObject *CPyType_persistent_connection___send_PersistentConnection_gen;
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen(void);
+extern CPyThreadLocal faster_web3___providers___persistent___persistent_connection___send_PersistentConnection_genObject *persistent_connection___send_PersistentConnection_gen_free_instance;
+extern PyTypeObject *CPyType_persistent_connection___recv_PersistentConnection_gen;
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen(void);
+extern CPyThreadLocal faster_web3___providers___persistent___persistent_connection___recv_PersistentConnection_genObject *persistent_connection___recv_PersistentConnection_gen_free_instance;
+extern char CPyDef_persistent_connection___PersistentConnection_____init__(PyObject *cpy_r_self, PyObject *cpy_r_w3);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern PyObject *CPyDef_persistent_connection___PersistentConnection___subscriptions(PyObject *cpy_r_self);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection___subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___make_request_PersistentConnection_gen_____await__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___make_request_PersistentConnection_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___PersistentConnection___make_request(PyObject *cpy_r_self, PyObject *cpy_r_method, PyObject *cpy_r_params);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection___make_request(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___send_PersistentConnection_gen_____await__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___send_PersistentConnection_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___PersistentConnection___send(PyObject *cpy_r_self, PyObject *cpy_r_method, PyObject *cpy_r_params);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___recv_PersistentConnection_gen_____await__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_persistent_connection___recv_PersistentConnection_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___PersistentConnection___recv(PyObject *cpy_r_self);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection___recv(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_persistent_connection___PersistentConnection___process_subscriptions(PyObject *cpy_r_self);
+extern PyObject *CPyPy_persistent_connection___PersistentConnection___process_subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_persistent_connection_____top_level__(void);
 extern PyTypeObject *CPyType_request_processor___TaskReliantQueue;
 extern PyObject *CPyDef_request_processor___TaskReliantQueue(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
 extern PyTypeObject *CPyType_request_processor___RequestProcessor;
