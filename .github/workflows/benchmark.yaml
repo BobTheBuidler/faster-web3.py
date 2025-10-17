@@ -7,11 +7,14 @@ on:
       - '.github/workflows/**'
       - '!.github/workflows/benchmark.yaml'
       - 'tests/**'
+      - 'tox.ini'
   push:
     branches: [main, master]
     paths-ignore:
       - '.github/workflows/**'
       - '!.github/workflows/benchmark.yaml'
+      - 'tests/**'
+      - 'tox.ini'
   workflow_dispatch:
 
 concurrency:
