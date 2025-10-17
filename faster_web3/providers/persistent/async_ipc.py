@@ -63,11 +63,12 @@ class AsyncIPCProvider(PersistentConnectionProvider):
     ) -> None:
         # initialize the ipc_path before calling the super constructor
         if ipc_path is None:
-            self.ipc_path = get_default_ipc_path()
+            ipc_path_ = get_default_ipc_path()
         elif isinstance(ipc_path, str) or isinstance(ipc_path, Path):
-            self.ipc_path = str(Path(ipc_path).expanduser().resolve())
+            ipc_path_ = str(Path(ipc_path).expanduser().resolve())
         else:
             raise Web3TypeError("ipc_path must be of type string or pathlib.Path")
+        self.ipc_path: Final = ipc_path_
         super().__init__(**kwargs)
         self.read_buffer_limit = read_buffer_limit
 

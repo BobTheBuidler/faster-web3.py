@@ -78,8 +78,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
-          restore-keys: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
+          key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
+          restore-keys: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-
 
       - name: Install ccache on Linux
         if: runner.os == 'Linux'
@@ -107,4 +107,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
