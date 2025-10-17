@@ -8,11 +8,15 @@ on:
       - '!.github/workflows/codspeed.yaml'
       - 'scripts/**'
       - 'tests/**'
+      - 'tox.ini'
   push:
     branches: [main, master]
     paths-ignore:
       - '.github/workflows/**'
       - '!.github/workflows/codspeed.yaml'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'tox.ini'
   workflow_dispatch:
 
 concurrency:
