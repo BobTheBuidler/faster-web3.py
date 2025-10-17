@@ -8,6 +8,7 @@ from pathlib import (
 )
 import sys
 from typing import (
+    TYPE_CHECKING,
     Any,
     Final,
     Optional,
@@ -33,27 +34,34 @@ from ..ipc import (
     get_default_ipc_path,
 )
 
+if sys.platform == "win32":
+    if TYPE_CHECKING:
+        from faster_web3._utils.windows import NamedPipe
 
-async def async_get_ipc_socket(
-    ipc_path: str, read_buffer_limit: int
-) -> Tuple[asyncio.StreamReader, asyncio.StreamWriter]:
-    if sys.platform == "win32":
+    async def async_get_ipc_socket(
+        ipc_path: str, read_buffer_limit: int
+    ) -> "NamedPipe":
         # On Windows named pipe is used. Simulate socket with it.
-        from web3._utils.windows import (
+        from faster_web3._utils.windows import (
             NamedPipe,
         )
 
         return NamedPipe(ipc_path)
-    else:
+
+else:
+    async def async_get_ipc_socket(
+        ipc_path: str, read_buffer_limit: int
+    ) -> Tuple[asyncio.StreamReader, asyncio.StreamWriter]:
         return await asyncio.open_unix_connection(ipc_path, limit=read_buffer_limit)
 
 
+@final
 class AsyncIPCProvider(PersistentConnectionProvider):
-    logger = logging.getLogger("faster_web3.providers.AsyncIPCProvider")
+    logger: Final = logging.getLogger("faster_web3.providers.AsyncIPCProvider")
 
-    _reader: Optional[asyncio.StreamReader] = None
-    _writer: Optional[asyncio.StreamWriter] = None
-    _decoder: json.JSONDecoder = json.JSONDecoder()
+    _reader: Optional[asyncio.StreamReader]
+    _writer: Optional[asyncio.StreamWriter]
+    _decoder: Final[json.JSONDecoder] = json.JSONDecoder()
 
     def __init__(
         self,
@@ -71,7 +79,9 @@ class AsyncIPCProvider(PersistentConnectionProvider):
             raise Web3TypeError("ipc_path must be of type string or pathlib.Path")
         self.ipc_path: Final = ipc_path_
         super().__init__(**kwargs)
-        self.read_buffer_limit = read_buffer_limit
+        self.read_buffer_limit: Final = read_buffer_limit
+        self._reader = None
+        self._writer = None
 
     def __str__(self) -> str:
         return f"<{self.__class__.__name__} {self.ipc_path}>"
