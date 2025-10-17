@@ -1,5 +1,4 @@
 import asyncio
-import sys
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -34,6 +33,7 @@ from faster_web3.providers.persistent.subscription_manager import (
     SubscriptionContainer,
 )
 from faster_web3.types import (
+    BatchResponse,
     RPCEndpoint,
     RPCId,
     RPCResponse,
@@ -50,6 +50,9 @@ if TYPE_CHECKING:
 T = TypeVar("T")
 
 
+_get_next: Final = asyncio.Queue.get
+
+
 @final
 class TaskReliantQueue(asyncio.Queue[T]):
     """
@@ -57,7 +60,7 @@ class TaskReliantQueue(asyncio.Queue[T]):
     """
 
     async def get(self) -> T:
-        item = await super().get()
+        item = await _get_next(self)
         if isinstance(item, Exception):
             # if the item is an exception, raise it so the task can handle this case
             # more gracefully
@@ -248,9 +251,7 @@ class RequestProcessor:
 
     # raw response cache
 
-    def _is_batch_response(
-        self, raw_response: Union[List[RPCResponse], RPCResponse]
-    ) -> TypeGuard[Union[List[RPCResponse], RPCResponse]]:
+    def _is_batch_response(self, raw_response: BatchResponse) -> TypeGuard[BatchResponse]:
         return isinstance(raw_response, list) or (
             isinstance(raw_response, dict)
             and raw_response.get("id") is None

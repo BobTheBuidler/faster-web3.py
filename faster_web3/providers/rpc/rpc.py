@@ -1,13 +1,10 @@
 import logging
 import time
 from typing import (
-    TYPE_CHECKING,
     Any,
     Dict,
-    Iterable,
     List,
     Optional,
-    Tuple,
     Union,
     cast,
 )
@@ -17,7 +14,6 @@ from eth_typing import (
 )
 from faster_eth_utils import (
     combomethod,
-    to_dict,
 )
 import requests
 
@@ -29,6 +25,8 @@ from faster_web3._utils.http import (
     construct_user_agent,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -49,11 +47,6 @@ from .utils import (
     ExceptionRetryConfiguration,
     check_if_retry_on_failure,
 )
-
-if TYPE_CHECKING:
-    from faster_web3.middleware.base import (  # noqa: F401
-        Middleware,
-    )
 
 
 class HTTPProvider(JSONBaseProvider):
@@ -180,9 +173,7 @@ class HTTPProvider(JSONBaseProvider):
         )
         return response
 
-    def make_batch_request(
-        self, batch_requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    def make_batch_request(self, batch_requests: BatchParams) -> BatchResponse:
         self.logger.debug("Making batch request HTTP, uri: `%s`", self.endpoint_uri)
         request_data = self.encode_batch_rpc_request(batch_requests)
         raw_response = self._request_session_manager.make_post_request(

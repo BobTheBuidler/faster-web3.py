@@ -3,10 +3,8 @@ import logging
 from typing import (
     Any,
     Dict,
-    Iterable,
     List,
     Optional,
-    Tuple,
     Union,
     cast,
 )
@@ -20,7 +18,6 @@ from eth_typing import (
 )
 from faster_eth_utils import (
     combomethod,
-    to_dict,
 )
 
 from faster_web3._utils.empty import (
@@ -31,6 +28,8 @@ from faster_web3._utils.http import (
     construct_user_agent,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -170,9 +169,7 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
         )
         return response
 
-    async def make_batch_request(
-        self, batch_requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    async def make_batch_request(self, batch_requests: BatchParams) -> BatchResponse:
         self.logger.debug("Making batch request HTTP - uri: `%s`", self.endpoint_uri)
         request_data = self.encode_batch_rpc_request(batch_requests)
         raw_response = await self._request_session_manager.async_make_post_request(

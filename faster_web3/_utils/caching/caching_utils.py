@@ -47,6 +47,9 @@ from faster_web3.exceptions import (
 )
 from faster_web3.types import (
     RPCEndpoint,
+    RPCRequest,
+    RPCResponse,
+    TReturn,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -55,14 +58,7 @@ from faster_web3.utils import (
 if TYPE_CHECKING:
     from faster_web3.providers import (  # noqa: F401
         AsyncBaseProvider,
-        BaseProvider,
         PersistentConnectionProvider,
-    )
-    from faster_web3.types import (  # noqa: F401
-        AsyncMakeRequestFn,
-        MakeRequestFn,
-        RPCRequest,
-        RPCResponse,
     )
 
 
@@ -382,12 +378,13 @@ def async_handle_request_caching(
     return wrapper
 
 
-def async_handle_send_caching(
-    func: Callable[
-        [ASYNC_PROVIDER_TYPE, RPCEndpoint, Any],
-        Coroutine[Any, Any, "RPCRequest"],
-    ],
-) -> Callable[..., Coroutine[Any, Any, "RPCRequest"]]:
+AsyncSendFunc = Callable[
+    [ASYNC_PROVIDER_TYPE, RPCEndpoint, Any],
+    Coroutine[Any, Any, RPCRequest],
+]
+
+
+def async_handle_send_caching(func: AsyncSendFunc) -> AsyncSendFunc:
     async def wrapper(
         provider: ASYNC_PROVIDER_TYPE, method: RPCEndpoint, params: Any
     ) -> "RPCRequest":
@@ -406,12 +403,13 @@ def async_handle_send_caching(
     return wrapper
 
 
-def async_handle_recv_caching(
-    func: Callable[
-        ["PersistentConnectionProvider", "RPCRequest"],
-        Coroutine[Any, Any, "RPCResponse"],
-    ],
-) -> Callable[..., Coroutine[Any, Any, "RPCResponse"]]:
+AsyncRecvFunc = Callable[
+    ["PersistentConnectionProvider", RPCRequest],
+    # TReturn should be a RPCResponse unless we're mocking, in which case it's a string
+    Coroutine[Any, Any, TReturn],
+]
+
+def async_handle_recv_caching(func: AsyncRecvFunc) -> AsyncRecvFunc:
     async def wrapper(
         provider: "PersistentConnectionProvider",
         rpc_request: "RPCRequest",

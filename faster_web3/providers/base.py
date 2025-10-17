@@ -6,7 +6,6 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    List,
     Optional,
     Set,
     Tuple,
@@ -41,6 +40,8 @@ from faster_web3.middleware.base import (
     MiddlewareOnion,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -89,7 +90,7 @@ class BaseProvider:
             Optional["RequestBatcher[Any]"]
         ] = contextvars.ContextVar("batching_context", default=None)
         self._batch_request_func_cache: Tuple[
-            Tuple[Middleware, ...], Callable[..., Union[List[RPCResponse], RPCResponse]]
+            Tuple[Middleware, ...], Callable[..., BatchResponse]
         ] = (None, None)
 
     @property
@@ -178,7 +179,7 @@ class JSONBaseProvider(BaseProvider):
 
     def batch_request_func(
         self, w3: "Web3", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Union[List[RPCResponse], RPCResponse]]:
+    ) -> Callable[..., BatchResponse]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
         cache_key = self._batch_request_func_cache[0]
@@ -196,9 +197,7 @@ class JSONBaseProvider(BaseProvider):
 
         return self._batch_request_func_cache[-1]
 
-    def encode_batch_rpc_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> bytes:
+    def encode_batch_rpc_request(self, requests: BatchParams) -> bytes:
         return (
             b"["
             + b", ".join(
@@ -208,6 +207,6 @@ class JSONBaseProvider(BaseProvider):
         )
 
     def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+        self, requests: BatchParams
+    ) -> BatchResponse:
         raise NotImplementedError("Providers must implement this method")

@@ -73,6 +73,7 @@ from faster_web3.providers.async_base import (
 )
 from faster_web3.types import (
     FormattedEthSubscriptionResponse,
+    RequestParams,
     RPCEndpoint,
     RPCRequest,
     RPCResponse,
@@ -407,7 +408,7 @@ class RequestManager:
 
     def _format_batched_response(
         self,
-        requests_info: Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]],
+        requests_info: Tuple[RequestParams, Sequence[Any]],
         response: RPCResponse,
     ) -> RPCResponse:
         result_formatters, error_formatters, null_result_formatters = requests_info[1]
