@@ -14,8 +14,8 @@ import requests
 aiosleep: Final = asyncio.sleep
 
 socket: Final = builtinssocket.socket
-AF_UNIX: Final = socket.AF_UNIX
-SOCK_STREAM: Final = socket.SOCK_STREAM
+AF_UNIX: Final = builtinssocket.AF_UNIX
+SOCK_STREAM: Final = builtinssocket.SOCK_STREAM
 
 time: Final = builtinstime.time
 sleep: Final = builtinstime.sleep
