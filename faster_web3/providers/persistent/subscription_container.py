@@ -1,9 +1,11 @@
 from typing import (
     Any,
     Dict,
+    Final,
     Iterator,
     List,
     Optional,
+    final,
 )
 
 from eth_typing import (
@@ -15,11 +17,12 @@ from faster_web3.utils import (
 )
 
 
+@final
 class SubscriptionContainer:
     def __init__(self) -> None:
-        self.subscriptions: List[EthSubscription[Any]] = []
-        self.subscriptions_by_id: Dict[HexStr, EthSubscription[Any]] = {}
-        self.subscriptions_by_label: Dict[str, EthSubscription[Any]] = {}
+        self.subscriptions: Final[List[EthSubscription[Any]]] = []
+        self.subscriptions_by_id: Final[Dict[HexStr, EthSubscription[Any]]] = {}
+        self.subscriptions_by_label: Final[Dict[str, EthSubscription[Any]]] = {}
 
     def __len__(self) -> int:
         return len(self.subscriptions)
