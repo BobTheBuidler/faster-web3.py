@@ -29,7 +29,7 @@ if TYPE_CHECKING:
 
 P = ParamSpec("P")
 
-AsyncWeb3Method = Callable[Concatenate["AsyncWeb3[AsyncProviderT]", P], TReturn]
+AsyncWeb3Method = Callable[Concatenate["AsyncWeb3[AsyncProviderT]", P], Coroutine[Any, Any, TReturn]]
 
 
 def persistent_connection_provider_method(
@@ -57,7 +57,7 @@ def persistent_connection_provider_method(
         @functools.wraps(func)
         def inner(
             self: "AsyncWeb3[AsyncProviderT]", *args: P.args, **kwargs: P.kwargs
-        ) -> TReturn:
+        ) -> Coroutine[Any, Any, TReturn]:
             if not isinstance(self.provider, PersistentConnectionProvider):
                 raise Web3ValidationError(message_actual)
             return func(self, *args, **kwargs)
