@@ -593,11 +593,10 @@ class AsyncWeb3(BaseWeb3, Generic[AsyncProviderT]):
         "when instantiating via ``async for``."
     )
     async def __aiter__(self) -> AsyncIterator[Self]:
-        provider = self.provider
+        provider = cast("PersistentConnectionProvider", self.provider)
+        logger = provider.logger
         while True:
             await provider.connect()
             yield self
-            cast("PersistentConnectionProvider", provider).logger.error(
-                "Connection interrupted, attempting to reconnect..."
-            )
+            logger.error("Connection interrupted, attempting to reconnect...")
             await provider.disconnect()
