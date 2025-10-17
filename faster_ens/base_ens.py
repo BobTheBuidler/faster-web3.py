@@ -41,7 +41,7 @@ if TYPE_CHECKING:
 
 @mypyc_attr(allow_interpreted_subclasses=True)
 class BaseENS:
-    w3: Union["AsyncWeb3", "Web3"]
+    w3: Union["AsyncWeb3[Any]", "Web3"]
     ens: Optional[Union["Contract", "AsyncContract"]] = None
     _resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None
     _reverse_resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None

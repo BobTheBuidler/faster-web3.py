@@ -123,7 +123,7 @@ def call_eth_tester(
 
 
 def without_eth_tester(
-    fn: Callable[[TParams], TReturn]
+    fn: Callable[[TParams], TReturn],
 ) -> Callable[["EthereumTester", TParams], TReturn]:
     # workaround for: https://github.com/pytoolz/cytoolz/issues/103
     # @functools.wraps(fn)
@@ -134,7 +134,7 @@ def without_eth_tester(
 
 
 def without_params(
-    fn: Callable[[TParams], TReturn]
+    fn: Callable[[TParams], TReturn],
 ) -> Callable[["EthereumTester", TParams], TReturn]:
     # workaround for: https://github.com/pytoolz/cytoolz/issues/103
     # @functools.wraps(fn)

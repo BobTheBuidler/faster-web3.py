@@ -300,7 +300,7 @@ def is_valid_ens_name(ens_name: str) -> bool:
 def init_async_web3(
     provider: Optional["AsyncBaseProvider"] = None,
     middleware: Optional[Sequence[Tuple["Middleware", str]]] = (),
-) -> "AsyncWeb3":
+) -> "AsyncWeb3[Any]":
     from faster_web3 import (
         AsyncWeb3 as AsyncWeb3Main,
     )
