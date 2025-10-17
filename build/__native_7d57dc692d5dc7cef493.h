@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_826c207bc3cb90f09ef9_H
-#define MYPYC_NATIVE_826c207bc3cb90f09ef9_H
+#ifndef MYPYC_NATIVE_7d57dc692d5dc7cef493_H
+#define MYPYC_NATIVE_7d57dc692d5dc7cef493_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -2006,6 +2006,118 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *_logger;
+    PyObject *__reader;
+    PyObject *__writer;
+    PyObject *__decoder;
+    PyObject *_ipc_path;
+    CPyTagged _read_buffer_limit;
+} faster_web3___providers___persistent___async_ipc___AsyncIPCProviderObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__ipc_path;
+    CPyTagged ___mypyc_generator_attribute__read_buffer_limit;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+} faster_web3___providers___persistent___async_ipc___async_get_ipc_socket_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    char ___mypyc_generator_attribute__show_traceback;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+    tuple_T3OOO ___mypyc_temp__4;
+    PyObject *___mypyc_generator_attribute__e;
+} faster_web3___providers___persistent___async_ipc___is_connected_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__request_data;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__5;
+    tuple_T3OOO ___mypyc_temp__6;
+} faster_web3___providers___persistent___async_ipc___socket_send_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__7;
+    tuple_T3OOO ___mypyc_temp__8;
+    PyObject *___mypyc_generator_attribute__data;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__e;
+    tuple_T2OO ___mypyc_temp__10;
+    PyObject *___mypyc_temp__11;
+    PyObject *___mypyc_generator_attribute__kw;
+} faster_web3___providers___persistent___async_ipc___socket_recv_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__request_data;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__12;
+    tuple_T3OOO ___mypyc_temp__13;
+    tuple_T3OOO ___mypyc_temp__14;
+    PyObject *___mypyc_generator_attribute__e;
+    PyObject *___mypyc_temp__15;
+    tuple_T3OOO ___mypyc_temp__16;
+    PyObject *___mypyc_temp__17;
+    tuple_T3OOO ___mypyc_temp__18;
+} faster_web3___providers___persistent___async_ipc____socket_send_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__19;
+    tuple_T3OOO ___mypyc_temp__20;
+    PyObject *___mypyc_temp__21;
+    tuple_T3OOO ___mypyc_temp__22;
+} faster_web3___providers___persistent___async_ipc____reset_socket_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__23;
+    tuple_T3OOO ___mypyc_temp__24;
+} faster_web3___providers___persistent___async_ipc____provider_specific_connect_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__25;
+    tuple_T3OOO ___mypyc_temp__26;
+} faster_web3___providers___persistent___async_ipc____provider_specific_disconnect_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__27;
+    tuple_T3OOO ___mypyc_temp__28;
+} faster_web3___providers___persistent___async_ipc____provider_specific_socket_reader_AsyncIPCProvider_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     PyObject *__manager;
     PyObject *_provider;
 } faster_web3___providers___persistent___persistent_connection___PersistentConnectionObject;
@@ -2122,8 +2234,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    int64_t ___mypyc_temp__2_0;
-    PyObject *___mypyc_temp__2_1;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {
