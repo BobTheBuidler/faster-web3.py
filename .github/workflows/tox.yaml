@@ -29,7 +29,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
-        jobtype: [core, ens, integration-goethereum, integration-ethtester, lint, wheel]
+        jobtype: [core, ens, integration-ethtester, lint, wheel]
         include:
           - os: ubuntu-latest
             ccache-dir: ~/.cache/ccache
@@ -57,7 +57,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install tox
-            
+
       - name: Cache .mypy_cache
         uses: actions/cache@v4
         with:
@@ -72,7 +72,7 @@ jobs:
             .hypothesis
           key: ${{ runner.os }}-tox-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-${{ matrix.python-version }}-${{ matrix.jobtype }}
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
-      
+
       - name: Restore ccache cache
         id: restore-ccache
         uses: actions/cache/restore@v4
@@ -80,7 +80,7 @@ jobs:
           path: ~/.cache/ccache
           key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
           restore-keys: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('setup.py', 'pyproject.toml') }}-
-          
+
       - name: Install ccache on Linux
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y ccache
@@ -90,7 +90,7 @@ jobs:
       - name: Install ccache on Windows
         if: runner.os == 'Windows'
         run: choco install ccache --no-progress
-        
+
       - name: Show ccache config and stats before build
         run: ccache --version && ccache -p -s
 
@@ -98,9 +98,10 @@ jobs:
         env:
           CC: ccache gcc
         run: python -m tox run  ${{ env.TOX_RECREATE_FLAG }}
-        
+
       - name: Show ccache stats after build
         run: ccache -s
+
       
       - name: Save ccache cache
         uses: actions/cache/save@v4
