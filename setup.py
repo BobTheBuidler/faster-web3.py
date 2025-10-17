@@ -59,11 +59,22 @@ with open("./README.md") as readme:
 
 skip_mypyc = any(
     cmd in sys.argv
-    for cmd in ("sdist", "egg_info", "--name", "--version", "--help", "--help-commands")
+    for cmd in (
+        "sdist",
+        "egg_info",
+        "dist_info",
+        "bdist_egg",
+        "--name",
+        "--version",
+        "--help",
+        "--help-commands",
+        "prepare_metadata_for_build_wheel",
+        "pip-egg-info",)
 )
 
 if skip_mypyc:
     ext_modules = []
+    print("Skipping mypyc build due to metadata command:", sys.argv)
 else:
     main_files = [
         "faster_ens/__init__.py",
