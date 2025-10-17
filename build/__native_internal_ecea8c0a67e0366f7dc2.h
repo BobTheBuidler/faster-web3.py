@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_d37076d826d373101344_H
-#define MYPYC_NATIVE_INTERNAL_d37076d826d373101344_H
+#ifndef MYPYC_NATIVE_INTERNAL_ecea8c0a67e0366f7dc2_H
+#define MYPYC_NATIVE_INTERNAL_ecea8c0a67e0366f7dc2_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_d37076d826d373101344.h"
+#include "__native_ecea8c0a67e0366f7dc2.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2347];
+extern PyObject *CPyStatics[2375];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -223,6 +223,7 @@ extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_manager;
 extern PyObject *CPyStatic_subscription_manager___globals;
 extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_container;
+extern CPyModule *CPyModule_faster_web3___utils___subscriptions__internal;
 extern CPyModule *CPyModule_faster_web3___utils___subscriptions;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node__internal;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node;
@@ -243,6 +244,7 @@ extern PyObject *CPyStatic_types___globals;
 extern CPyModule *CPyModule_eth_account___datastructures;
 extern CPyModule *CPyModule_faster_web3____utils___abi_element_identifiers;
 extern PyObject *CPyStatic_utils___caching___globals;
+extern PyObject *CPyStatic_subscriptions___globals;
 extern char CPyDef_faster_ens_____top_level__(void);
 extern PyObject *CPyStatic__normalization___NFC;
 extern PyObject *CPyStatic__normalization___NFD;
@@ -3445,4 +3447,90 @@ extern PyObject *CPyPy_utils___caching___async_await_and_popitem_SimpleCache_gen
 extern PyObject *CPyDef_utils___caching___SimpleCache___async_await_and_popitem(PyObject *cpy_r_self, char cpy_r_last, double cpy_r_timeout, uint32_t cpy_r___bitmap);
 extern PyObject *CPyPy_utils___caching___SimpleCache___async_await_and_popitem(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_utils___caching_____top_level__(void);
+extern PyTypeObject *CPyType_subscriptions___EthSubscriptionContext;
+extern PyObject *CPyDef_subscriptions___EthSubscriptionContext(PyObject *cpy_r_async_w3, PyObject *cpy_r_subscription, PyObject *cpy_r_result, PyObject *cpy_r_kwargs);
+extern PyTypeObject *CPyType_subscriptions___EthSubscription;
+extern PyObject *CPyDef_subscriptions___EthSubscription(PyObject *cpy_r_subscription_params, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_label, PyObject *cpy_r_parallelize);
+extern PyTypeObject *CPyType_subscriptions___LogsSubscription;
+extern PyObject *CPyDef_subscriptions___LogsSubscription(PyObject *cpy_r_address, PyObject *cpy_r_topics, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_label, PyObject *cpy_r_parallelize);
+extern PyTypeObject *CPyType_subscriptions___NewHeadsSubscription;
+extern PyObject *CPyDef_subscriptions___NewHeadsSubscription(PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyTypeObject *CPyType_subscriptions___PendingTxSubscription;
+extern PyObject *CPyDef_subscriptions___PendingTxSubscription(char cpy_r_full_transactions, PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyTypeObject *CPyType_subscriptions___SyncingSubscription;
+extern PyObject *CPyDef_subscriptions___SyncingSubscription(PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyTypeObject *CPyType_subscriptions___handler_wrapper_env;
+extern PyObject *CPyDef_subscriptions___handler_wrapper_env(void);
+extern CPyThreadLocal faster_web3___utils___subscriptions___handler_wrapper_envObject *subscriptions___handler_wrapper_env_free_instance;
+extern PyTypeObject *CPyType_subscriptions___wrapped_handler_handler_wrapper_env;
+extern PyObject *CPyDef_subscriptions___wrapped_handler_handler_wrapper_env(void);
+extern CPyThreadLocal faster_web3___utils___subscriptions___wrapped_handler_handler_wrapper_envObject *subscriptions___wrapped_handler_handler_wrapper_env_free_instance;
+extern PyTypeObject *CPyType_subscriptions___wrapped_handler_handler_wrapper_obj;
+extern PyObject *CPyDef_subscriptions___wrapped_handler_handler_wrapper_obj(void);
+extern CPyThreadLocal faster_web3___utils___subscriptions___wrapped_handler_handler_wrapper_objObject *subscriptions___wrapped_handler_handler_wrapper_obj_free_instance;
+extern PyTypeObject *CPyType_subscriptions___wrapped_handler_gen___3_87;
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87(void);
+extern CPyThreadLocal faster_web3___utils___subscriptions___wrapped_handler_gen___3_87Object *subscriptions___wrapped_handler_gen___3_87_free_instance;
+extern PyTypeObject *CPyType_subscriptions___unsubscribe_EthSubscription_gen;
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen(void);
+extern CPyThreadLocal faster_web3___utils___subscriptions___unsubscribe_EthSubscription_genObject *subscriptions___unsubscribe_EthSubscription_gen_free_instance;
+extern char CPyDef_subscriptions___EthSubscriptionContext_____init__(PyObject *cpy_r_self, PyObject *cpy_r_async_w3, PyObject *cpy_r_subscription, PyObject *cpy_r_result, PyObject *cpy_r_kwargs);
+extern PyObject *CPyPy_subscriptions___EthSubscriptionContext_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern PyObject *CPyDef_subscriptions___EthSubscriptionContext_____getattr__(PyObject *cpy_r_self, PyObject *cpy_r_item);
+extern PyObject *CPyPy_subscriptions___EthSubscriptionContext_____getattr__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_handler_wrapper_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_handler_wrapper_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_gen___3_87_____await__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_gen___3_87_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___wrapped_handler_handler_wrapper_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_context);
+extern PyObject *CPyPy_subscriptions___wrapped_handler_handler_wrapper_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___handler_wrapper(PyObject *cpy_r_handler);
+extern PyObject *CPyPy_subscriptions___handler_wrapper(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_subscriptions___EthSubscription_____init__(PyObject *cpy_r_self, PyObject *cpy_r_subscription_params, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_label, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___EthSubscription_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern PyObject *CPyDef_subscriptions___EthSubscription____default_label(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscriptions___EthSubscription____default_label(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___EthSubscription____create_type_aware_subscription(PyObject *cpy_r_cls, PyObject *cpy_r_subscription_params, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_label, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___EthSubscription____create_type_aware_subscription(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___EthSubscription___subscription_params(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscriptions___EthSubscription___subscription_params(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___EthSubscription___label(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscriptions___EthSubscription___label(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___EthSubscription___id(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscriptions___EthSubscription___id(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen_____next__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen_____iter__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen___close(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___unsubscribe_EthSubscription_gen_____await__(PyObject *cpy_r___mypyc_self__);
+extern PyObject *CPyPy_subscriptions___unsubscribe_EthSubscription_gen_____await__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_subscriptions___EthSubscription___unsubscribe(PyObject *cpy_r_self);
+extern PyObject *CPyPy_subscriptions___EthSubscription___unsubscribe(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_subscriptions___LogsSubscription_____init__(PyObject *cpy_r_self, PyObject *cpy_r_address, PyObject *cpy_r_topics, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_label, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___LogsSubscription_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern char CPyDef_subscriptions___NewHeadsSubscription_____init__(PyObject *cpy_r_self, PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___NewHeadsSubscription_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern char CPyDef_subscriptions___PendingTxSubscription_____init__(PyObject *cpy_r_self, char cpy_r_full_transactions, PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___PendingTxSubscription_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern char CPyDef_subscriptions___SyncingSubscription_____init__(PyObject *cpy_r_self, PyObject *cpy_r_label, PyObject *cpy_r_handler, PyObject *cpy_r_handler_context, PyObject *cpy_r_parallelize);
+extern PyObject *CPyPy_subscriptions___SyncingSubscription_____init__(PyObject *self, PyObject *args, PyObject *kw);
+extern char CPyDef_subscriptions_____top_level__(void);
 #endif

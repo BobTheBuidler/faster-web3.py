@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_d37076d826d373101344_H
-#define MYPYC_NATIVE_d37076d826d373101344_H
+#ifndef MYPYC_NATIVE_ecea8c0a67e0366f7dc2_H
+#define MYPYC_NATIVE_ecea8c0a67e0366f7dc2_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -154,6 +154,14 @@ typedef struct tuple_T6OOOOOO {
     PyObject *f4;
     PyObject *f5;
 } tuple_T6OOOOOO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2OC
+#define MYPYC_DECLARED_tuple_T2OC
+typedef struct tuple_T2OC {
+    PyObject *f0;
+    char f1;
+} tuple_T2OC;
 #endif
 
 typedef struct {
@@ -2257,5 +2265,130 @@ typedef struct {
     PyObject *___mypyc_temp__3;
     tuple_T3OOO ___mypyc_temp__4;
 } faster_web3___utils___caching___async_await_and_popitem_SimpleCache_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_async_w3;
+    PyObject *_subscription;
+    PyObject *_result;
+    PyObject *___dict__;
+} faster_web3___utils___subscriptions___EthSubscriptionContextObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__id;
+    PyObject *_manager;
+    PyObject *__subscription_params;
+    PyObject *__handler;
+    PyObject *__handler_context;
+    PyObject *__label;
+    PyObject *_parallelize;
+    CPyTagged _handler_call_count;
+} faster_web3___utils___subscriptions___EthSubscriptionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__id;
+    PyObject *_manager;
+    PyObject *__subscription_params;
+    PyObject *__handler;
+    PyObject *__handler_context;
+    PyObject *__label;
+    PyObject *_parallelize;
+    CPyTagged _handler_call_count;
+    PyObject *_address;
+    PyObject *_topics;
+    PyObject *_logs_filter;
+} faster_web3___utils___subscriptions___LogsSubscriptionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__id;
+    PyObject *_manager;
+    PyObject *__subscription_params;
+    PyObject *__handler;
+    PyObject *__handler_context;
+    PyObject *__label;
+    PyObject *_parallelize;
+    CPyTagged _handler_call_count;
+} faster_web3___utils___subscriptions___NewHeadsSubscriptionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__id;
+    PyObject *_manager;
+    PyObject *__subscription_params;
+    PyObject *__handler;
+    PyObject *__handler_context;
+    PyObject *__label;
+    PyObject *_parallelize;
+    CPyTagged _handler_call_count;
+    char _full_transactions;
+} faster_web3___utils___subscriptions___PendingTxSubscriptionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__id;
+    PyObject *_manager;
+    PyObject *__subscription_params;
+    PyObject *__handler;
+    PyObject *__handler_context;
+    PyObject *__label;
+    PyObject *_parallelize;
+    CPyTagged _handler_call_count;
+} faster_web3___utils___subscriptions___SyncingSubscriptionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_handler;
+    PyObject *_wrapped_handler;
+} faster_web3___utils___subscriptions___handler_wrapper_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *___mypyc_env__;
+    PyObject *___mypyc_generator_attribute__context;
+    PyObject *_type;
+    PyObject *_value;
+    PyObject *_traceback;
+    PyObject *_arg;
+    PyObject **_stop_iter_ptr;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__sub;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+} faster_web3___utils___subscriptions___wrapped_handler_handler_wrapper_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3___utils___subscriptions___wrapped_handler_handler_wrapper_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_env__;
+} faster_web3___utils___subscriptions___wrapped_handler_gen___3_87Object;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+} faster_web3___utils___subscriptions___unsubscribe_EthSubscription_genObject;
 
 #endif
