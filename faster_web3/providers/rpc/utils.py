@@ -1,7 +1,10 @@
 from typing import (
+    Final,
     Optional,
     Sequence,
+    Set,
     Type,
+    final,
 )
 
 from pydantic import (
@@ -12,7 +15,7 @@ from faster_web3.types import (
     RPCEndpoint,
 )
 
-REQUEST_RETRY_ALLOWLIST = [
+REQUEST_RETRY_ALLOWLIST: Final = {
     "admin",
     "net",
     "txpool",
@@ -56,34 +59,32 @@ REQUEST_RETRY_ALLOWLIST = [
     "eth_sign",
     "eth_signTypedData",
     "eth_sendRawTransaction",
-]
+}
 
 
 def check_if_retry_on_failure(
     method: RPCEndpoint,
-    allowlist: Optional[Sequence[str]] = None,
+    allowlist: Optional[Set[str]] = None,
 ) -> bool:
     if allowlist is None:
         allowlist = REQUEST_RETRY_ALLOWLIST
 
-    if method in allowlist or method.split("_")[0] in allowlist:
-        return True
-    else:
-        return False
+    return method in allowlist or method.split("_")[0] in allowlist
 
 
+@final
 class ExceptionRetryConfiguration(BaseModel):
     errors: Sequence[Type[BaseException]]
     retries: int
     backoff_factor: float
-    method_allowlist: Sequence[str]
+    method_allowlist: Set[str]
 
     def __init__(
         self,
         errors: Optional[Sequence[Type[BaseException]]] = None,
         retries: int = 5,
         backoff_factor: float = 0.125,
-        method_allowlist: Optional[Sequence[str]] = None,
+        method_allowlist: Optional[Set[str]] = None,
     ):
         super().__init__(
             errors=errors,
