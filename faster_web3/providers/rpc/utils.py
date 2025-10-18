@@ -86,11 +86,11 @@ class ExceptionRetryConfiguration(BaseModel):
         errors: Optional[Sequence[Type[BaseException]]] = None,
         retries: int = 5,
         backoff_factor: float = 0.125,
-        method_allowlist: Optional[Set[str]] = None,
+        method_allowlist: Optional[Sequence[str]] = None,
     ):
         super().__init__(
             errors=errors,
             retries=retries,
             backoff_factor=backoff_factor,
-            method_allowlist=method_allowlist or REQUEST_RETRY_ALLOWLIST,
+            method_allowlist=set(method_allowlist) or REQUEST_RETRY_ALLOWLIST,
         )
