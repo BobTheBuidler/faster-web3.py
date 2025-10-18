@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_auto(void)
+PyInit_utils(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("c556dd23f4b64d210d05__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___auto");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___providers___rpc___utils");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "c556dd23f4b64d210d05__mypyc.init_faster_web3___auto");
+    void *init_func = PyCapsule_GetPointer(capsule, "c556dd23f4b64d210d05__mypyc.init_faster_web3___providers___rpc___utils");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_auto(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_auto(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_utils(); }

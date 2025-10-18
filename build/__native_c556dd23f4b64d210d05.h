@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_9ea8c57ae8946f99b690_H
-#define MYPYC_NATIVE_9ea8c57ae8946f99b690_H
+#ifndef MYPYC_NATIVE_c556dd23f4b64d210d05_H
+#define MYPYC_NATIVE_c556dd23f4b64d210d05_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -2189,8 +2189,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    int64_t ___mypyc_temp__2_0;
-    PyObject *___mypyc_temp__2_1;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {
@@ -2219,6 +2219,12 @@ typedef struct {
     PyObject *___mypyc_temp__29;
     tuple_T3OOO ___mypyc_temp__30;
 } faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+} faster_web3___providers___rpc___utils_____init___3_ExceptionRetryConfiguration_objObject;
 
 typedef struct {
     PyObject_HEAD

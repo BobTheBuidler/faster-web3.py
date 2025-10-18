@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_9ea8c57ae8946f99b690_H
-#define MYPYC_NATIVE_INTERNAL_9ea8c57ae8946f99b690_H
+#ifndef MYPYC_NATIVE_INTERNAL_c556dd23f4b64d210d05_H
+#define MYPYC_NATIVE_INTERNAL_c556dd23f4b64d210d05_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_9ea8c57ae8946f99b690.h"
+#include "__native_c556dd23f4b64d210d05.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2401];
+extern PyObject *CPyStatics[2413];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -230,6 +230,10 @@ extern CPyModule *CPyModule_faster_web3___providers___persistent___subscription_
 extern PyObject *CPyStatic_subscription_container___globals;
 extern PyObject *CPyStatic_subscription_manager___globals;
 extern CPyModule *CPyModule_faster_web3___utils___subscriptions;
+extern CPyModule *CPyModule_faster_web3___providers___rpc___utils__internal;
+extern CPyModule *CPyModule_faster_web3___providers___rpc___utils;
+extern PyObject *CPyStatic_rpc___utils___globals;
+extern CPyModule *CPyModule_pydantic___main;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node__internal;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___node;
 extern PyObject *CPyStatic_node___globals;
@@ -3372,6 +3376,18 @@ extern PyObject *CPyPy_subscription_manager___SubscriptionManager___handle_subsc
 extern char CPyDef_subscription_manager___SubscriptionManager_____mypyc_defaults_setup(PyObject *cpy_r___mypyc_self__);
 extern PyObject *CPyPy_subscription_manager___SubscriptionManager_____mypyc_defaults_setup(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_subscription_manager_____top_level__(void);
+extern PyObject *CPyStatic_rpc___utils___REQUEST_RETRY_ALLOWLIST;
+extern PyTypeObject *CPyType_rpc___utils___ExceptionRetryConfiguration;
+extern PyTypeObject *CPyType_rpc___utils_____init___3_ExceptionRetryConfiguration_obj;
+extern PyObject *CPyDef_rpc___utils_____init___3_ExceptionRetryConfiguration_obj(void);
+extern CPyThreadLocal faster_web3___providers___rpc___utils_____init___3_ExceptionRetryConfiguration_objObject *rpc___utils_____init___3_ExceptionRetryConfiguration_obj_free_instance;
+extern char CPyDef_rpc___utils___check_if_retry_on_failure(PyObject *cpy_r_method, PyObject *cpy_r_allowlist);
+extern PyObject *CPyPy_rpc___utils___check_if_retry_on_failure(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_self, PyObject *cpy_r_errors, CPyTagged cpy_r_retries, double cpy_r_backoff_factor, PyObject *cpy_r_method_allowlist, uint32_t cpy_r___bitmap);
+extern PyObject *CPyPy_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern char CPyDef_rpc___utils_____top_level__(void);
 extern PyTypeObject *CPyType_node___GethBenchmarkFixture;
 extern PyObject *CPyDef_node___GethBenchmarkFixture(void);
 extern PyTypeObject *CPyType_node___build_GethBenchmarkFixture_gen;
