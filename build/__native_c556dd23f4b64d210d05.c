@@ -108241,7 +108241,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -258690,23 +258690,26 @@ char CPyDef_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____call__(
     PyObject *cpy_r_r11;
     PyObject *cpy_r_r12;
     PyObject *cpy_r_r13;
-    int32_t cpy_r_r14;
-    char cpy_r_r15;
-    char cpy_r_r16;
-    PyObject *cpy_r_r17;
-    PyObject *cpy_r_r18;
-    char cpy_r_r19;
+    char cpy_r_r14;
+    PyObject *cpy_r_r15;
+    int32_t cpy_r_r16;
+    char cpy_r_r17;
+    char cpy_r_r18;
+    PyObject *cpy_r_r19;
     PyObject *cpy_r_r20;
     PyObject *cpy_r_r21;
-    PyObject **cpy_r_r23;
+    char cpy_r_r22;
+    PyObject *cpy_r_r23;
     PyObject *cpy_r_r24;
-    PyObject *cpy_r_r25;
-    char cpy_r_r26;
-    if (cpy_r_errors != NULL) goto CPyL22;
+    PyObject **cpy_r_r26;
+    PyObject *cpy_r_r27;
+    PyObject *cpy_r_r28;
+    char cpy_r_r29;
+    if (cpy_r_errors != NULL) goto CPyL24;
     cpy_r_r0 = Py_None;
     cpy_r_errors = cpy_r_r0;
 CPyL2: ;
-    if (cpy_r_retries != CPY_INT_TAG) goto CPyL23;
+    if (cpy_r_retries != CPY_INT_TAG) goto CPyL25;
     cpy_r_retries = 10;
 CPyL4: ;
     cpy_r_r1 = cpy_r___bitmap & 1;
@@ -258714,7 +258717,7 @@ CPyL4: ;
     if (!cpy_r_r2) goto CPyL6;
     cpy_r_backoff_factor = 0.125;
 CPyL6: ;
-    if (cpy_r_method_allowlist != NULL) goto CPyL24;
+    if (cpy_r_method_allowlist != NULL) goto CPyL26;
     cpy_r_r3 = Py_None;
     cpy_r_method_allowlist = cpy_r_r3;
 CPyL8: ;
@@ -258723,7 +258726,7 @@ CPyL8: ;
     cpy_r_r6 = CPyObject_GetAttr(cpy_r_r4, cpy_r_r5);
     if (unlikely(cpy_r_r6 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
-        goto CPyL25;
+        goto CPyL27;
     }
     cpy_r_r7 = (PyObject *)CPyType_rpc___utils___ExceptionRetryConfiguration;
     PyObject *cpy_r_r8[2] = {cpy_r_r7, cpy_r_self};
@@ -258732,113 +258735,119 @@ CPyL8: ;
     CPy_DECREF(cpy_r_r6);
     if (unlikely(cpy_r_r10 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
-        goto CPyL25;
+        goto CPyL27;
     }
     cpy_r_r11 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '__init__' */
     cpy_r_r12 = CPyObject_GetAttr(cpy_r_r10, cpy_r_r11);
     CPy_DECREF(cpy_r_r10);
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
-        goto CPyL25;
-    }
-    cpy_r_r13 = PySet_New(cpy_r_method_allowlist);
-    CPy_DECREF(cpy_r_method_allowlist);
-    if (unlikely(cpy_r_r13 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
-        goto CPyL26;
-    }
-    cpy_r_r14 = PyObject_IsTrue(cpy_r_r13);
-    cpy_r_r15 = cpy_r_r14 >= 0;
-    if (unlikely(!cpy_r_r15)) {
-        CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
         goto CPyL27;
     }
-    cpy_r_r16 = cpy_r_r14;
-    if (!cpy_r_r16) goto CPyL28;
-    cpy_r_r17 = cpy_r_r13;
-    goto CPyL19;
-CPyL15: ;
-    cpy_r_r18 = CPyStatic_rpc___utils___REQUEST_RETRY_ALLOWLIST;
-    if (unlikely(cpy_r_r18 == NULL)) {
-        goto CPyL29;
-    } else
-        goto CPyL18;
-CPyL16: ;
-    PyErr_SetString(PyExc_NameError, "value for final name \"REQUEST_RETRY_ALLOWLIST\" was not set");
-    cpy_r_r19 = 0;
-    if (unlikely(!cpy_r_r19)) {
+    cpy_r_r13 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r14 = cpy_r_method_allowlist != cpy_r_r13;
+    if (!cpy_r_r14) goto CPyL28;
+    CPy_INCREF(cpy_r_method_allowlist);
+    cpy_r_r15 = cpy_r_method_allowlist;
+    cpy_r_r16 = PyObject_IsTrue(cpy_r_r15);
+    CPy_DECREF(cpy_r_r15);
+    cpy_r_r17 = cpy_r_r16 >= 0;
+    if (unlikely(!cpy_r_r17)) {
         CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
-        goto CPyL21;
+        goto CPyL29;
     }
-    CPy_Unreachable();
-CPyL18: ;
-    CPy_INCREF(cpy_r_r18);
-    cpy_r_r17 = cpy_r_r18;
-CPyL19: ;
-    cpy_r_r20 = CPyTagged_StealAsObject(cpy_r_retries);
-    cpy_r_r21 = PyFloat_FromDouble(cpy_r_backoff_factor);
-    PyObject *cpy_r_r22[4] = {cpy_r_errors, cpy_r_r20, cpy_r_r21, cpy_r_r17};
-    cpy_r_r23 = (PyObject **)&cpy_r_r22;
-    cpy_r_r24 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('errors', 'retries', 'backoff_factor',
-                                     'method_allowlist') */
-    cpy_r_r25 = PyObject_Vectorcall(cpy_r_r12, cpy_r_r23, 0, cpy_r_r24);
-    CPy_DECREF(cpy_r_r12);
-    if (unlikely(cpy_r_r25 == NULL)) {
+    cpy_r_r18 = cpy_r_r16;
+    if (!cpy_r_r18) goto CPyL28;
+    cpy_r_r19 = PySet_New(cpy_r_method_allowlist);
+    CPy_DECREF(cpy_r_method_allowlist);
+    if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
         goto CPyL30;
-    } else
+    }
+    cpy_r_r20 = cpy_r_r19;
+    goto CPyL21;
+CPyL17: ;
+    cpy_r_r21 = CPyStatic_rpc___utils___REQUEST_RETRY_ALLOWLIST;
+    if (unlikely(cpy_r_r21 == NULL)) {
         goto CPyL31;
+    } else
+        goto CPyL20;
+CPyL18: ;
+    PyErr_SetString(PyExc_NameError, "value for final name \"REQUEST_RETRY_ALLOWLIST\" was not set");
+    cpy_r_r22 = 0;
+    if (unlikely(!cpy_r_r22)) {
+        CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
+        goto CPyL23;
+    }
+    CPy_Unreachable();
 CPyL20: ;
-    CPy_DECREF(cpy_r_errors);
-    CPy_DECREF(cpy_r_r20);
-    CPy_DECREF(cpy_r_r21);
-    CPy_DECREF(cpy_r_r17);
-    return 1;
+    CPy_INCREF(cpy_r_r21);
+    cpy_r_r20 = cpy_r_r21;
 CPyL21: ;
-    cpy_r_r26 = 2;
-    return cpy_r_r26;
+    cpy_r_r23 = CPyTagged_StealAsObject(cpy_r_retries);
+    cpy_r_r24 = PyFloat_FromDouble(cpy_r_backoff_factor);
+    PyObject *cpy_r_r25[4] = {cpy_r_errors, cpy_r_r23, cpy_r_r24, cpy_r_r20};
+    cpy_r_r26 = (PyObject **)&cpy_r_r25;
+    cpy_r_r27 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('errors', 'retries', 'backoff_factor',
+                                     'method_allowlist') */
+    cpy_r_r28 = PyObject_Vectorcall(cpy_r_r12, cpy_r_r26, 0, cpy_r_r27);
+    CPy_DECREF(cpy_r_r12);
+    if (unlikely(cpy_r_r28 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/rpc/utils.py", "__init__", DIFFCHECK_PLACEHOLDER, CPyStatic_rpc___utils___globals);
+        goto CPyL32;
+    } else
+        goto CPyL33;
 CPyL22: ;
+    CPy_DECREF(cpy_r_errors);
+    CPy_DECREF(cpy_r_r23);
+    CPy_DECREF(cpy_r_r24);
+    CPy_DECREF(cpy_r_r20);
+    return 1;
+CPyL23: ;
+    cpy_r_r29 = 2;
+    return cpy_r_r29;
+CPyL24: ;
     CPy_INCREF(cpy_r_errors);
     goto CPyL2;
-CPyL23: ;
+CPyL25: ;
     CPyTagged_INCREF(cpy_r_retries);
     goto CPyL4;
-CPyL24: ;
+CPyL26: ;
     CPy_INCREF(cpy_r_method_allowlist);
     goto CPyL8;
-CPyL25: ;
-    CPy_DecRef(cpy_r_errors);
-    CPyTagged_DecRef(cpy_r_retries);
-    CPy_DecRef(cpy_r_method_allowlist);
-    goto CPyL21;
-CPyL26: ;
-    CPy_DecRef(cpy_r_errors);
-    CPyTagged_DecRef(cpy_r_retries);
-    CPy_DecRef(cpy_r_r12);
-    goto CPyL21;
 CPyL27: ;
     CPy_DecRef(cpy_r_errors);
     CPyTagged_DecRef(cpy_r_retries);
-    CPy_DecRef(cpy_r_r12);
-    CPy_DecRef(cpy_r_r13);
-    goto CPyL21;
+    CPy_DecRef(cpy_r_method_allowlist);
+    goto CPyL23;
 CPyL28: ;
-    CPy_DECREF(cpy_r_r13);
-    goto CPyL15;
+    CPy_DECREF(cpy_r_method_allowlist);
+    goto CPyL17;
 CPyL29: ;
     CPy_DecRef(cpy_r_errors);
     CPyTagged_DecRef(cpy_r_retries);
+    CPy_DecRef(cpy_r_method_allowlist);
     CPy_DecRef(cpy_r_r12);
-    goto CPyL16;
+    goto CPyL23;
 CPyL30: ;
     CPy_DecRef(cpy_r_errors);
-    CPy_DecRef(cpy_r_r17);
-    CPy_DecRef(cpy_r_r20);
-    CPy_DecRef(cpy_r_r21);
-    goto CPyL21;
+    CPyTagged_DecRef(cpy_r_retries);
+    CPy_DecRef(cpy_r_r12);
+    goto CPyL23;
 CPyL31: ;
-    CPy_DECREF(cpy_r_r25);
-    goto CPyL20;
+    CPy_DecRef(cpy_r_errors);
+    CPyTagged_DecRef(cpy_r_retries);
+    CPy_DecRef(cpy_r_r12);
+    goto CPyL18;
+CPyL32: ;
+    CPy_DecRef(cpy_r_errors);
+    CPy_DecRef(cpy_r_r20);
+    CPy_DecRef(cpy_r_r23);
+    CPy_DecRef(cpy_r_r24);
+    goto CPyL23;
+CPyL33: ;
+    CPy_DECREF(cpy_r_r28);
+    goto CPyL22;
 }
 
 PyObject *CPyPy_rpc___utils_____init___3_ExceptionRetryConfiguration_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -297731,7 +297740,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\tfinalized\004safe",
     "\002\tis_string\006is_hex",
     "\002=Value did not match any of the recognized block identifiers: \005curry",
     "\003\tTypeGuard\021typing_extensions\"select_method_for_block_identifier",
@@ -297892,7 +297901,7 @@ const char * const CPyLit_Str[] = {
     "\0020Storage key must be one of bytes, int, str, got \tto_0x_hex",
     "\003)Storage key must be a 32-byte value, got \023to_checksum_address\abalance",
     "\004\astorage\nis_address\022apply_formatter_if\021has_pretrace_keys",
-    "\004#type_aware_apply_formatters_to_dict\tis_hexstr\asyncing\006status",
+    "\004#type_aware_apply_formatters_to_dict\tis_hexstr\006status\asyncing",
     "\004\022combine_formatters\017Block with id: \v not found.\nIndexError",
     "\003\030Unknown block identifier\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
@@ -298403,8 +298412,8 @@ const int CPyLit_Tuple[] = {
     515, 87
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 388, 300, 389, 288, 390, 3, 19, 2015, 0, 2, 887, 888, 4, 1090,
-    1091, 372, 1088
+    4, 5, 288, 388, 300, 389, 390, 3, 19, 2015, 0, 2, 887, 888, 4, 1090,
+    372, 1088, 1091
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
