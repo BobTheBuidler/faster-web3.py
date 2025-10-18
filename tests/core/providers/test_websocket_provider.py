@@ -309,7 +309,7 @@ async def test_listen_event_awaits_msg_processing_when_subscription_queue_is_ful
     sub_request_information = RequestInformation(
         method=RPCEndpoint("eth_subscribe"),
         params=["mock"],
-        response_formatters=[[], [], []],
+        response_formatters=([], [], []),
         subscription_id=sub_id,
     )
     async_w3.provider._request_processor._request_information_cache.cache(

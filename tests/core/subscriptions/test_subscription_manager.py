@@ -1,7 +1,6 @@
 import pytest
 import asyncio
 import itertools
-import logging
 import time
 from typing import (
     cast,
