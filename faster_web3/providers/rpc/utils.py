@@ -7,7 +7,9 @@ from typing import (
     final,
 )
 
-from pydantic import (
+# TODO restore this to original form when
+# https://github.com/mypyc/mypyc/issues/1155 is fixed
+from pydantic.main import (
     BaseModel,
 )
 
