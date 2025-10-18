@@ -10,7 +10,7 @@
 
 ##### You can find the compiled C code and header files in the [build](https://github.com/BobTheBuidler/web3.py/tree/master/build) directory.
 
-###### You may also be interested in: [faster-hexbytes](https://github.com/BobTheBuidler/faster-hexbytes/), [faster-eth-abi](https://github.com/BobTheBuidler/faster-eth-abi/), and [faster-eth-abi](https://github.com/BobTheBuidler/faster-eth-abi/)
+###### You may also be interested in: [faster-hexbytes](https://github.com/BobTheBuidler/faster-hexbytes/), [faster-eth-abi](https://github.com/BobTheBuidler/faster-eth-abi/), and [faster-eth-utils](https://github.com/BobTheBuidler/faster-eth-utils/)
 
 ##### The original web3.py readme is below:
 
