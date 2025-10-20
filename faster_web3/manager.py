@@ -15,9 +15,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    pipe,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -585,8 +582,8 @@ class RequestManager:
                     )
 
             # pipe response back through middleware response processors
-            if len(request_info.middleware_response_processors) > 0:
-                response = pipe(response, *request_info.middleware_response_processors)
+            for formatter in request_info.middleware_response_processors:
+                response = formatter(response)
 
             (
                 result_formatters,

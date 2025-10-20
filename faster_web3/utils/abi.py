@@ -53,9 +53,6 @@ from faster_eth_utils.conversions import (
 from faster_eth_utils.hexadecimal import (
     encode_hex,
 )
-from faster_eth_utils.toolz import (
-    pipe,
-)
 from faster_eth_utils.types import (
     is_list_like,
 )
@@ -590,15 +587,16 @@ def get_abi_element(
     if abi_codec is None:
         abi_codec = ABICodec(default_registry)
 
-    abi_element_matches: Sequence[ABIElement] = pipe(
-        abi,
-        *_build_abi_filters(
-            abi_element_identifier,
-            *args,
-            abi_codec=abi_codec,
-            **kwargs,
-        ),
+    abi_filters = _build_abi_filters(
+        abi_element_identifier,
+        *args,
+        abi_codec=abi_codec,
+        **kwargs,
     )
+
+    abi_element_matches: Sequence[ABIElement] = abi
+    for filter in abi_filters:
+        abi_element_matches = filter(abi_element_matches)
 
     num_matches = len(abi_element_matches)
 
@@ -715,21 +713,16 @@ def get_event_abi(
         >>> get_event_abi(abi, 'MyEvent')
         {'type': 'event', 'name': 'MyEvent', 'inputs': []}
     """
-    filters: List[functools.partial[Sequence[ABIElement]]] = [
-        functools.partial(filter_abi_by_type, "event"),
-    ]
-
-    if event_name is None or event_name == "":
+    if not event_name:
         raise Web3ValidationError(
             "event_name is required in order to match an event ABI."
         )
-
-    filters.append(functools.partial(filter_abi_by_name, event_name))
-
+    
+    event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_name(
+        event_name, filter_abi_by_type("event", abi)
+    )
     if argument_names is not None:
-        filters.append(functools.partial(filter_by_argument_name, argument_names))
-
-    event_abi_candidates = cast(Sequence[ABIEvent], pipe(abi, *filters))
+        event_abi_candidates = filter_by_argument_name(argument_names, event_abi_candidates)
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]

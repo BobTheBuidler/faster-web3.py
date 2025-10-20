@@ -119,7 +119,7 @@ class RequestInformation:
         self.params: Final = params
         self.response_formatters: Final = response_formatters
         self.subscription_id: Final = subscription_id
-        self.middleware_response_processors: Final[List[Callable[..., Any]]] = []
+        self.middleware_response_processors: Final[List[Callable[[Any], Any]]] = []
 
     def __repr__(self) -> str:
         attrs = {

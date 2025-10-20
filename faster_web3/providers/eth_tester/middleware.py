@@ -29,7 +29,6 @@ from faster_eth_utils.toolz import (
     curry,
     identity,
     partial,
-    pipe,
 )
 from typing_extensions import (
     TypeGuard,
@@ -420,11 +419,7 @@ class DefaultTransactionFieldsMiddleware(Web3Middleware):
             "eth_sendTransaction",
             "eth_createAccessList",
         }:
-            fill_default_from = fill_default("from", guess_from, self._w3)
-            filled_transaction = pipe(
-                params[0],
-                fill_default_from,
-            )
+            filled_transaction = fill_default("from", guess_from, self._w3, params[0])
             params = [filled_transaction] + list(params)[1:]
         return method, params
 
