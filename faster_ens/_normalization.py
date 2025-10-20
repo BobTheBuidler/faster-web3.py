@@ -57,7 +57,7 @@ with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     NORMALIZATION_SPEC_GROUPS: Final[List[Dict[str, Any]]] = NORMALIZATION_SPEC["groups"]
     NORMALIZATION_SPEC_IGNORED: Final[List[int]] = NORMALIZATION_SPEC["ignored"]
     NORMALIZATION_SPEC_MAPPED: Final[Dict[int, List[int]]] = NORMALIZATION_SPEC["mapped"]
-    NORMALIZATION_SPEC_NSM: Final[Set[int]] = NORMALIZATION_SPEC["nsm"]
+    NORMALIZATION_SPEC_NSM: Final[Set[int]] = set(NORMALIZATION_SPEC["nsm"])
     # clean `FE0F` (65039) from entries since it's optional
     for e in EMOJI_NORMALIZATION_SPEC:
         if 65039 in e:
