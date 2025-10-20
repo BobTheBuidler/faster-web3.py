@@ -184,18 +184,18 @@ def _construct_whole_confusable_map() -> Dict[int, FrozenSet[str]]:
                     confusable_extents.append(({confusable_cp}, groups))
 
         for confusable_cp in whole_confusables:
-            confusable_cp_extent_groups: Set[str] = set()
-
             if confusable_cp in whole["confused"]:
-                whole_map[confusable_cp] = set()
+                confusable_cp_extent_groups: Set[str] = set()
+                this_group: Set[str] = set()
+
                 for ce in confusable_extents:
                     if confusable_cp in ce[0]:
                         confusable_cp_extent_groups.update(ce[1])
                     else:
-                        whole_map[confusable_cp].update(ce[1])
+                        this_group.update(ce[1])
 
                 # remove the groups from confusable_cp's confusable extent
-                whole_map[confusable_cp] = whole_map[confusable_cp].difference(
+                whole_map[confusable_cp] = this_group.difference(
                     confusable_cp_extent_groups
                 )
 
@@ -273,11 +273,8 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
                 f"Label cannot contain two fenced codepoints in a row: '{label_text}'"
             )
 
-    if any(
-        t.codepoints[0] in NORMALIZATION_SPEC["cm"]
-        for t in tokens
-        if t.type == TokenType.TEXT
-    ):
+    cm = NORMALIZATION_SPEC["cm"]
+    if any(t.type == TokenType.TEXT and t.codepoints[0] in cm for t in tokens):
         raise InvalidName(
             "At least one text token in label starts with a "
             f"combining mark: '{label_text}'"
@@ -344,8 +341,8 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
     # check wholes
     # start with set of all groups with confusables
     retained_groups = set(VALID_BY_GROUPS.keys())
-    confused_chars = set()
-    buffer = set()
+    confused_chars: Set[int] = set()
+    buffer: Set[int] = set()
 
     for char_cp in text_token_cps_set:
         groups_excluding_ce = WHOLE_CONFUSABLE_MAP.get(char_cp)
@@ -365,7 +362,8 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
 
     if len(confused_chars) > 0:
         for retained_group_name in retained_groups:
-            if all(cp in VALID_BY_GROUPS[retained_group_name] for cp in buffer):
+            valid = VALID_BY_GROUPS[retained_group_name]
+            if all(cp in valid for cp in buffer):
                 # Though the spec doesn't mention this explicitly, if the buffer is
                 # empty, the label is confusable. This allows for using ``all()`` here
                 # since that yields ``True`` on empty sets.
@@ -373,7 +371,7 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
                 # for any ``group_cps``.
                 if len(buffer) == 0:
                     msg = (
-                        f"All characters in label are confusable: "
+                        "All characters in label are confusable: "
                         f"'{label_text}' ({chars_group_name} / "
                     )
                     msg += (
