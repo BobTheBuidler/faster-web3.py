@@ -40,9 +40,6 @@ from faster_eth_utils import (
     filter_abi_by_type,
     get_abi_input_types,
 )
-from faster_eth_utils.toolz import (
-    pipe,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -101,17 +98,14 @@ def find_matching_event_abi(
     event_name: Optional[str] = None,
     argument_names: Optional[Sequence[str]] = None,
 ) -> ABIEvent:
-    filters: List[functools.partial[Sequence[ABIElement]]] = [
-        functools.partial(filter_abi_by_type, "event"),
-    ]
+    
+    event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_type("event", abi)
 
     if event_name is not None:
-        filters.append(functools.partial(filter_abi_by_name, event_name))
+        event_abi_candidates = filter_abi_by_name(event_name, event_abi_candidates)
 
     if argument_names is not None:
-        filters.append(functools.partial(filter_by_argument_name, argument_names))
-
-    event_abi_candidates: Sequence[ABIEvent] = pipe(abi, *filters)
+        event_abi_candidates = filter_by_argument_name(argument_names, event_abi_candidates)
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]

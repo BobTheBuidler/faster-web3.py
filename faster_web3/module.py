@@ -17,7 +17,6 @@ from faster_eth_abi.codec import (
 )
 from faster_eth_utils.toolz import (
     curry,
-    pipe,
 )
 
 from faster_web3._utils.filters import (
@@ -49,11 +48,7 @@ if TYPE_CHECKING:
 def apply_result_formatters(
     result_formatters: Callable[..., Any], result: RPCResponse
 ) -> RPCResponse:
-    if result_formatters:
-        formatted_result = pipe(result, result_formatters)
-        return formatted_result
-    else:
-        return result
+    return result_formatters(result) if result_formatters else result
 
 
 TReturn = TypeVar("TReturn")

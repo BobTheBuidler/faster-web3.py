@@ -73,7 +73,6 @@ from faster_eth_utils import (
 )
 from faster_eth_utils.toolz import (
     curry,
-    pipe,
 )
 from typing_extensions import (
     TypeGuard,
@@ -613,15 +612,13 @@ def map_abi_data(
     2. Recursively mapping each of the normalizers to the data
     3. Stripping the types back out of the tree
     """
-    return pipe(
-        data,
-        # 1. Decorating the data tree with types
-        abi_data_tree(types),
-        # 2. Recursively mapping each of the normalizers to the data
-        *map(data_tree_map, normalizers),
-        # 3. Stripping the types back out of the tree
-        strip_abi_types,
-    )
+    # 1. Decorating the data tree with types
+    data = abi_data_tree(types, data)
+    # 2. Recursively mapping each of the normalizers to the data
+    for normalizer in map(data_tree_map, normalizers):
+        data = normalizer(data)
+    # 3. Stripping the types back out of the tree
+    return strip_abi_types(data)
 
 
 @curry
