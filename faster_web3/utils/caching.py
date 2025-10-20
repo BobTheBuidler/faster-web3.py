@@ -69,10 +69,7 @@ class SimpleCache(Generic[T]):
         return list(self._data.values())
 
     def pop(self, key: str) -> Optional[T]:
-        if key not in self._data:
-            return None
-
-        return self._data.pop(key)
+        return self._data.pop(key, None)
 
     def popitem(self, last: bool = True) -> Tuple[str, T]:
         return self._data.popitem(last=last)

@@ -215,9 +215,11 @@ def get_event_abi_types_for_decoding(
     decode the log entries using the correct types.
     """
     return tuple(
-        TypeStr("bytes32")
-        if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"])
-        else collapse_if_tuple(input_abi)
+        (
+            TypeStr("bytes32")
+            if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"])
+            else collapse_if_tuple(input_abi)
+        )
         for input_abi in event_inputs
     )
 

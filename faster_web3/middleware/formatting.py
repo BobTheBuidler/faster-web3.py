@@ -181,7 +181,7 @@ class FormattingMiddlewareBuilder(Web3MiddlewareBuilder):
     async def async_request_processor(self, method: "RPCEndpoint", params: Any) -> Any:
         if self.async_formatters_builder is not None:
             formatters = FORMATTER_DEFAULTS | await self.async_formatters_builder(
-                    cast("AsyncWeb3[Any]", self._w3), method
+                cast("AsyncWeb3[Any]", self._w3), method
             )
             self.request_formatters = formatters.pop("request_formatters")
 

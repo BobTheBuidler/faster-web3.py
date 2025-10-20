@@ -125,8 +125,7 @@ def construct_event_filter_params(
 
     filter_params["topics"] = topic_set
 
-    sanitized_addresses = _sanitize_addresses(address, contract_address)
-    if sanitized_addresses:
+    if sanitized_addresses := _sanitize_addresses(address, contract_address):
         filter_params["address"] = sanitized_addresses
 
     if from_block is not None:
@@ -252,9 +251,8 @@ class LogFilter(Filter):
         super().__init__(*args, **kwargs)
 
     def format_entry(self, entry: LogReceipt) -> LogReceipt:
-        if self.log_entry_formatter:
-            return self.log_entry_formatter(entry)
-        return entry
+        formatter = self.log_entry_formatter
+        return formatter(entry) if formatter else entry
 
     def set_data_filters(
         self, data_filter_set: Collection[Tuple[TypeStr, Any]]

@@ -10,6 +10,7 @@ from typing import (
     Any,
     Callable,
     Dict,
+    NewType,
     Union,
 )
 
@@ -41,6 +42,8 @@ from faster_web3.types import (
 
 KEYFILE_PW = "web3py-test"
 
+ExecutionTime = NewType("ExecutionTime", float)
+
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--num-calls",
@@ -57,41 +60,39 @@ parser.add_argument(
 
 def build_web3_http(endpoint_uri: str) -> Web3:
     wait_for_http(endpoint_uri)
-    _w3 = Web3(
+    return Web3(
         HTTPProvider(endpoint_uri),
         middleware=[GasPriceStrategyMiddleware, BufferedGasEstimateMiddleware],
     )
-    return _w3
 
 
 async def build_async_w3_http(endpoint_uri: str) -> AsyncWeb3[Any]:
     await wait_for_aiohttp(endpoint_uri)
-    _w3 = AsyncWeb3(
+    return AsyncWeb3(
         AsyncHTTPProvider(endpoint_uri),
         middleware=[GasPriceStrategyMiddleware, BufferedGasEstimateMiddleware],
     )
-    return _w3
 
 
-def sync_benchmark(func: Callable[..., Any], n: int) -> Union[float, str]:
+def sync_benchmark(func: Callable[..., Any], n: int) -> Union[ExecutionTime, str]:
     try:
         starttime = timeit.default_timer()
         for _ in range(n):
             func()
         endtime = timeit.default_timer()
-        execution_time = endtime - starttime
-        return execution_time
+        return ExecutionTime(endtime - starttime)
     except Exception:
         return "N/A"
 
 
-async def async_benchmark(func: Callable[..., Any], n: int) -> Union[float, str]:
+async def async_benchmark(
+    func: Callable[..., Any], n: int
+) -> Union[ExecutionTime, str]:
     try:
         starttime = timeit.default_timer()
         for result in asyncio.as_completed([func() for _ in range(n)]):
             await result
-        execution_time = timeit.default_timer() - starttime
-        return execution_time
+        return ExecutionTime(timeit.default_timer() - starttime)
     except Exception:
         return "N/A"
 

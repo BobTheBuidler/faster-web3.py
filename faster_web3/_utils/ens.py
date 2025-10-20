@@ -53,8 +53,7 @@ def is_ens_name(value: Any) -> TypeGuard[str]:
 
 
 def validate_name_has_address(ens: ENS, name: str) -> ChecksumAddress:
-    addr = ens.address(name)
-    if addr:
+    if addr := ens.address(name):
         return to_checksum_address(addr)
     else:
         raise NameNotFound(f"Could not find address for name {name!r}")
