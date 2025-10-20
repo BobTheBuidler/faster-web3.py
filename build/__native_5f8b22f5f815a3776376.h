@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_c556dd23f4b64d210d05_H
-#define MYPYC_NATIVE_c556dd23f4b64d210d05_H
+#ifndef MYPYC_NATIVE_5f8b22f5f815a3776376_H
+#define MYPYC_NATIVE_5f8b22f5f815a3776376_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
@@ -121,27 +121,6 @@ typedef struct tuple_T4OOOO {
     PyObject *f2;
     PyObject *f3;
 } tuple_T4OOOO;
-#endif
-
-#ifndef MYPYC_DECLARED_tuple_T15OOOOOOOOOOOOOOO
-#define MYPYC_DECLARED_tuple_T15OOOOOOOOOOOOOOO
-typedef struct tuple_T15OOOOOOOOOOOOOOO {
-    PyObject *f0;
-    PyObject *f1;
-    PyObject *f2;
-    PyObject *f3;
-    PyObject *f4;
-    PyObject *f5;
-    PyObject *f6;
-    PyObject *f7;
-    PyObject *f8;
-    PyObject *f9;
-    PyObject *f10;
-    PyObject *f11;
-    PyObject *f12;
-    PyObject *f13;
-    PyObject *f14;
-} tuple_T15OOOOOOOOOOOOOOO;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T6OOOOOO
@@ -2202,73 +2181,6 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
 } faster_web3___providers___rpc___utils_____init___3_ExceptionRetryConfiguration_objObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    PyObject *_rpc_port;
-    PyObject *_endpoint_uri;
-    PyObject *_geth_binary;
-    PyObject *_datadir;
-} faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    PyObject *___mypyc_generator_attribute__self;
-    int32_t ___mypyc_next_label__;
-    PyObject *___mypyc_temp__0;
-    PyObject *___mypyc_temp__1;
-    char ___mypyc_temp__2;
-    PyObject *___mypyc_generator_attribute__base_dir;
-    PyObject *___mypyc_generator_attribute__zipfile_path;
-    PyObject *___mypyc_generator_attribute__tmp_datadir;
-    PyObject *___mypyc_temp__3;
-    PyObject *___mypyc_temp__4;
-    char ___mypyc_temp__5;
-    PyObject *___mypyc_generator_attribute__zip_ref;
-    tuple_T3OOO ___mypyc_temp__6;
-    PyObject *___mypyc_generator_attribute__genesis_file;
-    tuple_T3OOO ___mypyc_temp__7;
-} faster_web3___tools___benchmark___node___build_GethBenchmarkFixture_genObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    PyObject *___mypyc_generator_attribute__self;
-    PyObject *___mypyc_generator_attribute__datadir;
-    PyObject *___mypyc_generator_attribute__genesis_file;
-    PyObject *___mypyc_generator_attribute__rpc_port;
-    int32_t ___mypyc_next_label__;
-    tuple_T5OOOOO ___mypyc_generator_attribute__init_datadir_command;
-    PyObject *___mypyc_generator_attribute__proc;
-} faster_web3___tools___benchmark___node____geth_process_GethBenchmarkFixture_genObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    uint32_t bitmap;
-    PyObject *___mypyc_generator_attribute__endpoint_uri;
-    CPyTagged ___mypyc_generator_attribute__timeout;
-    int32_t ___mypyc_next_label__;
-    double ___mypyc_generator_attribute__timeout_at;
-    PyObject *___mypyc_temp__0;
-    PyObject *___mypyc_temp__1;
-    char ___mypyc_temp__2;
-    PyObject *___mypyc_temp__3;
-    tuple_T3OOO ___mypyc_temp__4;
-    PyObject *___mypyc_generator_attribute__session;
-    PyObject *___mypyc_temp__5;
-    tuple_T3OOO ___mypyc_temp__6;
-    tuple_T3OOO ___mypyc_temp__7;
-    PyObject *___mypyc_temp__8;
-    tuple_T3OOO ___mypyc_temp__9;
-    PyObject *___mypyc_temp__10;
-    tuple_T3OOO ___mypyc_temp__11;
-    tuple_T3OOO ___mypyc_temp__12;
-    PyObject *___mypyc_temp__13;
-    tuple_T3OOO ___mypyc_temp__14;
-} faster_web3___tools___benchmark___utils___wait_for_aiohttp_genObject;
 
 typedef struct {
     PyObject_HEAD
