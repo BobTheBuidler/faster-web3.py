@@ -107795,7 +107795,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -287910,7 +287910,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\004safe\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\004safe\bearliest",
     "\002\tis_string\006is_hex",
     "\002=Value did not match any of the recognized block identifiers: \005curry",
     "\003\tTypeGuard\021typing_extensions\"select_method_for_block_identifier",
@@ -288071,7 +288071,7 @@ const char * const CPyLit_Str[] = {
     "\0020Storage key must be one of bytes, int, str, got \tto_0x_hex",
     "\003)Storage key must be a 32-byte value, got \023to_checksum_address\abalance",
     "\004\astorage\nis_address\022apply_formatter_if\021has_pretrace_keys",
-    "\004#type_aware_apply_formatters_to_dict\tis_hexstr\asyncing\006status",
+    "\004#type_aware_apply_formatters_to_dict\tis_hexstr\006status\asyncing",
     "\004\017Block with id: \v not found.\nIndexError\030Unknown block identifier",
     "\002\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
@@ -288556,8 +288556,8 @@ const int CPyLit_Tuple[] = {
     323, 1, 1919, 1, 1918, 9, 76, 78, 79, 358, 81, 83, 85, 514, 87
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 387, 300, 288, 388, 389, 3, 19, 1930, 0, 2, 884, 885, 4, 1086,
-    1085, 371, 1083
+    4, 5, 387, 288, 388, 389, 300, 3, 19, 1930, 0, 2, 884, 885, 4, 371,
+    1083, 1085, 1086
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
