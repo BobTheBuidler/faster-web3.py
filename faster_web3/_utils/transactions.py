@@ -16,7 +16,6 @@ from eth_typing import (
 from faster_eth_utils.toolz import (
     assoc,
     curry,
-    merge,
 )
 from faster_hexbytes import (
     HexBytes,
@@ -144,7 +143,7 @@ def fill_transaction_defaults(w3: "Web3", transaction: TxParams) -> TxParams:
                 default_val = default_getter
 
             defaults[key] = default_val
-    return merge(defaults, transaction)
+    return defaults | transaction
 
 
 def get_block_gas_limit(

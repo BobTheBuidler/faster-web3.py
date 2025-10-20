@@ -19,9 +19,6 @@ from eth_typing import (
     ChecksumAddress,
     HexStr,
 )
-from faster_eth_utils.toolz import (
-    merge,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -616,7 +613,7 @@ class Eth(BaseEth):
         current_transaction_params = extract_valid_transaction_params(
             current_transaction
         )
-        new_transaction = merge(current_transaction_params, transaction_params)
+        new_transaction = current_transaction_params | transaction_params
         return replace_transaction(self.w3, current_transaction, new_transaction)
 
     # eth_sign

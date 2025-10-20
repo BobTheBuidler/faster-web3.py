@@ -25,9 +25,6 @@ from faster_eth_utils import (
     is_checksum_address,
     to_checksum_address,
 )
-from faster_eth_utils.toolz import (
-    merge,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -607,7 +604,7 @@ class AsyncENS(BaseENS):
             transact = {}
 
         owner = await self.owner(name)
-        transact_from_owner = merge({"from": owner}, transact)
+        transact_from_owner = {"from": owner} | transact
 
         return await func(*args).transact(transact_from_owner)
 

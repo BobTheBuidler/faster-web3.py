@@ -169,9 +169,12 @@ class AsyncContractEvent(BaseContractEvent):
           same time as ``from_block`` or ``to_block``
         :yield: Tuple of :class:`AttributeDict` instances
         """
+        abi = self.abi
+        w3 = self.w3
+
         # validate ``argument_filters`` if present
         if argument_filters is not None:
-            event_arg_names = get_abi_input_names(self.abi)
+            event_arg_names = get_abi_input_names(abi)
             if not all(arg in event_arg_names for arg in argument_filters.keys()):
                 raise Web3ValidationError(
                     "When filtering by argument names, all argument names must be "
@@ -179,17 +182,17 @@ class AsyncContractEvent(BaseContractEvent):
                 )
 
         _filter_params = self._get_event_filter_params(
-            self.abi, argument_filters, from_block, to_block, block_hash
+            abi, argument_filters, from_block, to_block, block_hash
         )
         # call JSON-RPC API
-        logs = await self.w3.eth.get_logs(_filter_params)
+        logs = await w3.eth.get_logs(_filter_params)
 
         # convert raw binary data to Python proxy objects as described by ABI:
         all_event_logs = tuple(
-            get_event_data(self.w3.codec, self.abi, entry) for entry in logs
+            get_event_data(w3.codec, abi, entry) for entry in logs
         )
         filtered_logs = self._process_get_logs_argument_filters(
-            self.abi,
+            abi,
             all_event_logs,
             argument_filters,
         )
@@ -210,7 +213,10 @@ class AsyncContractEvent(BaseContractEvent):
         """
         Create filter object that tracks logs emitted by this contract event.
         """
-        filter_builder = AsyncEventFilterBuilder(self.abi, self.w3.codec)
+        abi = self.abi
+        w3 = self.w3
+        codec = w3.codec
+        filter_builder = AsyncEventFilterBuilder(abi, codec)
         self._set_up_filter_builder(
             argument_filters,
             from_block,
@@ -219,18 +225,18 @@ class AsyncContractEvent(BaseContractEvent):
             topics,
             filter_builder,
         )
-        log_filter = await filter_builder.deploy(self.w3)
-        log_filter.log_entry_formatter = get_event_data(self.w3.codec, self.abi)
+        log_filter = await filter_builder.deploy(w3)
+        log_filter.log_entry_formatter = get_event_data(codec, abi)
         log_filter.builder = filter_builder
 
         return log_filter
 
     @combomethod
     def build_filter(self) -> AsyncEventFilterBuilder:
+        abi = self.abi
+        codec = self.w3.codec
         builder = AsyncEventFilterBuilder(
-            self.abi,
-            self.w3.codec,
-            formatter=get_event_data(self.w3.codec, self.abi),
+            abi, codec, formatter=get_event_data(codec, abi)
         )
         builder.address = self.address
         return builder
@@ -281,21 +287,24 @@ class AsyncContractFunction(BaseContractFunction):
         :return: ``Caller`` object that has contract public functions
             and variables exposed as Python methods
         """
+        abi = self.abi
+        w3 = self.w3
+
         call_transaction = self._get_call_txparams(transaction)
 
-        block_id = await async_parse_block_identifier(self.w3, block_identifier)
+        block_id = await async_parse_block_identifier(w3, block_identifier)
 
-        abi_element_identifier = abi_to_signature(self.abi)
+        abi_element_identifier = abi_to_signature(abi)
 
         return await async_call_contract_function(
-            self.w3,
+            w3,
             self.address,
             self._return_data_normalizers,
             abi_element_identifier,
             call_transaction,
             block_id,
             self.contract_abi,
-            self.abi,
+            abi,
             state_override,
             ccip_read_enabled,
             self.decode_tuples,
@@ -305,14 +314,15 @@ class AsyncContractFunction(BaseContractFunction):
 
     async def transact(self, transaction: Optional[TxParams] = None) -> HexBytes:
         setup_transaction = self._transact(transaction)
-        abi_element_identifier = abi_to_signature(self.abi)
+        abi = self.abi
+        abi_element_identifier = abi_to_signature(abi)
         return await async_transact_with_contract_function(
             self.address,
             self.w3,
             abi_element_identifier,
             setup_transaction,
             self.contract_abi,
-            self.abi,
+            abi,
             *self.args or (),
             **self.kwargs or {},
         )
@@ -324,14 +334,15 @@ class AsyncContractFunction(BaseContractFunction):
         state_override: Optional[StateOverride] = None,
     ) -> int:
         setup_transaction = self._estimate_gas(transaction)
-        abi_element_identifier = abi_to_signature(self.abi)
+        abi = self.abi
+        abi_element_identifier = abi_to_signature(abi)
         return await async_estimate_gas_for_function(
             self.address,
             self.w3,
             abi_element_identifier,
             setup_transaction,
             self.contract_abi,
-            self.abi,
+            abi,
             block_identifier,
             state_override,
             *self.args or (),
@@ -342,14 +353,15 @@ class AsyncContractFunction(BaseContractFunction):
         self, transaction: Optional[TxParams] = None
     ) -> TxParams:
         built_transaction = self._build_transaction(transaction)
-        abi_element_identifier = abi_to_signature(self.abi)
+        abi = self.abi
+        abi_element_identifier = abi_to_signature(abi)
         return await async_build_transaction_for_function(
             self.address,
             self.w3,
             abi_element_identifier,
             built_transaction,
             self.contract_abi,
-            self.abi,
+            abi,
             *self.args or (),
             **self.kwargs or {},
         )
@@ -414,7 +426,8 @@ class AsyncContract(BaseContract):
 
         :param address: Contract address as 0x hex string
         """
-        if self.w3 is None:
+        w3 = self.w3
+        if w3 is None:
             raise Web3AttributeError(
                 "The `Contract` class has not been initialized.  Please use the "
                 "`web3.contract` interface to create your contract class."
@@ -423,26 +436,31 @@ class AsyncContract(BaseContract):
         if address:
             self.address = normalize_address_no_ens(address)
 
-        if not self.address:
+        address = self.address
+        if not address:
             raise Web3TypeError(
                 "The address argument is required to instantiate a contract."
             )
-        self.functions = AsyncContractFunctions(
-            self.abi, self.w3, self.address, decode_tuples=self.decode_tuples
+
+        abi = self.abi
+        decode_tuples = self.decode_tuples
+        functions = AsyncContractFunctions(
+            abi, w3, address, decode_tuples=decode_tuples
         )
+        self.functions = functions
         self.caller = AsyncContractCaller(
-            self.abi,
-            self.w3,
-            self.address,
-            decode_tuples=self.decode_tuples,
-            contract_functions=self.functions,
+            abi,
+            w3,
+            address,
+            decode_tuples=decode_tuples,
+            contract_functions=functions,
         )
-        self.events = AsyncContractEvents(self.abi, self.w3, self.address)
+        self.events = AsyncContractEvents(abi, w3, address)
         self.fallback = AsyncContract.get_fallback_function(
-            self.abi, self.w3, AsyncContractFunction, self.address
+            abi, w3, AsyncContractFunction, address
         )
         self.receive = AsyncContract.get_receive_function(
-            self.abi, self.w3, AsyncContractFunction, self.address
+            abi, w3, AsyncContractFunction, address
         )
 
     @classmethod
@@ -468,9 +486,9 @@ class AsyncContract(BaseContract):
             ),
         )
 
-        if contract.abi:
-            for abi in contract.abi:
-                abi_name = abi.get("name")
+        if contract_abi := contract.abi:
+            for abi in contract_abi:
+                abi_name: Optional[str] = abi.get("name")
                 if abi_name in ["abi", "address"]:
                     raise Web3AttributeError(
                         f"Contract contains a reserved word `{abi_name}` "
@@ -507,13 +525,14 @@ class AsyncContract(BaseContract):
         :param kwargs: The contract constructor arguments as keyword arguments
         :return: a contract constructor object
         """
-        if cls.bytecode is None:
+        bytecode = cls.bytecode
+        if bytecode is None:
             raise Web3ValueError(
                 "Cannot call constructor on a contract that does not have "
                 "'bytecode' associated with it"
             )
 
-        return AsyncContractConstructor(cls.w3, cls.abi, cls.bytecode, *args, **kwargs)
+        return AsyncContractConstructor(cls.w3, cls.abi, bytecode, *args, **kwargs)
 
     @combomethod
     def find_functions_by_identifier(

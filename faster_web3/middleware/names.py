@@ -7,10 +7,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    merge,
-)
-
 from faster_web3._utils.normalizers import (
     abi_ens_resolver,
     async_abi_ens_resolver,
@@ -91,7 +87,7 @@ async def async_apply_ens_to_address_conversion(
             [param_dict[field] for field in fields],
         )
         formatted_dict = dict(zip(fields, formatted_params))
-        formatted_params_dict = merge(param_dict, formatted_dict)
+        formatted_params_dict = param_dict | formatted_dict
         return (formatted_params_dict, *params[1:])
 
     else:
