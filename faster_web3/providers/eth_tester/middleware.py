@@ -24,7 +24,6 @@ from faster_eth_utils.curried import (
 )
 from faster_eth_utils.toolz import (
     assoc,
-    complement,
     compose,
     curry,
     identity,
@@ -72,8 +71,12 @@ def is_hexstr(value: Any) -> TypeGuard[HexStr]:
     return is_string(value) and is_hex(value)
 
 
-to_integer_if_hex: Final = apply_formatter_if(is_hexstr, hex_to_integer)
-is_not_named_block: Final = complement(is_named_block)
+def to_integer_if_hex(value: Any) -> Any:
+    return hex_to_integer(value) if is_hexstr(value) else value
+
+
+def is_not_named_block(value: Any) -> Any:
+    return not is_named_block(value)
 
 # --- Request Mapping --- #
 
@@ -251,35 +254,30 @@ fee_history_result_remapper: Final = apply_key_map(
 )
 
 
+def hex_block_to_integer(value: Any) -> Any:
+    return to_integer_if_hex(value) if is_not_named_block(value) else value
+
+
+block_arg_to_integer: Final = apply_formatters_to_args(hex_block_to_integer)
+by_block_number_and_index: Final = apply_formatters_to_args(hex_block_to_integer, to_integer_if_hex)
+
 request_formatters: Final = {
     # Eth
-    RPCEndpoint("eth_getBlockByNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
+    RPCEndpoint("eth_getBlockByNumber"): block_arg_to_integer,
     RPCEndpoint("eth_getFilterChanges"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getFilterLogs"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getTransactionCount"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
-    RPCEndpoint("eth_getBlockTransactionCountByNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
-    RPCEndpoint("eth_getUncleCountByBlockNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
+    RPCEndpoint("eth_getBlockTransactionCountByNumber"): block_arg_to_integer,
+    RPCEndpoint("eth_getUncleCountByBlockNumber"): block_arg_to_integer,
     RPCEndpoint("eth_getTransactionByBlockHashAndIndex"): apply_formatters_to_args(
         identity,
         to_integer_if_hex,
     ),
-    RPCEndpoint("eth_getTransactionByBlockNumberAndIndex"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-        to_integer_if_hex,
-    ),
-    RPCEndpoint("eth_getUncleByBlockNumberAndIndex"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-        to_integer_if_hex,
-    ),
+    RPCEndpoint("eth_getTransactionByBlockNumberAndIndex"): by_block_number_and_index,
+    RPCEndpoint("eth_getUncleByBlockNumberAndIndex"): by_block_number_and_index,
     RPCEndpoint("eth_newFilter"): apply_formatters_to_args(
         filter_request_transformer,
     ),
@@ -294,28 +292,33 @@ request_formatters: Final = {
     ),
     RPCEndpoint("eth_call"): apply_formatters_to_args(
         transaction_request_transformer,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_createAccessList"): apply_formatters_to_args(
         transaction_request_transformer,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_uninstallFilter"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getCode"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_getBalance"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_feeHistory"): apply_formatters_to_args(
         to_integer_if_hex,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     # EVM
     RPCEndpoint("evm_revert"): apply_formatters_to_args(hex_to_integer),
 }
+
+format_logs: Final = apply_formatter_if(
+    is_array_of_dicts,
+    apply_list_to_array_formatter(log_result_remapper),
+)
 
 result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
     RPCEndpoint("eth_getBlockByHash"): apply_formatter_if(
@@ -343,18 +346,9 @@ result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
     RPCEndpoint("eth_newFilter"): integer_to_hex,
     RPCEndpoint("eth_newBlockFilter"): integer_to_hex,
     RPCEndpoint("eth_newPendingTransactionFilter"): integer_to_hex,
-    RPCEndpoint("eth_getLogs"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
-    RPCEndpoint("eth_getFilterChanges"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
-    RPCEndpoint("eth_getFilterLogs"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
+    RPCEndpoint("eth_getLogs"): format_logs,
+    RPCEndpoint("eth_getFilterChanges"): format_logs,
+    RPCEndpoint("eth_getFilterLogs"): format_logs,
     RPCEndpoint("eth_feeHistory"): apply_formatter_if(
         is_dict, fee_history_result_remapper
     ),

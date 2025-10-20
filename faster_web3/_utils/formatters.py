@@ -55,7 +55,7 @@ integer_to_hex = hex
 
 def apply_formatters_to_args(
     *formatters: Callable[[TValue], TReturn]
-) -> Callable[..., TReturn]:
+) -> Callable[[TValue], TReturn]:
     return compose(
         *(
             apply_formatter_at_index(formatter, index)
