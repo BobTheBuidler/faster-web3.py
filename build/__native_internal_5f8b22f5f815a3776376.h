@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2309];
+extern PyObject *CPyStatics[2308];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -27,12 +27,12 @@ extern CPyModule *CPyModule_faster_ens___exceptions;
 extern CPyModule *CPyModule_faster_ens____normalization__internal;
 extern CPyModule *CPyModule_faster_ens____normalization;
 extern PyObject *CPyStatic__normalization___globals;
-extern CPyModule *CPyModule_json;
 extern CPyModule *CPyModule_sys;
 extern CPyModule *CPyModule_enum;
 extern CPyModule *CPyModule_pathlib;
 extern CPyModule *CPyModule_typing;
 extern CPyModule *CPyModule_pyunormalize;
+extern CPyModule *CPyModule_ujson;
 extern CPyModule *CPyModule_faster_ens___auto__internal;
 extern CPyModule *CPyModule_faster_ens___auto;
 extern PyObject *CPyStatic_faster_ens___auto___globals;
@@ -113,6 +113,7 @@ extern CPyModule *CPyModule_faster_web3____utils___decorators__internal;
 extern CPyModule *CPyModule_faster_web3____utils___decorators;
 extern PyObject *CPyStatic_decorators___globals;
 extern PyObject *CPyStatic_encoding___globals;
+extern CPyModule *CPyModule_json;
 extern CPyModule *CPyModule_re;
 extern CPyModule *CPyModule_faster_eth_abi___encoding;
 extern CPyModule *CPyModule_pydantic;
@@ -306,8 +307,6 @@ extern PyObject *CPyDef__normalization____validate_tokens_and_get_label_type(PyO
 extern PyObject *CPyPy__normalization____validate_tokens_and_get_label_type(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization____build_and_validate_label_from_tokens(PyObject *cpy_r_tokens);
 extern PyObject *CPyPy__normalization____build_and_validate_label_from_tokens(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef__normalization____buffer_codepoints_to_chars(PyObject *cpy_r_buffer);
-extern PyObject *CPyPy__normalization____buffer_codepoints_to_chars(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization___normalize_name_ensip15(PyObject *cpy_r_name);
 extern PyObject *CPyPy__normalization___normalize_name_ensip15(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef__normalization_____top_level__(void);
