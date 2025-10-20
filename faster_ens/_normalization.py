@@ -208,8 +208,8 @@ MAX_LEN_EMOJI_PATTERN: Final = max(map(len, EMOJI_NORMALIZATION_SPEC))
 NSM_MAX: Final[int] = NORMALIZATION_SPEC["nsm_max"]
 
 
-def _is_fenced(cp: int) -> bool:
-    return cp in [fenced[0] for fenced in NORMALIZATION_SPEC["fenced"]]
+def _is_fenced(cp: int, spec: List[List[int]]) -> bool:
+    return any(cp == fenced[0] for fenced in spec)
 
 
 def _codepoints_to_text(cps: Union[List[List[int]], List[int]]) -> str:
@@ -259,7 +259,8 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
             f"Underscores '_' may only occur at the start of a label: '{label_text}'"
         )
 
-    if _is_fenced(all_token_cps[0]) or _is_fenced(all_token_cps[-1]):
+    norm_spec_fenced = NORMALIZATION_SPEC["fenced"]
+    if _is_fenced(all_token_cps[0], norm_spec_fenced) or _is_fenced(all_token_cps[-1], norm_spec_fenced):
         raise InvalidName(
             f"Label cannot start or end with a fenced codepoint: '{label_text}'"
         )
@@ -268,7 +269,7 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
         if cp_index == len(all_token_cps) - 1:
             break
         next_cp = all_token_cps[cp_index + 1]
-        if _is_fenced(cp) and _is_fenced(next_cp):
+        if _is_fenced(cp, norm_spec_fenced) and _is_fenced(next_cp, norm_spec_fenced):
             raise InvalidName(
                 f"Label cannot contain two fenced codepoints in a row: '{label_text}'"
             )
