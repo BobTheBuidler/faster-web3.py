@@ -9,11 +9,12 @@ Usage:
     python parse_benchmark_output.py <benchmark.json> [output.json]
 """
 
-import json
 import sys
 import re
 from collections import defaultdict
 from typing import Dict, Any
+
+import ujson
 
 
 def get_module_path(bench: dict) -> str:
@@ -73,10 +74,10 @@ def main() -> None:
     infile = sys.argv[1]
     outfile = sys.argv[2] if len(sys.argv) > 2 else "benchmark_results.json"
     with open(infile, "r") as f:
-        data = json.load(f)
+        data = ujson.load(f)
     results = parse_pytest_benchmark_json(data)
     with open(outfile, "w") as f:
-        json.dump(results, f, indent=2)
+        ujson.dump(results, f, indent=2)
     print(f"Parsed results written to {outfile}")
 
 

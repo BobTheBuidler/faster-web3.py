@@ -1,5 +1,6 @@
 import os
-import json
+
+import ujson
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
     ).replace("refs/heads/", "")
 
     with open(diff_path, "r", encoding="utf-8") as f:
-        diff = json.load(f)
+        diff = ujson.load(f)
 
     for module_path, groupDiffs in diff.items():
         # module_path is like "ens/base_ens" or "web3/foo"

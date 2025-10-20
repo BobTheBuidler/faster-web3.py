@@ -205,6 +205,7 @@ setup(
         "types-requests>=2.0.0",
         "websockets>=10.0.0,<16.0.0",
         "pyunormalize>=15.0.0",
+        "ujson",
     ],
     python_requires=">=3.9, <4",
     extras_require=extras_require,

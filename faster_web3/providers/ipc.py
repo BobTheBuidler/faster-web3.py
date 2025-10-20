@@ -1,6 +1,3 @@
-from json import (
-    JSONDecodeError,
-)
 import logging
 import os
 from pathlib import (
@@ -14,12 +11,15 @@ from types import (
 )
 from typing import (
     Any,
+    Final,
     List,
     Optional,
     Type,
     Union,
     cast,
 )
+
+import ujson
 
 from faster_web3._utils.threads import (
     Timeout,
@@ -43,6 +43,9 @@ from ..exceptions import (
 from .base import (
     JSONBaseProvider,
 )
+
+
+JSONDecodeError: Final = ujson.JSONDecodeError
 
 
 def get_ipc_socket(ipc_path: str, timeout: float = 2.0) -> socket.socket:
@@ -180,19 +183,13 @@ class IPCProvider(JSONBaseProvider):
                     except socket.timeout:
                         timeout.sleep(0)
                         continue
-                    if raw_response == b"":
-                        timeout.sleep(0)
-                    elif has_valid_json_rpc_ending(raw_response):
-                        try:
-                            response = self.decode_rpc_response(raw_response)
-                        except JSONDecodeError:
-                            timeout.sleep(0)
-                            continue
-                        else:
-                            return response
-                    else:
+                    if raw_response == b"" or not has_valid_json_rpc_ending(raw_response):
                         timeout.sleep(0)
                         continue
+                    try:
+                        return self.decode_rpc_response(raw_response)
+                    except JSONDecodeError:
+                        timeout.sleep(0)
 
     @handle_request_caching
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:

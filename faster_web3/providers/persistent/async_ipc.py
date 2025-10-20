@@ -3,10 +3,10 @@ import asyncio
 import errno
 import json
 import logging
+import sys
 from pathlib import (
     Path,
 )
-import sys
 from typing import (
     Any,
     Final,
@@ -15,10 +15,6 @@ from typing import (
     Union,
 )
 
-from faster_web3.types import (
-    RPCEndpoint,
-    RPCResponse,
-)
 
 from . import (
     PersistentConnectionProvider,
@@ -31,6 +27,10 @@ from ...exceptions import (
 )
 from ..ipc import (
     get_default_ipc_path,
+)
+from ...types import (
+    RPCEndpoint,
+    RPCResponse,
 )
 
 

@@ -1,5 +1,4 @@
 import asyncio
-import json
 import logging
 import os
 from threading import (
@@ -17,6 +16,7 @@ from typing import (
     cast,
 )
 
+import ujson
 from eth_typing import (
     URI,
 )
@@ -126,7 +126,7 @@ class LegacyWebSocketProvider(JSONBaseProvider):
             await asyncio.wait_for(
                 conn.send(request_data), timeout=self.websocket_timeout
             )
-            return json.loads(
+            return ujson.loads(
                 await asyncio.wait_for(conn.recv(), timeout=self.websocket_timeout)
             )
 

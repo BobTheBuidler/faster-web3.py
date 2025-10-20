@@ -1,5 +1,4 @@
 import asyncio
-import json
 import logging
 import os
 from typing import (
@@ -9,6 +8,7 @@ from typing import (
     Union,
 )
 
+import ujson
 from eth_typing import (
     URI,
 )
@@ -123,7 +123,7 @@ class WebSocketProvider(PersistentConnectionProvider):
 
     async def socket_recv(self) -> RPCResponse:
         raw_response = await self._ws.recv()
-        return json.loads(raw_response)
+        return ujson.loads(raw_response)
 
     # -- private methods -- #
 

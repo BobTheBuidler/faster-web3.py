@@ -1,4 +1,3 @@
-import json
 import sys
 from enum import (
     Enum,
@@ -22,6 +21,7 @@ from typing import (
 )
 
 import pyunormalize
+import ujson
 
 from .exceptions import (
     InvalidName,
@@ -48,7 +48,7 @@ def _json_list_mapping_to_dict(
 # https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
 specs_dir_path = Path(sys.modules["faster_ens"].__file__).parent.joinpath("specs")
 with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
-    f = json.load(spec)
+    f = ujson.load(spec)
 
     NORMALIZATION_SPEC: Final = _json_list_mapping_to_dict(f, "mapped")
     EMOJI_NORMALIZATION_SPEC: Final[List[List[int]]] = NORMALIZATION_SPEC["emoji"]
@@ -59,7 +59,7 @@ with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
                 e.remove(65039)
 
 with specs_dir_path.joinpath("nf.json").open() as nf:
-    f = json.load(nf)
+    f = ujson.load(nf)
     NF = _json_list_mapping_to_dict(f, "decomp")
 
 
@@ -394,20 +394,13 @@ def _build_and_validate_label_from_tokens(tokens: List[Token]) -> Label:
     for token in tokens:
         if token.type == TokenType.TEXT:
             # apply NFC normalization to text tokens
-            chars = [chr(cp) for cp in token._original_codepoints]
+            chars = list(map(chr, token._original_codepoints))
             nfc = NFC(chars)
-            token._normalized_codepoints = [ord(c) for c in nfc]
+            token._normalized_codepoints = list(map(ord, nfc))
 
     label_type = _validate_tokens_and_get_label_type(tokens)
 
     return Label(label_type, tokens)
-
-
-def _buffer_codepoints_to_chars(buffer: Union[List[int], List[List[int]]]) -> str:
-    return "".join(
-        "".join(chr(c) for c in char) if isinstance(char, list) else chr(char)
-        for char in buffer
-    )
 
 
 # -----
@@ -436,7 +429,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
     for label_str in raw_labels:
         # _input takes the label and breaks it into a list of unicode code points
         # e.g. "xyz👨🏻" -> [120, 121, 122, 128104, 127995]
-        _input = [ord(c) for c in label_str]
+        _input = list(map(ord, label_str))
         buffer: List[int] = []
         tokens: List[Token] = []
 
