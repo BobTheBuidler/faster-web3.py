@@ -12,7 +12,6 @@ from typing import (
 from faster_eth_utils.toolz import (
     assoc,
     curry,
-    merge,
 )
 
 from faster_web3.exceptions import (
@@ -151,9 +150,8 @@ class FormattingMiddlewareBuilder(Web3MiddlewareBuilder):
 
     def request_processor(self, method: "RPCEndpoint", params: Any) -> Any:
         if self.sync_formatters_builder is not None:
-            formatters = merge(
-                FORMATTER_DEFAULTS,
-                self.sync_formatters_builder(cast("Web3", self._w3), method),
+            formatters = FORMATTER_DEFAULTS | self.sync_formatters_builder(
+                cast("Web3", self._w3), method
             )
             self.request_formatters = formatters.pop("request_formatters")
 
@@ -165,9 +163,8 @@ class FormattingMiddlewareBuilder(Web3MiddlewareBuilder):
 
     def response_processor(self, method: RPCEndpoint, response: "RPCResponse") -> Any:
         if self.sync_formatters_builder is not None:
-            formatters = merge(
-                FORMATTER_DEFAULTS,
-                self.sync_formatters_builder(cast("Web3", self._w3), method),
+            formatters = FORMATTER_DEFAULTS | self.sync_formatters_builder(
+                cast("Web3", self._w3), method
             )
             self.result_formatters = formatters["result_formatters"]
             self.error_formatters = formatters["error_formatters"]
@@ -183,11 +180,8 @@ class FormattingMiddlewareBuilder(Web3MiddlewareBuilder):
 
     async def async_request_processor(self, method: "RPCEndpoint", params: Any) -> Any:
         if self.async_formatters_builder is not None:
-            formatters = merge(
-                FORMATTER_DEFAULTS,
-                await self.async_formatters_builder(
+            formatters = FORMATTER_DEFAULTS | await self.async_formatters_builder(
                     cast("AsyncWeb3[Any]", self._w3), method
-                ),
             )
             self.request_formatters = formatters.pop("request_formatters")
 
@@ -201,11 +195,8 @@ class FormattingMiddlewareBuilder(Web3MiddlewareBuilder):
         self, method: RPCEndpoint, response: "RPCResponse"
     ) -> Any:
         if self.async_formatters_builder is not None:
-            formatters = merge(
-                FORMATTER_DEFAULTS,
-                await self.async_formatters_builder(
-                    cast("AsyncWeb3[Any]", self._w3), method
-                ),
+            formatters = FORMATTER_DEFAULTS | await self.async_formatters_builder(
+                cast("AsyncWeb3[Any]", self._w3), method
             )
             self.result_formatters = formatters["result_formatters"]
             self.error_formatters = formatters["error_formatters"]

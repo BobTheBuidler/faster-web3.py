@@ -11,10 +11,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    merge,
-)
-
 from faster_web3.providers.persistent import (
     PersistentConnectionProvider,
 )
@@ -162,17 +158,17 @@ class RequestMocker:
             elif "error" in mock_return:
                 mock_return = self._create_error_object(mock_return["error"])
 
-            mocked_response = merge(response_dict, mock_return)
+            mocked_response = response_dict | mock_return
         elif method in self.mock_results:
             mock_return = self.mock_results[method]
             if callable(mock_return):
                 mock_return = mock_return(method, params)
-            mocked_response = merge(response_dict, {"result": mock_return})
+            mocked_response = response_dict | {"result": mock_return}
         elif method in self.mock_errors:
             error = self.mock_errors[method]
             if callable(error):
                 error = error(method, params)
-            mocked_response = merge(response_dict, self._create_error_object(error))
+            mocked_response = response_dict | self._create_error_object(error)
         else:
             raise Exception("Invariant: unreachable code path")
 
@@ -236,7 +232,7 @@ class RequestMocker:
             elif "error" in mock_return:
                 mock_return = self._create_error_object(mock_return["error"])
 
-            mocked_result = merge(response_dict, mock_return)
+            mocked_result = response_dict | mock_return
         elif method in self.mock_results:
             mock_return = self.mock_results[method]
             if callable(mock_return):
@@ -246,7 +242,7 @@ class RequestMocker:
                 # this is the "correct" way to mock the async make_request
                 mock_return = await mock_return(method, params)
 
-            mocked_result = merge(response_dict, {"result": mock_return})
+            mocked_result = response_dict | {"result": mock_return}
 
         elif method in self.mock_errors:
             error = self.mock_errors[method]
@@ -254,7 +250,7 @@ class RequestMocker:
                 error = error(method, params)
             elif iscoroutinefunction(error):
                 error = await error(method, params)
-            mocked_result = merge(response_dict, self._create_error_object(error))
+            mocked_result = response_dict | self._create_error_object(error)
 
         else:
             raise Exception("Invariant: unreachable code path")
@@ -332,4 +328,4 @@ class RequestMocker:
     def _create_error_object(error: Dict[str, Any]) -> Dict[str, Any]:
         code = error.get("code", -32000)
         message = error.get("message", "Mocked error")
-        return {"error": merge({"code": code, "message": message}, error)}
+        return {"error": {"code": code, "message": message} | error}

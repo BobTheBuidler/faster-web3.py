@@ -13,7 +13,6 @@ from eth_typing import (
 )
 from faster_eth_utils.toolz import (
     assoc,
-    merge,
 )
 from faster_hexbytes import (
     HexBytes,
@@ -165,7 +164,7 @@ async def async_fill_transaction_defaults(
                 default_val = default_getter
 
             defaults[key] = default_val
-    return merge(defaults, transaction)
+    return defaults | transaction
 
 
 async def async_get_required_transaction(

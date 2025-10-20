@@ -37,7 +37,6 @@ from faster_eth_utils import (
 )
 from faster_eth_utils.toolz import (
     assoc,
-    merge,
 )
 from faster_hexbytes import (
     HexBytes,
@@ -786,14 +785,11 @@ class AsyncEthModuleTest:
             "nonce": nonce + 3,
         }
         signed_reset_auth = keyfile_account.sign_authorization(reset_auth)
-        reset_code_txn = merge(
-            txn,
-            {
-                "from": keyfile_account.address,
-                "authorizationList": [signed_reset_auth],
-                "nonce": nonce + 2,
-            },
-        )
+        reset_code_txn = txn | {
+            "from": keyfile_account.address,
+            "authorizationList": [signed_reset_auth],
+            "nonce": nonce + 2,
+        }
 
         # test eth_sendTransaction
         reset_tx_hash = await async_w3.eth.send_transaction(reset_code_txn)
@@ -3931,14 +3927,11 @@ class EthModuleTest:
             "nonce": nonce + 3,
         }
         signed_reset_auth = keyfile_account.sign_authorization(reset_auth)
-        reset_code_txn = merge(
-            txn,
-            {
-                "from": keyfile_account.address,
-                "authorizationList": [signed_reset_auth],
-                "nonce": nonce + 2,
-            },
-        )
+        reset_code_txn = txn | {
+            "from": keyfile_account.address,
+            "authorizationList": [signed_reset_auth],
+            "nonce": nonce + 2,
+        }
 
         # test eth_sendTransaction
         reset_tx_hash = w3.eth.send_transaction(reset_code_txn)
