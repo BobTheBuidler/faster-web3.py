@@ -172,12 +172,13 @@ setup(
     long_description_content_type="text/markdown",
     author="The Ethereum Foundation",
     author_email="snakecharmers@ethereum.org",
-    url="https://github.com/ethereum/web3.py",
+    url="https://github.com/BobTheBuidler/faster-web3.py",
     project_urls={
         "Documentation": "https://web3py.readthedocs.io/en/stable/",
         "Release Notes": "https://github.com/BobTheBuidler/faster-web3.py/releases",
         "Issues": "https://github.com/BobTheBuidler/faster-web3.py/issues",
         "Source": "https://github.com/BobTheBuidler/faster-web3.py",
+        "Original": "https://github.com/ethereum/web3.py",
     },
     include_package_data=True,
     install_requires=[
