@@ -16,7 +16,6 @@ from typing import (
     final,
 )
 
-import ujson
 from eth_typing import (
     HexStr,
     Primitives,
@@ -236,12 +235,12 @@ class FriendlyJsonSerde:
 
     def json_decode(self, json_str: str) -> Dict[Any, Any]:
         try:
-            return ujson.loads(json_str)
-        except ujson.JSONDecodeError as exc:
+            return json.loads(json_str)
+        except json.JSONDecodeError as exc:
             err_msg = f"Could not decode {json_str!r} because of {exc}."
             # Calling code may rely on catching JSONDecodeError to recognize bad json
             # so we have to re-raise the same type.
-            raise ujson.JSONDecodeError(err_msg, exc.doc, exc.pos)
+            raise json.JSONDecodeError(err_msg)
 
     def json_encode(
         self, obj: Mapping[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None
