@@ -12,9 +12,6 @@ from eth_typing import (
 from faster_eth_utils import (
     is_checksum_address,
 )
-from faster_eth_utils.toolz import (
-    assoc,
-)
 
 from faster_web3._utils.rpc_abi import (
     RPC,
@@ -96,7 +93,8 @@ class Tracing(Module):
         if "from" not in transaction and is_checksum_address(
             self.w3.eth.default_account
         ):
-            transaction = assoc(transaction, "from", self.w3.eth.default_account)
+            transaction = transaction.copy()
+            transaction["from"] = self.w3.eth.default_account
 
         if block_identifier is None:
             block_identifier = self.default_block

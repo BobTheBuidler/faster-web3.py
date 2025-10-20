@@ -4,10 +4,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    assoc,
-)
-
 from faster_web3._utils.method_formatters import (
     to_hex_if_integer,
 )
@@ -49,9 +45,8 @@ def validate_transaction_params(
         and "gasPrice" not in transaction
         and none_in_dict(DYNAMIC_FEE_TXN_PARAMS, transaction)
     ):
-        transaction = assoc(
-            transaction, "gasPrice", to_hex_if_integer(strategy_based_gas_price)
-        )
+        transaction = transaction.copy()
+        transaction["gasPrice"] = to_hex_if_integer(strategy_based_gas_price)
 
     # legacy and dynamic fee tx variables used:
     if "gasPrice" in transaction and any_in_dict(DYNAMIC_FEE_TXN_PARAMS, transaction):
@@ -67,7 +62,8 @@ def validate_transaction_params(
         base_fee = latest_block["baseFeePerGas"]
         priority_fee = int(str(transaction["maxPriorityFeePerGas"]), 16)
         max_fee_per_gas = priority_fee + 2 * base_fee
-        transaction = assoc(transaction, "maxFeePerGas", hex(max_fee_per_gas))
+        transaction = transaction.copy()
+        transaction["maxFeePerGas"] = hex(max_fee_per_gas)
     # dynamic fee transaction - no priority fee:
     elif "maxFeePerGas" in transaction and "maxPriorityFeePerGas" not in transaction:
         raise InvalidTransaction(
