@@ -66,7 +66,6 @@ def _apply_response_formatters(
             appropriate_response = cast(EthSubscriptionParams, response[response_type])
             params = response["params"].copy()
             params["result"] = method_response_formatter(appropriate_response["result"])
-            response = response.copy()
             response[response_type] = params
         else:
             response[response_type] = method_response_formatter(appropriate_response)

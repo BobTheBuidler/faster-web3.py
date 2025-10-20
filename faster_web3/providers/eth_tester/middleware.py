@@ -371,7 +371,7 @@ def fill_default(
     if transaction.get(field) is None:
         guess_val = guess_func(w3, transaction)
         transaction = transaction.copy()
-        transaction[field] = guess_val
+        transaction[field] = guess_val  # type: ignore [literal-required]
     return transaction
 
 
@@ -395,7 +395,7 @@ async def async_fill_default(
     if transaction.get(field) is None:
         guess_val = await guess_func(async_w3, transaction)
         transaction = transaction.copy()
-        transaction[field] = guess_val
+        transaction[field] = guess_val  # type: ignore [literal-required]
     return transaction
 
 
