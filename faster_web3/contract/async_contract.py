@@ -215,7 +215,8 @@ class AsyncContractEvent(BaseContractEvent):
         """
         abi = self.abi
         w3 = self.w3
-        filter_builder = AsyncEventFilterBuilder(abi, w3.codec)
+        codec = w3.codec
+        filter_builder = AsyncEventFilterBuilder(abi, codec)
         self._set_up_filter_builder(
             argument_filters,
             from_block,
@@ -225,7 +226,7 @@ class AsyncContractEvent(BaseContractEvent):
             filter_builder,
         )
         log_filter = await filter_builder.deploy(w3)
-        log_filter.log_entry_formatter = get_event_data(w3.codec, abi)
+        log_filter.log_entry_formatter = get_event_data(codec, abi)
         log_filter.builder = filter_builder
 
         return log_filter
