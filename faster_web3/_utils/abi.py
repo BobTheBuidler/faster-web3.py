@@ -70,7 +70,6 @@ from faster_eth_utils import (
     is_string,
     is_text,
     to_text,
-    to_tuple,
 )
 from faster_eth_utils.toolz import (
     curry,
@@ -566,17 +565,17 @@ def is_probably_enum(abi_type: TypeStr) -> bool:
     return bool(re.match(ENUM_REGEX, abi_type))
 
 
-@to_tuple
 def normalize_event_input_types(
     abi_args: Collection[ABIEvent],
-) -> Iterable[Union[ABIEvent, Dict[TypeStr, Any]]]:
-    for arg in abi_args:
-        if is_recognized_type(arg["type"]):
-            yield arg
-        elif is_probably_enum(arg["type"]):
-            yield {k: "uint8" if k == "type" else v for k, v in arg.items()}
-        else:
-            yield arg
+) -> Tuple[Union[ABIEvent, Dict[TypeStr, Any]], ...]:
+    return tuple(
+        arg
+        if is_recognized_type(arg_type := arg["type"])
+        else {k: "uint8" if k == "type" else v for k, v in arg.items()}
+        if is_probably_enum(arg_type)
+        else arg
+        for arg in abi_args
+    )
 
 
 ########################################################

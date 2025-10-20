@@ -192,8 +192,8 @@ class BaseContractEvent:
             self.argument_names = argument_names
 
         event_inputs = self.abi.get("inputs", [])
-        self.argument_names = tuple([input.get("name", None) for input in event_inputs])
-        self.argument_types = tuple([input["type"] for input in event_inputs])
+        self.argument_names = tuple(input.get("name", None) for input in event_inputs)
+        self.argument_types = tuple(input["type"] for input in event_inputs)
 
     def __repr__(self) -> str:
         if self.abi:
@@ -593,8 +593,8 @@ class BaseContractFunction:
         self.signature = abi_to_signature(self.abi)
 
         event_inputs = self.abi.get("inputs", [])
-        self.argument_names = tuple([input.get("name", None) for input in event_inputs])
-        self.argument_types = tuple([input["type"] for input in event_inputs])
+        self.argument_names = tuple(input.get("name", None) for input in event_inputs)
+        self.argument_types = tuple(input["type"] for input in event_inputs)
 
     @combomethod
     def _get_abi(cls) -> ABIFunction:

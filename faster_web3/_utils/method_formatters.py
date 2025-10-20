@@ -37,7 +37,6 @@ from faster_eth_utils.curried import (
     is_string,
     to_checksum_address,
     to_list,
-    to_tuple,
 )
 from faster_eth_utils.toolz import (
     complement,
@@ -1131,14 +1130,15 @@ ERROR_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
 }
 
 
-@to_tuple
 def combine_formatters(
     formatter_maps: Collection[Dict[RPCEndpoint, Callable[..., TReturn]]],
     method_name: RPCEndpoint,
-) -> Iterable[Callable[..., TReturn]]:
-    for formatter_map in formatter_maps:
-        if method_name in formatter_map:
-            yield formatter_map[method_name]
+) -> Tuple[Callable[..., TReturn], ...]:
+    return tuple(
+        formatter_map[method_name]
+        for formatter_map in formatter_maps
+        if method_name in formatter_map
+    )
 
 
 def get_request_formatters(method_name: RPCEndpoint) -> Callable[[RPCResponse], Any]:
@@ -1281,14 +1281,12 @@ FILTER_RESULT_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
 }
 
 
-@to_tuple
 def apply_module_to_formatters(
     formatters: Iterable[Callable[..., TReturn]],
     module: "Module",
     method_name: Union[RPCEndpoint, Callable[..., RPCEndpoint]],
-) -> Iterable[Callable[..., TReturn]]:
-    for f in formatters:
-        yield partial(f, module, method_name)
+) -> Tuple[Callable[..., TReturn], ...]:
+    return tuple(partial(f, module, method_name) for f in formatters)
 
 
 def get_result_formatters(
