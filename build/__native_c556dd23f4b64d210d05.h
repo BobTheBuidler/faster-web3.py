@@ -1129,29 +1129,6 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
-    PyObject *___mypyc_generator_attribute__formatter_maps;
-    PyObject *___mypyc_generator_attribute__method_name;
-    int32_t ___mypyc_next_label__;
-    PyObject *___mypyc_temp__0;
-    PyObject *___mypyc_temp__1;
-    PyObject *___mypyc_generator_attribute__formatter_map;
-} faster_web3____utils___method_formatters___combine_formatters_genObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
-    PyObject *___mypyc_generator_attribute__formatters;
-    PyObject *___mypyc_generator_attribute__module;
-    PyObject *___mypyc_generator_attribute__method_name;
-    int32_t ___mypyc_next_label__;
-    PyObject *___mypyc_temp__2;
-    PyObject *___mypyc_temp__3;
-    PyObject *___mypyc_generator_attribute__f;
-} faster_web3____utils___method_formatters___apply_module_to_formatters_genObject;
-
-typedef struct {
-    PyObject_HEAD
-    CPyVTableItem *vtable;
     PyObject *___mypyc_self__;
     PyObject *_duplicates;
     PyObject *_dup_sel;
