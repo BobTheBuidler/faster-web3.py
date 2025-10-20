@@ -1,5 +1,4 @@
 import codecs
-import operator
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -33,13 +32,11 @@ from faster_eth_utils.curried import (
     is_address,
     is_bytes,
     is_integer,
-    is_null,
     is_string,
     to_checksum_address,
     to_list,
 )
 from faster_eth_utils.toolz import (
-    complement,
     compose,
     curried,
     curry,
@@ -129,15 +126,28 @@ def bytes_to_ascii(value: bytes) -> str:
     return codecs.decode(value, "ascii")
 
 
-to_ascii_if_bytes: Final = apply_formatter_if(is_bytes, bytes_to_ascii)
-to_integer_if_hex: Final = apply_formatter_if(is_string, hex_to_integer)
-to_hex_if_integer: Final = apply_formatter_if(is_integer, integer_to_hex)
+def to_ascii_if_bytes(value: Any) -> Any:
+    return bytes_to_ascii(value) if is_bytes(value) else value
 
-is_false: Final[Callable[[Any], TypeGuard[Literal[False]]]] = partial(
-    operator.is_, False
-)
-is_not_false: Final = complement(is_false)
-is_not_null: Final = complement(is_null)
+
+def to_integer_if_hex(value: Any) -> Any:
+    return hex_to_integer(value) if is_string(value) else value
+
+
+def to_hex_if_integer(value: Any) -> Any:
+    return integer_to_hex(value) if is_integer(value) else value
+
+
+def is_false(value: Any) -> TypeGuard[Literal[False]]:
+    return value is False
+
+
+def is_not_false(value: Any) -> bool:
+    return not is_false(value)
+
+
+def is_not_null(value: Any) -> bool:
+    return value is not None
 
 
 @curry
@@ -259,10 +269,19 @@ AUTH_LIST_RESULT_FORMATTER: Final = apply_formatter_if(
     ),
 )
 
+
+to_hexbytes32: Final = to_hexbytes(32)
+
+def to_hexbytes32_if_not_null(value: Any) -> Any:
+    return value if value is None else to_hexbytes32(value)
+
+def to_varhexbytes32_if_not_null(value: Any) -> Any:
+    return value if value is None else to_hexbytes32(value, variable_length=True)
+
 TRANSACTION_RESULT_FORMATTERS: Final = {
-    "blockHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "blockNumber": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "transactionIndex": apply_formatter_if(is_not_null, to_integer_if_hex),
+    "blockHash": to_hexbytes32_if_not_null,
+    "blockNumber": to_integer_if_hex,
+    "transactionIndex": to_integer_if_hex,
     "nonce": to_integer_if_hex,
     "gas": to_integer_if_hex,
     "gasPrice": to_integer_if_hex,
@@ -271,16 +290,16 @@ TRANSACTION_RESULT_FORMATTERS: Final = {
     "value": to_integer_if_hex,
     "from": to_checksum_address,
     "publicKey": apply_formatter_if(is_not_null, to_hexbytes(64)),
-    "r": apply_formatter_if(is_not_null, to_hexbytes(32, variable_length=True)),
+    "r": to_varhexbytes32_if_not_null,
     "raw": HexBytes,
-    "s": apply_formatter_if(is_not_null, to_hexbytes(32, variable_length=True)),
+    "s": to_varhexbytes32_if_not_null,
     "to": apply_formatter_if(is_address, to_checksum_address),
-    "hash": to_hexbytes(32),
-    "v": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "yParity": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "standardV": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "type": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "chainId": apply_formatter_if(is_not_null, to_integer_if_hex),
+    "hash": to_hexbytes32,
+    "v": to_integer_if_hex,
+    "yParity": to_integer_if_hex,
+    "standardV": to_integer_if_hex,
+    "type": to_integer_if_hex,
+    "chainId": to_integer_if_hex,
     "accessList": apply_formatter_if(
         is_not_null,
         apply_formatter_to_array(ACCESS_LIST_FORMATTER),
@@ -289,7 +308,7 @@ TRANSACTION_RESULT_FORMATTERS: Final = {
     "data": HexBytes,  # Nethermind, for example, returns both `input` and `data`
     "maxFeePerBlobGas": to_integer_if_hex,
     "blobVersionedHashes": apply_formatter_if(
-        is_not_null, apply_formatter_to_array(to_hexbytes(32))
+        is_not_null, apply_formatter_to_array(to_hexbytes32)
     ),
     "authorizationList": AUTH_LIST_RESULT_FORMATTER,
 }
@@ -311,13 +330,13 @@ withdrawal_result_formatter: Final = type_aware_apply_formatters_to_dict(
 
 
 LOG_ENTRY_FORMATTERS: Final = {
-    "blockHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "blockNumber": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "transactionIndex": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "transactionHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "blockHash": to_hexbytes32_if_not_null,
+    "blockNumber": to_integer_if_hex,
+    "transactionIndex": to_integer_if_hex,
+    "transactionHash": to_hexbytes32_if_not_null,
     "logIndex": to_integer_if_hex,
     "address": to_checksum_address,
-    "topics": apply_list_to_array_formatter(to_hexbytes(32)),
+    "topics": apply_list_to_array_formatter(to_hexbytes32),
     "data": HexBytes,
 }
 
@@ -326,10 +345,10 @@ log_entry_formatter: Final = type_aware_apply_formatters_to_dict(LOG_ENTRY_FORMA
 
 
 RECEIPT_FORMATTERS: Final = {
-    "blockHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "blockNumber": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "transactionIndex": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "transactionHash": to_hexbytes(32),
+    "blockHash": to_hexbytes32_if_not_null,
+    "blockNumber": to_integer_if_hex,
+    "transactionIndex": to_integer_if_hex,
+    "transactionHash": to_hexbytes32,
     "cumulativeGasUsed": to_integer_if_hex,
     "status": to_integer_if_hex,
     "gasUsed": to_integer_if_hex,
@@ -377,25 +396,25 @@ block_request_formatter: Final = type_aware_apply_formatters_to_dict(
 
 BLOCK_RESULT_FORMATTERS: Final = {
     "baseFeePerGas": to_integer_if_hex,
-    "extraData": apply_formatter_if(is_not_null, to_hexbytes(32, variable_length=True)),
+    "extraData": to_varhexbytes32_if_not_null,
     "gasLimit": to_integer_if_hex,
     "gasUsed": to_integer_if_hex,
     "size": to_integer_if_hex,
     "timestamp": to_integer_if_hex,
-    "hash": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "hash": to_hexbytes32_if_not_null,
     "logsBloom": apply_formatter_if(
         is_not_null, to_hexbytes(256, variable_length=True)
     ),
     "miner": apply_formatter_if(is_not_null, to_checksum_address),
-    "mixHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "mixHash": to_hexbytes32_if_not_null,
     "nonce": apply_formatter_if(is_not_null, to_hexbytes(8, variable_length=True)),
-    "number": apply_formatter_if(is_not_null, to_integer_if_hex),
-    "parentHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "sha3Uncles": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "uncles": apply_list_to_array_formatter(to_hexbytes(32)),
+    "number": to_integer_if_hex,
+    "parentHash": to_hexbytes32_if_not_null,
+    "sha3Uncles": to_hexbytes32_if_not_null,
+    "uncles": apply_list_to_array_formatter(to_hexbytes32),
     "difficulty": to_integer_if_hex,
-    "receiptsRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "stateRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "receiptsRoot": to_hexbytes32_if_not_null,
+    "stateRoot": to_hexbytes32_if_not_null,
     "totalDifficulty": to_integer_if_hex,
     "transactions": apply_one_of_formatters(
         (
@@ -403,18 +422,18 @@ BLOCK_RESULT_FORMATTERS: Final = {
                 is_array_of_dicts,
                 apply_list_to_array_formatter(transaction_result_formatter),
             ),
-            (is_array_of_strings, apply_list_to_array_formatter(to_hexbytes(32))),
+            (is_array_of_strings, apply_list_to_array_formatter(to_hexbytes32)),
         )
     ),
-    "transactionsRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "transactionsRoot": to_hexbytes32_if_not_null,
     "withdrawals": apply_formatter_if(
         is_not_null, apply_list_to_array_formatter(withdrawal_result_formatter)
     ),
-    "withdrawalsRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "withdrawalsRoot": to_hexbytes32_if_not_null,
     "blobGasUsed": to_integer_if_hex,
     "excessBlobGas": to_integer_if_hex,
-    "parentBeaconBlockRoot": apply_formatter_if(is_not_null, to_hexbytes(32)),
-    "requestsHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
+    "parentBeaconBlockRoot": to_hexbytes32_if_not_null,
+    "requestsHash": to_hexbytes32_if_not_null,
 }
 block_result_formatter: Final = type_aware_apply_formatters_to_dict(
     BLOCK_RESULT_FORMATTERS
@@ -485,9 +504,9 @@ ACCOUNT_PROOF_FORMATTERS: Final = {
     "address": to_checksum_address,
     "accountProof": apply_list_to_array_formatter(HexBytes),
     "balance": to_integer_if_hex,
-    "codeHash": to_hexbytes(32),
+    "codeHash": to_hexbytes32,
     "nonce": to_integer_if_hex,
-    "storageHash": to_hexbytes(32),
+    "storageHash": to_hexbytes32,
     "storageProof": apply_list_to_array_formatter(
         type_aware_apply_formatters_to_dict(STORAGE_PROOF_FORMATTERS)
     ),
@@ -509,7 +528,7 @@ filter_params_formatter: Final = type_aware_apply_formatters_to_dict(
 filter_result_formatter: Final = apply_one_of_formatters(
     (
         (is_array_of_dicts, apply_list_to_array_formatter(log_entry_formatter)),
-        (is_array_of_strings, apply_list_to_array_formatter(to_hexbytes(32))),
+        (is_array_of_strings, apply_list_to_array_formatter(to_hexbytes32)),
     )
 )
 
@@ -795,7 +814,7 @@ DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS: Final = apply_formatter_if(
     type_aware_apply_formatters_to_dict(
         {
             "address": to_checksum_address,
-            "topics": apply_list_to_array_formatter(to_hexbytes(32)),
+            "topics": apply_list_to_array_formatter(to_hexbytes32),
             "data": HexBytes,
             "position": to_integer_if_hex,
         }
@@ -934,7 +953,7 @@ TRACE_FORMATTERS: Final[Callable[[TValue], Union[Any, TValue]]] = apply_formatte
             "result": TRACE_RESULT_FORMATTERS,
             "blockHash": HexBytes,
             "blockNumber": to_integer_if_hex,
-            "transactionHash": apply_formatter_if(is_not_null, to_hexbytes(32)),
+            "transactionHash": to_hexbytes32_if_not_null,
         }
     ),
 )
@@ -1065,8 +1084,8 @@ PYTHONIC_RESULT_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
         apply_formatter_if(is_0x_prefixed, to_integer_if_hex),
         apply_formatter_if(is_integer, str),
     ),
-    RPC.eth_sendRawTransaction: to_hexbytes(32),
-    RPC.eth_sendTransaction: to_hexbytes(32),
+    RPC.eth_sendRawTransaction: to_hexbytes32,
+    RPC.eth_sendTransaction: to_hexbytes32,
     RPC.eth_sign: HexBytes,
     RPC.eth_signTransaction: apply_formatter_if(is_not_null, signed_tx_formatter),
     RPC.eth_signTypedData: HexBytes,

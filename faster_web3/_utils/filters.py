@@ -30,11 +30,7 @@ from faster_eth_utils import (
     is_string,
     is_text,
 )
-from faster_eth_utils.curried import (
-    apply_formatter_if,
-)
 from faster_eth_utils.toolz import (
-    complement,
     curry,
 )
 from faster_hexbytes import (
@@ -322,8 +318,12 @@ def decode_utf8_bytes(value: bytes) -> str:
     return value.decode("utf-8")
 
 
-not_text = complement(is_text)
-normalize_to_text = apply_formatter_if(not_text, decode_utf8_bytes)
+def not_text(value: Any) -> bool:
+    return not is_text(value)
+
+
+def normalize_to_text(value: Any) -> str:
+    return decode_utf8_bytes(value) if not_text(value) else value
 
 
 def normalize_data_values(type_string: TypeStr, data_value: Any) -> Any:
