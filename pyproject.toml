@@ -78,7 +78,7 @@ add-ignore = "D200,D203,D204,D205,D212,D302,D400,D401,D412,D415"
 # summary line.  Neither one of those requirements seem appropriate.
 
 [tool.pytest.ini_options]
-addopts = "-v --showlocals --durations 10"
+addopts = "--showlocals --durations 10"
 asyncio_mode = "strict"
 log_date_format = "%m-%d %H:%M:%S"
 log_format = "%(levelname)8s  %(asctime)s  %(filename)20s  %(message)s"
