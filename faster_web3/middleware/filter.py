@@ -29,7 +29,6 @@ from faster_eth_utils import (
     is_string,
     to_hex,
     to_int,
-    to_list,
 )
 from faster_eth_utils.toolz import (
     concat,
@@ -342,15 +341,16 @@ class RequestBlocks:
             yield (block_hashes_in_range(self.w3, block_range))
 
 
-@to_list
 def block_hashes_in_range(
     w3: "Web3", block_range: Tuple[BlockNumber, BlockNumber]
-) -> Iterable[Hash32]:
+) -> List[Hash32]:
     from_block, to_block = block_range
     if from_block is None or to_block is None:
-        return
-    for block_number in range(from_block, to_block + 1):
-        yield getattr(w3.eth.get_block(BlockNumber(block_number)), "hash", None)
+        return []
+    return [
+        getattr(w3.eth.get_block(BlockNumber(block_number)), "hash", None)
+        for block_number in range(from_block, to_block + 1)
+    ]
 
 
 # --- async --- #

@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2413];
+extern PyObject *CPyStatics[2411];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -1569,12 +1569,6 @@ extern CPyThreadLocal faster_web3____utils___method_formatters_____mypyc_lambda_
 extern PyTypeObject *CPyType_method_formatters_____mypyc_lambda__6_obj;
 extern PyObject *CPyDef_method_formatters_____mypyc_lambda__6_obj(void);
 extern CPyThreadLocal faster_web3____utils___method_formatters_____mypyc_lambda__6_objObject *method_formatters_____mypyc_lambda__6_obj_free_instance;
-extern PyTypeObject *CPyType_method_formatters___combine_formatters_gen;
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen(void);
-extern CPyThreadLocal faster_web3____utils___method_formatters___combine_formatters_genObject *method_formatters___combine_formatters_gen_free_instance;
-extern PyTypeObject *CPyType_method_formatters___apply_module_to_formatters_gen;
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen(void);
-extern CPyThreadLocal faster_web3____utils___method_formatters___apply_module_to_formatters_genObject *method_formatters___apply_module_to_formatters_gen_free_instance;
 extern PyObject *CPyDef_method_formatters___bytes_to_ascii(PyObject *cpy_r_value);
 extern PyObject *CPyPy_method_formatters___bytes_to_ascii(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___to_hexbytes(CPyTagged cpy_r_num_bytes, PyObject *cpy_r_val, char cpy_r_variable_length);
@@ -1623,17 +1617,6 @@ extern PyObject *CPyDef_method_formatters_____mypyc_lambda__6_obj_____call__(PyO
 extern PyObject *CPyPy_method_formatters_____mypyc_lambda__6_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___subscription_formatter(PyObject *cpy_r_value);
 extern PyObject *CPyPy_method_formatters___subscription_formatter(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen_____next__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___combine_formatters_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
-extern PyObject *CPyPy_method_formatters___combine_formatters_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen_____iter__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___combine_formatters_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
-extern PyObject *CPyPy_method_formatters___combine_formatters_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___combine_formatters_gen___close(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___combine_formatters_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___combine_formatters(PyObject *cpy_r_formatter_maps, PyObject *cpy_r_method_name);
 extern PyObject *CPyPy_method_formatters___combine_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___get_request_formatters(PyObject *cpy_r_method_name);
@@ -1648,17 +1631,6 @@ extern PyObject *CPyDef_method_formatters___raise_transaction_not_found_with_ind
 extern PyObject *CPyPy_method_formatters___raise_transaction_not_found_with_index(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___filter_wrapper(PyObject *cpy_r_module, PyObject *cpy_r_method, PyObject *cpy_r_filter_id);
 extern PyObject *CPyPy_method_formatters___filter_wrapper(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen_____mypyc_generator_helper__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback, PyObject *cpy_r_arg, PyObject **cpy_r_stop_iter_ptr);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen_____next__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___apply_module_to_formatters_gen_____next__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen___send(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_arg);
-extern PyObject *CPyPy_method_formatters___apply_module_to_formatters_gen___send(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen_____iter__(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___apply_module_to_formatters_gen_____iter__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen___throw(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_type, PyObject *cpy_r_value, PyObject *cpy_r_traceback);
-extern PyObject *CPyPy_method_formatters___apply_module_to_formatters_gen___throw(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_method_formatters___apply_module_to_formatters_gen___close(PyObject *cpy_r___mypyc_self__);
-extern PyObject *CPyPy_method_formatters___apply_module_to_formatters_gen___close(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___apply_module_to_formatters(PyObject *cpy_r_formatters, PyObject *cpy_r_module, PyObject *cpy_r_method_name);
 extern PyObject *CPyPy_method_formatters___apply_module_to_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef_method_formatters___get_result_formatters(PyObject *cpy_r_method_name, PyObject *cpy_r_module);
