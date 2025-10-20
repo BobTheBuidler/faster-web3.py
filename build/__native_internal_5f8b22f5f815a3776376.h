@@ -298,7 +298,7 @@ extern PyObject *CPyDef__normalization____extract_valid_codepoints(void);
 extern PyObject *CPyPy__normalization____extract_valid_codepoints(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization____construct_whole_confusable_map(void);
 extern PyObject *CPyPy__normalization____construct_whole_confusable_map(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern char CPyDef__normalization____is_fenced(CPyTagged cpy_r_cp);
+extern char CPyDef__normalization____is_fenced(CPyTagged cpy_r_cp, PyObject *cpy_r_spec);
 extern PyObject *CPyPy__normalization____is_fenced(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization____codepoints_to_text(PyObject *cpy_r_cps);
 extern PyObject *CPyPy__normalization____codepoints_to_text(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
