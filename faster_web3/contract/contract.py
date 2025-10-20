@@ -481,35 +481,34 @@ class Contract(BaseContract):
             ),
         )
 
-        if contract.abi:
-            for abi in contract.abi:
-                abi_name = abi.get("name")
+        if contract_abi := contract.abi:
+            for abi in contract_abi:
+                abi_name: Optional[str] = abi.get("name")
                 if abi_name in ["abi", "address"]:
                     raise Web3AttributeError(
                         f"Contract contains a reserved word `{abi_name}` "
                         f"and could not be instantiated."
                     )
 
-        contract.functions = ContractFunctions(
-            contract.abi, contract.w3, decode_tuples=contract.decode_tuples
+        w3 = contract.w3
+        decode_tuples = contract.decode_tuples
+        functions = ContractFunctions(
+            contract_abi, w3, decode_tuples=decode_tuples
         )
+        contract.functions = functions
         contract.caller = ContractCaller(
-            contract.abi,
-            contract.w3,
+            contract_abi,
+            w3,
             contract.address,
-            decode_tuples=contract.decode_tuples,
-            contract_functions=contract.functions,
+            decode_tuples=decode_tuples,
+            contract_functions=functions,
         )
-        contract.events = ContractEvents(contract.abi, contract.w3)
+        contract.events = ContractEvents(contract_abi, w3)
         contract.fallback = Contract.get_fallback_function(
-            contract.abi,
-            contract.w3,
-            ContractFunction,
+            contract_abi, w3, ContractFunction
         )
         contract.receive = Contract.get_receive_function(
-            contract.abi,
-            contract.w3,
-            ContractFunction,
+            contract_abi, w3, ContractFunction
         )
 
         return contract

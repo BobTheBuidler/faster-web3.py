@@ -494,26 +494,25 @@ class AsyncContract(BaseContract):
                         f"and could not be instantiated."
                     )
 
-        contract.functions = AsyncContractFunctions(
-            contract.abi, contract.w3, decode_tuples=contract.decode_tuples
+        w3 = contract.w3
+        decode_tuples = contract.decode_tuples
+        functions = AsyncContractFunctions(
+            contract_abi, w3, decode_tuples=decode_tuples
         )
+        contract.functions = functions
         contract.caller = AsyncContractCaller(
-            contract.abi,
-            contract.w3,
+            contract_abi,
+            w3,
             contract.address,
-            decode_tuples=contract.decode_tuples,
-            contract_functions=contract.functions,
+            decode_tuples=decode_tuples,
+            contract_functions=functions,
         )
-        contract.events = AsyncContractEvents(contract.abi, contract.w3)
+        contract.events = AsyncContractEvents(contract_abi, w3)
         contract.fallback = AsyncContract.get_fallback_function(
-            contract.abi,
-            contract.w3,
-            AsyncContractFunction,
+            contract_abi, w3, AsyncContractFunction
         )
         contract.receive = AsyncContract.get_receive_function(
-            contract.abi,
-            contract.w3,
-            AsyncContractFunction,
+            contract_abi, w3, AsyncContractFunction
         )
         return contract
 
