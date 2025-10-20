@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2309];
+extern PyObject *CPyStatics[2320];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -253,6 +253,12 @@ extern PyObject *CPyStatic__normalization___NFC;
 extern PyObject *CPyStatic__normalization___NFD;
 extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC;
 extern PyObject *CPyStatic__normalization___EMOJI_NORMALIZATION_SPEC;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_CM;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_FENCED;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_GROUPS;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_IGNORED;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_MAPPED;
+extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_NSM;
 extern PyObject *CPyStatic__normalization___TokenType___EMOJI;
 extern PyObject *CPyStatic__normalization___TokenType___TEXT;
 extern PyObject *CPyStatic__normalization___GROUP_COMBINED_VALID_CPS;
@@ -3444,6 +3450,9 @@ extern PyObject *CPyPy_async_exception_handling___async_handle_offchain_lookup_g
 extern PyObject *CPyDef_async_exception_handling___async_handle_offchain_lookup(PyObject *cpy_r_offchain_lookup_payload, PyObject *cpy_r_transaction);
 extern PyObject *CPyPy_async_exception_handling___async_handle_offchain_lookup(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_async_exception_handling_____top_level__(void);
+extern PyObject *CPyStatic_utils___caching___TimeoutError;
+extern PyObject *CPyStatic_utils___caching___sleep;
+extern PyObject *CPyStatic_utils___caching___time;
 extern PyObject *CPyStatic_utils___caching___RequestCacheValidationThreshold___FINALIZED;
 extern PyObject *CPyStatic_utils___caching___RequestCacheValidationThreshold___SAFE;
 extern PyTypeObject *CPyType_utils___caching___RequestCacheValidationThreshold;

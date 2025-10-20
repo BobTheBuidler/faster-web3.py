@@ -2,6 +2,15 @@
 #define MYPYC_NATIVE_5f8b22f5f815a3776376_H
 #include <Python.h>
 #include <CPy.h>
+#ifndef MYPYC_DECLARED_tuple_T3CIO
+#define MYPYC_DECLARED_tuple_T3CIO
+typedef struct tuple_T3CIO {
+    char f0;
+    CPyTagged f1;
+    PyObject *f2;
+} tuple_T3CIO;
+#endif
+
 #ifndef MYPYC_DECLARED_tuple_T4CIOO
 #define MYPYC_DECLARED_tuple_T4CIOO
 typedef struct tuple_T4CIOO {
@@ -18,15 +27,6 @@ typedef struct tuple_T2OO {
     PyObject *f0;
     PyObject *f1;
 } tuple_T2OO;
-#endif
-
-#ifndef MYPYC_DECLARED_tuple_T3CIO
-#define MYPYC_DECLARED_tuple_T3CIO
-typedef struct tuple_T3CIO {
-    char f0;
-    CPyTagged f1;
-    PyObject *f2;
-} tuple_T3CIO;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T3OOO
