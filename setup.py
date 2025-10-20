@@ -104,9 +104,6 @@ else:
         "faster_web3/providers/persistent/subscription_container.py",
         "faster_web3/providers/persistent/subscription_manager.py",
         "faster_web3/providers/rpc/utils.py",
-        "faster_web3/tools/benchmark/node.py",
-        "faster_web3/tools/benchmark/reporting.py",
-        "faster_web3/tools/benchmark/utils.py",
         "faster_web3/types.py",
         "faster_web3/utils/address.py",
         "faster_web3/utils/async_exception_handling.py",
@@ -115,7 +112,13 @@ else:
         # "faster_web3/utils/subscriptions.py",  compile this on mypyc 1.19
     ]
 
-    # these do not need to be part of the same compilation unit as the rest of the library
+    # benchmark tooling and data files do not need to be part of the same
+    # compilation unit as the rest of the library
+    benchmark_tooling_files = [
+        "faster_web3/tools/benchmark/node.py",
+        "faster_web3/tools/benchmark/reporting.py",
+        "faster_web3/tools/benchmark/utils.py",
+    ]
     web3_data_files = sorted(
         str(p.as_posix())
         for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
@@ -157,6 +160,9 @@ else:
     main_unit = mypycify(main_files + flags)
     ext_modules.extend(main_unit)
 
+    benchmark_tooling_unit = mypycify(benchmark_tooling_files + flags)
+    ext_modules.extend(benchmark_tooling_unit)
+    
     # these do not need to be part of the same compilation unit as the rest of the library
     for data_file in web3_data_files + ens_data_files:
         data_unit = mypycify([data_file] + flags)
