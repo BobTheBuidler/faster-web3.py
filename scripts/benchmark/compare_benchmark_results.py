@@ -11,10 +11,11 @@ Usage:
     python compare_benchmark_results.py <results.json> [output.json]
 """
 
-import json
 import sys
 import re
 from typing import Any, Dict
+
+import ujson
 
 
 def get_group_name(test_name: str) -> str:
@@ -78,7 +79,7 @@ def main() -> None:
     output_path = sys.argv[2] if len(sys.argv) > 2 else "benchmark_diff.json"
 
     with open(results_path, "r") as f:
-        results = json.load(f)
+        results = ujson.load(f)
 
     # results: {submodule: {group: {function_name: {...}}}}
     diff_by_submodule = {
@@ -90,7 +91,7 @@ def main() -> None:
     }
 
     with open(output_path, "w") as f:
-        json.dump(diff_by_submodule, f, indent=2)
+        ujson.dump(diff_by_submodule, f, indent=2)
     print(f"Diff written to {output_path}")
 
 

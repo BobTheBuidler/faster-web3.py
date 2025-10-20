@@ -16,13 +16,14 @@ from typing import (
     final,
 )
 
-from faster_eth_abi.encoding import (
-    BaseArrayEncoder,
-)
+import ujson
 from eth_typing import (
     HexStr,
     Primitives,
     TypeStr,
+)
+from faster_eth_abi.encoding import (
+    BaseArrayEncoder,
 )
 from faster_eth_utils import (
     add_0x_prefix,
@@ -235,12 +236,12 @@ class FriendlyJsonSerde:
 
     def json_decode(self, json_str: str) -> Dict[Any, Any]:
         try:
-            return json.loads(json_str)
-        except json.decoder.JSONDecodeError as exc:
+            return ujson.loads(json_str)
+        except ujson.JSONDecodeError as exc:
             err_msg = f"Could not decode {json_str!r} because of {exc}."
             # Calling code may rely on catching JSONDecodeError to recognize bad json
             # so we have to re-raise the same type.
-            raise json.decoder.JSONDecodeError(err_msg, exc.doc, exc.pos)
+            raise ujson.JSONDecodeError(err_msg, exc.doc, exc.pos)
 
     def json_encode(
         self, obj: Mapping[Any, Any], cls: Optional[Type[json.JSONEncoder]] = None

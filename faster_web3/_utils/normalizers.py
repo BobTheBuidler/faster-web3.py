@@ -1,6 +1,5 @@
 import codecs
 import functools
-import json
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -12,18 +11,19 @@ from typing import (
     cast,
 )
 
+import ujson
+from eth_typing import (
+    ABI,
+    ChecksumAddress,
+    HexStr,
+    TypeStr,
+)
 from faster_eth_abi.exceptions import (
     ParseError,
 )
 from faster_eth_abi.grammar import (
     BasicType,
     parse,
-)
-from eth_typing import (
-    ABI,
-    ChecksumAddress,
-    HexStr,
-    TypeStr,
 )
 from faster_eth_utils import (
     to_bytes,
@@ -248,7 +248,7 @@ BASE_RETURN_NORMALIZERS: Final = (addresses_checksummed,)
 
 def normalize_abi(abi: Union[ABI, str]) -> ABI:
     if isinstance(abi, str):
-        abi = json.loads(abi)
+        abi = ujson.loads(abi)
     validate_abi(cast(ABI, abi))
     return cast(ABI, abi)
 

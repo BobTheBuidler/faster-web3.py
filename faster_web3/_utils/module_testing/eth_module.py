@@ -1,6 +1,5 @@
 import pytest
 import asyncio
-import json
 import math
 from random import (
     randint,
@@ -17,6 +16,7 @@ from typing import (
 )
 
 import faster_eth_abi as abi
+import ujson
 from eth_typing import (
     BlockNumber,
     ChecksumAddress,
@@ -324,7 +324,7 @@ class AsyncEthModuleTest:
         async_skip_if_testrpc(async_w3)
         signature = HexBytes(
             await async_w3.eth.sign_typed_data(
-                async_keyfile_account_address_dual_type, json.loads(validJSONMessage)
+                async_keyfile_account_address_dual_type, ujson.loads(validJSONMessage)
             )
         )
         assert len(signature) == 32 + 32 + 1
@@ -382,7 +382,7 @@ class AsyncEthModuleTest:
         ):
             await async_w3.eth.sign_typed_data(
                 async_keyfile_account_address_dual_type,
-                json.loads(invalid_typed_message),
+                ujson.loads(invalid_typed_message),
             )
 
     @pytest.mark.asyncio
@@ -3046,7 +3046,7 @@ class EthModuleTest:
         skip_if_testrpc(w3)
         signature = HexBytes(
             w3.eth.sign_typed_data(
-                keyfile_account_address_dual_type, json.loads(validJSONMessage)
+                keyfile_account_address_dual_type, ujson.loads(validJSONMessage)
             )
         )
         assert len(signature) == 32 + 32 + 1
@@ -3102,7 +3102,7 @@ class EthModuleTest:
             match=r".*Expected 2 items for array type Person\[2\], got 1 items.*",
         ):
             w3.eth.sign_typed_data(
-                keyfile_account_address_dual_type, json.loads(invalid_typed_message)
+                keyfile_account_address_dual_type, ujson.loads(invalid_typed_message)
             )
 
     def test_eth_sign_transaction_legacy(

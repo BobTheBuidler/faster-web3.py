@@ -6,12 +6,11 @@ import ens.exceptions
 import faster_ens.ens
 import faster_ens.exceptions
 
-import requests
+import ujson
 from unittest.mock import patch
 from web3 import HTTPProvider as Web3HTTPProvider
 from faster_web3 import HTTPProvider as FasterWeb3HTTPProvider
 
-import json
 from benchmarks.ens.params import NAMES
 from benchmarks.ens.fake_rpc import fake_json_rpc_response, FAKE_ENS_REGISTRY
 
@@ -36,7 +35,7 @@ class FakeResponse:
 
 
 def fake_send(*args, **kwargs):
-    request_data = json.loads(args[1].body)
+    request_data = ujson.loads(args[1].body)
     return FakeResponse(fake_json_rpc_response(request_data))
 
 
