@@ -92,5 +92,5 @@ class ExceptionRetryConfiguration(BaseModel):
             errors=errors,
             retries=retries,
             backoff_factor=backoff_factor,
-            method_allowlist=set(method_allowlist) if method_allowlist else REQUEST_RETRY_ALLOWLIST,
+            method_allowlist=(set(method_allowlist or REQUEST_RETRY_ALLOWLIST)),
         )

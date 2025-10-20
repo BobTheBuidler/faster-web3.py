@@ -188,9 +188,8 @@ class AsyncContractEvent(BaseContractEvent):
         logs = await w3.eth.get_logs(_filter_params)
 
         # convert raw binary data to Python proxy objects as described by ABI:
-        all_event_logs = tuple(
-            get_event_data(w3.codec, abi, entry) for entry in logs
-        )
+        codec = w3.codec
+        all_event_logs = tuple(get_event_data(codec, abi, entry) for entry in logs)
         filtered_logs = self._process_get_logs_argument_filters(
             abi,
             all_event_logs,

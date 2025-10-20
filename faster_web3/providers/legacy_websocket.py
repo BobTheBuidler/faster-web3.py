@@ -109,15 +109,13 @@ class LegacyWebSocketProvider(JSONBaseProvider):
             LegacyWebSocketProvider._loop = _get_threaded_loop()
         if websocket_kwargs is None:
             websocket_kwargs = {}
-        else:
-            found_restricted_keys = set(websocket_kwargs).intersection(
-                RESTRICTED_WEBSOCKET_KWARGS
+        elif found_restricted_keys := set(websocket_kwargs).intersection(
+            RESTRICTED_WEBSOCKET_KWARGS
+        ):
+            raise Web3ValidationError(
+                f"{RESTRICTED_WEBSOCKET_KWARGS} are not allowed "
+                f"in websocket_kwargs, found: {found_restricted_keys}"
             )
-            if found_restricted_keys:
-                raise Web3ValidationError(
-                    f"{RESTRICTED_WEBSOCKET_KWARGS} are not allowed "
-                    f"in websocket_kwargs, found: {found_restricted_keys}"
-                )
         self.conn = PersistentWebSocket(self.endpoint_uri, websocket_kwargs)
 
     def __str__(self) -> str:

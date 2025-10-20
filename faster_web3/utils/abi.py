@@ -717,12 +717,14 @@ def get_event_abi(
         raise Web3ValidationError(
             "event_name is required in order to match an event ABI."
         )
-    
+
     event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_name(
         event_name, filter_abi_by_type("event", abi)
     )
     if argument_names is not None:
-        event_abi_candidates = filter_by_argument_name(argument_names, event_abi_candidates)
+        event_abi_candidates = filter_by_argument_name(
+            argument_names, event_abi_candidates
+        )
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]

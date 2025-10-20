@@ -568,11 +568,15 @@ def normalize_event_input_types(
     abi_args: Collection[ABIEvent],
 ) -> Tuple[Union[ABIEvent, Dict[TypeStr, Any]], ...]:
     return tuple(
-        arg
-        if is_recognized_type(arg_type := arg["type"])
-        else {k: "uint8" if k == "type" else v for k, v in arg.items()}
-        if is_probably_enum(arg_type)
-        else arg
+        (
+            arg
+            if is_recognized_type(arg_type := arg["type"])
+            else (
+                {k: "uint8" if k == "type" else v for k, v in arg.items()}
+                if is_probably_enum(arg_type)
+                else arg
+            )
+        )
         for arg in abi_args
     )
 

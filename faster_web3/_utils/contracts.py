@@ -98,14 +98,16 @@ def find_matching_event_abi(
     event_name: Optional[str] = None,
     argument_names: Optional[Sequence[str]] = None,
 ) -> ABIEvent:
-    
+
     event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_type("event", abi)
 
     if event_name is not None:
         event_abi_candidates = filter_abi_by_name(event_name, event_abi_candidates)
 
     if argument_names is not None:
-        event_abi_candidates = filter_by_argument_name(argument_names, event_abi_candidates)
+        event_abi_candidates = filter_by_argument_name(
+            argument_names, event_abi_candidates
+        )
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]

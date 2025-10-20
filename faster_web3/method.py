@@ -49,7 +49,7 @@ Munger = Callable[..., Any]
 
 def _apply_request_formatters(
     params: Iterable[TValue],
-    request_formatters: Callable[[Iterable[TValue]], Iterable[TReturn]]
+    request_formatters: Callable[[Iterable[TValue]], Iterable[TReturn]],
 ) -> Tuple[TReturn, ...]:
     return tuple(request_formatters(params))
 
@@ -60,11 +60,7 @@ def _set_mungers(
     if is_property and mungers:
         raise Web3ValidationError("Mungers cannot be used with a property.")
 
-    return mungers or (
-        [default_munger]
-        if is_property
-        else [default_root_munger]
-    )
+    return mungers or ([default_munger] if is_property else [default_root_munger])
 
 
 def default_munger(_module: "Module", *args: Any, **kwargs: Any) -> Tuple[()]:

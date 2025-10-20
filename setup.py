@@ -162,7 +162,7 @@ else:
 
     benchmark_tooling_unit = mypycify(benchmark_tooling_files + flags)
     ext_modules.extend(benchmark_tooling_unit)
-    
+
     # these do not need to be part of the same compilation unit as the rest of the library
     for data_file in web3_data_files + ens_data_files:
         data_unit = mypycify([data_file] + flags)

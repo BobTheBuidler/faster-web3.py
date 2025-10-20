@@ -40,10 +40,7 @@ WS_SCHEMES = {"ws", "wss"}
 
 def load_provider_from_environment() -> Optional[JSONBaseProvider]:
     uri_string = URI(os.environ.get("WEB3_PROVIDER_URI", ""))
-    if not uri_string:
-        return None
-
-    return load_provider_from_uri(uri_string)
+    return load_provider_from_uri(uri_string) if uri_string else None
 
 
 def load_provider_from_uri(
