@@ -90,7 +90,7 @@ async def async_benchmark(
 ) -> Union[ExecutionTime, str]:
     try:
         starttime = timeit.default_timer()
-        for result in asyncio.as_completed([func() for _ in range(n)]):
+        for result in asyncio.as_completed(func() for _ in range(n)):
             await result
         return ExecutionTime(timeit.default_timer() - starttime)
     except Exception:
