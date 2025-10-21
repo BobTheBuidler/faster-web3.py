@@ -5,9 +5,8 @@ from collections import (
 from enum import (
     Enum,
 )
-import time
+import time as _time
 from typing import (
-    Any,
     Dict,
     Final,
     Generic,
@@ -20,6 +19,11 @@ from typing import (
 
 
 T = TypeVar("T")
+
+TimeoutError: Final = asyncio.TimeoutError
+
+sleep: Final = asyncio.sleep
+time: Final = _time.time
 
 
 @final
@@ -82,16 +86,16 @@ class SimpleCache(Generic[T]):
     async def async_await_and_popitem(
         self, last: bool = True, timeout: float = 10.0
     ) -> Tuple[str, T]:
-        start = time.time()
+        start = time()
         end_time = start + timeout
         while True:
-            await asyncio.sleep(0)
+            await sleep(0)
             try:
                 return self.popitem(last=last)
             except KeyError:
-                now = time.time()
+                now = time()
                 if now >= end_time:
-                    raise asyncio.TimeoutError(
+                    raise TimeoutError(
                         "Timeout waiting for item to be available"
                     )
-                await asyncio.sleep(min(0.1, end_time - now))
+                await sleep(min(0.1, end_time - now))

@@ -52,6 +52,12 @@ with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
 
     NORMALIZATION_SPEC: Final = _json_list_mapping_to_dict(f, "mapped")
     EMOJI_NORMALIZATION_SPEC: Final[List[List[int]]] = NORMALIZATION_SPEC["emoji"]
+    NORMALIZATION_SPEC_CM: Final[List[int]] = NORMALIZATION_SPEC["cm"]
+    NORMALIZATION_SPEC_FENCED: Final[List[List[int]]] = NORMALIZATION_SPEC["fenced"]
+    NORMALIZATION_SPEC_GROUPS: Final[List[Dict[str, Any]]] = NORMALIZATION_SPEC["groups"]
+    NORMALIZATION_SPEC_IGNORED: Final[List[int]] = NORMALIZATION_SPEC["ignored"]
+    NORMALIZATION_SPEC_MAPPED: Final[Dict[int, List[int]]] = NORMALIZATION_SPEC["mapped"]
+    NORMALIZATION_SPEC_NSM: Final[Set[int]] = set(NORMALIZATION_SPEC["nsm"])
     # clean `FE0F` (65039) from entries since it's optional
     for e in EMOJI_NORMALIZATION_SPEC:
         if 65039 in e:
@@ -133,19 +139,20 @@ class ENSNormalizedName:
 # -----
 
 GROUP_COMBINED_VALID_CPS: Final[List[int]] = []
-for d in NORMALIZATION_SPEC["groups"]:
-    GROUP_COMBINED_VALID_CPS.extend(d["primary"])
-    GROUP_COMBINED_VALID_CPS.extend(d["secondary"])
 
-VALID_BY_GROUPS: Final[Dict[str, FrozenSet[int]]] = {
-    d["name"]: frozenset(d["primary"] + d["secondary"])
-    for d in NORMALIZATION_SPEC["groups"]
-}
+VALID_BY_GROUPS: Final[Dict[str, FrozenSet[int]]] = {}
+
+for d in NORMALIZATION_SPEC_GROUPS:
+    primary: List[int] = d["primary"]
+    secondary: List[int] = d["secondary"]
+    combined = primary + secondary
+    GROUP_COMBINED_VALID_CPS.extend(combined)
+    VALID_BY_GROUPS[d["name"]] = frozenset(combined)
 
 
 def _extract_valid_codepoints() -> FrozenSet[int]:
     all_valid: Set[int] = set()
-    for _name, valid_cps in VALID_BY_GROUPS.items():
+    for valid_cps in VALID_BY_GROUPS.values():
         all_valid.update(valid_cps)
     all_valid.update(map(ord, NFD("".join(map(chr, all_valid)))))
     return frozenset(all_valid)
@@ -158,8 +165,10 @@ def _construct_whole_confusable_map() -> Dict[int, FrozenSet[str]]:
     https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
     """
     whole_map: Dict[int, Set[str]] = {}
+    
+    whole: Dict[str, List[int]]
     for whole in NORMALIZATION_SPEC["wholes"]:
-        whole_confusables: Set[int] = set(whole["valid"] + whole["confused"])
+        whole_confusables = set(whole["valid"] + whole["confused"])
         confusable_extents: List[Tuple[Set[int], Set[str]]] = []
 
         for confusable_cp in whole_confusables:
@@ -213,9 +222,12 @@ def _is_fenced(cp: int, spec: List[List[int]]) -> bool:
 
 
 def _codepoints_to_text(cps: Union[List[List[int]], List[int]]) -> str:
-    return "".join(
-        chr(cp) if isinstance(cp, int) else _codepoints_to_text(cp) for cp in cps
-    )
+    if not cps:
+        return ""
+    elif isinstance(cps[0], int):
+        return "".join(map(chr, cps))
+    else:
+        return "".join(map(_codepoints_to_text, cps))
 
 
 def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
@@ -259,7 +271,7 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
             f"Underscores '_' may only occur at the start of a label: '{label_text}'"
         )
 
-    norm_spec_fenced = NORMALIZATION_SPEC["fenced"]
+    norm_spec_fenced = NORMALIZATION_SPEC_FENCED
     if _is_fenced(all_token_cps[0], norm_spec_fenced) or _is_fenced(all_token_cps[-1], norm_spec_fenced):
         raise InvalidName(
             f"Label cannot start or end with a fenced codepoint: '{label_text}'"
@@ -274,7 +286,7 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
                 f"Label cannot contain two fenced codepoints in a row: '{label_text}'"
             )
 
-    cm = NORMALIZATION_SPEC["cm"]
+    cm = NORMALIZATION_SPEC_CM
     if any(t.type == TokenType.TEXT and t.codepoints[0] in cm for t in tokens):
         raise InvalidName(
             "At least one text token in label starts with a "
@@ -301,7 +313,8 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
         )
 
     # apply NFD and check contiguous NSM sequences
-    for group in NORMALIZATION_SPEC["groups"]:
+    NSM_SPEC = NORMALIZATION_SPEC_NSM
+    for group in NORMALIZATION_SPEC_GROUPS:
         if group["name"] == chars_group_name:
             if "cm" not in group:
                 nfd_cps = [
@@ -313,14 +326,14 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
                     if cp_i <= next_index:
                         continue
 
-                    if cp in NORMALIZATION_SPEC["nsm"]:
+                    if cp in NSM_SPEC:
                         if cp_i == len(nfd_cps) - 1:
                             break
 
                         contiguous_nsm_cps = [cp]
                         next_index = cp_i + 1
                         next_cp = nfd_cps[next_index]
-                        while next_cp in NORMALIZATION_SPEC["nsm"]:
+                        while next_cp in NSM_SPEC:
                             contiguous_nsm_cps.append(next_cp)
                             if len(contiguous_nsm_cps) > NSM_MAX:
                                 raise InvalidName(
@@ -433,6 +446,13 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 
     normalized_labels = []
 
+    # Read these C constants into locals only once
+    emoji_spec = EMOJI_NORMALIZATION_SPEC
+    ignored_spec = NORMALIZATION_SPEC_IGNORED
+    mapped_spec = NORMALIZATION_SPEC_MAPPED
+    valid_codepoints = VALID_CODEPOINTS
+    emoji_max_len = MAX_LEN_EMOJI_PATTERN
+
     for label_str in raw_labels:
         # _input takes the label and breaks it into a list of unicode code points
         # e.g. "xyz👨🏻" -> [120, 121, 122, 128104, 127995]
@@ -446,7 +466,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
             while end_index <= len(_input):
                 current_emoji_sequence = _input[:end_index]
 
-                if len(current_emoji_sequence) > MAX_LEN_EMOJI_PATTERN:
+                if len(current_emoji_sequence) > emoji_max_len:
                     # if we've reached the max length of all known emoji patterns
                     break
 
@@ -458,7 +478,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
                         raise InvalidName("Empty name after removing 65039 (0xFE0F)")
                     end_index -= 1  # reset end_index after removing 0xFE0F
 
-                if current_emoji_sequence in EMOJI_NORMALIZATION_SPEC:
+                if current_emoji_sequence in emoji_spec:
                     emoji_codepoint = current_emoji_sequence
                 end_index += 1
 
@@ -475,17 +495,17 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
             else:
                 leading_codepoint = _input.pop(0)
 
-                if leading_codepoint in NORMALIZATION_SPEC["ignored"]:
+                if leading_codepoint in ignored_spec:
                     pass
 
                 elif (
-                    mapped := NORMALIZATION_SPEC["mapped"].get(leading_codepoint)
+                    mapped := mapped_spec.get(leading_codepoint)
                 ) is not None:
                     for cp in mapped:
                         buffer.append(cp)
 
                 else:
-                    if leading_codepoint in VALID_CODEPOINTS:
+                    if leading_codepoint in valid_codepoints:
                         buffer.append(leading_codepoint)
                     else:
                         raise InvalidName(
