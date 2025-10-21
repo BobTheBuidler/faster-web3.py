@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
+      - '.circleci/**'
       - '.github/workflows/**'
       - '!.github/workflows/compile.yaml'
       - 'benchmarks/**'
