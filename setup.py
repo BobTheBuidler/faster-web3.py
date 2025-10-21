@@ -187,6 +187,7 @@ setup(
         "Source - Precompiled (.py)": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/faster_eth_utils",
         "Source - Compiled (.c)": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/build",
         "Benchmarks": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/benchmarks",
+        "Benchmarks - Results": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/benchmarks/results",
         "Original": "https://github.com/ethereum/web3.py",
     },
     include_package_data=True,
