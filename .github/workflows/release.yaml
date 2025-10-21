@@ -112,6 +112,7 @@ jobs:
           CIBW_BUILD: ${{ matrix.cibw_build || '' }}
         run: |
           python -m cibuildwheel --output-dir wheelhouse
+        continue-on-error: true
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
@@ -191,6 +192,7 @@ jobs:
         with:
           name: "wheels-windows-latest-x86"
           path: wheelhouse/windows-x86
+        continue-on-error: true
 
       # ----------------------------------------------------
       # Publish all built artifacts to PyPI
@@ -200,13 +202,4 @@ jobs:
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: |
-          twine upload \
-            dist/* \
-            wheelhouse/linux-many-x64/*.whl \
-            wheelhouse/linux-many-x86/*.whl \
-            wheelhouse/linux-musl-x64/*.whl \
-            wheelhouse/linux-musl-x86/*.whl \
-            wheelhouse/macos/*.whl \
-            wheelhouse/windows-x64/*.whl \
-            wheelhouse/windows-x86/*.whl
+        run: twine upload dist/* wheelhouse/**/*.whl
