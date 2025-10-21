@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [main, master]
     paths-ignore:
+      - '.circleci/**'
       - '.github/workflows/**'
       - '!.github/workflows/codspeed.yaml'
       - 'scripts/**'
