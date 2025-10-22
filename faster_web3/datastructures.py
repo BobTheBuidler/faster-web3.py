@@ -50,11 +50,11 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         self, dictionary: Dict[TKey, TValue], *args: Any, **kwargs: Any
     ) -> None:
         # type ignored on 46/50 b/c dict() expects str index type not TKey
-        self.__dict__ = dict(dictionary)  # type: ignore
+        self.__dict__ = dict(dictionary)
         self.__dict__.update(dict(*args, **kwargs))
 
     def __getitem__(self, key: TKey) -> TValue:
-        return self.__dict__[key]  # type: ignore
+        return self.__dict__[key]
 
     def __iter__(self) -> Iterator[Any]:
         return iter(self.__dict__)
@@ -86,7 +86,7 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         if isinstance(value, Mapping):
             return cls({k: cls.recursive(v) for k, v in value.items()})
         elif isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
-            return type(value)([cls.recursive(v) for v in value])  # type: ignore
+            return type(value)([cls.recursive(v) for v in value])
         elif isinstance(value, set):
             return {cls.recursive(v) for v in value}
         return value
@@ -321,7 +321,7 @@ class NamedElementOnion(Mapping[TKey, TValue]):
         elements = self._queue.values()
         if not isinstance(elements, Sequence):
             # type ignored b/c elements is set as _OrderedDictValuesView[Any] on 210
-            elements = list(elements)  # type: ignore
+            elements = list(elements)
         return reversed(elements)
 
     def as_tuple_of_middleware(self) -> Tuple[TValue, ...]:
@@ -337,7 +337,7 @@ class NamedElementOnion(Mapping[TKey, TValue]):
         # implementation returns ``Iterator[TValue]`` on reversed values (not keys).
         # This leads to typing issues, so it's better to use
         # ``as_tuple_of_middleware()`` to achieve the same result.
-        return iter(self._reversed_middleware())  # type: ignore
+        return iter(self._reversed_middleware())
 
     def values(self) -> ValuesView[TValue]:
         return ValuesView(self._queue)
