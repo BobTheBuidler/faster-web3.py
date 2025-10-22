@@ -25,7 +25,7 @@ NAMES_FULL_COVERAGE = {
     "precomposed-e-acute": "caf\u00e9.eth",  # café.eth (precomposed)
     "ligature-ffl": "wa\ufb04e.eth",  # ligature waﬄe.eth (with 'ﬄ' ligature)
     "multi-combining": "andr\u00e9e\u0308.eth",  # combining andréë.eth (e + acute, e + diaeresis)
-    "combining-reorder": "zoe\u0308\u0301.eth",  # reorder zoë́.eth (e + diaeresis + acute)
+    "combining-reorder": "renee\u0301\u0300.eth",  # realistic: reneé̀.eth (e + acute + grave, tests combining mark reordering)
     "blocked-last-cc": "andr\u00e9e.eth",  # blocked/last_cc andrée.eth (e + acute after d)
     "compose-pair": "zo\u00eb.eth",  # zoë.eth (precomposed ë)
     "only-combining": "m\u00e1.eth",  # only combining mark má.eth (precomposed á)
