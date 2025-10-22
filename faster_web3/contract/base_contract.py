@@ -1339,7 +1339,7 @@ class BaseContract:
                 abi=fallback_abi,
             )()
 
-        return cast(function_type, NonExistentFallbackFunction())
+        return cast(function_type, NonExistentFallbackFunction())  # type: ignore [valid-type]
 
     @staticmethod
     def get_receive_function(
