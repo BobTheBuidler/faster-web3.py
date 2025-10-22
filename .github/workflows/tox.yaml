@@ -85,7 +85,7 @@ jobs:
           path: ~/.cache/ccache
           key: ccache-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
           
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
           path: dist/*.whl
@@ -142,7 +142,7 @@ jobs:
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
       
       - name: Download wheel
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
 
