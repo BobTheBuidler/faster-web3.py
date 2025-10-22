@@ -174,7 +174,7 @@ select_ids = [
 
 
 def run_100_select(func, value, *, exc=None):
-    curried = func("HASH", "NUMBER", "PREDEFINED")
+    curried = func(if_hash="HASH", if_number="NUMBER", if_predefined="PREDEFINED")
     if exc is None:
         for _ in range(100):
             curried(value)
