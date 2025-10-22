@@ -272,11 +272,14 @@ AUTH_LIST_RESULT_FORMATTER: Final = apply_formatter_if(
 
 to_hexbytes32: Final = to_hexbytes(32)
 
+
 def to_hexbytes32_if_not_null(value: Any) -> Any:
     return value if value is None else to_hexbytes32(value)
 
+
 def to_varhexbytes32_if_not_null(value: Any) -> Any:
     return value if value is None else to_hexbytes32(value, variable_length=True)
+
 
 TRANSACTION_RESULT_FORMATTERS: Final = {
     "blockHash": to_hexbytes32_if_not_null,

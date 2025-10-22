@@ -95,7 +95,5 @@ class SimpleCache(Generic[T]):
             except KeyError:
                 now = time()
                 if now >= end_time:
-                    raise TimeoutError(
-                        "Timeout waiting for item to be available"
-                    )
+                    raise TimeoutError("Timeout waiting for item to be available")
                 await sleep(min(0.1, end_time - now))

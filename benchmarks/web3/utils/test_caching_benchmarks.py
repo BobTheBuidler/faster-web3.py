@@ -35,7 +35,7 @@ def test_faster_simplecache_cache(benchmark: BenchmarkFixture, size):
 
 
 def insert_and_evict(cls, size, keys, values):
-    cache = faster_web3.utils.caching.SimpleCache(size=size)
+    cache = cls(size=size)
     for k, v in zip(keys, values):
         cache.cache(k, v)
 

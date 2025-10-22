@@ -54,9 +54,13 @@ with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     EMOJI_NORMALIZATION_SPEC: Final[List[List[int]]] = NORMALIZATION_SPEC["emoji"]
     NORMALIZATION_SPEC_CM: Final[List[int]] = NORMALIZATION_SPEC["cm"]
     NORMALIZATION_SPEC_FENCED: Final[List[List[int]]] = NORMALIZATION_SPEC["fenced"]
-    NORMALIZATION_SPEC_GROUPS: Final[List[Dict[str, Any]]] = NORMALIZATION_SPEC["groups"]
+    NORMALIZATION_SPEC_GROUPS: Final[List[Dict[str, Any]]] = NORMALIZATION_SPEC[
+        "groups"
+    ]
     NORMALIZATION_SPEC_IGNORED: Final[List[int]] = NORMALIZATION_SPEC["ignored"]
-    NORMALIZATION_SPEC_MAPPED: Final[Dict[int, List[int]]] = NORMALIZATION_SPEC["mapped"]
+    NORMALIZATION_SPEC_MAPPED: Final[Dict[int, List[int]]] = NORMALIZATION_SPEC[
+        "mapped"
+    ]
     NORMALIZATION_SPEC_NSM: Final[Set[int]] = set(NORMALIZATION_SPEC["nsm"])
     # clean `FE0F` (65039) from entries since it's optional
     for e in EMOJI_NORMALIZATION_SPEC:
@@ -165,7 +169,7 @@ def _construct_whole_confusable_map() -> Dict[int, FrozenSet[str]]:
     https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
     """
     whole_map: Dict[int, Set[str]] = {}
-    
+
     whole: Dict[str, List[int]]
     for whole in NORMALIZATION_SPEC["wholes"]:
         whole_confusables = set(whole["valid"] + whole["confused"])
@@ -272,7 +276,9 @@ def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
         )
 
     norm_spec_fenced = NORMALIZATION_SPEC_FENCED
-    if _is_fenced(all_token_cps[0], norm_spec_fenced) or _is_fenced(all_token_cps[-1], norm_spec_fenced):
+    if _is_fenced(all_token_cps[0], norm_spec_fenced) or _is_fenced(
+        all_token_cps[-1], norm_spec_fenced
+    ):
         raise InvalidName(
             f"Label cannot start or end with a fenced codepoint: '{label_text}'"
         )
@@ -498,9 +504,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
                 if leading_codepoint in ignored_spec:
                     pass
 
-                elif (
-                    mapped := mapped_spec.get(leading_codepoint)
-                ) is not None:
+                elif (mapped := mapped_spec.get(leading_codepoint)) is not None:
                     for cp in mapped:
                         buffer.append(cp)
 

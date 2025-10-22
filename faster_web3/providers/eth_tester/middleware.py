@@ -78,6 +78,7 @@ def to_integer_if_hex(value: Any) -> Any:
 def is_not_named_block(value: Any) -> Any:
     return not is_named_block(value)
 
+
 # --- Request Mapping --- #
 
 TRANSACTION_REQUEST_KEY_MAPPING: Final = {
@@ -259,7 +260,9 @@ def hex_block_to_integer(value: Any) -> Any:
 
 
 block_arg_to_integer: Final = apply_formatters_to_args(hex_block_to_integer)
-by_block_number_and_index: Final = apply_formatters_to_args(hex_block_to_integer, to_integer_if_hex)
+by_block_number_and_index: Final = apply_formatters_to_args(
+    hex_block_to_integer, to_integer_if_hex
+)
 
 request_formatters: Final = {
     # Eth
