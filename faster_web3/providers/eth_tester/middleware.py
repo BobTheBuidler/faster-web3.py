@@ -9,7 +9,6 @@ from typing import (
     final,
 )
 
-abc = tuple('abc')
 from eth_typing import (
     ChecksumAddress,
     HexStr,
