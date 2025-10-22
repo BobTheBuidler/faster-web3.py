@@ -34,9 +34,9 @@ def test_get_create_address_faster(benchmark: BenchmarkFixture, nonce):
     benchmark(faster_web3.utils.address.get_create_address, SENDER, nonce)
 
 @parametrize_create2
-def test_get_create2_address_reference(benchmark: BenchmarkFixture, salt, init_code):
-    benchmark(web3.utils.address.get_create2_address, SENDER, salt, init_code)
+def test_get_create2_address_reference(benchmark: BenchmarkFixture, init_code):
+    benchmark(web3.utils.address.get_create2_address, SENDER, SALT, init_code)
 
 @parametrize_create2
-def test_get_create2_address_faster(benchmark: BenchmarkFixture, salt, init_code):
-    benchmark(faster_web3.utils.address.get_create2_address, SENDER, salt, init_code)
+def test_get_create2_address_faster(benchmark: BenchmarkFixture, init_code):
+    benchmark(faster_web3.utils.address.get_create2_address, SENDER, SALT, init_code)
