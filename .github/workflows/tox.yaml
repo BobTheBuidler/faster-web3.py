@@ -148,4 +148,4 @@ jobs:
           path: .
 
       - name: Run tox
-        run: python -m tox run --installpkg=dist/*.whl ${{ env.TOX_RECREATE_FLAG }}
+        run: python -m tox run --installpkg=$(ls dist/*.whl) ${{ env.TOX_RECREATE_FLAG }}
