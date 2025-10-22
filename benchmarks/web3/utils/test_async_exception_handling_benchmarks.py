@@ -50,7 +50,7 @@ async def _run_100(fn, *args):
 
 @pytest.mark.benchmark(group="async_handle_offchain_lookup")
 @parametrize_offchain_lookup
-def test_async_handle_offchain_lookup_reference(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
+def test_async_handle_offchain_lookup(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
     payload = payload.copy()
     payload["urls"] = urls
 
