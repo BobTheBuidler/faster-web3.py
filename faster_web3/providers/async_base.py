@@ -65,7 +65,6 @@ if TYPE_CHECKING:
 
     from faster_web3 import (  # noqa: F401
         AsyncWeb3,
-        WebSocketProvider,
     )
     from faster_web3._utils.batching import (  # noqa: F401
         RequestBatcher,
