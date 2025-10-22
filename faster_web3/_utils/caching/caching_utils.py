@@ -457,5 +457,5 @@ def async_handle_recv_caching(func: AsyncRecvFunc) -> AsyncRecvFunc:
         return response
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_recv_caching
+    wrapper._decorator = async_handle_recv_caching  # type: ignore [attr-defined]
     return wrapper
