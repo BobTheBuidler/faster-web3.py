@@ -43,6 +43,7 @@ from faster_web3.middleware.base import (
     MiddlewareOnion,
 )
 from faster_web3.types import (
+    AsyncMakeBatchRequestFn,
     BatchParams,
     BatchRequests,
     BatchResponse,
@@ -144,11 +145,9 @@ class AsyncBaseProvider:
             accumulator_fn = self.make_batch_request
             for mw in reversed(middleware):
                 initialized = mw(async_w3)
-                # type ignore bc in order to wrap the method, we have to call
-                # `async_wrap_make_batch_request` with the accumulator_fn as the
-                # argument which breaks the type hinting for this particular case.
-                accumulator_fn = await initialized.async_wrap_make_batch_request( # noqa: E501
-                    accumulator_fn
+                accumulator_fn = cast(
+                    AsyncMakeBatchRequestFn,
+                    await initialized.async_wrap_make_batch_request(accumulator_fn),
                 )
             self._batch_request_func_cache = (middleware, accumulator_fn)
         return accumulator_fn
