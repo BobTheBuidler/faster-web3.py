@@ -67,12 +67,10 @@ jobs:
           CC: ccache gcc
         run: |
           python -m pip install --upgrade pip
-          pip install .[dev] pytest-codspeed web3
+          pip install .[benchmark]
           
       - name: Remove Python files from test env
-        run: |
-          rm -r faster_web3
-          rm -r faster_ens
+        run: rm -r faster_web3 faster_ens
           
       - name: Run CodSpeed
         uses: CodSpeedHQ/action@v4
