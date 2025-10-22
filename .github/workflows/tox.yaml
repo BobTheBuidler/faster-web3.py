@@ -145,6 +145,7 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: .
 
       - name: Run tox
         run: python -m tox run --installpkg=dist/*.whl ${{ env.TOX_RECREATE_FLAG }}
