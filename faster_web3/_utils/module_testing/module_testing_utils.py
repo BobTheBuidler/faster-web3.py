@@ -166,7 +166,7 @@ class WebSocketMessageStreamMock:
     def __init__(
         self, messages: Collection[bytes] = None, raise_exception: Exception = None
     ) -> None:
-        self.queue = asyncio.Queue()  # py38 issue
+        self.queue = asyncio.Queue()
         for msg in messages or []:
             self.queue.put_nowait(msg)
         self.raise_exception = raise_exception
