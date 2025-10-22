@@ -431,6 +431,23 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_if_hash;
+    PyObject *_if_number;
+    PyObject *_if_predefined;
+    PyObject *_select_method_for_block_identifier_curried;
+} faster_web3____utils___blocks___select_method_for_block_identifier_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     PyObject *_method;
     PyObject *_params;
     tuple_T3OOO _response_formatters;

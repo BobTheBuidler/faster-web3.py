@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2320];
+extern PyObject *CPyStatics[2319];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -717,13 +717,23 @@ extern PyObject *CPyPy_batching_____mypyc_lambda__0_sort_batch_response_by_respo
 extern PyObject *CPyDef_batching___sort_batch_response_by_response_ids(PyObject *cpy_r_responses);
 extern PyObject *CPyPy_batching___sort_batch_response_by_response_ids(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_batching_____top_level__(void);
+extern PyTypeObject *CPyType_blocks___select_method_for_block_identifier_env;
+extern PyObject *CPyDef_blocks___select_method_for_block_identifier_env(void);
+extern CPyThreadLocal faster_web3____utils___blocks___select_method_for_block_identifier_envObject *blocks___select_method_for_block_identifier_env_free_instance;
+extern PyTypeObject *CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj;
+extern PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj(void);
+extern CPyThreadLocal faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance;
 extern char CPyDef_blocks___is_predefined_block_number(PyObject *cpy_r_value);
 extern PyObject *CPyPy_blocks___is_predefined_block_number(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_blocks___is_hex_encoded_block_hash(PyObject *cpy_r_value);
 extern PyObject *CPyPy_blocks___is_hex_encoded_block_hash(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_blocks___is_hex_encoded_block_number(PyObject *cpy_r_value);
 extern PyObject *CPyPy_blocks___is_hex_encoded_block_number(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_value, PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined);
+extern PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+extern PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_value);
+extern PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined);
 extern PyObject *CPyPy_blocks___select_method_for_block_identifier(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_blocks_____top_level__(void);
 extern char CPyDef__utils___caching_____top_level__(void);
