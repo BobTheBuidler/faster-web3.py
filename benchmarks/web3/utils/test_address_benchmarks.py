@@ -26,17 +26,17 @@ create2 = lambda fn: pytest.mark.benchmark(group="get_create2_address")(
 )
 
 @create
-def test_get_create_address_reference(benchmark: BenchmarkFixture, nonce):
+def test_get_create_address(benchmark: BenchmarkFixture, nonce):
     benchmark(web3.utils.address.get_create_address, SENDER, nonce)
 
 @create
-def test_get_create_address_faster(benchmark: BenchmarkFixture, nonce):
+def test_faster_get_create_address(benchmark: BenchmarkFixture, nonce):
     benchmark(faster_web3.utils.address.get_create_address, SENDER, nonce)
 
 @create2
-def test_get_create2_address_reference(benchmark: BenchmarkFixture, init_code):
+def test_get_create2_address(benchmark: BenchmarkFixture, init_code):
     benchmark(web3.utils.address.get_create2_address, SENDER, SALT, init_code)
 
 @create2
-def test_get_create2_address_faster(benchmark: BenchmarkFixture, init_code):
+def test_faster_get_create2_address(benchmark: BenchmarkFixture, init_code):
     benchmark(faster_web3.utils.address.get_create2_address, SENDER, SALT, init_code)
