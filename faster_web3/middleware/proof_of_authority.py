@@ -31,8 +31,10 @@ if TYPE_CHECKING:
         Web3,
     )
 
+
 def is_not_null(value: Any) -> bool:
     return value is not None
+
 
 remap_extradata_to_poa_fields = apply_key_map(
     {
