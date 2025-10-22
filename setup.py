@@ -42,7 +42,7 @@ extras_require = {
         f"mypy=={'1.14.1' if sys.version_info < (3, 9) else '1.18.2'}",
         "pre-commit>=3.4.0",
     ],
-    "benchmark": [
+    "codspeed": [
         "pytest>=7.0.0",
         "pytest-codspeed",
         "pytest-test-groups",
