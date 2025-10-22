@@ -37,13 +37,9 @@ from faster_web3._utils.decorators import (
 )
 from faster_web3.types import (
     RPCResponse,
+    TReturn,
+    TValue,
 )
-
-if TYPE_CHECKING:
-    from faster_web3.types import (
-        TReturn,
-        TValue,
-    )
 
 
 def hex_to_integer(value: HexStr) -> int:
