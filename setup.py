@@ -44,7 +44,8 @@ extras_require = {
     ],
     "codspeed": [
         "pytest>=7.0.0",
-        "pytest-codspeed",
+        "pytest-asyncio>=1.2,<1.3",
+        "pytest-codspeed>=4.1.1,<4.2",
         "pytest-test-groups",
         "web3>=7.14.0, <8",
     ]
