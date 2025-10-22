@@ -3,7 +3,13 @@ from pytest_codspeed import BenchmarkFixture
 
 import ens.utils
 import faster_ens.utils
-from benchmarks.ens.params import NAMES, LABELS, ADDRESSES, LABEL_LISTS
+from benchmarks.ens.params import (
+    NAMES,
+    LABELS,
+    ADDRESSES,
+    LABEL_LISTS,
+    parametrize_names_full_coverage,
+)
 
 
 def run_10(func, *args, **kwargs):
@@ -25,37 +31,37 @@ def run_500(func, *args, **kwargs):
 
 
 @pytest.mark.benchmark(group="normalize_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_normalize_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.normalize_name, name)
 
 
 @pytest.mark.benchmark(group="normalize_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_normalize_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.normalize_name, name)
 
 
 @pytest.mark.benchmark(group="dns_encode_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_dns_encode_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.dns_encode_name, name)
 
 
 @pytest.mark.benchmark(group="dns_encode_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_dns_encode_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.dns_encode_name, name)
 
 
 @pytest.mark.benchmark(group="is_valid_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_is_valid_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.is_valid_name, name)
 
 
 @pytest.mark.benchmark(group="is_valid_name")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_is_valid_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.is_valid_name, name)
 
@@ -90,25 +96,25 @@ def test_faster_label_to_hash(benchmark: BenchmarkFixture, label):
 
 
 @pytest.mark.benchmark(group="normal_name_to_hash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_normal_name_to_hash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.normal_name_to_hash, name)
 
 
 @pytest.mark.benchmark(group="normal_name_to_hash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_normal_name_to_hash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.normal_name_to_hash, name)
 
 
 @pytest.mark.benchmark(group="raw_name_to_hash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_raw_name_to_hash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.raw_name_to_hash, name)
 
 
 @pytest.mark.benchmark(group="raw_name_to_hash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_raw_name_to_hash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.raw_name_to_hash, name)
 
@@ -162,12 +168,12 @@ def test_faster_is_empty_name(benchmark: BenchmarkFixture, name):
 
 
 @pytest.mark.benchmark(group="is_valid_ens_name")
-@pytest.mark.parametrize("ens_name", NAMES + ["foo", "bar", "baz"])
+@parametrize_names_full_coverage
 def test_is_valid_ens_name(benchmark: BenchmarkFixture, ens_name):
     benchmark(run_10, ens.utils.is_valid_ens_name, ens_name)
 
 
 @pytest.mark.benchmark(group="is_valid_ens_name")
-@pytest.mark.parametrize("ens_name", NAMES + ["foo", "bar", "baz"])
+@parametrize_names_full_coverage
 def test_faster_is_valid_ens_name(benchmark: BenchmarkFixture, ens_name):
     benchmark(run_10, faster_ens.utils.is_valid_ens_name, ens_name)

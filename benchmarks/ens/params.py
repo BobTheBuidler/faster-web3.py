@@ -1,5 +1,11 @@
 # Shared parameter sets for ENS/faster_ens benchmarks
+import pytest
 
+# NAMES_FULL_COVERAGE is a mapping of descriptive test ids to ENS names
+# chosen to exercise all meaningful code paths and Unicode edge cases
+# in normalization, validation, and hashing logic. Use the shared
+# parametrize_names_full_coverage decorator for any test that
+# parametrizes over ENS names and benefits from full Unicode coverage.
 NAMES = [
     "alice.eth",
     "bob.eth",
@@ -8,6 +14,33 @@ NAMES = [
     "a" * 63 + ".eth",
     "",
 ]
+
+# Expanded set for full Unicode normalization branch coverage (as a mapping for test ids, using hyphens)
+NAMES_FULL_COVERAGE = {
+    "ascii": "alice.eth",  # ASCII
+    "emoji": "emoji👨🏻.eth",  # Emoji
+    "hangul-lv": "한.eth",  # Hangul LV syllable
+    "hangul-lvt": "값.eth",  # Hangul LVT syllable
+    "hangul-jamo": "\u1112\u1161\u11ab.eth",  # Hangul Jamo sequence (한)
+    "combining-nfd": "e\u0301.eth",  # e + acute
+    "precomposed-e-acute": "é.eth",  # precomposed é
+    "ligature-ffl": "ﬃ.eth",  # ligature
+    "multi-combining": "a\u0301\u0327.eth",  # a + acute + cedilla
+    "combining-reorder": "a\u0327\u0301.eth",  # a + cedilla + acute (reordering)
+    "blocked-last-cc": "a\u0301b\u0327.eth",  # blocked/last_cc
+    "compose-pair": "o\u0308.eth",  # o + diaeresis
+    "only-combining": "\u0301.eth",  # only combining mark
+    "empty": "",  # empty string
+}
+
+
+# DRY: shared parameterization for ENS names
+parametrize_names_full_coverage = pytest.mark.parametrize(
+    "name",
+    list(NAMES_FULL_COVERAGE.values()),
+    ids=list(NAMES_FULL_COVERAGE.keys()),
+)
+
 
 LABELS = [
     "alice",

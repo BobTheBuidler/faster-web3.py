@@ -12,7 +12,7 @@ from web3 import HTTPProvider as Web3HTTPProvider
 from faster_web3 import HTTPProvider as FasterWeb3HTTPProvider
 
 import json
-from benchmarks.ens.params import NAMES
+from benchmarks.ens.params import parametrize_names_full_coverage
 from benchmarks.ens.fake_rpc import fake_json_rpc_response, FAKE_ENS_REGISTRY
 
 
@@ -41,7 +41,7 @@ def fake_send(*args, **kwargs):
 
 
 @pytest.mark.benchmark(group="ENS.address")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_address(benchmark: BenchmarkFixture, name):
     with patch("requests.Session.send", side_effect=fake_send):
         provider = Web3HTTPProvider("http://localhost:8545")
@@ -51,7 +51,7 @@ def test_address(benchmark: BenchmarkFixture, name):
 
 
 @pytest.mark.benchmark(group="ENS.address")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_address(benchmark: BenchmarkFixture, name):
     with patch("requests.Session.send", side_effect=fake_send):
         provider = FasterWeb3HTTPProvider("http://localhost:8545")
