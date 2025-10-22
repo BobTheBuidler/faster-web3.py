@@ -169,11 +169,11 @@ def test_faster_is_empty_name(benchmark: BenchmarkFixture, name):
 
 @pytest.mark.benchmark(group="is_valid_ens_name")
 @parametrize_names_full_coverage
-def test_is_valid_ens_name(benchmark: BenchmarkFixture, ens_name):
+def test_is_valid_ens_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.utils.is_valid_ens_name, ens_name)
 
 
 @pytest.mark.benchmark(group="is_valid_ens_name")
 @parametrize_names_full_coverage
-def test_faster_is_valid_ens_name(benchmark: BenchmarkFixture, ens_name):
+def test_faster_is_valid_ens_name(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.utils.is_valid_ens_name, ens_name)
