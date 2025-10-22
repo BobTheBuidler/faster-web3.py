@@ -35564,11 +35564,297 @@ CPyL46: ;
     CPy_DecRef(cpy_r_r106);
     goto CPyL39;
 }
+
+PyObject *CPyDef_blocks_____mypyc__select_method_for_block_identifier_env_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_blocks___select_method_for_block_identifier_env(void);
+
+static PyObject *
+blocks___select_method_for_block_identifier_env_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    if (type != CPyType_blocks___select_method_for_block_identifier_env) {
+        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+        return NULL;
+    }
+    PyObject *self = CPyDef_blocks_____mypyc__select_method_for_block_identifier_env_setup((PyObject*)type);
+    if (self == NULL)
+        return NULL;
+    return self;
+}
+
+static int
+blocks___select_method_for_block_identifier_env_traverse(faster_web3____utils___blocks___select_method_for_block_identifier_envObject *self, visitproc visit, void *arg)
+{
+    Py_VISIT(self->___mypyc_self__);
+    Py_VISIT(self->_if_hash);
+    Py_VISIT(self->_if_number);
+    Py_VISIT(self->_if_predefined);
+    Py_VISIT(self->_select_method_for_block_identifier_curried);
+    return 0;
+}
+
+static int
+blocks___select_method_for_block_identifier_env_clear(faster_web3____utils___blocks___select_method_for_block_identifier_envObject *self)
+{
+    Py_CLEAR(self->___mypyc_self__);
+    Py_CLEAR(self->_if_hash);
+    Py_CLEAR(self->_if_number);
+    Py_CLEAR(self->_if_predefined);
+    Py_CLEAR(self->_select_method_for_block_identifier_curried);
+    return 0;
+}
+
+static void
+blocks___select_method_for_block_identifier_env_dealloc(faster_web3____utils___blocks___select_method_for_block_identifier_envObject *self)
+{
+    PyObject_GC_UnTrack(self);
+    if (blocks___select_method_for_block_identifier_env_free_instance == NULL) {
+        blocks___select_method_for_block_identifier_env_free_instance = self;
+        Py_CLEAR(self->___mypyc_self__);
+        Py_CLEAR(self->_if_hash);
+        Py_CLEAR(self->_if_number);
+        Py_CLEAR(self->_if_predefined);
+        Py_CLEAR(self->_select_method_for_block_identifier_curried);
+        return;
+    }
+    CPy_TRASHCAN_BEGIN(self, blocks___select_method_for_block_identifier_env_dealloc)
+    blocks___select_method_for_block_identifier_env_clear(self);
+    Py_TYPE(self)->tp_free((PyObject *)self);
+    CPy_TRASHCAN_END(self)
+}
+
+static CPyVTableItem blocks___select_method_for_block_identifier_env_vtable[1];
+static bool
+CPyDef_blocks___select_method_for_block_identifier_env_trait_vtable_setup(void)
+{
+    CPyVTableItem blocks___select_method_for_block_identifier_env_vtable_scratch[] = {
+        NULL
+    };
+    memcpy(blocks___select_method_for_block_identifier_env_vtable, blocks___select_method_for_block_identifier_env_vtable_scratch, sizeof(blocks___select_method_for_block_identifier_env_vtable));
+    return 1;
+}
+
+static PyMethodDef blocks___select_method_for_block_identifier_env_methods[] = {
+    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
+    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
+    {NULL}  /* Sentinel */
+};
+
+static PyTypeObject CPyType_blocks___select_method_for_block_identifier_env_template_ = {
+    PyVarObject_HEAD_INIT(NULL, 0)
+    .tp_name = "select_method_for_block_identifier_env",
+    .tp_new = blocks___select_method_for_block_identifier_env_new,
+    .tp_dealloc = (destructor)blocks___select_method_for_block_identifier_env_dealloc,
+    .tp_traverse = (traverseproc)blocks___select_method_for_block_identifier_env_traverse,
+    .tp_clear = (inquiry)blocks___select_method_for_block_identifier_env_clear,
+    .tp_methods = blocks___select_method_for_block_identifier_env_methods,
+    .tp_basicsize = sizeof(faster_web3____utils___blocks___select_method_for_block_identifier_envObject),
+    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC,
+    .tp_doc = PyDoc_STR("select_method_for_block_identifier_env()\n--\n\n"),
+};
+static PyTypeObject *CPyType_blocks___select_method_for_block_identifier_env_template = &CPyType_blocks___select_method_for_block_identifier_env_template_;
+
+PyObject *CPyDef_blocks_____mypyc__select_method_for_block_identifier_env_setup(PyObject *cpy_r_type)
+{
+    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
+    faster_web3____utils___blocks___select_method_for_block_identifier_envObject *self;
+    if (blocks___select_method_for_block_identifier_env_free_instance != NULL) {
+        self = blocks___select_method_for_block_identifier_env_free_instance;
+        blocks___select_method_for_block_identifier_env_free_instance = NULL;
+        Py_SET_REFCNT(self, 1);
+        PyObject_GC_Track(self);
+        return (PyObject *)self;
+    }
+    self = (faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)type->tp_alloc(type, 0);
+    if (self == NULL)
+        return NULL;
+    self->vtable = blocks___select_method_for_block_identifier_env_vtable;
+    return (PyObject *)self;
+}
+
+PyObject *CPyDef_blocks___select_method_for_block_identifier_env(void)
+{
+    PyObject *self = CPyDef_blocks_____mypyc__select_method_for_block_identifier_env_setup((PyObject *)CPyType_blocks___select_method_for_block_identifier_env);
+    if (self == NULL)
+        return NULL;
+    return self;
+}
+
+
+static PyObject *CPyDunder___get__blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj(PyObject *self, PyObject *instance, PyObject *owner) {
+    instance = instance ? instance : Py_None;
+    return CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(self, instance, owner);
+}
+PyObject *CPyDef_blocks_____mypyc__select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj(void);
+
+static PyObject *
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    if (type != CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj) {
+        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+        return NULL;
+    }
+    PyObject *self = CPyDef_blocks_____mypyc__select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_setup((PyObject*)type);
+    if (self == NULL)
+        return NULL;
+    return self;
+}
+
+static int
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_traverse(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self, visitproc visit, void *arg)
+{
+    Py_VISIT(self->___mypyc_env__);
+    PyObject_VisitManagedDict((PyObject *)self, visit, arg);
+    return 0;
+}
+
+static int
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_clear(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self)
+{
+    Py_CLEAR(self->___mypyc_env__);
+    PyObject_ClearManagedDict((PyObject *)self);
+    return 0;
+}
+
+static void
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_dealloc(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self)
+{
+    PyObject_GC_UnTrack(self);
+    if (blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance == NULL) {
+        blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance = self;
+        Py_CLEAR(self->___mypyc_env__);
+        return;
+    }
+    CPy_TRASHCAN_BEGIN(self, blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_dealloc)
+    blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_clear(self);
+    Py_TYPE(self)->tp_free((PyObject *)self);
+    CPy_TRASHCAN_END(self)
+}
+
+static CPyVTableItem blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable[2];
+static bool
+CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_trait_vtable_setup(void)
+{
+    CPyVTableItem blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable_scratch[] = {
+        (CPyVTableItem)CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__,
+        (CPyVTableItem)CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__,
+    };
+    memcpy(blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable, blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable_scratch, sizeof(blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable));
+    return 1;
+}
+
+static PyObject *
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_get___3_mypyc_env__(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self, void *closure);
+static int
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_set___3_mypyc_env__(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self, PyObject *value, void *closure);
+
+static PyGetSetDef blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_getseters[] = {
+    {"__mypyc_env__",
+     (getter)blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_get___3_mypyc_env__, (setter)blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_set___3_mypyc_env__,
+     NULL, NULL},
+    {"__dict__", PyObject_GenericGetDict, PyObject_GenericSetDict},
+    {NULL}  /* Sentinel */
+};
+
+static PyMethodDef blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_methods[] = {
+    {"__call__",
+     (PyCFunction)CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__,
+     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__call__($value)\n--\n\n")},
+    {"__get__",
+     (PyCFunction)CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__,
+     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__get__($instance, owner)\n--\n\n")},
+    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
+    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
+    {NULL}  /* Sentinel */
+};
+
+static PyTypeObject CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_template_ = {
+    PyVarObject_HEAD_INIT(NULL, 0)
+    .tp_name = "select_method_for_block_identifier_curried_select_method_for_block_identifier_obj",
+    .tp_new = blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_new,
+    .tp_dealloc = (destructor)blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_dealloc,
+    .tp_traverse = (traverseproc)blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_traverse,
+    .tp_clear = (inquiry)blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_clear,
+    .tp_getset = blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_getseters,
+    .tp_methods = blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_methods,
+    .tp_call = PyVectorcall_Call,
+    .tp_descr_get = CPyDunder___get__blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj,
+    .tp_basicsize = sizeof(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject),
+    .tp_vectorcall_offset = offsetof(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject, vectorcall),
+    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC | _Py_TPFLAGS_HAVE_VECTORCALL | Py_TPFLAGS_MANAGED_DICT,
+    .tp_doc = PyDoc_STR("select_method_for_block_identifier_curried_select_method_for_block_identifier_obj()\n--\n\n"),
+};
+static PyTypeObject *CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_template = &CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_template_;
+
+PyObject *CPyDef_blocks_____mypyc__select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_setup(PyObject *cpy_r_type)
+{
+    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
+    faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self;
+    if (blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance != NULL) {
+        self = blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance;
+        blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance = NULL;
+        Py_SET_REFCNT(self, 1);
+        PyObject_GC_Track(self);
+        return (PyObject *)self;
+    }
+    self = (faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *)type->tp_alloc(type, 0);
+    if (self == NULL)
+        return NULL;
+    self->vtable = blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_vtable;
+    self->vectorcall = CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__;
+    return (PyObject *)self;
+}
+
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj(void)
+{
+    PyObject *self = CPyDef_blocks_____mypyc__select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_setup((PyObject *)CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj);
+    if (self == NULL)
+        return NULL;
+    return self;
+}
+
+static PyObject *
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_get___3_mypyc_env__(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self, void *closure)
+{
+    if (unlikely(self->___mypyc_env__ == NULL)) {
+        PyErr_SetString(PyExc_AttributeError,
+            "attribute '__mypyc_env__' of 'select_method_for_block_identifier_curried_select_method_for_block_identifier_obj' undefined");
+        return NULL;
+    }
+    CPy_INCREF_NO_IMM(self->___mypyc_env__);
+    PyObject *retval = self->___mypyc_env__;
+    return retval;
+}
+
+static int
+blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_set___3_mypyc_env__(faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *self, PyObject *value, void *closure)
+{
+    if (value == NULL) {
+        PyErr_SetString(PyExc_AttributeError,
+            "'select_method_for_block_identifier_curried_select_method_for_block_identifier_obj' object attribute '__mypyc_env__' cannot be deleted");
+        return -1;
+    }
+    if (self->___mypyc_env__ != NULL) {
+        CPy_DECREF_NO_IMM(self->___mypyc_env__);
+    }
+    PyObject *tmp;
+    if (likely(Py_TYPE(value) == CPyType_blocks___select_method_for_block_identifier_env))
+        tmp = value;
+    else {
+        CPy_TypeError("faster_web3._utils.blocks.select_method_for_block_identifier_env", value); 
+        tmp = NULL;
+    }
+    if (!tmp)
+        return -1;
+    CPy_INCREF_NO_IMM(tmp);
+    self->___mypyc_env__ = tmp;
+    return 0;
+}
 static PyMethodDef blocksmodule_methods[] = {
     {"is_predefined_block_number", (PyCFunction)CPyPy_blocks___is_predefined_block_number, METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("is_predefined_block_number(value)\n--\n\n") /* docstring */},
     {"is_hex_encoded_block_hash", (PyCFunction)CPyPy_blocks___is_hex_encoded_block_hash, METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("is_hex_encoded_block_hash(value)\n--\n\n") /* docstring */},
     {"is_hex_encoded_block_number", (PyCFunction)CPyPy_blocks___is_hex_encoded_block_number, METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("is_hex_encoded_block_number(value)\n--\n\n") /* docstring */},
-    {"select_method_for_block_identifier", (PyCFunction)CPyPy_blocks___select_method_for_block_identifier, METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("select_method_for_block_identifier(value, if_hash, if_number, if_predefined)\n--\n\n") /* docstring */},
+    {"select_method_for_block_identifier", (PyCFunction)CPyPy_blocks___select_method_for_block_identifier, METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("select_method_for_block_identifier(if_hash, if_number, if_predefined)\n--\n\n") /* docstring */},
     {NULL, NULL, 0, NULL}
 };
 
@@ -35578,6 +35864,12 @@ int CPyExec_faster_web3____utils___blocks(PyObject *module)
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___blocks__internal, "__name__");
     CPyStatic_blocks___globals = PyModule_GetDict(CPyModule_faster_web3____utils___blocks__internal);
     if (unlikely(CPyStatic_blocks___globals == NULL))
+        goto fail;
+    CPyType_blocks___select_method_for_block_identifier_env = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_blocks___select_method_for_block_identifier_env_template, NULL, modname);
+    if (unlikely(!CPyType_blocks___select_method_for_block_identifier_env))
+        goto fail;
+    CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_template, NULL, modname);
+    if (unlikely(!CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj))
         goto fail;
     if (CPyGlobalsInit() < 0)
         goto fail;
@@ -35589,6 +35881,8 @@ int CPyExec_faster_web3____utils___blocks(PyObject *module)
     fail:
     Py_CLEAR(CPyModule_faster_web3____utils___blocks__internal);
     Py_CLEAR(modname);
+    Py_CLEAR(CPyType_blocks___select_method_for_block_identifier_env);
+    Py_CLEAR(CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj);
     return -1;
 }
 static struct PyModuleDef blocksmodule = {
@@ -35694,7 +35988,7 @@ char CPyDef_blocks___is_predefined_block_number(PyObject *cpy_r_value) {
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r7 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 36, CPyStatic_blocks___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 34, CPyStatic_blocks___globals, "str", cpy_r_value);
         goto CPyL28;
     }
     cpy_r_value_text = cpy_r_r7;
@@ -35737,7 +36031,7 @@ CPyL6: ;
     if (likely(PyUnicode_Check(cpy_r_r19)))
         cpy_r_r20 = cpy_r_r19;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 42, CPyStatic_blocks___globals, "str", cpy_r_r19);
+        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 40, CPyStatic_blocks___globals, "str", cpy_r_r19);
         goto CPyL28;
     }
     cpy_r_value_text = cpy_r_r20;
@@ -35785,7 +36079,7 @@ CPyL18: ;
     if (likely(PyUnicode_Check(cpy_r_r35)))
         cpy_r_r36 = cpy_r_r35;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 46, CPyStatic_blocks___globals, "str", cpy_r_r35);
+        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_predefined_block_number", 44, CPyStatic_blocks___globals, "str", cpy_r_r35);
         goto CPyL28;
     }
     cpy_r_r37 = PyList_New(2);
@@ -35941,7 +36235,7 @@ CPyL5: ;
     if (likely(PyUnicode_Check(cpy_r_r12)))
         cpy_r_r13 = cpy_r_r12;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_hex_encoded_block_hash", 54, CPyStatic_blocks___globals, "str", cpy_r_r12);
+        CPy_TypeErrorTraceback("faster_web3/_utils/blocks.py", "is_hex_encoded_block_hash", 52, CPyStatic_blocks___globals, "str", cpy_r_r12);
         goto CPyL16;
     }
     cpy_r_r14 = CPyStr_Size_size_t(cpy_r_r13);
@@ -36210,213 +36504,411 @@ fail: ;
     return NULL;
 }
 
-PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_value, PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined) {
-    char cpy_r_r0;
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner) {
+    PyObject *cpy_r_r0;
     char cpy_r_r1;
-    char cpy_r_r2;
+    PyObject *cpy_r_r2;
     PyObject *cpy_r_r3;
+    cpy_r_r0 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r1 = cpy_r_instance == cpy_r_r0;
+    if (!cpy_r_r1) goto CPyL2;
+    CPy_INCREF(cpy_r___mypyc_self__);
+    return cpy_r___mypyc_self__;
+CPyL2: ;
+    cpy_r_r2 = PyMethod_New(cpy_r___mypyc_self__, cpy_r_instance);
+    if (cpy_r_r2 == NULL) goto CPyL4;
+    return cpy_r_r2;
+CPyL4: ;
+    cpy_r_r3 = NULL;
+    return cpy_r_r3;
+}
+
+PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
+    PyObject *obj___mypyc_self__ = self;
+    static const char * const kwlist[] = {"instance", "owner", 0};
+    static CPyArg_Parser parser = {"OO:__get__", kwlist, 0};
+    PyObject *obj_instance;
+    PyObject *obj_owner;
+    if (!CPyArg_ParseStackAndKeywordsSimple(args, nargs, kwnames, &parser, &obj_instance, &obj_owner)) {
+        return NULL;
+    }
+    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
+    PyObject *arg_instance = obj_instance;
+    PyObject *arg_owner = obj_owner;
+    PyObject *retval = CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(arg___mypyc_self__, arg_instance, arg_owner);
+    return retval;
+fail: ;
+    CPy_AddTraceback("faster_web3/_utils/blocks.py", "__get__", -1, CPyStatic_blocks___globals);
+    return NULL;
+}
+
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_value) {
+    PyObject *cpy_r_r0;
+    char cpy_r_r1;
+    PyObject *cpy_r_r2;
+    char cpy_r_r3;
     PyObject *cpy_r_r4;
-    PyObject *cpy_r_r5;
-    PyObject **cpy_r_r7;
+    char cpy_r_r5;
+    PyObject *cpy_r_r6;
+    PyObject *cpy_r_r7;
     PyObject *cpy_r_r8;
-    char cpy_r_r9;
-    CPyTagged cpy_r_r10;
-    int64_t cpy_r_r11;
-    char cpy_r_r12;
-    int64_t cpy_r_r13;
-    char cpy_r_r14;
-    char cpy_r_r15;
+    PyObject *cpy_r_r9;
+    PyObject **cpy_r_r11;
+    PyObject *cpy_r_r12;
+    char cpy_r_r13;
+    CPyTagged cpy_r_r14;
+    int64_t cpy_r_r15;
     char cpy_r_r16;
-    char cpy_r_r17;
+    int64_t cpy_r_r17;
     char cpy_r_r18;
-    CPyTagged cpy_r_r19;
-    int64_t cpy_r_r20;
+    char cpy_r_r19;
+    char cpy_r_r20;
     char cpy_r_r21;
-    int64_t cpy_r_r22;
-    char cpy_r_r23;
-    char cpy_r_r24;
+    char cpy_r_r22;
+    CPyTagged cpy_r_r23;
+    int64_t cpy_r_r24;
     char cpy_r_r25;
-    char cpy_r_r26;
+    int64_t cpy_r_r26;
     char cpy_r_r27;
-    PyObject *cpy_r_r28;
-    PyObject *cpy_r_r29;
-    PyObject *cpy_r_r30;
+    char cpy_r_r28;
+    char cpy_r_r29;
+    char cpy_r_r30;
     PyObject *cpy_r_r31;
-    PyObject *cpy_r_r32;
+    char cpy_r_r32;
     PyObject *cpy_r_r33;
-    PyObject **cpy_r_r35;
+    PyObject *cpy_r_r34;
+    PyObject *cpy_r_r35;
     PyObject *cpy_r_r36;
     PyObject *cpy_r_r37;
-    cpy_r_r0 = CPyDef_blocks___is_predefined_block_number(cpy_r_value);
-    if (unlikely(cpy_r_r0 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    PyObject *cpy_r_r38;
+    PyObject *cpy_r_r39;
+    PyObject **cpy_r_r41;
+    PyObject *cpy_r_r42;
+    PyObject *cpy_r_r43;
+    cpy_r_r0 = ((faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
+    if (unlikely(cpy_r_r0 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", "select_method_for_block_identifier_curried_select_method_for_block_identifier_obj", "__mypyc_env__", 70, CPyStatic_blocks___globals);
+        goto CPyL40;
     }
-    if (!cpy_r_r0) goto CPyL3;
-    CPy_INCREF(cpy_r_if_predefined);
-    return cpy_r_if_predefined;
-CPyL3: ;
-    cpy_r_r1 = PyBytes_Check(cpy_r_value);
+    CPy_INCREF_NO_IMM(cpy_r_r0);
+CPyL1: ;
+    cpy_r_r1 = CPyDef_blocks___is_predefined_block_number(cpy_r_value);
+    if (unlikely(cpy_r_r1 == 2)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
+    }
     if (!cpy_r_r1) goto CPyL5;
-    CPy_INCREF(cpy_r_if_hash);
-    return cpy_r_if_hash;
+    cpy_r_r2 = ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_predefined;
+    if (unlikely(cpy_r_r2 == NULL)) {
+        PyErr_SetString(PyExc_AttributeError, "attribute 'if_predefined' of 'select_method_for_block_identifier_env' undefined");
+    } else {
+        CPy_INCREF(cpy_r_r2);
+    }
+    CPy_DECREF_NO_IMM(cpy_r_r0);
+    if (unlikely(cpy_r_r2 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
+    }
+CPyL4: ;
+    return cpy_r_r2;
 CPyL5: ;
-    cpy_r_r2 = CPyDef_blocks___is_hex_encoded_block_hash(cpy_r_value);
-    if (unlikely(cpy_r_r2 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    cpy_r_r3 = PyBytes_Check(cpy_r_value);
+    if (!cpy_r_r3) goto CPyL8;
+    cpy_r_r4 = ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_hash;
+    if (unlikely(cpy_r_r4 == NULL)) {
+        PyErr_SetString(PyExc_AttributeError, "attribute 'if_hash' of 'select_method_for_block_identifier_env' undefined");
+    } else {
+        CPy_INCREF(cpy_r_r4);
     }
-    if (!cpy_r_r2) goto CPyL8;
-    CPy_INCREF(cpy_r_if_hash);
-    return cpy_r_if_hash;
+    CPy_DECREF_NO_IMM(cpy_r_r0);
+    if (unlikely(cpy_r_r4 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
+    }
+CPyL7: ;
+    return cpy_r_r4;
 CPyL8: ;
-    cpy_r_r3 = CPyStatic_blocks___globals;
-    cpy_r_r4 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_integer' */
-    cpy_r_r5 = CPyDict_GetItem(cpy_r_r3, cpy_r_r4);
-    if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    cpy_r_r5 = CPyDef_blocks___is_hex_encoded_block_hash(cpy_r_value);
+    if (unlikely(cpy_r_r5 == 2)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
     }
-    PyObject *cpy_r_r6[1] = {cpy_r_value};
-    cpy_r_r7 = (PyObject **)&cpy_r_r6;
-    cpy_r_r8 = PyObject_Vectorcall(cpy_r_r5, cpy_r_r7, 1, 0);
-    CPy_DECREF(cpy_r_r5);
-    if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    if (!cpy_r_r5) goto CPyL12;
+    cpy_r_r6 = ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_hash;
+    if (unlikely(cpy_r_r6 == NULL)) {
+        PyErr_SetString(PyExc_AttributeError, "attribute 'if_hash' of 'select_method_for_block_identifier_env' undefined");
+    } else {
+        CPy_INCREF(cpy_r_r6);
     }
-    if (unlikely(!PyBool_Check(cpy_r_r8))) {
-        CPy_TypeError("bool", cpy_r_r8); cpy_r_r9 = 2;
+    CPy_DECREF_NO_IMM(cpy_r_r0);
+    if (unlikely(cpy_r_r6 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
+    }
+CPyL11: ;
+    return cpy_r_r6;
+CPyL12: ;
+    cpy_r_r7 = CPyStatic_blocks___globals;
+    cpy_r_r8 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_integer' */
+    cpy_r_r9 = CPyDict_GetItem(cpy_r_r7, cpy_r_r8);
+    if (unlikely(cpy_r_r9 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
+    }
+    PyObject *cpy_r_r10[1] = {cpy_r_value};
+    cpy_r_r11 = (PyObject **)&cpy_r_r10;
+    cpy_r_r12 = PyObject_Vectorcall(cpy_r_r9, cpy_r_r11, 1, 0);
+    CPy_DECREF(cpy_r_r9);
+    if (unlikely(cpy_r_r12 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
+    }
+    if (unlikely(!PyBool_Check(cpy_r_r12))) {
+        CPy_TypeError("bool", cpy_r_r12); cpy_r_r13 = 2;
     } else
-        cpy_r_r9 = cpy_r_r8 == Py_True;
-    CPy_DECREF(cpy_r_r8);
-    if (unlikely(cpy_r_r9 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+        cpy_r_r13 = cpy_r_r12 == Py_True;
+    CPy_DECREF(cpy_r_r12);
+    if (unlikely(cpy_r_r13 == 2)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
     }
-    if (!cpy_r_r9) goto CPyL25;
+    if (!cpy_r_r13) goto CPyL30;
     if (likely(PyLong_Check(cpy_r_value)))
-        cpy_r_r10 = CPyTagged_FromObject(cpy_r_value);
+        cpy_r_r14 = CPyTagged_FromObject(cpy_r_value);
     else {
-        CPy_TypeError("int", cpy_r_value); cpy_r_r10 = CPY_INT_TAG;
+        CPy_TypeError("int", cpy_r_value); cpy_r_r14 = CPY_INT_TAG;
     }
-    if (unlikely(cpy_r_r10 == CPY_INT_TAG)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    if (unlikely(cpy_r_r14 == CPY_INT_TAG)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
     }
-    cpy_r_r11 = 0 & 1;
-    cpy_r_r12 = cpy_r_r11 != 0;
-    if (cpy_r_r12) goto CPyL15;
-    cpy_r_r13 = cpy_r_r10 & 1;
-    cpy_r_r14 = cpy_r_r13 != 0;
-    if (!cpy_r_r14) goto CPyL16;
-CPyL15: ;
-    cpy_r_r15 = CPyTagged_IsLt_(cpy_r_r10, 0);
-    cpy_r_r16 = cpy_r_r15 ^ 1;
-    cpy_r_r17 = cpy_r_r16;
-    goto CPyL17;
-CPyL16: ;
-    cpy_r_r18 = (Py_ssize_t)0 <= (Py_ssize_t)cpy_r_r10;
-    cpy_r_r17 = cpy_r_r18;
-CPyL17: ;
-    if (cpy_r_r17) {
-        goto CPyL19;
-    } else
-        goto CPyL35;
-CPyL18: ;
-    if (cpy_r_r17) {
-        goto CPyL24;
-    } else
-        goto CPyL25;
+    cpy_r_r15 = 0 & 1;
+    cpy_r_r16 = cpy_r_r15 != 0;
+    if (cpy_r_r16) goto CPyL19;
+    cpy_r_r17 = cpy_r_r14 & 1;
+    cpy_r_r18 = cpy_r_r17 != 0;
+    if (!cpy_r_r18) goto CPyL20;
 CPyL19: ;
-    cpy_r_r19 = (CPyTagged)CPyStatics[DIFFCHECK_PLACEHOLDER] | 1; /* 115792089237316195423570985008687907853269984665640564039457584007913129639936 */
-    cpy_r_r20 = cpy_r_r10 & 1;
-    cpy_r_r21 = cpy_r_r20 != 0;
-    if (cpy_r_r21) goto CPyL21;
-    cpy_r_r22 = cpy_r_r19 & 1;
-    cpy_r_r23 = cpy_r_r22 != 0;
-    if (!cpy_r_r23) goto CPyL22;
+    cpy_r_r19 = CPyTagged_IsLt_(cpy_r_r14, 0);
+    cpy_r_r20 = cpy_r_r19 ^ 1;
+    cpy_r_r21 = cpy_r_r20;
+    goto CPyL21;
+CPyL20: ;
+    cpy_r_r22 = (Py_ssize_t)0 <= (Py_ssize_t)cpy_r_r14;
+    cpy_r_r21 = cpy_r_r22;
 CPyL21: ;
-    cpy_r_r24 = CPyTagged_IsLt_(cpy_r_r10, cpy_r_r19);
-    cpy_r_r25 = cpy_r_r24;
-    goto CPyL23;
+    if (cpy_r_r21) {
+        goto CPyL23;
+    } else
+        goto CPyL42;
 CPyL22: ;
-    cpy_r_r26 = (Py_ssize_t)cpy_r_r10 < (Py_ssize_t)cpy_r_r19;
-    cpy_r_r25 = cpy_r_r26;
+    if (cpy_r_r21) {
+        goto CPyL28;
+    } else
+        goto CPyL30;
 CPyL23: ;
-    CPyTagged_DECREF(cpy_r_r10);
-    if (!cpy_r_r25) goto CPyL25;
-CPyL24: ;
-    CPy_INCREF(cpy_r_if_number);
-    return cpy_r_if_number;
+    cpy_r_r23 = (CPyTagged)CPyStatics[DIFFCHECK_PLACEHOLDER] | 1; /* 115792089237316195423570985008687907853269984665640564039457584007913129639936 */
+    cpy_r_r24 = cpy_r_r14 & 1;
+    cpy_r_r25 = cpy_r_r24 != 0;
+    if (cpy_r_r25) goto CPyL25;
+    cpy_r_r26 = cpy_r_r23 & 1;
+    cpy_r_r27 = cpy_r_r26 != 0;
+    if (!cpy_r_r27) goto CPyL26;
 CPyL25: ;
-    cpy_r_r27 = CPyDef_blocks___is_hex_encoded_block_number(cpy_r_value);
-    if (unlikely(cpy_r_r27 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
-    }
-    if (!cpy_r_r27) goto CPyL28;
-    CPy_INCREF(cpy_r_if_number);
-    return cpy_r_if_number;
+    cpy_r_r28 = CPyTagged_IsLt_(cpy_r_r14, cpy_r_r23);
+    cpy_r_r29 = cpy_r_r28;
+    goto CPyL27;
+CPyL26: ;
+    cpy_r_r30 = (Py_ssize_t)cpy_r_r14 < (Py_ssize_t)cpy_r_r23;
+    cpy_r_r29 = cpy_r_r30;
+CPyL27: ;
+    CPyTagged_DECREF(cpy_r_r14);
+    if (!cpy_r_r29) goto CPyL30;
 CPyL28: ;
-    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Value did not match any of the recognized block '
-                                    'identifiers: ') */
-    cpy_r_r29 = PyObject_Str(cpy_r_value);
-    if (unlikely(cpy_r_r29 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    cpy_r_r31 = ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_number;
+    if (unlikely(cpy_r_r31 == NULL)) {
+        PyErr_SetString(PyExc_AttributeError, "attribute 'if_number' of 'select_method_for_block_identifier_env' undefined");
+    } else {
+        CPy_INCREF(cpy_r_r31);
     }
-    cpy_r_r30 = CPyStr_Build(2, cpy_r_r28, cpy_r_r29);
-    CPy_DECREF(cpy_r_r29);
-    if (unlikely(cpy_r_r30 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+    CPy_DECREF_NO_IMM(cpy_r_r0);
+    if (unlikely(cpy_r_r31 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
     }
-    cpy_r_r31 = CPyStatic_blocks___globals;
-    cpy_r_r32 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r33 = CPyDict_GetItem(cpy_r_r31, cpy_r_r32);
+CPyL29: ;
+    return cpy_r_r31;
+CPyL30: ;
+    cpy_r_r32 = CPyDef_blocks___is_hex_encoded_block_number(cpy_r_value);
+    if (unlikely(cpy_r_r32 == 2)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL41;
+    }
+    if (!cpy_r_r32) goto CPyL43;
+    cpy_r_r33 = ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_number;
     if (unlikely(cpy_r_r33 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL36;
+        PyErr_SetString(PyExc_AttributeError, "attribute 'if_number' of 'select_method_for_block_identifier_env' undefined");
+    } else {
+        CPy_INCREF(cpy_r_r33);
     }
-    PyObject *cpy_r_r34[1] = {cpy_r_r30};
-    cpy_r_r35 = (PyObject **)&cpy_r_r34;
-    cpy_r_r36 = PyObject_Vectorcall(cpy_r_r33, cpy_r_r35, 1, 0);
-    CPy_DECREF(cpy_r_r33);
+    CPy_DECREF_NO_IMM(cpy_r_r0);
+    if (unlikely(cpy_r_r33 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
+    }
+CPyL33: ;
+    return cpy_r_r33;
+CPyL34: ;
+    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Value did not match any of the recognized block '
+                                    'identifiers: ') */
+    cpy_r_r35 = PyObject_Str(cpy_r_value);
+    if (unlikely(cpy_r_r35 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
+    }
+    cpy_r_r36 = CPyStr_Build(2, cpy_r_r34, cpy_r_r35);
+    CPy_DECREF(cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL36;
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
     }
-    CPy_DECREF(cpy_r_r30);
-    CPy_Raise(cpy_r_r36);
+    cpy_r_r37 = CPyStatic_blocks___globals;
+    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
+    cpy_r_r39 = CPyDict_GetItem(cpy_r_r37, cpy_r_r38);
+    if (unlikely(cpy_r_r39 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL44;
+    }
+    PyObject *cpy_r_r40[1] = {cpy_r_r36};
+    cpy_r_r41 = (PyObject **)&cpy_r_r40;
+    cpy_r_r42 = PyObject_Vectorcall(cpy_r_r39, cpy_r_r41, 1, 0);
+    CPy_DECREF(cpy_r_r39);
+    if (unlikely(cpy_r_r42 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL44;
+    }
     CPy_DECREF(cpy_r_r36);
+    CPy_Raise(cpy_r_r42);
+    CPy_DECREF(cpy_r_r42);
     if (unlikely(!0)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL34;
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL40;
     }
     CPy_Unreachable();
-CPyL34: ;
-    cpy_r_r37 = NULL;
-    return cpy_r_r37;
-CPyL35: ;
-    CPyTagged_DECREF(cpy_r_r10);
-    goto CPyL18;
-CPyL36: ;
-    CPy_DecRef(cpy_r_r30);
+CPyL40: ;
+    cpy_r_r43 = NULL;
+    return cpy_r_r43;
+CPyL41: ;
+    CPy_DecRef(cpy_r_r0);
+    goto CPyL40;
+CPyL42: ;
+    CPyTagged_DECREF(cpy_r_r14);
+    goto CPyL22;
+CPyL43: ;
+    CPy_DECREF_NO_IMM(cpy_r_r0);
     goto CPyL34;
+CPyL44: ;
+    CPy_DecRef(cpy_r_r36);
+    goto CPyL40;
+}
+
+PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
+    PyObject *obj___mypyc_self__ = self;
+    static const char * const kwlist[] = {"value", 0};
+    static CPyArg_Parser parser = {"O:__call__", kwlist, 0};
+    PyObject *obj_value;
+    if (!CPyArg_ParseStackAndKeywordsOneArg(args, PyVectorcall_NARGS(nargs), kwnames, &parser, &obj_value)) {
+        return NULL;
+    }
+    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
+    PyObject *arg_value = obj_value;
+    PyObject *retval = CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(arg___mypyc_self__, arg_value);
+    return retval;
+fail: ;
+    CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier_curried", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+    return NULL;
+}
+
+PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined) {
+    PyObject *cpy_r_r0;
+    char cpy_r_r1;
+    char cpy_r_r2;
+    char cpy_r_r3;
+    PyObject *cpy_r_r4;
+    char cpy_r_r5;
+    PyObject *cpy_r_select_method_for_block_identifier_curried;
+    PyObject *cpy_r_r6;
+    cpy_r_r0 = CPyDef_blocks___select_method_for_block_identifier_env();
+    if (unlikely(cpy_r_r0 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL7;
+    }
+    CPy_INCREF(cpy_r_if_hash);
+    if (((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_hash != NULL) {
+        CPy_DECREF(((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_hash);
+    }
+    ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_hash = cpy_r_if_hash;
+    cpy_r_r1 = 1;
+    if (unlikely(!cpy_r_r1)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL8;
+    }
+    CPy_INCREF(cpy_r_if_number);
+    if (((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_number != NULL) {
+        CPy_DECREF(((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_number);
+    }
+    ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_number = cpy_r_if_number;
+    cpy_r_r2 = 1;
+    if (unlikely(!cpy_r_r2)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL8;
+    }
+    CPy_INCREF(cpy_r_if_predefined);
+    if (((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_predefined != NULL) {
+        CPy_DECREF(((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_predefined);
+    }
+    ((faster_web3____utils___blocks___select_method_for_block_identifier_envObject *)cpy_r_r0)->_if_predefined = cpy_r_if_predefined;
+    cpy_r_r3 = 1;
+    if (unlikely(!cpy_r_r3)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL8;
+    }
+    cpy_r_r4 = CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj();
+    if (unlikely(cpy_r_r4 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL8;
+    }
+    if (((faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *)cpy_r_r4)->___mypyc_env__ != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *)cpy_r_r4)->___mypyc_env__);
+    }
+    ((faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *)cpy_r_r4)->___mypyc_env__ = cpy_r_r0;
+    cpy_r_r5 = 1;
+    if (unlikely(!cpy_r_r5)) {
+        CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
+        goto CPyL9;
+    }
+    cpy_r_select_method_for_block_identifier_curried = cpy_r_r4;
+    return cpy_r_select_method_for_block_identifier_curried;
+CPyL7: ;
+    cpy_r_r6 = NULL;
+    return cpy_r_r6;
+CPyL8: ;
+    CPy_DecRef(cpy_r_r0);
+    goto CPyL7;
+CPyL9: ;
+    CPy_DecRef(cpy_r_r4);
+    goto CPyL7;
 }
 
 PyObject *CPyPy_blocks___select_method_for_block_identifier(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
-    static const char * const kwlist[] = {"value", "if_hash", "if_number", "if_predefined", 0};
-    static CPyArg_Parser parser = {"OOOO:select_method_for_block_identifier", kwlist, 0};
-    PyObject *obj_value;
+    static const char * const kwlist[] = {"if_hash", "if_number", "if_predefined", 0};
+    static CPyArg_Parser parser = {"OOO:select_method_for_block_identifier", kwlist, 0};
     PyObject *obj_if_hash;
     PyObject *obj_if_number;
     PyObject *obj_if_predefined;
-    if (!CPyArg_ParseStackAndKeywordsSimple(args, nargs, kwnames, &parser, &obj_value, &obj_if_hash, &obj_if_number, &obj_if_predefined)) {
+    if (!CPyArg_ParseStackAndKeywordsSimple(args, nargs, kwnames, &parser, &obj_if_hash, &obj_if_number, &obj_if_predefined)) {
         return NULL;
     }
-    PyObject *arg_value = obj_value;
     PyObject *arg_if_hash;
     if (likely(PyUnicode_Check(obj_if_hash)))
         arg_if_hash = obj_if_hash;
@@ -36438,7 +36930,7 @@ PyObject *CPyPy_blocks___select_method_for_block_identifier(PyObject *self, PyOb
         CPy_TypeError("str", obj_if_predefined); 
         goto fail;
     }
-    PyObject *retval = CPyDef_blocks___select_method_for_block_identifier(arg_value, arg_if_hash, arg_if_number, arg_if_predefined);
+    PyObject *retval = CPyDef_blocks___select_method_for_block_identifier(arg_if_hash, arg_if_number, arg_if_predefined);
     return retval;
 fail: ;
     CPy_AddTraceback("faster_web3/_utils/blocks.py", "select_method_for_block_identifier", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
@@ -36475,23 +36967,7 @@ char CPyDef_blocks_____top_level__(void) {
     PyObject *cpy_r_r26;
     PyObject *cpy_r_r27;
     PyObject *cpy_r_r28;
-    PyObject *cpy_r_r29;
-    PyObject *cpy_r_r30;
-    PyObject *cpy_r_r31;
-    PyObject *cpy_r_r32;
-    PyObject *cpy_r_r33;
-    PyObject *cpy_r_r34;
-    PyObject *cpy_r_r35;
-    PyObject *cpy_r_r36;
-    PyObject *cpy_r_r37;
-    PyObject *cpy_r_r38;
-    PyObject **cpy_r_r40;
-    PyObject *cpy_r_r41;
-    PyObject *cpy_r_r42;
-    PyObject *cpy_r_r43;
-    int32_t cpy_r_r44;
-    char cpy_r_r45;
-    char cpy_r_r46;
+    char cpy_r_r29;
     cpy_r_r0 = CPyModule_builtins;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
@@ -36500,19 +36976,19 @@ char CPyDef_blocks_____top_level__(void) {
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", -1, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
     CPyModule_builtins = cpy_r_r4;
     CPy_INCREF(CPyModule_builtins);
     CPy_DECREF(cpy_r_r4);
 CPyL3: ;
-    cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Any', 'Optional', 'Union') */
+    cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Any', 'Callable', 'Optional', 'Union') */
     cpy_r_r6 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing' */
     cpy_r_r7 = CPyStatic_blocks___globals;
     cpy_r_r8 = CPyImport_ImportFromMany(cpy_r_r6, cpy_r_r5, cpy_r_r5, cpy_r_r7);
     if (unlikely(cpy_r_r8 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
     CPyModule_typing = cpy_r_r8;
     CPy_INCREF(CPyModule_typing);
@@ -36523,7 +36999,7 @@ CPyL3: ;
     cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
     CPyModule_eth_typing = cpy_r_r12;
     CPy_INCREF(CPyModule_eth_typing);
@@ -36535,94 +37011,48 @@ CPyL3: ;
     cpy_r_r16 = CPyImport_ImportFromMany(cpy_r_r14, cpy_r_r13, cpy_r_r13, cpy_r_r15);
     if (unlikely(cpy_r_r16 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
     CPyModule_faster_eth_utils = cpy_r_r16;
     CPy_INCREF(CPyModule_faster_eth_utils);
     CPy_DECREF(cpy_r_r16);
-    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('curry',) */
-    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_eth_utils.toolz' */
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('TypeGuard',) */
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing_extensions' */
     cpy_r_r19 = CPyStatic_blocks___globals;
     cpy_r_r20 = CPyImport_ImportFromMany(cpy_r_r18, cpy_r_r17, cpy_r_r17, cpy_r_r19);
     if (unlikely(cpy_r_r20 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
-    CPyModule_faster_eth_utils___toolz = cpy_r_r20;
-    CPy_INCREF(CPyModule_faster_eth_utils___toolz);
+    CPyModule_typing_extensions = cpy_r_r20;
+    CPy_INCREF(CPyModule_typing_extensions);
     CPy_DECREF(cpy_r_r20);
-    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('TypeGuard',) */
-    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing_extensions' */
+    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Web3TypeError', 'Web3ValueError') */
+    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
     cpy_r_r23 = CPyStatic_blocks___globals;
     cpy_r_r24 = CPyImport_ImportFromMany(cpy_r_r22, cpy_r_r21, cpy_r_r21, cpy_r_r23);
     if (unlikely(cpy_r_r24 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
-    CPyModule_typing_extensions = cpy_r_r24;
-    CPy_INCREF(CPyModule_typing_extensions);
+    CPyModule_faster_web3___exceptions = cpy_r_r24;
+    CPy_INCREF(CPyModule_faster_web3___exceptions);
     CPy_DECREF(cpy_r_r24);
-    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Web3TypeError', 'Web3ValueError') */
-    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
+    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('RPCEndpoint',) */
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
     cpy_r_r27 = CPyStatic_blocks___globals;
     cpy_r_r28 = CPyImport_ImportFromMany(cpy_r_r26, cpy_r_r25, cpy_r_r25, cpy_r_r27);
     if (unlikely(cpy_r_r28 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
+        goto CPyL10;
     }
-    CPyModule_faster_web3___exceptions = cpy_r_r28;
-    CPy_INCREF(CPyModule_faster_web3___exceptions);
-    CPy_DECREF(cpy_r_r28);
-    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('RPCEndpoint',) */
-    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
-    cpy_r_r31 = CPyStatic_blocks___globals;
-    cpy_r_r32 = CPyImport_ImportFromMany(cpy_r_r30, cpy_r_r29, cpy_r_r29, cpy_r_r31);
-    if (unlikely(cpy_r_r32 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
-    }
-    CPyModule_faster_web3___types = cpy_r_r32;
+    CPyModule_faster_web3___types = cpy_r_r28;
     CPy_INCREF(CPyModule_faster_web3___types);
-    CPy_DECREF(cpy_r_r32);
-    cpy_r_r33 = CPyStatic_blocks___globals;
-    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'select_method_for_block_identifier' */
-    cpy_r_r35 = CPyDict_GetItem(cpy_r_r33, cpy_r_r34);
-    if (unlikely(cpy_r_r35 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
-    }
-    cpy_r_r36 = CPyStatic_blocks___globals;
-    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'curry' */
-    cpy_r_r38 = CPyDict_GetItem(cpy_r_r36, cpy_r_r37);
-    if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL16;
-    }
-    PyObject *cpy_r_r39[1] = {cpy_r_r35};
-    cpy_r_r40 = (PyObject **)&cpy_r_r39;
-    cpy_r_r41 = PyObject_Vectorcall(cpy_r_r38, cpy_r_r40, 1, 0);
-    CPy_DECREF(cpy_r_r38);
-    if (unlikely(cpy_r_r41 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL16;
-    }
-    CPy_DECREF(cpy_r_r35);
-    cpy_r_r42 = CPyStatic_blocks___globals;
-    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'select_method_for_block_identifier' */
-    cpy_r_r44 = PyDict_SetItem(cpy_r_r42, cpy_r_r43, cpy_r_r41);
-    CPy_DECREF(cpy_r_r41);
-    cpy_r_r45 = cpy_r_r44 >= 0;
-    if (unlikely(!cpy_r_r45)) {
-        CPy_AddTraceback("faster_web3/_utils/blocks.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_blocks___globals);
-        goto CPyL15;
-    }
+    CPy_DECREF(cpy_r_r28);
     return 1;
-CPyL15: ;
-    cpy_r_r46 = 2;
-    return cpy_r_r46;
-CPyL16: ;
-    CPy_DecRef(cpy_r_r35);
-    goto CPyL15;
+CPyL10: ;
+    cpy_r_r29 = 2;
+    return cpy_r_r29;
 }
 static PyMethodDef _utils___cachingmodule_methods[] = {
     {NULL, NULL, 0, NULL}
@@ -250344,17 +250774,20 @@ CPyL98: ;
     CPy_INCREF_NO_IMM(cpy_r_r128);
 CPyL99: ;
     cpy_r_r129 = ((faster_web3___providers___persistent___subscription_manager___SubscriptionManagerObject *)cpy_r_r128)->__subscription_container;
+    CPy_INCREF_NO_IMM(cpy_r_r129);
+    CPy_DECREF_NO_IMM(cpy_r_r128);
     cpy_r_r130 = CPyDef_subscription_container___SubscriptionContainer___handler_subscriptions(cpy_r_r129);
+    CPy_DECREF_NO_IMM(cpy_r_r129);
     if (unlikely(cpy_r_r130 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL244;
+        goto CPyL223;
     }
 CPyL100: ;
     cpy_r_r131 = (CPyPtr)&((PyVarObject *)cpy_r_r130)->ob_size;
     cpy_r_r132 = *(int64_t *)cpy_r_r131;
+    CPy_DECREF_NO_IMM(cpy_r_r130);
     cpy_r_r133 = cpy_r_r132 << 1;
     cpy_r_r134 = cpy_r_r133 == 0;
-    CPy_DECREF_NO_IMM(cpy_r_r128);
     if (!cpy_r_r134) goto CPyL137;
     cpy_r_r135 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r135 == NULL)) {
@@ -250377,7 +250810,7 @@ CPyL102: ;
         cpy_r_r139 = cpy_r_r138;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", 234, CPyStatic_subscription_manager___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r138);
-        goto CPyL245;
+        goto CPyL244;
     }
     cpy_r_r140 = ((faster_web3___providers___persistent___request_processor___RequestProcessorObject *)cpy_r_r139)->__handler_subscription_queue;
     CPy_INCREF_NO_IMM(cpy_r_r140);
@@ -250403,13 +250836,13 @@ CPyL106: ;
     cpy_r_r145 = CPyDict_GetItem(cpy_r_r143, cpy_r_r144);
     if (unlikely(cpy_r_r145 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL246;
+        goto CPyL245;
     }
     cpy_r_r146 = PyObject_Vectorcall(cpy_r_r145, 0, 0, 0);
     CPy_DECREF(cpy_r_r145);
     if (unlikely(cpy_r_r146 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL246;
+        goto CPyL245;
     }
     cpy_r_r147 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'put' */
     PyObject *cpy_r_r148[2] = {cpy_r_r142, cpy_r_r146};
@@ -250417,7 +250850,7 @@ CPyL106: ;
     cpy_r_r150 = PyObject_VectorcallMethod(cpy_r_r147, cpy_r_r149, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r150 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL247;
+        goto CPyL246;
     }
     CPy_DECREF_NO_IMM(cpy_r_r142);
     CPy_DECREF(cpy_r_r146);
@@ -250472,13 +250905,13 @@ CPyL116: ;
 CPyL117: ;
     cpy_r_r161 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r162 = cpy_r_type != cpy_r_r161;
-    if (!cpy_r_r162) goto CPyL248;
+    if (!cpy_r_r162) goto CPyL247;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL121;
     } else
-        goto CPyL249;
+        goto CPyL248;
 CPyL119: ;
     CPy_Unreachable();
 CPyL120: ;
@@ -250495,13 +250928,13 @@ CPyL121: ;
     cpy_r_r164 = 1;
     if (unlikely(!cpy_r_r164)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL250;
+        goto CPyL249;
     }
     cpy_r_r165 = (PyObject **)&cpy_r_r3;
     cpy_r_r166 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r166 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__10", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL250;
+        goto CPyL249;
     }
     CPy_INCREF(cpy_r_r166);
 CPyL123: ;
@@ -250509,14 +250942,14 @@ CPyL123: ;
     CPy_DecRef(cpy_r_r166);
     if (unlikely(cpy_r_r167 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL250;
+        goto CPyL249;
     }
     if (cpy_r_r167) goto CPyL127;
     cpy_r_r159 = cpy_r_r3;
     cpy_r_r168 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
     if (unlikely(cpy_r_r168.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__11", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL251;
+        goto CPyL250;
     }
     CPy_INCREF(cpy_r_r168.f0);
     CPy_INCREF(cpy_r_r168.f1);
@@ -250565,7 +250998,7 @@ CPyL132: ;
     cpy_r_r172 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r172 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__10", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL252;
+        goto CPyL251;
     }
     CPy_INCREF(cpy_r_r172);
 CPyL133: ;
@@ -250606,7 +251039,7 @@ CPyL143: ;
     cpy_r_r180 = CPyDict_GetItem(cpy_r_r178, cpy_r_r179);
     if (unlikely(cpy_r_r180 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL253;
+        goto CPyL252;
     }
     cpy_r_r181 = PyObject_IsInstance(cpy_r_r177, cpy_r_r180);
     CPy_DECREF(cpy_r_r177);
@@ -250729,7 +251162,7 @@ CPyL163: ;
     cpy_r_r206 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
     if (unlikely(cpy_r_r206 == -113)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__13", 246, CPyStatic_subscription_manager___globals);
-        goto CPyL254;
+        goto CPyL253;
     }
 CPyL164: ;
     cpy_r_r207 = (CPyPtr)&((PyListObject *)cpy_r_r205)->ob_item;
@@ -250767,14 +251200,14 @@ CPyL166: ;
     cpy_r_r215 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r215 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "self", 247, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     CPy_INCREF_NO_IMM(cpy_r_r215);
 CPyL167: ;
     cpy_r_r216 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__subscription;
     if (unlikely(cpy_r_r216 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "subscription", 247, CPyStatic_subscription_manager___globals);
-        goto CPyL256;
+        goto CPyL255;
     }
     CPy_INCREF(cpy_r_r216);
 CPyL168: ;
@@ -250783,7 +251216,7 @@ CPyL168: ;
     CPy_DECREF_NO_IMM(cpy_r_r215);
     if (unlikely(cpy_r_r217 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 != NULL) {
         CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14);
@@ -250792,12 +251225,12 @@ CPyL168: ;
     cpy_r_r218 = 1;
     if (unlikely(!cpy_r_r218)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     cpy_r_r219 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r219 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__14", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     CPy_INCREF_NO_IMM(cpy_r_r219);
 CPyL171: ;
@@ -250807,11 +251240,11 @@ CPyL171: ;
     cpy_r_r222 = (PyObject **)&cpy_r_r5;
     cpy_r_r223 = CPyDef_subscription_manager___unsubscribe_SubscriptionManager_gen_____mypyc_generator_helper__(cpy_r_r219, cpy_r_r220, cpy_r_r220, cpy_r_r220, cpy_r_r220, cpy_r_r222);
     CPy_DECREF_NO_IMM(cpy_r_r219);
-    if (cpy_r_r223 != NULL) goto CPyL257;
+    if (cpy_r_r223 != NULL) goto CPyL256;
     cpy_r_r224 = cpy_r_r5 != 0;
     if (unlikely(!cpy_r_r224)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL258;
+        goto CPyL257;
     }
     cpy_r_r225 = cpy_r_r5;
     cpy_r_r226 = NULL;
@@ -250822,7 +251255,7 @@ CPyL171: ;
     cpy_r_r227 = 1;
     if (unlikely(!cpy_r_r227)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL259;
+        goto CPyL258;
     } else
         goto CPyL196;
 CPyL174: ;
@@ -250833,13 +251266,13 @@ CPyL175: ;
 CPyL176: ;
     cpy_r_r230 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r231 = cpy_r_type != cpy_r_r230;
-    if (!cpy_r_r231) goto CPyL260;
+    if (!cpy_r_r231) goto CPyL259;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL180;
     } else
-        goto CPyL261;
+        goto CPyL260;
 CPyL178: ;
     CPy_Unreachable();
 CPyL179: ;
@@ -250856,13 +251289,13 @@ CPyL180: ;
     cpy_r_r233 = 1;
     if (unlikely(!cpy_r_r233)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL262;
+        goto CPyL261;
     }
     cpy_r_r234 = (PyObject **)&cpy_r_r7;
     cpy_r_r235 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r235 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__14", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL262;
+        goto CPyL261;
     }
     CPy_INCREF_NO_IMM(cpy_r_r235);
 CPyL182: ;
@@ -250870,18 +251303,18 @@ CPyL182: ;
     CPy_DecRef(cpy_r_r235);
     if (unlikely(cpy_r_r236 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL262;
+        goto CPyL261;
     }
     if (cpy_r_r236) {
         goto CPyL186;
     } else
-        goto CPyL263;
+        goto CPyL262;
 CPyL184: ;
     cpy_r_r228 = cpy_r_r7;
     cpy_r_r237 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
     if (unlikely(cpy_r_r237.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__15", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL264;
+        goto CPyL263;
     }
     CPy_INCREF(cpy_r_r237.f0);
     CPy_INCREF(cpy_r_r237.f1);
@@ -250897,7 +251330,7 @@ CPyL186: ;
     cpy_r_r238 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
     if (unlikely(cpy_r_r238.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__15", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL265;
+        goto CPyL264;
     }
     CPy_INCREF(cpy_r_r238.f0);
     CPy_INCREF(cpy_r_r238.f1);
@@ -250929,7 +251362,7 @@ CPyL191: ;
     cpy_r_r241 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r241 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "__mypyc_temp__14", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL266;
+        goto CPyL265;
     }
     CPy_INCREF_NO_IMM(cpy_r_r241);
 CPyL192: ;
@@ -250939,7 +251372,7 @@ CPyL192: ;
     if (cpy_r_r242 == NULL) {
         goto CPyL194;
     } else
-        goto CPyL267;
+        goto CPyL266;
 CPyL193: ;
     cpy_r_r228 = cpy_r_r242;
     goto CPyL175;
@@ -250947,7 +251380,7 @@ CPyL194: ;
     cpy_r_r243 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r243 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     cpy_r_r225 = cpy_r_r243;
 CPyL196: ;
@@ -250958,7 +251391,7 @@ CPyL196: ;
     CPy_DECREF(cpy_r_r225);
     if (unlikely(cpy_r_r244 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL255;
+        goto CPyL254;
     }
     cpy_r_r245 = cpy_r_r244 ? Py_True : Py_False;
     cpy_r_r246 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
@@ -251007,7 +251440,7 @@ CPyL201: ;
     cpy_r_r257 = CPyObject_GetAttr(cpy_r_r255, cpy_r_r256);
     if (unlikely(cpy_r_r257 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL268;
+        goto CPyL267;
     }
     PyObject *cpy_r_r258[1] = {cpy_r_r254};
     cpy_r_r259 = (PyObject **)&cpy_r_r258;
@@ -251015,7 +251448,7 @@ CPyL201: ;
     CPy_DECREF(cpy_r_r257);
     if (unlikely(cpy_r_r260 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL268;
+        goto CPyL267;
     }
     CPy_DECREF_NO_IMM(cpy_r_r254);
     if (unlikely(!PyBool_Check(cpy_r_r260))) {
@@ -251052,7 +251485,7 @@ CPyL210: ;
     cpy_r_r267 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__subscriptions;
     if (unlikely(cpy_r_r267 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", "unsubscribe_SubscriptionManager_gen", "subscriptions", 252, CPyStatic_subscription_manager___globals);
-        goto CPyL269;
+        goto CPyL268;
     }
     CPy_INCREF(cpy_r_r267);
 CPyL211: ;
@@ -251062,9 +251495,9 @@ CPyL211: ;
     cpy_r_r271 = PyObject_VectorcallMethod(cpy_r_r268, cpy_r_r270, 9223372036854775811ULL, 0);
     if (unlikely(cpy_r_r271 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL270;
+        goto CPyL269;
     } else
-        goto CPyL271;
+        goto CPyL270;
 CPyL212: ;
     CPy_DECREF(cpy_r_r265);
     CPy_DECREF(cpy_r_r267);
@@ -251079,24 +251512,24 @@ CPyL216: ;
     return 0;
 CPyL217: ;
     cpy_r_r274 = cpy_r_r8 == 0;
-    if (cpy_r_r274) goto CPyL272;
+    if (cpy_r_r274) goto CPyL271;
     cpy_r_r275 = cpy_r_r8 == 1;
     if (cpy_r_r275) {
-        goto CPyL273;
+        goto CPyL272;
     } else
-        goto CPyL274;
+        goto CPyL273;
 CPyL219: ;
     cpy_r_r276 = cpy_r_r8 == 2;
     if (cpy_r_r276) {
-        goto CPyL275;
+        goto CPyL274;
     } else
-        goto CPyL276;
+        goto CPyL275;
 CPyL220: ;
     cpy_r_r277 = cpy_r_r8 == 3;
     if (cpy_r_r277) {
         goto CPyL176;
     } else
-        goto CPyL277;
+        goto CPyL276;
 CPyL221: ;
     PyErr_SetNone(PyExc_StopIteration);
     cpy_r_r278 = 0;
@@ -251173,60 +251606,57 @@ CPyL243: ;
     CPy_DECREF(cpy_r_r127);
     goto CPyL98;
 CPyL244: ;
-    CPy_DecRef(cpy_r_r128);
+    CPy_DecRef(cpy_r_r138);
     goto CPyL223;
 CPyL245: ;
-    CPy_DecRef(cpy_r_r138);
+    CPy_DecRef(cpy_r_r142);
     goto CPyL223;
 CPyL246: ;
     CPy_DecRef(cpy_r_r142);
-    goto CPyL223;
-CPyL247: ;
-    CPy_DecRef(cpy_r_r142);
     CPy_DecRef(cpy_r_r146);
     goto CPyL223;
-CPyL248: ;
+CPyL247: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL120;
-CPyL249: ;
+CPyL248: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL119;
-CPyL250: ;
+CPyL249: ;
     CPy_XDecRef(cpy_r_r3);
     goto CPyL129;
-CPyL251: ;
+CPyL250: ;
     CPy_DecRef(cpy_r_r159);
     goto CPyL129;
-CPyL252: ;
+CPyL251: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL223;
-CPyL253: ;
+CPyL252: ;
     CPy_DecRef(cpy_r_r177);
     goto CPyL223;
-CPyL254: ;
+CPyL253: ;
     CPy_DecRef(cpy_r_r205);
     goto CPyL223;
-CPyL255: ;
+CPyL254: ;
     goto CPyL223;
-CPyL256: ;
+CPyL255: ;
     CPy_DecRef(cpy_r_r215);
     goto CPyL223;
-CPyL257: ;
+CPyL256: ;
     CPy_XDECREF(cpy_r_r5);
     goto CPyL174;
-CPyL258: ;
+CPyL257: ;
     CPy_XDecRef(cpy_r_r5);
     goto CPyL223;
-CPyL259: ;
+CPyL258: ;
     CPy_DecRef(cpy_r_r225);
     goto CPyL223;
-CPyL260: ;
+CPyL259: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL179;
-CPyL261: ;
+CPyL260: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL178;
-CPyL262: ;
+CPyL261: ;
     CPy_XDecRef(cpy_r_r7);
     cpy_r_r280 = NULL;
     if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
@@ -251235,12 +251665,12 @@ CPyL262: ;
     ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r280;
     cpy_r_r281 = 1;
     goto CPyL188;
-CPyL263: ;
+CPyL262: ;
     goto CPyL184;
-CPyL264: ;
+CPyL263: ;
     CPy_DecRef(cpy_r_r228);
     goto CPyL188;
-CPyL265: ;
+CPyL264: ;
     cpy_r_r282 = NULL;
     if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
         CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
@@ -251249,25 +251679,25 @@ CPyL265: ;
     cpy_r_r283 = 1;
     CPy_DecRef(cpy_r_r225);
     goto CPyL188;
-CPyL266: ;
+CPyL265: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL223;
-CPyL267: ;
+CPyL266: ;
     goto CPyL193;
-CPyL268: ;
+CPyL267: ;
     CPy_DecRef(cpy_r_r254);
+    goto CPyL223;
+CPyL268: ;
+    CPy_DecRef(cpy_r_r265);
     goto CPyL223;
 CPyL269: ;
     CPy_DecRef(cpy_r_r265);
-    goto CPyL223;
-CPyL270: ;
-    CPy_DecRef(cpy_r_r265);
     CPy_DecRef(cpy_r_r267);
     goto CPyL223;
-CPyL271: ;
+CPyL270: ;
     CPy_DECREF(cpy_r_r271);
     goto CPyL212;
-CPyL272: ;
+CPyL271: ;
     CPy_XDECREF(cpy_r_r1);
     CPy_XDECREF(cpy_r_r3);
     CPy_XDECREF(cpy_r_r7);
@@ -251278,7 +251708,7 @@ CPyL272: ;
     ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r284;
     cpy_r_r285 = 1;
     goto CPyL1;
-CPyL273: ;
+CPyL272: ;
     CPy_XDECREF(cpy_r_r3);
     CPy_XDECREF(cpy_r_r7);
     cpy_r_r286 = NULL;
@@ -251288,10 +251718,10 @@ CPyL273: ;
     ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r286;
     cpy_r_r287 = 1;
     goto CPyL63;
-CPyL274: ;
+CPyL273: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL219;
-CPyL275: ;
+CPyL274: ;
     CPy_XDECREF(cpy_r_r7);
     cpy_r_r288 = NULL;
     if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
@@ -251300,10 +251730,10 @@ CPyL275: ;
     ((faster_web3___providers___persistent___subscription_manager___unsubscribe_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r288;
     cpy_r_r289 = 1;
     goto CPyL117;
-CPyL276: ;
+CPyL275: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL220;
-CPyL277: ;
+CPyL276: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL221;
 }
@@ -253113,13 +253543,15 @@ CPyL4: ;
     CPy_INCREF_NO_IMM(cpy_r_r19);
 CPyL5: ;
     cpy_r_r20 = ((faster_web3___providers___persistent___subscription_manager___SubscriptionManagerObject *)cpy_r_r19)->__subscription_container;
+    CPy_INCREF_NO_IMM(cpy_r_r20);
+    CPy_DECREF_NO_IMM(cpy_r_r19);
     cpy_r_r21 = CPyDef_subscription_container___SubscriptionContainer___handler_subscriptions(cpy_r_r20);
+    CPy_DECREF_NO_IMM(cpy_r_r20);
     if (unlikely(cpy_r_r21 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL290;
+        goto CPyL289;
     }
 CPyL6: ;
-    CPy_DECREF_NO_IMM(cpy_r_r19);
     cpy_r_r22 = (CPyPtr)&((PyVarObject *)cpy_r_r21)->ob_size;
     cpy_r_r23 = *(int64_t *)cpy_r_r22;
     CPy_DECREF_NO_IMM(cpy_r_r21);
@@ -253152,9 +253584,9 @@ CPyL10: ;
     cpy_r_r33 = PyObject_VectorcallMethod(cpy_r_r30, cpy_r_r32, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r33 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL291;
+        goto CPyL290;
     } else
-        goto CPyL292;
+        goto CPyL291;
 CPyL11: ;
     CPy_DECREF(cpy_r_r28);
     cpy_r_r34 = Py_None;
@@ -253188,7 +253620,7 @@ CPyL17: ;
         cpy_r_r40 = cpy_r_r39;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", 297, CPyStatic_subscription_manager___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r39);
-        goto CPyL293;
+        goto CPyL292;
     }
     cpy_r_r41 = ((faster_web3___providers___persistent___request_processor___RequestProcessorObject *)cpy_r_r40)->__handler_subscription_queue;
     CPy_INCREF_NO_IMM(cpy_r_r41);
@@ -253219,13 +253651,15 @@ CPyL22: ;
     CPy_INCREF_NO_IMM(cpy_r_r44);
 CPyL23: ;
     cpy_r_r45 = ((faster_web3___providers___persistent___subscription_manager___SubscriptionManagerObject *)cpy_r_r44)->__subscription_container;
+    CPy_INCREF_NO_IMM(cpy_r_r45);
+    CPy_DECREF_NO_IMM(cpy_r_r44);
     cpy_r_r46 = CPyDef_subscription_container___SubscriptionContainer___handler_subscriptions(cpy_r_r45);
+    CPy_DECREF_NO_IMM(cpy_r_r45);
     if (unlikely(cpy_r_r46 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL294;
+        goto CPyL289;
     }
 CPyL24: ;
-    CPy_DECREF_NO_IMM(cpy_r_r44);
     cpy_r_r47 = (CPyPtr)&((PyVarObject *)cpy_r_r46)->ob_size;
     cpy_r_r48 = *(int64_t *)cpy_r_r47;
     CPy_DECREF_NO_IMM(cpy_r_r46);
@@ -253268,11 +253702,11 @@ CPyL29: ;
     cpy_r_r57 = (PyObject **)&cpy_r_r1;
     cpy_r_r58 = CPyDef_request_processor___get_TaskReliantQueue_gen_____mypyc_generator_helper__(cpy_r_r54, cpy_r_r55, cpy_r_r55, cpy_r_r55, cpy_r_r55, cpy_r_r57);
     CPy_DECREF_NO_IMM(cpy_r_r54);
-    if (cpy_r_r58 != NULL) goto CPyL295;
+    if (cpy_r_r58 != NULL) goto CPyL293;
     cpy_r_r59 = cpy_r_r1 != 0;
     if (unlikely(!cpy_r_r59)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL296;
+        goto CPyL294;
     }
     cpy_r_r60 = cpy_r_r1;
     cpy_r_r61 = NULL;
@@ -253283,7 +253717,7 @@ CPyL29: ;
     cpy_r_r62 = 1;
     if (unlikely(!cpy_r_r62)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL297;
+        goto CPyL295;
     } else
         goto CPyL54;
 CPyL32: ;
@@ -253294,13 +253728,13 @@ CPyL33: ;
 CPyL34: ;
     cpy_r_r65 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r66 = cpy_r_type != cpy_r_r65;
-    if (!cpy_r_r66) goto CPyL298;
+    if (!cpy_r_r66) goto CPyL296;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL38;
     } else
-        goto CPyL299;
+        goto CPyL297;
 CPyL36: ;
     CPy_Unreachable();
 CPyL37: ;
@@ -253317,13 +253751,13 @@ CPyL38: ;
     cpy_r_r68 = 1;
     if (unlikely(!cpy_r_r68)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL300;
+        goto CPyL298;
     }
     cpy_r_r69 = (PyObject **)&cpy_r_r3;
     cpy_r_r70 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__20;
     if (unlikely(cpy_r_r70 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__20", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL300;
+        goto CPyL298;
     }
     CPy_INCREF_NO_IMM(cpy_r_r70);
 CPyL40: ;
@@ -253331,14 +253765,14 @@ CPyL40: ;
     CPy_DecRef(cpy_r_r70);
     if (unlikely(cpy_r_r71 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL300;
+        goto CPyL298;
     }
     if (cpy_r_r71) goto CPyL44;
     cpy_r_r63 = cpy_r_r3;
     cpy_r_r72 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__21;
     if (unlikely(cpy_r_r72.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__21", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL301;
+        goto CPyL299;
     }
     CPy_INCREF(cpy_r_r72.f0);
     CPy_INCREF(cpy_r_r72.f1);
@@ -253354,7 +253788,7 @@ CPyL44: ;
     cpy_r_r73 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__21;
     if (unlikely(cpy_r_r73.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__21", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL302;
+        goto CPyL300;
     }
     CPy_INCREF(cpy_r_r73.f0);
     CPy_INCREF(cpy_r_r73.f1);
@@ -253386,7 +253820,7 @@ CPyL49: ;
     cpy_r_r76 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__20;
     if (unlikely(cpy_r_r76 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__20", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL303;
+        goto CPyL301;
     }
     CPy_INCREF_NO_IMM(cpy_r_r76);
 CPyL50: ;
@@ -253439,7 +253873,7 @@ CPyL57: ;
     cpy_r_r85 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__response;
     if (unlikely(cpy_r_r85 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "response", 303, CPyStatic_subscription_manager___globals);
-        goto CPyL304;
+        goto CPyL302;
     }
     CPy_INCREF(cpy_r_r85);
 CPyL59: ;
@@ -253449,7 +253883,7 @@ CPyL59: ;
     cpy_r_r89 = PyObject_VectorcallMethod(cpy_r_r86, cpy_r_r88, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r89 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL305;
+        goto CPyL303;
     }
     CPy_DECREF(cpy_r_r84);
     CPy_DECREF(cpy_r_r85);
@@ -253492,7 +253926,7 @@ CPyL63: ;
     cpy_r_r97 = 1;
     if (unlikely(!cpy_r_r97)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL306;
+        goto CPyL304;
     } else
         goto CPyL88;
 CPyL66: ;
@@ -253503,13 +253937,13 @@ CPyL67: ;
 CPyL68: ;
     cpy_r_r100 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r101 = cpy_r_type != cpy_r_r100;
-    if (!cpy_r_r101) goto CPyL307;
+    if (!cpy_r_r101) goto CPyL305;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL72;
     } else
-        goto CPyL308;
+        goto CPyL306;
 CPyL70: ;
     CPy_Unreachable();
 CPyL71: ;
@@ -253526,13 +253960,13 @@ CPyL72: ;
     cpy_r_r103 = 1;
     if (unlikely(!cpy_r_r103)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL309;
+        goto CPyL307;
     }
     cpy_r_r104 = (PyObject **)&cpy_r_r5;
     cpy_r_r105 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__22;
     if (unlikely(cpy_r_r105 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__22", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL309;
+        goto CPyL307;
     }
     CPy_INCREF(cpy_r_r105);
 CPyL74: ;
@@ -253540,14 +253974,14 @@ CPyL74: ;
     CPy_DecRef(cpy_r_r105);
     if (unlikely(cpy_r_r106 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL309;
+        goto CPyL307;
     }
     if (cpy_r_r106) goto CPyL78;
     cpy_r_r98 = cpy_r_r5;
     cpy_r_r107 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__23;
     if (unlikely(cpy_r_r107.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__23", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL310;
+        goto CPyL308;
     }
     CPy_INCREF(cpy_r_r107.f0);
     CPy_INCREF(cpy_r_r107.f1);
@@ -253563,7 +253997,7 @@ CPyL78: ;
     cpy_r_r108 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__23;
     if (unlikely(cpy_r_r108.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__23", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL311;
+        goto CPyL309;
     }
     CPy_INCREF(cpy_r_r108.f0);
     CPy_INCREF(cpy_r_r108.f1);
@@ -253595,7 +254029,7 @@ CPyL83: ;
     cpy_r_r111 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__22;
     if (unlikely(cpy_r_r111 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__22", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL312;
+        goto CPyL310;
     }
     CPy_INCREF(cpy_r_r111);
 CPyL84: ;
@@ -253679,7 +254113,7 @@ CPyL95: ;
     cpy_r_r123 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sub_id;
     if (unlikely(cpy_r_r123 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "sub_id", 310, CPyStatic_subscription_manager___globals);
-        goto CPyL313;
+        goto CPyL311;
     }
     CPy_INCREF(cpy_r_r123);
 CPyL96: ;
@@ -253687,7 +254121,7 @@ CPyL96: ;
         cpy_r_r124 = cpy_r_r123;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", 309, CPyStatic_subscription_manager___globals, "str", cpy_r_r123);
-        goto CPyL313;
+        goto CPyL311;
     }
     cpy_r_r125 = CPyDef_subscription_container___SubscriptionContainer___get_handler_subscription_by_id(cpy_r_r122, cpy_r_r124);
     CPy_DECREF(cpy_r_r124);
@@ -253714,7 +254148,7 @@ CPyL96: ;
 CPyL100: ;
     cpy_r_r128 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r129 = cpy_r_r127 != cpy_r_r128;
-    if (!cpy_r_r129) goto CPyL314;
+    if (!cpy_r_r129) goto CPyL312;
     cpy_r_r130 = cpy_r_r127;
     cpy_r_r131 = PyObject_IsTrue(cpy_r_r130);
     CPy_DECREF(cpy_r_r130);
@@ -253738,14 +254172,14 @@ CPyL105: ;
     cpy_r_r136 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sub;
     if (unlikely(cpy_r_r136 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "sub", 315, CPyStatic_subscription_manager___globals);
-        goto CPyL315;
+        goto CPyL313;
     }
     CPy_INCREF(cpy_r_r136);
 CPyL106: ;
     cpy_r_r137 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sub_response;
     if (unlikely(cpy_r_r137 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "formatted_sub_response", 316, CPyStatic_subscription_manager___globals);
-        goto CPyL316;
+        goto CPyL314;
     }
     CPy_INCREF(cpy_r_r137);
 CPyL107: ;
@@ -253754,12 +254188,12 @@ CPyL107: ;
     CPy_DECREF(cpy_r_r137);
     if (unlikely(cpy_r_r139 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL316;
+        goto CPyL314;
     }
     cpy_r_r140 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sub;
     if (unlikely(cpy_r_r140 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "sub", 317, CPyStatic_subscription_manager___globals);
-        goto CPyL317;
+        goto CPyL315;
     }
     CPy_INCREF(cpy_r_r140);
 CPyL109: ;
@@ -253769,32 +254203,32 @@ CPyL109: ;
     CPy_DECREF(cpy_r_r141);
     if (unlikely(cpy_r_r143 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL317;
+        goto CPyL315;
     }
     if (likely(PyDict_Check(cpy_r_r143)))
         cpy_r_r144 = cpy_r_r143;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", 317, CPyStatic_subscription_manager___globals, "dict", cpy_r_r143);
-        goto CPyL317;
+        goto CPyL315;
     }
     cpy_r_r145 = CPyStatic_subscription_manager___globals;
     cpy_r_r146 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'EthSubscriptionContext' */
     cpy_r_r147 = CPyDict_GetItem(cpy_r_r145, cpy_r_r146);
     if (unlikely(cpy_r_r147 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL318;
+        goto CPyL316;
     }
     cpy_r_r148 = PyDict_New();
     if (unlikely(cpy_r_r148 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL319;
+        goto CPyL317;
     }
     cpy_r_r149 = CPyDict_UpdateInDisplay(cpy_r_r148, cpy_r_r144);
     CPy_DECREF(cpy_r_r144);
     cpy_r_r150 = cpy_r_r149 >= 0;
     if (unlikely(!cpy_r_r150)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL320;
+        goto CPyL318;
     }
     cpy_r_r151 = PyTuple_Pack(3, cpy_r_r135, cpy_r_r136, cpy_r_r139);
     CPy_DECREF(cpy_r_r135);
@@ -253802,7 +254236,7 @@ CPyL109: ;
     CPy_DECREF(cpy_r_r139);
     if (unlikely(cpy_r_r151 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL321;
+        goto CPyL319;
     }
     cpy_r_r152 = PyObject_Call(cpy_r_r147, cpy_r_r151, cpy_r_r148);
     CPy_DECREF(cpy_r_r147);
@@ -253910,7 +254344,7 @@ CPyL131: ;
     cpy_r_r171 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sub_context;
     if (unlikely(cpy_r_r171 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "sub_context", 323, CPyStatic_subscription_manager___globals);
-        goto CPyL322;
+        goto CPyL320;
     }
     CPy_INCREF(cpy_r_r171);
 CPyL132: ;
@@ -253921,7 +254355,7 @@ CPyL132: ;
     cpy_r_r176 = PyObject_VectorcallMethod(cpy_r_r173, cpy_r_r175, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r176 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL323;
+        goto CPyL321;
     }
     CPy_DECREF(cpy_r_r172);
     CPy_DECREF(cpy_r_r171);
@@ -253930,7 +254364,7 @@ CPyL132: ;
     cpy_r_r179 = CPyObject_GetAttr(cpy_r_r177, cpy_r_r178);
     if (unlikely(cpy_r_r179 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL324;
+        goto CPyL322;
     }
     PyObject *cpy_r_r180[1] = {cpy_r_r176};
     cpy_r_r181 = (PyObject **)&cpy_r_r180;
@@ -253938,7 +254372,7 @@ CPyL132: ;
     CPy_DECREF(cpy_r_r179);
     if (unlikely(cpy_r_r182 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL324;
+        goto CPyL322;
     }
     CPy_DECREF(cpy_r_r176);
     if (((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__task != NULL) {
@@ -253963,7 +254397,7 @@ CPyL138: ;
     cpy_r_r186 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__task;
     if (unlikely(cpy_r_r186 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "task", 324, CPyStatic_subscription_manager___globals);
-        goto CPyL325;
+        goto CPyL323;
     }
     CPy_INCREF(cpy_r_r186);
 CPyL139: ;
@@ -253985,7 +254419,7 @@ CPyL141: ;
     cpy_r_r190 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r190 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "self", 325, CPyStatic_subscription_manager___globals);
-        goto CPyL326;
+        goto CPyL324;
     }
     CPy_INCREF_NO_IMM(cpy_r_r190);
 CPyL142: ;
@@ -253994,7 +254428,7 @@ CPyL142: ;
     CPy_DECREF_NO_IMM(cpy_r_r190);
     if (unlikely(cpy_r_r192 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL326;
+        goto CPyL324;
     }
     cpy_r_r193 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'add_done_callback' */
     PyObject *cpy_r_r194[2] = {cpy_r_r189, cpy_r_r192};
@@ -254002,9 +254436,9 @@ CPyL142: ;
     cpy_r_r196 = PyObject_VectorcallMethod(cpy_r_r193, cpy_r_r195, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r196 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL327;
+        goto CPyL325;
     } else
-        goto CPyL328;
+        goto CPyL326;
 CPyL144: ;
     CPy_DECREF(cpy_r_r189);
     CPy_DECREF(cpy_r_r192);
@@ -254020,7 +254454,7 @@ CPyL146: ;
     cpy_r_r198 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sub_context;
     if (unlikely(cpy_r_r198 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "sub_context", 328, CPyStatic_subscription_manager___globals);
-        goto CPyL329;
+        goto CPyL327;
     }
     CPy_INCREF(cpy_r_r198);
 CPyL147: ;
@@ -254031,7 +254465,7 @@ CPyL147: ;
     cpy_r_r203 = PyObject_VectorcallMethod(cpy_r_r200, cpy_r_r202, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r203 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL330;
+        goto CPyL328;
     }
     CPy_DECREF(cpy_r_r199);
     CPy_DECREF(cpy_r_r198);
@@ -254086,13 +254520,13 @@ CPyL156: ;
 CPyL157: ;
     cpy_r_r214 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r215 = cpy_r_type != cpy_r_r214;
-    if (!cpy_r_r215) goto CPyL331;
+    if (!cpy_r_r215) goto CPyL329;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL161;
     } else
-        goto CPyL332;
+        goto CPyL330;
 CPyL159: ;
     CPy_Unreachable();
 CPyL160: ;
@@ -254109,13 +254543,13 @@ CPyL161: ;
     cpy_r_r217 = 1;
     if (unlikely(!cpy_r_r217)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL333;
+        goto CPyL331;
     }
     cpy_r_r218 = (PyObject **)&cpy_r_r7;
     cpy_r_r219 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__24;
     if (unlikely(cpy_r_r219 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__24", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL333;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r219);
 CPyL163: ;
@@ -254123,14 +254557,14 @@ CPyL163: ;
     CPy_DecRef(cpy_r_r219);
     if (unlikely(cpy_r_r220 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL333;
+        goto CPyL331;
     }
     if (cpy_r_r220) goto CPyL167;
     cpy_r_r212 = cpy_r_r7;
     cpy_r_r221 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__25;
     if (unlikely(cpy_r_r221.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__25", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL334;
+        goto CPyL332;
     }
     CPy_INCREF(cpy_r_r221.f0);
     CPy_INCREF(cpy_r_r221.f1);
@@ -254179,7 +254613,7 @@ CPyL172: ;
     cpy_r_r225 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__24;
     if (unlikely(cpy_r_r225 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__24", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL335;
+        goto CPyL333;
     }
     CPy_INCREF(cpy_r_r225);
 CPyL173: ;
@@ -254247,9 +254681,9 @@ CPyL183: ;
     cpy_r_r241 = PyObject_VectorcallMethod(cpy_r_r238, cpy_r_r240, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r241 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL336;
+        goto CPyL334;
     } else
-        goto CPyL337;
+        goto CPyL335;
 CPyL184: ;
     CPy_DecRef(cpy_r_r236);
     cpy_r_r242 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__26;
@@ -254295,9 +254729,9 @@ CPyL189: ;
     cpy_r_r253 = PyObject_VectorcallMethod(cpy_r_r250, cpy_r_r252, 9223372036854775810ULL, 0);
     if (unlikely(cpy_r_r253 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL338;
+        goto CPyL336;
     } else
-        goto CPyL339;
+        goto CPyL337;
 CPyL190: ;
     CPy_DecRef(cpy_r_r248);
     cpy_r_r254 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
@@ -254335,11 +254769,11 @@ CPyL194: ;
     cpy_r_r260 = (PyObject **)&cpy_r_r9;
     cpy_r_r261 = CPyDef_subscription_manager____cleanup_remaining_tasks_SubscriptionManager_gen_____mypyc_generator_helper__(cpy_r_r257, cpy_r_r258, cpy_r_r258, cpy_r_r258, cpy_r_r258, cpy_r_r260);
     CPy_DecRef(cpy_r_r257);
-    if (cpy_r_r261 != NULL) goto CPyL340;
+    if (cpy_r_r261 != NULL) goto CPyL338;
     cpy_r_r262 = cpy_r_r9 != 0;
     if (unlikely(!cpy_r_r262)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL341;
+        goto CPyL339;
     }
     cpy_r_r263 = cpy_r_r9;
     CPy_DecRef(cpy_r_r263);
@@ -254362,13 +254796,13 @@ CPyL198: ;
 CPyL199: ;
     cpy_r_r268 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r269 = cpy_r_type != cpy_r_r268;
-    if (!cpy_r_r269) goto CPyL342;
+    if (!cpy_r_r269) goto CPyL340;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL203;
     } else
-        goto CPyL343;
+        goto CPyL341;
 CPyL201: ;
     CPy_Unreachable();
 CPyL202: ;
@@ -254385,13 +254819,13 @@ CPyL203: ;
     cpy_r_r271 = 1;
     if (unlikely(!cpy_r_r271)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL344;
+        goto CPyL342;
     }
     cpy_r_r272 = (PyObject **)&cpy_r_r11;
     cpy_r_r273 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__27;
     if (unlikely(cpy_r_r273 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__27", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL344;
+        goto CPyL342;
     }
     CPy_INCREF_NO_IMM(cpy_r_r273);
 CPyL205: ;
@@ -254399,14 +254833,14 @@ CPyL205: ;
     CPy_DecRef(cpy_r_r273);
     if (unlikely(cpy_r_r274 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL344;
+        goto CPyL342;
     }
     if (cpy_r_r274) goto CPyL209;
     cpy_r_r266 = cpy_r_r11;
     cpy_r_r275 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__28;
     if (unlikely(cpy_r_r275.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__28", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL345;
+        goto CPyL343;
     }
     CPy_INCREF(cpy_r_r275.f0);
     CPy_INCREF(cpy_r_r275.f1);
@@ -254455,7 +254889,7 @@ CPyL214: ;
     cpy_r_r279 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__27;
     if (unlikely(cpy_r_r279 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__27", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL346;
+        goto CPyL344;
     }
     CPy_INCREF_NO_IMM(cpy_r_r279);
 CPyL215: ;
@@ -254512,7 +254946,7 @@ CPyL225: ;
     cpy_r_r291 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__e;
     if (unlikely(cpy_r_r291 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "e", 345, CPyStatic_subscription_manager___globals);
-        goto CPyL347;
+        goto CPyL345;
     }
     CPy_INCREF(cpy_r_r291);
 CPyL226: ;
@@ -254521,13 +254955,13 @@ CPyL226: ;
     CPy_DecRef(cpy_r_r291);
     if (unlikely(cpy_r_r293 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL347;
+        goto CPyL345;
     }
     if (likely(PyUnicode_Check(cpy_r_r293)))
         cpy_r_r294 = cpy_r_r293;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", 345, CPyStatic_subscription_manager___globals, "str", cpy_r_r293);
-        goto CPyL347;
+        goto CPyL345;
     }
     cpy_r_r295 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'error' */
     PyObject *cpy_r_r296[3] = {cpy_r_r289, cpy_r_r290, cpy_r_r294};
@@ -254535,9 +254969,9 @@ CPyL226: ;
     cpy_r_r298 = PyObject_VectorcallMethod(cpy_r_r295, cpy_r_r297, 9223372036854775811ULL, 0);
     if (unlikely(cpy_r_r298 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL348;
+        goto CPyL346;
     } else
-        goto CPyL349;
+        goto CPyL347;
 CPyL229: ;
     CPy_DecRef(cpy_r_r289);
     CPy_DecRef(cpy_r_r294);
@@ -254557,9 +254991,9 @@ CPyL230: ;
     cpy_r_r304 = PyObject_VectorcallMethod(cpy_r_r301, cpy_r_r303, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r304 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL350;
+        goto CPyL348;
     } else
-        goto CPyL351;
+        goto CPyL349;
 CPyL231: ;
     CPy_DecRef(cpy_r_r300);
     cpy_r_r305 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__26;
@@ -254696,11 +255130,11 @@ CPyL251: ;
     cpy_r_r326 = (PyObject **)&cpy_r_r13;
     cpy_r_r327 = CPyDef_subscription_manager____cleanup_remaining_tasks_SubscriptionManager_gen_____mypyc_generator_helper__(cpy_r_r323, cpy_r_r324, cpy_r_r324, cpy_r_r324, cpy_r_r324, cpy_r_r326);
     CPy_DECREF_NO_IMM(cpy_r_r323);
-    if (cpy_r_r327 != NULL) goto CPyL352;
+    if (cpy_r_r327 != NULL) goto CPyL350;
     cpy_r_r328 = cpy_r_r13 != 0;
     if (unlikely(!cpy_r_r328)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL353;
+        goto CPyL351;
     }
     cpy_r_r329 = cpy_r_r13;
     CPy_DECREF(cpy_r_r329);
@@ -254723,13 +255157,13 @@ CPyL255: ;
 CPyL256: ;
     cpy_r_r334 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r335 = cpy_r_type != cpy_r_r334;
-    if (!cpy_r_r335) goto CPyL354;
+    if (!cpy_r_r335) goto CPyL352;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
         goto CPyL260;
     } else
-        goto CPyL355;
+        goto CPyL353;
 CPyL258: ;
     CPy_Unreachable();
 CPyL259: ;
@@ -254746,13 +255180,13 @@ CPyL260: ;
     cpy_r_r337 = 1;
     if (unlikely(!cpy_r_r337)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL356;
+        goto CPyL354;
     }
     cpy_r_r338 = (PyObject **)&cpy_r_r15;
     cpy_r_r339 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__29;
     if (unlikely(cpy_r_r339 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__29", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL356;
+        goto CPyL354;
     }
     CPy_INCREF_NO_IMM(cpy_r_r339);
 CPyL262: ;
@@ -254760,14 +255194,14 @@ CPyL262: ;
     CPy_DecRef(cpy_r_r339);
     if (unlikely(cpy_r_r340 == 2)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
-        goto CPyL356;
+        goto CPyL354;
     }
     if (cpy_r_r340) goto CPyL266;
     cpy_r_r332 = cpy_r_r15;
     cpy_r_r341 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__30;
     if (unlikely(cpy_r_r341.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__30", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL357;
+        goto CPyL355;
     }
     CPy_INCREF(cpy_r_r341.f0);
     CPy_INCREF(cpy_r_r341.f1);
@@ -254816,7 +255250,7 @@ CPyL271: ;
     cpy_r_r345 = ((faster_web3___providers___persistent___subscription_manager___handle_subscriptions_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__29;
     if (unlikely(cpy_r_r345 == NULL)) {
         CPy_AttributeError("faster_web3/providers/persistent/subscription_manager.py", "handle_subscriptions", "handle_subscriptions_SubscriptionManager_gen", "__mypyc_temp__29", -1, CPyStatic_subscription_manager___globals);
-        goto CPyL358;
+        goto CPyL356;
     }
     CPy_INCREF_NO_IMM(cpy_r_r345);
 CPyL272: ;
@@ -254846,36 +255280,36 @@ CPyL280: ;
     return 0;
 CPyL281: ;
     cpy_r_r350 = cpy_r_r16 == 0;
-    if (cpy_r_r350) goto CPyL359;
+    if (cpy_r_r350) goto CPyL357;
     cpy_r_r351 = cpy_r_r16 == 1;
     if (cpy_r_r351) {
-        goto CPyL360;
+        goto CPyL358;
     } else
-        goto CPyL361;
+        goto CPyL359;
 CPyL283: ;
     cpy_r_r352 = cpy_r_r16 == 2;
     if (cpy_r_r352) {
-        goto CPyL362;
+        goto CPyL360;
     } else
-        goto CPyL363;
+        goto CPyL361;
 CPyL284: ;
     cpy_r_r353 = cpy_r_r16 == 3;
     if (cpy_r_r353) {
-        goto CPyL364;
+        goto CPyL362;
     } else
-        goto CPyL365;
+        goto CPyL363;
 CPyL285: ;
     cpy_r_r354 = cpy_r_r16 == 4;
     if (cpy_r_r354) {
-        goto CPyL366;
+        goto CPyL364;
     } else
-        goto CPyL367;
+        goto CPyL365;
 CPyL286: ;
     cpy_r_r355 = cpy_r_r16 == 5;
     if (cpy_r_r355) {
         goto CPyL256;
     } else
-        goto CPyL368;
+        goto CPyL366;
 CPyL287: ;
     PyErr_SetNone(PyExc_StopIteration);
     cpy_r_r356 = 0;
@@ -254888,270 +255322,264 @@ CPyL289: ;
     cpy_r_r357 = NULL;
     return cpy_r_r357;
 CPyL290: ;
-    CPy_DecRef(cpy_r_r19);
-    goto CPyL289;
-CPyL291: ;
     CPy_DecRef(cpy_r_r28);
     goto CPyL289;
-CPyL292: ;
+CPyL291: ;
     CPy_DECREF(cpy_r_r33);
     goto CPyL11;
-CPyL293: ;
+CPyL292: ;
     CPy_DecRef(cpy_r_r39);
     goto CPyL289;
-CPyL294: ;
-    CPy_DecRef(cpy_r_r44);
-    goto CPyL289;
-CPyL295: ;
+CPyL293: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL32;
-CPyL296: ;
+CPyL294: ;
     CPy_XDecRef(cpy_r_r1);
     goto CPyL177;
-CPyL297: ;
+CPyL295: ;
     CPy_DecRef(cpy_r_r60);
     goto CPyL177;
-CPyL298: ;
+CPyL296: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL37;
-CPyL299: ;
+CPyL297: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL36;
-CPyL300: ;
+CPyL298: ;
     CPy_XDecRef(cpy_r_r3);
     goto CPyL46;
-CPyL301: ;
+CPyL299: ;
     CPy_DecRef(cpy_r_r63);
     goto CPyL46;
-CPyL302: ;
+CPyL300: ;
     CPy_DecRef(cpy_r_r60);
     goto CPyL46;
-CPyL303: ;
+CPyL301: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL177;
-CPyL304: ;
+CPyL302: ;
     CPy_DecRef(cpy_r_r84);
     goto CPyL177;
-CPyL305: ;
+CPyL303: ;
     CPy_DecRef(cpy_r_r84);
     CPy_DecRef(cpy_r_r85);
     goto CPyL177;
-CPyL306: ;
+CPyL304: ;
     CPy_DecRef(cpy_r_r95);
     goto CPyL177;
-CPyL307: ;
+CPyL305: ;
     CPy_XDECREF(cpy_r_r5);
     goto CPyL71;
-CPyL308: ;
+CPyL306: ;
     CPy_XDECREF(cpy_r_r5);
     goto CPyL70;
-CPyL309: ;
+CPyL307: ;
     CPy_XDecRef(cpy_r_r5);
     goto CPyL80;
-CPyL310: ;
+CPyL308: ;
     CPy_DecRef(cpy_r_r98);
     goto CPyL80;
-CPyL311: ;
+CPyL309: ;
     CPy_DecRef(cpy_r_r95);
     goto CPyL80;
-CPyL312: ;
+CPyL310: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL177;
-CPyL313: ;
+CPyL311: ;
     CPy_DecRef(cpy_r_r122);
     goto CPyL177;
-CPyL314: ;
+CPyL312: ;
     CPy_DECREF(cpy_r_r127);
     goto CPyL20;
+CPyL313: ;
+    CPy_DecRef(cpy_r_r135);
+    goto CPyL177;
+CPyL314: ;
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r136);
+    goto CPyL177;
 CPyL315: ;
     CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r136);
+    CPy_DecRef(cpy_r_r139);
     goto CPyL177;
 CPyL316: ;
     CPy_DecRef(cpy_r_r135);
     CPy_DecRef(cpy_r_r136);
+    CPy_DecRef(cpy_r_r139);
+    CPy_DecRef(cpy_r_r144);
     goto CPyL177;
 CPyL317: ;
     CPy_DecRef(cpy_r_r135);
     CPy_DecRef(cpy_r_r136);
     CPy_DecRef(cpy_r_r139);
+    CPy_DecRef(cpy_r_r144);
+    CPy_DecRef(cpy_r_r147);
     goto CPyL177;
 CPyL318: ;
     CPy_DecRef(cpy_r_r135);
     CPy_DecRef(cpy_r_r136);
     CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r144);
+    CPy_DecRef(cpy_r_r147);
+    CPy_DecRef(cpy_r_r148);
     goto CPyL177;
 CPyL319: ;
-    CPy_DecRef(cpy_r_r135);
-    CPy_DecRef(cpy_r_r136);
-    CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r144);
     CPy_DecRef(cpy_r_r147);
+    CPy_DecRef(cpy_r_r148);
     goto CPyL177;
 CPyL320: ;
-    CPy_DecRef(cpy_r_r135);
-    CPy_DecRef(cpy_r_r136);
-    CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r147);
-    CPy_DecRef(cpy_r_r148);
-    goto CPyL177;
-CPyL321: ;
-    CPy_DecRef(cpy_r_r147);
-    CPy_DecRef(cpy_r_r148);
-    goto CPyL177;
-CPyL322: ;
     CPy_DecRef(cpy_r_r170);
     goto CPyL177;
-CPyL323: ;
+CPyL321: ;
     CPy_DecRef(cpy_r_r171);
     CPy_DecRef(cpy_r_r172);
     goto CPyL177;
-CPyL324: ;
+CPyL322: ;
     CPy_DecRef(cpy_r_r176);
     goto CPyL177;
-CPyL325: ;
+CPyL323: ;
     CPy_DecRef(cpy_r_r185);
     goto CPyL177;
-CPyL326: ;
+CPyL324: ;
     CPy_DecRef(cpy_r_r189);
     goto CPyL177;
-CPyL327: ;
+CPyL325: ;
     CPy_DecRef(cpy_r_r189);
     CPy_DecRef(cpy_r_r192);
     goto CPyL177;
-CPyL328: ;
+CPyL326: ;
     CPy_DECREF(cpy_r_r196);
     goto CPyL144;
-CPyL329: ;
+CPyL327: ;
     CPy_DecRef(cpy_r_r197);
     goto CPyL177;
-CPyL330: ;
+CPyL328: ;
     CPy_DecRef(cpy_r_r198);
     CPy_DecRef(cpy_r_r199);
     goto CPyL177;
-CPyL331: ;
+CPyL329: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL160;
-CPyL332: ;
+CPyL330: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL159;
-CPyL333: ;
+CPyL331: ;
     CPy_XDecRef(cpy_r_r7);
     goto CPyL169;
-CPyL334: ;
+CPyL332: ;
     CPy_DecRef(cpy_r_r212);
     goto CPyL169;
-CPyL335: ;
+CPyL333: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL177;
-CPyL336: ;
+CPyL334: ;
     CPy_DecRef(cpy_r_r236);
     goto CPyL237;
-CPyL337: ;
+CPyL335: ;
     CPy_DecRef(cpy_r_r241);
     goto CPyL184;
-CPyL338: ;
+CPyL336: ;
     CPy_DecRef(cpy_r_r248);
     goto CPyL237;
-CPyL339: ;
+CPyL337: ;
     CPy_DecRef(cpy_r_r253);
     goto CPyL190;
-CPyL340: ;
+CPyL338: ;
     CPy_XDecRef(cpy_r_r9);
     goto CPyL197;
-CPyL341: ;
+CPyL339: ;
     CPy_XDecRef(cpy_r_r9);
     goto CPyL237;
-CPyL342: ;
+CPyL340: ;
     CPy_XDECREF(cpy_r_r11);
     goto CPyL202;
-CPyL343: ;
+CPyL341: ;
     CPy_XDECREF(cpy_r_r11);
     goto CPyL201;
-CPyL344: ;
+CPyL342: ;
     CPy_XDecRef(cpy_r_r11);
     goto CPyL211;
-CPyL345: ;
+CPyL343: ;
     CPy_DecRef(cpy_r_r266);
     goto CPyL211;
-CPyL346: ;
+CPyL344: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL237;
-CPyL347: ;
+CPyL345: ;
     CPy_DecRef(cpy_r_r289);
     goto CPyL237;
-CPyL348: ;
+CPyL346: ;
     CPy_DecRef(cpy_r_r289);
     CPy_DecRef(cpy_r_r294);
     goto CPyL237;
-CPyL349: ;
+CPyL347: ;
     CPy_DecRef(cpy_r_r298);
     goto CPyL229;
-CPyL350: ;
+CPyL348: ;
     CPy_DecRef(cpy_r_r300);
     goto CPyL237;
-CPyL351: ;
+CPyL349: ;
     CPy_DecRef(cpy_r_r304);
     goto CPyL231;
-CPyL352: ;
+CPyL350: ;
     CPy_XDECREF(cpy_r_r13);
     goto CPyL254;
-CPyL353: ;
+CPyL351: ;
     CPy_XDecRef(cpy_r_r13);
     goto CPyL289;
-CPyL354: ;
+CPyL352: ;
     CPy_XDECREF(cpy_r_r15);
     goto CPyL259;
-CPyL355: ;
+CPyL353: ;
     CPy_XDECREF(cpy_r_r15);
     goto CPyL258;
-CPyL356: ;
+CPyL354: ;
     CPy_XDecRef(cpy_r_r15);
     goto CPyL268;
-CPyL357: ;
+CPyL355: ;
     CPy_DecRef(cpy_r_r332);
     goto CPyL268;
-CPyL358: ;
+CPyL356: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL289;
-CPyL359: ;
+CPyL357: ;
     CPy_XDECREF(cpy_r_r3);
     CPy_XDECREF(cpy_r_r5);
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     goto CPyL1;
-CPyL360: ;
+CPyL358: ;
     CPy_XDECREF(cpy_r_r5);
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     goto CPyL34;
-CPyL361: ;
+CPyL359: ;
     CPy_XDECREF(cpy_r_r3);
     goto CPyL283;
-CPyL362: ;
+CPyL360: ;
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     goto CPyL68;
-CPyL363: ;
+CPyL361: ;
     CPy_XDECREF(cpy_r_r5);
     goto CPyL284;
-CPyL364: ;
+CPyL362: ;
     CPy_XDECREF(cpy_r_r11);
     CPy_XDECREF(cpy_r_r15);
     goto CPyL157;
-CPyL365: ;
+CPyL363: ;
     CPy_XDECREF(cpy_r_r7);
     goto CPyL285;
-CPyL366: ;
+CPyL364: ;
     CPy_XDECREF(cpy_r_r15);
     goto CPyL199;
-CPyL367: ;
+CPyL365: ;
     CPy_XDECREF(cpy_r_r11);
     goto CPyL286;
-CPyL368: ;
+CPyL366: ;
     CPy_XDECREF(cpy_r_r15);
     goto CPyL287;
 }
@@ -286591,7 +287019,6 @@ int CPyGlobalsInit(void)
     CPyModule_typing = Py_None;
     CPyModule_eth_typing = Py_None;
     CPyModule_faster_eth_utils = Py_None;
-    CPyModule_faster_eth_utils___toolz = Py_None;
     CPyModule_typing_extensions = Py_None;
     CPyModule_faster_web3___exceptions = Py_None;
     CPyModule_faster_web3___types = Py_None;
@@ -287075,11 +287502,10 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\tfinalized\bearliest",
+    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\004safe\bearliest",
     "\002\tis_string\006is_hex",
-    "\002=Value did not match any of the recognized block identifiers: \005curry",
-    "\003\tTypeGuard\021typing_extensions\"select_method_for_block_identifier",
-    "\002\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
+    "\001=Value did not match any of the recognized block identifiers: ",
+    "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
     "\0015faster_web3._utils.caching.request_caching_validation",
     "\003\022CACHEABLE_REQUESTS\034async_handle_request_caching\022generate_cache_key",
     "\003\026handle_request_caching\024is_cacheable_request\022RequestInformation",
@@ -287171,7 +287597,7 @@ const char * const CPyLit_Str[] = {
     "\a\023NotImplementedError\004base\006string\004utf8\005bytes\rAttributeDict\tBaseModel",
     "\005\nmodel_dump\bby_alias\vJSONEncoder\002re\036faster_web3/_utils/encoding.py",
     "\005\bIterable\aMapping\020BaseArrayEncoder\027faster_eth_abi.encoding\nPrimitives",
-    "\003\bpydantic\021validate_abi_type\022validate_abi_value",
+    "\004\005curry\bpydantic\021validate_abi_type\022validate_abi_value",
     "\003\035faster_web3._utils.validation\032faster_web3.datastructures\tpad_bytes",
     "\004\nzpad_bytes\vtext_if_str\021FriendlyJsonSerde\nis_dynamic",
     "\003\031DynamicArrayPackedEncoder\017Web3JsonEncoder\023Reverted 0x08c379a0",
@@ -287633,97 +288059,97 @@ const double CPyLit_Float[] = {0};
 const double CPyLit_Complex[] = {0};
 const int CPyLit_Tuple[] = {
     334, 1, 4, 1, 6, 1, 8, 7, 10, 11, 12, 13, 14, 15, 16, 3, 63, 63, 63,
-    3, 64, 64, 64, 2, 1986, 1987, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
-    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1992, 1, 13, 1, 74, 1,
+    3, 64, 64, 64, 2, 1985, 1986, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
+    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1991, 1, 13, 1, 74, 1,
     170, 5, 172, 71, 78, 173, 81, 2, 174, 175, 1, 167, 1, 178, 1, 180, 5,
     182, 160, 183, 184, 185, 3, 175, 191, 192, 1, 82, 3, 219, 220, 220, 1,
-    2005, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
+    2004, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
     43, 1, 252, 1, 123, 1, 259, 1, 278, 1, 279, 1, 280, 1, 281, 3, 282,
     188, 87, 2, 260, 261, 10, 172, 71, 283, 74, 78, 284, 80, 173, 81, 285,
-    3, 286, 286, 286, 1, 2025, 5, 288, 174, 175, 191, 192, 4, 269, 271,
+    3, 286, 286, 286, 1, 2024, 5, 288, 174, 175, 191, 192, 4, 269, 271,
     255, 270, 2, 229, 227, 6, 193, 194, 195, 198, 196, 200, 2, 235, 13, 1,
     310, 7, 172, 71, 73, 74, 78, 81, 285, 1, 175, 1, 311, 1, 320, 1, 324,
     1, 326, 1, 306, 5, 329, 330, 331, 332, 333, 1, 359, 1, 362, 13, 172,
     71, 364, 365, 73, 74, 366, 76, 80, 173, 81, 285, 82, 1, 368, 3, 370,
-    371, 372, 3, 71, 78, 81, 1, 192, 6, 390, 399, 392, 398, 389, 271, 1,
-    401, 1, 402, 2, 394, 306, 1, 370, 2, 405, 406, 6, 408, 409, 410, 411,
-    412, 413, 3, 443, 443, 443, 3, 444, 444, 444, 2, 2055, 2056, 1, 438,
-    13, 172, 71, 364, 365, 73, 74, 417, 76, 78, 284, 80, 81, 82, 3, 289,
-    289, 289, 1, 2060, 1, 447, 8, 449, 450, 451, 452, 453, 454, 455, 456,
-    1, 429, 1, 458, 1, 394, 5, 370, 460, 461, 462, 372, 1, 463, 1, 514, 3,
-    517, 517, 517, 1, 2070, 8, 172, 71, 73, 74, 78, 284, 522, 81, 1, 523,
-    3, 571, 571, 571, 3, 576, 576, 576, 2, 2074, 2075, 10, 172, 71, 364,
-    73, 76, 78, 284, 80, 81, 285, 12, 578, 579, 580, 581, 582, 583, 584,
-    585, 288, 175, 192, 586, 1, 560, 1, 588, 1, 559, 5, 558, 543, 527,
-    526, 531, 5, 528, 545, 548, 540, 562, 1, 591, 1, 542, 1, 594, 4, 536,
-    537, 539, 538, 4, 570, 394, 568, 306, 6, 597, 329, 598, 599, 600, 331,
-    3, 532, 549, 554, 7, 71, 283, 73, 74, 78, 80, 173, 3, 322, 289, 289,
-    2, 2060, 2092, 1, 607, 2, 624, 259, 2, 2075, 2056, 7, 71, 364, 74, 79,
-    80, 522, 285, 1, 646, 1, 649, 1, 669, 1, 670, 2, 672, 588, 1, 689, 3,
-    691, 691, 691, 2, 1986, 2104, 12, 71, 364, 73, 74, 693, 694, 78, 284,
-    173, 522, 81, 82, 1, 695, 3, 192, 697, 586, 8, 558, 543, 390, 399,
-    469, 271, 255, 542, 1, 687, 9, 634, 629, 631, 635, 633, 636, 632, 628,
-    630, 2, 699, 700, 1, 686, 1, 336, 5, 71, 73, 74, 78, 81, 3, 739, 671,
-    671, 2, 2116, 2060, 7, 737, 726, 717, 724, 722, 732, 306, 2, 740, 461,
-    4, 172, 74, 81, 285, 2, 780, 332, 1, 694, 8, 172, 71, 364, 73, 693,
-    78, 284, 81, 3, 468, 469, 398, 1, 784, 3, 785, 401, 787, 1, 790, 1,
-    461, 1, 794, 1, 795, 1, 800, 1, 572, 2, 824, 825, 2, 813, 827, 3, 849,
-    849, 849, 1, 2135, 1, 799, 3, 852, 852, 852, 3, 853, 853, 853, 4,
-    2138, 2139, 2056, 2070, 7, 71, 73, 74, 76, 78, 81, 82, 4, 854, 826,
-    839, 823, 1, 856, 3, 857, 857, 857, 1, 2144, 1, 822, 1, 410, 1, 798,
-    1, 819, 1, 860, 1, 284, 2, 871, 306, 1, 884, 1, 910, 3, 668, 668, 668,
-    1, 2155, 13, 172, 71, 364, 283, 73, 74, 693, 77, 922, 80, 522, 81,
-    285, 1, 892, 13, 784, 889, 879, 612, 923, 924, 925, 888, 390, 392,
-    398, 885, 880, 4, 785, 926, 401, 920, 1, 927, 3, 928, 929, 930, 6,
-    909, 916, 913, 911, 917, 914, 5, 933, 792, 934, 935, 793, 4, 536, 937,
-    938, 939, 3, 458, 940, 941, 1, 942, 1, 944, 2, 686, 945, 4, 737, 904,
-    394, 306, 9, 329, 946, 370, 461, 947, 948, 372, 331, 333, 2, 74, 81,
-    5, 71, 693, 694, 79, 81, 2, 330, 331, 2, 1217, 1218, 1, 1217, 3, 1226,
-    1226, 1226, 2, 2177, 2138, 6, 71, 364, 73, 74, 922, 78, 4, 578, 584,
-    192, 586, 13, 1161, 526, 1168, 925, 1187, 467, 390, 1182, 468, 1183,
-    392, 469, 398, 1, 879, 1, 543, 4, 785, 1169, 1170, 1028, 1, 1229, 10,
-    634, 629, 631, 635, 633, 1172, 636, 632, 1174, 630, 1, 1230, 8, 1203,
-    1186, 1221, 1223, 904, 1224, 394, 306, 4, 1234, 278, 1235, 236, 1,
-    1236, 1, 1237, 1, 1240, 1, 1242, 1, 1244, 1, 839, 2, 856, 192, 1, 869,
-    43, 1291, 1331, 1325, 1293, 1309, 1307, 1277, 1281, 1271, 1275, 1269,
-    1267, 1327, 1273, 1299, 1305, 1261, 1265, 1263, 1253, 1251, 1301,
-    1247, 1249, 1319, 1283, 1287, 1289, 1285, 1311, 1315, 1317, 1313,
-    1295, 1279, 1303, 1329, 1323, 1257, 1259, 1255, 1321, 1297, 8, 71, 73,
-    74, 76, 78, 81, 285, 82, 3, 310, 1355, 1356, 5, 187, 1363, 170, 1364,
-    166, 4, 187, 1363, 170, 166, 11, 172, 71, 364, 74, 76, 78, 284, 80,
-    173, 81, 285, 1, 1347, 7, 578, 579, 582, 584, 288, 175, 586, 3, 1161,
-    526, 167, 2, 785, 401, 3, 540, 562, 1354, 1, 1371, 1, 375, 1, 1373, 1,
-    1352, 1, 1360, 2, 1351, 306, 6, 597, 329, 1375, 599, 600, 331, 1, 549,
-    1, 78, 2, 331, 332, 1, 1379, 2, 359, 1384, 2, 1391, 1392, 3, 1393,
-    1393, 1393, 3, 1394, 1394, 1394, 3, 1395, 1395, 1395, 3, 2222, 2223,
-    2224, 5, 74, 693, 78, 284, 80, 1, 1397, 3, 401, 1169, 1386, 1, 1398,
-    2, 871, 568, 5, 598, 1400, 330, 331, 332, 2, 1405, 1392, 2, 1410,
-    1411, 3, 1433, 1433, 1433, 3, 1434, 1434, 1434, 4, 2234, 2224, 2235,
-    1987, 10, 172, 71, 364, 74, 76, 922, 78, 80, 173, 522, 1, 166, 4, 737,
-    1436, 1414, 904, 2, 191, 192, 4, 1438, 543, 470, 264, 1, 889, 3, 785,
-    401, 1426, 1, 1439, 2, 752, 774, 2, 724, 722, 5, 1440, 1441, 372, 949,
-    1442, 1, 1470, 1, 1572, 1, 1570, 3, 282, 1241, 1577, 1, 1578, 3, 282,
-    187, 1577, 1, 1414, 9, 172, 71, 364, 73, 74, 77, 78, 81, 285, 1, 390,
-    1, 524, 1, 506, 4, 370, 740, 461, 462, 2, 1576, 1582, 2, 1588, 1589,
-    1, 2224, 7, 172, 71, 364, 73, 74, 78, 82, 2, 175, 192, 3, 468, 399,
-    398, 2, 889, 612, 5, 311, 785, 401, 1601, 920, 6, 1602, 1603, 933,
-    792, 934, 1604, 1, 1605, 1, 1606, 1, 1608, 3, 1610, 370, 331, 2, 1675,
-    1677, 7, 172, 71, 73, 74, 81, 285, 82, 3, 1683, 370, 461, 10, 172, 71,
-    364, 73, 74, 78, 80, 522, 81, 82, 1, 374, 2, 413, 410, 3, 1716, 1717,
-    306, 1, 1718, 4, 1720, 370, 1721, 461, 7, 71, 73, 74, 1736, 76, 78,
-    82, 1, 1737, 1, 727, 2, 2135, 2138, 11, 172, 71, 74, 76, 78, 284, 79,
-    81, 285, 82, 1780, 5, 1750, 1716, 1717, 394, 306, 2, 1683, 461, 2,
-    1737, 1771, 4, 1786, 1787, 1788, 1789, 6, 74, 78, 284, 79, 173, 82,
-    15, 172, 71, 364, 365, 73, 76, 77, 1796, 78, 284, 80, 173, 1797, 522,
-    81, 1, 1798, 5, 288, 598, 175, 1800, 192, 2, 1801, 1802, 1, 1804, 1,
-    838, 3, 1917, 1917, 1917, 2, 2060, 2298, 2, 175, 191, 1, 568, 2, 192,
-    1808, 1, 811, 2, 63, 811, 3, 71, 73, 74, 3, 855, 855, 855, 1, 2306, 2,
-    1926, 942, 2, 1924, 568, 1, 331, 1, 1928, 1, 1927, 3, 517, 517, 1931,
-    1, 2313, 8, 73, 74, 366, 76, 78, 80, 522, 82
+    371, 372, 4, 71, 364, 78, 81, 1, 192, 6, 390, 399, 392, 398, 389, 271,
+    1, 401, 2, 394, 306, 1, 370, 2, 403, 404, 6, 406, 407, 408, 409, 410,
+    411, 3, 441, 441, 441, 3, 442, 442, 442, 2, 2053, 2054, 1, 436, 13,
+    172, 71, 364, 365, 73, 74, 415, 76, 78, 284, 80, 81, 82, 3, 289, 289,
+    289, 1, 2058, 1, 445, 8, 447, 448, 449, 450, 451, 452, 453, 454, 1,
+    427, 1, 456, 1, 394, 5, 370, 458, 459, 460, 372, 1, 461, 1, 512, 3,
+    515, 515, 515, 1, 2068, 8, 172, 71, 73, 74, 78, 284, 520, 81, 1, 521,
+    3, 569, 569, 569, 3, 574, 574, 574, 2, 2072, 2073, 10, 172, 71, 364,
+    73, 76, 78, 284, 80, 81, 285, 12, 576, 577, 578, 579, 580, 581, 582,
+    583, 288, 175, 192, 584, 1, 558, 1, 586, 1, 557, 5, 556, 541, 525,
+    524, 529, 5, 526, 543, 546, 538, 560, 1, 589, 1, 540, 1, 592, 4, 534,
+    535, 537, 536, 4, 568, 394, 566, 306, 6, 595, 329, 596, 597, 598, 331,
+    3, 530, 547, 552, 7, 71, 283, 73, 74, 78, 80, 173, 3, 322, 289, 289,
+    2, 2058, 2090, 1, 605, 2, 622, 259, 2, 2073, 2054, 7, 71, 364, 74, 79,
+    80, 520, 285, 1, 644, 1, 647, 1, 667, 1, 668, 2, 670, 586, 1, 687, 3,
+    689, 689, 689, 2, 1985, 2102, 12, 71, 364, 73, 74, 691, 692, 78, 284,
+    173, 520, 81, 82, 1, 693, 3, 192, 695, 584, 8, 556, 541, 390, 399,
+    467, 271, 255, 540, 1, 696, 1, 685, 9, 632, 627, 629, 633, 631, 634,
+    630, 626, 628, 2, 698, 699, 1, 684, 1, 336, 5, 71, 73, 74, 78, 81, 3,
+    738, 669, 669, 2, 2115, 2058, 7, 736, 725, 716, 723, 721, 731, 306, 2,
+    739, 459, 4, 172, 74, 81, 285, 2, 779, 332, 1, 692, 8, 172, 71, 364,
+    73, 691, 78, 284, 81, 3, 466, 467, 398, 1, 783, 3, 784, 696, 786, 1,
+    789, 1, 459, 1, 793, 1, 794, 1, 799, 1, 570, 2, 823, 824, 2, 812, 826,
+    3, 848, 848, 848, 1, 2134, 1, 798, 3, 851, 851, 851, 3, 852, 852, 852,
+    4, 2137, 2138, 2054, 2068, 7, 71, 73, 74, 76, 78, 81, 82, 4, 853, 825,
+    838, 822, 1, 855, 3, 856, 856, 856, 1, 2143, 1, 821, 1, 408, 1, 797,
+    1, 818, 1, 859, 1, 284, 2, 870, 306, 1, 883, 1, 909, 3, 666, 666, 666,
+    1, 2154, 13, 172, 71, 364, 283, 73, 74, 691, 77, 921, 80, 520, 81,
+    285, 1, 891, 13, 783, 888, 878, 610, 922, 923, 924, 887, 390, 392,
+    398, 884, 879, 4, 784, 925, 696, 919, 1, 926, 3, 927, 928, 929, 6,
+    908, 915, 912, 910, 916, 913, 5, 932, 791, 933, 934, 792, 4, 534, 936,
+    937, 938, 3, 456, 939, 940, 1, 941, 1, 943, 2, 684, 944, 4, 736, 903,
+    394, 306, 9, 329, 945, 370, 459, 946, 947, 372, 331, 333, 2, 74, 81,
+    5, 71, 691, 692, 79, 81, 2, 330, 331, 2, 1216, 1217, 1, 1216, 3, 1225,
+    1225, 1225, 2, 2176, 2137, 6, 71, 364, 73, 74, 921, 78, 4, 576, 582,
+    192, 584, 13, 1160, 524, 1167, 924, 1186, 465, 390, 1181, 466, 1182,
+    392, 467, 398, 1, 878, 1, 541, 4, 784, 1168, 1169, 1027, 1, 1228, 10,
+    632, 627, 629, 633, 631, 1171, 634, 630, 1173, 628, 1, 1229, 8, 1202,
+    1185, 1220, 1222, 903, 1223, 394, 306, 4, 1233, 278, 1234, 236, 1,
+    1235, 1, 1236, 1, 1239, 1, 1241, 1, 1243, 1, 838, 2, 855, 192, 1, 868,
+    43, 1290, 1330, 1324, 1292, 1308, 1306, 1276, 1280, 1270, 1274, 1268,
+    1266, 1326, 1272, 1298, 1304, 1260, 1264, 1262, 1252, 1250, 1300,
+    1246, 1248, 1318, 1282, 1286, 1288, 1284, 1310, 1314, 1316, 1312,
+    1294, 1278, 1302, 1328, 1322, 1256, 1258, 1254, 1320, 1296, 8, 71, 73,
+    74, 76, 78, 81, 285, 82, 3, 310, 1354, 1355, 5, 187, 1362, 170, 1363,
+    166, 4, 187, 1362, 170, 166, 11, 172, 71, 364, 74, 76, 78, 284, 80,
+    173, 81, 285, 1, 1346, 7, 576, 577, 580, 582, 288, 175, 584, 3, 1160,
+    524, 167, 2, 784, 696, 3, 538, 560, 1353, 1, 1370, 1, 375, 1, 1372, 1,
+    1351, 1, 1359, 2, 1350, 306, 6, 595, 329, 1374, 597, 598, 331, 1, 547,
+    1, 78, 2, 331, 332, 1, 1378, 2, 359, 1383, 2, 1390, 1391, 3, 1392,
+    1392, 1392, 3, 1393, 1393, 1393, 3, 1394, 1394, 1394, 3, 2221, 2222,
+    2223, 5, 74, 691, 78, 284, 80, 1, 1396, 3, 696, 1168, 1385, 1, 1397,
+    2, 870, 566, 5, 596, 1399, 330, 331, 332, 2, 1404, 1391, 2, 1409,
+    1410, 3, 1432, 1432, 1432, 3, 1433, 1433, 1433, 4, 2233, 2223, 2234,
+    1986, 10, 172, 71, 364, 74, 76, 921, 78, 80, 173, 520, 1, 166, 4, 736,
+    1435, 1413, 903, 2, 191, 192, 4, 1437, 541, 468, 264, 1, 888, 3, 784,
+    696, 1425, 1, 1438, 2, 751, 773, 2, 723, 721, 5, 1439, 1440, 372, 948,
+    1441, 1, 1469, 1, 1571, 1, 1569, 3, 282, 1240, 1576, 1, 1577, 3, 282,
+    187, 1576, 1, 1413, 9, 172, 71, 364, 73, 74, 77, 78, 81, 285, 1, 390,
+    1, 522, 1, 504, 4, 370, 739, 459, 460, 2, 1575, 1581, 2, 1587, 1588,
+    1, 2223, 7, 172, 71, 364, 73, 74, 78, 82, 2, 175, 192, 3, 466, 399,
+    398, 2, 888, 610, 5, 311, 784, 696, 1600, 919, 6, 1601, 1602, 932,
+    791, 933, 1603, 1, 1604, 1, 1605, 1, 1607, 3, 1609, 370, 331, 2, 1674,
+    1676, 7, 172, 71, 73, 74, 81, 285, 82, 3, 1682, 370, 459, 10, 172, 71,
+    364, 73, 74, 78, 80, 520, 81, 82, 1, 374, 2, 411, 408, 3, 1715, 1716,
+    306, 1, 1717, 4, 1719, 370, 1720, 459, 7, 71, 73, 74, 1735, 76, 78,
+    82, 1, 1736, 1, 726, 2, 2134, 2137, 11, 172, 71, 74, 76, 78, 284, 79,
+    81, 285, 82, 1779, 5, 1749, 1715, 1716, 394, 306, 2, 1682, 459, 2,
+    1736, 1770, 4, 1785, 1786, 1787, 1788, 6, 74, 78, 284, 79, 173, 82,
+    15, 172, 71, 364, 365, 73, 76, 77, 1795, 78, 284, 80, 173, 1796, 520,
+    81, 1, 1797, 5, 288, 596, 175, 1799, 192, 2, 1800, 1801, 1, 1803, 1,
+    837, 3, 1916, 1916, 1916, 2, 2058, 2297, 2, 175, 191, 1, 566, 2, 192,
+    1807, 1, 810, 2, 63, 810, 3, 71, 73, 74, 3, 854, 854, 854, 1, 2305, 2,
+    1925, 941, 2, 1923, 566, 1, 331, 1, 1927, 1, 1926, 3, 515, 515, 1930,
+    1, 2312, 8, 73, 74, 366, 76, 78, 80, 520, 82
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 395, 396, 296, 397, 308, 3, 19, 1940, 0, 2, 893, 894, 4, 1088,
-    1091, 1090, 379
+    4, 5, 395, 396, 308, 397, 296, 3, 19, 1939, 0, 2, 892, 893, 4, 1089,
+    379, 1090, 1087
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
@@ -288428,13 +288854,23 @@ PyObject *CPyPy_batching_____mypyc_lambda__0_sort_batch_response_by_response_ids
 PyObject *CPyDef_batching___sort_batch_response_by_response_ids(PyObject *cpy_r_responses);
 PyObject *CPyPy_batching___sort_batch_response_by_response_ids(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_batching_____top_level__(void);
+PyTypeObject *CPyType_blocks___select_method_for_block_identifier_env;
+PyObject *CPyDef_blocks___select_method_for_block_identifier_env(void);
+CPyThreadLocal faster_web3____utils___blocks___select_method_for_block_identifier_envObject *blocks___select_method_for_block_identifier_env_free_instance;
+PyTypeObject *CPyType_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj;
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj(void);
+CPyThreadLocal faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject *blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_free_instance;
 char CPyDef_blocks___is_predefined_block_number(PyObject *cpy_r_value);
 PyObject *CPyPy_blocks___is_predefined_block_number(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_blocks___is_hex_encoded_block_hash(PyObject *cpy_r_value);
 PyObject *CPyPy_blocks___is_hex_encoded_block_hash(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_blocks___is_hex_encoded_block_number(PyObject *cpy_r_value);
 PyObject *CPyPy_blocks___is_hex_encoded_block_number(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_value, PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined);
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+PyObject *CPyDef_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_value);
+PyObject *CPyPy_blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+PyObject *CPyDef_blocks___select_method_for_block_identifier(PyObject *cpy_r_if_hash, PyObject *cpy_r_if_number, PyObject *cpy_r_if_predefined);
 PyObject *CPyPy_blocks___select_method_for_block_identifier(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_blocks_____top_level__(void);
 char CPyDef__utils___caching_____top_level__(void);
