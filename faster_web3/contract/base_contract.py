@@ -1359,7 +1359,7 @@ class BaseContract:
                 abi=receive_abi,
             )()
 
-        return cast(function_type, NonExistentReceiveFunction())
+        return cast(function_type, NonExistentReceiveFunction())  # type: ignore [valid-type]
 
     #
     # Private Helpers

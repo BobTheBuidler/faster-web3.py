@@ -411,7 +411,7 @@ def async_handle_send_caching(func: AsyncSendFunc) -> AsyncSendFunc:
         return await func(provider, method, params)
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_send_caching
+    wrapper._decorator = async_handle_send_caching  # type: ignore [attr-defined]
     return wrapper
 
 
