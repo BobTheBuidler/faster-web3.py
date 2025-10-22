@@ -173,8 +173,7 @@ def construct_event_data_set(
 
     normalized_args = {
         key: value if is_list_like(value) else [value]
-        # type ignored b/c at this point arguments is always a dict
-        for key, value in arguments.items()
+        for key, value in cast(dict, arguments).items()
     }
 
     non_indexed_args = exclude_indexed_event_inputs(event_abi)
@@ -531,7 +530,6 @@ class BaseArgumentFilter(ABC):
 
 
 class DataArgumentFilter(BaseArgumentFilter):
-    # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
     def match_values(self) -> Tuple[TypeStr, Tuple[Any, ...]]:
         return self.arg_type, self._match_values
