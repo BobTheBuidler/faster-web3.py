@@ -173,49 +173,36 @@ select_ids = [
 ]
 
 
+def run_100_select(func, value, *, exc=None):
+    curried = func(if_hash="HASH", if_number="NUMBER", if_predefined="PREDEFINED")
+    if exc is None:
+        for _ in range(100):
+            curried(value)
+    else:
+        for _ in range(100):
+            try:
+                curried(value)
+            except exc:
+                pass
+
+
 @pytest.mark.benchmark(group="select_method_for_block_identifier")
 @pytest.mark.parametrize("value", select_cases, ids=select_ids)
 def test_select_method_for_block_identifier(benchmark: BenchmarkFixture, value):
-    if value in (None, _object):
-        benchmark(
-            run_100_exc,
-            web3._utils.blocks.select_method_for_block_identifier,
-            web3.exceptions.Web3TypeError,
-            value,
-            "HASH",
-            "NUMBER",
-            "PREDEFINED",
-        )
-    else:
-        benchmark(
-            run_100,
-            web3._utils.blocks.select_method_for_block_identifier,
-            value,
-            "HASH",
-            "NUMBER",
-            "PREDEFINED",
-        )
+    benchmark(
+        run_100_select,
+        web3._utils.blocks.select_method_for_block_identifier,
+        value,
+        exc=web3.exceptions.Web3TypeError if value in (None, _object) else None,
+    )
 
 
 @pytest.mark.benchmark(group="select_method_for_block_identifier")
 @pytest.mark.parametrize("value", select_cases, ids=select_ids)
 def test_faster_select_method_for_block_identifier(benchmark: BenchmarkFixture, value):
-    if value in (None, _object):
-        benchmark(
-            run_100_exc,
-            faster_web3._utils.blocks.select_method_for_block_identifier,
-            faster_web3.exceptions.Web3TypeError,
-            value,
-            "HASH",
-            "NUMBER",
-            "PREDEFINED",
-        )
-    else:
-        benchmark(
-            run_100,
-            faster_web3._utils.blocks.select_method_for_block_identifier,
-            value,
-            "HASH",
-            "NUMBER",
-            "PREDEFINED",
-        )
+    benchmark(
+        run_100_select,
+        faster_web3._utils.blocks.select_method_for_block_identifier,
+        value,
+        exc=faster_web3.exceptions.Web3TypeError if value in (None, _object) else None,
+    )
