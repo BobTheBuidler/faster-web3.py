@@ -33,7 +33,7 @@ def make_fake_send(urls, fail_indices):
 
 @pytest.mark.benchmark(group="handle_offchain_lookup")
 @parametrize_offchain_lookup
-def test_handle_offchain_lookup_reference(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
+def test_handle_offchain_lookup(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
     payload = payload.copy()
     payload["urls"] = urls
 
