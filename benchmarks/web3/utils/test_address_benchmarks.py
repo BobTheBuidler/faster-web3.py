@@ -17,26 +17,26 @@ INIT_CODES = [
 ]
 INIT_CODE_IDS = ["short", "med", "long"]
 
-parametrize_create = lambda fn: pytest.mark.benchmark(group="get_create_address")(
+create = lambda fn: pytest.mark.benchmark(group="get_create_address")(
     pytest.mark.parametrize("nonce", NONCES)(fn)
 )
 
-parametrize_create2 = lambda fn: pytest.mark.benchmark(group="get_create2_address")(
+create2 = lambda fn: pytest.mark.benchmark(group="get_create2_address")(
     pytest.mark.parametrize("init_code", INIT_CODES, ids=INIT_CODE_IDS)(fn)
 )
 
-@parametrize_create
+@create
 def test_get_create_address_reference(benchmark: BenchmarkFixture, nonce):
     benchmark(web3.utils.address.get_create_address, SENDER, nonce)
 
-@parametrize_create
+@create
 def test_get_create_address_faster(benchmark: BenchmarkFixture, nonce):
     benchmark(faster_web3.utils.address.get_create_address, SENDER, nonce)
 
-@parametrize_create2
+@create2
 def test_get_create2_address_reference(benchmark: BenchmarkFixture, salt, init_code):
     benchmark(web3.utils.address.get_create2_address, SENDER, salt, init_code)
 
-@parametrize_create2
+@create2
 def test_get_create2_address_faster(benchmark: BenchmarkFixture, salt, init_code):
     benchmark(faster_web3.utils.address.get_create2_address, SENDER, salt, init_code)
