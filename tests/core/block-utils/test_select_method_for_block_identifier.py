@@ -1,9 +1,5 @@
 import pytest
 
-from faster_eth_utils.toolz import (
-    partial,
-)
-
 from faster_web3._utils.blocks import (
     select_method_for_block_identifier,
 )
@@ -11,8 +7,7 @@ from faster_web3.exceptions import (
     Web3ValueError,
 )
 
-selector_fn = partial(
-    select_method_for_block_identifier,
+selector_fn = select_method_for_block_identifier(
     if_hash="test_hash",
     if_number="test_number",
     if_predefined="test_predefined",
