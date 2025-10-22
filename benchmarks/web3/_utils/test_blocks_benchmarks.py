@@ -213,7 +213,7 @@ def test_faster_select_method_for_block_identifier(benchmark: BenchmarkFixture, 
     else:
         benchmark(
             run_100,
-            web3._utils.blocks.select_method_for_block_identifier,
+            faster_web3._utils.blocks.select_method_for_block_identifier,
             value,
             "HASH",
             "NUMBER",
