@@ -632,14 +632,14 @@ class LocalFilterMiddleware(Web3Middleware):
                 _filter = self.filters[_filter_id]
                 if method == RPC.eth_getFilterChanges:
                     return _simulate_rpc_response_with_result(
-                        next(_filter.filter_changes)  # type: ignore
+                        next(_filter.filter_changes)
                     )
 
                 elif method == RPC.eth_getFilterLogs:
                     # type ignored b/c logic prevents RequestBlocks which
                     # doesn't implement get_logs
                     return _simulate_rpc_response_with_result(
-                        _filter.get_logs()  # type: ignore
+                        _filter.get_logs()
                     )
                 else:
                     raise NotImplementedError(method)
@@ -684,14 +684,14 @@ class LocalFilterMiddleware(Web3Middleware):
                 _filter = self.async_filters[_filter_id]
                 if method == RPC.eth_getFilterChanges:
                     return _simulate_rpc_response_with_result(
-                        await _filter.filter_changes.__anext__()  # type: ignore
+                        await _filter.filter_changes.__anext__()
                     )
 
                 elif method == RPC.eth_getFilterLogs:
                     # type ignored b/c logic prevents RequestBlocks which
                     # doesn't implement get_logs
                     return _simulate_rpc_response_with_result(
-                        await _filter.get_logs()  # type: ignore
+                        await _filter.get_logs()
                     )
                 else:
                     raise NotImplementedError(method)

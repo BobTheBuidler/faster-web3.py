@@ -289,7 +289,7 @@ def handle_request_caching(
         return response
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = handle_request_caching  # type: ignore
+    wrapper._decorator = handle_request_caching
     return wrapper
 
 
@@ -386,7 +386,7 @@ def async_handle_request_caching(
         return response
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_request_caching  # type: ignore
+    wrapper._decorator = async_handle_request_caching
     return wrapper
 
 
@@ -411,7 +411,7 @@ def async_handle_send_caching(func: AsyncSendFunc) -> AsyncSendFunc:
         return await func(provider, method, params)
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_send_caching  # type: ignore
+    wrapper._decorator = async_handle_send_caching
     return wrapper
 
 
@@ -457,5 +457,5 @@ def async_handle_recv_caching(func: AsyncRecvFunc) -> AsyncRecvFunc:
         return response
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_recv_caching  # type: ignore
+    wrapper._decorator = async_handle_recv_caching
     return wrapper
