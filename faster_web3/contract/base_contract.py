@@ -257,7 +257,6 @@ class BaseContractEvent:
                 if errors == DISCARD:
                     continue
                 elif errors == IGNORE:
-                    # type ignores b/c rich_log set on 1092 conflicts with mutated types
                     new_log = MutableAttributeDict(log)
                     new_log["errors"] = e
                     rich_log = AttributeDict(new_log)
