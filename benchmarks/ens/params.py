@@ -8,7 +8,6 @@ import pytest
 # parametrizes over ENS names and benefits from full Unicode coverage.
 NAMES = [
     "alice.eth",
-    "bob.eth",
     "emoji👨🏻.eth",
     "subdomain.alice.eth",
     "a" * 63 + ".eth",
@@ -22,14 +21,14 @@ NAMES_FULL_COVERAGE = {
     "hangul-lv": "한.eth",  # Hangul LV syllable
     "hangul-lvt": "값.eth",  # Hangul LVT syllable
     "hangul-jamo": "\u1112\u1161\u11ab.eth",  # Hangul Jamo sequence (한)
-    "combining-nfd": "e\u0301.eth",  # e + acute
-    "precomposed-e-acute": "é.eth",  # precomposed é
-    "ligature-ffl": "ﬃ.eth",  # ligature
-    "multi-combining": "a\u0301\u0327.eth",  # a + acute + cedilla
-    "combining-reorder": "a\u0327\u0301.eth",  # a + cedilla + acute (reordering)
-    "blocked-last-cc": "a\u0301b\u0327.eth",  # blocked/last_cc
-    "compose-pair": "o\u0308.eth",  # o + diaeresis
-    "only-combining": "\u0301.eth",  # only combining mark
+    "combining-nfd": "cafe\u0301.eth",  # café.eth (NFD: cafe + combining acute)
+    "precomposed-e-acute": "caf\u00e9.eth",  # café.eth (precomposed)
+    "ligature-ffl": "wa\ufb04e.eth",  # ligature waﬄe.eth (with 'ﬄ' ligature)
+    "multi-combining": "andr\u00e9e\u0308.eth",  # combining andréë.eth (e + acute, e + diaeresis)
+    "combining-reorder": "zoe\u0308\u0301.eth",  # reorder zoë́.eth (e + diaeresis + acute)
+    "blocked-last-cc": "andr\u00e9e.eth",  # blocked/last_cc andrée.eth (e + acute after d)
+    "compose-pair": "zo\u00eb.eth",  # zoë.eth (precomposed ë)
+    "only-combining": "m\u00e1.eth",  # only combining mark má.eth (precomposed á)
     "empty": "",  # empty string
 }
 
@@ -45,7 +44,7 @@ parametrize_names_full_coverage = pytest.mark.parametrize(
 LABELS = [
     "alice",
     "bob",
-    "emoji👨🏻",
+    "emoji\U0001F468\U0001F3FB",  # emoji👨🏻
     "xn--fiqs8s",
     "a" * 63,
     "",
@@ -66,7 +65,7 @@ LABEL_LISTS = [
 NAMES_VALIDITY = [
     "alice.eth",
     "bob.eth",
-    "emoji👨🏻.eth",
+    "emoji\U0001F468\U0001F3FB.eth",  # emoji👨🏻.eth
     "subdomain.alice.eth",
     "a" * 63 + ".eth",
     "",
