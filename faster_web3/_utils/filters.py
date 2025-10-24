@@ -402,7 +402,7 @@ def select_filter_method(
             raise Web3ValidationError(
                 "Filter argument needs to be either 'latest',"
                 " 'pending', or a hex-encoded filter_id. Filter argument"
-                f" is: {value}"
+                f" is: {value!r}"
             )
     elif isinstance(value, dict):
         return if_new_filter
