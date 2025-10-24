@@ -149,7 +149,6 @@ else:
         "--disable-error-code=type-var",
         "--disable-error-code=call-arg",
         "--disable-error-code=call-overload",
-        "--disable-error-code=str-bytes-safe",
         "--disable-error-code=dict-item",
         "--disable-error-code=typeddict-item",
         "--disable-error-code=truthy-function",
