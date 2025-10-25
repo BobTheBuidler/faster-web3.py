@@ -234545,19 +234545,22 @@ PyObject *CPyDef_persistent_connection___PersistentConnection___subscriptions(Py
         cpy_r_r3 = cpy_r_r2;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", 50, CPyStatic_persistent_connection___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r2);
-        goto CPyL4;
+        goto CPyL5;
     }
     cpy_r_r4 = CPyDef_request_processor___RequestProcessor___active_subscriptions(cpy_r_r3);
-    CPy_DECREF_NO_IMM(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_persistent_connection___globals);
-        goto CPyL4;
+        goto CPyL5;
     }
 CPyL3: ;
+    CPy_DECREF(cpy_r_r2);
     return cpy_r_r4;
 CPyL4: ;
     cpy_r_r5 = NULL;
     return cpy_r_r5;
+CPyL5: ;
+    CPy_DecRef(cpy_r_r2);
+    goto CPyL4;
 }
 
 PyObject *CPyPy_persistent_connection___PersistentConnection___subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -246554,7 +246557,7 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_traverse(faster_w
     Py_VISIT(self->___mypyc_temp__19.f1);
     Py_VISIT(self->___mypyc_temp__19.f2);
     Py_VISIT(self->___mypyc_generator_attribute__unsubscribed);
-    Py_VISIT(self->___mypyc_temp__2_0);
+    Py_VISIT(self->___mypyc_temp__2_1);
     return 0;
 }
 
@@ -246569,7 +246572,7 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_clear(faster_web3
     Py_CLEAR(self->___mypyc_temp__19.f1);
     Py_CLEAR(self->___mypyc_temp__19.f2);
     Py_CLEAR(self->___mypyc_generator_attribute__unsubscribed);
-    Py_CLEAR(self->___mypyc_temp__2_0);
+    Py_CLEAR(self->___mypyc_temp__2_1);
     return 0;
 }
 
@@ -246589,8 +246592,8 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_dealloc(faster_we
         Py_CLEAR(self->___mypyc_temp__19.f1);
         Py_CLEAR(self->___mypyc_temp__19.f2);
         Py_CLEAR(self->___mypyc_generator_attribute__unsubscribed);
-        Py_CLEAR(self->___mypyc_temp__2_0);
-        self->___mypyc_temp__2_1 = -113;
+        self->___mypyc_temp__2_0 = -113;
+        Py_CLEAR(self->___mypyc_temp__2_1);
         return;
     }
     CPy_TRASHCAN_BEGIN(self, subscription_manager___unsubscribe_all_SubscriptionManager_gen_dealloc)
@@ -246675,7 +246678,7 @@ PyObject *CPyDef_subscription_manager_____mypyc__unsubscribe_all_SubscriptionMan
     self->___mypyc_next_label__ = -113;
     self->___mypyc_temp__17 = -113;
     self->___mypyc_temp__19 = (tuple_T3OOO) { NULL, NULL, NULL };
-    self->___mypyc_temp__2_1 = -113;
+    self->___mypyc_temp__2_0 = -113;
     return (PyObject *)self;
 }
 
@@ -252405,10 +252408,10 @@ CPyL6: ;
     cpy_r_r10 = (CPyPtr)&((PyVarObject *)cpy_r_r9)->ob_size;
     cpy_r_r11 = *(int64_t *)cpy_r_r10;
     cpy_r_r12 = PyList_New(cpy_r_r11);
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r12;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r12;
     cpy_r_r13 = 1;
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe_all", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
@@ -252481,7 +252484,7 @@ CPyL15: ;
     if (unlikely(cpy_r_r29 == -113)) {
         PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__17' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r29;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r29;
     cpy_r_r30 = 1;
     if (unlikely(cpy_r_r29 == -113)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe_all", -1, CPyStatic_subscription_manager___globals);
@@ -252685,15 +252688,15 @@ CPyL47: ;
         goto CPyL83;
     }
     cpy_r_r61 = cpy_r_r60 ? Py_True : Py_False;
-    cpy_r_r62 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
+    cpy_r_r62 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
     if (unlikely(cpy_r_r62 == NULL)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     } else {
         CPy_INCREF_NO_IMM(cpy_r_r62);
     }
-    cpy_r_r63 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
+    cpy_r_r63 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
     if (unlikely(cpy_r_r63 == -113)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     }
     CPyList_SetItemUnsafe(cpy_r_r62, cpy_r_r63, cpy_r_r61);
     CPy_DECREF_NO_IMM(cpy_r_r62);
@@ -252712,9 +252715,9 @@ CPyL50: ;
     } else
         goto CPyL10;
 CPyL51: ;
-    cpy_r_r67 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
+    cpy_r_r67 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
     if (unlikely(cpy_r_r67 == NULL)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     } else {
         CPy_INCREF_NO_IMM(cpy_r_r67);
     }
@@ -252909,10 +252912,10 @@ CPyL90: ;
 CPyL91: ;
     CPy_XDecRef(cpy_r_r3);
     cpy_r_r107 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r107;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r107;
     cpy_r_r108 = 1;
     goto CPyL39;
 CPyL92: ;
@@ -252922,10 +252925,10 @@ CPyL93: ;
     goto CPyL39;
 CPyL94: ;
     cpy_r_r109 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r109;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r109;
     cpy_r_r110 = 1;
     CPy_DecRef(cpy_r_r41);
     goto CPyL39;
@@ -252956,10 +252959,10 @@ CPyL102: ;
 CPyL103: ;
     CPy_XDECREF(cpy_r_r3);
     cpy_r_r111 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r111;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r111;
     cpy_r_r112 = 1;
     goto CPyL1;
 CPyL104: ;
@@ -278995,6 +278998,7 @@ async_exception_handling___async_handle_offchain_lookup_gen_traverse(faster_web3
     Py_VISIT(self->___mypyc_temp__12.f0);
     Py_VISIT(self->___mypyc_temp__12.f1);
     Py_VISIT(self->___mypyc_temp__12.f2);
+    Py_VISIT(self->___mypyc_generator_attribute__data);
     Py_VISIT(self->___mypyc_generator_attribute__fourbyte);
     Py_VISIT(self->___mypyc_temp__13);
     Py_VISIT(self->___mypyc_temp__14.f0);
@@ -279042,6 +279046,7 @@ async_exception_handling___async_handle_offchain_lookup_gen_clear(faster_web3___
     Py_CLEAR(self->___mypyc_temp__12.f0);
     Py_CLEAR(self->___mypyc_temp__12.f1);
     Py_CLEAR(self->___mypyc_temp__12.f2);
+    Py_CLEAR(self->___mypyc_generator_attribute__data);
     Py_CLEAR(self->___mypyc_generator_attribute__fourbyte);
     Py_CLEAR(self->___mypyc_temp__13);
     Py_CLEAR(self->___mypyc_temp__14.f0);
@@ -279093,6 +279098,7 @@ async_exception_handling___async_handle_offchain_lookup_gen_dealloc(faster_web3_
         Py_CLEAR(self->___mypyc_temp__12.f0);
         Py_CLEAR(self->___mypyc_temp__12.f1);
         Py_CLEAR(self->___mypyc_temp__12.f2);
+        Py_CLEAR(self->___mypyc_generator_attribute__data);
         Py_CLEAR(self->___mypyc_generator_attribute__fourbyte);
         Py_CLEAR(self->___mypyc_temp__13);
         Py_CLEAR(self->___mypyc_temp__14.f0);
@@ -279515,123 +279521,120 @@ PyObject *CPyDef_async_exception_handling___async_handle_offchain_lookup_gen____
     PyObject *cpy_r_r264;
     PyObject *cpy_r_r265;
     PyObject *cpy_r_r266;
-    char cpy_r_r267;
-    PyObject *cpy_r_r268;
+    PyObject *cpy_r_r267;
+    char cpy_r_r268;
     PyObject *cpy_r_r269;
-    PyObject **cpy_r_r271;
-    PyObject *cpy_r_r272;
+    PyObject *cpy_r_r270;
+    PyObject **cpy_r_r272;
     PyObject *cpy_r_r273;
-    char cpy_r_r274;
-    PyObject *cpy_r_r275;
+    PyObject *cpy_r_r274;
+    char cpy_r_r275;
     PyObject *cpy_r_r276;
     PyObject *cpy_r_r277;
     PyObject *cpy_r_r278;
     PyObject *cpy_r_r279;
-    char cpy_r_r280;
-    PyObject *cpy_r_r281;
-    char cpy_r_r282;
-    PyObject *cpy_r_r283;
-    char cpy_r_r284;
-    tuple_T3OOO cpy_r_r285;
-    char cpy_r_r286;
-    PyObject **cpy_r_r287;
-    PyObject *cpy_r_r288;
-    char cpy_r_r289;
-    tuple_T3OOO cpy_r_r290;
+    PyObject *cpy_r_r280;
+    char cpy_r_r281;
+    PyObject *cpy_r_r282;
+    char cpy_r_r283;
+    PyObject *cpy_r_r284;
+    char cpy_r_r285;
+    tuple_T3OOO cpy_r_r286;
+    char cpy_r_r287;
+    PyObject **cpy_r_r288;
+    PyObject *cpy_r_r289;
+    char cpy_r_r290;
     tuple_T3OOO cpy_r_r291;
     tuple_T3OOO cpy_r_r292;
-    char cpy_r_r293;
-    PyObject *cpy_r_r294;
+    tuple_T3OOO cpy_r_r293;
+    char cpy_r_r294;
     PyObject *cpy_r_r295;
     PyObject *cpy_r_r296;
     PyObject *cpy_r_r297;
     PyObject *cpy_r_r298;
     PyObject *cpy_r_r299;
-    PyObject **cpy_r_r301;
+    PyObject *cpy_r_r300;
+    char cpy_r_r301;
     PyObject *cpy_r_r302;
-    int32_t cpy_r_r303;
+    PyObject *cpy_r_r303;
     char cpy_r_r304;
-    char cpy_r_r305;
-    char cpy_r_r306;
+    PyObject *cpy_r_r305;
+    PyObject *cpy_r_r306;
     PyObject *cpy_r_r307;
     PyObject *cpy_r_r308;
-    PyObject *cpy_r_r309;
-    PyObject *cpy_r_r310;
-    PyObject **cpy_r_r312;
+    PyObject **cpy_r_r310;
+    PyObject *cpy_r_r311;
+    PyObject *cpy_r_r312;
     PyObject *cpy_r_r313;
     PyObject *cpy_r_r314;
     PyObject *cpy_r_r315;
-    PyObject *cpy_r_r316;
+    char cpy_r_r316;
     PyObject *cpy_r_r317;
-    char cpy_r_r318;
+    PyObject *cpy_r_r318;
     PyObject *cpy_r_r319;
-    PyObject *cpy_r_r320;
+    tuple_T2OO cpy_r_r320;
     PyObject *cpy_r_r321;
-    tuple_T2OO cpy_r_r322;
+    PyObject *cpy_r_r322;
     PyObject *cpy_r_r323;
     PyObject *cpy_r_r324;
     PyObject *cpy_r_r325;
     PyObject *cpy_r_r326;
     PyObject *cpy_r_r327;
-    PyObject *cpy_r_r328;
-    PyObject *cpy_r_r329;
-    PyObject *cpy_r_r330;
+    CPyPtr cpy_r_r328;
+    CPyPtr cpy_r_r329;
+    CPyPtr cpy_r_r330;
     PyObject *cpy_r_r331;
-    CPyPtr cpy_r_r332;
-    CPyPtr cpy_r_r333;
-    CPyPtr cpy_r_r334;
-    PyObject *cpy_r_r335;
-    char cpy_r_r336;
+    char cpy_r_r332;
+    PyObject *cpy_r_r333;
+    PyObject **cpy_r_r335;
+    PyObject *cpy_r_r336;
     PyObject *cpy_r_r337;
-    PyObject **cpy_r_r339;
-    PyObject *cpy_r_r340;
+    PyObject *cpy_r_r338;
+    char cpy_r_r339;
+    char cpy_r_r340;
     PyObject *cpy_r_r341;
     PyObject *cpy_r_r342;
-    char cpy_r_r343;
-    char cpy_r_r344;
+    PyObject **cpy_r_r344;
     PyObject *cpy_r_r345;
     PyObject *cpy_r_r346;
-    PyObject **cpy_r_r348;
+    char cpy_r_r347;
+    PyObject *cpy_r_r348;
     PyObject *cpy_r_r349;
     PyObject *cpy_r_r350;
-    char cpy_r_r351;
+    PyObject *cpy_r_r351;
     PyObject *cpy_r_r352;
-    PyObject *cpy_r_r353;
+    char cpy_r_r353;
     PyObject *cpy_r_r354;
-    PyObject *cpy_r_r355;
+    char cpy_r_r355;
     PyObject *cpy_r_r356;
     char cpy_r_r357;
-    PyObject *cpy_r_r358;
+    tuple_T3OOO cpy_r_r358;
     char cpy_r_r359;
-    PyObject *cpy_r_r360;
-    char cpy_r_r361;
-    tuple_T3OOO cpy_r_r362;
-    char cpy_r_r363;
-    PyObject **cpy_r_r364;
-    PyObject *cpy_r_r365;
+    PyObject **cpy_r_r360;
+    PyObject *cpy_r_r361;
+    char cpy_r_r362;
+    tuple_T3OOO cpy_r_r363;
+    tuple_T3OOO cpy_r_r364;
+    tuple_T3OOO cpy_r_r365;
     char cpy_r_r366;
-    tuple_T3OOO cpy_r_r367;
-    tuple_T3OOO cpy_r_r368;
-    tuple_T3OOO cpy_r_r369;
-    char cpy_r_r370;
+    PyObject *cpy_r_r367;
+    PyObject *cpy_r_r368;
+    PyObject *cpy_r_r369;
+    PyObject *cpy_r_r370;
     PyObject *cpy_r_r371;
     PyObject *cpy_r_r372;
     PyObject *cpy_r_r373;
-    PyObject *cpy_r_r374;
-    PyObject *cpy_r_r375;
+    PyObject **cpy_r_r375;
     PyObject *cpy_r_r376;
-    PyObject *cpy_r_r377;
-    PyObject **cpy_r_r379;
-    PyObject *cpy_r_r380;
+    char cpy_r_r377;
+    char cpy_r_r378;
+    char cpy_r_r379;
+    char cpy_r_r380;
     char cpy_r_r381;
     char cpy_r_r382;
     char cpy_r_r383;
     char cpy_r_r384;
-    char cpy_r_r385;
-    char cpy_r_r386;
-    char cpy_r_r387;
-    char cpy_r_r388;
-    PyObject *cpy_r_r389;
+    PyObject *cpy_r_r385;
     cpy_r_r0 = NULL;
     cpy_r_r1 = cpy_r_r0;
     cpy_r_r2 = NULL;
@@ -279645,7 +279648,7 @@ PyObject *CPyDef_async_exception_handling___async_handle_offchain_lookup_gen____
     cpy_r_r10 = NULL;
     cpy_r_r11 = cpy_r_r10;
     cpy_r_r12 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL321;
+    goto CPyL322;
 CPyL1: ;
     cpy_r_r13 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r14 = cpy_r_type != cpy_r_r13;
@@ -279653,14 +279656,14 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r15 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
     if (unlikely(cpy_r_r15 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 41, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r15);
 CPyL5: ;
@@ -279669,13 +279672,13 @@ CPyL5: ;
     CPy_DECREF(cpy_r_r15);
     if (unlikely(cpy_r_r17 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r18 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r17);
     CPy_DECREF(cpy_r_r17);
     if (unlikely(cpy_r_r18 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r19 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r20[1] = {cpy_r_r18};
@@ -279683,14 +279686,14 @@ CPyL5: ;
     cpy_r_r22 = PyObject_VectorcallMethod(cpy_r_r19, cpy_r_r21, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r22 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL331;
+        goto CPyL332;
     }
     CPy_DECREF(cpy_r_r18);
     if (likely(PyUnicode_Check(cpy_r_r22)))
         cpy_r_r23 = cpy_r_r22;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 41, CPyStatic_async_exception_handling___globals, "str", cpy_r_r22);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sender != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sender);
@@ -279699,12 +279702,12 @@ CPyL5: ;
     cpy_r_r24 = 1;
     if (unlikely(!cpy_r_r24)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r25 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
     if (unlikely(cpy_r_r25 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 42, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r25);
 CPyL11: ;
@@ -279713,13 +279716,13 @@ CPyL11: ;
     CPy_DECREF(cpy_r_r25);
     if (unlikely(cpy_r_r27 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r28 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r27);
     CPy_DECREF(cpy_r_r27);
     if (unlikely(cpy_r_r28 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r30[1] = {cpy_r_r28};
@@ -279727,14 +279730,14 @@ CPyL11: ;
     cpy_r_r32 = PyObject_VectorcallMethod(cpy_r_r29, cpy_r_r31, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL332;
+        goto CPyL333;
     }
     CPy_DECREF(cpy_r_r28);
     if (likely(PyUnicode_Check(cpy_r_r32)))
         cpy_r_r33 = cpy_r_r32;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 42, CPyStatic_async_exception_handling___globals, "str", cpy_r_r32);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_data != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_data);
@@ -279743,19 +279746,19 @@ CPyL11: ;
     cpy_r_r34 = 1;
     if (unlikely(!cpy_r_r34)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r35 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sender;
     if (unlikely(cpy_r_r35 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_sender", 44, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r35);
 CPyL17: ;
     cpy_r_r36 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "transaction", 44, CPyStatic_async_exception_handling___globals);
-        goto CPyL333;
+        goto CPyL334;
     }
     CPy_INCREF(cpy_r_r36);
 CPyL18: ;
@@ -279764,7 +279767,7 @@ CPyL18: ;
     CPy_DECREF(cpy_r_r36);
     if (unlikely(cpy_r_r38 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL333;
+        goto CPyL334;
     }
     if (PyBytes_Check(cpy_r_r38) || PyByteArray_Check(cpy_r_r38))
         cpy_r_r39 = cpy_r_r38;
@@ -279779,13 +279782,13 @@ CPyL18: ;
     }
     if (cpy_r_r39 != NULL) goto __LL983;
     CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 44, CPyStatic_async_exception_handling___globals, "union[bytes, str]", cpy_r_r38);
-    goto CPyL333;
+    goto CPyL334;
 __LL983: ;
     cpy_r_r40 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r39);
     CPy_DECREF(cpy_r_r39);
     if (unlikely(cpy_r_r40 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL333;
+        goto CPyL334;
     }
     cpy_r_r41 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r42[1] = {cpy_r_r40};
@@ -279793,14 +279796,14 @@ __LL983: ;
     cpy_r_r44 = PyObject_VectorcallMethod(cpy_r_r41, cpy_r_r43, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r44 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL334;
+        goto CPyL335;
     }
     CPy_DECREF(cpy_r_r40);
     if (likely(PyUnicode_Check(cpy_r_r44)))
         cpy_r_r45 = cpy_r_r44;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 44, CPyStatic_async_exception_handling___globals, "str", cpy_r_r44);
-        goto CPyL333;
+        goto CPyL334;
     }
     cpy_r_r46 = CPyStr_Equal(cpy_r_r35, cpy_r_r45);
     CPy_DECREF(cpy_r_r35);
@@ -279815,7 +279818,7 @@ __LL983: ;
     cpy_r_r51 = CPyDict_GetItem(cpy_r_r49, cpy_r_r50);
     if (unlikely(cpy_r_r51 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     PyObject *cpy_r_r52[1] = {cpy_r_r48};
     cpy_r_r53 = (PyObject **)&cpy_r_r52;
@@ -279823,13 +279826,13 @@ __LL983: ;
     CPy_DECREF(cpy_r_r51);
     if (unlikely(cpy_r_r54 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Raise(cpy_r_r54);
     CPy_DECREF(cpy_r_r54);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
 CPyL28: ;
@@ -279839,14 +279842,14 @@ CPyL28: ;
     cpy_r_r56 = 0;
     if (unlikely(!cpy_r_r56)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
 CPyL31: ;
     cpy_r_r57 = PyObject_Vectorcall(cpy_r_r55, 0, 0, 0);
     if (unlikely(cpy_r_r57 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session);
@@ -279855,7 +279858,7 @@ CPyL31: ;
     cpy_r_r58 = 1;
     if (unlikely(!cpy_r_r58)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r59 = CPyStatic_async_exception_handling___ClientTimeout;
     if (likely(cpy_r_r59 != NULL)) goto CPyL36;
@@ -279863,7 +279866,7 @@ CPyL31: ;
     cpy_r_r60 = 0;
     if (unlikely(!cpy_r_r60)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
 CPyL36: ;
@@ -279873,7 +279876,7 @@ CPyL36: ;
     cpy_r_r64 = PyObject_Vectorcall(cpy_r_r59, cpy_r_r63, 1, 0);
     if (unlikely(cpy_r_r64 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL335;
+        goto CPyL336;
     }
     CPy_DECREF(cpy_r_r61);
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__timeout != NULL) {
@@ -279883,12 +279886,12 @@ CPyL36: ;
     cpy_r_r65 = 1;
     if (unlikely(!cpy_r_r65)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r66 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
     if (unlikely(cpy_r_r66 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 53, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r66);
 CPyL39: ;
@@ -279897,12 +279900,12 @@ CPyL39: ;
     CPy_DECREF(cpy_r_r66);
     if (unlikely(cpy_r_r68 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r69 = PyObject_GetIter(cpy_r_r68);
     if (unlikely(cpy_r_r69 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL336;
+        goto CPyL337;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0);
@@ -279911,7 +279914,7 @@ CPyL39: ;
     cpy_r_r70 = 1;
     if (unlikely(!cpy_r_r70)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL337;
+        goto CPyL338;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1);
@@ -279920,19 +279923,19 @@ CPyL39: ;
     cpy_r_r71 = 1;
     if (unlikely(!cpy_r_r71)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
 CPyL43: ;
     cpy_r_r72 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r72 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__1", 53, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r72);
 CPyL44: ;
     cpy_r_r73 = PyIter_Next(cpy_r_r72);
     CPy_DECREF(cpy_r_r72);
-    if (cpy_r_r73 == NULL) goto CPyL286;
+    if (cpy_r_r73 == NULL) goto CPyL287;
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__url != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__url);
     }
@@ -279940,12 +279943,12 @@ CPyL44: ;
     cpy_r_r74 = 1;
     if (unlikely(!cpy_r_r74)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r75 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__url;
     if (unlikely(cpy_r_r75 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "url", 55, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r75);
 CPyL47: ;
@@ -279953,13 +279956,13 @@ CPyL47: ;
     CPy_DECREF(cpy_r_r75);
     if (unlikely(cpy_r_r76 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r77 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{sender}' */
     cpy_r_r78 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sender;
     if (unlikely(cpy_r_r78 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_sender", 56, CPyStatic_async_exception_handling___globals);
-        goto CPyL338;
+        goto CPyL339;
     }
     CPy_INCREF(cpy_r_r78);
 CPyL49: ;
@@ -279967,20 +279970,20 @@ CPyL49: ;
     CPy_DECREF(cpy_r_r78);
     if (unlikely(cpy_r_r79 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL338;
+        goto CPyL339;
     }
     cpy_r_r80 = PyUnicode_Replace(cpy_r_r76, cpy_r_r77, cpy_r_r79, -1);
     CPy_DECREF(cpy_r_r76);
     CPy_DECREF(cpy_r_r79);
     if (unlikely(cpy_r_r80 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r81 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{data}' */
     cpy_r_r82 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_data;
     if (unlikely(cpy_r_r82 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_data", 57, CPyStatic_async_exception_handling___globals);
-        goto CPyL339;
+        goto CPyL340;
     }
     CPy_INCREF(cpy_r_r82);
 CPyL52: ;
@@ -279988,14 +279991,14 @@ CPyL52: ;
     CPy_DECREF(cpy_r_r82);
     if (unlikely(cpy_r_r83 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL339;
+        goto CPyL340;
     }
     cpy_r_r84 = PyUnicode_Replace(cpy_r_r80, cpy_r_r81, cpy_r_r83, -1);
     CPy_DECREF(cpy_r_r80);
     CPy_DECREF(cpy_r_r83);
     if (unlikely(cpy_r_r84 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_url != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_url);
@@ -280004,7 +280007,7 @@ CPyL52: ;
     cpy_r_r85 = 1;
     if (unlikely(!cpy_r_r85)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r86 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{data}' */
     cpy_r_r87 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__url;
@@ -280050,14 +280053,14 @@ CPyL62: ;
     cpy_r_r97 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_url;
     if (unlikely(cpy_r_r97 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_url", 62, CPyStatic_async_exception_handling___globals);
-        goto CPyL340;
+        goto CPyL341;
     }
     CPy_INCREF(cpy_r_r97);
 CPyL63: ;
     cpy_r_r98 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__timeout;
     if (unlikely(cpy_r_r98 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "timeout", 62, CPyStatic_async_exception_handling___globals);
-        goto CPyL341;
+        goto CPyL342;
     }
     CPy_INCREF(cpy_r_r98);
 CPyL64: ;
@@ -280068,7 +280071,7 @@ CPyL64: ;
     cpy_r_r103 = PyObject_VectorcallMethod(cpy_r_r99, cpy_r_r101, 9223372036854775810ULL, cpy_r_r102);
     if (unlikely(cpy_r_r103 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL342;
+        goto CPyL343;
     }
     CPy_DECREF(cpy_r_r96);
     CPy_DECREF(cpy_r_r97);
@@ -280112,7 +280115,7 @@ CPyL68: ;
     cpy_r_r111 = 1;
     if (unlikely(!cpy_r_r111)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL343;
+        goto CPyL344;
     } else
         goto CPyL93;
 CPyL71: ;
@@ -280123,13 +280126,13 @@ CPyL72: ;
 CPyL73: ;
     cpy_r_r114 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r115 = cpy_r_type != cpy_r_r114;
-    if (!cpy_r_r115) goto CPyL344;
+    if (!cpy_r_r115) goto CPyL345;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL77;
     } else
-        goto CPyL345;
+        goto CPyL346;
 CPyL75: ;
     CPy_Unreachable();
 CPyL76: ;
@@ -280146,13 +280149,13 @@ CPyL77: ;
     cpy_r_r117 = 1;
     if (unlikely(!cpy_r_r117)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL346;
+        goto CPyL347;
     }
     cpy_r_r118 = (PyObject **)&cpy_r_r1;
     cpy_r_r119 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
     if (unlikely(cpy_r_r119 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__2", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL346;
+        goto CPyL347;
     }
     CPy_INCREF(cpy_r_r119);
 CPyL79: ;
@@ -280160,14 +280163,14 @@ CPyL79: ;
     CPy_DecRef(cpy_r_r119);
     if (unlikely(cpy_r_r120 == 2)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL346;
+        goto CPyL347;
     }
     if (cpy_r_r120) goto CPyL83;
     cpy_r_r112 = cpy_r_r1;
     cpy_r_r121 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r121.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__3", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL347;
+        goto CPyL348;
     }
     CPy_INCREF(cpy_r_r121.f0);
     CPy_INCREF(cpy_r_r121.f1);
@@ -280183,7 +280186,7 @@ CPyL83: ;
     cpy_r_r122 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r122.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__3", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL348;
+        goto CPyL349;
     }
     CPy_INCREF(cpy_r_r122.f0);
     CPy_INCREF(cpy_r_r122.f1);
@@ -280215,7 +280218,7 @@ CPyL88: ;
     cpy_r_r125 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
     if (unlikely(cpy_r_r125 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__2", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL349;
+        goto CPyL350;
     }
     CPy_INCREF(cpy_r_r125);
 CPyL89: ;
@@ -280254,7 +280257,7 @@ CPyL95: ;
     cpy_r_r130 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_url;
     if (unlikely(cpy_r_r130 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_url", 65, CPyStatic_async_exception_handling___globals);
-        goto CPyL350;
+        goto CPyL351;
     }
     CPy_INCREF(cpy_r_r130);
 CPyL96: ;
@@ -280262,7 +280265,7 @@ CPyL96: ;
     cpy_r_r132 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_data;
     if (unlikely(cpy_r_r132 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_data", 66, CPyStatic_async_exception_handling___globals);
-        goto CPyL351;
+        goto CPyL352;
     }
     CPy_INCREF(cpy_r_r132);
 CPyL97: ;
@@ -280270,7 +280273,7 @@ CPyL97: ;
     cpy_r_r134 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__formatted_sender;
     if (unlikely(cpy_r_r134 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "formatted_sender", 66, CPyStatic_async_exception_handling___globals);
-        goto CPyL352;
+        goto CPyL353;
     }
     CPy_INCREF(cpy_r_r134);
 CPyL98: ;
@@ -280279,12 +280282,12 @@ CPyL98: ;
     CPy_DECREF(cpy_r_r134);
     if (unlikely(cpy_r_r135 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL351;
+        goto CPyL352;
     }
     cpy_r_r136 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__timeout;
     if (unlikely(cpy_r_r136 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "timeout", 67, CPyStatic_async_exception_handling___globals);
-        goto CPyL353;
+        goto CPyL354;
     }
     CPy_INCREF(cpy_r_r136);
 CPyL100: ;
@@ -280295,7 +280298,7 @@ CPyL100: ;
     cpy_r_r141 = PyObject_VectorcallMethod(cpy_r_r137, cpy_r_r139, 9223372036854775810ULL, cpy_r_r140);
     if (unlikely(cpy_r_r141 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL354;
+        goto CPyL355;
     }
     CPy_DECREF(cpy_r_r129);
     CPy_DECREF(cpy_r_r130);
@@ -280340,7 +280343,7 @@ CPyL104: ;
     cpy_r_r149 = 1;
     if (unlikely(!cpy_r_r149)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL355;
+        goto CPyL356;
     } else
         goto CPyL129;
 CPyL107: ;
@@ -280351,13 +280354,13 @@ CPyL108: ;
 CPyL109: ;
     cpy_r_r152 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r153 = cpy_r_type != cpy_r_r152;
-    if (!cpy_r_r153) goto CPyL356;
+    if (!cpy_r_r153) goto CPyL357;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL113;
     } else
-        goto CPyL357;
+        goto CPyL358;
 CPyL111: ;
     CPy_Unreachable();
 CPyL112: ;
@@ -280374,13 +280377,13 @@ CPyL113: ;
     cpy_r_r155 = 1;
     if (unlikely(!cpy_r_r155)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL358;
+        goto CPyL359;
     }
     cpy_r_r156 = (PyObject **)&cpy_r_r3;
     cpy_r_r157 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4;
     if (unlikely(cpy_r_r157 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__4", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL358;
+        goto CPyL359;
     }
     CPy_INCREF(cpy_r_r157);
 CPyL115: ;
@@ -280388,14 +280391,14 @@ CPyL115: ;
     CPy_DecRef(cpy_r_r157);
     if (unlikely(cpy_r_r158 == 2)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL358;
+        goto CPyL359;
     }
     if (cpy_r_r158) goto CPyL119;
     cpy_r_r150 = cpy_r_r3;
     cpy_r_r159 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
     if (unlikely(cpy_r_r159.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__5", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL359;
+        goto CPyL360;
     }
     CPy_INCREF(cpy_r_r159.f0);
     CPy_INCREF(cpy_r_r159.f1);
@@ -280411,7 +280414,7 @@ CPyL119: ;
     cpy_r_r160 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
     if (unlikely(cpy_r_r160.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__5", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL360;
+        goto CPyL361;
     }
     CPy_INCREF(cpy_r_r160.f0);
     CPy_INCREF(cpy_r_r160.f1);
@@ -280443,7 +280446,7 @@ CPyL124: ;
     cpy_r_r163 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4;
     if (unlikely(cpy_r_r163 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__4", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL361;
+        goto CPyL362;
     }
     CPy_INCREF(cpy_r_r163);
 CPyL125: ;
@@ -280515,7 +280518,7 @@ CPyL137: ;
     cpy_r_r174 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__6;
     if (unlikely(cpy_r_r174.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__6", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r174.f0);
     CPy_INCREF(cpy_r_r174.f1);
@@ -280526,13 +280529,13 @@ CPyL138: ;
     CPy_DecRef(cpy_r_r174.f1);
     CPy_DecRef(cpy_r_r174.f2);
     cpy_r_r175 = CPy_KeepPropagating();
-    if (!cpy_r_r175) goto CPyL330;
+    if (!cpy_r_r175) goto CPyL331;
     CPy_Unreachable();
 CPyL140: ;
     cpy_r_r176 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__response;
     if (unlikely(cpy_r_r176 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "response", 72, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r176);
 CPyL141: ;
@@ -280541,7 +280544,7 @@ CPyL141: ;
     CPy_DECREF(cpy_r_r176);
     if (unlikely(cpy_r_r178 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__status_code != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__status_code);
@@ -280550,12 +280553,12 @@ CPyL141: ;
     cpy_r_r179 = 1;
     if (unlikely(!cpy_r_r179)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r180 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__status_code;
     if (unlikely(cpy_r_r180 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "status_code", 73, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r180);
 CPyL144: ;
@@ -280563,19 +280566,19 @@ CPyL144: ;
     cpy_r_r182 = PyObject_RichCompare(cpy_r_r181, cpy_r_r180, 1);
     if (unlikely(cpy_r_r182 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL362;
+        goto CPyL363;
     }
     cpy_r_r183 = PyObject_IsTrue(cpy_r_r182);
     cpy_r_r184 = cpy_r_r183 >= 0;
     if (unlikely(!cpy_r_r184)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL363;
+        goto CPyL364;
     }
     cpy_r_r185 = cpy_r_r183;
     if (cpy_r_r185) {
-        goto CPyL364;
-    } else
         goto CPyL365;
+    } else
+        goto CPyL366;
 CPyL147: ;
     cpy_r_r186 = cpy_r_r182;
     goto CPyL150;
@@ -280585,7 +280588,7 @@ CPyL148: ;
     CPy_DECREF(cpy_r_r180);
     if (unlikely(cpy_r_r188 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r186 = cpy_r_r188;
 CPyL150: ;
@@ -280594,14 +280597,14 @@ CPyL150: ;
     cpy_r_r190 = cpy_r_r189 >= 0;
     if (unlikely(!cpy_r_r190)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r191 = cpy_r_r189;
     if (!cpy_r_r191) goto CPyL185;
     cpy_r_r192 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
     if (unlikely(cpy_r_r192 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "session", 74, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r192);
 CPyL153: ;
@@ -280611,14 +280614,14 @@ CPyL153: ;
     cpy_r_r196 = PyObject_VectorcallMethod(cpy_r_r193, cpy_r_r195, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r196 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL366;
+        goto CPyL367;
     }
     CPy_DECREF(cpy_r_r192);
     cpy_r_r197 = CPy_GetCoro(cpy_r_r196);
     CPy_DECREF(cpy_r_r196);
     if (unlikely(cpy_r_r197 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7);
@@ -280627,12 +280630,12 @@ CPyL153: ;
     cpy_r_r198 = 1;
     if (unlikely(!cpy_r_r198)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r199 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7;
     if (unlikely(cpy_r_r199 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__7", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r199);
 CPyL157: ;
@@ -280642,7 +280645,7 @@ CPyL157: ;
     cpy_r_r201 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r201 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r202 = cpy_r_r201;
     CPy_DECREF(cpy_r_r202);
@@ -280654,7 +280657,7 @@ CPyL157: ;
     cpy_r_r204 = 1;
     if (unlikely(!cpy_r_r204)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     } else
         goto CPyL182;
 CPyL160: ;
@@ -280665,13 +280668,13 @@ CPyL161: ;
 CPyL162: ;
     cpy_r_r207 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r208 = cpy_r_type != cpy_r_r207;
-    if (!cpy_r_r208) goto CPyL367;
+    if (!cpy_r_r208) goto CPyL368;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL166;
     } else
-        goto CPyL368;
+        goto CPyL369;
 CPyL164: ;
     CPy_Unreachable();
 CPyL165: ;
@@ -280688,13 +280691,13 @@ CPyL166: ;
     cpy_r_r210 = 1;
     if (unlikely(!cpy_r_r210)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL369;
+        goto CPyL370;
     }
     cpy_r_r211 = (PyObject **)&cpy_r_r5;
     cpy_r_r212 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7;
     if (unlikely(cpy_r_r212 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__7", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL369;
+        goto CPyL370;
     }
     CPy_INCREF(cpy_r_r212);
 CPyL168: ;
@@ -280702,14 +280705,14 @@ CPyL168: ;
     CPy_DecRef(cpy_r_r212);
     if (unlikely(cpy_r_r213 == 2)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL369;
+        goto CPyL370;
     }
     if (cpy_r_r213) goto CPyL172;
     cpy_r_r205 = cpy_r_r5;
     cpy_r_r214 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r214.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__8", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL370;
+        goto CPyL371;
     }
     CPy_INCREF(cpy_r_r214.f0);
     CPy_INCREF(cpy_r_r214.f1);
@@ -280741,7 +280744,7 @@ CPyL174: ;
     cpy_r_r216 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__8;
     if (unlikely(cpy_r_r216.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__8", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r216.f0);
     CPy_INCREF(cpy_r_r216.f1);
@@ -280752,13 +280755,13 @@ CPyL175: ;
     CPy_DecRef(cpy_r_r216.f1);
     CPy_DecRef(cpy_r_r216.f2);
     cpy_r_r217 = CPy_KeepPropagating();
-    if (!cpy_r_r217) goto CPyL330;
+    if (!cpy_r_r217) goto CPyL331;
     CPy_Unreachable();
 CPyL177: ;
     cpy_r_r218 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7;
     if (unlikely(cpy_r_r218 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__7", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL371;
+        goto CPyL372;
     }
     CPy_INCREF(cpy_r_r218);
 CPyL178: ;
@@ -280772,7 +280775,7 @@ CPyL180: ;
     cpy_r_r220 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r220 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r202 = cpy_r_r220;
     CPy_DECREF(cpy_r_r202);
@@ -280780,7 +280783,7 @@ CPyL182: ;
     cpy_r_r221 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__response;
     if (unlikely(cpy_r_r221 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "response", 75, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r221);
 CPyL183: ;
@@ -280790,16 +280793,16 @@ CPyL183: ;
     cpy_r_r225 = PyObject_VectorcallMethod(cpy_r_r222, cpy_r_r224, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r225 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL372;
-    } else
         goto CPyL373;
+    } else
+        goto CPyL374;
 CPyL184: ;
     CPy_DECREF(cpy_r_r221);
 CPyL185: ;
     cpy_r_r226 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__status_code;
     if (unlikely(cpy_r_r226 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "status_code", 76, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r226);
 CPyL186: ;
@@ -280807,19 +280810,19 @@ CPyL186: ;
     cpy_r_r228 = PyObject_RichCompare(cpy_r_r227, cpy_r_r226, 1);
     if (unlikely(cpy_r_r228 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL374;
+        goto CPyL375;
     }
     cpy_r_r229 = PyObject_IsTrue(cpy_r_r228);
     cpy_r_r230 = cpy_r_r229 >= 0;
     if (unlikely(!cpy_r_r230)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL375;
+        goto CPyL376;
     }
     cpy_r_r231 = cpy_r_r229;
     if (cpy_r_r231) {
-        goto CPyL376;
-    } else
         goto CPyL377;
+    } else
+        goto CPyL378;
 CPyL189: ;
     cpy_r_r232 = cpy_r_r228;
     goto CPyL192;
@@ -280829,7 +280832,7 @@ CPyL190: ;
     CPy_DECREF(cpy_r_r226);
     if (unlikely(cpy_r_r234 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r232 = cpy_r_r234;
 CPyL192: ;
@@ -280838,14 +280841,14 @@ CPyL192: ;
     cpy_r_r236 = cpy_r_r235 >= 0;
     if (unlikely(!cpy_r_r236)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r237 = cpy_r_r235;
     if (!cpy_r_r237) goto CPyL43;
     cpy_r_r238 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__response;
     if (unlikely(cpy_r_r238 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "response", 79, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r238);
 CPyL195: ;
@@ -280855,14 +280858,14 @@ CPyL195: ;
     cpy_r_r242 = PyObject_VectorcallMethod(cpy_r_r239, cpy_r_r241, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r242 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL378;
+        goto CPyL379;
     }
     CPy_DECREF(cpy_r_r238);
     cpy_r_r243 = CPy_GetCoro(cpy_r_r242);
     CPy_DECREF(cpy_r_r242);
     if (unlikely(cpy_r_r243 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9);
@@ -280871,12 +280874,12 @@ CPyL195: ;
     cpy_r_r244 = 1;
     if (unlikely(!cpy_r_r244)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r245 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r245 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__9", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r245);
 CPyL199: ;
@@ -280886,7 +280889,7 @@ CPyL199: ;
     cpy_r_r247 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r247 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r248 = cpy_r_r247;
     cpy_r_r249 = NULL;
@@ -280897,7 +280900,7 @@ CPyL199: ;
     cpy_r_r250 = 1;
     if (unlikely(!cpy_r_r250)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL379;
+        goto CPyL380;
     } else
         goto CPyL224;
 CPyL202: ;
@@ -280908,13 +280911,13 @@ CPyL203: ;
 CPyL204: ;
     cpy_r_r253 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r254 = cpy_r_type != cpy_r_r253;
-    if (!cpy_r_r254) goto CPyL380;
+    if (!cpy_r_r254) goto CPyL381;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL208;
     } else
-        goto CPyL381;
+        goto CPyL382;
 CPyL206: ;
     CPy_Unreachable();
 CPyL207: ;
@@ -280931,13 +280934,13 @@ CPyL208: ;
     cpy_r_r256 = 1;
     if (unlikely(!cpy_r_r256)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL382;
+        goto CPyL383;
     }
     cpy_r_r257 = (PyObject **)&cpy_r_r7;
     cpy_r_r258 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r258 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__9", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL382;
+        goto CPyL383;
     }
     CPy_INCREF(cpy_r_r258);
 CPyL210: ;
@@ -280945,14 +280948,14 @@ CPyL210: ;
     CPy_DecRef(cpy_r_r258);
     if (unlikely(cpy_r_r259 == 2)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL382;
+        goto CPyL383;
     }
     if (cpy_r_r259) goto CPyL214;
     cpy_r_r251 = cpy_r_r7;
     cpy_r_r260 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r260.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__10", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL383;
+        goto CPyL384;
     }
     CPy_INCREF(cpy_r_r260.f0);
     CPy_INCREF(cpy_r_r260.f1);
@@ -280968,7 +280971,7 @@ CPyL214: ;
     cpy_r_r261 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r261.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__10", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL384;
+        goto CPyL385;
     }
     CPy_INCREF(cpy_r_r261.f0);
     CPy_INCREF(cpy_r_r261.f1);
@@ -280983,7 +280986,7 @@ CPyL216: ;
     cpy_r_r262 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r262.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__10", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r262.f0);
     CPy_INCREF(cpy_r_r262.f1);
@@ -280994,13 +280997,13 @@ CPyL217: ;
     CPy_DecRef(cpy_r_r262.f1);
     CPy_DecRef(cpy_r_r262.f2);
     cpy_r_r263 = CPy_KeepPropagating();
-    if (!cpy_r_r263) goto CPyL330;
+    if (!cpy_r_r263) goto CPyL331;
     CPy_Unreachable();
 CPyL219: ;
     cpy_r_r264 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r264 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__9", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL385;
+        goto CPyL386;
     }
     CPy_INCREF(cpy_r_r264);
 CPyL220: ;
@@ -281014,900 +281017,903 @@ CPyL222: ;
     cpy_r_r266 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r266 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     cpy_r_r248 = cpy_r_r266;
 CPyL224: ;
+    if (likely(PyDict_Check(cpy_r_r248)))
+        cpy_r_r267 = cpy_r_r248;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 79, CPyStatic_async_exception_handling___globals, "dict", cpy_r_r248);
+        goto CPyL331;
+    }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result = cpy_r_r248;
-    cpy_r_r267 = 1;
-    if (unlikely(!cpy_r_r267)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result = cpy_r_r267;
+    cpy_r_r268 = 1;
+    if (unlikely(!cpy_r_r268)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r268 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
-    if (unlikely(cpy_r_r268 == NULL)) {
+    cpy_r_r269 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
+    if (unlikely(cpy_r_r269 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "session", 81, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    CPy_INCREF(cpy_r_r268);
-CPyL226: ;
-    cpy_r_r269 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'close' */
-    PyObject *cpy_r_r270[1] = {cpy_r_r268};
-    cpy_r_r271 = (PyObject **)&cpy_r_r270;
-    cpy_r_r272 = PyObject_VectorcallMethod(cpy_r_r269, cpy_r_r271, 9223372036854775809ULL, 0);
-    if (unlikely(cpy_r_r272 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL386;
-    }
-    CPy_DECREF(cpy_r_r268);
-    cpy_r_r273 = CPy_GetCoro(cpy_r_r272);
-    CPy_DECREF(cpy_r_r272);
+    CPy_INCREF(cpy_r_r269);
+CPyL227: ;
+    cpy_r_r270 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'close' */
+    PyObject *cpy_r_r271[1] = {cpy_r_r269};
+    cpy_r_r272 = (PyObject **)&cpy_r_r271;
+    cpy_r_r273 = PyObject_VectorcallMethod(cpy_r_r270, cpy_r_r272, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r273 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL387;
+    }
+    CPy_DECREF(cpy_r_r269);
+    cpy_r_r274 = CPy_GetCoro(cpy_r_r273);
+    CPy_DECREF(cpy_r_r273);
+    if (unlikely(cpy_r_r274 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 = cpy_r_r273;
-    cpy_r_r274 = 1;
-    if (unlikely(!cpy_r_r274)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 = cpy_r_r274;
+    cpy_r_r275 = 1;
+    if (unlikely(!cpy_r_r275)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r275 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
-    if (unlikely(cpy_r_r275 == NULL)) {
+    cpy_r_r276 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
+    if (unlikely(cpy_r_r276 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__11", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    CPy_INCREF(cpy_r_r275);
-CPyL230: ;
-    cpy_r_r276 = CPyIter_Next(cpy_r_r275);
-    CPy_DECREF(cpy_r_r275);
-    if (cpy_r_r276 != NULL) goto CPyL233;
-    cpy_r_r277 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r277 == NULL)) {
+    CPy_INCREF(cpy_r_r276);
+CPyL231: ;
+    cpy_r_r277 = CPyIter_Next(cpy_r_r276);
+    CPy_DECREF(cpy_r_r276);
+    if (cpy_r_r277 != NULL) goto CPyL234;
+    cpy_r_r278 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r278 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r278 = cpy_r_r277;
-    CPy_DECREF(cpy_r_r278);
-    cpy_r_r279 = NULL;
+    cpy_r_r279 = cpy_r_r278;
+    CPy_DECREF(cpy_r_r279);
+    cpy_r_r280 = NULL;
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 = cpy_r_r279;
-    cpy_r_r280 = 1;
-    if (unlikely(!cpy_r_r280)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 = cpy_r_r280;
+    cpy_r_r281 = 1;
+    if (unlikely(!cpy_r_r281)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     } else
-        goto CPyL255;
-CPyL233: ;
-    cpy_r_r281 = cpy_r_r276;
+        goto CPyL256;
 CPyL234: ;
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 5;
-    return cpy_r_r281;
+    cpy_r_r282 = cpy_r_r277;
 CPyL235: ;
-    cpy_r_r283 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r284 = cpy_r_type != cpy_r_r283;
-    if (!cpy_r_r284) goto CPyL387;
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 5;
+    return cpy_r_r282;
+CPyL236: ;
+    cpy_r_r284 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r285 = cpy_r_type != cpy_r_r284;
+    if (!cpy_r_r285) goto CPyL388;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL239;
+        goto CPyL240;
     } else
-        goto CPyL388;
-CPyL237: ;
-    CPy_Unreachable();
+        goto CPyL389;
 CPyL238: ;
-    CPy_INCREF(cpy_r_arg);
-    goto CPyL250;
+    CPy_Unreachable();
 CPyL239: ;
-    cpy_r_r285 = CPy_CatchError();
+    CPy_INCREF(cpy_r_arg);
+    goto CPyL251;
+CPyL240: ;
+    cpy_r_r286 = CPy_CatchError();
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12.f0 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12.f0);
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12.f1);
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12.f2);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r285;
-    cpy_r_r286 = 1;
-    if (unlikely(!cpy_r_r286)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12 = cpy_r_r286;
+    cpy_r_r287 = 1;
+    if (unlikely(!cpy_r_r287)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL389;
-    }
-    cpy_r_r287 = (PyObject **)&cpy_r_r9;
-    cpy_r_r288 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
-    if (unlikely(cpy_r_r288 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__11", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL389;
-    }
-    CPy_INCREF(cpy_r_r288);
-CPyL241: ;
-    cpy_r_r289 = CPy_YieldFromErrorHandle(cpy_r_r288, cpy_r_r287);
-    CPy_DecRef(cpy_r_r288);
-    if (unlikely(cpy_r_r289 == 2)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL389;
-    }
-    if (cpy_r_r289) goto CPyL245;
-    cpy_r_r281 = cpy_r_r9;
-    cpy_r_r290 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
-    if (unlikely(cpy_r_r290.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__12", -1, CPyStatic_async_exception_handling___globals);
         goto CPyL390;
     }
-    CPy_INCREF(cpy_r_r290.f0);
-    CPy_INCREF(cpy_r_r290.f1);
-    CPy_INCREF(cpy_r_r290.f2);
-CPyL244: ;
-    CPy_RestoreExcInfo(cpy_r_r290);
-    CPy_DecRef(cpy_r_r290.f0);
-    CPy_DecRef(cpy_r_r290.f1);
-    CPy_DecRef(cpy_r_r290.f2);
-    goto CPyL234;
-CPyL245: ;
-    cpy_r_r278 = cpy_r_r9;
-    CPy_DecRef(cpy_r_r278);
+    cpy_r_r288 = (PyObject **)&cpy_r_r9;
+    cpy_r_r289 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
+    if (unlikely(cpy_r_r289 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__11", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL390;
+    }
+    CPy_INCREF(cpy_r_r289);
+CPyL242: ;
+    cpy_r_r290 = CPy_YieldFromErrorHandle(cpy_r_r289, cpy_r_r288);
+    CPy_DecRef(cpy_r_r289);
+    if (unlikely(cpy_r_r290 == 2)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL390;
+    }
+    if (cpy_r_r290) goto CPyL246;
+    cpy_r_r282 = cpy_r_r9;
     cpy_r_r291 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
     if (unlikely(cpy_r_r291.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__12", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL247;
+        goto CPyL391;
     }
     CPy_INCREF(cpy_r_r291.f0);
     CPy_INCREF(cpy_r_r291.f1);
     CPy_INCREF(cpy_r_r291.f2);
-CPyL246: ;
+CPyL245: ;
     CPy_RestoreExcInfo(cpy_r_r291);
     CPy_DecRef(cpy_r_r291.f0);
     CPy_DecRef(cpy_r_r291.f1);
     CPy_DecRef(cpy_r_r291.f2);
-    goto CPyL255;
-CPyL247: ;
+    goto CPyL235;
+CPyL246: ;
+    cpy_r_r279 = cpy_r_r9;
+    CPy_DecRef(cpy_r_r279);
     cpy_r_r292 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
     if (unlikely(cpy_r_r292.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__12", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL248;
     }
     CPy_INCREF(cpy_r_r292.f0);
     CPy_INCREF(cpy_r_r292.f1);
     CPy_INCREF(cpy_r_r292.f2);
-CPyL248: ;
+CPyL247: ;
     CPy_RestoreExcInfo(cpy_r_r292);
     CPy_DecRef(cpy_r_r292.f0);
     CPy_DecRef(cpy_r_r292.f1);
     CPy_DecRef(cpy_r_r292.f2);
-    cpy_r_r293 = CPy_KeepPropagating();
-    if (!cpy_r_r293) goto CPyL330;
+    goto CPyL256;
+CPyL248: ;
+    cpy_r_r293 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
+    if (unlikely(cpy_r_r293.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__12", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r293.f0);
+    CPy_INCREF(cpy_r_r293.f1);
+    CPy_INCREF(cpy_r_r293.f2);
+CPyL249: ;
+    CPy_RestoreExcInfo(cpy_r_r293);
+    CPy_DecRef(cpy_r_r293.f0);
+    CPy_DecRef(cpy_r_r293.f1);
+    CPy_DecRef(cpy_r_r293.f2);
+    cpy_r_r294 = CPy_KeepPropagating();
+    if (!cpy_r_r294) goto CPyL331;
     CPy_Unreachable();
-CPyL250: ;
-    cpy_r_r294 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
-    if (unlikely(cpy_r_r294 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__11", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL391;
-    }
-    CPy_INCREF(cpy_r_r294);
 CPyL251: ;
-    cpy_r_r295 = CPyIter_Send(cpy_r_r294, cpy_r_arg);
-    CPy_DECREF(cpy_r_r294);
-    CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r295 == NULL) goto CPyL253;
-    cpy_r_r281 = cpy_r_r295;
-    goto CPyL234;
-CPyL253: ;
-    cpy_r_r296 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r296 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+    cpy_r_r295 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
+    if (unlikely(cpy_r_r295 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__11", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL392;
     }
-    cpy_r_r278 = cpy_r_r296;
-    CPy_DECREF(cpy_r_r278);
-CPyL255: ;
-    cpy_r_r297 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    CPy_INCREF(cpy_r_r295);
+CPyL252: ;
+    cpy_r_r296 = CPyIter_Send(cpy_r_r295, cpy_r_arg);
+    CPy_DECREF(cpy_r_r295);
+    CPy_DECREF(cpy_r_arg);
+    if (cpy_r_r296 == NULL) goto CPyL254;
+    cpy_r_r282 = cpy_r_r296;
+    goto CPyL235;
+CPyL254: ;
+    cpy_r_r297 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r297 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    cpy_r_r279 = cpy_r_r297;
+    CPy_DECREF(cpy_r_r279);
+CPyL256: ;
     cpy_r_r298 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
     if (unlikely(cpy_r_r298 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "result", 83, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_INCREF(cpy_r_r298);
-CPyL256: ;
-    cpy_r_r299 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'keys' */
-    PyObject *cpy_r_r300[1] = {cpy_r_r298};
-    cpy_r_r301 = (PyObject **)&cpy_r_r300;
-    cpy_r_r302 = PyObject_VectorcallMethod(cpy_r_r299, cpy_r_r301, 9223372036854775809ULL, 0);
-    if (unlikely(cpy_r_r302 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL392;
-    }
+CPyL257: ;
+    cpy_r_r299 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r300 = CPyDict_GetWithNone(cpy_r_r298, cpy_r_r299);
     CPy_DECREF(cpy_r_r298);
-    cpy_r_r303 = PySequence_Contains(cpy_r_r302, cpy_r_r297);
+    if (unlikely(cpy_r_r300 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data != NULL) {
+        CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data);
+    }
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data = cpy_r_r300;
+    cpy_r_r301 = 1;
+    if (unlikely(!cpy_r_r301)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    cpy_r_r302 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data;
+    if (unlikely(cpy_r_r302 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "data", 84, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r302);
+CPyL260: ;
+    cpy_r_r303 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r304 = cpy_r_r302 == cpy_r_r303;
     CPy_DECREF(cpy_r_r302);
-    cpy_r_r304 = cpy_r_r303 >= 0;
-    if (unlikely(!cpy_r_r304)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    cpy_r_r305 = cpy_r_r303;
-    cpy_r_r306 = cpy_r_r305 ^ 1;
-    if (!cpy_r_r306) goto CPyL263;
-    cpy_r_r307 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Improperly formatted response for offchain lookup '
+    if (!cpy_r_r304) goto CPyL265;
+    cpy_r_r305 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Improperly formatted response for offchain lookup '
                                       "HTTP request - missing 'data' field.") */
-    cpy_r_r308 = CPyStatic_async_exception_handling___globals;
-    cpy_r_r309 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValidationError' */
-    cpy_r_r310 = CPyDict_GetItem(cpy_r_r308, cpy_r_r309);
-    if (unlikely(cpy_r_r310 == NULL)) {
+    cpy_r_r306 = CPyStatic_async_exception_handling___globals;
+    cpy_r_r307 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValidationError' */
+    cpy_r_r308 = CPyDict_GetItem(cpy_r_r306, cpy_r_r307);
+    if (unlikely(cpy_r_r308 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    PyObject *cpy_r_r311[1] = {cpy_r_r307};
-    cpy_r_r312 = (PyObject **)&cpy_r_r311;
-    cpy_r_r313 = PyObject_Vectorcall(cpy_r_r310, cpy_r_r312, 1, 0);
-    CPy_DECREF(cpy_r_r310);
-    if (unlikely(cpy_r_r313 == NULL)) {
+    PyObject *cpy_r_r309[1] = {cpy_r_r305};
+    cpy_r_r310 = (PyObject **)&cpy_r_r309;
+    cpy_r_r311 = PyObject_Vectorcall(cpy_r_r308, cpy_r_r310, 1, 0);
+    CPy_DECREF(cpy_r_r308);
+    if (unlikely(cpy_r_r311 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    CPy_Raise(cpy_r_r313);
-    CPy_DECREF(cpy_r_r313);
+    CPy_Raise(cpy_r_r311);
+    CPy_DECREF(cpy_r_r311);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
-CPyL263: ;
-    cpy_r_r314 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
+CPyL265: ;
+    cpy_r_r312 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
+    if (unlikely(cpy_r_r312 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 91, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r312);
+CPyL266: ;
+    cpy_r_r313 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'callbackFunction' */
+    cpy_r_r314 = CPyDict_GetItem(cpy_r_r312, cpy_r_r313);
+    CPy_DECREF(cpy_r_r312);
     if (unlikely(cpy_r_r314 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 90, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
     }
-    CPy_INCREF(cpy_r_r314);
-CPyL264: ;
-    cpy_r_r315 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'callbackFunction' */
-    cpy_r_r316 = CPyDict_GetItem(cpy_r_r314, cpy_r_r315);
+    cpy_r_r315 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r314);
     CPy_DECREF(cpy_r_r314);
-    if (unlikely(cpy_r_r316 == NULL)) {
+    if (unlikely(cpy_r_r315 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    cpy_r_r317 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r316);
-    CPy_DECREF(cpy_r_r316);
-    if (unlikely(cpy_r_r317 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte = cpy_r_r317;
-    cpy_r_r318 = 1;
-    if (unlikely(!cpy_r_r318)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte = cpy_r_r315;
+    cpy_r_r316 = 1;
+    if (unlikely(!cpy_r_r316)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r319 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte;
-    if (unlikely(cpy_r_r319 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "fourbyte", 93, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+    cpy_r_r317 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__fourbyte;
+    if (unlikely(cpy_r_r317 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "fourbyte", 94, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
     }
+    CPy_INCREF(cpy_r_r317);
+CPyL270: ;
+    cpy_r_r318 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r319 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    CPy_INCREF(cpy_r_r318);
     CPy_INCREF(cpy_r_r319);
-CPyL268: ;
-    cpy_r_r320 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
-    cpy_r_r321 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
-    CPy_INCREF(cpy_r_r320);
-    CPy_INCREF(cpy_r_r321);
-    cpy_r_r322.f0 = cpy_r_r320;
-    cpy_r_r322.f1 = cpy_r_r321;
-    cpy_r_r323 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__result;
-    if (unlikely(cpy_r_r323 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "result", 96, CPyStatic_async_exception_handling___globals);
+    cpy_r_r320.f0 = cpy_r_r318;
+    cpy_r_r320.f1 = cpy_r_r319;
+    cpy_r_r321 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data;
+    if (unlikely(cpy_r_r321 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "data", 97, CPyStatic_async_exception_handling___globals);
         goto CPyL393;
     }
+    CPy_INCREF(cpy_r_r321);
+CPyL271: ;
+    cpy_r_r322 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r321);
+    CPy_DECREF(cpy_r_r321);
+    if (unlikely(cpy_r_r322 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL393;
+    }
+    cpy_r_r323 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
+    if (unlikely(cpy_r_r323 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 98, CPyStatic_async_exception_handling___globals);
+        goto CPyL394;
+    }
     CPy_INCREF(cpy_r_r323);
-CPyL269: ;
-    cpy_r_r324 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
-    cpy_r_r325 = PyObject_GetItem(cpy_r_r323, cpy_r_r324);
+CPyL273: ;
+    cpy_r_r324 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'extraData' */
+    cpy_r_r325 = CPyDict_GetItem(cpy_r_r323, cpy_r_r324);
     CPy_DECREF(cpy_r_r323);
     if (unlikely(cpy_r_r325 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL393;
+        goto CPyL394;
     }
     cpy_r_r326 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r325);
     CPy_DECREF(cpy_r_r325);
     if (unlikely(cpy_r_r326 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL393;
+        goto CPyL394;
     }
-    cpy_r_r327 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__offchain_lookup_payload;
+    cpy_r_r327 = PyList_New(2);
     if (unlikely(cpy_r_r327 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "offchain_lookup_payload", 97, CPyStatic_async_exception_handling___globals);
-        goto CPyL394;
-    }
-    CPy_INCREF(cpy_r_r327);
-CPyL272: ;
-    cpy_r_r328 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'extraData' */
-    cpy_r_r329 = CPyDict_GetItem(cpy_r_r327, cpy_r_r328);
-    CPy_DECREF(cpy_r_r327);
-    if (unlikely(cpy_r_r329 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL394;
-    }
-    cpy_r_r330 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r329);
-    CPy_DECREF(cpy_r_r329);
-    if (unlikely(cpy_r_r330 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL394;
-    }
-    cpy_r_r331 = PyList_New(2);
-    if (unlikely(cpy_r_r331 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL395;
     }
-    cpy_r_r332 = (CPyPtr)&((PyListObject *)cpy_r_r331)->ob_item;
-    cpy_r_r333 = *(CPyPtr *)cpy_r_r332;
-    *(PyObject * *)cpy_r_r333 = cpy_r_r326;
-    cpy_r_r334 = cpy_r_r333 + 8;
-    *(PyObject * *)cpy_r_r334 = cpy_r_r330;
-    cpy_r_r335 = CPyStatic_async_exception_handling___encode;
-    if (unlikely(cpy_r_r335 == NULL)) {
+    cpy_r_r328 = (CPyPtr)&((PyListObject *)cpy_r_r327)->ob_item;
+    cpy_r_r329 = *(CPyPtr *)cpy_r_r328;
+    *(PyObject * *)cpy_r_r329 = cpy_r_r322;
+    cpy_r_r330 = cpy_r_r329 + 8;
+    *(PyObject * *)cpy_r_r330 = cpy_r_r326;
+    cpy_r_r331 = CPyStatic_async_exception_handling___encode;
+    if (unlikely(cpy_r_r331 == NULL)) {
         goto CPyL396;
     } else
-        goto CPyL278;
-CPyL276: ;
+        goto CPyL279;
+CPyL277: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"encode\" was not set");
-    cpy_r_r336 = 0;
-    if (unlikely(!cpy_r_r336)) {
+    cpy_r_r332 = 0;
+    if (unlikely(!cpy_r_r332)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
-CPyL278: ;
-    cpy_r_r337 = PyTuple_New(2);
-    if (unlikely(cpy_r_r337 == NULL))
+CPyL279: ;
+    cpy_r_r333 = PyTuple_New(2);
+    if (unlikely(cpy_r_r333 == NULL))
         CPyError_OutOfMemory();
-    PyObject *__tmp984 = cpy_r_r322.f0;
-    PyTuple_SET_ITEM(cpy_r_r337, 0, __tmp984);
-    PyObject *__tmp985 = cpy_r_r322.f1;
-    PyTuple_SET_ITEM(cpy_r_r337, 1, __tmp985);
-    PyObject *cpy_r_r338[2] = {cpy_r_r337, cpy_r_r331};
-    cpy_r_r339 = (PyObject **)&cpy_r_r338;
-    cpy_r_r340 = PyObject_Vectorcall(cpy_r_r335, cpy_r_r339, 2, 0);
-    if (unlikely(cpy_r_r340 == NULL)) {
+    PyObject *__tmp984 = cpy_r_r320.f0;
+    PyTuple_SET_ITEM(cpy_r_r333, 0, __tmp984);
+    PyObject *__tmp985 = cpy_r_r320.f1;
+    PyTuple_SET_ITEM(cpy_r_r333, 1, __tmp985);
+    PyObject *cpy_r_r334[2] = {cpy_r_r333, cpy_r_r327};
+    cpy_r_r335 = (PyObject **)&cpy_r_r334;
+    cpy_r_r336 = PyObject_Vectorcall(cpy_r_r331, cpy_r_r335, 2, 0);
+    if (unlikely(cpy_r_r336 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL397;
     }
-    CPy_DECREF(cpy_r_r337);
-    CPy_DECREF_NO_IMM(cpy_r_r331);
-    if (likely(PyBytes_Check(cpy_r_r340) || PyByteArray_Check(cpy_r_r340)))
-        cpy_r_r341 = cpy_r_r340;
+    CPy_DECREF(cpy_r_r333);
+    CPy_DECREF_NO_IMM(cpy_r_r327);
+    if (likely(PyBytes_Check(cpy_r_r336) || PyByteArray_Check(cpy_r_r336)))
+        cpy_r_r337 = cpy_r_r336;
     else {
-        CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 93, CPyStatic_async_exception_handling___globals, "bytes", cpy_r_r340);
+        CPy_TypeErrorTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", 94, CPyStatic_async_exception_handling___globals, "bytes", cpy_r_r336);
         goto CPyL398;
     }
-    cpy_r_r342 = CPyBytes_Concat(cpy_r_r319, cpy_r_r341);
-    CPy_DECREF(cpy_r_r341);
-    if (unlikely(cpy_r_r342 == NULL)) {
+    cpy_r_r338 = CPyBytes_Concat(cpy_r_r317, cpy_r_r337);
+    CPy_DECREF(cpy_r_r337);
+    if (unlikely(cpy_r_r338 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL285;
-    CPyGen_SetStopIterationValue(cpy_r_r342);
-    CPy_DECREF(cpy_r_r342);
-    if (!0) goto CPyL330;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL286;
+    CPyGen_SetStopIterationValue(cpy_r_r338);
+    CPy_DECREF(cpy_r_r338);
+    if (!0) goto CPyL331;
     CPy_Unreachable();
-CPyL285: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r342;
-    return 0;
 CPyL286: ;
-    cpy_r_r344 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r344)) {
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r338;
+    return 0;
+CPyL287: ;
+    cpy_r_r340 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r340)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r345 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
+    cpy_r_r341 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
+    if (unlikely(cpy_r_r341 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "session", 102, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r341);
+CPyL289: ;
+    cpy_r_r342 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'close' */
+    PyObject *cpy_r_r343[1] = {cpy_r_r341};
+    cpy_r_r344 = (PyObject **)&cpy_r_r343;
+    cpy_r_r345 = PyObject_VectorcallMethod(cpy_r_r342, cpy_r_r344, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r345 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "session", 101, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    CPy_INCREF(cpy_r_r345);
-CPyL288: ;
-    cpy_r_r346 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'close' */
-    PyObject *cpy_r_r347[1] = {cpy_r_r345};
-    cpy_r_r348 = (PyObject **)&cpy_r_r347;
-    cpy_r_r349 = PyObject_VectorcallMethod(cpy_r_r346, cpy_r_r348, 9223372036854775809ULL, 0);
-    if (unlikely(cpy_r_r349 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL399;
     }
+    CPy_DECREF(cpy_r_r341);
+    cpy_r_r346 = CPy_GetCoro(cpy_r_r345);
     CPy_DECREF(cpy_r_r345);
-    cpy_r_r350 = CPy_GetCoro(cpy_r_r349);
-    CPy_DECREF(cpy_r_r349);
+    if (unlikely(cpy_r_r346 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 != NULL) {
+        CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13);
+    }
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r346;
+    cpy_r_r347 = 1;
+    if (unlikely(!cpy_r_r347)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    cpy_r_r348 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r348 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__13", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r348);
+CPyL293: ;
+    cpy_r_r349 = CPyIter_Next(cpy_r_r348);
+    CPy_DECREF(cpy_r_r348);
+    if (cpy_r_r349 != NULL) goto CPyL296;
+    cpy_r_r350 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r350 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
+    cpy_r_r351 = cpy_r_r350;
+    CPy_DECREF(cpy_r_r351);
+    cpy_r_r352 = NULL;
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r350;
-    cpy_r_r351 = 1;
-    if (unlikely(!cpy_r_r351)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    cpy_r_r352 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r352 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__13", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    CPy_INCREF(cpy_r_r352);
-CPyL292: ;
-    cpy_r_r353 = CPyIter_Next(cpy_r_r352);
-    CPy_DECREF(cpy_r_r352);
-    if (cpy_r_r353 != NULL) goto CPyL295;
-    cpy_r_r354 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r354 == NULL)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r352;
+    cpy_r_r353 = 1;
+    if (unlikely(!cpy_r_r353)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    cpy_r_r355 = cpy_r_r354;
-    CPy_DECREF(cpy_r_r355);
-    cpy_r_r356 = NULL;
-    if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 != NULL) {
-        CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13);
-    }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13 = cpy_r_r356;
-    cpy_r_r357 = 1;
-    if (unlikely(!cpy_r_r357)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     } else
-        goto CPyL317;
-CPyL295: ;
-    cpy_r_r358 = cpy_r_r353;
+        goto CPyL318;
 CPyL296: ;
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 6;
-    return cpy_r_r358;
+    cpy_r_r354 = cpy_r_r349;
 CPyL297: ;
-    cpy_r_r360 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r361 = cpy_r_type != cpy_r_r360;
-    if (!cpy_r_r361) goto CPyL400;
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 6;
+    return cpy_r_r354;
+CPyL298: ;
+    cpy_r_r356 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r357 = cpy_r_type != cpy_r_r356;
+    if (!cpy_r_r357) goto CPyL400;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL301;
+        goto CPyL302;
     } else
         goto CPyL401;
-CPyL299: ;
-    CPy_Unreachable();
 CPyL300: ;
-    CPy_INCREF(cpy_r_arg);
-    goto CPyL312;
+    CPy_Unreachable();
 CPyL301: ;
-    cpy_r_r362 = CPy_CatchError();
+    CPy_INCREF(cpy_r_arg);
+    goto CPyL313;
+CPyL302: ;
+    cpy_r_r358 = CPy_CatchError();
     if (((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14.f0 != NULL) {
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14.f0);
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14.f1);
         CPy_DECREF(((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14.f2);
     }
-    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r362;
-    cpy_r_r363 = 1;
-    if (unlikely(!cpy_r_r363)) {
+    ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 = cpy_r_r358;
+    cpy_r_r359 = 1;
+    if (unlikely(!cpy_r_r359)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", -1, CPyStatic_async_exception_handling___globals);
         goto CPyL402;
     }
-    cpy_r_r364 = (PyObject **)&cpy_r_r11;
-    cpy_r_r365 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r365 == NULL)) {
+    cpy_r_r360 = (PyObject **)&cpy_r_r11;
+    cpy_r_r361 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r361 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__13", -1, CPyStatic_async_exception_handling___globals);
         goto CPyL402;
     }
-    CPy_INCREF(cpy_r_r365);
-CPyL303: ;
-    cpy_r_r366 = CPy_YieldFromErrorHandle(cpy_r_r365, cpy_r_r364);
-    CPy_DecRef(cpy_r_r365);
-    if (unlikely(cpy_r_r366 == 2)) {
+    CPy_INCREF(cpy_r_r361);
+CPyL304: ;
+    cpy_r_r362 = CPy_YieldFromErrorHandle(cpy_r_r361, cpy_r_r360);
+    CPy_DecRef(cpy_r_r361);
+    if (unlikely(cpy_r_r362 == 2)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
         goto CPyL402;
     }
-    if (cpy_r_r366) goto CPyL307;
-    cpy_r_r358 = cpy_r_r11;
-    cpy_r_r367 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r367.f0 == NULL)) {
+    if (cpy_r_r362) goto CPyL308;
+    cpy_r_r354 = cpy_r_r11;
+    cpy_r_r363 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r363.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__14", -1, CPyStatic_async_exception_handling___globals);
         goto CPyL403;
     }
-    CPy_INCREF(cpy_r_r367.f0);
-    CPy_INCREF(cpy_r_r367.f1);
-    CPy_INCREF(cpy_r_r367.f2);
-CPyL306: ;
-    CPy_RestoreExcInfo(cpy_r_r367);
-    CPy_DecRef(cpy_r_r367.f0);
-    CPy_DecRef(cpy_r_r367.f1);
-    CPy_DecRef(cpy_r_r367.f2);
-    goto CPyL296;
+    CPy_INCREF(cpy_r_r363.f0);
+    CPy_INCREF(cpy_r_r363.f1);
+    CPy_INCREF(cpy_r_r363.f2);
 CPyL307: ;
-    cpy_r_r355 = cpy_r_r11;
-    CPy_DecRef(cpy_r_r355);
-    cpy_r_r368 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r368.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__14", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL309;
-    }
-    CPy_INCREF(cpy_r_r368.f0);
-    CPy_INCREF(cpy_r_r368.f1);
-    CPy_INCREF(cpy_r_r368.f2);
+    CPy_RestoreExcInfo(cpy_r_r363);
+    CPy_DecRef(cpy_r_r363.f0);
+    CPy_DecRef(cpy_r_r363.f1);
+    CPy_DecRef(cpy_r_r363.f2);
+    goto CPyL297;
 CPyL308: ;
-    CPy_RestoreExcInfo(cpy_r_r368);
-    CPy_DecRef(cpy_r_r368.f0);
-    CPy_DecRef(cpy_r_r368.f1);
-    CPy_DecRef(cpy_r_r368.f2);
-    goto CPyL317;
-CPyL309: ;
-    cpy_r_r369 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
-    if (unlikely(cpy_r_r369.f0 == NULL)) {
+    cpy_r_r351 = cpy_r_r11;
+    CPy_DecRef(cpy_r_r351);
+    cpy_r_r364 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r364.f0 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__14", -1, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL310;
     }
-    CPy_INCREF(cpy_r_r369.f0);
-    CPy_INCREF(cpy_r_r369.f1);
-    CPy_INCREF(cpy_r_r369.f2);
+    CPy_INCREF(cpy_r_r364.f0);
+    CPy_INCREF(cpy_r_r364.f1);
+    CPy_INCREF(cpy_r_r364.f2);
+CPyL309: ;
+    CPy_RestoreExcInfo(cpy_r_r364);
+    CPy_DecRef(cpy_r_r364.f0);
+    CPy_DecRef(cpy_r_r364.f1);
+    CPy_DecRef(cpy_r_r364.f2);
+    goto CPyL318;
 CPyL310: ;
-    CPy_RestoreExcInfo(cpy_r_r369);
-    CPy_DecRef(cpy_r_r369.f0);
-    CPy_DecRef(cpy_r_r369.f1);
-    CPy_DecRef(cpy_r_r369.f2);
-    cpy_r_r370 = CPy_KeepPropagating();
-    if (!cpy_r_r370) goto CPyL330;
+    cpy_r_r365 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
+    if (unlikely(cpy_r_r365.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__14", -1, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    CPy_INCREF(cpy_r_r365.f0);
+    CPy_INCREF(cpy_r_r365.f1);
+    CPy_INCREF(cpy_r_r365.f2);
+CPyL311: ;
+    CPy_RestoreExcInfo(cpy_r_r365);
+    CPy_DecRef(cpy_r_r365.f0);
+    CPy_DecRef(cpy_r_r365.f1);
+    CPy_DecRef(cpy_r_r365.f2);
+    cpy_r_r366 = CPy_KeepPropagating();
+    if (!cpy_r_r366) goto CPyL331;
     CPy_Unreachable();
-CPyL312: ;
-    cpy_r_r371 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
-    if (unlikely(cpy_r_r371 == NULL)) {
+CPyL313: ;
+    cpy_r_r367 = ((faster_web3___utils___async_exception_handling___async_handle_offchain_lookup_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
+    if (unlikely(cpy_r_r367 == NULL)) {
         CPy_AttributeError("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", "async_handle_offchain_lookup_gen", "__mypyc_temp__13", -1, CPyStatic_async_exception_handling___globals);
         goto CPyL404;
     }
-    CPy_INCREF(cpy_r_r371);
-CPyL313: ;
-    cpy_r_r372 = CPyIter_Send(cpy_r_r371, cpy_r_arg);
-    CPy_DECREF(cpy_r_r371);
+    CPy_INCREF(cpy_r_r367);
+CPyL314: ;
+    cpy_r_r368 = CPyIter_Send(cpy_r_r367, cpy_r_arg);
+    CPy_DECREF(cpy_r_r367);
     CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r372 == NULL) goto CPyL315;
-    cpy_r_r358 = cpy_r_r372;
-    goto CPyL296;
-CPyL315: ;
-    cpy_r_r373 = CPy_FetchStopIterationValue();
+    if (cpy_r_r368 == NULL) goto CPyL316;
+    cpy_r_r354 = cpy_r_r368;
+    goto CPyL297;
+CPyL316: ;
+    cpy_r_r369 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r369 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
+        goto CPyL331;
+    }
+    cpy_r_r351 = cpy_r_r369;
+    CPy_DECREF(cpy_r_r351);
+CPyL318: ;
+    cpy_r_r370 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Offchain lookup failed for supplied urls.' */
+    cpy_r_r371 = CPyStatic_async_exception_handling___globals;
+    cpy_r_r372 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MultipleFailedRequests' */
+    cpy_r_r373 = CPyDict_GetItem(cpy_r_r371, cpy_r_r372);
     if (unlikely(cpy_r_r373 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    cpy_r_r355 = cpy_r_r373;
-    CPy_DECREF(cpy_r_r355);
-CPyL317: ;
-    cpy_r_r374 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Offchain lookup failed for supplied urls.' */
-    cpy_r_r375 = CPyStatic_async_exception_handling___globals;
-    cpy_r_r376 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MultipleFailedRequests' */
-    cpy_r_r377 = CPyDict_GetItem(cpy_r_r375, cpy_r_r376);
-    if (unlikely(cpy_r_r377 == NULL)) {
+    PyObject *cpy_r_r374[1] = {cpy_r_r370};
+    cpy_r_r375 = (PyObject **)&cpy_r_r374;
+    cpy_r_r376 = PyObject_Vectorcall(cpy_r_r373, cpy_r_r375, 1, 0);
+    CPy_DECREF(cpy_r_r373);
+    if (unlikely(cpy_r_r376 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
-    PyObject *cpy_r_r378[1] = {cpy_r_r374};
-    cpy_r_r379 = (PyObject **)&cpy_r_r378;
-    cpy_r_r380 = PyObject_Vectorcall(cpy_r_r377, cpy_r_r379, 1, 0);
-    CPy_DECREF(cpy_r_r377);
-    if (unlikely(cpy_r_r380 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
-    }
-    CPy_Raise(cpy_r_r380);
-    CPy_DECREF(cpy_r_r380);
+    CPy_Raise(cpy_r_r376);
+    CPy_DECREF(cpy_r_r376);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
-CPyL321: ;
-    cpy_r_r381 = cpy_r_r12 == 0;
-    if (cpy_r_r381) goto CPyL405;
-    cpy_r_r382 = cpy_r_r12 == 1;
-    if (cpy_r_r382) {
+CPyL322: ;
+    cpy_r_r377 = cpy_r_r12 == 0;
+    if (cpy_r_r377) goto CPyL405;
+    cpy_r_r378 = cpy_r_r12 == 1;
+    if (cpy_r_r378) {
         goto CPyL406;
     } else
         goto CPyL407;
-CPyL323: ;
-    cpy_r_r383 = cpy_r_r12 == 2;
-    if (cpy_r_r383) {
+CPyL324: ;
+    cpy_r_r379 = cpy_r_r12 == 2;
+    if (cpy_r_r379) {
         goto CPyL408;
     } else
         goto CPyL409;
-CPyL324: ;
-    cpy_r_r384 = cpy_r_r12 == 3;
-    if (cpy_r_r384) {
+CPyL325: ;
+    cpy_r_r380 = cpy_r_r12 == 3;
+    if (cpy_r_r380) {
         goto CPyL410;
     } else
         goto CPyL411;
-CPyL325: ;
-    cpy_r_r385 = cpy_r_r12 == 4;
-    if (cpy_r_r385) {
+CPyL326: ;
+    cpy_r_r381 = cpy_r_r12 == 4;
+    if (cpy_r_r381) {
         goto CPyL412;
     } else
         goto CPyL413;
-CPyL326: ;
-    cpy_r_r386 = cpy_r_r12 == 5;
-    if (cpy_r_r386) {
+CPyL327: ;
+    cpy_r_r382 = cpy_r_r12 == 5;
+    if (cpy_r_r382) {
         goto CPyL414;
     } else
         goto CPyL415;
-CPyL327: ;
-    cpy_r_r387 = cpy_r_r12 == 6;
-    if (cpy_r_r387) {
-        goto CPyL297;
+CPyL328: ;
+    cpy_r_r383 = cpy_r_r12 == 6;
+    if (cpy_r_r383) {
+        goto CPyL298;
     } else
         goto CPyL416;
-CPyL328: ;
+CPyL329: ;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r388 = 0;
-    if (unlikely(!cpy_r_r388)) {
+    cpy_r_r384 = 0;
+    if (unlikely(!cpy_r_r384)) {
         CPy_AddTraceback("faster_web3/utils/async_exception_handling.py", "async_handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_async_exception_handling___globals);
-        goto CPyL330;
+        goto CPyL331;
     }
     CPy_Unreachable();
-CPyL330: ;
-    cpy_r_r389 = NULL;
-    return cpy_r_r389;
 CPyL331: ;
-    CPy_DecRef(cpy_r_r18);
-    goto CPyL330;
+    cpy_r_r385 = NULL;
+    return cpy_r_r385;
 CPyL332: ;
-    CPy_DecRef(cpy_r_r28);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r18);
+    goto CPyL331;
 CPyL333: ;
-    CPy_DecRef(cpy_r_r35);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r28);
+    goto CPyL331;
 CPyL334: ;
     CPy_DecRef(cpy_r_r35);
-    CPy_DecRef(cpy_r_r40);
-    goto CPyL330;
+    goto CPyL331;
 CPyL335: ;
-    CPy_DecRef(cpy_r_r61);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r35);
+    CPy_DecRef(cpy_r_r40);
+    goto CPyL331;
 CPyL336: ;
-    CPy_DecRef(cpy_r_r68);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r61);
+    goto CPyL331;
 CPyL337: ;
-    CPy_DecRef(cpy_r_r69);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r68);
+    goto CPyL331;
 CPyL338: ;
-    CPy_DecRef(cpy_r_r76);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r69);
+    goto CPyL331;
 CPyL339: ;
-    CPy_DecRef(cpy_r_r80);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r76);
+    goto CPyL331;
 CPyL340: ;
-    CPy_DecRef(cpy_r_r96);
-    goto CPyL130;
+    CPy_DecRef(cpy_r_r80);
+    goto CPyL331;
 CPyL341: ;
     CPy_DecRef(cpy_r_r96);
-    CPy_DecRef(cpy_r_r97);
     goto CPyL130;
 CPyL342: ;
     CPy_DecRef(cpy_r_r96);
     CPy_DecRef(cpy_r_r97);
-    CPy_DecRef(cpy_r_r98);
     goto CPyL130;
 CPyL343: ;
-    CPy_DecRef(cpy_r_r109);
+    CPy_DecRef(cpy_r_r96);
+    CPy_DecRef(cpy_r_r97);
+    CPy_DecRef(cpy_r_r98);
     goto CPyL130;
 CPyL344: ;
-    CPy_XDECREF(cpy_r_r1);
-    goto CPyL76;
+    CPy_DecRef(cpy_r_r109);
+    goto CPyL130;
 CPyL345: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL75;
+    goto CPyL76;
 CPyL346: ;
+    CPy_XDECREF(cpy_r_r1);
+    goto CPyL75;
+CPyL347: ;
     CPy_XDecRef(cpy_r_r1);
     goto CPyL85;
-CPyL347: ;
+CPyL348: ;
     CPy_DecRef(cpy_r_r112);
     goto CPyL85;
-CPyL348: ;
+CPyL349: ;
     CPy_DecRef(cpy_r_r109);
     goto CPyL85;
-CPyL349: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL130;
 CPyL350: ;
-    CPy_DecRef(cpy_r_r129);
+    CPy_DecRef(cpy_r_arg);
     goto CPyL130;
 CPyL351: ;
     CPy_DecRef(cpy_r_r129);
-    CPy_DecRef(cpy_r_r130);
     goto CPyL130;
 CPyL352: ;
     CPy_DecRef(cpy_r_r129);
     CPy_DecRef(cpy_r_r130);
-    CPy_DecRef(cpy_r_r132);
     goto CPyL130;
 CPyL353: ;
     CPy_DecRef(cpy_r_r129);
     CPy_DecRef(cpy_r_r130);
-    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r132);
     goto CPyL130;
 CPyL354: ;
     CPy_DecRef(cpy_r_r129);
     CPy_DecRef(cpy_r_r130);
     CPy_DecRef(cpy_r_r135);
-    CPy_DecRef(cpy_r_r136);
     goto CPyL130;
 CPyL355: ;
-    CPy_DecRef(cpy_r_r147);
+    CPy_DecRef(cpy_r_r129);
+    CPy_DecRef(cpy_r_r130);
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r136);
     goto CPyL130;
 CPyL356: ;
-    CPy_XDECREF(cpy_r_r3);
-    goto CPyL112;
+    CPy_DecRef(cpy_r_r147);
+    goto CPyL130;
 CPyL357: ;
     CPy_XDECREF(cpy_r_r3);
-    goto CPyL111;
+    goto CPyL112;
 CPyL358: ;
+    CPy_XDECREF(cpy_r_r3);
+    goto CPyL111;
+CPyL359: ;
     CPy_XDecRef(cpy_r_r3);
     goto CPyL121;
-CPyL359: ;
+CPyL360: ;
     CPy_DecRef(cpy_r_r150);
     goto CPyL121;
-CPyL360: ;
+CPyL361: ;
     CPy_DecRef(cpy_r_r147);
     goto CPyL121;
-CPyL361: ;
+CPyL362: ;
     CPy_DecRef(cpy_r_arg);
     goto CPyL130;
-CPyL362: ;
-    CPy_DecRef(cpy_r_r180);
-    goto CPyL330;
 CPyL363: ;
     CPy_DecRef(cpy_r_r180);
-    CPy_DecRef(cpy_r_r182);
-    goto CPyL330;
+    goto CPyL331;
 CPyL364: ;
+    CPy_DecRef(cpy_r_r180);
+    CPy_DecRef(cpy_r_r182);
+    goto CPyL331;
+CPyL365: ;
     CPy_DECREF(cpy_r_r182);
     goto CPyL148;
-CPyL365: ;
+CPyL366: ;
     CPy_DECREF(cpy_r_r180);
     goto CPyL147;
-CPyL366: ;
-    CPy_DecRef(cpy_r_r192);
-    goto CPyL330;
 CPyL367: ;
-    CPy_XDECREF(cpy_r_r5);
-    goto CPyL165;
+    CPy_DecRef(cpy_r_r192);
+    goto CPyL331;
 CPyL368: ;
     CPy_XDECREF(cpy_r_r5);
-    goto CPyL164;
+    goto CPyL165;
 CPyL369: ;
+    CPy_XDECREF(cpy_r_r5);
+    goto CPyL164;
+CPyL370: ;
     CPy_XDecRef(cpy_r_r5);
     goto CPyL174;
-CPyL370: ;
+CPyL371: ;
     CPy_DecRef(cpy_r_r205);
     goto CPyL174;
-CPyL371: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL330;
 CPyL372: ;
-    CPy_DecRef(cpy_r_r221);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL331;
 CPyL373: ;
+    CPy_DecRef(cpy_r_r221);
+    goto CPyL331;
+CPyL374: ;
     CPy_DECREF(cpy_r_r225);
     goto CPyL184;
-CPyL374: ;
-    CPy_DecRef(cpy_r_r226);
-    goto CPyL330;
 CPyL375: ;
     CPy_DecRef(cpy_r_r226);
-    CPy_DecRef(cpy_r_r228);
-    goto CPyL330;
+    goto CPyL331;
 CPyL376: ;
+    CPy_DecRef(cpy_r_r226);
+    CPy_DecRef(cpy_r_r228);
+    goto CPyL331;
+CPyL377: ;
     CPy_DECREF(cpy_r_r228);
     goto CPyL190;
-CPyL377: ;
+CPyL378: ;
     CPy_DECREF(cpy_r_r226);
     goto CPyL189;
-CPyL378: ;
-    CPy_DecRef(cpy_r_r238);
-    goto CPyL330;
 CPyL379: ;
-    CPy_DecRef(cpy_r_r248);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r238);
+    goto CPyL331;
 CPyL380: ;
-    CPy_XDECREF(cpy_r_r7);
-    goto CPyL207;
+    CPy_DecRef(cpy_r_r248);
+    goto CPyL331;
 CPyL381: ;
     CPy_XDECREF(cpy_r_r7);
-    goto CPyL206;
+    goto CPyL207;
 CPyL382: ;
+    CPy_XDECREF(cpy_r_r7);
+    goto CPyL206;
+CPyL383: ;
     CPy_XDecRef(cpy_r_r7);
     goto CPyL216;
-CPyL383: ;
+CPyL384: ;
     CPy_DecRef(cpy_r_r251);
     goto CPyL216;
-CPyL384: ;
+CPyL385: ;
     CPy_DecRef(cpy_r_r248);
     goto CPyL216;
-CPyL385: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL330;
 CPyL386: ;
-    CPy_DecRef(cpy_r_r268);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL331;
 CPyL387: ;
-    CPy_XDECREF(cpy_r_r9);
-    goto CPyL238;
+    CPy_DecRef(cpy_r_r269);
+    goto CPyL331;
 CPyL388: ;
     CPy_XDECREF(cpy_r_r9);
-    goto CPyL237;
+    goto CPyL239;
 CPyL389: ;
-    CPy_XDecRef(cpy_r_r9);
-    goto CPyL247;
+    CPy_XDECREF(cpy_r_r9);
+    goto CPyL238;
 CPyL390: ;
-    CPy_DecRef(cpy_r_r281);
-    goto CPyL247;
+    CPy_XDecRef(cpy_r_r9);
+    goto CPyL248;
 CPyL391: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r282);
+    goto CPyL248;
 CPyL392: ;
-    CPy_DecRef(cpy_r_r298);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL331;
 CPyL393: ;
-    CPy_DecRef(cpy_r_r319);
-    CPy_DecRef(cpy_r_r322.f0);
-    CPy_DecRef(cpy_r_r322.f1);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r317);
+    CPy_DecRef(cpy_r_r320.f0);
+    CPy_DecRef(cpy_r_r320.f1);
+    goto CPyL331;
 CPyL394: ;
-    CPy_DecRef(cpy_r_r319);
-    CPy_DecRef(cpy_r_r322.f0);
-    CPy_DecRef(cpy_r_r322.f1);
-    CPy_DecRef(cpy_r_r326);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r317);
+    CPy_DecRef(cpy_r_r320.f0);
+    CPy_DecRef(cpy_r_r320.f1);
+    CPy_DecRef(cpy_r_r322);
+    goto CPyL331;
 CPyL395: ;
-    CPy_DecRef(cpy_r_r319);
-    CPy_DecRef(cpy_r_r322.f0);
-    CPy_DecRef(cpy_r_r322.f1);
+    CPy_DecRef(cpy_r_r317);
+    CPy_DecRef(cpy_r_r320.f0);
+    CPy_DecRef(cpy_r_r320.f1);
+    CPy_DecRef(cpy_r_r322);
     CPy_DecRef(cpy_r_r326);
-    CPy_DecRef(cpy_r_r330);
-    goto CPyL330;
+    goto CPyL331;
 CPyL396: ;
-    CPy_DecRef(cpy_r_r319);
-    CPy_DecRef(cpy_r_r322.f0);
-    CPy_DecRef(cpy_r_r322.f1);
-    CPy_DecRef(cpy_r_r331);
-    goto CPyL276;
+    CPy_DecRef(cpy_r_r317);
+    CPy_DecRef(cpy_r_r320.f0);
+    CPy_DecRef(cpy_r_r320.f1);
+    CPy_DecRef(cpy_r_r327);
+    goto CPyL277;
 CPyL397: ;
-    CPy_DecRef(cpy_r_r319);
-    CPy_DecRef(cpy_r_r331);
-    CPy_DecRef(cpy_r_r337);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r317);
+    CPy_DecRef(cpy_r_r327);
+    CPy_DecRef(cpy_r_r333);
+    goto CPyL331;
 CPyL398: ;
-    CPy_DecRef(cpy_r_r319);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r317);
+    goto CPyL331;
 CPyL399: ;
-    CPy_DecRef(cpy_r_r345);
-    goto CPyL330;
+    CPy_DecRef(cpy_r_r341);
+    goto CPyL331;
 CPyL400: ;
     CPy_XDECREF(cpy_r_r11);
-    goto CPyL300;
+    goto CPyL301;
 CPyL401: ;
     CPy_XDECREF(cpy_r_r11);
-    goto CPyL299;
+    goto CPyL300;
 CPyL402: ;
     CPy_XDecRef(cpy_r_r11);
-    goto CPyL309;
+    goto CPyL310;
 CPyL403: ;
-    CPy_DecRef(cpy_r_r358);
-    goto CPyL309;
+    CPy_DecRef(cpy_r_r354);
+    goto CPyL310;
 CPyL404: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL330;
+    goto CPyL331;
 CPyL405: ;
     CPy_XDECREF(cpy_r_r1);
     CPy_XDECREF(cpy_r_r3);
@@ -281925,7 +281931,7 @@ CPyL406: ;
     goto CPyL73;
 CPyL407: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL323;
+    goto CPyL324;
 CPyL408: ;
     CPy_XDECREF(cpy_r_r5);
     CPy_XDECREF(cpy_r_r7);
@@ -281934,7 +281940,7 @@ CPyL408: ;
     goto CPyL109;
 CPyL409: ;
     CPy_XDECREF(cpy_r_r3);
-    goto CPyL324;
+    goto CPyL325;
 CPyL410: ;
     CPy_XDECREF(cpy_r_r7);
     CPy_XDECREF(cpy_r_r9);
@@ -281942,23 +281948,23 @@ CPyL410: ;
     goto CPyL162;
 CPyL411: ;
     CPy_XDECREF(cpy_r_r5);
-    goto CPyL325;
+    goto CPyL326;
 CPyL412: ;
     CPy_XDECREF(cpy_r_r9);
     CPy_XDECREF(cpy_r_r11);
     goto CPyL204;
 CPyL413: ;
     CPy_XDECREF(cpy_r_r7);
-    goto CPyL326;
+    goto CPyL327;
 CPyL414: ;
     CPy_XDECREF(cpy_r_r11);
-    goto CPyL235;
+    goto CPyL236;
 CPyL415: ;
     CPy_XDECREF(cpy_r_r9);
-    goto CPyL327;
+    goto CPyL328;
 CPyL416: ;
     CPy_XDECREF(cpy_r_r11);
-    goto CPyL328;
+    goto CPyL329;
 }
 
 PyObject *CPyDef_async_exception_handling___async_handle_offchain_lookup_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -286070,60 +286076,56 @@ PyObject *CPyDef_exception_handling___handle_offchain_lookup(PyObject *cpy_r_off
     PyObject *cpy_r_r120;
     PyObject *cpy_r_r121;
     PyObject *cpy_r_r122;
-    PyObject **cpy_r_r124;
-    PyObject *cpy_r_r125;
-    int32_t cpy_r_r126;
-    char cpy_r_r127;
-    char cpy_r_r128;
-    char cpy_r_r129;
-    PyObject *cpy_r_r130;
-    PyObject *cpy_r_r131;
+    PyObject *cpy_r_r123;
+    PyObject *cpy_r_data;
+    PyObject *cpy_r_r124;
+    char cpy_r_r125;
+    PyObject *cpy_r_r126;
+    PyObject *cpy_r_r127;
+    PyObject *cpy_r_r128;
+    PyObject *cpy_r_r129;
+    PyObject **cpy_r_r131;
     PyObject *cpy_r_r132;
     PyObject *cpy_r_r133;
-    PyObject **cpy_r_r135;
+    PyObject *cpy_r_r134;
+    PyObject *cpy_r_r135;
     PyObject *cpy_r_r136;
     PyObject *cpy_r_r137;
-    PyObject *cpy_r_r138;
+    tuple_T2OO cpy_r_r138;
     PyObject *cpy_r_r139;
     PyObject *cpy_r_r140;
     PyObject *cpy_r_r141;
-    tuple_T2OO cpy_r_r142;
+    PyObject *cpy_r_r142;
     PyObject *cpy_r_r143;
-    PyObject *cpy_r_r144;
-    PyObject *cpy_r_r145;
-    PyObject *cpy_r_r146;
+    CPyPtr cpy_r_r144;
+    CPyPtr cpy_r_r145;
+    CPyPtr cpy_r_r146;
     PyObject *cpy_r_r147;
-    PyObject *cpy_r_r148;
+    char cpy_r_r148;
     PyObject *cpy_r_r149;
-    CPyPtr cpy_r_r150;
-    CPyPtr cpy_r_r151;
-    CPyPtr cpy_r_r152;
+    PyObject **cpy_r_r151;
+    PyObject *cpy_r_r152;
     PyObject *cpy_r_r153;
-    char cpy_r_r154;
-    PyObject *cpy_r_r155;
-    PyObject **cpy_r_r157;
+    PyObject *cpy_r_r154;
+    char cpy_r_r155;
+    PyObject *cpy_r_r156;
+    PyObject *cpy_r_r157;
     PyObject *cpy_r_r158;
     PyObject *cpy_r_r159;
-    PyObject *cpy_r_r160;
-    char cpy_r_r161;
+    PyObject **cpy_r_r161;
     PyObject *cpy_r_r162;
     PyObject *cpy_r_r163;
-    PyObject *cpy_r_r164;
-    PyObject *cpy_r_r165;
-    PyObject **cpy_r_r167;
-    PyObject *cpy_r_r168;
-    PyObject *cpy_r_r169;
     cpy_r_r0 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'sender' */
     cpy_r_r1 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r0);
     if (unlikely(cpy_r_r1 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     cpy_r_r2 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r1);
     CPy_DECREF(cpy_r_r1);
     if (unlikely(cpy_r_r2 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r4[1] = {cpy_r_r2};
@@ -286131,26 +286133,26 @@ PyObject *CPyDef_exception_handling___handle_offchain_lookup(PyObject *cpy_r_off
     cpy_r_r6 = PyObject_VectorcallMethod(cpy_r_r3, cpy_r_r5, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r6 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL98;
+        goto CPyL97;
     }
     CPy_DECREF(cpy_r_r2);
     if (likely(PyUnicode_Check(cpy_r_r6)))
         cpy_r_r7 = cpy_r_r6;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 40, CPyStatic_exception_handling___globals, "str", cpy_r_r6);
-        goto CPyL97;
+        goto CPyL96;
     }
     cpy_r_r8 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'callData' */
     cpy_r_r9 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r8);
     if (unlikely(cpy_r_r9 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL99;
+        goto CPyL98;
     }
     cpy_r_r10 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r9);
     CPy_DECREF(cpy_r_r9);
     if (unlikely(cpy_r_r10 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL99;
+        goto CPyL98;
     }
     cpy_r_r11 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r12[1] = {cpy_r_r10};
@@ -286158,20 +286160,20 @@ PyObject *CPyDef_exception_handling___handle_offchain_lookup(PyObject *cpy_r_off
     cpy_r_r14 = PyObject_VectorcallMethod(cpy_r_r11, cpy_r_r13, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r14 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL100;
+        goto CPyL99;
     }
     CPy_DECREF(cpy_r_r10);
     if (likely(PyUnicode_Check(cpy_r_r14)))
         cpy_r_r15 = cpy_r_r14;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 41, CPyStatic_exception_handling___globals, "str", cpy_r_r14);
-        goto CPyL99;
+        goto CPyL98;
     }
     cpy_r_r16 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to' */
     cpy_r_r17 = CPyDict_GetItem(cpy_r_transaction, cpy_r_r16);
     if (unlikely(cpy_r_r17 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL101;
+        goto CPyL100;
     }
     if (PyBytes_Check(cpy_r_r17) || PyByteArray_Check(cpy_r_r17))
         cpy_r_r18 = cpy_r_r17;
@@ -286186,13 +286188,13 @@ PyObject *CPyDef_exception_handling___handle_offchain_lookup(PyObject *cpy_r_off
     }
     if (cpy_r_r18 != NULL) goto __LL1010;
     CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 43, CPyStatic_exception_handling___globals, "union[bytes, str]", cpy_r_r17);
-    goto CPyL101;
+    goto CPyL100;
 __LL1010: ;
     cpy_r_r19 = CPyDef_type_conversion___to_hex_if_bytes(cpy_r_r18);
     CPy_DECREF(cpy_r_r18);
     if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL101;
+        goto CPyL100;
     }
     cpy_r_r20 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
     PyObject *cpy_r_r21[1] = {cpy_r_r19};
@@ -286200,20 +286202,20 @@ __LL1010: ;
     cpy_r_r23 = PyObject_VectorcallMethod(cpy_r_r20, cpy_r_r22, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r23 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL102;
+        goto CPyL101;
     }
     CPy_DECREF(cpy_r_r19);
     if (likely(PyUnicode_Check(cpy_r_r23)))
         cpy_r_r24 = cpy_r_r23;
     else {
         CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 43, CPyStatic_exception_handling___globals, "str", cpy_r_r23);
-        goto CPyL101;
+        goto CPyL100;
     }
     cpy_r_r25 = CPyStr_Equal(cpy_r_r7, cpy_r_r24);
     CPy_DECREF(cpy_r_r24);
     cpy_r_r26 = cpy_r_r25 == 0;
     if (cpy_r_r26) {
-        goto CPyL103;
+        goto CPyL102;
     } else
         goto CPyL18;
 CPyL14: ;
@@ -286225,7 +286227,7 @@ CPyL14: ;
     cpy_r_r30 = CPyDict_GetItem(cpy_r_r28, cpy_r_r29);
     if (unlikely(cpy_r_r30 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     PyObject *cpy_r_r31[1] = {cpy_r_r27};
     cpy_r_r32 = (PyObject **)&cpy_r_r31;
@@ -286233,13 +286235,13 @@ CPyL14: ;
     CPy_DECREF(cpy_r_r30);
     if (unlikely(cpy_r_r33 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     CPy_Raise(cpy_r_r33);
     CPy_DECREF(cpy_r_r33);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     CPy_Unreachable();
 CPyL18: ;
@@ -286248,76 +286250,76 @@ CPyL18: ;
     cpy_r_r36 = CPyObject_GetAttr(cpy_r_r34, cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL101;
+        goto CPyL100;
     }
     cpy_r_r37 = PyObject_Vectorcall(cpy_r_r36, 0, 0, 0);
     CPy_DECREF(cpy_r_r36);
     if (unlikely(cpy_r_r37 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL101;
+        goto CPyL100;
     }
     cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'urls' */
     cpy_r_r39 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r38);
     if (unlikely(cpy_r_r39 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL104;
+        goto CPyL103;
     }
     cpy_r_r40 = PyObject_GetIter(cpy_r_r39);
     CPy_DECREF(cpy_r_r39);
     if (unlikely(cpy_r_r40 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL104;
+        goto CPyL103;
     }
 CPyL22: ;
     cpy_r_r41 = PyIter_Next(cpy_r_r40);
-    if (cpy_r_r41 == NULL) goto CPyL105;
+    if (cpy_r_r41 == NULL) goto CPyL104;
     cpy_r_r42 = PyObject_Str(cpy_r_r41);
     if (unlikely(cpy_r_r42 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL106;
+        goto CPyL105;
     }
     cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{sender}' */
     cpy_r_r44 = PyObject_Str(cpy_r_r7);
     if (unlikely(cpy_r_r44 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL107;
+        goto CPyL106;
     }
     cpy_r_r45 = PyUnicode_Replace(cpy_r_r42, cpy_r_r43, cpy_r_r44, -1);
     CPy_DECREF(cpy_r_r42);
     CPy_DECREF(cpy_r_r44);
     if (unlikely(cpy_r_r45 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL106;
+        goto CPyL105;
     }
     cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{data}' */
     cpy_r_r47 = PyObject_Str(cpy_r_r15);
     if (unlikely(cpy_r_r47 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL108;
+        goto CPyL107;
     }
     cpy_r_r48 = PyUnicode_Replace(cpy_r_r45, cpy_r_r46, cpy_r_r47, -1);
     CPy_DECREF(cpy_r_r45);
     CPy_DECREF(cpy_r_r47);
     if (unlikely(cpy_r_r48 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL106;
+        goto CPyL105;
     }
     cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{data}' */
     cpy_r_r50 = PySequence_Contains(cpy_r_r41, cpy_r_r49);
     cpy_r_r51 = cpy_r_r50 >= 0;
     if (unlikely(!cpy_r_r51)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL109;
+        goto CPyL108;
     }
     cpy_r_r52 = cpy_r_r50;
-    if (!cpy_r_r52) goto CPyL110;
+    if (!cpy_r_r52) goto CPyL109;
     cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{sender}' */
     cpy_r_r54 = PySequence_Contains(cpy_r_r41, cpy_r_r53);
     CPy_DECREF(cpy_r_r41);
     cpy_r_r55 = cpy_r_r54 >= 0;
     if (unlikely(!cpy_r_r55)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL111;
+        goto CPyL110;
     }
     cpy_r_r56 = cpy_r_r54;
     if (!cpy_r_r56) goto CPyL35;
@@ -286329,7 +286331,7 @@ CPyL22: ;
     cpy_r_r62 = PyObject_VectorcallMethod(cpy_r_r57, cpy_r_r60, 9223372036854775810ULL, cpy_r_r61);
     if (unlikely(cpy_r_r62 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL112;
+        goto CPyL111;
     }
     CPy_DECREF(cpy_r_r48);
     CPy_DECREF(cpy_r_r58);
@@ -286341,7 +286343,7 @@ CPyL35: ;
     cpy_r_r65 = CPyDict_Build(2, cpy_r_r63, cpy_r_r15, cpy_r_r64, cpy_r_r7);
     if (unlikely(cpy_r_r65 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL111;
+        goto CPyL110;
     }
     cpy_r_r66 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'post' */
     cpy_r_r67 = PyFloat_FromDouble(30.0);
@@ -286351,7 +286353,7 @@ CPyL35: ;
     cpy_r_r71 = PyObject_VectorcallMethod(cpy_r_r66, cpy_r_r69, 9223372036854775810ULL, cpy_r_r70);
     if (unlikely(cpy_r_r71 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL113;
+        goto CPyL112;
     }
     CPy_DECREF(cpy_r_r48);
     CPy_DECREF(cpy_r_r65);
@@ -286365,11 +286367,11 @@ CPyL38: ;
     cpy_r_r75 = CPyObject_GetAttr(cpy_r_r73, cpy_r_r74);
     if (unlikely(cpy_r_r75 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL114;
+        goto CPyL113;
     }
     cpy_r_r76 = CPy_ExceptionMatches(cpy_r_r75);
     CPy_DecRef(cpy_r_r75);
-    if (!cpy_r_r76) goto CPyL115;
+    if (!cpy_r_r76) goto CPyL114;
     CPy_RestoreExcInfo(cpy_r_r72);
     CPy_DecRef(cpy_r_r72.f0);
     CPy_DecRef(cpy_r_r72.f1);
@@ -286380,7 +286382,7 @@ CPyL41: ;
     if (!0) {
         goto CPyL43;
     } else
-        goto CPyL116;
+        goto CPyL115;
 CPyL42: ;
     CPy_Unreachable();
 CPyL43: ;
@@ -286389,14 +286391,14 @@ CPyL43: ;
     CPy_DecRef(cpy_r_r72.f1);
     CPy_DecRef(cpy_r_r72.f2);
     cpy_r_r77 = CPy_KeepPropagating();
-    if (!cpy_r_r77) goto CPyL97;
+    if (!cpy_r_r77) goto CPyL96;
     CPy_Unreachable();
 CPyL45: ;
     cpy_r_r78 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'status_code' */
     cpy_r_r79 = CPyObject_GetAttr(cpy_r_response, cpy_r_r78);
     if (unlikely(cpy_r_r79 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL117;
+        goto CPyL116;
     }
     if (likely(PyLong_Check(cpy_r_r79)))
         cpy_r_r80 = CPyTagged_FromObject(cpy_r_r79);
@@ -286406,7 +286408,7 @@ CPyL45: ;
     CPy_DECREF(cpy_r_r79);
     if (unlikely(cpy_r_r80 == CPY_INT_TAG)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL117;
+        goto CPyL116;
     }
     cpy_r_r81 = 800 & 1;
     cpy_r_r82 = cpy_r_r81 != 0;
@@ -286452,9 +286454,9 @@ CPyL58: ;
     cpy_r_r100 = PyObject_VectorcallMethod(cpy_r_r97, cpy_r_r99, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r100 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL118;
+        goto CPyL117;
     } else
-        goto CPyL119;
+        goto CPyL118;
 CPyL59: ;
     cpy_r_r101 = 400 & 1;
     cpy_r_r102 = cpy_r_r101 != 0;
@@ -286474,12 +286476,12 @@ CPyL63: ;
     if (cpy_r_r107) {
         goto CPyL65;
     } else
-        goto CPyL120;
+        goto CPyL119;
 CPyL64: ;
     if (cpy_r_r107) {
-        goto CPyL121;
+        goto CPyL120;
     } else
-        goto CPyL122;
+        goto CPyL121;
 CPyL65: ;
     cpy_r_r109 = cpy_r_r80 & 1;
     cpy_r_r110 = cpy_r_r109 != 0;
@@ -286498,9 +286500,9 @@ CPyL68: ;
 CPyL69: ;
     CPyTagged_DECREF(cpy_r_r80);
     if (cpy_r_r115) {
-        goto CPyL121;
+        goto CPyL120;
     } else
-        goto CPyL122;
+        goto CPyL121;
 CPyL70: ;
     cpy_r_r117 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'json' */
     PyObject *cpy_r_r118[1] = {cpy_r_response};
@@ -286508,349 +286510,340 @@ CPyL70: ;
     cpy_r_r120 = PyObject_VectorcallMethod(cpy_r_r117, cpy_r_r119, 9223372036854775809ULL, 0);
     if (unlikely(cpy_r_r120 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL123;
+        goto CPyL122;
     }
     CPy_DECREF(cpy_r_response);
-    cpy_r_r121 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
-    cpy_r_r122 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'keys' */
-    PyObject *cpy_r_r123[1] = {cpy_r_r120};
-    cpy_r_r124 = (PyObject **)&cpy_r_r123;
-    cpy_r_r125 = PyObject_VectorcallMethod(cpy_r_r122, cpy_r_r124, 9223372036854775809ULL, 0);
-    if (unlikely(cpy_r_r125 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL124;
+    if (likely(PyDict_Check(cpy_r_r120)))
+        cpy_r_r121 = cpy_r_r120;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 75, CPyStatic_exception_handling___globals, "dict", cpy_r_r120);
+        goto CPyL96;
     }
-    cpy_r_r126 = PySequence_Contains(cpy_r_r125, cpy_r_r121);
-    CPy_DECREF(cpy_r_r125);
-    cpy_r_r127 = cpy_r_r126 >= 0;
-    if (unlikely(!cpy_r_r127)) {
+    cpy_r_r122 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r123 = CPyDict_GetWithNone(cpy_r_r121, cpy_r_r122);
+    CPy_DECREF(cpy_r_r121);
+    if (unlikely(cpy_r_r123 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL124;
+        goto CPyL96;
     }
-    cpy_r_r128 = cpy_r_r126;
-    cpy_r_r129 = cpy_r_r128 ^ 1;
-    if (cpy_r_r129) {
-        goto CPyL125;
+    cpy_r_data = cpy_r_r123;
+    cpy_r_r124 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r125 = cpy_r_data == cpy_r_r124;
+    if (cpy_r_r125) {
+        goto CPyL123;
     } else
         goto CPyL78;
 CPyL74: ;
-    cpy_r_r130 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Improperly formatted response for offchain lookup '
+    cpy_r_r126 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Improperly formatted response for offchain lookup '
                                       "HTTP request - missing 'data' field.") */
-    cpy_r_r131 = CPyStatic_exception_handling___globals;
-    cpy_r_r132 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValidationError' */
-    cpy_r_r133 = CPyDict_GetItem(cpy_r_r131, cpy_r_r132);
-    if (unlikely(cpy_r_r133 == NULL)) {
+    cpy_r_r127 = CPyStatic_exception_handling___globals;
+    cpy_r_r128 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValidationError' */
+    cpy_r_r129 = CPyDict_GetItem(cpy_r_r127, cpy_r_r128);
+    if (unlikely(cpy_r_r129 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
-    PyObject *cpy_r_r134[1] = {cpy_r_r130};
-    cpy_r_r135 = (PyObject **)&cpy_r_r134;
-    cpy_r_r136 = PyObject_Vectorcall(cpy_r_r133, cpy_r_r135, 1, 0);
-    CPy_DECREF(cpy_r_r133);
-    if (unlikely(cpy_r_r136 == NULL)) {
+    PyObject *cpy_r_r130[1] = {cpy_r_r126};
+    cpy_r_r131 = (PyObject **)&cpy_r_r130;
+    cpy_r_r132 = PyObject_Vectorcall(cpy_r_r129, cpy_r_r131, 1, 0);
+    CPy_DECREF(cpy_r_r129);
+    if (unlikely(cpy_r_r132 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
-    CPy_Raise(cpy_r_r136);
-    CPy_DECREF(cpy_r_r136);
+    CPy_Raise(cpy_r_r132);
+    CPy_DECREF(cpy_r_r132);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     CPy_Unreachable();
 CPyL78: ;
-    cpy_r_r137 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'callbackFunction' */
-    cpy_r_r138 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r137);
-    if (unlikely(cpy_r_r138 == NULL)) {
+    cpy_r_r133 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'callbackFunction' */
+    cpy_r_r134 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r133);
+    if (unlikely(cpy_r_r134 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
         goto CPyL124;
     }
-    cpy_r_r139 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r138);
-    CPy_DECREF(cpy_r_r138);
+    cpy_r_r135 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r134);
+    CPy_DECREF(cpy_r_r134);
+    if (unlikely(cpy_r_r135 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL124;
+    }
+    cpy_r_r136 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    cpy_r_r137 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
+    CPy_INCREF(cpy_r_r136);
+    CPy_INCREF(cpy_r_r137);
+    cpy_r_r138.f0 = cpy_r_r136;
+    cpy_r_r138.f1 = cpy_r_r137;
+    cpy_r_r139 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_data);
+    CPy_DECREF(cpy_r_data);
     if (unlikely(cpy_r_r139 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL124;
+        goto CPyL125;
     }
-    cpy_r_r140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
-    cpy_r_r141 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'bytes' */
-    CPy_INCREF(cpy_r_r140);
-    CPy_INCREF(cpy_r_r141);
-    cpy_r_r142.f0 = cpy_r_r140;
-    cpy_r_r142.f1 = cpy_r_r141;
-    cpy_r_r143 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
-    cpy_r_r144 = PyObject_GetItem(cpy_r_r120, cpy_r_r143);
-    CPy_DECREF(cpy_r_r120);
-    if (unlikely(cpy_r_r144 == NULL)) {
+    cpy_r_r140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'extraData' */
+    cpy_r_r141 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r140);
+    if (unlikely(cpy_r_r141 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
         goto CPyL126;
     }
-    cpy_r_r145 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r144);
-    CPy_DECREF(cpy_r_r144);
-    if (unlikely(cpy_r_r145 == NULL)) {
+    cpy_r_r142 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r141);
+    CPy_DECREF(cpy_r_r141);
+    if (unlikely(cpy_r_r142 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
         goto CPyL126;
     }
-    cpy_r_r146 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'extraData' */
-    cpy_r_r147 = CPyDict_GetItem(cpy_r_offchain_lookup_payload, cpy_r_r146);
+    cpy_r_r143 = PyList_New(2);
+    if (unlikely(cpy_r_r143 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL127;
+    }
+    cpy_r_r144 = (CPyPtr)&((PyListObject *)cpy_r_r143)->ob_item;
+    cpy_r_r145 = *(CPyPtr *)cpy_r_r144;
+    *(PyObject * *)cpy_r_r145 = cpy_r_r139;
+    cpy_r_r146 = cpy_r_r145 + 8;
+    *(PyObject * *)cpy_r_r146 = cpy_r_r142;
+    cpy_r_r147 = CPyStatic_exception_handling___encode;
     if (unlikely(cpy_r_r147 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL127;
-    }
-    cpy_r_r148 = CPyDef_type_conversion___to_bytes_if_hex(cpy_r_r147);
-    CPy_DECREF(cpy_r_r147);
-    if (unlikely(cpy_r_r148 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL127;
-    }
-    cpy_r_r149 = PyList_New(2);
-    if (unlikely(cpy_r_r149 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
         goto CPyL128;
-    }
-    cpy_r_r150 = (CPyPtr)&((PyListObject *)cpy_r_r149)->ob_item;
-    cpy_r_r151 = *(CPyPtr *)cpy_r_r150;
-    *(PyObject * *)cpy_r_r151 = cpy_r_r145;
-    cpy_r_r152 = cpy_r_r151 + 8;
-    *(PyObject * *)cpy_r_r152 = cpy_r_r148;
-    cpy_r_r153 = CPyStatic_exception_handling___encode;
-    if (unlikely(cpy_r_r153 == NULL)) {
-        goto CPyL129;
     } else
-        goto CPyL88;
-CPyL86: ;
+        goto CPyL87;
+CPyL85: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"encode\" was not set");
-    cpy_r_r154 = 0;
-    if (unlikely(!cpy_r_r154)) {
+    cpy_r_r148 = 0;
+    if (unlikely(!cpy_r_r148)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     CPy_Unreachable();
-CPyL88: ;
-    cpy_r_r155 = PyTuple_New(2);
-    if (unlikely(cpy_r_r155 == NULL))
+CPyL87: ;
+    cpy_r_r149 = PyTuple_New(2);
+    if (unlikely(cpy_r_r149 == NULL))
         CPyError_OutOfMemory();
-    PyObject *__tmp1011 = cpy_r_r142.f0;
-    PyTuple_SET_ITEM(cpy_r_r155, 0, __tmp1011);
-    PyObject *__tmp1012 = cpy_r_r142.f1;
-    PyTuple_SET_ITEM(cpy_r_r155, 1, __tmp1012);
-    PyObject *cpy_r_r156[2] = {cpy_r_r155, cpy_r_r149};
-    cpy_r_r157 = (PyObject **)&cpy_r_r156;
-    cpy_r_r158 = PyObject_Vectorcall(cpy_r_r153, cpy_r_r157, 2, 0);
-    if (unlikely(cpy_r_r158 == NULL)) {
+    PyObject *__tmp1011 = cpy_r_r138.f0;
+    PyTuple_SET_ITEM(cpy_r_r149, 0, __tmp1011);
+    PyObject *__tmp1012 = cpy_r_r138.f1;
+    PyTuple_SET_ITEM(cpy_r_r149, 1, __tmp1012);
+    PyObject *cpy_r_r150[2] = {cpy_r_r149, cpy_r_r143};
+    cpy_r_r151 = (PyObject **)&cpy_r_r150;
+    cpy_r_r152 = PyObject_Vectorcall(cpy_r_r147, cpy_r_r151, 2, 0);
+    if (unlikely(cpy_r_r152 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL129;
+    }
+    CPy_DECREF(cpy_r_r149);
+    CPy_DECREF_NO_IMM(cpy_r_r143);
+    if (likely(PyBytes_Check(cpy_r_r152) || PyByteArray_Check(cpy_r_r152)))
+        cpy_r_r153 = cpy_r_r152;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 88, CPyStatic_exception_handling___globals, "bytes", cpy_r_r152);
         goto CPyL130;
     }
-    CPy_DECREF(cpy_r_r155);
-    CPy_DECREF_NO_IMM(cpy_r_r149);
-    if (likely(PyBytes_Check(cpy_r_r158) || PyByteArray_Check(cpy_r_r158)))
-        cpy_r_r159 = cpy_r_r158;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", 87, CPyStatic_exception_handling___globals, "bytes", cpy_r_r158);
-        goto CPyL131;
+    cpy_r_r154 = CPyBytes_Concat(cpy_r_r135, cpy_r_r153);
+    CPy_DECREF(cpy_r_r153);
+    if (unlikely(cpy_r_r154 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL96;
     }
-    cpy_r_r160 = CPyBytes_Concat(cpy_r_r139, cpy_r_r159);
+    return cpy_r_r154;
+CPyL91: ;
+    cpy_r_r155 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r155)) {
+        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL96;
+    }
+    cpy_r_r156 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Offchain lookup failed for supplied urls.' */
+    cpy_r_r157 = CPyStatic_exception_handling___globals;
+    cpy_r_r158 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MultipleFailedRequests' */
+    cpy_r_r159 = CPyDict_GetItem(cpy_r_r157, cpy_r_r158);
+    if (unlikely(cpy_r_r159 == NULL)) {
+        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
+        goto CPyL96;
+    }
+    PyObject *cpy_r_r160[1] = {cpy_r_r156};
+    cpy_r_r161 = (PyObject **)&cpy_r_r160;
+    cpy_r_r162 = PyObject_Vectorcall(cpy_r_r159, cpy_r_r161, 1, 0);
     CPy_DECREF(cpy_r_r159);
-    if (unlikely(cpy_r_r160 == NULL)) {
+    if (unlikely(cpy_r_r162 == NULL)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
-    return cpy_r_r160;
-CPyL92: ;
-    cpy_r_r161 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r161)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
-    }
-    cpy_r_r162 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Offchain lookup failed for supplied urls.' */
-    cpy_r_r163 = CPyStatic_exception_handling___globals;
-    cpy_r_r164 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MultipleFailedRequests' */
-    cpy_r_r165 = CPyDict_GetItem(cpy_r_r163, cpy_r_r164);
-    if (unlikely(cpy_r_r165 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
-    }
-    PyObject *cpy_r_r166[1] = {cpy_r_r162};
-    cpy_r_r167 = (PyObject **)&cpy_r_r166;
-    cpy_r_r168 = PyObject_Vectorcall(cpy_r_r165, cpy_r_r167, 1, 0);
-    CPy_DECREF(cpy_r_r165);
-    if (unlikely(cpy_r_r168 == NULL)) {
-        CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
-    }
-    CPy_Raise(cpy_r_r168);
-    CPy_DECREF(cpy_r_r168);
+    CPy_Raise(cpy_r_r162);
+    CPy_DECREF(cpy_r_r162);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/utils/exception_handling.py", "handle_offchain_lookup", DIFFCHECK_PLACEHOLDER, CPyStatic_exception_handling___globals);
-        goto CPyL97;
+        goto CPyL96;
     }
     CPy_Unreachable();
+CPyL96: ;
+    cpy_r_r163 = NULL;
+    return cpy_r_r163;
 CPyL97: ;
-    cpy_r_r169 = NULL;
-    return cpy_r_r169;
-CPyL98: ;
     CPy_DecRef(cpy_r_r2);
-    goto CPyL97;
+    goto CPyL96;
+CPyL98: ;
+    CPy_DecRef(cpy_r_r7);
+    goto CPyL96;
 CPyL99: ;
     CPy_DecRef(cpy_r_r7);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r10);
+    goto CPyL96;
 CPyL100: ;
     CPy_DecRef(cpy_r_r7);
-    CPy_DecRef(cpy_r_r10);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r15);
+    goto CPyL96;
 CPyL101: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
-    goto CPyL97;
-CPyL102: ;
-    CPy_DecRef(cpy_r_r7);
-    CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r19);
-    goto CPyL97;
-CPyL103: ;
+    goto CPyL96;
+CPyL102: ;
     CPy_DECREF(cpy_r_r7);
     CPy_DECREF(cpy_r_r15);
     goto CPyL14;
-CPyL104: ;
+CPyL103: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
-    goto CPyL97;
-CPyL105: ;
+    goto CPyL96;
+CPyL104: ;
     CPy_DECREF(cpy_r_r7);
     CPy_DECREF(cpy_r_r15);
     CPy_DECREF(cpy_r_r37);
     CPy_DECREF(cpy_r_r40);
-    goto CPyL92;
+    goto CPyL91;
+CPyL105: ;
+    CPy_DecRef(cpy_r_r7);
+    CPy_DecRef(cpy_r_r15);
+    CPy_DecRef(cpy_r_r37);
+    CPy_DecRef(cpy_r_r40);
+    CPy_DecRef(cpy_r_r41);
+    goto CPyL96;
 CPyL106: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
     CPy_DecRef(cpy_r_r40);
     CPy_DecRef(cpy_r_r41);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r42);
+    goto CPyL96;
 CPyL107: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
     CPy_DecRef(cpy_r_r40);
     CPy_DecRef(cpy_r_r41);
-    CPy_DecRef(cpy_r_r42);
-    goto CPyL97;
-CPyL108: ;
-    CPy_DecRef(cpy_r_r7);
-    CPy_DecRef(cpy_r_r15);
-    CPy_DecRef(cpy_r_r37);
-    CPy_DecRef(cpy_r_r40);
-    CPy_DecRef(cpy_r_r41);
     CPy_DecRef(cpy_r_r45);
-    goto CPyL97;
-CPyL109: ;
+    goto CPyL96;
+CPyL108: ;
     CPy_DecRef(cpy_r_r41);
     CPy_DecRef(cpy_r_r48);
     goto CPyL38;
-CPyL110: ;
+CPyL109: ;
     CPy_DECREF(cpy_r_r41);
     goto CPyL35;
-CPyL111: ;
+CPyL110: ;
     CPy_DecRef(cpy_r_r48);
     goto CPyL38;
-CPyL112: ;
+CPyL111: ;
     CPy_DecRef(cpy_r_r48);
     CPy_DecRef(cpy_r_r58);
     goto CPyL38;
-CPyL113: ;
+CPyL112: ;
     CPy_DecRef(cpy_r_r48);
     CPy_DecRef(cpy_r_r65);
     CPy_DecRef(cpy_r_r67);
     goto CPyL38;
-CPyL114: ;
+CPyL113: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
     CPy_DecRef(cpy_r_r40);
     goto CPyL43;
-CPyL115: ;
+CPyL114: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
     CPy_DecRef(cpy_r_r40);
     goto CPyL41;
-CPyL116: ;
+CPyL115: ;
     CPy_DecRef(cpy_r_r72.f0);
     CPy_DecRef(cpy_r_r72.f1);
     CPy_DecRef(cpy_r_r72.f2);
     goto CPyL42;
+CPyL116: ;
+    CPy_DecRef(cpy_r_r7);
+    CPy_DecRef(cpy_r_r15);
+    CPy_DecRef(cpy_r_r37);
+    CPy_DecRef(cpy_r_r40);
+    CPy_DecRef(cpy_r_response);
+    goto CPyL96;
 CPyL117: ;
     CPy_DecRef(cpy_r_r7);
     CPy_DecRef(cpy_r_r15);
     CPy_DecRef(cpy_r_r37);
     CPy_DecRef(cpy_r_r40);
     CPy_DecRef(cpy_r_response);
-    goto CPyL97;
-CPyL118: ;
-    CPy_DecRef(cpy_r_r7);
-    CPy_DecRef(cpy_r_r15);
-    CPy_DecRef(cpy_r_r37);
-    CPy_DecRef(cpy_r_r40);
-    CPy_DecRef(cpy_r_response);
     CPyTagged_DecRef(cpy_r_r80);
-    goto CPyL97;
-CPyL119: ;
+    goto CPyL96;
+CPyL118: ;
     CPy_DECREF(cpy_r_r100);
     goto CPyL59;
-CPyL120: ;
+CPyL119: ;
     CPyTagged_DECREF(cpy_r_r80);
     goto CPyL64;
-CPyL121: ;
+CPyL120: ;
     CPy_DECREF(cpy_r_r7);
     CPy_DECREF(cpy_r_r15);
     CPy_DECREF(cpy_r_r37);
     CPy_DECREF(cpy_r_r40);
     goto CPyL70;
-CPyL122: ;
+CPyL121: ;
     CPy_DECREF(cpy_r_response);
     goto CPyL22;
-CPyL123: ;
+CPyL122: ;
     CPy_DecRef(cpy_r_response);
-    goto CPyL97;
-CPyL124: ;
-    CPy_DecRef(cpy_r_r120);
-    goto CPyL97;
-CPyL125: ;
-    CPy_DECREF(cpy_r_r120);
+    goto CPyL96;
+CPyL123: ;
+    CPy_DECREF(cpy_r_data);
     goto CPyL74;
+CPyL124: ;
+    CPy_DecRef(cpy_r_data);
+    goto CPyL96;
+CPyL125: ;
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r138.f0);
+    CPy_DecRef(cpy_r_r138.f1);
+    goto CPyL96;
 CPyL126: ;
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r138.f0);
+    CPy_DecRef(cpy_r_r138.f1);
     CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r142.f0);
-    CPy_DecRef(cpy_r_r142.f1);
-    goto CPyL97;
+    goto CPyL96;
 CPyL127: ;
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r138.f0);
+    CPy_DecRef(cpy_r_r138.f1);
     CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r142.f0);
-    CPy_DecRef(cpy_r_r142.f1);
-    CPy_DecRef(cpy_r_r145);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r142);
+    goto CPyL96;
 CPyL128: ;
-    CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r142.f0);
-    CPy_DecRef(cpy_r_r142.f1);
-    CPy_DecRef(cpy_r_r145);
-    CPy_DecRef(cpy_r_r148);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r138.f0);
+    CPy_DecRef(cpy_r_r138.f1);
+    CPy_DecRef(cpy_r_r143);
+    goto CPyL85;
 CPyL129: ;
-    CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r142.f0);
-    CPy_DecRef(cpy_r_r142.f1);
+    CPy_DecRef(cpy_r_r135);
+    CPy_DecRef(cpy_r_r143);
     CPy_DecRef(cpy_r_r149);
-    goto CPyL86;
+    goto CPyL96;
 CPyL130: ;
-    CPy_DecRef(cpy_r_r139);
-    CPy_DecRef(cpy_r_r149);
-    CPy_DecRef(cpy_r_r155);
-    goto CPyL97;
-CPyL131: ;
-    CPy_DecRef(cpy_r_r139);
-    goto CPyL97;
+    CPy_DecRef(cpy_r_r135);
+    goto CPyL96;
 }
 
 PyObject *CPyPy_exception_handling___handle_offchain_lookup(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -287656,7 +287649,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\bearliest\004safe",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
@@ -288304,8 +288297,8 @@ const int CPyLit_Tuple[] = {
     76, 78, 80, 522, 82
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 395, 308, 396, 397, 296, 3, 19, 1940, 0, 2, 894, 895, 4, 1091,
-    1088, 379, 1090
+    4, 5, 308, 395, 296, 396, 397, 3, 19, 1940, 0, 2, 894, 895, 4, 1091,
+    1090, 1088, 379
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
