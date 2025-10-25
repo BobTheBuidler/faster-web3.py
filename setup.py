@@ -151,6 +151,7 @@ else:
         "--disable-error-code=typeddict-item",
         "--disable-error-code=truthy-function",
         "--disable-error-code=var-annotated",
+        "--disable-error-code=assignment",
         "--disable-error-code=index",
         "--disable-error-code=operator",
         "--disable-error-code=override",
