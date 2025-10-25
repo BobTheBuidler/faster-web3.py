@@ -67,7 +67,7 @@ class WebSocketProvider(PersistentConnectionProvider):
         **kwargs: Any,
     ) -> None:
         # initialize the endpoint_uri before calling the super constructor
-        endpoint = URI(endpoint_uri) or get_default_endpoint()
+        endpoint = URI(endpoint_uri) if endpoint_uri else get_default_endpoint()
         self.endpoint_uri: Final = endpoint
         super().__init__(**kwargs)
         self.use_text_frames: Final = use_text_frames
