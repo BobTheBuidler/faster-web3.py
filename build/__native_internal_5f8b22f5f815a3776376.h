@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2321];
+extern PyObject *CPyStatics[2318];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -1061,7 +1061,6 @@ extern PyObject *CPyDef_contracts___copy_contract_event(PyObject *cpy_r_contract
 extern PyObject *CPyPy_contracts___copy_contract_event(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_contracts_____top_level__(void);
 extern PyObject *CPyStatic_datatypes___apply_formatters_to_dict;
-extern PyObject *CPyStatic_datatypes___concat;
 extern PyTypeObject *CPyType_datatypes___PropertyCheckingFactory;
 extern PyTypeObject *CPyType_datatypes_____init___3_PropertyCheckingFactory_obj;
 extern PyObject *CPyDef_datatypes_____init___3_PropertyCheckingFactory_obj(void);
