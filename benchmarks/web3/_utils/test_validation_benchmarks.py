@@ -9,12 +9,12 @@ from eth_utils.abi import function_abi_to_4byte_selector
 from eth_utils.hexadecimal import encode_hex
 
 # --- Helpers ---
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
+def run_1000(func, *args, **kwargs):
+    for _ in range(1000):
         func(*args, **kwargs)
 
-def run_100_exc(exc, func, *args, **kwargs):
-    for _ in range(100):
+def run_1000_exc(exc, func, *args, **kwargs):
+    for _ in range(1000):
         try:
             func(*args, **kwargs)
         except exc:
@@ -80,105 +80,105 @@ error_rpc_response = {
 @pytest.mark.benchmark(group="validation-validate_abi")
 @pytest.mark.parametrize("abi", [erc20_abi, uniswap_v2_pair_abi, compound_cDAI_abi])
 def test_validate_abi(benchmark: BenchmarkFixture, abi):
-    benchmark(run_100, web3._utils.validation.validate_abi, abi)
+    benchmark(run_1000, web3._utils.validation.validate_abi, abi)
 
 @pytest.mark.benchmark(group="validation-validate_abi")
 @pytest.mark.parametrize("abi", [erc20_abi, uniswap_v2_pair_abi, compound_cDAI_abi])
 def test_faster_validate_abi(benchmark: BenchmarkFixture, abi):
-    benchmark(run_100, faster_web3._utils.validation.validate_abi, abi)
+    benchmark(run_1000, faster_web3._utils.validation.validate_abi, abi)
 
 @pytest.mark.benchmark(group="validation-_prepare_selector_collision_msg")
 def test_prepare_selector_collision_msg(benchmark: BenchmarkFixture):
-    benchmark(run_100, web3._utils.validation._prepare_selector_collision_msg, fake_duplicates)
+    benchmark(run_1000, web3._utils.validation._prepare_selector_collision_msg, fake_duplicates)
 
 @pytest.mark.benchmark(group="validation-_prepare_selector_collision_msg")
 def test_faster_prepare_selector_collision_msg(benchmark: BenchmarkFixture):
-    benchmark(run_100, faster_web3._utils.validation._prepare_selector_collision_msg, fake_duplicates)
+    benchmark(run_1000, faster_web3._utils.validation._prepare_selector_collision_msg, fake_duplicates)
 
 @pytest.mark.benchmark(group="validation-validate_abi_type")
 @pytest.mark.parametrize("abi_type", valid_types)
 def test_validate_abi_type(benchmark: BenchmarkFixture, abi_type):
-    benchmark(run_100, web3._utils.validation.validate_abi_type, abi_type)
+    benchmark(run_1000, web3._utils.validation.validate_abi_type, abi_type)
 
 @pytest.mark.benchmark(group="validation-validate_abi_type")
 @pytest.mark.parametrize("abi_type", valid_types)
 def test_faster_validate_abi_type(benchmark: BenchmarkFixture, abi_type):
-    benchmark(run_100, faster_web3._utils.validation.validate_abi_type, abi_type)
+    benchmark(run_1000, faster_web3._utils.validation.validate_abi_type, abi_type)
 
 @pytest.mark.benchmark(group="validation-validate_abi_value")
 @pytest.mark.parametrize("abi_type,value", zip(valid_types, valid_values))
 def test_validate_abi_value(benchmark: BenchmarkFixture, abi_type, value):
-    benchmark(run_100, web3._utils.validation.validate_abi_value, abi_type, value)
+    benchmark(run_1000, web3._utils.validation.validate_abi_value, abi_type, value)
 
 @pytest.mark.benchmark(group="validation-validate_abi_value")
 @pytest.mark.parametrize("abi_type,value", zip(valid_types, valid_values))
 def test_faster_validate_abi_value(benchmark: BenchmarkFixture, abi_type, value):
-    benchmark(run_100, faster_web3._utils.validation.validate_abi_value, abi_type, value)
+    benchmark(run_1000, faster_web3._utils.validation.validate_abi_value, abi_type, value)
 
 @pytest.mark.benchmark(group="validation-is_not_address_string")
 @pytest.mark.parametrize("val", [valid_ens, "notanaddress", "0x123", b"bytes", valid_address])
 def test_is_not_address_string(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, web3._utils.validation.is_not_address_string, val)
+    benchmark(run_1000, web3._utils.validation.is_not_address_string, val)
 
 @pytest.mark.benchmark(group="validation-is_not_address_string")
 @pytest.mark.parametrize("val", [valid_ens, "notanaddress", "0x123", b"bytes", valid_address])
 def test_faster_is_not_address_string(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, faster_web3._utils.validation.is_not_address_string, val)
+    benchmark(run_1000, faster_web3._utils.validation.is_not_address_string, val)
 
 @pytest.mark.benchmark(group="validation-validate_address")
 @pytest.mark.parametrize("val", [valid_address, valid_ens])
 def test_validate_address(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, web3._utils.validation.validate_address, val)
+    benchmark(run_1000, web3._utils.validation.validate_address, val)
 
 @pytest.mark.benchmark(group="validation-validate_address")
 @pytest.mark.parametrize("val", [valid_address, valid_ens])
 def test_faster_validate_address(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, faster_web3._utils.validation.validate_address, val)
+    benchmark(run_1000, faster_web3._utils.validation.validate_address, val)
 
 @pytest.mark.benchmark(group="validation-has_one_val")
 def test_has_one_val(benchmark: BenchmarkFixture):
-    benchmark(run_100, web3._utils.validation.has_one_val, *one_val_args)
+    benchmark(run_1000, web3._utils.validation.has_one_val, *one_val_args)
 
 @pytest.mark.benchmark(group="validation-has_one_val")
 def test_faster_has_one_val(benchmark: BenchmarkFixture):
-    benchmark(run_100, faster_web3._utils.validation.has_one_val, *one_val_args)
+    benchmark(run_1000, faster_web3._utils.validation.has_one_val, *one_val_args)
 
 @pytest.mark.benchmark(group="validation-assert_one_val")
 def test_assert_one_val(benchmark: BenchmarkFixture):
-    benchmark(run_100, web3._utils.validation.assert_one_val, *one_val_args)
+    benchmark(run_1000, web3._utils.validation.assert_one_val, *one_val_args)
 
 @pytest.mark.benchmark(group="validation-assert_one_val")
 def test_faster_assert_one_val(benchmark: BenchmarkFixture):
-    benchmark(run_100, faster_web3._utils.validation.assert_one_val, *one_val_args)
+    benchmark(run_1000, faster_web3._utils.validation.assert_one_val, *one_val_args)
 
 @pytest.mark.benchmark(group="validation-_validate_subscription_fields")
 def test_validate_subscription_fields(benchmark: BenchmarkFixture):
-    benchmark(run_100, web3._utils.validation._validate_subscription_fields, valid_subscription_response)
+    benchmark(run_1000, web3._utils.validation._validate_subscription_fields, valid_subscription_response)
 
 @pytest.mark.benchmark(group="validation-_validate_subscription_fields")
 def test_faster_validate_subscription_fields(benchmark: BenchmarkFixture):
-    benchmark(run_100, faster_web3._utils.validation._validate_subscription_fields, valid_subscription_response)
+    benchmark(run_1000, faster_web3._utils.validation._validate_subscription_fields, valid_subscription_response)
 
 @pytest.mark.benchmark(group="validation-_raise_bad_response_format")
 def test_raise_bad_response_format(benchmark: BenchmarkFixture):
-    benchmark(run_100_exc, web3.exceptions.BadResponseFormat, web3._utils.validation._raise_bad_response_format, bad_response)
+    benchmark(run_1000_exc, web3.exceptions.BadResponseFormat, web3._utils.validation._raise_bad_response_format, bad_response)
 
 @pytest.mark.benchmark(group="validation-_raise_bad_response_format")
 def test_faster_raise_bad_response_format(benchmark: BenchmarkFixture):
-    benchmark(run_100_exc, faster_web3.exceptions.BadResponseFormat, faster_web3._utils.validation._raise_bad_response_format, bad_response)
+    benchmark(run_1000_exc, faster_web3.exceptions.BadResponseFormat, faster_web3._utils.validation._raise_bad_response_format, bad_response)
 
 @pytest.mark.benchmark(group="validation-raise_error_for_batch_response")
 def test_raise_error_for_batch_response(benchmark: BenchmarkFixture):
-    benchmark(run_100_exc, web3.exceptions.Web3RPCError, web3._utils.validation.raise_error_for_batch_response, error_rpc_response)
+    benchmark(run_1000_exc, web3.exceptions.Web3RPCError, web3._utils.validation.raise_error_for_batch_response, error_rpc_response)
 
 @pytest.mark.benchmark(group="validation-raise_error_for_batch_response")
 def test_faster_raise_error_for_batch_response(benchmark: BenchmarkFixture):
-    benchmark(run_100_exc, faster_web3.exceptions.Web3RPCError, faster_web3._utils.validation.raise_error_for_batch_response, error_rpc_response)
+    benchmark(run_1000_exc, faster_web3.exceptions.Web3RPCError, faster_web3._utils.validation.raise_error_for_batch_response, error_rpc_response)
 
 @pytest.mark.benchmark(group="validation-validate_rpc_response_and_raise_if_error")
 def test_validate_rpc_response_and_raise_if_error(benchmark: BenchmarkFixture):
-    benchmark(run_100, web3._utils.validation.validate_rpc_response_and_raise_if_error, valid_rpc_response, None)
+    benchmark(run_1000, web3._utils.validation.validate_rpc_response_and_raise_if_error, valid_rpc_response, None)
 
 @pytest.mark.benchmark(group="validation-validate_rpc_response_and_raise_if_error")
 def test_faster_validate_rpc_response_and_raise_if_error(benchmark: BenchmarkFixture):
-    benchmark(run_100, faster_web3._utils.validation.validate_rpc_response_and_raise_if_error, valid_rpc_response, None)
+    benchmark(run_1000, faster_web3._utils.validation.validate_rpc_response_and_raise_if_error, valid_rpc_response, None)
