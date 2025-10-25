@@ -10,7 +10,6 @@ from typing import (
 )
 
 from faster_eth_utils.toolz import (
-    assoc,
     curry,
 )
 
@@ -55,6 +54,8 @@ def _apply_response_formatters(
     error_formatters: Formatters,
     response: RPCResponse,
 ) -> RPCResponse:
+    response = response.copy()
+
     def _format_response(
         response_type: Literal["result", "error", "params"],
         method_response_formatter: Callable[..., Any],
@@ -63,19 +64,12 @@ def _apply_response_formatters(
 
         if response_type == "params":
             appropriate_response = cast(EthSubscriptionParams, response[response_type])
-            return assoc(
-                response,
-                response_type,
-                assoc(
-                    response["params"],
-                    "result",
-                    method_response_formatter(appropriate_response["result"]),
-                ),
-            )
+            params = response["params"].copy()
+            params["result"] = method_response_formatter(appropriate_response["result"])
+            response[response_type] = params
         else:
-            return assoc(
-                response, response_type, method_response_formatter(appropriate_response)
-            )
+            response[response_type] = method_response_formatter(appropriate_response)
+        return response
 
     if not isinstance(response, dict):
         raise BadResponseFormat(

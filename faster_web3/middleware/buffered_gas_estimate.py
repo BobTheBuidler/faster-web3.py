@@ -4,10 +4,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    assoc,
-)
-
 from faster_web3._utils.async_transactions import (
     get_buffered_gas_estimate as async_get_buffered_gas_estimate,
 )
@@ -37,10 +33,9 @@ class BufferedGasEstimateMiddleware(Web3Middleware):
         if method == "eth_sendTransaction":
             transaction = params[0]
             if "gas" not in transaction:
-                transaction = assoc(
-                    transaction,
-                    "gas",
-                    hex(get_buffered_gas_estimate(cast("Web3", self._w3), transaction)),
+                transaction = transaction.copy()
+                transaction["gas"] = hex(
+                    get_buffered_gas_estimate(cast("Web3", self._w3), transaction)
                 )
                 params = (transaction,)
         return method, params
@@ -54,6 +49,7 @@ class BufferedGasEstimateMiddleware(Web3Middleware):
                 gas_estimate = await async_get_buffered_gas_estimate(
                     cast("AsyncWeb3[Any]", self._w3), transaction
                 )
-                transaction = assoc(transaction, "gas", hex(gas_estimate))
+                transaction = transaction.copy()
+                transaction["gas"] = hex(gas_estimate)
                 params = (transaction,)
         return method, params

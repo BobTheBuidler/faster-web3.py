@@ -35,9 +35,6 @@ from faster_eth_utils import (
     remove_0x_prefix,
     to_bytes,
 )
-from faster_eth_utils.toolz import (
-    assoc,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -867,7 +864,8 @@ class AsyncEthModuleTest:
             "maxPriorityFeePerGas": max_priority_fee,
         }
         if max_fee is not None:
-            txn_params = assoc(txn_params, "maxFeePerGas", max_fee)
+            txn_params = txn_params.copy()
+            txn_params["maxFeePerGas"] = max_fee
 
         def gas_price_strategy(w3: "Web3", txn: TxParams) -> Wei:
             return async_w3.to_wei(2, "gwei")
@@ -3466,7 +3464,8 @@ class EthModuleTest:
             "maxPriorityFeePerGas": max_priority_fee,
         }
         if max_fee is not None:
-            txn_params = assoc(txn_params, "maxFeePerGas", max_fee)
+            txn_params = txn_params.copy()
+            txn_params["maxFeePerGas"] = max_fee
 
         def gas_price_strategy(_w3: "Web3", _txn: TxParams) -> Wei:
             return w3.to_wei(2, "gwei")

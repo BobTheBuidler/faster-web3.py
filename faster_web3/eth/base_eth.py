@@ -19,9 +19,6 @@ from faster_eth_utils import (
     is_checksum_address,
     is_string,
 )
-from faster_eth_utils.toolz import (
-    assoc,
-)
 
 from faster_web3._utils.empty import (
     Empty,
@@ -80,9 +77,11 @@ class BaseEth(Module):
         self._default_account = account
 
     def send_transaction_munger(self, transaction: TxParams) -> Tuple[TxParams]:
-        if "from" not in transaction and is_checksum_address(self.default_account):
-            transaction = assoc(transaction, "from", self.default_account)
-
+        if "from" not in transaction:
+            default_account = self.default_account
+            if is_checksum_address(default_account):
+                transaction = transaction.copy()
+                transaction["from"] = default_account
         return (transaction,)
 
     def generate_gas_price(
@@ -107,8 +106,11 @@ class BaseEth(Module):
         Tuple[TxParams, BlockIdentifier, StateOverride],
     ]:
         # TODO: move to middleware
-        if "from" not in transaction and is_checksum_address(self.default_account):
-            transaction = assoc(transaction, "from", self.default_account)
+        if "from" not in transaction:
+            default_account = self.default_account
+            if is_checksum_address(default_account):
+                transaction = transaction.copy()
+                transaction["from"] = default_account
 
         # TODO: move to middleware
         if block_identifier is None:
@@ -173,8 +175,11 @@ class BaseEth(Module):
         self, transaction: TxParams, block_identifier: Optional[BlockIdentifier] = None
     ) -> Tuple[TxParams, BlockIdentifier]:
         # TODO: move to middleware
-        if "from" not in transaction and is_checksum_address(self.default_account):
-            transaction = assoc(transaction, "from", self.default_account)
+        if "from" not in transaction:
+            default_account = self.default_account
+            if is_checksum_address(default_account):
+                transaction = transaction.copy()
+                transaction["from"] = default_account
 
         # TODO: move to middleware
         if block_identifier is None:

@@ -11,9 +11,6 @@ from typing import (
 from eth_typing import (
     ChecksumAddress,
 )
-from faster_eth_utils.toolz import (
-    assoc,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -119,7 +116,8 @@ async def async_fill_nonce(
             cast(ChecksumAddress, transaction["from"]),
             block_identifier="pending",
         )
-        return assoc(transaction, "nonce", tx_count)
+        transaction = transaction.copy()
+        transaction["nonce"] = tx_count
     return transaction
 
 

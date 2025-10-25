@@ -14,7 +14,6 @@ from eth_typing import (
     ChecksumAddress,
 )
 from faster_eth_utils.toolz import (
-    assoc,
     curry,
 )
 from faster_hexbytes import (
@@ -98,15 +97,11 @@ if TYPE_CHECKING:
 @curry
 def fill_nonce(w3: "Web3", transaction: TxParams) -> TxParams:
     if "from" in transaction and "nonce" not in transaction:
-        return assoc(
-            transaction,
-            "nonce",
-            w3.eth.get_transaction_count(
-                cast(ChecksumAddress, transaction["from"]), block_identifier="pending"
-            ),
+        transaction = transaction.copy()
+        transaction["nonce"] = w3.eth.get_transaction_count(
+            cast(ChecksumAddress, transaction["from"]), block_identifier="pending"
         )
-    else:
-        return transaction
+    return transaction
 
 
 @curry
@@ -214,9 +209,9 @@ def extract_valid_transaction_params(transaction_params: TxData) -> TxParams:
             return extracted_params
     elif extracted_params.get("data") is None:
         if transaction_params.get("input") is not None:
-            return assoc(extracted_params, "data", transaction_params["input"])
-        else:
-            return extracted_params
+            extracted_params = extracted_params.copy()
+            extracted_params["data"] = transaction_params["input"]
+        return extracted_params
     else:
         raise Exception(
             "Unreachable path: transaction's 'data' is either set or not set"
@@ -248,9 +243,8 @@ def prepare_replacement_transaction(
         )
 
     if "nonce" not in replacement_transaction:
-        replacement_transaction = assoc(
-            replacement_transaction, "nonce", original_transaction["nonce"]
-        )
+        replacement_transaction = replacement_transaction.copy()
+        replacement_transaction["nonce"] = original_transaction["nonce"]
 
     if any_in_dict(DYNAMIC_FEE_TXN_PARAMS, replacement_transaction):
         # for now, the client decides if a dynamic fee txn can replace
@@ -271,14 +265,12 @@ def prepare_replacement_transaction(
         minimum_gas_price = int(
             math.ceil(original_transaction["gasPrice"] * gas_multiplier)
         )
-        if generated_gas_price and generated_gas_price > minimum_gas_price:
-            replacement_transaction = assoc(
-                replacement_transaction, "gasPrice", generated_gas_price
-            )
-        else:
-            replacement_transaction = assoc(
-                replacement_transaction, "gasPrice", minimum_gas_price
-            )
+        replacement_transaction = replacement_transaction.copy()
+        replacement_transaction["gasPrice"] = (
+            generated_gas_price
+            if generated_gas_price and generated_gas_price > minimum_gas_price
+            else minimum_gas_price
+        )
 
     return replacement_transaction
 
