@@ -133,7 +133,7 @@ def async_mock_offchain_lookup_request_response(
 
         @staticmethod
         def raise_for_status() -> None:
-            raise Exception("called raise_for_status()")  # noqa: E501, E704
+            raise Exception("called raise_for_status()")  # noqa: E704
 
     async def _mock_specific_request(
         *args: Any, **kwargs: Any
@@ -166,7 +166,7 @@ class WebSocketMessageStreamMock:
     def __init__(
         self, messages: Collection[bytes] = None, raise_exception: Exception = None
     ) -> None:
-        self.queue = asyncio.Queue()  # type: ignore  # py38 issue
+        self.queue = asyncio.Queue()
         for msg in messages or []:
             self.queue.put_nowait(msg)
         self.raise_exception = raise_exception

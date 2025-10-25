@@ -1,6 +1,6 @@
-import asyncio
 import hashlib
 import threading
+from inspect import isawaitable
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -47,6 +47,10 @@ from faster_web3.exceptions import (
 )
 from faster_web3.types import (
     RPCEndpoint,
+    RPCRequest,
+    RPCResponse,
+    RPCResponseCoro,
+    TReturn,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -58,15 +62,7 @@ if TYPE_CHECKING:
         BaseProvider,
         PersistentConnectionProvider,
     )
-    from faster_web3.types import (  # noqa: F401
-        AsyncMakeRequestFn,
-        MakeRequestFn,
-        RPCRequest,
-        RPCResponse,
-    )
 
-
-iscoroutinefunction: Final = asyncio.iscoroutinefunction
 
 md5: Final = hashlib.md5
 
@@ -80,6 +76,9 @@ is_null: Final = faster_eth_utils.is_null
 is_number: Final = faster_eth_utils.is_number
 is_text: Final = faster_eth_utils.is_text
 to_bytes: Final = faster_eth_utils.to_bytes
+
+
+SyncValidatorFunc = Callable[["BaseProvider", Sequence[Any], Dict[str, Any]], bool]
 
 
 def generate_cache_key(value: Any) -> str:
@@ -124,7 +123,17 @@ class RequestInformation:
         self.params: Final = params
         self.response_formatters: Final = response_formatters
         self.subscription_id: Final = subscription_id
-        self.middleware_response_processors: Final[List[Callable[..., Any]]] = []
+        self.middleware_response_processors: Final[List[Callable[[Any], Any]]] = []
+
+    def __repr__(self) -> str:
+        attrs = {
+            "method": self.method,
+            "params": self.params,
+            "response_formatters": self.response_formatters,
+            "subscription_id": self.subscription_id,
+            "middleware_response_processors": self.middleware_response_processors,
+        }
+        return f"RequestInformation({attrs!r})"
 
 
 DEFAULT_VALIDATION_THRESHOLD: Final = 60 * 60  # 1 hour
@@ -165,40 +174,40 @@ def is_cacheable_request(
 
 # -- request caching -- #
 
-ALWAYS_CACHE: Final = frozenset({
-    RPC.eth_chainId,
-    RPC.web3_clientVersion,
-    RPC.net_version,
-})
-BLOCKNUM_IN_PARAMS: Final = frozenset({
-    RPC.eth_getBlockByNumber,
-    RPC.eth_getRawTransactionByBlockNumberAndIndex,
-    RPC.eth_getBlockTransactionCountByNumber,
-    RPC.eth_getUncleByBlockNumberAndIndex,
-    RPC.eth_getUncleCountByBlockNumber,
-})
-BLOCK_IN_RESULT: Final = frozenset({
-    RPC.eth_getBlockByHash,
-    RPC.eth_getTransactionByHash,
-    RPC.eth_getTransactionByBlockNumberAndIndex,
-    RPC.eth_getTransactionByBlockHashAndIndex,
-    RPC.eth_getBlockTransactionCountByHash,
-})
-BLOCKHASH_IN_PARAMS: Final = frozenset({
-    RPC.eth_getRawTransactionByBlockHashAndIndex,
-    RPC.eth_getUncleByBlockHashAndIndex,
-    RPC.eth_getUncleCountByBlockHash,
-})
+ALWAYS_CACHE: Final = frozenset(
+    {
+        RPC.eth_chainId,
+        RPC.web3_clientVersion,
+        RPC.net_version,
+    }
+)
+BLOCKNUM_IN_PARAMS: Final = frozenset(
+    {
+        RPC.eth_getBlockByNumber,
+        RPC.eth_getRawTransactionByBlockNumberAndIndex,
+        RPC.eth_getBlockTransactionCountByNumber,
+        RPC.eth_getUncleByBlockNumberAndIndex,
+        RPC.eth_getUncleCountByBlockNumber,
+    }
+)
+BLOCK_IN_RESULT: Final = frozenset(
+    {
+        RPC.eth_getBlockByHash,
+        RPC.eth_getTransactionByHash,
+        RPC.eth_getTransactionByBlockNumberAndIndex,
+        RPC.eth_getTransactionByBlockHashAndIndex,
+        RPC.eth_getBlockTransactionCountByHash,
+    }
+)
+BLOCKHASH_IN_PARAMS: Final = frozenset(
+    {
+        RPC.eth_getRawTransactionByBlockHashAndIndex,
+        RPC.eth_getUncleByBlockHashAndIndex,
+        RPC.eth_getUncleCountByBlockHash,
+    }
+)
 
-INTERNAL_VALIDATION_MAP: Final[
-    Dict[
-        RPCEndpoint,
-        Callable[
-            [SYNC_PROVIDER_TYPE, Sequence[Any], Dict[str, Any]],
-            bool,
-        ],
-    ],
-] = {
+INTERNAL_VALIDATION_MAP: Final[Dict[RPCEndpoint, SyncValidatorFunc]] = {
     **{endpoint: always_cache_request for endpoint in ALWAYS_CACHE},
     **{endpoint: validate_from_block_id_in_params for endpoint in BLOCKNUM_IN_PARAMS},
     **{endpoint: validate_from_blocknum_in_result for endpoint in BLOCK_IN_RESULT},
@@ -245,39 +254,38 @@ def _should_cache_response(
         return False
 
     set_threshold_if_empty(provider)
+    cache_validator = INTERNAL_VALIDATION_MAP.get(method)
     if (
-        method in INTERNAL_VALIDATION_MAP
+        cache_validator is not None
         and provider.request_cache_validation_threshold is not None
     ):
-        return INTERNAL_VALIDATION_MAP[method](provider, params, result)
+        return cache_validator(provider, params, result)
     return True
 
 
 def handle_request_caching(
-    func: Callable[[SYNC_PROVIDER_TYPE, RPCEndpoint, Any], "RPCResponse"]
+    func: Callable[[SYNC_PROVIDER_TYPE, RPCEndpoint, Any], "RPCResponse"],
 ) -> Callable[..., "RPCResponse"]:
     def wrapper(
         provider: SYNC_PROVIDER_TYPE, method: RPCEndpoint, params: Any
     ) -> "RPCResponse":
-        if is_cacheable_request(provider, method, params):
-            request_cache = provider._request_cache
-            cache_key = generate_cache_key(
-                f"{get_ident()}:{(method, params)}"
-            )
-            cache_result = request_cache.get_cache_entry(cache_key)
-            if cache_result is not None:
-                return cache_result
-            else:
-                response = func(provider, method, params)
-                if _should_cache_response(provider, method, params, response):
-                    with provider._request_cache_lock:
-                        request_cache.cache(cache_key, response)
-                return response
-        else:
+        if not is_cacheable_request(provider, method, params):
             return func(provider, method, params)
 
+        request_cache = provider._request_cache
+        cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
+        cache_result = request_cache.get_cache_entry(cache_key)
+        if cache_result is not None:
+            return cache_result
+
+        response = func(provider, method, params)
+        if _should_cache_response(provider, method, params, response):
+            with provider._request_cache_lock:
+                request_cache.cache(cache_key, response)
+        return response
+
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = handle_request_caching  # type: ignore
+    wrapper._decorator = handle_request_caching  # type: ignore [attr-defined]
     return wrapper
 
 
@@ -342,65 +350,55 @@ async def _async_should_cache_response(
         return False
 
     await async_set_threshold_if_empty(provider)
+    cache_validator = ASYNC_INTERNAL_VALIDATION_MAP.get(method)
     if (
-        method in ASYNC_INTERNAL_VALIDATION_MAP
+        cache_validator is not None
         and provider.request_cache_validation_threshold is not None
     ):
-        cache_validator = ASYNC_INTERNAL_VALIDATION_MAP[method]
-        return (
-            await cache_validator(provider, params, result)
-            if iscoroutinefunction(cache_validator)
-            else cache_validator(provider, params, result)
-        )
+        should_cache = cache_validator(provider, params, result)
+        return await should_cache if isawaitable(should_cache) else should_cache
     return True
 
 
 def async_handle_request_caching(
-    func: Callable[
-        [ASYNC_PROVIDER_TYPE, RPCEndpoint, Any], Coroutine[Any, Any, "RPCResponse"]
-    ],
-) -> Callable[..., Coroutine[Any, Any, "RPCResponse"]]:
+    func: Callable[[ASYNC_PROVIDER_TYPE, RPCEndpoint, Any], RPCResponseCoro],
+) -> Callable[..., RPCResponseCoro]:
     async def wrapper(
         provider: ASYNC_PROVIDER_TYPE, method: RPCEndpoint, params: Any
     ) -> "RPCResponse":
-        if is_cacheable_request(provider, method, params):
-            request_cache = provider._request_cache
-            cache_key = generate_cache_key(
-                f"{get_ident()}:{(method, params)}"
-            )
-            cache_result = request_cache.get_cache_entry(cache_key)
-            if cache_result is not None:
-                return cache_result
-            else:
-                response = await func(provider, method, params)
-                if await _async_should_cache_response(
-                    provider, method, params, response
-                ):
-                    async with provider._request_cache_lock:
-                        request_cache.cache(cache_key, response)
-                return response
-        else:
+        if not is_cacheable_request(provider, method, params):
             return await func(provider, method, params)
 
+        request_cache = provider._request_cache
+        cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
+        cache_result = request_cache.get_cache_entry(cache_key)
+        if cache_result is not None:
+            return cache_result
+
+        response = await func(provider, method, params)
+        if await _async_should_cache_response(provider, method, params, response):
+            async with provider._request_cache_lock:
+                request_cache.cache(cache_key, response)
+        return response
+
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_request_caching  # type: ignore
+    wrapper._decorator = async_handle_request_caching  # type: ignore [attr-defined]
     return wrapper
 
 
-def async_handle_send_caching(
-    func: Callable[
-        [ASYNC_PROVIDER_TYPE, RPCEndpoint, Any],
-        Coroutine[Any, Any, "RPCRequest"],
-    ],
-) -> Callable[..., Coroutine[Any, Any, "RPCRequest"]]:
+AsyncSendFunc = Callable[
+    [ASYNC_PROVIDER_TYPE, RPCEndpoint, Any],
+    Coroutine[Any, Any, RPCRequest],
+]
+
+
+def async_handle_send_caching(func: AsyncSendFunc) -> AsyncSendFunc:
     async def wrapper(
         provider: ASYNC_PROVIDER_TYPE, method: RPCEndpoint, params: Any
     ) -> "RPCRequest":
         if is_cacheable_request(provider, method, params):
             request_cache = provider._request_cache
-            cache_key = generate_cache_key(
-                f"{get_ident()}:{(method, params)}"
-            )
+            cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
             cached_response = request_cache.get_cache_entry(cache_key)
             if cached_response is not None:
                 # The request data isn't used, this just prevents a cached request from
@@ -409,41 +407,51 @@ def async_handle_send_caching(
         return await func(provider, method, params)
 
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_send_caching  # type: ignore
+    wrapper._decorator = async_handle_send_caching  # type: ignore [attr-defined]
     return wrapper
 
 
-def async_handle_recv_caching(
-    func: Callable[
-        ["PersistentConnectionProvider", "RPCRequest"],
-        Coroutine[Any, Any, "RPCResponse"],
-    ]
-) -> Callable[..., Coroutine[Any, Any, "RPCResponse"]]:
+AsyncRecvFunc = Callable[
+    ["PersistentConnectionProvider", RPCRequest],
+    # TReturn should be a RPCResponse unless we're mocking, in which case it's a string
+    Coroutine[Any, Any, TReturn],
+]
+
+
+def async_handle_recv_caching(func: AsyncRecvFunc) -> AsyncRecvFunc:
     async def wrapper(
         provider: "PersistentConnectionProvider",
         rpc_request: "RPCRequest",
     ) -> "RPCResponse":
         method = rpc_request["method"]
         params = rpc_request["params"]
-        if is_cacheable_request(provider, method, params):
-            request_cache = provider._request_cache
-            cache_key = generate_cache_key(
-                f"{get_ident()}:{(method, params)}"
-            )
-            cache_result = request_cache.get_cache_entry(cache_key)
-            if cache_result is not None:
-                return cache_result
-            else:
-                response = await func(provider, rpc_request)
-                if await _async_should_cache_response(
-                    provider, method, params, response
-                ):
-                    async with provider._request_cache_lock:
-                        request_cache.cache(cache_key, response)
-                return response
-        else:
+        if not is_cacheable_request(provider, method, params):
             return await func(provider, rpc_request)
 
+        request_cache = provider._request_cache
+        cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
+        cache_result = request_cache.get_cache_entry(cache_key)
+        if cache_result is not None:
+            return cache_result
+
+        response = await func(provider, rpc_request)
+        if await _async_should_cache_response(provider, method, params, response):
+            async with provider._request_cache_lock:
+                request_cache.cache(cache_key, response)
+        return response
+
+        request_cache = provider._request_cache
+        cache_key = generate_cache_key(f"{get_ident()}:{(method, params)}")
+        cache_result = request_cache.get_cache_entry(cache_key)
+        if cache_result is not None:
+            return cache_result
+
+        response = await func(provider, rpc_request)
+        if await _async_should_cache_response(provider, method, params, response):
+            async with provider._request_cache_lock:
+                request_cache.cache(cache_key, response)
+        return response
+
     # save a reference to the decorator on the wrapped function
-    wrapper._decorator = async_handle_recv_caching  # type: ignore
+    wrapper._decorator = async_handle_recv_caching  # type: ignore [attr-defined]
     return wrapper

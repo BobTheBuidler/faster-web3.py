@@ -3,17 +3,16 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Final,
 )
 
 from faster_eth_utils.curried import (
     apply_formatter_at_index,
     apply_formatter_if,
     apply_formatters_to_dict,
-    is_null,
     is_string,
 )
 from faster_eth_utils.toolz import (
-    complement,
     compose,
     curry,
     dissoc,
@@ -48,10 +47,15 @@ if TYPE_CHECKING:
         Web3,
     )
 
-MAX_EXTRADATA_LENGTH = 32
+MAX_EXTRADATA_LENGTH: Final = 32
 
-is_not_null = complement(is_null)
-to_integer_if_hex = apply_formatter_if(is_string, hex_to_integer)
+
+def is_not_null(value: Any) -> bool:
+    return value is not None
+
+
+def to_integer_if_hex(value: Any) -> Any:
+    return hex_to_integer(value) if is_string(value) else value
 
 
 @curry
@@ -121,7 +125,7 @@ def _chain_id_validator(web3_chain_id: int) -> Callable[..., Any]:
 
 
 def _build_formatters_dict(
-    request_formatters: Dict[RPCEndpoint, Any]
+    request_formatters: Dict[RPCEndpoint, Any],
 ) -> FormattersDict:
     return dict(
         request_formatters=request_formatters,
@@ -149,7 +153,7 @@ def build_method_validators(w3: "Web3", method: RPCEndpoint) -> FormattersDict:
 
 
 async def async_build_method_validators(
-    async_w3: "AsyncWeb3", method: RPCEndpoint
+    async_w3: "AsyncWeb3[Any]", method: RPCEndpoint
 ) -> FormattersDict:
     request_formatters: Formatters = {}
     if RPCEndpoint(method) in METHODS_TO_VALIDATE:

@@ -1,13 +1,10 @@
 import logging
 import time
 from typing import (
-    TYPE_CHECKING,
     Any,
     Dict,
-    Iterable,
     List,
     Optional,
-    Tuple,
     Union,
     cast,
 )
@@ -17,7 +14,6 @@ from eth_typing import (
 )
 from faster_eth_utils import (
     combomethod,
-    to_dict,
 )
 import requests
 
@@ -29,6 +25,8 @@ from faster_web3._utils.http import (
     construct_user_agent,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -49,11 +47,6 @@ from .utils import (
     ExceptionRetryConfiguration,
     check_if_retry_on_failure,
 )
-
-if TYPE_CHECKING:
-    from faster_web3.middleware.base import (  # noqa: F401
-        Middleware,
-    )
 
 
 class HTTPProvider(JSONBaseProvider):
@@ -110,11 +103,12 @@ class HTTPProvider(JSONBaseProvider):
     ) -> None:
         self._exception_retry_configuration = value
 
-    @to_dict
-    def get_request_kwargs(self) -> Iterable[Tuple[str, Any]]:
-        if "headers" not in self._request_kwargs:
-            yield "headers", self.get_request_headers()
-        yield from self._request_kwargs.items()
+    def get_request_kwargs(self) -> Dict[str, Any]:
+        provider_request_kwargs = self._request_kwargs
+        if "headers" in provider_request_kwargs:
+            return provider_request_kwargs.copy()
+        headers = {"headers": self.get_request_headers()}
+        return headers | provider_request_kwargs
 
     @combomethod
     def get_request_headers(cls) -> Dict[str, str]:
@@ -135,30 +129,28 @@ class HTTPProvider(JSONBaseProvider):
         If exception_retry_configuration is set, retry on failure; otherwise, make
         the request without retrying.
         """
-        if (
-            self.exception_retry_configuration is not None
-            and check_if_retry_on_failure(
-                method, self.exception_retry_configuration.method_allowlist
-            )
+        session_manager = self._request_session_manager
+        retry_config = self.exception_retry_configuration
+        endpoint = self.endpoint_uri
+        if retry_config is None or not check_if_retry_on_failure(
+            method, retry_config.method_allowlist
         ):
-            for i in range(self.exception_retry_configuration.retries):
-                try:
-                    return self._request_session_manager.make_post_request(
-                        self.endpoint_uri, request_data, **self.get_request_kwargs()
-                    )
-                except tuple(self.exception_retry_configuration.errors) as e:
-                    if i < self.exception_retry_configuration.retries - 1:
-                        time.sleep(
-                            self.exception_retry_configuration.backoff_factor * 2**i
-                        )
-                        continue
-                    else:
-                        raise e
-            return None
-        else:
-            return self._request_session_manager.make_post_request(
-                self.endpoint_uri, request_data, **self.get_request_kwargs()
+            return session_manager.make_post_request(
+                endpoint, request_data, **self.get_request_kwargs()
             )
+
+        retry_on_errs = tuple(retry_config.errors)
+        for i in range(retries := retry_config.retries):
+            try:
+                return session_manager.make_post_request(
+                    endpoint, request_data, **self.get_request_kwargs()
+                )
+            except retry_on_errs as e:
+                if i < retries - 1:
+                    time.sleep(retry_config.backoff_factor * 2**i)
+                else:
+                    raise e
+        return None
 
     @handle_request_caching
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
@@ -176,9 +168,7 @@ class HTTPProvider(JSONBaseProvider):
         )
         return response
 
-    def make_batch_request(
-        self, batch_requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    def make_batch_request(self, batch_requests: BatchParams) -> BatchResponse:
         self.logger.debug("Making batch request HTTP, uri: `%s`", self.endpoint_uri)
         request_data = self.encode_batch_rpc_request(batch_requests)
         raw_response = self._request_session_manager.make_post_request(

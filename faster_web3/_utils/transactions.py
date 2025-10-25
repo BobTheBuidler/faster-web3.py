@@ -1,6 +1,7 @@
 import math
 from typing import (
     TYPE_CHECKING,
+    Any,
     Dict,
     List,
     Literal,
@@ -15,7 +16,6 @@ from eth_typing import (
 from faster_eth_utils.toolz import (
     assoc,
     curry,
-    merge,
 )
 from faster_hexbytes import (
     HexBytes,
@@ -143,7 +143,7 @@ def fill_transaction_defaults(w3: "Web3", transaction: TxParams) -> TxParams:
                 default_val = default_getter
 
             defaults[key] = default_val
-    return merge(defaults, transaction)
+    return defaults | transaction
 
 
 def get_block_gas_limit(
@@ -230,7 +230,7 @@ def assert_valid_transaction_params(transaction_params: TxParams) -> None:
 
 
 def prepare_replacement_transaction(
-    w3: Union["Web3", "AsyncWeb3"],
+    w3: Union["Web3", "AsyncWeb3[Any]"],
     original_transaction: TxData,
     replacement_transaction: TxParams,
     gas_multiplier: float = 1.125,

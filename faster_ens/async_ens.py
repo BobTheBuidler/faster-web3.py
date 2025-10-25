@@ -25,9 +25,6 @@ from faster_eth_utils import (
     is_checksum_address,
     to_checksum_address,
 )
-from faster_eth_utils.toolz import (
-    merge,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -73,7 +70,9 @@ if TYPE_CHECKING:
         AsyncContract,
         AsyncContractFunction,
     )
-    from faster_web3.main import AsyncWeb3  # noqa: F401
+    from faster_web3.main import (  # noqa: F401
+        AsyncWeb3,
+    )
     from faster_web3.middleware.base import (  # noqa: F401
         Middleware,
     )
@@ -97,7 +96,7 @@ class AsyncENS(BaseENS):
     """
 
     # mypy types
-    w3: "AsyncWeb3"
+    w3: "AsyncWeb3[Any]"
 
     def __init__(
         self,
@@ -114,7 +113,7 @@ class AsyncENS(BaseENS):
         provider = provider or cast("AsyncBaseProvider", default)
         self.w3 = init_async_web3(provider, middleware)
 
-        ens_addr = addr if addr else ENS_MAINNET_ADDR
+        ens_addr = addr or ENS_MAINNET_ADDR
         self.ens = self.w3.eth.contract(abi=abis.ENS, address=ens_addr)
         self._resolver_contract = self.w3.eth.contract(
             abi=abis.PUBLIC_RESOLVER_2_EXTENDED
@@ -124,7 +123,11 @@ class AsyncENS(BaseENS):
         )
 
     @classmethod
-    def from_web3(cls, w3: "AsyncWeb3", addr: Optional[ChecksumAddress] = None) -> "AsyncENS":
+    def from_web3(
+        cls,
+        w3: "AsyncWeb3[Any]",
+        addr: Optional[ChecksumAddress] = None,
+    ) -> "AsyncENS":
         """
         Generate an AsyncENS instance with web3
 
@@ -201,12 +204,12 @@ class AsyncENS(BaseENS):
         transact = deepcopy(transact)
         owner = await self.setup_owner(name, transact=transact)
         await self._assert_control(owner, name)
-        if is_none_or_zero_address(address):
-            address = None
-        elif address is default:
+        if address is default:
             address = owner
+        elif is_none_or_zero_address(address):
+            address = None
         elif is_binary_address(address):
-            address = to_checksum_address(cast(str, address))
+            address = to_checksum_address(address)
         elif not is_checksum_address(address):
             raise ENSValueError("You must supply the address in checksum format")
         if await self.address(name) == address:
@@ -601,7 +604,7 @@ class AsyncENS(BaseENS):
             transact = {}
 
         owner = await self.owner(name)
-        transact_from_owner = merge({"from": owner}, transact)
+        transact_from_owner = {"from": owner} | transact
 
         return await func(*args).transact(transact_from_owner)
 

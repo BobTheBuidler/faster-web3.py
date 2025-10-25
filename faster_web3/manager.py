@@ -15,9 +15,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    pipe,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -72,7 +69,9 @@ from faster_web3.providers.async_base import (
     AsyncJSONBaseProvider,
 )
 from faster_web3.types import (
+    BatchRequests,
     FormattedEthSubscriptionResponse,
+    RequestParams,
     RPCEndpoint,
     RPCRequest,
     RPCResponse,
@@ -82,9 +81,6 @@ if TYPE_CHECKING:
     from faster_web3.main import (  # noqa: F401
         AsyncWeb3,
         Web3,
-    )
-    from faster_web3.middleware.base import (  # noqa: F401
-        Web3Middleware,
     )
     from faster_web3.providers import (  # noqa: F401
         AsyncBaseProvider,
@@ -105,7 +101,7 @@ class RequestManager:
 
     def __init__(
         self,
-        w3: Union["AsyncWeb3", "Web3"],
+        w3: Union["AsyncWeb3[Any]", "Web3"],
         provider: Optional[Union["BaseProvider", "AsyncBaseProvider"]] = None,
         middleware: Optional[Sequence[Tuple[Middleware, str]]] = None,
     ) -> None:
@@ -167,7 +163,8 @@ class RequestManager:
     ) -> RPCResponse:
         provider = cast("AsyncBaseProvider", self.provider)
         request_func = await provider.request_func(
-            cast("AsyncWeb3", self.w3), cast("MiddlewareOnion", self.middleware_onion)
+            cast("AsyncWeb3[Any]", self.w3),
+            cast("MiddlewareOnion", self.middleware_onion),
         )
         self.logger.debug("Making request. Method: %s", method)
         return await request_func(method, params)
@@ -290,16 +287,14 @@ class RequestManager:
 
     async def _async_make_batch_request(
         self,
-        requests_info: List[
-            Coroutine[Any, Any, Tuple[Tuple["RPCEndpoint", Any], Tuple[Any]]]
-        ],
+        requests_info: List[Coroutine[Any, Any, Tuple[RequestParams, Tuple[Any, ...]]]],
     ) -> List[RPCResponse]:
         """
         Make an asynchronous batch request using the provider
         """
         provider = cast(AsyncJSONBaseProvider, self.provider)
         request_func = await provider.batch_request_func(
-            cast("AsyncWeb3", self.w3),
+            cast("AsyncWeb3[Any]", self.w3),
             cast("MiddlewareOnion", self.middleware_onion),
         )
         # since we add items to the batch without awaiting, we unpack the coroutines
@@ -326,7 +321,7 @@ class RequestManager:
 
     async def _async_send_batch(
         self, requests: List[Tuple["RPCEndpoint", Any]]
-    ) -> List[RPCRequest]:
+    ) -> BatchRequests:
         """
         Send a batch request via socket.
         """
@@ -336,7 +331,7 @@ class RequestManager:
                 "can send batch requests."
             )
         send_func = await self._provider.send_batch_func(
-            cast("AsyncWeb3", self.w3),
+            cast("AsyncWeb3[Any]", self.w3),
             cast("MiddlewareOnion", self.middleware_onion),
         )
         self.logger.debug(
@@ -345,7 +340,7 @@ class RequestManager:
         )
         return await send_func(requests)
 
-    async def _async_recv_batch(self, requests: List[RPCRequest]) -> List[RPCResponse]:
+    async def _async_recv_batch(self, requests: BatchRequests) -> List[RPCResponse]:
         """
         Receive a batch request via socket.
         """
@@ -355,7 +350,7 @@ class RequestManager:
                 "can receive batch requests."
             )
         recv_func = await self._provider.recv_batch_func(
-            cast("AsyncWeb3", self.w3),
+            cast("AsyncWeb3[Any]", self.w3),
             cast("MiddlewareOnion", self.middleware_onion),
         )
         self.logger.debug(
@@ -366,9 +361,7 @@ class RequestManager:
 
     async def _async_make_socket_batch_request(
         self,
-        requests_info: List[
-            Coroutine[Any, Any, Tuple[Tuple["RPCEndpoint", Any], Tuple[Any, ...]]]
-        ],
+        requests_info: List[Coroutine[Any, Any, Tuple[RequestParams, Tuple[Any, ...]]]],
     ) -> List[RPCResponse]:
         """
         Send and receive a batch request via a socket.
@@ -406,7 +399,7 @@ class RequestManager:
 
     def _format_batched_response(
         self,
-        requests_info: Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]],
+        requests_info: Tuple[RequestParams, Sequence[Any]],
         response: RPCResponse,
     ) -> RPCResponse:
         result_formatters, error_formatters, null_result_formatters = requests_info[1]
@@ -457,7 +450,7 @@ class RequestManager:
 
     async def send(self, method: RPCEndpoint, params: Any) -> RPCRequest:
         provider = cast(PersistentConnectionProvider, self._provider)
-        async_w3 = cast("AsyncWeb3", self.w3)
+        async_w3 = cast("AsyncWeb3[Any]", self.w3)
         middleware_onion = cast("MiddlewareOnion", self.middleware_onion)
         send_func = await provider.send_func(
             async_w3,
@@ -475,7 +468,7 @@ class RequestManager:
 
     async def recv_for_request(self, rpc_request: RPCRequest) -> RPCResponse:
         provider = cast(PersistentConnectionProvider, self._provider)
-        async_w3 = cast("AsyncWeb3", self.w3)
+        async_w3 = cast("AsyncWeb3[Any]", self.w3)
         middleware_onion = cast("MiddlewareOnion", self.middleware_onion)
         recv_func = await provider.recv_func(
             async_w3,
@@ -523,7 +516,7 @@ class RequestManager:
                 "Only providers that maintain an open, persistent connection "
                 "can listen to streams."
             )
-        async_w3 = cast("AsyncWeb3", self.w3)
+        async_w3 = cast("AsyncWeb3[Any]", self.w3)
 
         if self._provider._message_listener_task is None:
             raise ProviderConnectionError(
@@ -582,15 +575,15 @@ class RequestManager:
                         "    cache_key=%s,\n"
                         "    request_info=%s",
                         cache_key,
-                        request_info.__dict__,
+                        request_info,
                     )
                     self._request_processor._request_information_cache.cache(
                         cache_key, request_info
                     )
 
             # pipe response back through middleware response processors
-            if len(request_info.middleware_response_processors) > 0:
-                response = pipe(response, *request_info.middleware_response_processors)
+            for formatter in request_info.middleware_response_processors:
+                response = formatter(response)
 
             (
                 result_formatters,

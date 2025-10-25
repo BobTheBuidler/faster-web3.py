@@ -1,12 +1,10 @@
 from typing import (
     Any,
     Dict,
+    Final,
 )
 
-from aiohttp import (
-    ClientSession,
-    ClientTimeout,
-)
+import aiohttp
 from faster_eth_abi import (
     abi,
 )
@@ -30,6 +28,12 @@ from faster_web3.types import (
 )
 
 
+ClientSession: Final = aiohttp.ClientSession
+ClientTimeout: Final = aiohttp.ClientTimeout
+
+encode: Final = abi.encode
+
+
 async def async_handle_offchain_lookup(
     offchain_lookup_payload: Dict[str, Any],
     transaction: TxParams,
@@ -44,6 +48,8 @@ async def async_handle_offchain_lookup(
         )
 
     session = ClientSession()
+    timeout = ClientTimeout(DEFAULT_HTTP_TIMEOUT)
+
     for url in offchain_lookup_payload["urls"]:
         formatted_url = URI(
             str(url)
@@ -53,52 +59,45 @@ async def async_handle_offchain_lookup(
 
         try:
             if "{data}" in url and "{sender}" in url:
-                response = await session.get(
-                    formatted_url, timeout=ClientTimeout(DEFAULT_HTTP_TIMEOUT)
-                )
+                response = await session.get(formatted_url, timeout=timeout)
             else:
                 response = await session.post(
                     formatted_url,
                     json={"data": formatted_data, "sender": formatted_sender},
-                    timeout=ClientTimeout(DEFAULT_HTTP_TIMEOUT),
+                    timeout=timeout,
                 )
         except Exception:
             continue  # try next url if timeout or issues making the request
 
-        if (
-            400 <= response.status <= 499
-        ):  # if request returns 400 error, raise exception
+        status_code = response.status
+        if 400 <= status_code <= 499:  # if request returns 400 error, raise exception
             await session.close()
             response.raise_for_status()
-        if not 200 <= response.status <= 299:  # if not 400 error, try next url
+        if not 200 <= status_code <= 299:  # if not 400 error, try next url
             continue
 
-        result = await response.json()
+        result: Dict[str, Any] = await response.json()
 
-        if "data" not in result.keys():
-            await session.close()
+        await session.close()
+
+        data = result.get("data")
+        if data is None:
             raise Web3ValidationError(
                 "Improperly formatted response for offchain lookup HTTP request"
                 " - missing 'data' field."
             )
 
-        encoded_data_with_function_selector = b"".join(
-            [
-                # 4-byte callback function selector
-                to_bytes_if_hex(offchain_lookup_payload["callbackFunction"]),
-                # encode the `data` from the result and the `extraData` as bytes
-                abi.encode(
-                    ["bytes", "bytes"],
-                    [
-                        to_bytes_if_hex(result["data"]),
-                        to_bytes_if_hex(offchain_lookup_payload["extraData"]),
-                    ],
-                ),
-            ]
-        )
+        # 4-byte callback function selector
+        fourbyte = to_bytes_if_hex(offchain_lookup_payload["callbackFunction"])
 
-        await session.close()
-        return encoded_data_with_function_selector
+        # encode the `data` from the result and the `extraData` as bytes
+        return fourbyte + encode(
+            ("bytes", "bytes"),
+            [
+                to_bytes_if_hex(data),
+                to_bytes_if_hex(offchain_lookup_payload["extraData"]),
+            ],
+        )
 
     await session.close()
     raise MultipleFailedRequests("Offchain lookup failed for supplied urls.")

@@ -12,7 +12,6 @@ from typing import (
     Any,
     List,
     Optional,
-    Tuple,
     Type,
     Union,
     cast,
@@ -39,6 +38,7 @@ from faster_web3.providers.base import (
     JSONBaseProvider,
 )
 from faster_web3.types import (
+    BatchParams,
     RPCEndpoint,
     RPCResponse,
 )
@@ -109,15 +109,13 @@ class LegacyWebSocketProvider(JSONBaseProvider):
             LegacyWebSocketProvider._loop = _get_threaded_loop()
         if websocket_kwargs is None:
             websocket_kwargs = {}
-        else:
-            found_restricted_keys = set(websocket_kwargs).intersection(
-                RESTRICTED_WEBSOCKET_KWARGS
+        elif found_restricted_keys := set(websocket_kwargs).intersection(
+            RESTRICTED_WEBSOCKET_KWARGS
+        ):
+            raise Web3ValidationError(
+                f"{RESTRICTED_WEBSOCKET_KWARGS} are not allowed "
+                f"in websocket_kwargs, found: {found_restricted_keys}"
             )
-            if found_restricted_keys:
-                raise Web3ValidationError(
-                    f"{RESTRICTED_WEBSOCKET_KWARGS} are not allowed "
-                    f"in websocket_kwargs, found: {found_restricted_keys}"
-                )
         self.conn = PersistentWebSocket(self.endpoint_uri, websocket_kwargs)
 
     def __str__(self) -> str:
@@ -143,9 +141,7 @@ class LegacyWebSocketProvider(JSONBaseProvider):
         )
         return future.result()
 
-    def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> List[RPCResponse]:
+    def make_batch_request(self, requests: BatchParams) -> List[RPCResponse]:
         self.logger.debug(
             "Making batch request WebSocket. URI: %s, Methods: %s",
             self.endpoint_uri,

@@ -15,6 +15,7 @@ from typing import (
     Dict,
     Iterable,
     List,
+    Literal,
     Mapping,
     Optional,
     Sequence,
@@ -69,11 +70,12 @@ from faster_eth_utils import (
     is_string,
     is_text,
     to_text,
-    to_tuple,
 )
 from faster_eth_utils.toolz import (
     curry,
-    pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.abi_element_identifiers import (
@@ -474,7 +476,7 @@ def is_recognized_type(abi_type: TypeStr) -> bool:
     return bool(re.match(TYPE_REGEX, abi_type))
 
 
-def is_bool_type(abi_type: TypeStr) -> bool:
+def is_bool_type(abi_type: TypeStr) -> TypeGuard[Literal["bool"]]:
     return abi_type == "bool"
 
 
@@ -486,7 +488,7 @@ def is_int_type(abi_type: TypeStr) -> bool:
     return abi_type in INT_TYPES
 
 
-def is_address_type(abi_type: TypeStr) -> bool:
+def is_address_type(abi_type: TypeStr) -> TypeGuard[Literal["address"]]:
     return abi_type == "address"
 
 
@@ -494,7 +496,7 @@ def is_bytes_type(abi_type: TypeStr) -> bool:
     return abi_type in BYTES_TYPES + ["bytes"]
 
 
-def is_string_type(abi_type: TypeStr) -> bool:
+def is_string_type(abi_type: TypeStr) -> TypeGuard[Literal["string"]]:
     return abi_type == "string"
 
 
@@ -503,7 +505,8 @@ def is_length(target_length: int, value: abc.Sized) -> bool:
     return len(value) == target_length
 
 
-def size_of_type(abi_type: TypeStr) -> int:
+def size_of_type(abi_type: TypeStr) -> Optional[int]:
+    # sourcery skip: assign-if-exp, reintroduce-else
     """
     Returns size in bits of abi_type
     """
@@ -530,17 +533,16 @@ def sub_type_of_array_type(abi_type: TypeStr) -> str:
     return re.sub(END_BRACKETS_OF_ARRAY_TYPE_REGEX, "", abi_type, count=1)
 
 
-def length_of_array_type(abi_type: TypeStr) -> int:
+def length_of_array_type(abi_type: TypeStr) -> Optional[int]:
     if not is_array_type(abi_type):
         raise Web3ValueError(f"Cannot parse length of nonarray abi-type: {abi_type}")
 
-    inner_brackets = (
-        re.search(END_BRACKETS_OF_ARRAY_TYPE_REGEX, abi_type).group(0).strip("[]")
-    )
-    if not inner_brackets:
-        return None
-    else:
+    if inner_brackets := (
+        re.search(END_BRACKETS_OF_ARRAY_TYPE_REGEX, abi_type)[0].strip("[]")
+    ):
         return int(inner_brackets)
+    else:
+        return None
 
 
 ARRAY_REGEX = ("^" "[a-zA-Z0-9_]+" "({sub_type})+" "$").format(sub_type=SUB_TYPE_REGEX)
@@ -562,17 +564,21 @@ def is_probably_enum(abi_type: TypeStr) -> bool:
     return bool(re.match(ENUM_REGEX, abi_type))
 
 
-@to_tuple
 def normalize_event_input_types(
     abi_args: Collection[ABIEvent],
-) -> Iterable[Union[ABIEvent, Dict[TypeStr, Any]]]:
-    for arg in abi_args:
-        if is_recognized_type(arg["type"]):
-            yield arg
-        elif is_probably_enum(arg["type"]):
-            yield {k: "uint8" if k == "type" else v for k, v in arg.items()}
-        else:
-            yield arg
+) -> Tuple[Union[ABIEvent, Dict[TypeStr, Any]], ...]:
+    return tuple(
+        (
+            arg
+            if is_recognized_type(arg_type := arg["type"])
+            else (
+                {k: "uint8" if k == "type" else v for k, v in arg.items()}
+                if is_probably_enum(arg_type)
+                else arg
+            )
+        )
+        for arg in abi_args
+    )
 
 
 ########################################################
@@ -610,15 +616,13 @@ def map_abi_data(
     2. Recursively mapping each of the normalizers to the data
     3. Stripping the types back out of the tree
     """
-    return pipe(
-        data,
-        # 1. Decorating the data tree with types
-        abi_data_tree(types),
-        # 2. Recursively mapping each of the normalizers to the data
-        *map(data_tree_map, normalizers),
-        # 3. Stripping the types back out of the tree
-        strip_abi_types,
-    )
+    # 1. Decorating the data tree with types
+    data = abi_data_tree(types, data)
+    # 2. Recursively mapping each of the normalizers to the data
+    for normalizer in map(data_tree_map, normalizers):
+        data = normalizer(data)
+    # 3. Stripping the types back out of the tree
+    return strip_abi_types(data)
 
 
 @curry
@@ -637,22 +641,24 @@ def abi_data_tree(
     return list(map(abi_sub_tree, types, data))
 
 
-@curry
 def data_tree_map(
-    func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]], data_tree: Any
-) -> "ABITypedData":
+    func: Callable[[TypeStr, Any], Tuple[TypeStr, Any]],
+) -> Callable[[Any], "ABITypedData"]:
     """
     Map func to every ABITypedData element in the tree. func will
     receive two args: abi_type, and data
     """
 
-    def map_to_typed_data(elements: Any) -> "ABITypedData":
-        if isinstance(elements, ABITypedData) and elements.abi_type is not None:
-            return ABITypedData(func(*elements))
-        else:
-            return elements
+    def data_tree_map_curried(data_tree: Any) -> "ABITypedData":
+        def map_to_typed_data(elements: Any) -> "ABITypedData":
+            if isinstance(elements, ABITypedData) and elements.abi_type is not None:
+                return ABITypedData(func(*elements))
+            else:
+                return elements
 
-    return recursive_map(map_to_typed_data, data_tree)
+        return recursive_map(map_to_typed_data, data_tree)
+
+    return data_tree_map_curried
 
 
 class ABITypedData(namedtuple("ABITypedData", "abi_type, data")):
@@ -827,8 +833,7 @@ def _named_subtree(
     if abi_type.is_array:
         item_type = abi_type.item_type.to_type_str()
         item_abi = {**abi, "type": item_type, "name": ""}
-        items = [_named_subtree(item_abi, item) for item in data]
-        return items
+        return [_named_subtree(item_abi, item) for item in data]
 
     elif isinstance(abi_type, TupleType):
         if abi.get("indexed"):
@@ -852,7 +857,7 @@ def _named_subtree(
 
 def recursive_dict_to_namedtuple(data: Dict[str, Any]) -> Tuple[Any, ...]:
     def _dict_to_namedtuple(
-        value: Union[Dict[str, Any], List[Any]]
+        value: Union[Dict[str, Any], List[Any]],
     ) -> Union[Tuple[Any, ...], List[Any]]:
         if not isinstance(value, dict):
             return value
@@ -864,11 +869,11 @@ def recursive_dict_to_namedtuple(data: Dict[str, Any]) -> Tuple[Any, ...]:
 
 
 def abi_decoded_namedtuple_factory(
-    fields: Tuple[Any, ...]
+    fields: Tuple[Any, ...],
 ) -> Callable[..., Tuple[Any, ...]]:
-    class ABIDecodedNamedTuple(namedtuple("ABIDecodedNamedTuple", fields, rename=True)):  # type: ignore # noqa: E501
-        def __new__(self, args: Any) -> "ABIDecodedNamedTuple":
-            return super().__new__(self, *args)
+    class ABIDecodedNamedTuple(namedtuple("ABIDecodedNamedTuple", fields, rename=True)): # noqa: E501
+        def __new__(cls, args: Any) -> "ABIDecodedNamedTuple":
+            return super().__new__(cls, *args)
 
     return ABIDecodedNamedTuple
 
@@ -877,9 +882,9 @@ def abi_decoded_namedtuple_factory(
 
 
 async def async_data_tree_map(
-    async_w3: "AsyncWeb3",
+    async_w3: "AsyncWeb3[Any]",
     func: Callable[
-        ["AsyncWeb3", TypeStr, Any], Coroutine[Any, Any, Tuple[TypeStr, Any]]
+        ["AsyncWeb3[Any]", TypeStr, Any], Coroutine[Any, Any, Tuple[TypeStr, Any]]
     ],
     data_tree: Any,
 ) -> "ABITypedData":
@@ -902,7 +907,7 @@ async def async_data_tree_map(
 
 @reject_recursive_repeats
 async def async_recursive_map(
-    async_w3: "AsyncWeb3",
+    async_w3: "AsyncWeb3[Any]",
     func: Callable[[Any], Coroutine[Any, Any, TReturn]],
     data: Any,
 ) -> TReturn:

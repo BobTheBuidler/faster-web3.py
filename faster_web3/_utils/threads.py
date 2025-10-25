@@ -58,9 +58,7 @@ class Timeout(Exception):
         return False
 
     def __str__(self) -> str:
-        if self.seconds is None:
-            return ""
-        return f"{self.seconds} seconds"
+        return "" if self.seconds is None else f"{self.seconds} seconds"
 
     @property
     def expire_at(self) -> int:
@@ -115,7 +113,7 @@ class ThreadWithReturn(threading.Thread, Generic[TReturn]):
     ) -> None:
         super().__init__(
             target=target,
-            args=args or tuple(),
+            args=args or (),
             kwargs=kwargs or {},
         )
         self.target = target

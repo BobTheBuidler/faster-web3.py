@@ -40,9 +40,7 @@ from faster_eth_utils import (
     is_list_like,
     keccak,
     to_bytes,
-    to_dict,
     to_hex,
-    to_tuple,
 )
 from faster_eth_utils.abi import (
     collapse_if_tuple,
@@ -53,11 +51,13 @@ from faster_eth_utils.curried import (
     apply_formatter_if,
 )
 from faster_eth_utils.toolz import (
-    complement,
     compose,
     cons,
     curry,
     valfilter,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 import faster_web3
@@ -173,8 +173,7 @@ def construct_event_data_set(
 
     normalized_args = {
         key: value if is_list_like(value) else [value]
-        # type ignored b/c at this point arguments is always a dict
-        for key, value in arguments.items()  # type: ignore
+        for key, value in cast(dict, arguments).items()
     }
 
     non_indexed_args = exclude_indexed_event_inputs(event_abi)
@@ -205,20 +204,22 @@ def is_dynamic_sized_type(type_str: TypeStr) -> bool:
     return abi_type.is_dynamic
 
 
-@to_tuple
 def get_event_abi_types_for_decoding(
     event_inputs: Sequence[Union[ABIComponent, ABIComponentIndexed]],
-) -> Iterable[TypeStr]:
+) -> Tuple[TypeStr, ...]:
     """
     Event logs use the `keccak(value)` for indexed inputs of type `bytes` or
     `string`.  Because of this we need to modify the types so that we can
     decode the log entries using the correct types.
     """
-    for input_abi in event_inputs:
-        if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"]):
-            yield "bytes32"
-        else:
-            yield collapse_if_tuple(input_abi)
+    return tuple(
+        (
+            TypeStr("bytes32")
+            if input_abi.get("indexed") and is_dynamic_sized_type(input_abi["type"])
+            else collapse_if_tuple(input_abi)
+        )
+        for input_abi in event_inputs
+    )
 
 
 @curry
@@ -303,9 +304,8 @@ def get_event_data(
     return event_data
 
 
-@to_tuple
-def pop_singlets(seq: Sequence[Any]) -> Iterable[Any]:
-    yield from (i[0] if is_list_like(i) and len(i) == 1 else i for i in seq)
+def pop_singlets(seq: Sequence[Any]) -> Tuple[Any, ...]:
+    return tuple(i[0] if is_list_like(i) and len(i) == 1 else i for i in seq)
 
 
 @curry
@@ -324,13 +324,12 @@ normalize_topic_list = compose(
 )
 
 
-def is_indexed(arg: Any) -> bool:
-    if isinstance(arg, TopicArgumentFilter):
-        return True
-    return False
+def is_indexed(arg: Any) -> TypeGuard["TopicArgumentFilter"]:
+    return isinstance(arg, TopicArgumentFilter)
 
 
-is_not_indexed = complement(is_indexed)
+def is_not_indexed(arg: Any) -> Any:
+    return not is_indexed(arg)
 
 
 class BaseEventFilterBuilder:
@@ -402,12 +401,10 @@ class BaseEventFilterBuilder:
         return tuple(map(self.args.__getitem__, self._ordered_arg_names))
 
     @property
-    @to_tuple
     def indexed_args(self) -> Tuple[Any, ...]:
         return tuple(filter(is_indexed, self.ordered_args))
 
     @property
-    @to_tuple
     def data_args(self) -> Tuple[Any, ...]:
         return tuple(filter(is_not_indexed, self.ordered_args))
 
@@ -453,7 +450,7 @@ class EventFilterBuilder(BaseEventFilterBuilder):
 
 
 class AsyncEventFilterBuilder(BaseEventFilterBuilder):
-    async def deploy(self, async_w3: "AsyncWeb3") -> "AsyncLogFilter":
+    async def deploy(self, async_w3: "AsyncWeb3[Any]") -> "AsyncLogFilter":
         if not isinstance(async_w3, faster_web3.AsyncWeb3):
             raise Web3ValueError(f"Invalid web3 argument: got: {async_w3!r}")
 
@@ -478,29 +475,25 @@ def initialize_event_topics(event_abi: ABIEvent) -> Union[bytes, List[Any]]:
         return list()
 
 
-@to_dict
 def _build_argument_filters_from_event_abi(
     event_abi: ABIEvent, abi_codec: ABICodec
-) -> Iterable[Tuple[str, "BaseArgumentFilter"]]:
-    for item in event_abi["inputs"]:
-        key = item["name"]
-        value: "BaseArgumentFilter"
-        if item.get("indexed") is True:
-            value = TopicArgumentFilter(
-                abi_codec=abi_codec, arg_type=collapse_if_tuple(item)
-            )
-        else:
-            value = DataArgumentFilter(arg_type=collapse_if_tuple(item))
-        yield key, value
+) -> Dict[str, "BaseArgumentFilter"]:
+    inputs = event_abi["inputs"]
+    return {
+        item["name"]: (
+            TopicArgumentFilter(abi_codec=abi_codec, arg_type=arg_type)
+            if item.get("indexed") is True
+            else DataArgumentFilter(arg_type=arg_type)
+        )
+        for item, arg_type in zip(inputs, map(collapse_if_tuple, inputs))
+    }
 
 
 array_to_tuple = apply_formatter_if(is_list_like, tuple)
 
 
-@to_tuple
-def _normalize_match_values(match_values: Collection[Any]) -> Iterable[Any]:
-    for value in match_values:
-        yield array_to_tuple(value)
+def _normalize_match_values(match_values: Collection[Any]) -> Tuple[Any, ...]:
+    return tuple(map(array_to_tuple, match_values))
 
 
 class BaseArgumentFilter(ABC):
@@ -537,9 +530,8 @@ class BaseArgumentFilter(ABC):
 
 
 class DataArgumentFilter(BaseArgumentFilter):
-    # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
-    def match_values(self) -> Tuple[TypeStr, Tuple[Any, ...]]:  # type: ignore
+    def match_values(self) -> Tuple[TypeStr, Tuple[Any, ...]]:
         return self.arg_type, self._match_values
 
 
@@ -548,17 +540,12 @@ class TopicArgumentFilter(BaseArgumentFilter):
         self.abi_codec = abi_codec
         self.arg_type = arg_type
 
-    @to_tuple
     def _get_match_values(self) -> Iterable[HexStr]:
-        yield from (self._encode(value) for value in self._match_values)
+        return tuple(map(self._encode, self._match_values))
 
-    # type ignore b/c conflict with BaseArgumentFilter.match_values type
     @property
-    def match_values(self) -> Optional[Tuple[HexStr, ...]]:  # type: ignore
-        if self._match_values is not None:
-            return self._get_match_values()
-        else:
-            return None
+    def match_values(self) -> Optional[Tuple[HexStr, ...]]:
+        return None if self._match_values is None else self._get_match_values()
 
     def _encode(self, value: Any) -> HexStr:
         if is_dynamic_sized_type(self.arg_type):

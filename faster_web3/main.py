@@ -2,6 +2,9 @@ import decimal
 from types import (
     TracebackType,
 )
+from typing import (
+    Mapping,
+)
 
 from faster_ens import (
     AsyncENS,
@@ -37,10 +40,12 @@ from typing import (
     Callable,
     Dict,
     Generator,
+    Generic,
     List,
     Optional,
     Sequence,
     Type,
+    TypeVar,
     Union,
     cast,
 )
@@ -54,6 +59,9 @@ from eth_typing import (
 from eth_typing.abi import TypeStr
 from faster_eth_utils import (
     combomethod,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.abi import (
@@ -155,7 +163,9 @@ from faster_web3.providers.persistent.subscription_manager import (
 if TYPE_CHECKING:
     from faster_web3._utils.batching import RequestBatcher  # noqa: F401
     from faster_web3._utils.empty import Empty  # noqa: F401
-    from faster_web3.providers.persistent import PersistentConnectionProvider  # noqa: F401
+    from faster_web3.providers.persistent import (
+        PersistentConnectionProvider,
+    )  # noqa: F401
 
 
 def get_async_default_modules() -> Dict[str, Union[Type[Module], Sequence[Any]]]:
@@ -210,34 +220,42 @@ class BaseWeb3:
     @staticmethod
     @wraps(to_bytes)
     def to_bytes(
-        primitive: Optional[Primitives] = None, hexstr: Optional[HexStr] = None, text: Optional[str] = None
+        primitive: Optional[Primitives] = None,
+        hexstr: Optional[HexStr] = None,
+        text: Optional[str] = None,
     ) -> bytes:
         return to_bytes(primitive, hexstr, text)
 
     @staticmethod
     @wraps(to_int)
     def to_int(
-        primitive: Optional[Primitives] = None, hexstr: Optional[HexStr] = None, text: Optional[str] = None
+        primitive: Optional[Primitives] = None,
+        hexstr: Optional[HexStr] = None,
+        text: Optional[str] = None,
     ) -> int:
         return to_int(primitive, hexstr, text)
 
     @staticmethod
     @wraps(to_hex)
     def to_hex(
-        primitive: Optional[Primitives] = None, hexstr: Optional[HexStr] = None, text: Optional[str] = None
+        primitive: Optional[Primitives] = None,
+        hexstr: Optional[HexStr] = None,
+        text: Optional[str] = None,
     ) -> HexStr:
         return to_hex(primitive, hexstr, text)
 
     @staticmethod
     @wraps(to_text)
     def to_text(
-        primitive: Optional[Primitives] = None, hexstr: Optional[HexStr] = None, text: Optional[str] = None
+        primitive: Optional[Primitives] = None,
+        hexstr: Optional[HexStr] = None,
+        text: Optional[str] = None,
     ) -> str:
         return to_text(primitive, hexstr, text)
 
     @staticmethod
     @wraps(to_json)
-    def to_json(obj: Dict[Any, Any]) -> str:
+    def to_json(obj: Mapping[Any, Any]) -> str:
         return to_json(obj)
 
     # Currency Utility
@@ -254,12 +272,12 @@ class BaseWeb3:
     # Address Utility
     @staticmethod
     @wraps(is_address)
-    def is_address(value: Any) -> bool:
+    def is_address(value: Any) -> TypeGuard[AnyAddress]:
         return is_address(value)
 
     @staticmethod
     @wraps(is_checksum_address)
-    def is_checksum_address(value: Any) -> bool:
+    def is_checksum_address(value: Any) -> TypeGuard[ChecksumAddress]:
         return is_checksum_address(value)
 
     @staticmethod
@@ -340,7 +358,7 @@ class BaseWeb3:
         return cls.keccak(hexstr=hex_string)
 
     def attach_modules(
-        self, modules: Optional[Dict[str, Union[Type[Module], Sequence[Any]]]]
+        self, modules: Dict[str, Union[Type[Module], Sequence[Any]]]
     ) -> None:
         """
         Attach modules to the `Web3` instance.
@@ -359,7 +377,7 @@ class BaseWeb3:
 
 
 def _validate_provider(
-    w3: Union["Web3", "AsyncWeb3"],
+    w3: Union["Web3", "AsyncWeb3[Any]"],
     provider: Optional[Union[BaseProvider, AsyncBaseProvider]],
 ) -> None:
     if provider is not None:
@@ -447,7 +465,10 @@ class Web3(BaseWeb3):
 # -- async -- #
 
 
-class AsyncWeb3(BaseWeb3):
+AsyncProviderT = TypeVar("AsyncProviderT", bound=AsyncBaseProvider)
+
+
+class AsyncWeb3(BaseWeb3, Generic[AsyncProviderT]):
     # mypy Types
     eth: AsyncEth
     net: AsyncNet
@@ -460,7 +481,7 @@ class AsyncWeb3(BaseWeb3):
 
     def __init__(
         self,
-        provider: Optional[AsyncBaseProvider] = None,
+        provider: Optional[AsyncProviderT] = None,
         middleware: Optional[Sequence[Any]] = None,
         modules: Optional[Dict[str, Union[Type[Module], Sequence[Any]]]] = None,
         external_modules: Optional[
@@ -486,11 +507,11 @@ class AsyncWeb3(BaseWeb3):
         return await self.provider.is_connected(show_traceback)
 
     @property
-    def provider(self) -> AsyncBaseProvider:
-        return cast(AsyncBaseProvider, self.manager.provider)
+    def provider(self) -> AsyncProviderT:
+        return cast(AsyncProviderT, self.manager.provider)
 
     @provider.setter
-    def provider(self, provider: AsyncBaseProvider) -> None:
+    def provider(self, provider: AsyncProviderT) -> None:
         self.manager.provider = provider
 
     @property
@@ -572,11 +593,10 @@ class AsyncWeb3(BaseWeb3):
         "when instantiating via ``async for``."
     )
     async def __aiter__(self) -> AsyncIterator[Self]:
-        provider = self.provider
+        provider = cast("PersistentConnectionProvider", self.provider)
+        logger = provider.logger
         while True:
             await provider.connect()
             yield self
-            cast("PersistentConnectionProvider", provider).logger.error(
-                "Connection interrupted, attempting to reconnect..."
-            )
+            logger.error("Connection interrupted, attempting to reconnect...")
             await provider.disconnect()

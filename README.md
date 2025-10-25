@@ -1,3 +1,19 @@
+### I forked web3.py and compiled it to C. It does the same stuff, now faster
+
+[![PyPI](https://img.shields.io/pypi/v/faster-web3.svg?logo=Python&logoColor=white)](https://pypi.org/project/faster-web3)
+[![Monthly Downloads](https://img.shields.io/pypi/dm/faster-web3)](https://pypistats.org/packages/faster-web3)
+[![Codspeed.io Status](https://img.shields.io/endpoint?url=https://codspeed.io/badge.json)](https://codspeed.io/BobTheBuidler/faster-web3.py)
+
+##### This fork will be kept up-to-date with [web3.py](https://github.com/ethereum/web3.py). I will pull updates as they are released and push new [faster-web3.py](https://github.com/BobTheBuidler/faster-web3.py) releases to [PyPI](https://pypi.org/project/faster-web3.py/).
+
+##### We (kinda) benchmark `faster-web3.py` against the original `web3.py` for your convenience. [See results](https://github.com/BobTheBuidler/faster-web3.py/tree/master/benchmarks/results). More benchmarks will be LLM'd into existence soon enough.
+
+##### You can find the compiled C code and header files in the [build](https://github.com/BobTheBuidler/web3.py/tree/master/build) directory.
+
+###### You may also be interested in: [faster-hexbytes](https://github.com/BobTheBuidler/faster-hexbytes/), [faster-eth-abi](https://github.com/BobTheBuidler/faster-eth-abi/), and [faster-eth-utils](https://github.com/BobTheBuidler/faster-eth-utils/)
+
+##### The original web3.py readme is below:
+
 # web3.py
 
 [![Join the conversation on Discord](https://img.shields.io/discord/809793915578089484?color=blue&label=chat&logo=discord&logoColor=white)](https://discord.gg/GHryRvPB84)

@@ -21,9 +21,6 @@ from eth_typing import (
     ChecksumAddress,
     HexStr,
 )
-from faster_eth_utils.toolz import (
-    merge,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -58,6 +55,9 @@ from faster_web3._utils.transactions import (
 from faster_web3.contract import (
     AsyncContract,
     AsyncContractCaller,
+)
+from faster_web3.datastructures import (
+    AttributeDict,
 )
 from faster_web3.eth.base_eth import (
     BaseEth,
@@ -118,23 +118,23 @@ if TYPE_CHECKING:
 
 class AsyncEth(BaseEth):
     # mypy types
-    w3: "AsyncWeb3"
+    w3: "AsyncWeb3[Any]"
 
     is_async = True
 
-    _default_contract_factory: Type[
-        Union[AsyncContract, AsyncContractCaller]
-    ] = AsyncContract
+    _default_contract_factory: Type[Union[AsyncContract, AsyncContractCaller]] = (
+        AsyncContract
+    )
 
     # eth_accounts
 
-    _accounts: Method[Callable[[], Awaitable[Tuple[ChecksumAddress]]]] = Method(
+    _accounts: Method[Callable[[], Awaitable[Tuple[ChecksumAddress, ...]]]] = Method(
         RPC.eth_accounts,
         is_property=True,
     )
 
     @property
-    async def accounts(self) -> Tuple[ChecksumAddress]:
+    async def accounts(self) -> Sequence[ChecksumAddress]:
         return await self._accounts()
 
     # eth_blobBaseFee
@@ -230,7 +230,7 @@ class AsyncEth(BaseEth):
         block_count: int,
         newest_block: Union[BlockParams, BlockNumber],
         reward_percentiles: Optional[List[float]] = None,
-    ) -> FeeHistory:
+    ) -> Union[FeeHistory, AttributeDict]:
         reward_percentiles = reward_percentiles or []
         return await self._fee_history(block_count, newest_block, reward_percentiles)
 
@@ -401,15 +401,15 @@ class AsyncEth(BaseEth):
     # eth_getBlockTransactionCountByHash
     # eth_getBlockTransactionCountByNumber
 
-    get_block_transaction_count: Method[
-        Callable[[BlockIdentifier], Awaitable[int]]
-    ] = Method(
-        method_choice_depends_on_args=select_method_for_block_identifier(
-            if_predefined=RPC.eth_getBlockTransactionCountByNumber,
-            if_hash=RPC.eth_getBlockTransactionCountByHash,
-            if_number=RPC.eth_getBlockTransactionCountByNumber,
-        ),
-        mungers=[default_root_munger],
+    get_block_transaction_count: Method[Callable[[BlockIdentifier], Awaitable[int]]] = (
+        Method(
+            method_choice_depends_on_args=select_method_for_block_identifier(
+                if_predefined=RPC.eth_getBlockTransactionCountByNumber,
+                if_hash=RPC.eth_getBlockTransactionCountByHash,
+                if_number=RPC.eth_getBlockTransactionCountByNumber,
+            ),
+            mungers=[default_root_munger],
+        )
     )
 
     # eth_sendTransaction
@@ -436,20 +436,20 @@ class AsyncEth(BaseEth):
     # eth_getBlockByHash
     # eth_getBlockByNumber
 
-    _get_block: Method[
-        Callable[[BlockIdentifier, bool], Awaitable[BlockData]]
-    ] = Method(
-        method_choice_depends_on_args=select_method_for_block_identifier(
-            if_predefined=RPC.eth_getBlockByNumber,
-            if_hash=RPC.eth_getBlockByHash,
-            if_number=RPC.eth_getBlockByNumber,
-        ),
-        mungers=[BaseEth.get_block_munger],
+    _get_block: Method[Callable[[BlockIdentifier, bool], Awaitable[BlockData]]] = (
+        Method(
+            method_choice_depends_on_args=select_method_for_block_identifier(
+                if_predefined=RPC.eth_getBlockByNumber,
+                if_hash=RPC.eth_getBlockByHash,
+                if_number=RPC.eth_getBlockByNumber,
+            ),
+            mungers=[BaseEth.get_block_munger],
+        )
     )
 
     async def get_block(
         self, block_identifier: BlockIdentifier, full_transactions: bool = False
-    ) -> BlockData:
+    ) -> Union[BlockData, AttributeDict]:
         return await self._get_block(block_identifier, full_transactions)
 
     # eth_getBlockReceipts
@@ -594,29 +594,22 @@ class AsyncEth(BaseEth):
     async def replace_transaction(
         self, transaction_hash: _Hash32, new_transaction: TxParams
     ) -> HexBytes:
-        current_transaction = await async_get_required_transaction(
-            self.w3, transaction_hash
-        )
-        return await async_replace_transaction(
-            self.w3, current_transaction, new_transaction
-        )
+        w3 = self.w3
+        current_transaction = await async_get_required_transaction(w3, transaction_hash)
+        return await async_replace_transaction(w3, current_transaction, new_transaction)
 
     async def modify_transaction(
         self, transaction_hash: _Hash32, **transaction_params: Unpack[TxParams]
     ) -> HexBytes:
         assert_valid_transaction_params(transaction_params)
 
-        current_transaction = await async_get_required_transaction(
-            self.w3, transaction_hash
-        )
+        w3 = self.w3
+        current_transaction = await async_get_required_transaction(w3, transaction_hash)
         current_transaction_params = extract_valid_transaction_params(
             current_transaction
         )
-        new_transaction = merge(current_transaction_params, transaction_params)
-
-        return await async_replace_transaction(
-            self.w3, current_transaction, new_transaction
-        )
+        new_transaction = current_transaction_params | transaction_params
+        return await async_replace_transaction(w3, current_transaction, new_transaction)
 
     # eth_sign
 
@@ -690,9 +683,9 @@ class AsyncEth(BaseEth):
 
     # eth_getFilterChanges, eth_getFilterLogs, eth_uninstallFilter
 
-    _get_filter_changes: Method[
-        Callable[[HexStr], Awaitable[List[LogReceipt]]]
-    ] = Method(RPC.eth_getFilterChanges, mungers=[default_root_munger])
+    _get_filter_changes: Method[Callable[[HexStr], Awaitable[List[LogReceipt]]]] = (
+        Method(RPC.eth_getFilterChanges, mungers=[default_root_munger])
+    )
 
     async def get_filter_changes(self, filter_id: HexStr) -> List[LogReceipt]:
         return await self._get_filter_changes(filter_id)
@@ -733,7 +726,8 @@ class AsyncEth(BaseEth):
         label: Optional[str] = None,
         parallelize: Optional[bool] = None,
     ) -> HexStr:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        w3 = self.w3
+        if not isinstance(w3.provider, PersistentConnectionProvider):
             raise MethodNotSupported(
                 "eth_subscribe is only supported with providers that support "
                 "persistent connections."
@@ -746,7 +740,7 @@ class AsyncEth(BaseEth):
             label=label,
             parallelize=parallelize,
         )
-        return await self.w3.subscription_manager.subscribe(sub)
+        return await w3.subscription_manager.subscribe(sub)
 
     _unsubscribe: Method[Callable[[HexStr], Awaitable[bool]]] = Method(
         RPC.eth_unsubscribe,
@@ -754,13 +748,14 @@ class AsyncEth(BaseEth):
     )
 
     async def unsubscribe(self, subscription_id: HexStr) -> bool:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        w3 = self.w3
+        if not isinstance(w3.provider, PersistentConnectionProvider):
             raise MethodNotSupported(
                 "eth_unsubscribe is only supported with providers that support "
                 "persistent connections."
             )
 
-        for sub in self.w3.subscription_manager.subscriptions:
+        for sub in w3.subscription_manager.subscriptions:
             if sub._id == subscription_id:
                 return await sub.unsubscribe()
 
@@ -772,14 +767,12 @@ class AsyncEth(BaseEth):
     # -- contract methods -- #
 
     @overload
-    def contract(self, address: None = None, **kwargs: Any) -> Type[AsyncContract]:
-        ...
+    def contract(self, address: None = None, **kwargs: Any) -> Type[AsyncContract]: ...
 
     @overload
     def contract(
         self, address: Union[Address, ChecksumAddress, ENS], **kwargs: Any
-    ) -> AsyncContract:
-        ...
+    ) -> AsyncContract: ...
 
     def contract(
         self,

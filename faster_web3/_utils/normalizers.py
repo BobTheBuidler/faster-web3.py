@@ -5,6 +5,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    Final,
     Optional,
     Tuple,
     Union,
@@ -72,7 +73,7 @@ if TYPE_CHECKING:
 
 
 def implicitly_identity(
-    to_wrap: Callable[[TypeStr, Any], Any]
+    to_wrap: Callable[[TypeStr, Any], Any],
 ) -> Callable[[TypeStr, Any], Tuple[TypeStr, Any]]:
     @functools.wraps(to_wrap)
     def wrapper(type_str: TypeStr, data: Any) -> Tuple[TypeStr, Any]:
@@ -112,7 +113,7 @@ def decode_abi_strings(type_str: TypeStr, data: Any) -> Tuple[TypeStr, str]:
 
 
 def parse_basic_type_str(
-    old_normalizer: Callable[[BasicType, TypeStr, Any], Tuple[TypeStr, Any]]
+    old_normalizer: Callable[[BasicType, TypeStr, Any], Tuple[TypeStr, Any]],
 ) -> Callable[[TypeStr, Any], Tuple[TypeStr, Any]]:
     """
     Modifies a normalizer to automatically parse the incoming type string.  If
@@ -237,9 +238,7 @@ def abi_ens_resolver(
         return type_str, val
 
 
-BASE_RETURN_NORMALIZERS = [
-    addresses_checksummed,
-]
+BASE_RETURN_NORMALIZERS: Final = (addresses_checksummed,)
 
 
 #
@@ -283,7 +282,7 @@ def normalize_bytecode(bytecode: Optional[bytes]) -> Union[HexBytes, None]:
 
 
 async def async_abi_ens_resolver(
-    async_w3: "AsyncWeb3",
+    async_w3: "AsyncWeb3[Any]",
     type_str: TypeStr,
     val: Any,
 ) -> Tuple[TypeStr, Any]:

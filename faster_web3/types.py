@@ -106,8 +106,8 @@ class EventData(TypedDict):
 
 class RPCError(TypedDict):
     code: int
-    message: str
-    data: NotRequired[str]
+    message: Union[str, None]
+    data: NotRequired[Union[str, Dict[str, Any], None]]
 
 
 class SetCodeAuthorizationData(TypedDict):
@@ -185,7 +185,7 @@ TxParams = TypedDict(
         # addr or ens
         "to": Union[Address, ChecksumAddress, str],
         "type": Union[int, HexStr],
-        "value": Wei,
+        "value": Union[Wei, HexStr],
     },
     total=False,
 )
@@ -336,15 +336,19 @@ class CreateAccessListResponse(TypedDict):
     gasUsed: int
 
 
+RequestParams = Tuple[RPCEndpoint, Any]
+BatchParams = List[RequestParams]
+
+BatchRequests = List[RPCRequest]
+BatchResponse = Union[List[RPCResponse], RPCResponse]
+
+RPCResponseCoro = Coroutine[Any, Any, RPCResponse]
+BatchResponseCoro = Coroutine[Any, Any, BatchResponse]
+
 MakeRequestFn = Callable[[RPCEndpoint, Any], RPCResponse]
-MakeBatchRequestFn = Callable[
-    [List[Tuple[RPCEndpoint, Any]]], Union[List[RPCResponse], RPCResponse]
-]
-AsyncMakeRequestFn = Callable[[RPCEndpoint, Any], Coroutine[Any, Any, RPCResponse]]
-AsyncMakeBatchRequestFn = Callable[
-    [List[Tuple[RPCEndpoint, Any]]],
-    Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]],
-]
+MakeBatchRequestFn = Callable[[BatchParams], BatchResponse]
+AsyncMakeRequestFn = Callable[[RPCEndpoint, Any], RPCResponseCoro]
+AsyncMakeBatchRequestFn = Callable[[BatchParams], BatchResponseCoro]
 
 
 class FormattersDict(TypedDict, total=False):
@@ -380,7 +384,7 @@ StateOverride = Dict[Union[str, Address, ChecksumAddress], StateOverrideParams]
 
 
 GasPriceStrategy = Union[
-    Callable[["Web3", TxParams], Wei], Callable[["AsyncWeb3", TxParams], Wei]
+    Callable[["Web3", TxParams], Wei], Callable[["AsyncWeb3[Any]", TxParams], Wei]
 ]
 
 

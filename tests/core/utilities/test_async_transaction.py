@@ -50,7 +50,7 @@ async def test_async_get_buffered_gas_estimate(async_w3):
     }
     gas_estimate = await async_w3.eth.estimate_gas(txn_params)
     gas_buffer = 100000
-    gas_limit = await get_block_gas_limit(async_w3.eth)  # type: ignore
+    gas_limit = await get_block_gas_limit(async_w3.eth)
 
     buffered_gas_estimate = await get_buffered_gas_estimate(async_w3, txn_params)
     assert isinstance(buffered_gas_estimate, int)

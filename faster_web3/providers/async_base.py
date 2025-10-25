@@ -6,9 +6,8 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    Coroutine,
     Dict,
-    List,
+    Final,
     Optional,
     Set,
     Tuple,
@@ -44,9 +43,15 @@ from faster_web3.middleware.base import (
     MiddlewareOnion,
 )
 from faster_web3.types import (
+    AsyncMakeBatchRequestFn,
+    BatchParams,
+    BatchRequests,
+    BatchResponse,
+    BatchResponseCoro,
     RPCEndpoint,
     RPCRequest,
     RPCResponse,
+    RPCResponseCoro,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -60,7 +65,6 @@ if TYPE_CHECKING:
 
     from faster_web3 import (  # noqa: F401
         AsyncWeb3,
-        WebSocketProvider,
     )
     from faster_web3._utils.batching import (  # noqa: F401
         RequestBatcher,
@@ -75,8 +79,9 @@ class AsyncBaseProvider:
     logger: logging.Logger = logging.getLogger(
         "faster_web3.providers.async_base.AsyncBaseProvider"
     )
-    _request_func_cache: Tuple[
-        Tuple[Middleware, ...], Callable[..., Coroutine[Any, Any, RPCResponse]]
+    _request_func_cache: Union[
+        Tuple[Tuple[Middleware, ...], Callable[..., RPCResponseCoro]],
+        Tuple[None, None],
     ] = (None, None)
 
     is_async = True
@@ -92,8 +97,8 @@ class AsyncBaseProvider:
             Union[RequestCacheValidationThreshold, int, Empty]
         ] = empty,
     ) -> None:
-        self._request_cache = SimpleCache(1000)
-        self._request_cache_lock: asyncio.Lock = asyncio.Lock()
+        self._request_cache: Final[SimpleCache[RPCResponse]] = SimpleCache(1000)
+        self._request_cache_lock: Final = asyncio.Lock()
 
         self.cache_allowed_requests = cache_allowed_requests
         self.cacheable_requests = cacheable_requests or CACHEABLE_REQUESTS
@@ -102,9 +107,12 @@ class AsyncBaseProvider:
         self._batching_context: contextvars.ContextVar[
             Optional["RequestBatcher[Any]"]
         ] = contextvars.ContextVar("batching_context", default=None)
-        self._batch_request_func_cache: Tuple[
-            Tuple[Middleware, ...],
-            Callable[..., Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]]],
+        self._batch_request_func_cache: Union[
+            Tuple[
+                Tuple[Middleware, ...],
+                Callable[..., BatchResponseCoro],
+            ],
+            Tuple[None, None],
         ] = (None, None)
 
     @property
@@ -112,47 +120,41 @@ class AsyncBaseProvider:
         return self._batching_context.get() is not None
 
     async def request_func(
-        self, async_w3: "AsyncWeb3", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Coroutine[Any, Any, RPCResponse]]:
+        self, async_w3: "AsyncWeb3[Any]", middleware_onion: MiddlewareOnion
+    ) -> Callable[..., RPCResponseCoro]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                await async_combine_middleware(
-                    middleware=middleware,
-                    async_w3=async_w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = await async_combine_middleware(
+                middleware=middleware,
+                async_w3=async_w3,
+                provider_request_fn=self.make_request,
             )
+            self._request_func_cache = middleware, func
         return self._request_func_cache[-1]
 
     async def batch_request_func(
-        self, async_w3: "AsyncWeb3", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Coroutine[Any, Any, Union[List[RPCResponse], RPCResponse]]]:
+        self, async_w3: "AsyncWeb3[Any]", middleware_onion: MiddlewareOnion
+    ) -> Callable[..., BatchResponseCoro]:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._batch_request_func_cache[0]
+        cache_key, accumulator_fn = self._batch_request_func_cache
         if cache_key != middleware:
             accumulator_fn = self.make_batch_request
             for mw in reversed(middleware):
                 initialized = mw(async_w3)
-                # type ignore bc in order to wrap the method, we have to call
-                # `async_wrap_make_batch_request` with the accumulator_fn as the
-                # argument which breaks the type hinting for this particular case.
-                accumulator_fn = await initialized.async_wrap_make_batch_request(  # type: ignore # noqa: E501
-                    accumulator_fn
+                accumulator_fn = cast(
+                    AsyncMakeBatchRequestFn,
+                    await initialized.async_wrap_make_batch_request(accumulator_fn),
                 )
             self._batch_request_func_cache = (middleware, accumulator_fn)
-        return self._batch_request_func_cache[-1]
+        return accumulator_fn
 
     async def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         raise NotImplementedError("Providers must implement this method")
 
-    async def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    async def make_batch_request(self, requests: BatchParams) -> BatchResponse:
         raise NotImplementedError("Providers must implement this method")
 
     async def is_connected(self, show_traceback: bool = False) -> bool:
@@ -241,9 +243,7 @@ class AsyncJSONBaseProvider(AsyncBaseProvider):
 
     # -- batch requests -- #
 
-    def encode_batch_rpc_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> bytes:
+    def encode_batch_rpc_request(self, requests: BatchParams) -> bytes:
         return (
             b"["
             + b", ".join(
@@ -252,5 +252,5 @@ class AsyncJSONBaseProvider(AsyncBaseProvider):
             + b"]"
         )
 
-    def encode_batch_request_dicts(self, request_dicts: List[RPCRequest]) -> bytes:
+    def encode_batch_request_dicts(self, request_dicts: BatchRequests) -> bytes:
         return b"[" + b",".join(self.encode_rpc_dict(d) for d in request_dicts) + b"]"

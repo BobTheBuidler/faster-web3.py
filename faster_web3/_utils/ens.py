@@ -19,6 +19,9 @@ from faster_eth_utils import (
     is_hex_address,
     to_checksum_address,
 )
+from typing_extensions import (
+    TypeGuard,
+)
 
 from faster_ens import (
     ENS,
@@ -38,7 +41,7 @@ if TYPE_CHECKING:
     )
 
 
-def is_ens_name(value: Any) -> bool:
+def is_ens_name(value: Any) -> TypeGuard[str]:
     if not isinstance(value, str):
         return False
     elif is_hex_address(value):
@@ -50,8 +53,7 @@ def is_ens_name(value: Any) -> bool:
 
 
 def validate_name_has_address(ens: ENS, name: str) -> ChecksumAddress:
-    addr = ens.address(name)
-    if addr:
+    if addr := ens.address(name):
         return to_checksum_address(addr)
     else:
         raise NameNotFound(f"Could not find address for name {name!r}")
@@ -75,7 +77,7 @@ class AsyncStaticENS:
 
 @contextmanager
 def ens_addresses(
-    w3: Union["Web3", "AsyncWeb3"], name_addr_pairs: Dict[str, ChecksumAddress]
+    w3: Union["Web3", "AsyncWeb3[Any]"], name_addr_pairs: Dict[str, ChecksumAddress]
 ) -> Iterator[None]:
     original_ens = w3.ens
     if w3.provider.is_async:

@@ -7,6 +7,21 @@ mapping modules (e.g., ens/base_ens) to groups and their test functions and resu
 
 Usage:
     python parse_benchmark_output.py <benchmark.json> [output.json]
+
+Expected "fullname" field formats (from pytest-benchmark):
+    - benchmarks/ens/test_base_ens_benchmarks.py
+    - benchmarks/web3/_utils/test_blocks_benchmarks.py
+    - benchmarks/test_foo_benchmarks.py
+
+If the script prints a warning about "Could not extract module path from fullname", it means the input file's "fullname" field does not match any expected pattern.
+In that case:
+    - Check your pytest-benchmark configuration and ensure test files are named as test_*_benchmarks.py and are located under the benchmarks/ directory.
+    - If your workflow changes the file structure, update the regex in get_module_path accordingly.
+
+Troubleshooting:
+    - If all results are grouped under "unknown", your input file's "fullname" fields are not matching the expected patterns.
+    - Use the debug output to see the unmatched "fullname" values and adjust the regex if needed.
+
 """
 
 import json
@@ -16,18 +31,40 @@ from collections import defaultdict
 from typing import Dict, Any
 
 def get_module_path(bench: dict) -> str:
-    # Extracts the relative module path from the test file path.
-    # E.g., benchmarks/ens/test_base_ens_benchmarks.py -> ens/base_ens
+    """
+    Extracts the relative module path from the test file path.
+    Handles various patterns, including nested directories and underscores.
+
+    Expected fullname examples:
+    - benchmarks/ens/test_base_ens_benchmarks.py
+    - benchmarks/web3/_utils/test_blocks_benchmarks.py
+    - benchmarks/test_foo_benchmarks.py
+
+    Returns a string like:
+    - ens/base_ens
+    - web3/_utils/blocks
+    - foo
+
+    If the pattern is not matched, returns "unknown" and prints a warning.
+    """
     fullname = bench.get("fullname", "")
-    m = re.search(r"benchmarks/(.+)/test_([a-zA-Z0-9_]+)_benchmarks\.py", fullname)
+    # Try to match nested directories, e.g. benchmarks/web3/_utils/test_blocks_benchmarks.py
+    m = re.search(
+        r"benchmarks/(?P<subdir>.+)/test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py", fullname
+    )
     if m:
-        subdir = m.group(1)
-        base = m.group(2)
+        subdir = m.group("subdir")
+        base = m.group("base")
         return f"{subdir}/{base}"
     # Try for top-level: benchmarks/test_foo_benchmarks.py -> foo
-    m2 = re.search(r"benchmarks/test_([a-zA-Z0-9_]+)_benchmarks\.py", fullname)
+    m2 = re.search(r"benchmarks/test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py", fullname)
     if m2:
-        return m2.group(1)
+        return m2.group("base")
+    # Try to match even more generic: any test_..._benchmarks.py
+    m3 = re.search(r"test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py", fullname)
+    if m3:
+        return m3.group("base")
+    print(f"[parse_benchmark_output.py] WARNING: Could not extract module path from fullname: '{fullname}'")
     return "unknown"
 
 def get_group_name(test_name: str) -> str:

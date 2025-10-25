@@ -4,6 +4,7 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Final,
     NoReturn,
     Optional,
 )
@@ -40,6 +41,9 @@ from faster_eth_utils.toolz import (
     groupby,
     valfilter,
     valmap,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_ens.utils import (
@@ -166,7 +170,7 @@ def validate_abi_value(abi_type: TypeStr, value: Any) -> None:
     raise Web3TypeError(f"The following abi value is not a '{abi_type}': {value}")
 
 
-def is_not_address_string(value: Any) -> bool:
+def is_not_address_string(value: Any) -> TypeGuard[str]:
     return (
         is_string(value)
         and not is_bytes(value)
@@ -230,14 +234,14 @@ def assert_one_val(*args: Any, **kwargs: Any) -> None:
 
 # -- RPC Response Validation -- #
 
-KNOWN_REQUEST_TIMEOUT_MESSAGING = {
+KNOWN_REQUEST_TIMEOUT_MESSAGING: Final = {
     # Note: It's important to be very explicit here and not too broad. We don't want
     # to accidentally catch a message that is not for a request timeout. In the worst
     # case, we raise something more generic like `Web3RPCError`. JSON-RPC unfortunately
     # has not standardized error codes for request timeouts.
     "request timed out",  # go-ethereum
 }
-METHOD_NOT_FOUND = -32601
+METHOD_NOT_FOUND: Final = -32601
 
 
 def _validate_subscription_fields(response: RPCResponse) -> None:
@@ -323,12 +327,12 @@ def validate_rpc_response_and_raise_if_error(
             "`eth_subscription` response.",
         )
 
-    if all(key in response for key in {"error", "result"}):
+    if all(key in response for key in ("error", "result")):
         _raise_bad_response_format(
             response, 'Response cannot include both "error" and "result".'
         )
     elif (
-        not any(key in response for key in {"error", "result"})
+        not any(key in response for key in ("error", "result"))
         and not is_subscription_response
     ):
         _raise_bad_response_format(

@@ -4,11 +4,14 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Final,
     Optional,
+    final,
 )
 
 from eth_typing import (
     ChecksumAddress,
+    HexStr,
 )
 from faster_eth_utils import (
     is_dict,
@@ -21,12 +24,13 @@ from faster_eth_utils.curried import (
 )
 from faster_eth_utils.toolz import (
     assoc,
-    complement,
     compose,
     curry,
     identity,
     partial,
-    pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.formatters import (
@@ -47,6 +51,7 @@ from faster_web3.middleware.formatting import (
     FormattingMiddlewareBuilder,
 )
 from faster_web3.types import (
+    BlockParams,
     RPCEndpoint,
     TxParams,
 )
@@ -58,20 +63,25 @@ if TYPE_CHECKING:
     )
 
 
-def is_named_block(value: Any) -> bool:
-    return value in {"latest", "earliest", "safe", "finalized"}
+def is_named_block(value: Any) -> TypeGuard[BlockParams]:
+    return value in {"latest", "earliest", "safe", "pending", "finalized"}
 
 
-def is_hexstr(value: Any) -> bool:
+def is_hexstr(value: Any) -> TypeGuard[HexStr]:
     return is_string(value) and is_hex(value)
 
 
-to_integer_if_hex = apply_formatter_if(is_hexstr, hex_to_integer)
-is_not_named_block = complement(is_named_block)
+def to_integer_if_hex(value: Any) -> Any:
+    return hex_to_integer(value) if is_hexstr(value) else value
+
+
+def is_not_named_block(value: Any) -> Any:
+    return not is_named_block(value)
+
 
 # --- Request Mapping --- #
 
-TRANSACTION_REQUEST_KEY_MAPPING = {
+TRANSACTION_REQUEST_KEY_MAPPING: Final = {
     "blobVersionedHashes": "blob_versioned_hashes",
     "gasPrice": "gas_price",
     "maxFeePerBlobGas": "max_fee_per_blob_gas",
@@ -81,10 +91,10 @@ TRANSACTION_REQUEST_KEY_MAPPING = {
     "authorizationList": "authorization_list",
     "chainId": "chain_id",
 }
-transaction_request_remapper = apply_key_map(TRANSACTION_REQUEST_KEY_MAPPING)
+transaction_request_remapper: Final = apply_key_map(TRANSACTION_REQUEST_KEY_MAPPING)
 
 
-TRANSACTION_REQUEST_FORMATTERS = {
+TRANSACTION_REQUEST_FORMATTERS: Final = {
     "chainId": to_integer_if_hex,
     "gas": to_integer_if_hex,
     "gasPrice": to_integer_if_hex,
@@ -110,27 +120,29 @@ TRANSACTION_REQUEST_FORMATTERS = {
         )
     ),
 }
-transaction_request_formatter = apply_formatters_to_dict(TRANSACTION_REQUEST_FORMATTERS)
+transaction_request_formatter: Final = apply_formatters_to_dict(
+    TRANSACTION_REQUEST_FORMATTERS
+)
 
-transaction_request_transformer = compose(
+transaction_request_transformer: Final = compose(
     transaction_request_remapper,
     transaction_request_formatter,
 )
 
-FILTER_REQUEST_KEY_MAPPING = {
+FILTER_REQUEST_KEY_MAPPING: Final = {
     "fromBlock": "from_block",
     "toBlock": "to_block",
 }
-filter_request_remapper = apply_key_map(FILTER_REQUEST_KEY_MAPPING)
+filter_request_remapper: Final = apply_key_map(FILTER_REQUEST_KEY_MAPPING)
 
 
-FILTER_REQUEST_FORMATTERS = {
+FILTER_REQUEST_FORMATTERS: Final = {
     "from_block": to_integer_if_hex,
     "to_block": to_integer_if_hex,
 }
-filter_request_formatter = apply_formatters_to_dict(FILTER_REQUEST_FORMATTERS)
+filter_request_formatter: Final = apply_formatters_to_dict(FILTER_REQUEST_FORMATTERS)
 
-filter_request_transformer = compose(
+filter_request_transformer: Final = compose(
     filter_request_formatter,
     filter_request_remapper,
 )
@@ -138,7 +150,7 @@ filter_request_transformer = compose(
 
 # --- Result Mapping --- #
 
-TRANSACTION_RESULT_KEY_MAPPING = {
+TRANSACTION_RESULT_KEY_MAPPING: Final = {
     "access_list": "accessList",
     "authorization_list": "authorizationList",
     "blob_versioned_hashes": "blobVersionedHashes",
@@ -153,10 +165,10 @@ TRANSACTION_RESULT_KEY_MAPPING = {
     "transaction_index": "transactionIndex",
     "data": "input",
 }
-transaction_result_remapper = apply_key_map(TRANSACTION_RESULT_KEY_MAPPING)
+transaction_result_remapper: Final = apply_key_map(TRANSACTION_RESULT_KEY_MAPPING)
 
 
-TRANSACTION_RESULT_FORMATTERS = {
+TRANSACTION_RESULT_FORMATTERS: Final = {
     "to": apply_formatter_if(partial(operator.eq, ""), static_return(None)),
     "access_list": apply_list_to_array_formatter(
         apply_key_map({"storage_keys": "storageKeys"}),
@@ -165,10 +177,12 @@ TRANSACTION_RESULT_FORMATTERS = {
         apply_key_map({"chain_id": "chainId", "y_parity": "yParity"}),
     ),
 }
-transaction_result_formatter = apply_formatters_to_dict(TRANSACTION_RESULT_FORMATTERS)
+transaction_result_formatter: Final = apply_formatters_to_dict(
+    TRANSACTION_RESULT_FORMATTERS
+)
 
 
-LOG_RESULT_KEY_MAPPING = {
+LOG_RESULT_KEY_MAPPING: Final = {
     "log_index": "logIndex",
     "transaction_index": "transactionIndex",
     "transaction_hash": "transactionHash",
@@ -178,7 +192,7 @@ LOG_RESULT_KEY_MAPPING = {
 log_result_remapper = apply_key_map(LOG_RESULT_KEY_MAPPING)
 
 
-RECEIPT_RESULT_KEY_MAPPING = {
+RECEIPT_RESULT_KEY_MAPPING: Final = {
     "block_hash": "blockHash",
     "block_number": "blockNumber",
     "contract_address": "contractAddress",
@@ -190,10 +204,10 @@ RECEIPT_RESULT_KEY_MAPPING = {
     "blob_gas_used": "blobGasUsed",
     "blob_gas_price": "blobGasPrice",
 }
-receipt_result_remapper = apply_key_map(RECEIPT_RESULT_KEY_MAPPING)
+receipt_result_remapper: Final = apply_key_map(RECEIPT_RESULT_KEY_MAPPING)
 
 
-BLOCK_RESULT_KEY_MAPPING = {
+BLOCK_RESULT_KEY_MAPPING: Final = {
     "gas_limit": "gasLimit",
     "sha3_uncles": "sha3Uncles",
     "transactions_root": "transactionsRoot",
@@ -216,23 +230,23 @@ BLOCK_RESULT_KEY_MAPPING = {
     "excess_blob_gas": "excessBlobGas",
     "requests_hash": "requestsHash",
 }
-block_result_remapper = apply_key_map(BLOCK_RESULT_KEY_MAPPING)
+block_result_remapper: Final = apply_key_map(BLOCK_RESULT_KEY_MAPPING)
 
-BLOCK_RESULT_FORMATTERS = {
+BLOCK_RESULT_FORMATTERS: Final = {
     "withdrawals": apply_list_to_array_formatter(
         apply_key_map({"validator_index": "validatorIndex"}),
     ),
 }
-block_result_formatter = apply_formatters_to_dict(BLOCK_RESULT_FORMATTERS)
+block_result_formatter: Final = apply_formatters_to_dict(BLOCK_RESULT_FORMATTERS)
 
 
-RECEIPT_RESULT_FORMATTERS = {
+RECEIPT_RESULT_FORMATTERS: Final = {
     "logs": apply_list_to_array_formatter(log_result_remapper),
 }
-receipt_result_formatter = apply_formatters_to_dict(RECEIPT_RESULT_FORMATTERS)
+receipt_result_formatter: Final = apply_formatters_to_dict(RECEIPT_RESULT_FORMATTERS)
 
 
-fee_history_result_remapper = apply_key_map(
+fee_history_result_remapper: Final = apply_key_map(
     {
         "oldest_block": "oldestBlock",
         "base_fee_per_gas": "baseFeePerGas",
@@ -241,35 +255,32 @@ fee_history_result_remapper = apply_key_map(
 )
 
 
-request_formatters = {
+def hex_block_to_integer(value: Any) -> Any:
+    return to_integer_if_hex(value) if is_not_named_block(value) else value
+
+
+block_arg_to_integer: Final = apply_formatters_to_args(hex_block_to_integer)
+by_block_number_and_index: Final = apply_formatters_to_args(
+    hex_block_to_integer, to_integer_if_hex
+)
+
+request_formatters: Final = {
     # Eth
-    RPCEndpoint("eth_getBlockByNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
+    RPCEndpoint("eth_getBlockByNumber"): block_arg_to_integer,
     RPCEndpoint("eth_getFilterChanges"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getFilterLogs"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getTransactionCount"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
-    RPCEndpoint("eth_getBlockTransactionCountByNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
-    RPCEndpoint("eth_getUncleCountByBlockNumber"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-    ),
+    RPCEndpoint("eth_getBlockTransactionCountByNumber"): block_arg_to_integer,
+    RPCEndpoint("eth_getUncleCountByBlockNumber"): block_arg_to_integer,
     RPCEndpoint("eth_getTransactionByBlockHashAndIndex"): apply_formatters_to_args(
         identity,
         to_integer_if_hex,
     ),
-    RPCEndpoint("eth_getTransactionByBlockNumberAndIndex"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-        to_integer_if_hex,
-    ),
-    RPCEndpoint("eth_getUncleByBlockNumberAndIndex"): apply_formatters_to_args(
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
-        to_integer_if_hex,
-    ),
+    RPCEndpoint("eth_getTransactionByBlockNumberAndIndex"): by_block_number_and_index,
+    RPCEndpoint("eth_getUncleByBlockNumberAndIndex"): by_block_number_and_index,
     RPCEndpoint("eth_newFilter"): apply_formatters_to_args(
         filter_request_transformer,
     ),
@@ -284,30 +295,35 @@ request_formatters = {
     ),
     RPCEndpoint("eth_call"): apply_formatters_to_args(
         transaction_request_transformer,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_createAccessList"): apply_formatters_to_args(
         transaction_request_transformer,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_uninstallFilter"): apply_formatters_to_args(hex_to_integer),
     RPCEndpoint("eth_getCode"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_getBalance"): apply_formatters_to_args(
         identity,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     RPCEndpoint("eth_feeHistory"): apply_formatters_to_args(
         to_integer_if_hex,
-        apply_formatter_if(is_not_named_block, to_integer_if_hex),
+        hex_block_to_integer,
     ),
     # EVM
     RPCEndpoint("evm_revert"): apply_formatters_to_args(hex_to_integer),
 }
 
-result_formatters: Optional[Dict[RPCEndpoint, Callable[..., Any]]] = {
+format_logs: Final = apply_formatter_if(
+    is_array_of_dicts,
+    apply_list_to_array_formatter(log_result_remapper),
+)
+
+result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
     RPCEndpoint("eth_getBlockByHash"): apply_formatter_if(
         is_dict, compose(block_result_remapper, block_result_formatter)
     ),
@@ -333,18 +349,9 @@ result_formatters: Optional[Dict[RPCEndpoint, Callable[..., Any]]] = {
     RPCEndpoint("eth_newFilter"): integer_to_hex,
     RPCEndpoint("eth_newBlockFilter"): integer_to_hex,
     RPCEndpoint("eth_newPendingTransactionFilter"): integer_to_hex,
-    RPCEndpoint("eth_getLogs"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
-    RPCEndpoint("eth_getFilterChanges"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
-    RPCEndpoint("eth_getFilterLogs"): apply_formatter_if(
-        is_array_of_dicts,
-        apply_list_to_array_formatter(log_result_remapper),
-    ),
+    RPCEndpoint("eth_getLogs"): format_logs,
+    RPCEndpoint("eth_getFilterChanges"): format_logs,
+    RPCEndpoint("eth_getFilterLogs"): format_logs,
     RPCEndpoint("eth_feeHistory"): apply_formatter_if(
         is_dict, fee_history_result_remapper
     ),
@@ -354,10 +361,8 @@ result_formatters: Optional[Dict[RPCEndpoint, Callable[..., Any]]] = {
 
 
 def guess_from(w3: "Web3", _: TxParams) -> ChecksumAddress:
-    if w3.eth.accounts and len(w3.eth.accounts) > 0:
-        return w3.eth.accounts[0]
-
-    return None
+    accounts = w3.eth.accounts
+    return accounts[0] if len(accounts) > 0 else None
 
 
 @curry
@@ -365,7 +370,7 @@ def fill_default(
     field: str, guess_func: Callable[..., Any], w3: "Web3", transaction: TxParams
 ) -> TxParams:
     # type ignored b/c TxParams keys must be string literal types
-    if field in transaction and transaction[field] is not None:  # type: ignore
+    if field in transaction and transaction[field] is not None:  # type: ignore [literal-required]
         return transaction
     else:
         guess_val = guess_func(w3, transaction)
@@ -376,7 +381,7 @@ def fill_default(
 
 
 async def async_guess_from(
-    async_w3: "AsyncWeb3", _: TxParams
+    async_w3: "AsyncWeb3[Any]", _: TxParams
 ) -> Optional[ChecksumAddress]:
     accounts = await async_w3.eth.accounts
     if accounts is not None and len(accounts) > 0:
@@ -388,11 +393,11 @@ async def async_guess_from(
 async def async_fill_default(
     field: str,
     guess_func: Callable[..., Any],
-    async_w3: "AsyncWeb3",
+    async_w3: "AsyncWeb3[Any]",
     transaction: TxParams,
 ) -> TxParams:
     # type ignored b/c TxParams keys must be string literal types
-    if field in transaction and transaction[field] is not None:  # type: ignore
+    if field in transaction and transaction[field] is not None:  # type: ignore [literal-required]
         return transaction
     else:
         guess_val = await guess_func(async_w3, transaction)
@@ -402,31 +407,28 @@ async def async_fill_default(
 # --- define middleware --- #
 
 
+@final
 class DefaultTransactionFieldsMiddleware(Web3Middleware):
     def request_processor(self, method: "RPCEndpoint", params: Any) -> Any:
-        if method in (
+        if method in {
             "eth_call",
             "eth_estimateGas",
             "eth_sendTransaction",
             "eth_createAccessList",
-        ):
-            fill_default_from = fill_default("from", guess_from, self._w3)
-            filled_transaction = pipe(
-                params[0],
-                fill_default_from,
-            )
+        }:
+            filled_transaction = fill_default("from", guess_from, self._w3, params[0])
             params = [filled_transaction] + list(params)[1:]
         return method, params
 
     # --- async --- #
 
     async def async_request_processor(self, method: "RPCEndpoint", params: Any) -> Any:
-        if method in (
+        if method in {
             "eth_call",
             "eth_estimateGas",
             "eth_sendTransaction",
             "eth_createAccessList",
-        ):
+        }:
             filled_transaction = await async_fill_default(
                 "from", async_guess_from, self._w3, params[0]
             )
@@ -435,7 +437,7 @@ class DefaultTransactionFieldsMiddleware(Web3Middleware):
         return method, params
 
 
-ethereum_tester_middleware = FormattingMiddlewareBuilder.build(
+ethereum_tester_middleware: Final = FormattingMiddlewareBuilder.build(
     request_formatters=request_formatters, result_formatters=result_formatters
 )
-default_transaction_fields_middleware = DefaultTransactionFieldsMiddleware
+default_transaction_fields_middleware: Final = DefaultTransactionFieldsMiddleware

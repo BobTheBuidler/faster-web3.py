@@ -151,17 +151,19 @@ def serve_subscription_result(ipc_server_fixture):
 
 
 def test_ipc_tilde_in_path():
-    expected_path = str(pathlib.Path.home()) + ("\\foo" if sys.platform.startswith("win") else "/foo")
+    expected_path = str(pathlib.Path.home()) + (
+        "\\foo" if sys.platform.startswith("win") else "/foo"
+    )
     assert AsyncIPCProvider("~/foo").ipc_path == expected_path
     assert AsyncIPCProvider(pathlib.Path("~/foo")).ipc_path == expected_path
 
 
 def test_get_endpoint_uri_or_ipc_path_returns_ipc_path():
     provider = AsyncIPCProvider(pathlib.Path("/path/to/file"))
-    expected = "D:\\path\\to\\file" if sys.platform.startswith("win") else "/path/to/file"
-    assert (
-        provider.get_endpoint_uri_or_ipc_path() == expected == provider.ipc_path
+    expected = (
+        "D:\\path\\to\\file" if sys.platform.startswith("win") else "/path/to/file"
     )
+    assert provider.get_endpoint_uri_or_ipc_path() == expected == provider.ipc_path
 
 
 # -- async -- #

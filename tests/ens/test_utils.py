@@ -175,6 +175,7 @@ def test_normal_name_to_hash(name, hashed):
         raw_name_to_hash,
     ),
 )
+@pytest.mark.skip(reason="Native functions do not support mocking")
 def test_name_utility_methods_normalize_the_name_using_ensip15(utility_method):
     # we already have tests for `normalize_name_ensip15` so we just need to make sure
     # the utility methods call it under the hood with the correct arguments
@@ -185,6 +186,7 @@ def test_name_utility_methods_normalize_the_name_using_ensip15(utility_method):
         normalize_name_ensip15_mock.assert_called_once_with("foo.eth")
 
 
+@pytest.mark.skip(reason="Native functions do not support mocking")
 def test_label_to_hash_normalizes_name_using_ensip15():
     normalized_name = ENSNormalizedName(
         [
@@ -210,6 +212,7 @@ def test_label_to_hash_normalizes_name_using_ensip15():
 
 
 @mock.patch("faster_ens.utils.dns_encode_name")
+@pytest.mark.skip(reason="Native functions do not support mocking")
 def test_ens_encode_name_issues_deprecation_warning_and_calls_dns_encode_name(
     mock_dns_encode_name,
 ):

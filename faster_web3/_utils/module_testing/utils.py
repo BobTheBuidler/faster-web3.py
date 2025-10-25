@@ -11,10 +11,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_utils.toolz import (
-    merge,
-)
-
 from faster_web3.providers.persistent import (
     PersistentConnectionProvider,
 )
@@ -98,7 +94,7 @@ class RequestMocker:
 
     def __init__(
         self,
-        w3: Union["AsyncWeb3", "Web3"],
+        w3: Union["AsyncWeb3[Any]", "Web3"],
         mock_results: Dict[Union["RPCEndpoint", str], Any] = None,
         mock_errors: Dict[Union["RPCEndpoint", str], Any] = None,
         mock_responses: Dict[Union["RPCEndpoint", str], Any] = None,
@@ -111,9 +107,9 @@ class RequestMocker:
             self._send_request = w3.provider.send_request
             self._recv_for_request = w3.provider.recv_for_request
         else:
-            self._make_request: Union[
-                "AsyncMakeRequestFn", "MakeRequestFn"
-            ] = w3.provider.make_request
+            self._make_request: Union["AsyncMakeRequestFn", "MakeRequestFn"] = (
+                w3.provider.make_request
+            )
 
     def _build_request_id(self) -> int:
         request_id = (
@@ -132,10 +128,10 @@ class RequestMocker:
         return self
 
     def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
-        # mypy error: Cannot assign to a method
-        self.w3.provider.make_request = self._make_request  # type: ignore[assignment]
+        provider = self.w3.provider
+        provider.make_request = self._make_request  # type: ignore[method-assign]
         # reset request func cache to re-build request_func with original make_request
-        self.w3.provider._request_func_cache = (None, None)
+        provider._request_func_cache = (None, None)
 
     def _mock_request_handler(
         self, method: "RPCEndpoint", params: Any
@@ -162,17 +158,17 @@ class RequestMocker:
             elif "error" in mock_return:
                 mock_return = self._create_error_object(mock_return["error"])
 
-            mocked_response = merge(response_dict, mock_return)
+            mocked_response = response_dict | mock_return
         elif method in self.mock_results:
             mock_return = self.mock_results[method]
             if callable(mock_return):
                 mock_return = mock_return(method, params)
-            mocked_response = merge(response_dict, {"result": mock_return})
+            mocked_response = response_dict | {"result": mock_return}
         elif method in self.mock_errors:
             error = self.mock_errors[method]
             if callable(error):
                 error = error(method, params)
-            mocked_response = merge(response_dict, self._create_error_object(error))
+            mocked_response = response_dict | self._create_error_object(error)
         else:
             raise Exception("Invariant: unreachable code path")
 
@@ -190,29 +186,31 @@ class RequestMocker:
     # -- async -- #
 
     async def __aenter__(self) -> "Self":
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        provider = self.w3.provider
+        if not isinstance(provider, PersistentConnectionProvider):
             # mypy error: Cannot assign to a method
-            self.w3.provider.make_request = self._async_mock_request_handler  # type: ignore[method-assign]  # noqa: E501
+            provider.make_request = self._async_mock_request_handler  # type: ignore[method-assign]  # noqa: E501
             # reset request func cache to re-build request_func w/ mocked make_request
-            self.w3.provider._request_func_cache = (None, None)
+            provider._request_func_cache = (None, None)
         else:
-            self.w3.provider.send_request = self._async_mock_send_handler  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider.recv_for_request = self._async_mock_recv_handler  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider._send_func_cache = (None, None)
-            self.w3.provider._recv_func_cache = (None, None)
+            provider.send_request = self._async_mock_send_handler  # type: ignore[method-assign]  # noqa: E501
+            provider.recv_for_request = self._async_mock_recv_handler  # type: ignore[method-assign]  # noqa: E501
+            provider._send_func_cache = (None, None)
+            provider._recv_func_cache = (None, None)
         return self
 
     async def __aexit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
-        if not isinstance(self.w3.provider, PersistentConnectionProvider):
+        provider = self.w3.provider
+        if not isinstance(provider, PersistentConnectionProvider):
             # mypy error: Cannot assign to a method
-            self.w3.provider.make_request = self._make_request  # type: ignore[assignment]  # noqa: E501
+            provider.make_request = self._make_request  # type: ignore[method-assign]  # noqa: E501
             # reset request func cache to re-build request_func w/ original make_request
-            self.w3.provider._request_func_cache = (None, None)
+            provider._request_func_cache = (None, None)
         else:
-            self.w3.provider.send_request = self._send_request  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider.recv_for_request = self._recv_for_request  # type: ignore[method-assign]  # noqa: E501
-            self.w3.provider._send_func_cache = (None, None)
-            self.w3.provider._recv_func_cache = (None, None)
+            provider.send_request = self._send_request  # type: ignore[method-assign]  # noqa: E501
+            provider.recv_for_request = self._recv_for_request  # type: ignore[method-assign]  # noqa: E501
+            provider._send_func_cache = (None, None)
+            provider._recv_func_cache = (None, None)
 
     async def _async_build_mock_result(
         self, method: "RPCEndpoint", params: Any, request_id: Optional[int] = None
@@ -234,7 +232,7 @@ class RequestMocker:
             elif "error" in mock_return:
                 mock_return = self._create_error_object(mock_return["error"])
 
-            mocked_result = merge(response_dict, mock_return)
+            mocked_result = response_dict | mock_return
         elif method in self.mock_results:
             mock_return = self.mock_results[method]
             if callable(mock_return):
@@ -244,7 +242,7 @@ class RequestMocker:
                 # this is the "correct" way to mock the async make_request
                 mock_return = await mock_return(method, params)
 
-            mocked_result = merge(response_dict, {"result": mock_return})
+            mocked_result = response_dict | {"result": mock_return}
 
         elif method in self.mock_errors:
             error = self.mock_errors[method]
@@ -252,7 +250,7 @@ class RequestMocker:
                 error = error(method, params)
             elif iscoroutinefunction(error):
                 error = await error(method, params)
-            mocked_result = merge(response_dict, self._create_error_object(error))
+            mocked_result = response_dict | self._create_error_object(error)
 
         else:
             raise Exception("Invariant: unreachable code path")
@@ -262,7 +260,7 @@ class RequestMocker:
     async def _async_mock_request_handler(
         self, method: "RPCEndpoint", params: Any
     ) -> "RPCResponse":
-        self.w3 = cast("AsyncWeb3", self.w3)
+        self.w3 = cast("AsyncWeb3[Any]", self.w3)
         self._make_request = cast("AsyncMakeRequestFn", self._make_request)
         if all(
             method not in mock_dict
@@ -300,7 +298,7 @@ class RequestMocker:
     async def _async_mock_recv_handler(
         self, rpc_request: "RPCRequest"
     ) -> "RPCResponse":
-        self.w3 = cast("AsyncWeb3", self.w3)
+        self.w3 = cast("AsyncWeb3[Any]", self.w3)
         method = rpc_request["method"]
         request_id = rpc_request["id"]
         if all(
@@ -330,4 +328,4 @@ class RequestMocker:
     def _create_error_object(error: Dict[str, Any]) -> Dict[str, Any]:
         code = error.get("code", -32000)
         message = error.get("message", "Mocked error")
-        return {"error": merge({"code": code, "message": message}, error)}
+        return {"error": {"code": code, "message": message} | error}

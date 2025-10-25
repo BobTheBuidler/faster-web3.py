@@ -103,7 +103,7 @@ def _get_raw_miner_data(
 
 
 def _aggregate_miner_data(
-    raw_data: Iterable[Tuple[ChecksumAddress, HexBytes, Wei]]
+    raw_data: Iterable[Tuple[ChecksumAddress, HexBytes, Wei]],
 ) -> Iterable[MinerData]:
     data_by_miner = groupby(0, raw_data)
 
@@ -111,7 +111,7 @@ def _aggregate_miner_data(
         _, block_hashes, gas_prices = map(set, zip(*miner_data))
         try:
             # types ignored b/c mypy has trouble inferring gas_prices: Sequence[Wei]
-            price_percentile = percentile(gas_prices, percentile=20)  # type: ignore
+            price_percentile = percentile(gas_prices, percentile=20)
         except InsufficientData:
             price_percentile = min(gas_prices)
         yield MinerData(
@@ -216,7 +216,9 @@ def construct_time_based_gas_price_strategy(
         and 100 means 100%.
     """
 
-    def time_based_gas_price_strategy(w3: Web3, transaction_params: Optional[TxParams]) -> Wei:
+    def time_based_gas_price_strategy(
+        w3: Web3, transaction_params: Optional[TxParams]
+    ) -> Wei:
         # return gas price when no transactions available to sample
         if w3.eth.get_block("latest")["number"] == 0:
             return w3.eth.gas_price

@@ -6,11 +6,13 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    Final,
     List,
     NoReturn,
     Optional,
     Tuple,
     Type,
+    TypeVar,
 )
 
 from faster_eth_abi import (
@@ -40,6 +42,9 @@ from faster_eth_utils.toolz import (
     curry,
     excepts,
 )
+from typing_extensions import (
+    ParamSpec,
+)
 
 from faster_web3 import (
     Web3,
@@ -54,7 +59,6 @@ from faster_web3.exceptions import (
 )
 from faster_web3.types import (
     LogReceipt,
-    RPCResponse,
     TParams,
     TReturn,
     TValue,
@@ -67,6 +71,10 @@ if TYPE_CHECKING:
     )
 
 
+P = ParamSpec("P")
+T = TypeVar("T")
+
+
 def not_implemented(*args: Any, **kwargs: Any) -> NoReturn:
     raise NotImplementedError("RPC method not implemented")
 
@@ -77,7 +85,7 @@ def call_eth_tester(
     eth_tester: "EthereumTester",
     fn_args: Any,
     fn_kwargs: Optional[Any] = None,
-) -> RPCResponse:
+) -> Any:
     if fn_kwargs is None:
         fn_kwargs = {}
 
@@ -91,9 +99,8 @@ def call_eth_tester(
                 # b"Uo\x180" is the first 4 bytes of the keccak hash for:
                 # OffchainLookup(address,string[],bytes,bytes4,bytes)
                 parsed_data_as_bytes = ast.literal_eval(possible_data)
-                data_payload = parsed_data_as_bytes[
-                    4:
-                ]  # everything but the function selector
+                # everything but the function selector
+                data_payload = parsed_data_as_bytes[4:]
                 abi_decoded_data = abi.decode(
                     list(OFFCHAIN_LOOKUP_FIELDS.values()), data_payload
                 )
@@ -116,7 +123,7 @@ def call_eth_tester(
 
 
 def without_eth_tester(
-    fn: Callable[[TParams], TReturn]
+    fn: Callable[[TParams], TReturn],
 ) -> Callable[["EthereumTester", TParams], TReturn]:
     # workaround for: https://github.com/pytoolz/cytoolz/issues/103
     # @functools.wraps(fn)
@@ -127,7 +134,7 @@ def without_eth_tester(
 
 
 def without_params(
-    fn: Callable[[TParams], TReturn]
+    fn: Callable[[TParams], TReturn],
 ) -> Callable[["EthereumTester", TParams], TReturn]:
     # workaround for: https://github.com/pytoolz/cytoolz/issues/103
     # @functools.wraps(fn)
@@ -161,21 +168,23 @@ def client_version(eth_tester: "EthereumTester", params: Any) -> str:
     return f"EthereumTester/{__version__}/{sys.platform}/python{v.major}.{v.minor}.{v.micro}"  # noqa: E501
 
 
-@curry
 def null_if_excepts(
-    exc_type: Type[BaseException], fn: Callable[..., TReturn]
-) -> Callable[..., TReturn]:
-    return excepts(
-        exc_type,
-        fn,
-        static_return(None),
-    )
+    exc_type: Type[BaseException],
+) -> Callable[[Callable[P, T]], Callable[P, Optional[T]]]:
+    def null_if_excepts_decorator(fn: Callable[P, T]) -> Callable[P, Optional[T]]:
+        return excepts(
+            exc_type,
+            fn,
+            static_return(None),
+        )
+
+    return null_if_excepts_decorator
 
 
-null_if_block_not_found = null_if_excepts(BlockNotFound)
-null_if_transaction_not_found = null_if_excepts(TransactionNotFound)
-null_if_filter_not_found = null_if_excepts(FilterNotFound)
-null_if_indexerror = null_if_excepts(IndexError)
+null_if_block_not_found: Final = null_if_excepts(BlockNotFound)
+null_if_transaction_not_found: Final = null_if_excepts(TransactionNotFound)
+null_if_filter_not_found: Final = null_if_excepts(FilterNotFound)
+null_if_indexerror: Final = null_if_excepts(IndexError)
 
 
 @null_if_indexerror
@@ -185,8 +194,7 @@ def get_transaction_by_block_hash_and_index(
 ) -> TxReceipt:
     block_hash, transaction_index = params
     block = eth_tester.get_block_by_hash(block_hash, full_transactions=True)
-    transaction = block["transactions"][transaction_index]
-    return transaction
+    return block["transactions"][transaction_index]
 
 
 @null_if_indexerror
@@ -196,20 +204,17 @@ def get_transaction_by_block_number_and_index(
 ) -> TxReceipt:
     block_number, transaction_index = params
     block = eth_tester.get_block_by_number(block_number, full_transactions=True)
-    transaction = block["transactions"][transaction_index]
-    return transaction
+    return block["transactions"][transaction_index]
 
 
 def create_log_filter(eth_tester: "EthereumTester", params: Any) -> int:
     filter_params = params[0]
-    filter_id = eth_tester.create_log_filter(**filter_params)
-    return filter_id
+    return eth_tester.create_log_filter(**filter_params)
 
 
 def get_logs(eth_tester: "EthereumTester", params: Any) -> List[LogReceipt]:
     filter_params = params[0]
-    logs = eth_tester.get_logs(**filter_params)
-    return logs
+    return list(eth_tester.get_logs(**filter_params))
 
 
 def _generate_random_private_key() -> HexStr:
@@ -225,7 +230,7 @@ def create_new_account(eth_tester: "EthereumTester") -> HexAddress:
     return eth_tester.add_account(_generate_random_private_key())
 
 
-API_ENDPOINTS = {
+API_ENDPOINTS: Final = {
     "web3": {
         "clientVersion": client_version,
         "sha3": compose(

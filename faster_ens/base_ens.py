@@ -7,6 +7,7 @@ from typing import (
 )
 
 from eth_typing import (
+    AnyAddress,
     ChecksumAddress,
 )
 from faster_eth_utils.abi import (
@@ -40,10 +41,12 @@ if TYPE_CHECKING:
 
 @mypyc_attr(allow_interpreted_subclasses=True)
 class BaseENS:
-    w3: Union["AsyncWeb3", "Web3"]
+    w3: Union["AsyncWeb3[Any]", "Web3"]
     ens: Optional[Union["Contract", "AsyncContract"]] = None
     _resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None
-    _reverse_resolver_contract: Optional[Union[Type["Contract"], Type["AsyncContract"]]] = None
+    _reverse_resolver_contract: Optional[
+        Union[Type["Contract"], Type["AsyncContract"]]
+    ] = None
 
     @property
     def strict_bytes_type_checking(self) -> bool:
@@ -70,7 +73,7 @@ class BaseENS:
         return is_valid_name(name)
 
     @staticmethod
-    def reverse_domain(address: ChecksumAddress) -> str:
+    def reverse_domain(address: AnyAddress) -> str:
         return address_to_reverse_domain(address)
 
     @staticmethod

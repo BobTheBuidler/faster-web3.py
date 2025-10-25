@@ -2,8 +2,10 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Dict,
+    Final,
     Union,
     cast,
+    final,
 )
 
 from faster_web3.types import (
@@ -24,15 +26,18 @@ if TYPE_CHECKING:
     )
 
 
+@final
 class PersistentConnection:
     """
     A class that houses the public API for interacting with the persistent connection
     via a `AsyncWeb3` instance instantiated with a `PersistentConnectionProvider` class.
     """
 
-    def __init__(self, w3: "AsyncWeb3"):
-        self._manager = w3.manager
-        self.provider = cast("PersistentConnectionProvider", self._manager.provider)
+    def __init__(self, w3: "AsyncWeb3[Any]"):
+        self._manager: Final = w3.manager
+        self.provider: Final = cast(
+            "PersistentConnectionProvider", self._manager.provider
+        )
 
     @property
     def subscriptions(self) -> Dict[str, Any]:

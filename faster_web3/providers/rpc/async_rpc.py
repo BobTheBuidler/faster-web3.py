@@ -3,10 +3,8 @@ import logging
 from typing import (
     Any,
     Dict,
-    Iterable,
     List,
     Optional,
-    Tuple,
     Union,
     cast,
 )
@@ -20,7 +18,6 @@ from eth_typing import (
 )
 from faster_eth_utils import (
     combomethod,
-    to_dict,
 )
 
 from faster_web3._utils.empty import (
@@ -31,6 +28,8 @@ from faster_web3._utils.http import (
     construct_user_agent,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -103,11 +102,12 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
     ) -> None:
         self._exception_retry_configuration = value
 
-    @to_dict
-    def get_request_kwargs(self) -> Iterable[Tuple[str, Any]]:
-        if "headers" not in self._request_kwargs:
-            yield "headers", self.get_request_headers()
-        yield from self._request_kwargs.items()
+    def get_request_kwargs(self) -> Dict[str, Any]:
+        provider_request_kwargs = self._request_kwargs
+        if "headers" in provider_request_kwargs:
+            return provider_request_kwargs.copy()
+        headers = {"headers": self.get_request_headers()}
+        return headers | provider_request_kwargs
 
     @combomethod
     def get_request_headers(cls) -> Dict[str, str]:
@@ -127,30 +127,28 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
         If exception_retry_configuration is set, retry on failure; otherwise, make
         the request without retrying.
         """
-        if (
-            self.exception_retry_configuration is not None
-            and check_if_retry_on_failure(
-                method, self.exception_retry_configuration.method_allowlist
-            )
+        session_manager = self._request_session_manager
+        retry_config = self.exception_retry_configuration
+        endpoint = self.endpoint_uri
+        if retry_config is None or not check_if_retry_on_failure(
+            method, retry_config.method_allowlist
         ):
-            for i in range(self.exception_retry_configuration.retries):
-                try:
-                    return await self._request_session_manager.async_make_post_request(
-                        self.endpoint_uri, request_data, **self.get_request_kwargs()
-                    )
-                except tuple(self.exception_retry_configuration.errors):
-                    if i < self.exception_retry_configuration.retries - 1:
-                        await asyncio.sleep(
-                            self.exception_retry_configuration.backoff_factor * 2**i
-                        )
-                        continue
-                    else:
-                        raise
-            return None
-        else:
-            return await self._request_session_manager.async_make_post_request(
-                self.endpoint_uri, request_data, **self.get_request_kwargs()
+            return await session_manager.async_make_post_request(
+                endpoint, request_data, **self.get_request_kwargs()
             )
+
+        retry_on_errs = tuple(retry_config.errors)
+        for i in range(retries := retry_config.retries):
+            try:
+                return await session_manager.async_make_post_request(
+                    endpoint, request_data, **self.get_request_kwargs()
+                )
+            except retry_on_errs:
+                if i < retries - 1:
+                    await asyncio.sleep(retry_config.backoff_factor * 2**i)
+                else:
+                    raise
+        return None
 
     @async_handle_request_caching
     async def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
@@ -168,9 +166,7 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
         )
         return response
 
-    async def make_batch_request(
-        self, batch_requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    async def make_batch_request(self, batch_requests: BatchParams) -> BatchResponse:
         self.logger.debug("Making batch request HTTP - uri: `%s`", self.endpoint_uri)
         request_data = self.encode_batch_rpc_request(batch_requests)
         raw_response = await self._request_session_manager.async_make_post_request(
@@ -187,7 +183,7 @@ class AsyncHTTPProvider(AsyncJSONBaseProvider):
 
     async def disconnect(self) -> None:
         cache = self._request_session_manager.session_cache
-        for _, session in cache.items():
+        for session in cache.values():
             await session.close()
         cache.clear()
 

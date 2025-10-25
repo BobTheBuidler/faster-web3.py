@@ -1,6 +1,7 @@
 include LICENSE
 include README.md
 
+recursive-include faster_web3/tools *
 recursive-include faster_ens/specs *
 recursive-include scripts *
 recursive-include tests *

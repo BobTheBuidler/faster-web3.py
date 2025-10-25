@@ -17,7 +17,6 @@ from faster_eth_abi.codec import (
 )
 from faster_eth_utils.toolz import (
     curry,
-    pipe,
 )
 
 from faster_web3._utils.filters import (
@@ -33,6 +32,7 @@ from faster_web3.providers.persistent import (
 )
 from faster_web3.types import (
     FormattedEthSubscriptionResponse,
+    RequestParams,
     RPCEndpoint,
     RPCResponse,
 )
@@ -48,11 +48,7 @@ if TYPE_CHECKING:
 def apply_result_formatters(
     result_formatters: Callable[..., Any], result: RPCResponse
 ) -> RPCResponse:
-    if result_formatters:
-        formatted_result = pipe(result, result_formatters)
-        return formatted_result
-    else:
-        return result
+    return result_formatters(result) if result_formatters else result
 
 
 TReturn = TypeVar("TReturn")
@@ -60,16 +56,16 @@ TReturn = TypeVar("TReturn")
 
 @curry
 def retrieve_request_information_for_batching(
-    w3: Union["AsyncWeb3", "Web3"],
+    w3: Union["AsyncWeb3[Any]", "Web3"],
     module: "Module",
     method: Method[Callable[..., Any]],
 ) -> Union[
-    Callable[..., Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]],
-    Callable[..., Coroutine[Any, Any, Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]]],
+    Callable[..., Tuple[RequestParams, Sequence[Any]]],
+    Callable[..., Coroutine[Any, Any, Tuple[RequestParams, Sequence[Any]]]],
 ]:
     async def async_inner(
         *args: Any, **kwargs: Any
-    ) -> Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]:
+    ) -> Tuple[RequestParams, Sequence[Any]]:
         (method_str, params), response_formatters = method.process_params(
             module, *args, **kwargs
         )
@@ -79,9 +75,7 @@ def retrieve_request_information_for_batching(
             )
         return (cast(RPCEndpoint, method_str), params), response_formatters
 
-    def inner(
-        *args: Any, **kwargs: Any
-    ) -> Tuple[Tuple[RPCEndpoint, Any], Sequence[Any]]:
+    def inner(*args: Any, **kwargs: Any) -> Tuple[RequestParams, Sequence[Any]]:
         (method_str, params), response_formatters = method.process_params(
             module, *args, **kwargs
         )
@@ -119,7 +113,7 @@ def retrieve_blocking_method_call_fn(
 
 @curry
 def retrieve_async_method_call_fn(
-    async_w3: "AsyncWeb3",
+    async_w3: "AsyncWeb3[Any]",
     module: "Module",
     method: Method[Callable[..., Any]],
 ) -> Callable[
@@ -167,7 +161,7 @@ def retrieve_async_method_call_fn(
 class Module:
     is_async = False
 
-    def __init__(self, w3: Union["AsyncWeb3", "Web3"]) -> None:
+    def __init__(self, w3: Union["AsyncWeb3[Any]", "Web3"]) -> None:
         if self.is_async:
             self.retrieve_caller_fn = retrieve_async_method_call_fn(w3, self)
         else:

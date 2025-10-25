@@ -13,12 +13,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi.codec import (
-    ABICodec,
-)
-from faster_eth_abi.registry import (
-    registry as default_registry,
-)
 from eth_typing import (
     ABI,
     ABICallable,
@@ -28,9 +22,16 @@ from eth_typing import (
     ABIFallback,
     ABIFunction,
     ABIReceive,
+    Address,
     ChecksumAddress,
     HexStr,
     TypeStr,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
+)
+from faster_eth_abi.registry import (
+    registry as default_registry,
 )
 from faster_eth_utils import (
     add_0x_prefix,
@@ -38,9 +39,6 @@ from faster_eth_utils import (
     filter_abi_by_name,
     filter_abi_by_type,
     get_abi_input_types,
-)
-from faster_eth_utils.toolz import (
-    pipe,
 )
 from faster_hexbytes import (
     HexBytes,
@@ -100,17 +98,16 @@ def find_matching_event_abi(
     event_name: Optional[str] = None,
     argument_names: Optional[Sequence[str]] = None,
 ) -> ABIEvent:
-    filters: List[functools.partial[Sequence[ABIElement]]] = [
-        functools.partial(filter_abi_by_type, "event"),
-    ]
+
+    event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_type("event", abi)
 
     if event_name is not None:
-        filters.append(functools.partial(filter_abi_by_name, event_name))
+        event_abi_candidates = filter_abi_by_name(event_name, event_abi_candidates)
 
     if argument_names is not None:
-        filters.append(functools.partial(filter_by_argument_name, argument_names))
-
-    event_abi_candidates: Sequence[ABIEvent] = pipe(abi, *filters)
+        event_abi_candidates = filter_by_argument_name(
+            argument_names, event_abi_candidates
+        )
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]
@@ -121,17 +118,16 @@ def find_matching_event_abi(
 
 
 def encode_abi(
-    w3: Union["AsyncWeb3", "Web3"],
+    w3: Union["AsyncWeb3[Any]", "Web3"],
     abi: ABIElement,
     arguments: Sequence[Any],
-    data: Optional[HexStr] = None,
+    data: Optional[Union[HexStr, HexBytes]] = None,
 ) -> HexStr:
-    argument_types = []
     try:
         argument_types = get_abi_input_types(abi)
     except ValueError:
         # Use the default argument_types if the abi doesn't have inputs
-        pass
+        argument_types = []
 
     if not check_if_arguments_can_be_encoded(
         abi,
@@ -167,8 +163,8 @@ def encode_abi(
 
 
 def prepare_transaction(
-    address: ChecksumAddress,
-    w3: Union["AsyncWeb3", "Web3"],
+    address: Union[ChecksumAddress, Address, None],
+    w3: Union["AsyncWeb3[Any]", "Web3"],
     abi_element_identifier: ABIElementIdentifier,
     contract_abi: Optional[ABI] = None,
     abi_callable: Optional[ABICallable] = None,
@@ -232,7 +228,7 @@ def prepare_transaction(
 
 
 def encode_transaction_data(
-    w3: Union["AsyncWeb3", "Web3"],
+    w3: Union["AsyncWeb3[Any]", "Web3"],
     abi_element_identifier: ABIElementIdentifier,
     contract_abi: Optional[ABI] = None,
     abi_callable: Optional[ABICallable] = None,
@@ -275,9 +271,10 @@ def decode_transaction_data(
     types = get_abi_input_types(fn_abi)
     abi_codec = ABICodec(default_registry)
     decoded = abi_codec.decode(types, data_bytes[4:])
+    inputs = fn_abi["inputs"]
     if normalizers:
-        decoded = map_abi_data(normalizers, types, decoded)
-    return named_tree(fn_abi["inputs"], decoded)
+        return named_tree(inputs, map_abi_data(normalizers, types, decoded))
+    return named_tree(inputs, decoded)
 
 
 def get_constructor_function_info(
@@ -288,7 +285,7 @@ def get_constructor_function_info(
             ABIConstructor, get_abi_element(contract_abi, "constructor")
         )
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return constructor_abi, fn_selector, fn_arguments
 
 
@@ -298,7 +295,7 @@ def get_fallback_function_info(
     if fallback_abi is None:
         fallback_abi = cast(ABIFallback, get_abi_element(contract_abi, "fallback"))
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return fallback_abi, fn_selector, fn_arguments
 
 
@@ -308,7 +305,7 @@ def get_receive_function_info(
     if receive_abi is None:
         receive_abi = cast(ABIReceive, get_abi_element(contract_abi, "receive"))
     fn_selector = encode_hex(b"")
-    fn_arguments: Tuple[Any, ...] = tuple()
+    fn_arguments: Tuple[Any, ...] = ()
     return receive_abi, fn_selector, fn_arguments
 
 
@@ -317,15 +314,12 @@ def validate_payable(transaction: TxParams, abi_callable: ABICallable) -> None:
     Raise Web3ValidationError if non-zero ether
     is sent to a non-payable function.
     """
+    value = transaction.get("value")
+    if value is None or to_integer_if_hex(value) == 0:
+        return
     if (
-        "value" in transaction
-        and to_integer_if_hex(transaction["value"]) != 0
-        and (
-            "payable" in abi_callable
-            and not abi_callable["payable"]
-            or "stateMutability" in abi_callable
-            and abi_callable["stateMutability"] == "nonpayable"
-        )
+        abi_callable.get("payable") is False
+        or abi_callable.get("stateMutability") == "nonpayable"
     ):
         raise Web3ValidationError(
             "Sending non-zero ether to a contract function "
@@ -363,7 +357,7 @@ def parse_block_identifier_int(w3: "Web3", block_identifier_int: int) -> BlockNu
 
 
 async def async_parse_block_identifier(
-    async_w3: "AsyncWeb3", block_identifier: BlockIdentifier
+    async_w3: "AsyncWeb3[Any]", block_identifier: BlockIdentifier
 ) -> BlockIdentifier:
     if block_identifier is None:
         return async_w3.eth.default_block
@@ -381,7 +375,7 @@ async def async_parse_block_identifier(
 
 
 async def async_parse_block_identifier_int(
-    async_w3: "AsyncWeb3", block_identifier_int: int
+    async_w3: "AsyncWeb3[Any]", block_identifier_int: int
 ) -> BlockNumber:
     if block_identifier_int >= 0:
         block_num = block_identifier_int
@@ -401,8 +395,8 @@ def copy_contract_function(
     Copy a contract function instance.
     """
     clone = copy.copy(contract_function)
-    clone.args = args or tuple()
-    clone.kwargs = kwargs or dict()
+    clone.args = args
+    clone.kwargs = kwargs
 
     clone._set_function_info()
     return clone
@@ -415,8 +409,8 @@ def copy_contract_event(
     Copy a contract function instance.
     """
     clone = copy.copy(contract_event)
-    clone.args = args or tuple()
-    clone.kwargs = kwargs or dict()
+    clone.args = args
+    clone.kwargs = kwargs
 
     clone._set_event_info()
     return clone

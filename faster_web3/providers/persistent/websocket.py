@@ -12,9 +12,6 @@ from typing import (
 from eth_typing import (
     URI,
 )
-from toolz import (
-    merge,
-)
 from websockets.exceptions import (
     ConnectionClosedOK,
     WebSocketException,
@@ -84,16 +81,15 @@ class WebSocketProvider(PersistentConnectionProvider):
             )
 
         if websocket_kwargs is not None:
-            found_restricted_keys = set(websocket_kwargs).intersection(
+            if found_restricted_keys := set(websocket_kwargs).intersection(
                 RESTRICTED_WEBSOCKET_KWARGS
-            )
-            if found_restricted_keys:
+            ):
                 raise Web3ValidationError(
                     "Found restricted keys for websocket_kwargs: "
                     f"{found_restricted_keys}."
                 )
 
-        self.websocket_kwargs = merge(DEFAULT_WEBSOCKET_KWARGS, websocket_kwargs or {})
+        self.websocket_kwargs = DEFAULT_WEBSOCKET_KWARGS | (websocket_kwargs or {})
 
     def __str__(self) -> str:
         return f"WebSocket connection: {self.endpoint_uri}"

@@ -6,7 +6,6 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    List,
     Optional,
     Set,
     Tuple,
@@ -41,6 +40,9 @@ from faster_web3.middleware.base import (
     MiddlewareOnion,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
+    MakeBatchRequestFn,
     RPCEndpoint,
     RPCResponse,
 )
@@ -58,12 +60,14 @@ if TYPE_CHECKING:
 
 class BaseProvider:
     # Set generic logger for the provider. Override in subclasses for more specificity.
-    logger: logging.Logger = logging.getLogger("faster_web3.providers.base.BaseProvider")
-    # a tuple of (middleware, request_func)
-    _request_func_cache: Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]] = (
-        None,
-        None,
+    logger: logging.Logger = logging.getLogger(
+        "faster_web3.providers.base.BaseProvider"
     )
+    # a tuple of (middleware, request_func)
+    _request_func_cache: Union[
+        Tuple[Tuple[Middleware, ...], Callable[..., RPCResponse]],
+        Tuple[None, None],
+    ] = (None, None)
 
     is_async = False
     has_persistent_connection = False
@@ -89,7 +93,7 @@ class BaseProvider:
             Optional["RequestBatcher[Any]"]
         ] = contextvars.ContextVar("batching_context", default=None)
         self._batch_request_func_cache: Tuple[
-            Tuple[Middleware, ...], Callable[..., Union[List[RPCResponse], RPCResponse]]
+            Tuple[Middleware, ...], MakeBatchRequestFn
         ] = (None, None)
 
     @property
@@ -111,18 +115,15 @@ class BaseProvider:
         """
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
-        cache_key = self._request_func_cache[0]
+        cache_key, func = self._request_func_cache
         if cache_key != middleware:
-            self._request_func_cache = (
-                middleware,
-                combine_middleware(
-                    middleware=middleware,
-                    w3=w3,
-                    provider_request_fn=self.make_request,
-                ),
+            func = combine_middleware(
+                middleware=middleware,
+                w3=w3,
+                provider_request_fn=self.make_request,
             )
-
-        return self._request_func_cache[-1]
+            self._request_func_cache = middleware, func
+        return func
 
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         raise NotImplementedError("Providers must implement this method")
@@ -181,7 +182,7 @@ class JSONBaseProvider(BaseProvider):
 
     def batch_request_func(
         self, w3: "Web3", middleware_onion: MiddlewareOnion
-    ) -> Callable[..., Union[List[RPCResponse], RPCResponse]]:
+    ) -> MakeBatchRequestFn:
         middleware: Tuple[Middleware, ...] = middleware_onion.as_tuple_of_middleware()
 
         cache_key = self._batch_request_func_cache[0]
@@ -189,19 +190,15 @@ class JSONBaseProvider(BaseProvider):
             accumulator_fn = self.make_batch_request
             for mw in reversed(middleware):
                 initialized = mw(w3)
-                # type ignore bc in order to wrap the method, we have to call
-                # `wrap_make_batch_request` with the accumulator_fn as the argument
-                # which breaks the type hinting for this particular case.
-                accumulator_fn = initialized.wrap_make_batch_request(
-                    accumulator_fn
-                )  # type: ignore  # noqa: E501
+                accumulator_fn = cast(
+                    MakeBatchRequestFn,
+                    initialized.wrap_make_batch_request(accumulator_fn),
+                )
             self._batch_request_func_cache = (middleware, accumulator_fn)
 
         return self._batch_request_func_cache[-1]
 
-    def encode_batch_rpc_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> bytes:
+    def encode_batch_rpc_request(self, requests: BatchParams) -> bytes:
         return (
             b"["
             + b", ".join(
@@ -210,7 +207,5 @@ class JSONBaseProvider(BaseProvider):
             + b"]"
         )
 
-    def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    def make_batch_request(self, requests: BatchParams) -> BatchResponse:
         raise NotImplementedError("Providers must implement this method")

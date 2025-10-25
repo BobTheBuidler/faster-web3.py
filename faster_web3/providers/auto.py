@@ -28,6 +28,8 @@ from faster_web3.providers import (
     LegacyWebSocketProvider,
 )
 from faster_web3.types import (
+    BatchParams,
+    BatchResponse,
     RPCEndpoint,
     RPCResponse,
 )
@@ -38,10 +40,7 @@ WS_SCHEMES = {"ws", "wss"}
 
 def load_provider_from_environment() -> Optional[JSONBaseProvider]:
     uri_string = URI(os.environ.get("WEB3_PROVIDER_URI", ""))
-    if not uri_string:
-        return None
-
-    return load_provider_from_uri(uri_string)
+    return load_provider_from_uri(uri_string) if uri_string else None
 
 
 def load_provider_from_uri(
@@ -96,9 +95,7 @@ class AutoProvider(JSONBaseProvider):
         except OSError:
             return self._proxy_request(method, params, use_cache=False)
 
-    def make_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]]
-    ) -> Union[List[RPCResponse], RPCResponse]:
+    def make_batch_request(self, requests: BatchParams) -> BatchResponse:
         try:
             return self._proxy_batch_request(requests)
         except OSError:
@@ -121,8 +118,8 @@ class AutoProvider(JSONBaseProvider):
         return provider.make_request(method, params)
 
     def _proxy_batch_request(
-        self, requests: List[Tuple[RPCEndpoint, Any]], use_cache: bool = True
-    ) -> Union[List[RPCResponse], RPCResponse]:
+        self, requests: BatchParams, use_cache: bool = True
+    ) -> BatchResponse:
         provider = self._get_active_provider(use_cache)
         if provider is None:
             raise CannotHandleRequest(

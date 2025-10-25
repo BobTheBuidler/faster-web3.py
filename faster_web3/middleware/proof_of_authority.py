@@ -1,5 +1,6 @@
 from typing import (
     TYPE_CHECKING,
+    Any,
 )
 
 from faster_eth_utils import (
@@ -9,10 +10,8 @@ from faster_eth_utils.curried import (
     apply_formatter_if,
     apply_formatters_to_dict,
     apply_key_map,
-    is_null,
 )
 from faster_eth_utils.toolz import (
-    complement,
     compose,
 )
 from faster_hexbytes import (
@@ -32,7 +31,10 @@ if TYPE_CHECKING:
         Web3,
     )
 
-is_not_null = complement(is_null)
+
+def is_not_null(value: Any) -> bool:
+    return value is not None
+
 
 remap_extradata_to_poa_fields = apply_key_map(
     {

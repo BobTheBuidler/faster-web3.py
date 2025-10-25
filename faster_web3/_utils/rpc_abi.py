@@ -2,7 +2,6 @@ from typing import (
     Any,
     Callable,
     Dict,
-    Iterable,
     Sequence,
     Tuple,
     Union,
@@ -10,9 +9,6 @@ from typing import (
 
 from eth_typing import (
     TypeStr,
-)
-from faster_eth_utils import (
-    to_dict,
 )
 from faster_eth_utils.curried import (
     apply_formatter_at_index,
@@ -223,18 +219,20 @@ def apply_abi_formatters_to_dict(
     return formatted_dict
 
 
-@to_dict
 def abi_request_formatters(
     normalizers: Sequence[Callable[[TypeStr, Any], Tuple[TypeStr, Any]]],
     abis: Dict[RPCEndpoint, Any],
-) -> Iterable[Tuple[RPCEndpoint, Callable[..., Any]]]:
+) -> Dict[RPCEndpoint, Callable[..., Any]]:
+    formatters = {}
     for method, abi_types in abis.items():
         if isinstance(abi_types, list):
-            yield method, map_abi_data(normalizers, abi_types)
+            formatter = map_abi_data(normalizers, abi_types)
         elif isinstance(abi_types, dict):
             single_dict_formatter = apply_abi_formatters_to_dict(normalizers, abi_types)
-            yield method, apply_formatter_at_index(single_dict_formatter, 0)
+            formatter = apply_formatter_at_index(single_dict_formatter, 0)
         else:
             raise Web3TypeError(
                 f"ABI definitions must be a list or dictionary, got {abi_types!r}"
             )
+        formatters[method] = formatter
+    return formatters

@@ -53,9 +53,6 @@ from faster_eth_utils.conversions import (
 from faster_eth_utils.hexadecimal import (
     encode_hex,
 )
-from faster_eth_utils.toolz import (
-    pipe,
-)
 from faster_eth_utils.types import (
     is_list_like,
 )
@@ -219,8 +216,8 @@ def _build_abi_input_error(
         abi_element_input_types = get_abi_input_types(abi_element)
         abi_signature = abi_to_signature(abi_element)
         abi_element_name = get_name_from_abi_element_identifier(abi_signature)
-        types: Tuple[str, ...] = tuple()
-        aligned_args: Tuple[Any, ...] = tuple()
+        types: Tuple[str, ...] = ()
+        aligned_args: Tuple[Any, ...] = ()
 
         if len(abi_element_input_types) == num_args:
             if num_args == 0:
@@ -480,7 +477,7 @@ def get_abi_element_info(
 
     .. doctest::
 
-        >>> from web3.utils.abi import get_abi_element_info
+        >>> from faster_web3.utils.abi import get_abi_element_info
         >>> abi = [
         ...     {
         ...         "constant": False,
@@ -510,10 +507,10 @@ def get_abi_element_info(
         abi, abi_element_identifier, *args, abi_codec=abi_codec, **kwargs
     )
     fn_selector = encode_hex(function_abi_to_4byte_selector(fn_abi))
-    fn_inputs: Tuple[Any, ...] = tuple()
+    fn_inputs: Tuple[Any, ...] = ()
 
     if fn_abi["type"] == "fallback" or fn_abi["type"] == "receive":
-        return ABIElementInfo(abi=fn_abi, selector=fn_selector, arguments=tuple())
+        return ABIElementInfo(abi=fn_abi, selector=fn_selector, arguments=())
     else:
         fn_inputs = get_normalized_abi_inputs(fn_abi, *args, **kwargs)
         _, aligned_fn_inputs = get_aligned_abi_inputs(fn_abi, fn_inputs)
@@ -564,7 +561,7 @@ def get_abi_element(
 
     .. doctest::
 
-        >>> from web3.utils.abi import get_abi_element
+        >>> from faster_web3.utils.abi import get_abi_element
         >>> abi = [
         ...     {
         ...         "constant": False,
@@ -590,15 +587,16 @@ def get_abi_element(
     if abi_codec is None:
         abi_codec = ABICodec(default_registry)
 
-    abi_element_matches: Sequence[ABIElement] = pipe(
-        abi,
-        *_build_abi_filters(
-            abi_element_identifier,
-            *args,
-            abi_codec=abi_codec,
-            **kwargs,
-        ),
+    abi_filters = _build_abi_filters(
+        abi_element_identifier,
+        *args,
+        abi_codec=abi_codec,
+        **kwargs,
     )
+
+    abi_element_matches: Sequence[ABIElement] = abi
+    for filter in abi_filters:
+        abi_element_matches = filter(abi_element_matches)
 
     num_matches = len(abi_element_matches)
 
@@ -642,7 +640,7 @@ def check_if_arguments_can_be_encoded(
 
     .. doctest::
 
-            >>> from web3.utils.abi import check_if_arguments_can_be_encoded
+            >>> from faster_web3.utils.abi import check_if_arguments_can_be_encoded
             >>> abi = {
             ...     "constant": False,
             ...     "inputs": [
@@ -706,7 +704,7 @@ def get_event_abi(
 
     .. doctest::
 
-        >>> from web3.utils import get_event_abi
+        >>> from faster_web3.utils import get_event_abi
         >>> abi = [
         ...   {"type": "function", "name": "myFunction", "inputs": [], "outputs": []},
         ...   {"type": "function", "name": "myFunction2", "inputs": [], "outputs": []},
@@ -715,21 +713,18 @@ def get_event_abi(
         >>> get_event_abi(abi, 'MyEvent')
         {'type': 'event', 'name': 'MyEvent', 'inputs': []}
     """
-    filters: List[functools.partial[Sequence[ABIElement]]] = [
-        functools.partial(filter_abi_by_type, "event"),
-    ]
-
-    if event_name is None or event_name == "":
+    if not event_name:
         raise Web3ValidationError(
             "event_name is required in order to match an event ABI."
         )
 
-    filters.append(functools.partial(filter_abi_by_name, event_name))
-
+    event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_name(
+        event_name, filter_abi_by_type("event", abi)
+    )
     if argument_names is not None:
-        filters.append(functools.partial(filter_by_argument_name, argument_names))
-
-    event_abi_candidates = cast(Sequence[ABIEvent], pipe(abi, *filters))
+        event_abi_candidates = filter_by_argument_name(
+            argument_names, event_abi_candidates
+        )
 
     if len(event_abi_candidates) == 1:
         return event_abi_candidates[0]
@@ -755,7 +750,7 @@ def get_event_log_topics(
 
     .. doctest::
 
-        >>> from web3.utils import get_event_log_topics
+        >>> from faster_web3.utils import get_event_log_topics
         >>> abi = {
         ...   'type': 'event',
         ...   'anonymous': False,
@@ -794,7 +789,7 @@ def log_topic_to_bytes(
 
     .. doctest::
 
-        >>> from web3.utils import log_topic_to_bytes
+        >>> from faster_web3.utils import log_topic_to_bytes
         >>> log_topic_to_bytes('0xa12fd1')
         b'\xa1/\xd1'
     """

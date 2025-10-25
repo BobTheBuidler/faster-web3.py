@@ -2,13 +2,14 @@ from collections.abc import (
     Mapping,
 )
 from typing import (
+    TYPE_CHECKING,
     Any,
     Callable,
     Dict,
     Iterable,
     Optional,
-    Tuple,
-    TypeVar,
+    Sequence,
+    Union,
 )
 
 from eth_typing import (
@@ -18,7 +19,6 @@ from faster_eth_utils import (
     is_dict,
     is_list_like,
     is_string,
-    to_dict,
 )
 from faster_eth_utils.curried import (
     apply_formatter_at_index,
@@ -27,7 +27,9 @@ from faster_eth_utils.toolz import (
     compose,
     curry,
     dissoc,
-    pipe,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.decorators import (
@@ -35,10 +37,9 @@ from faster_web3._utils.decorators import (
 )
 from faster_web3.types import (
     RPCResponse,
+    TReturn,
+    TValue,
 )
-
-TReturn = TypeVar("TReturn")
-TValue = TypeVar("TValue")
 
 
 def hex_to_integer(value: HexStr) -> int:
@@ -50,7 +51,7 @@ integer_to_hex = hex
 
 def apply_formatters_to_args(
     *formatters: Callable[[TValue], TReturn]
-) -> Callable[..., TReturn]:
+) -> Callable[[TValue], TReturn]:
     return compose(
         *(
             apply_formatter_at_index(formatter, index)
@@ -98,34 +99,32 @@ def static_return(value: TValue) -> Callable[..., TValue]:
 
 
 def static_result(value: TValue) -> Callable[..., Dict[str, TValue]]:
+    result = {"result": value}
+
     def inner(*args: Any, **kwargs: Any) -> Dict[str, TValue]:
-        return {"result": value}
+        return result
 
     return inner
 
 
-@curry
-@to_dict
 def apply_key_map(
-    key_mappings: Dict[Any, Any], value: Dict[Any, Any]
-) -> Iterable[Tuple[Any, Any]]:
-    for key, item in value.items():
-        if key in key_mappings:
-            yield key_mappings[key], item
-        else:
-            yield key, item
+    key_mappings: Dict[Any, Any],
+) -> Callable[[Dict[Any, Any]], Dict[Any, Any]]:
+    def get_key(key: Any) -> Any:
+        return key_mappings[key] if key in key_mappings else key
+
+    def apply_key_map_curried(value: Dict[Any, Any]) -> Dict[Any, Any]:
+        return {get_key(k): v for k, v in value.items()}
+
+    return apply_key_map_curried
 
 
-def is_array_of_strings(value: Any) -> bool:
-    if not is_list_like(value):
-        return False
-    return all(is_string(item) for item in value)
+def is_array_of_strings(value: Any) -> TypeGuard[Sequence[str]]:
+    return is_list_like(value) and all(map(is_string, value))
 
 
-def is_array_of_dicts(value: Any) -> bool:
-    if not is_list_like(value):
-        return False
-    return all(is_dict(item) for item in value)
+def is_array_of_dicts(value: Any) -> TypeGuard[Sequence[Dict[Any, Any]]]:
+    return is_list_like(value) and all(map(is_dict, value))
 
 
 @curry
@@ -139,23 +138,21 @@ def remove_key_if(
 
 
 def apply_error_formatters(
-    error_formatters: Callable[..., Any],
+    error_formatters: Union[Callable[..., TReturn], None],
     response: RPCResponse,
-) -> RPCResponse:
+) -> Union[RPCResponse, TReturn]:  # sourcery skip: assign-if-exp
     if error_formatters:
-        formatted_resp = pipe(response, error_formatters)
-        return formatted_resp
+        return error_formatters(response)
     else:
         return response
 
 
 def apply_null_result_formatters(
-    null_result_formatters: Callable[..., Any],
+    null_result_formatters: Union[Callable[..., TReturn], None],
     response: RPCResponse,
     params: Optional[Any] = None,
-) -> RPCResponse:
+) -> Union[RPCResponse, TReturn]:  # sourcery skip: assign-if-exp
     if null_result_formatters:
-        formatted_resp = pipe(params, null_result_formatters)
-        return formatted_resp
+        return null_result_formatters(params)
     else:
         return response

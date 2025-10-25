@@ -3,6 +3,9 @@ import time
 import warnings
 
 import pytest_asyncio
+from typing_extensions import (
+    TypeGuard,
+)
 
 from tests.utils import (
     PollDelayCounter,
@@ -26,7 +29,7 @@ def sleep_interval():
     return PollDelayCounter()
 
 
-def is_testrpc_provider(provider):
+def is_testrpc_provider(provider) -> TypeGuard[EthereumTesterProvider]:
     return isinstance(provider, EthereumTesterProvider)
 
 
@@ -93,7 +96,7 @@ def print_warnings():
 # --- async --- #
 
 
-def is_async_testrpc_provider(provider):
+def is_async_testrpc_provider(provider) -> TypeGuard[AsyncEthereumTesterProvider]:
     return isinstance(provider, AsyncEthereumTesterProvider)
 
 

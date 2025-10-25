@@ -3,11 +3,14 @@ import logging
 from typing import (
     TYPE_CHECKING,
     Any,
+    Final,
     List,
+    Optional,
     Sequence,
     Set,
     Union,
     cast,
+    final,
     overload,
 )
 
@@ -38,10 +41,10 @@ if TYPE_CHECKING:
     from faster_web3 import AsyncWeb3  # noqa: F401
     from faster_web3.providers.persistent import (  # noqa: F401
         PersistentConnectionProvider,
-        RequestProcessor,
     )
 
 
+@final
 class SubscriptionManager:
     """
     The ``SubscriptionManager`` is responsible for subscribing, unsubscribing, and
@@ -49,14 +52,14 @@ class SubscriptionManager:
     used for processing all subscriptions that have handler functions.
     """
 
-    logger: logging.Logger = logging.getLogger(
+    logger: Final = logging.getLogger(
         "faster_web3.providers.persistent.subscription_manager"
     )
 
-    def __init__(self, w3: "AsyncWeb3") -> None:
-        self._w3 = w3
-        self._provider = cast("PersistentConnectionProvider", w3.provider)
-        self._subscription_container = SubscriptionContainer()
+    def __init__(self, w3: "AsyncWeb3[Any]") -> None:
+        self._w3: Final = w3
+        self._provider: Final = cast("PersistentConnectionProvider", w3.provider)
+        self._subscription_container: Final = SubscriptionContainer()
 
         # parallelize all subscription handler calls
         self.parallelize = False
@@ -84,15 +87,11 @@ class SubscriptionManager:
             while self.get_by_label(subscription._label) is not None:
                 subscription._label = f"{subscription._default_label}#{i}"
                 i += 1
-        else:
-            if (
-                subscription._label
-                in self._subscription_container.subscriptions_by_label
-            ):
-                raise Web3ValueError(
-                    "Subscription label already exists. Subscriptions must have unique "
-                    f"labels.\n    label: {subscription._label}"
-                )
+        elif subscription._label in self._subscription_container.subscriptions_by_label:
+            raise Web3ValueError(
+                "Subscription label already exists. Subscriptions must have unique "
+                f"labels.\n    label: {subscription._label}"
+            )
 
     def _handler_task_callback(self, task: asyncio.Task[None]) -> None:
         """
@@ -126,21 +125,19 @@ class SubscriptionManager:
     def subscriptions(self) -> List[EthSubscription[Any]]:
         return self._subscription_container.subscriptions
 
-    def get_by_id(self, sub_id: HexStr) -> EthSubscription[Any]:
+    def get_by_id(self, sub_id: HexStr) -> Optional[EthSubscription[Any]]:
         return self._subscription_container.get_by_id(sub_id)
 
-    def get_by_label(self, label: str) -> EthSubscription[Any]:
+    def get_by_label(self, label: str) -> Optional[EthSubscription[Any]]:
         return self._subscription_container.get_by_label(label)
 
     @overload
-    async def subscribe(self, subscriptions: EthSubscription[Any]) -> HexStr:
-        ...
+    async def subscribe(self, subscriptions: EthSubscription[Any]) -> HexStr: ...
 
     @overload
     async def subscribe(
         self, subscriptions: Sequence[EthSubscription[Any]]
-    ) -> List[HexStr]:
-        ...
+    ) -> List[HexStr]: ...
 
     async def subscribe(
         self, subscriptions: Union[EthSubscription[Any], Sequence[EthSubscription[Any]]]
@@ -175,19 +172,16 @@ class SubscriptionManager:
         raise Web3TypeError("Expected a Subscription or a sequence of Subscriptions.")
 
     @overload
-    async def unsubscribe(self, subscriptions: EthSubscription[Any]) -> bool:
-        ...
+    async def unsubscribe(self, subscriptions: EthSubscription[Any]) -> bool: ...
 
     @overload
-    async def unsubscribe(self, subscriptions: HexStr) -> bool:
-        ...
+    async def unsubscribe(self, subscriptions: HexStr) -> bool: ...
 
     @overload
     async def unsubscribe(
         self,
         subscriptions: Sequence[Union[EthSubscription[Any], HexStr]],
-    ) -> bool:
-        ...
+    ) -> bool: ...
 
     async def unsubscribe(
         self,
@@ -210,27 +204,29 @@ class SubscriptionManager:
         if isinstance(subscriptions, EthSubscription) or isinstance(subscriptions, str):
             if isinstance(subscriptions, str):
                 subscription_id = subscriptions
-                subscriptions = self.get_by_id(subscription_id)
-                if subscriptions is None:
+                subscription = self.get_by_id(subscription_id)
+                if subscription is None:
                     raise Web3ValueError(
                         "Subscription not found or is not being managed by the "
                         f"subscription manager.\n    id: {subscription_id}"
                     )
+            else:
+                subscription = subscriptions
 
-            if subscriptions not in self.subscriptions:
+            if subscription not in self.subscriptions:
                 raise Web3ValueError(
                     "Subscription not found or is not being managed by the "
                     "subscription manager.\n    "
-                    f"label: {subscriptions.label}\n    id: {subscriptions._id}"
+                    f"label: {subscription.label}\n    id: {subscription._id}"
                 )
 
-            if await self._w3.eth._unsubscribe(subscriptions.id):
-                self._remove_subscription(subscriptions)
+            if await self._w3.eth._unsubscribe(subscription.id):
+                self._remove_subscription(subscription)
                 self.logger.info(
                     "Successfully unsubscribed from subscription:\n"
                     "    label: %s\n    id: %s",
-                    subscriptions.label,
-                    subscriptions.id,
+                    subscription.label,
+                    subscription.id,
                 )
 
                 if len(self._subscription_container.handler_subscriptions) == 0:
@@ -247,11 +243,8 @@ class SubscriptionManager:
             unsubscribed: List[bool] = []
             # re-create the subscription list to prevent modifying the original list
             # in case ``subscription_manager.subscriptions`` was passed in directly
-            subs = list(subscriptions)
-            for sub in subs:
-                if isinstance(sub, str):
-                    sub = HexStr(sub)
-                unsubscribed.append(await self.unsubscribe(sub))
+            for subscription in list(subscriptions):
+                unsubscribed.append(await self.unsubscribe(subscription))
             return all(unsubscribed)
 
         self.logger.warning(

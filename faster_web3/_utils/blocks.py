@@ -1,8 +1,13 @@
 from typing import (
     Any,
+    Callable,
     Optional,
+    Union,
 )
 
+from eth_typing import (
+    HexStr,
+)
 from faster_eth_utils import (
     is_bytes,
     is_hex,
@@ -11,8 +16,8 @@ from faster_eth_utils import (
     is_text,
     remove_0x_prefix,
 )
-from faster_eth_utils.toolz import (
-    curry,
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3.exceptions import (
@@ -24,7 +29,7 @@ from faster_web3.types import (
 )
 
 
-def is_predefined_block_number(value: Any) -> bool:
+def is_predefined_block_number(value: Any) -> TypeGuard[Union[str, bytes]]:
     if is_text(value):
         value_text = value
     elif is_bytes(value):
@@ -41,13 +46,13 @@ def is_predefined_block_number(value: Any) -> bool:
     return value_text in {"latest", "pending", "earliest", "safe", "finalized"}
 
 
-def is_hex_encoded_block_hash(value: Any) -> bool:
+def is_hex_encoded_block_hash(value: Any) -> TypeGuard[HexStr]:
     if not is_string(value):
         return False
     return len(remove_0x_prefix(value)) == 64 and is_hex(value)
 
 
-def is_hex_encoded_block_number(value: Any) -> bool:
+def is_hex_encoded_block_number(value: Any) -> TypeGuard[HexStr]:
     if not is_string(value):
         return False
     elif is_hex_encoded_block_hash(value):
@@ -59,21 +64,22 @@ def is_hex_encoded_block_number(value: Any) -> bool:
     return 0 <= value_as_int < 2**256
 
 
-@curry
 def select_method_for_block_identifier(
-    value: Any, if_hash: RPCEndpoint, if_number: RPCEndpoint, if_predefined: RPCEndpoint
-) -> Optional[RPCEndpoint]:
-    if is_predefined_block_number(value):
-        return if_predefined
-    elif isinstance(value, bytes):
-        return if_hash
-    elif is_hex_encoded_block_hash(value):
-        return if_hash
-    elif is_integer(value) and (0 <= value < 2**256):
-        return if_number
-    elif is_hex_encoded_block_number(value):
-        return if_number
-    else:
-        raise Web3ValueError(
-            f"Value did not match any of the recognized block identifiers: {value}"
-        )
+    if_hash: RPCEndpoint, if_number: RPCEndpoint, if_predefined: RPCEndpoint
+) -> Callable[[Any], Optional[RPCEndpoint]]:
+    def select_method_for_block_identifier_curried(value: Any) -> Optional[RPCEndpoint]:
+        if is_predefined_block_number(value):
+            return if_predefined
+        elif isinstance(value, bytes):
+            return if_hash
+        elif is_hex_encoded_block_hash(value):
+            return if_hash
+        elif is_integer(value) and (0 <= value < 2**256):
+            return if_number
+        elif is_hex_encoded_block_number(value):
+            return if_number
+        else:
+            raise Web3ValueError(
+                f"Value did not match any of the recognized block identifiers: {value}"
+            )
+    return select_method_for_block_identifier_curried

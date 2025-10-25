@@ -19,9 +19,6 @@ from eth_typing import (
     ChecksumAddress,
     HexStr,
 )
-from faster_eth_utils.toolz import (
-    merge,
-)
 from faster_hexbytes import (
     HexBytes,
 )
@@ -115,13 +112,13 @@ class Eth(BaseEth):
 
     # eth_accounts
 
-    _accounts: Method[Callable[[], Tuple[ChecksumAddress]]] = Method(
+    _accounts: Method[Callable[[], Tuple[ChecksumAddress, ...]]] = Method(
         RPC.eth_accounts,
         is_property=True,
     )
 
     @property
-    def accounts(self) -> Tuple[ChecksumAddress]:
+    def accounts(self) -> Sequence[ChecksumAddress]:
         return self._accounts()
 
     # eth_blobBaseFee
@@ -216,7 +213,7 @@ class Eth(BaseEth):
         block_count: int,
         newest_block: Union[BlockParams, BlockNumber],
         reward_percentiles: Optional[List[float]] = None,
-    ) -> FeeHistory:
+    ) -> Union[FeeHistory, AttributeDict]:
         reward_percentiles = reward_percentiles or []
         return self._fee_history(block_count, newest_block, reward_percentiles)
 
@@ -616,7 +613,7 @@ class Eth(BaseEth):
         current_transaction_params = extract_valid_transaction_params(
             current_transaction
         )
-        new_transaction = merge(current_transaction_params, transaction_params)
+        new_transaction = current_transaction_params | transaction_params
         return replace_transaction(self.w3, current_transaction, new_transaction)
 
     # eth_sign
@@ -643,15 +640,15 @@ class Eth(BaseEth):
 
     # eth_newFilter, eth_newBlockFilter, eth_newPendingTransactionFilter
 
-    filter: Method[
-        Callable[[Optional[Union[str, FilterParams, HexStr]]], Filter]
-    ] = Method(
-        method_choice_depends_on_args=select_filter_method(
-            if_new_block_filter=RPC.eth_newBlockFilter,
-            if_new_pending_transaction_filter=RPC.eth_newPendingTransactionFilter,
-            if_new_filter=RPC.eth_newFilter,
-        ),
-        mungers=[BaseEth.filter_munger],
+    filter: Method[Callable[[Optional[Union[str, FilterParams, HexStr]]], Filter]] = (
+        Method(
+            method_choice_depends_on_args=select_filter_method(
+                if_new_block_filter=RPC.eth_newBlockFilter,
+                if_new_pending_transaction_filter=RPC.eth_newPendingTransactionFilter,
+                if_new_filter=RPC.eth_newFilter,
+            ),
+            mungers=[BaseEth.filter_munger],
+        )
     )
 
     # eth_getFilterChanges, eth_getFilterLogs, eth_uninstallFilter
@@ -670,14 +667,12 @@ class Eth(BaseEth):
     )
 
     @overload
-    def contract(self, address: None = None, **kwargs: Any) -> Type[Contract]:
-        ...
+    def contract(self, address: None = None, **kwargs: Any) -> Type[Contract]: ...
 
     @overload
     def contract(
         self, address: Union[Address, ChecksumAddress, ENS], **kwargs: Any
-    ) -> Contract:
-        ...
+    ) -> Contract: ...
 
     def contract(
         self,

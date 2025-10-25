@@ -7,10 +7,6 @@ from typing import (
     cast,
 )
 
-from toolz import (
-    merge,
-)
-
 from faster_web3._utils.normalizers import (
     abi_ens_resolver,
     async_abi_ens_resolver,
@@ -53,7 +49,7 @@ def _is_logs_subscription_with_optional_args(method: RPCEndpoint, params: Any) -
 
 
 async def async_format_all_ens_names_to_address(
-    async_web3: "AsyncWeb3",
+    async_web3: "AsyncWeb3[Any]",
     abi_types_for_method: Sequence[Any],
     data: Sequence[Any],
 ) -> Sequence[Any]:
@@ -69,7 +65,7 @@ async def async_format_all_ens_names_to_address(
 
 
 async def async_apply_ens_to_address_conversion(
-    async_web3: "AsyncWeb3",
+    async_web3: "AsyncWeb3[Any]",
     params: Any,
     abi_types_for_method: Union[Sequence[str], Dict[str, str]],
 ) -> Any:
@@ -91,7 +87,7 @@ async def async_apply_ens_to_address_conversion(
             [param_dict[field] for field in fields],
         )
         formatted_dict = dict(zip(fields, formatted_params))
-        formatted_params_dict = merge(param_dict, formatted_dict)
+        formatted_params_dict = param_dict | formatted_dict
         return (formatted_params_dict, *params[1:])
 
     else:
@@ -125,7 +121,7 @@ class ENSNameToAddressMiddleware(Web3Middleware):
                 # eth_subscribe optional logs params are unique.
                 # Handle them separately here.
                 (formatted_dict,) = await async_apply_ens_to_address_conversion(
-                    cast("AsyncWeb3", self._w3),
+                    cast("AsyncWeb3[Any]", self._w3),
                     (params[1],),
                     {
                         "address": "address",
@@ -136,7 +132,7 @@ class ENSNameToAddressMiddleware(Web3Middleware):
 
             else:
                 params = await async_apply_ens_to_address_conversion(
-                    cast("AsyncWeb3", self._w3),
+                    cast("AsyncWeb3[Any]", self._w3),
                     params,
                     abi_types_for_method,
                 )

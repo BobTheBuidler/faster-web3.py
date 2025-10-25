@@ -4,14 +4,18 @@ on:
   pull_request:
     branches: [main, master]
     paths-ignore:
+      - '.circleci/**'
       - '.github/workflows/**'
       - '!.github/workflows/benchmark.yaml'
       - 'tests/**'
+      - 'tox.ini'
   push:
     branches: [main, master]
     paths-ignore:
       - '.github/workflows/**'
       - '!.github/workflows/benchmark.yaml'
+      - 'tests/**'
+      - 'tox.ini'
   workflow_dispatch:
 
 concurrency:
@@ -23,32 +27,64 @@ jobs:
     name: Run Benchmarks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.14"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            setup.py
+            tox.ini
+            
+      - name: Cache .mypy_cache
+        uses: actions/cache@v4
+        with:
+          path: .mypy_cache
+          key: mypy-cache-${{ runner.os }}-${{ hashFiles('**/*.py', 'pyproject.toml') }}
+          
+      - name: Restore ccache cache
+        id: restore-ccache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          restore-keys: ccache-${{ runner.os }}-
+
+      - name: Install ccache
+        run: sudo apt-get update && sudo apt-get install -y ccache
+      
       - name: Install dependencies
+        env:
+          CC: ccache gcc
         run: |
           python -m pip install --upgrade pip
           pip install .[dev] pytest-codspeed pytest-benchmark web3
+          
       - name: Remove Python files from test env
         run: |
           rm -r faster_web3
           rm -r faster_ens
+          
       - name: Run Pytest Benchmark & Save Output
         run: pytest --benchmark-only --benchmark-json=benchmark.json benchmarks/
+        
       - name: Upload Pytest Benchmark Results
         uses: actions/upload-artifact@v4
         with:
           name: pytest-benchmark-results
           path: benchmark.json
+          
       - name: Parse Pytest Benchmark Output
         run: python scripts/benchmark/parse_benchmark_output.py benchmark.json pytest_benchmark_results.json
+        
       - name: Compare Pytest Benchmark Results
         run: python scripts/benchmark/compare_benchmark_results.py pytest_benchmark_results.json pytest_benchmark_diff.json
+        
       - name: Generate Markdown Benchmark Results
         run: python scripts/benchmark/generate_benchmark_markdown.py
+        
       - name: Commit and Push Markdown Benchmark Results
         continue-on-error: true
         run: |
@@ -65,18 +101,21 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Upload Markdown Benchmark Results
         uses: actions/upload-artifact@v4
         with:
           name: markdown-benchmark-results
           path: benchmarks/results/*.md
+          
       - name: Upload Pytest Benchmark Diff
         uses: actions/upload-artifact@v4
         with:
           name: pytest-benchmark-diff
           path: pytest_benchmark_diff.json
+          
       - name: Post Pytest Benchmark Diff as PR Comment
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const fs = require('fs');
@@ -121,3 +160,9 @@ jobs:
               body
             });
         if: github.event_name == 'pull_request'
+      
+      - name: Save ccache cache
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}

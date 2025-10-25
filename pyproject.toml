@@ -5,8 +5,13 @@ requires = [
     "mypy[mypyc]==1.18.2",
 	"types-requests",
     "eth-typing>=5,<6",
-	"faster-eth-utils>=5.3.8,<5.4",
-	"faster-eth-abi>=5.2,<5.3",
+	# eth-tester's dependencies don't install propersly on 32-bit systems
+	"eth-tester[py-evm]>=0.13.0b1,<0.14.0b1; platform_system != 'Windows' and platform_machine != 'i686'",
+	# pydantic-core (installed with faster-eth-utils and py-geth) is unable to build on Python3.14 on 32-bit Linux distros
+	"faster-eth-utils>=5.3.10,<5.4; platform_system != 'Linux' or platform_machine != 'i686'",
+	"faster-eth-abi>=5.2,<5.3; platform_system != 'Linux' or platform_machine != 'i686'",
+	"faster-hexbytes<3",
+	"py-geth>=5.1.0; platform_system != 'Windows' and platform_machine != 'i686'",
 ]
 
 [tool.autoflake]
@@ -26,7 +31,7 @@ multi_line_output = 3
 profile = "black"
 use_parentheses = true
 # skip `__init__.py` files because sometimes order of initialization is important
-skip="__init__.py,web3/main.py,web3/utils/windows.py"
+skip="__init__.py,web3/main.py,web3/_utils/windows.py"
 
 [tool.mypy]
 check_untyped_defs = true
@@ -74,7 +79,7 @@ add-ignore = "D200,D203,D204,D205,D212,D302,D400,D401,D412,D415"
 # summary line.  Neither one of those requirements seem appropriate.
 
 [tool.pytest.ini_options]
-addopts = "-v --showlocals --durations 10"
+addopts = "--showlocals --durations 10"
 asyncio_mode = "strict"
 log_date_format = "%m-%d %H:%M:%S"
 log_format = "%(levelname)8s  %(asctime)s  %(filename)20s  %(message)s"
@@ -135,7 +140,7 @@ name = "Removals"
 showcontent = true
 
 [tool.bumpversion]
-current_version = "7.13.0"
+current_version = "7.14.0"
 parse = """
     (?P<major>\\d+)
     \\.(?P<minor>\\d+)

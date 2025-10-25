@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+import sys
+from pathlib import (
+    Path,
+)
 from setuptools import (
     find_packages,
     setup,
@@ -25,19 +29,26 @@ extras_require = {
         "sphinx>=6.0.0",
         "sphinx-autobuild>=2021.3.14",
         "sphinx_rtd_theme>=1.0.0",
-        "towncrier>=24,<25",
+        "towncrier>=25,<26",
     ],
     "test": [
-        "pytest-asyncio>=0.18.1,<0.23",
+        "pytest-asyncio>=1.2,<1.3",
         "pytest-mock>=1.10",
         "pytest-xdist>=2.4.0",
         "pytest>=7.0.0",
         "flaky>=3.7.0",
         "hypothesis>=3.31.2",
         "tox>=4.0.0",
-        "mypy==1.10.0",
+        f"mypy=={'1.14.1' if sys.version_info < (3, 9) else '1.18.2'}",
         "pre-commit>=3.4.0",
     ],
+    "codspeed": [
+        "pytest>=7.0.0",
+        "pytest-asyncio>=1.2,<1.3",
+        "pytest-codspeed>=4.2,<4.3",
+        "pytest-test-groups",
+        "web3>=7.14.0, <8",
+    ]
 }
 
 extras_require["dev"] = (
@@ -53,29 +64,82 @@ with open("./README.md") as readme:
     long_description = readme.read()
 
 
-ext_modules = mypycify(
-    [
+skip_mypyc = any(
+    cmd in sys.argv
+    for cmd in ("sdist", "egg_info", "--name", "--version", "--help", "--help-commands")
+)
+
+if skip_mypyc:
+    ext_modules = []
+else:
+    main_files = [
+        "faster_ens/__init__.py",
         "faster_ens/_normalization.py",
         # "faster_ens/async_ens.py",  figure out `default`
         "faster_ens/auto.py",
         "faster_ens/base_ens.py",
-        "faster_ens/utils.py",
+        "faster_ens/constants.py",
         # "faster_ens/ens.py",  figure out `default`
-        "faster_web3/beacon",
+        "faster_ens/exceptions.py",
+        "faster_ens/utils.py",
+        "faster_web3/_utils/async_transactions.py",
+        "faster_web3/_utils/batching.py",
+        "faster_web3/_utils/blocks.py",
         "faster_web3/_utils/caching",
+        "faster_web3/_utils/contracts.py",
         "faster_web3/_utils/datatypes.py",
+        "faster_web3/_utils/decorators.py",
+        "faster_web3/_utils/encoding.py",
+        "faster_web3/_utils/error_formatters_utils.py",
+        "faster_web3/_utils/fee_utils.py",
+        "faster_web3/_utils/formatters.py",
         "faster_web3/_utils/http.py",
+        "faster_web3/_utils/http_session_manager.py",
         "faster_web3/_utils/math.py",
+        "faster_web3/_utils/method_formatters.py",
         "faster_web3/_utils/type_conversion.py",
         "faster_web3/_utils/utility_methods.py",
+        "faster_web3/_utils/validation.py",
         "faster_web3/auto",
+        "faster_web3/beacon",
+        "faster_web3/constants.py",
+        "faster_web3/contract/utils.py",
         "faster_web3/gas_strategies",
+        "faster_web3/providers/eth_tester",
+        "faster_web3/providers/persistent/persistent_connection.py",
+        "faster_web3/providers/persistent/request_processor.py",
+        "faster_web3/providers/persistent/subscription_container.py",
+        "faster_web3/providers/persistent/subscription_manager.py",
+        "faster_web3/providers/rpc/utils.py",
+        "faster_web3/types.py",
+        "faster_web3/utils/address.py",
+        "faster_web3/utils/async_exception_handling.py",
+        "faster_web3/utils/caching.py",
+        "faster_web3/utils/exception_handling.py",
+        # "faster_web3/utils/subscriptions.py",  compile this on mypyc 1.19
+    ]
+
+    # benchmark tooling and data files do not need to be part of the same
+    # compilation unit as the rest of the library
+    benchmark_tooling_files = [
         "faster_web3/tools/benchmark/node.py",
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
-        "faster_web3/utils/caching.py",
-        "faster_web3/constants.py",
-        "faster_web3/types.py",
+    ]
+    web3_data_files = sorted(
+        str(p.as_posix())
+        for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
+    )
+    ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
+
+    if sys.platform.startswith("win"):
+        # error C2026: string too big, trailing characters truncated
+        web3_data_files.remove(
+            "faster_web3/_utils/contract_sources/contract_data/offchain_resolver.py"
+        )
+        ens_data_files.remove("faster_ens/contract_data.py")
+
+    flags = [
         "--pretty",
         "--disable-error-code=return-value",
         "--disable-error-code=arg-type",
@@ -85,7 +149,6 @@ ext_modules = mypycify(
         "--disable-error-code=type-var",
         "--disable-error-code=call-arg",
         "--disable-error-code=call-overload",
-        "--disable-error-code=str-bytes-safe",
         "--disable-error-code=dict-item",
         "--disable-error-code=typeddict-item",
         "--disable-error-code=truthy-function",
@@ -97,18 +160,42 @@ ext_modules = mypycify(
         "--disable-error-code=misc",
         "--disable-error-code=unused-ignore",
     ]
-)
+
+    ext_modules = []
+
+    main_unit = mypycify(main_files + flags)
+    ext_modules.extend(main_unit)
+
+    if not sys.platform.startswith("win"):
+        benchmark_tooling_unit = mypycify(benchmark_tooling_files + flags)
+        ext_modules.extend(benchmark_tooling_unit)
+
+    # these do not need to be part of the same compilation unit as the rest of the library
+    for data_file in web3_data_files + ens_data_files:
+        data_unit = mypycify([data_file] + flags)
+        ext_modules.extend(data_unit)
+
 
 setup(
     name="faster_web3",
     # *IMPORTANT*: Don't manually change the version here. See Contributing docs for the release process.
-    version="7.13.0",
+    version="7.14.0",
     description="""A faster fork of web3: A Python library for interacting with Ethereum. Implemented in C.""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="The Ethereum Foundation",
     author_email="snakecharmers@ethereum.org",
-    url="https://github.com/ethereum/web3.py",
+    url="https://github.com/BobTheBuidler/faster-web3.py",
+    project_urls={
+        "Documentation": "https://web3py.readthedocs.io/en/stable/",
+        "Release Notes": "https://github.com/BobTheBuidler/faster-web3.py/releases",
+        "Issues": "https://github.com/BobTheBuidler/faster-web3.py/issues",
+        "Source - Precompiled (.py)": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/faster_eth_utils",
+        "Source - Compiled (.c)": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/build",
+        "Benchmarks": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/benchmarks",
+        "Benchmarks - Results": "https://github.com/BobTheBuidler/faster-web3.py/tree/master/benchmarks/results",
+        "Original": "https://github.com/ethereum/web3.py",
+    },
     include_package_data=True,
     install_requires=[
         # Note: ethereum-maintained libraries in this list should be added to the
@@ -134,7 +221,16 @@ setup(
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
-    packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*", "benchmarks", "benchmarks.*"]),
+    packages=find_packages(
+        exclude=[
+            "scripts",
+            "scripts.*",
+            "tests",
+            "tests.*",
+            "benchmarks",
+            "benchmarks.*",
+        ]
+    ),
     ext_modules=ext_modules,
     package_data={"faster_web3": ["py.typed"], "faster_ens": ["py.typed"]},
     classifiers=[
@@ -148,5 +244,6 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
     ],
 )

@@ -1,15 +1,16 @@
 from typing import (
     Any,
     Dict,
+    Final,
 )
 
+import requests
 from faster_eth_abi import (
     abi,
 )
 from eth_typing import (
     URI,
 )
-import requests
 
 from faster_web3._utils.http import (
     DEFAULT_HTTP_TIMEOUT,
@@ -25,6 +26,11 @@ from faster_web3.exceptions import (
 from faster_web3.types import (
     TxParams,
 )
+
+
+Session: Final = requests.Session
+
+encode: Final = abi.encode
 
 
 def handle_offchain_lookup(
@@ -60,35 +66,31 @@ def handle_offchain_lookup(
         except Exception:
             continue  # try next url if timeout or issues making the request
 
-        if (
-            400 <= response.status_code <= 499
-        ):  # if request returns 400 error, raise exception
+        status_code = response.status_code
+        if 400 <= status_code <= 499:  # if request returns 400 error, raise exception
             response.raise_for_status()
-        if not 200 <= response.status_code <= 299:  # if not 400 error, try next url
+        if not 200 <= status_code <= 299:  # if not 400 error, try next url
             continue
 
-        result = response.json()
+        result: Dict[str, Any] = response.json()
 
-        if "data" not in result.keys():
+        data = result.get("data")
+        if data is None:
             raise Web3ValidationError(
                 "Improperly formatted response for offchain lookup HTTP request"
                 " - missing 'data' field."
             )
 
-        encoded_data_with_function_selector = b"".join(
+        # 4-byte callback function selector
+        fourbyte = to_bytes_if_hex(offchain_lookup_payload["callbackFunction"])
+
+        # encode the `data` from the result and the `extraData` as bytes
+        return fourbyte + encode(
+            ("bytes", "bytes"),
             [
-                # 4-byte callback function selector
-                to_bytes_if_hex(offchain_lookup_payload["callbackFunction"]),
-                # encode the `data` from the result and the `extraData` as bytes
-                abi.encode(
-                    ["bytes", "bytes"],
-                    [
-                        to_bytes_if_hex(result["data"]),
-                        to_bytes_if_hex(offchain_lookup_payload["extraData"]),
-                    ],
-                ),
-            ]
+                to_bytes_if_hex(data),
+                to_bytes_if_hex(offchain_lookup_payload["extraData"]),
+            ],
         )
 
-        return encoded_data_with_function_selector
     raise MultipleFailedRequests("Offchain lookup failed for supplied urls.")

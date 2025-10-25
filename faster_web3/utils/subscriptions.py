@@ -4,12 +4,14 @@ from typing import (
     Callable,
     Coroutine,
     Dict,
+    Final,
     Generic,
     List,
     Optional,
     Sequence,
     TypeVar,
     Union,
+    final,
 )
 
 from eth_typing import (
@@ -48,18 +50,19 @@ TSubscriptionResult = TypeVar("TSubscriptionResult", bound="EthSubscriptionResul
 TSubscription = TypeVar("TSubscription", bound="EthSubscription[Any]")
 
 
+@final
 class EthSubscriptionContext(Generic[TSubscription, TSubscriptionResult]):
     def __init__(
         self,
-        async_w3: "AsyncWeb3",
+        async_w3: "AsyncWeb3[Any]",
         subscription: TSubscription,
         result: TSubscriptionResult,
         **kwargs: Any,
     ) -> None:
-        self.async_w3 = async_w3
-        self.subscription = subscription
-        self.result = result
-        self.__dict__.update(kwargs)
+        self.async_w3: Final = async_w3
+        self.subscription: Final = subscription
+        self.result: Final = result
+        self.__dict__: Final = kwargs
 
     def __getattr__(self, item: str) -> Any:
         if item in self.__dict__:
@@ -102,8 +105,8 @@ def handler_wrapper(
 
 
 class EthSubscription(Generic[TSubscriptionResult]):
-    _id: Optional[HexStr] = None
-    manager: Optional["SubscriptionManager"] = None
+    _id: Optional[HexStr]
+    manager: Optional["SubscriptionManager"]
 
     def __init__(
         self: TSubscription,
@@ -113,12 +116,14 @@ class EthSubscription(Generic[TSubscriptionResult]):
         label: Optional[str] = None,
         parallelize: Optional[bool] = None,
     ) -> None:
-        self._subscription_params = subscription_params
-        self._handler = handler_wrapper(handler)
-        self._handler_context = handler_context or {}
-        self._label = label
+        self._id = None
+        self._subscription_params: Final = subscription_params
+        self._handler: Final = handler_wrapper(handler)
+        self._handler_context: Final[Dict[str, Any]] = handler_context or {}
+        self._label: Final = label
 
-        self.parallelize = parallelize
+        self.manager = None
+        self.parallelize: Final = parallelize
         self.handler_call_count = 0
 
     @property
@@ -210,6 +215,7 @@ LogsSubscriptionContext = EthSubscriptionContext[
 LogsSubscriptionHandler = Callable[[LogsSubscriptionContext], Coroutine[Any, Any, None]]
 
 
+@final
 class LogsSubscription(EthSubscription[LogReceipt]):
     def __init__(
         self,
@@ -222,15 +228,15 @@ class LogsSubscription(EthSubscription[LogReceipt]):
         label: Optional[str] = None,
         parallelize: Optional[bool] = None,
     ) -> None:
-        self.address = address
-        self.topics = topics
+        self.address: Final = address
+        self.topics: Final = topics
 
         logs_filter: FilterParams = {}
         if address:
             logs_filter["address"] = address
         if topics:
             logs_filter["topics"] = topics
-        self.logs_filter = logs_filter
+        self.logs_filter: Final = logs_filter
 
         super().__init__(
             subscription_params=("logs", logs_filter),
@@ -247,6 +253,7 @@ NewHeadsSubscriptionHandler = Callable[
 ]
 
 
+@final
 class NewHeadsSubscription(EthSubscription[BlockData]):
     def __init__(
         self,
@@ -272,6 +279,7 @@ PendingTxSubscriptionHandler = Callable[
 ]
 
 
+@final
 class PendingTxSubscription(EthSubscription[Union[HexBytes, TxData]]):
     def __init__(
         self,
@@ -281,7 +289,7 @@ class PendingTxSubscription(EthSubscription[Union[HexBytes, TxData]]):
         handler_context: Optional[Dict[str, Any]] = None,
         parallelize: Optional[bool] = None,
     ) -> None:
-        self.full_transactions = full_transactions
+        self.full_transactions: Final = full_transactions
         super().__init__(
             subscription_params=("newPendingTransactions", full_transactions),
             handler=handler,
@@ -297,6 +305,7 @@ SyncingSubscriptionHandler = Callable[
 ]
 
 
+@final
 class SyncingSubscription(EthSubscription[SyncProgress]):
     def __init__(
         self,

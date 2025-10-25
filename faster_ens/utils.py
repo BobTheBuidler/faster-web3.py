@@ -6,16 +6,19 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Collection,
+    Final,
     Optional,
     Sequence,
     Tuple,
     Type,
     Union,
+    cast,
 )
 import warnings
 
 from eth_typing import (
     Address,
+    AnyAddress,
     ChecksumAddress,
     HexAddress,
     HexStr,
@@ -48,7 +51,7 @@ from .exceptions import (
     InvalidName,
 )
 
-default = object()
+default: Final = object()
 
 
 if TYPE_CHECKING:
@@ -108,7 +111,7 @@ def customize_web3(w3: "_Web3") -> "_Web3":
     return w3
 
 
-def normalize_name(name: str) -> str:
+def normalize_name(name: Optional[str]) -> str:
     """
     Clean the fully qualified name, as defined in ENS `EIP-137
     <https://github.com/ethereum/EIPs/blob/master/EIPS/eip-137.md#name-syntax>`_  # blocklint: pragma # noqa: E501
@@ -131,7 +134,7 @@ def normalize_name(name: str) -> str:
     return normalize_name_ensip15(name).as_text
 
 
-def dns_encode_name(name: str) -> HexBytes:
+def dns_encode_name(name: Optional[str]) -> HexBytes:
     r"""
     Encode a name according to DNS standards specified in section 3.1
     of RFC1035 with the following validations:
@@ -210,7 +213,7 @@ def label_to_hash(label: str) -> HexBytes:
     return Web3().keccak(text=label)
 
 
-def normal_name_to_hash(name: str) -> HexBytes:
+def normal_name_to_hash(name: Optional[str]) -> HexBytes:
     """
     Hashes a pre-normalized name.
     The normalization of the name is a prerequisite and is not handled by this function.
@@ -221,7 +224,7 @@ def normal_name_to_hash(name: str) -> HexBytes:
     """
     node = EMPTY_SHA3_BYTES
     if not is_empty_name(name):
-        labels = name.split(".")
+        labels = cast(str, name).split(".")
         for label in reversed(labels):
             labelhash = label_to_hash(label)
             assert isinstance(labelhash, bytes)
@@ -256,7 +259,7 @@ def address_in(
     return any(is_same_address(address, item) for item in addresses)
 
 
-def address_to_reverse_domain(address: ChecksumAddress) -> str:
+def address_to_reverse_domain(address: AnyAddress) -> str:
     lower_unprefixed_address = remove_0x_prefix(HexStr(to_normalized_address(address)))
     return f"{lower_unprefixed_address}.{REVERSE_REGISTRAR_DOMAIN}"
 
@@ -276,11 +279,13 @@ def assert_signer_in_modifier_kwargs(modifier_kwargs: Any) -> ChecksumAddress:
     return modifier_dict["from"]
 
 
-def is_none_or_zero_address(addr: Union[Address, ChecksumAddress, HexAddress]) -> bool:
+def is_none_or_zero_address(
+    addr: Union[Address, ChecksumAddress, HexAddress, None],
+) -> bool:
     return not addr or addr == EMPTY_ADDR_HEX
 
 
-def is_empty_name(name: str) -> bool:  # sourcery skip: collection-into-set
+def is_empty_name(name: Optional[str]) -> bool:  # sourcery skip: collection-into-set
     return name is None or name.strip() in ("", ".")
 
 
@@ -297,7 +302,7 @@ def is_valid_ens_name(ens_name: str) -> bool:
 def init_async_web3(
     provider: Optional["AsyncBaseProvider"] = None,
     middleware: Optional[Sequence[Tuple["Middleware", str]]] = (),
-) -> "AsyncWeb3":
+) -> "AsyncWeb3[Any]":
     from faster_web3 import (
         AsyncWeb3 as AsyncWeb3Main,
     )

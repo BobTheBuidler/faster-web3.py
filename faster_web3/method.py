@@ -5,6 +5,7 @@ from typing import (
     Callable,
     Dict,
     Generic,
+    Iterable,
     List,
     Optional,
     Sequence,
@@ -13,13 +14,6 @@ from typing import (
     Union,
 )
 import warnings
-
-from eth_utils.curried import (
-    to_tuple,
-)
-from eth_utils.toolz import (
-    pipe,
-)
 
 from faster_web3._utils.batching import (
     RPC_METHODS_UNSUPPORTED_DURING_BATCH,
@@ -43,27 +37,21 @@ from faster_web3.types import (
     RPCEndpoint,
     TFunc,
     TReturn,
+    TValue,
 )
 
 if TYPE_CHECKING:
-    from faster_web3 import (  # noqa: F401
-        PersistentConnectionProvider,
-        Web3,
-    )
     from faster_web3.module import Module  # noqa: F401
 
 
 Munger = Callable[..., Any]
 
 
-@to_tuple
 def _apply_request_formatters(
-    params: Any, request_formatters: Dict[RPCEndpoint, Callable[..., TReturn]]
-) -> Tuple[Any, ...]:
-    if request_formatters:
-        formatted_params = pipe(params, request_formatters)
-        return formatted_params
-    return params
+    params: Iterable[TValue],
+    request_formatters: Callable[[Iterable[TValue]], Iterable[TReturn]],
+) -> Tuple[TReturn, ...]:
+    return tuple(request_formatters(params))
 
 
 def _set_mungers(
@@ -72,13 +60,7 @@ def _set_mungers(
     if is_property and mungers:
         raise Web3ValidationError("Mungers cannot be used with a property.")
 
-    return (
-        mungers
-        if mungers
-        else [default_munger]
-        if is_property
-        else [default_root_munger]
-    )
+    return mungers or ([default_munger] if is_property else [default_root_munger])
 
 
 def default_munger(_module: "Module", *args: Any, **kwargs: Any) -> Tuple[()]:
@@ -87,8 +69,8 @@ def default_munger(_module: "Module", *args: Any, **kwargs: Any) -> Tuple[()]:
     return ()
 
 
-def default_root_munger(_module: "Module", *args: Any) -> List[Any]:
-    return [*args]
+def default_root_munger(_module: "Module", *args: TValue) -> List[TValue]:
+    return list(args)
 
 
 class Method(Generic[TFunc]):
@@ -200,9 +182,7 @@ class Method(Generic[TFunc]):
             lambda args, munger: munger(module, *args, **kwargs), self.mungers, args
         )
 
-    def process_params(
-        self, module: "Module", *args: Any, **kwargs: Any
-    ) -> Tuple[
+    def process_params(self, module: "Module", *args: Any, **kwargs: Any) -> Tuple[
         Tuple[Union[RPCEndpoint, Callable[..., RPCEndpoint]], Tuple[RPCEndpoint, ...]],
         Tuple[
             Union[TReturn, Dict[str, Callable[..., Any]]],

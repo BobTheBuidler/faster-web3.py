@@ -1,9 +1,11 @@
 from typing import (
     Any,
     Dict,
+    Final,
     Iterator,
     List,
     Optional,
+    final,
 )
 
 from eth_typing import (
@@ -15,11 +17,12 @@ from faster_web3.utils import (
 )
 
 
+@final
 class SubscriptionContainer:
     def __init__(self) -> None:
-        self.subscriptions: List[EthSubscription[Any]] = []
-        self.subscriptions_by_id: Dict[HexStr, EthSubscription[Any]] = {}
-        self.subscriptions_by_label: Dict[str, EthSubscription[Any]] = {}
+        self.subscriptions: Final[List[EthSubscription[Any]]] = []
+        self.subscriptions_by_id: Final[Dict[HexStr, EthSubscription[Any]]] = {}
+        self.subscriptions_by_label: Final[Dict[str, EthSubscription[Any]]] = {}
 
     def __len__(self) -> int:
         return len(self.subscriptions)
@@ -37,10 +40,10 @@ class SubscriptionContainer:
         self.subscriptions_by_id.pop(subscription.id)
         self.subscriptions_by_label.pop(subscription.label)
 
-    def get_by_id(self, sub_id: HexStr) -> EthSubscription[Any]:
+    def get_by_id(self, sub_id: HexStr) -> Optional[EthSubscription[Any]]:
         return self.subscriptions_by_id.get(sub_id)
 
-    def get_by_label(self, label: str) -> EthSubscription[Any]:
+    def get_by_label(self, label: str) -> Optional[EthSubscription[Any]]:
         return self.subscriptions_by_label.get(label)
 
     @property
@@ -51,6 +54,4 @@ class SubscriptionContainer:
         self, sub_id: HexStr
     ) -> Optional[EthSubscription[Any]]:
         sub = self.get_by_id(sub_id)
-        if sub and sub._handler:
-            return sub
-        return None
+        return sub if sub and sub._handler else None

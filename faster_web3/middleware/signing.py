@@ -6,8 +6,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Collection,
-    Iterable,
-    Tuple,
+    Dict,
     TypeVar,
     Union,
     cast,
@@ -31,16 +30,16 @@ from eth_typing import (
 )
 from faster_eth_utils import (
     to_checksum_address,
-    to_dict,
 )
 from faster_eth_utils.curried import (
     apply_formatter_if,
 )
 from faster_eth_utils.toolz import (
     compose,
-)
-from toolz import (
     curry,
+)
+from typing_extensions import (
+    TypeGuard,
 )
 
 from faster_web3._utils.async_transactions import (
@@ -80,7 +79,7 @@ T = TypeVar("T")
 to_hexstr_from_eth_key = operator.methodcaller("to_hex")
 
 
-def is_eth_key(value: Any) -> bool:
+def is_eth_key(value: Any) -> TypeGuard[PrivateKey]:
     return isinstance(value, PrivateKey)
 
 
@@ -91,25 +90,15 @@ key_normalizer = compose(
 _PrivateKey = Union[LocalAccount, PrivateKey, HexStr, bytes]
 
 
-@to_dict
 def gen_normalized_accounts(
-    val: Union[_PrivateKey, Collection[_PrivateKey]]
-) -> Iterable[Tuple[ChecksumAddress, LocalAccount]]:
-    if isinstance(
-        val,
-        (
-            list,
-            tuple,
-            set,
-        ),
-    ):
-        for i in val:
-            account: LocalAccount = to_account(i)
-            yield account.address, account
+    val: Union[_PrivateKey, Collection[_PrivateKey]],
+) -> Dict[ChecksumAddress, LocalAccount]:
+    # sourcery skip: remove-unnecessary-else
+    if isinstance(val, (list, tuple, set)):
+        return {account.address: account for account in map(to_account, val)}
     else:
         account = to_account(val)
-        yield account.address, account
-        return
+        return {account.address: account}
 
 
 @singledispatch
@@ -158,7 +147,7 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
     @curry
     def build(
         private_key_or_account: Union[_PrivateKey, Collection[_PrivateKey]],
-        w3: Union["Web3", "AsyncWeb3"],
+        w3: Union["Web3", "AsyncWeb3[Any]"],
     ) -> "SignAndSendRawMiddlewareBuilder":
         middleware = SignAndSendRawMiddlewareBuilder(w3)
         middleware._accounts = gen_normalized_accounts(private_key_or_account)
@@ -199,7 +188,7 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
             return method, params
 
         else:
-            w3 = cast("AsyncWeb3", self._w3)
+            w3 = cast("AsyncWeb3[Any]", self._w3)
 
             formatted_transaction = format_transaction(params[0])
             filled_transaction = await async_fill_transaction_defaults(
