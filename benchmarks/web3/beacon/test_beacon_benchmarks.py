@@ -39,6 +39,20 @@ peer_ids = ["peer1", "peer2", "0xdeadbeef"]
 
 # --- Benchmarks for All Beacon Methods ---
 
+def run_1000(fn, *args, **kwargs):
+    if kwargs and args:
+        for _ in range(1000):
+            fn(*args, **kwargs)
+    elif args:
+        for _ in range(1000):
+            fn(*args)
+    elif kwargs:
+        for _ in range(1000):
+            fn(**kwargs)
+    else:
+        for i in range(1000):
+            fn()
+
 @pytest.mark.benchmark(group="beacon-get_genesis")
 def test_get_genesis(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url="http://localhost:5052")
