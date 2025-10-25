@@ -153,7 +153,7 @@ class SubscriptionManager:
         """
         raise Web3TypeError("Expected a Subscription or a sequence of Subscriptions.")
 
-    @subscribe.register(EthSubscription)
+    @subscribe.register(EthSubscription)  # type: ignore [attr-defined]
     async def subscribe(self, subscription: EthSubscription[Any]) -> HexStr:
         subscription.manager = self
         self._validate_and_normalize_label(subscription)
@@ -167,7 +167,7 @@ class SubscriptionManager:
         )
         return sub_id
 
-    @subscribe.register(Sequence)
+    @subscribe.register(Sequence)  # type: ignore [attr-defined]
     async def subscribe(
         self, subscriptions: Sequence[EthSubscription[Any]]
     ) -> List[HexStr]:
