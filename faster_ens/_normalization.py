@@ -22,8 +22,8 @@ from typing import (
     final,
 )
 
-import pyunormalize._unicode as unicode
 from pyunormalize import (
+    _unicode_data,
     normalization,
 )
 
@@ -33,10 +33,10 @@ from .exceptions import (
 
 # Constants vendored from pyunormalize
 
-_NFC__QC_NO_OR_MAYBE: Final = unicode._NFC__QC_NO_OR_MAYBE
-_NFD__QC_NO: Final = unicode._NFD__QC_NO
-_NON_ZERO_CCC_TABLE: Final = unicode._NON_ZERO_CCC_TABLE
-_COMPOSITION_EXCLUSIONS: Final = unicode._COMPOSITION_EXCLUSIONS
+_NFC__QC_NO_OR_MAYBE: Final = _unicode_data._NFC__QC_NO_OR_MAYBE
+_NFD__QC_NO: Final = _unicode_data._NFD__QC_NO
+_NON_ZERO_CCC_TABLE: Final = _unicode_data._NON_ZERO_CCC_TABLE
+_COMPOSITION_EXCLUSIONS: Final = _unicode_data._COMPOSITION_EXCLUSIONS
 _COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
 _FULL_CDECOMP_BY_CHAR: Final[Dict[int, List[int]]] = normalization._FULL_CDECOMP_BY_CHAR
 _LB: Final = normalization._LB

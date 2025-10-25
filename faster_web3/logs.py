@@ -1,8 +1,12 @@
+from typing import (
+    Final,
+)
+
 from faster_web3._utils.events import (
     EventLogErrorFlags,
 )
 
-DISCARD = EventLogErrorFlags.Discard
-IGNORE = EventLogErrorFlags.Ignore
-STRICT = EventLogErrorFlags.Strict
-WARN = EventLogErrorFlags.Warn
+DISCARD: Final = EventLogErrorFlags.Discard
+IGNORE: Final = EventLogErrorFlags.Ignore
+STRICT: Final = EventLogErrorFlags.Strict
+WARN: Final = EventLogErrorFlags.Warn
