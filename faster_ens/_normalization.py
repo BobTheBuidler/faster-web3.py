@@ -222,9 +222,9 @@ def _codepoints_to_text(cps: Union[List[List[int]], List[int]]) -> str:
     if not cps:
         return ""
     elif isinstance(cps[0], int):
-        return "".join(map(chr, cps))
+        return "".join(map(chr, cast(List[int], cps)))
     else:
-        return "".join(map(_codepoints_to_text, cps))
+        return "".join(map(_codepoints_to_text, cast(List[List[int]], cps)))
 
 
 def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
@@ -519,7 +519,6 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 # Vendored from pyunormalize
 
 _NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
-_NFD__QC_NO: Final = normalization._NFD__QC_NO
 _NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
 _COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
 _COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
@@ -580,15 +579,19 @@ def NFC(unistr: str) -> str:
 
     """
     prev_ccc = 0
+    
+    # Read these C constants into locals only once
+    qc_no_or_maybe = _NFC__QC_NO_OR_MAYBE
+    non_zero_table = _NON_ZERO_CCC_TABLE
 
     for u in map(ord, unistr):
-        if u in _NFC__QC_NO_OR_MAYBE:
+        if u in qc_no_or_maybe:
             break
 
-        if u not in _NON_ZERO_CCC_TABLE:
+        if u not in non_zero_table:
             continue
 
-        curr_ccc = _NON_ZERO_CCC_TABLE[u]
+        curr_ccc = non_zero_table[u]
 
         if curr_ccc < prev_ccc:
             break
@@ -605,6 +608,7 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
     # and canonically ordered string into its most fully composed but still
     # canonically equivalent sequence.
 
+    # Read these C constants into locals only once
     non_zero_table = _NON_ZERO_CCC_TABLE
     composite_by_cdecomp = _COMPOSITE_BY_CDECOMP
     composition_exclusions = _COMPOSITION_EXCLUSIONS
@@ -630,8 +634,9 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
 
             if (
                 prev is None
-                    or prev not in non_zero_table
-                    or non_zero_table[prev] < non_zero_table[y]):
+                or prev not in non_zero_table
+                or non_zero_table[prev] < non_zero_table[y]
+            ):
 
                 pair = (x, y)
                 
@@ -717,8 +722,7 @@ def NFD(unistr: str) -> str:
     """
     prev_ccc = 0
 
-    # Read these C constants into locals only once
-    qc_no = _NFD__QC_NO
+    qc_no = normalization._NFD__QC_NO
     non_zero_table = _NON_ZERO_CCC_TABLE
 
     for u in map(ord, unistr):
