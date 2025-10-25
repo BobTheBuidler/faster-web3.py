@@ -2,7 +2,7 @@ import pytest
 import web3._utils.method_formatters
 import faster_web3._utils.method_formatters
 from faster_web3.types import RPCEndpoint
-from pytest_benchmark import BenchmarkFixture
+from pytest_codspeed import BenchmarkFixture
 
 def run_100(fn, *args):
     for _ in range(100):
