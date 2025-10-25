@@ -142,9 +142,7 @@ else:
     flags = [
         "--pretty",
         "--disable-error-code=return-value",
-        "--disable-error-code=arg-type",
         "--disable-error-code=union-attr",
-        "--disable-error-code=redundant-cast",
         "--disable-error-code=type-arg",
         "--disable-error-code=type-var",
         "--disable-error-code=call-arg",
@@ -152,11 +150,12 @@ else:
         "--disable-error-code=typeddict-item",
         "--disable-error-code=truthy-function",
         "--disable-error-code=var-annotated",
-        "--disable-error-code=assignment",
         "--disable-error-code=index",
         "--disable-error-code=operator",
         "--disable-error-code=override",
         "--disable-error-code=misc",
+        # keep these flags to ensure backward compatability
+        "--disable-error-code=redundant-cast",
         "--disable-error-code=unused-ignore",
     ]
 

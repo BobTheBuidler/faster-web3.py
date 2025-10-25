@@ -21,7 +21,7 @@ from typing import (
     final,
 )
 
-from pyunormalize import normalization
+from pyunormalize import NFD, normalization
 
 from .exceptions import (
     InvalidName,
@@ -526,7 +526,7 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 _NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
 _NFD__QC_NO: Final = normalization._NFD__QC_NO
 _NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
-_COMPOSITE_BY_CDECOMP: Final = normalization._COMPOSITE_BY_CDECOMP
+_COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
 _COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
 _FULL_CDECOMP_BY_CHAR: Final = normalization._FULL_CDECOMP_BY_CHAR
 _LB: Final = normalization._LB
