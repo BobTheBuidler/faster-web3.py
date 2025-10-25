@@ -14,15 +14,20 @@ from typing import (
     MutableMapping,
     Optional,
     Sequence,
+    Set,
     Tuple,
     TypeVar,
     Union,
     ValuesView,
     cast,
+    overload,
 )
 
 from faster_eth_utils import (
     is_integer,
+)
+from typing_extensions import (
+    Self,
 )
 
 from faster_web3.exceptions import (
@@ -76,6 +81,22 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         else:
             builder.pretty(self.__dict__)
         builder.text(")")
+
+    @overload
+    @classmethod
+    def recursive(cls, value: List[Any]) -> List[Any]: ...
+
+    @overload
+    @classmethod
+    def recursive(cls, value: Tuple[Any, ...]) -> Tuple[Any, ...]: ...
+
+    @overload
+    @classmethod
+    def recursive(cls, value: Mapping[str, Any]) -> Self: ...
+
+    @overload
+    @classmethod
+    def recursive(cls, value: Set[Any]) -> Set[Any]: ...
 
     @classmethod
     def recursive(cls, value: TValue) -> Any:
