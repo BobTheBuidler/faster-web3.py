@@ -784,7 +784,7 @@ class BaseContractFunction:
             List[ABIFunction],
             filter_abi_by_type(
                 "function",
-                self.contract_abi,
+                cast(ABI, self.contract_abi),
             ),
         )
         # Filter functions by name to obtain function signatures
