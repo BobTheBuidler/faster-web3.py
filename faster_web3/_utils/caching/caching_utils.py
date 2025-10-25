@@ -59,6 +59,7 @@ from faster_web3.utils import (
 if TYPE_CHECKING:
     from faster_web3.providers import (  # noqa: F401
         AsyncBaseProvider,
+        BaseProvider,
         PersistentConnectionProvider,
     )
 
@@ -75,6 +76,9 @@ is_null: Final = faster_eth_utils.is_null
 is_number: Final = faster_eth_utils.is_number
 is_text: Final = faster_eth_utils.is_text
 to_bytes: Final = faster_eth_utils.to_bytes
+
+
+SyncValidatorFunc = Callable[["BaseProvider", Sequence[Any], Dict[str, Any]], bool]
 
 
 def generate_cache_key(value: Any) -> str:
@@ -203,15 +207,7 @@ BLOCKHASH_IN_PARAMS: Final = frozenset(
     }
 )
 
-INTERNAL_VALIDATION_MAP: Final[
-    Dict[
-        RPCEndpoint,
-        Callable[
-            [SYNC_PROVIDER_TYPE, Sequence[Any], Dict[str, Any]],
-            bool,
-        ],
-    ],
-] = {
+INTERNAL_VALIDATION_MAP: Final[Dict[RPCEndpoint, SyncValidatorFunc]] = {
     **{endpoint: always_cache_request for endpoint in ALWAYS_CACHE},
     **{endpoint: validate_from_block_id_in_params for endpoint in BLOCKNUM_IN_PARAMS},
     **{endpoint: validate_from_blocknum_in_result for endpoint in BLOCK_IN_RESULT},
