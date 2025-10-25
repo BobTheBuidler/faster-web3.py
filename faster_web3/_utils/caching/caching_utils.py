@@ -78,7 +78,7 @@ is_text: Final = faster_eth_utils.is_text
 to_bytes: Final = faster_eth_utils.to_bytes
 
 
-SyncValidatorFunc = Callable[[BaseProvider, Sequence[Any], Dict[str, Any]], bool]
+SyncValidatorFunc = Callable[["BaseProvider", Sequence[Any], Dict[str, Any]], bool]
 
 
 def generate_cache_key(value: Any) -> str:
