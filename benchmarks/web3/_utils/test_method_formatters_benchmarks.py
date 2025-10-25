@@ -16,7 +16,7 @@ def run_100(fn, *args):
 # All data below is based on real mainnet-style values or representative realistic examples.
 
 TX_DATA = {
-    "hash": "0xfaceb00c1234567890b0b7b1d1e2feedbeefcafe1234567890deadbeefcafebabe",
+    "hash": "0xfaceb00c1234567890b0b7b1d1e2feedbeefcafe1234567890deadbeefcafeba",
     "nonce": "0x42",
     "blockHash": "0xfeedbeefcafebabe1234567890b0b7b1d1e2facefeedbeefcafe1234567890",
     "blockNumber": "0x1337",
@@ -76,7 +76,7 @@ DATA = {
     "net_peerCount": "0x8",
     "eth_getRawTransactionByBlockHashAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
     "eth_getRawTransactionByBlockNumberAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
-    "eth_sendRawTransaction": "0xdeadbeefcafebabe1234567890b0b7b1d1e2facefeedbeefcafe1234567890",
+    "eth_sendRawTransaction": "0xdeadbeefcafebabe1234567890b0b7b1d1e2facefeedbeefcafe1234567890aa",
     "eth_sign": "0x2c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
     "eth_sendTransaction": "0xfeedbabe1234567890cafebabe1234567890feedbabe1234567890cafebabe12",
     "eth_signTypedData": "0x1c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
@@ -92,7 +92,7 @@ DATA = {
         "balance": "0x0",
         "codeHash": "0x8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e8b5e",
         "nonce": "0x1",
-        "storageHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
+        "storageHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1",
         "storageProof": [],
     },
     "eth_getTransactionByBlockHashAndIndex": TX_DATA,
