@@ -30,6 +30,9 @@ from faster_web3 import (
     AsyncWeb3,
     PersistentConnectionProvider,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.beacon import (
     AsyncBeacon,
 )
@@ -44,7 +47,6 @@ from faster_web3.types import (
     FormattedEthSubscriptionResponse,
     LogReceipt,
     Nonce,
-    RPCEndpoint,
     TopicFilter,
     TxData,
     Wei,
@@ -778,7 +780,7 @@ class PersistentConnectionProviderTest:
 
         # send a request over the socket
         await async_w3.socket.send(
-            RPCEndpoint("eth_getBlockByNumber"), ["latest", True]
+            RPC.eth_getBlockByNumber, ["latest", True]
         )
 
         # recv and validate the unprocessed response
@@ -791,7 +793,7 @@ class PersistentConnectionProviderTest:
 
         # make a request over the socket
         response = await async_w3.socket.make_request(
-            RPCEndpoint("eth_getBlockByNumber"), ["latest", True]
+            RPC.eth_getBlockByNumber, ["latest", True]
         )
         assert "id" in response, "Expected 'id' key in response."
         assert "jsonrpc" in response, "Expected 'jsonrpc' key in response."

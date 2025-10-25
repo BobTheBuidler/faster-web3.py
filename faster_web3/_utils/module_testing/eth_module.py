@@ -62,6 +62,9 @@ from faster_web3._utils.module_testing.module_testing_utils import (
 from faster_web3._utils.module_testing.utils import (
     RequestMocker,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3._utils.type_conversion import (
     to_hex_if_bytes,
 )
@@ -1011,8 +1014,8 @@ class AsyncEthModuleTest:
     ) -> None:
         async with request_mocker(
             async_w3,
-            mock_errors={RPCEndpoint("eth_maxPriorityFeePerGas"): {}},
-            mock_results={RPCEndpoint("eth_feeHistory"): {"reward": [[0]]}},
+            mock_errors={RPC.eth_maxPriorityFeePerGas: {}},
+            mock_results={RPC.eth_feeHistory: {"reward": [[0]]}},
         ):
             with pytest.warns(
                 UserWarning,
@@ -2697,8 +2700,8 @@ class EthModuleTest:
     ) -> None:
         with request_mocker(
             w3,
-            mock_errors={RPCEndpoint("eth_maxPriorityFeePerGas"): {}},
-            mock_results={RPCEndpoint("eth_feeHistory"): {"reward": [[0]]}},
+            mock_errors={RPC.eth_maxPriorityFeePerGas: {}},
+            mock_results={RPC.eth_feeHistory: {"reward": [[0]]}},
         ):
             with pytest.warns(
                 UserWarning,

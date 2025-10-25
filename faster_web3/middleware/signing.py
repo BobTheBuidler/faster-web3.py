@@ -51,6 +51,7 @@ from faster_web3._utils.method_formatters import (
 )
 from faster_web3._utils.rpc_abi import (
     TRANSACTION_PARAMS_ABIS,
+    RPC,
     apply_abi_formatters_to_dict,
 )
 from faster_web3._utils.transactions import (
@@ -177,7 +178,7 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
                 raw_tx = account.sign_transaction(filled_transaction).raw_transaction
 
                 return (
-                    RPCEndpoint("eth_sendRawTransaction"),
+                    RPC.eth_sendRawTransaction,
                     [raw_tx.to_0x_hex()],
                 )
 
@@ -208,6 +209,6 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
                 ).raw_transaction
 
                 return (
-                    RPCEndpoint("eth_sendRawTransaction"),
+                    RPC.eth_sendRawTransaction,
                     [raw_tx.to_0x_hex()],
                 )

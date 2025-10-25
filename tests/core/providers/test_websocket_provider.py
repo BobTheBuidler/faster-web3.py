@@ -25,6 +25,9 @@ from faster_web3._utils.caching import (
 from faster_web3._utils.module_testing.module_testing_utils import (
     WebSocketMessageStreamMock,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.exceptions import (
     TimeExhausted,
     Web3RPCError,
@@ -307,7 +310,7 @@ async def test_listen_event_awaits_msg_processing_when_subscription_queue_is_ful
     # mock subscription and add to active subscriptions
     sub_id = "0x1"
     sub_request_information = RequestInformation(
-        method=RPCEndpoint("eth_subscribe"),
+        method=RPC.eth_subscribe,
         params=["mock"],
         response_formatters=([], [], []),
         subscription_id=sub_id,
@@ -523,7 +526,7 @@ async def test_websocket_provider_use_text_frames(use_text_frames, expected_send
         generate_cache_key(0), "0x1337"
     )
 
-    await provider.make_request(RPCEndpoint("eth_getBlockByNumber"), ["latest", False])
+    await provider.make_request(RPC.eth_getBlockByNumber, ["latest", False])
     provider._ws.send.assert_called_once_with(expected_send_arg)
 
 
@@ -556,7 +559,7 @@ async def test_req_info_cache_size_can_be_set_and_warns_when_full(caplog):
         provider: WebSocketProvider = async_w3.provider
         provider._request_processor.cache_request_information(
             "some_id",
-            RPCEndpoint("eth_getBlockByNumber"),
+            RPC.eth_getBlockByNumber,
             ["latest"],
             ((), (), ()),
         )

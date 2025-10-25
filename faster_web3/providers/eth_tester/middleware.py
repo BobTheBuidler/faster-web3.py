@@ -44,6 +44,9 @@ from faster_web3._utils.formatters import (
 from faster_web3._utils.method_formatters import (
     apply_list_to_array_formatter,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.middleware.base import (
     Web3Middleware,
 )
@@ -266,56 +269,56 @@ by_block_number_and_index: Final = apply_formatters_to_args(
 
 request_formatters: Final = {
     # Eth
-    RPCEndpoint("eth_getBlockByNumber"): block_arg_to_integer,
-    RPCEndpoint("eth_getFilterChanges"): apply_formatters_to_args(hex_to_integer),
-    RPCEndpoint("eth_getFilterLogs"): apply_formatters_to_args(hex_to_integer),
-    RPCEndpoint("eth_getTransactionCount"): apply_formatters_to_args(
+    RPC.eth_getBlockByNumber: block_arg_to_integer,
+    RPC.eth_getFilterChanges: apply_formatters_to_args(hex_to_integer),
+    RPC.eth_getFilterLogs: apply_formatters_to_args(hex_to_integer),
+    RPC.eth_getTransactionCount: apply_formatters_to_args(
         identity,
         hex_block_to_integer,
     ),
-    RPCEndpoint("eth_getBlockTransactionCountByNumber"): block_arg_to_integer,
-    RPCEndpoint("eth_getUncleCountByBlockNumber"): block_arg_to_integer,
-    RPCEndpoint("eth_getTransactionByBlockHashAndIndex"): apply_formatters_to_args(
+    RPC.eth_getBlockTransactionCountByNumber: block_arg_to_integer,
+    RPC.eth_getUncleCountByBlockNumber: block_arg_to_integer,
+    RPC.eth_getTransactionByBlockHashAndIndex: apply_formatters_to_args(
         identity,
         to_integer_if_hex,
     ),
-    RPCEndpoint("eth_getTransactionByBlockNumberAndIndex"): by_block_number_and_index,
-    RPCEndpoint("eth_getUncleByBlockNumberAndIndex"): by_block_number_and_index,
-    RPCEndpoint("eth_newFilter"): apply_formatters_to_args(
+    RPC.eth_getTransactionByBlockNumberAndIndex: by_block_number_and_index,
+    RPC.eth_getUncleByBlockNumberAndIndex: by_block_number_and_index,
+    RPC.eth_newFilter: apply_formatters_to_args(
         filter_request_transformer,
     ),
-    RPCEndpoint("eth_getLogs"): apply_formatters_to_args(
+    RPC.eth_getLogs: apply_formatters_to_args(
         filter_request_transformer,
     ),
-    RPCEndpoint("eth_sendTransaction"): apply_formatters_to_args(
+    RPC.eth_sendTransaction: apply_formatters_to_args(
         transaction_request_transformer,
     ),
-    RPCEndpoint("eth_estimateGas"): apply_formatters_to_args(
+    RPC.eth_estimateGas: apply_formatters_to_args(
         transaction_request_transformer,
     ),
-    RPCEndpoint("eth_call"): apply_formatters_to_args(
+    RPC.eth_call: apply_formatters_to_args(
         transaction_request_transformer,
         hex_block_to_integer,
     ),
-    RPCEndpoint("eth_createAccessList"): apply_formatters_to_args(
+    RPC.eth_createAccessList: apply_formatters_to_args(
         transaction_request_transformer,
         hex_block_to_integer,
     ),
-    RPCEndpoint("eth_uninstallFilter"): apply_formatters_to_args(hex_to_integer),
-    RPCEndpoint("eth_getCode"): apply_formatters_to_args(
+    RPC.eth_uninstallFilter: apply_formatters_to_args(hex_to_integer),
+    RPC.eth_getCode: apply_formatters_to_args(
         identity,
         hex_block_to_integer,
     ),
-    RPCEndpoint("eth_getBalance"): apply_formatters_to_args(
+    RPC.eth_getBalance: apply_formatters_to_args(
         identity,
         hex_block_to_integer,
     ),
-    RPCEndpoint("eth_feeHistory"): apply_formatters_to_args(
+    RPC.eth_feeHistory: apply_formatters_to_args(
         to_integer_if_hex,
         hex_block_to_integer,
     ),
     # EVM
-    RPCEndpoint("evm_revert"): apply_formatters_to_args(hex_to_integer),
+    RPC.evm_revert: apply_formatters_to_args(hex_to_integer),
 }
 
 format_logs: Final = apply_formatter_if(
@@ -324,39 +327,39 @@ format_logs: Final = apply_formatter_if(
 )
 
 result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
-    RPCEndpoint("eth_getBlockByHash"): apply_formatter_if(
+    RPC.eth_getBlockByHash: apply_formatter_if(
         is_dict, compose(block_result_remapper, block_result_formatter)
     ),
-    RPCEndpoint("eth_getBlockByNumber"): apply_formatter_if(
+    RPC.eth_getBlockByNumber: apply_formatter_if(
         is_dict, compose(block_result_remapper, block_result_formatter)
     ),
-    RPCEndpoint("eth_getBlockTransactionCountByHash"): apply_formatter_if(
+    RPC.eth_getBlockTransactionCountByHash: apply_formatter_if(
         is_dict,
         transaction_result_remapper,
     ),
-    RPCEndpoint("eth_getBlockTransactionCountByNumber"): apply_formatter_if(
+    RPC.eth_getBlockTransactionCountByNumber: apply_formatter_if(
         is_dict,
         transaction_result_remapper,
     ),
-    RPCEndpoint("eth_getTransactionByHash"): apply_formatter_if(
+    RPC.eth_getTransactionByHash: apply_formatter_if(
         is_dict,
         compose(transaction_result_remapper, transaction_result_formatter),
     ),
-    RPCEndpoint("eth_getTransactionReceipt"): apply_formatter_if(
+    RPC.eth_getTransactionReceipt: apply_formatter_if(
         is_dict,
         compose(receipt_result_remapper, receipt_result_formatter),
     ),
-    RPCEndpoint("eth_newFilter"): integer_to_hex,
-    RPCEndpoint("eth_newBlockFilter"): integer_to_hex,
-    RPCEndpoint("eth_newPendingTransactionFilter"): integer_to_hex,
-    RPCEndpoint("eth_getLogs"): format_logs,
-    RPCEndpoint("eth_getFilterChanges"): format_logs,
-    RPCEndpoint("eth_getFilterLogs"): format_logs,
-    RPCEndpoint("eth_feeHistory"): apply_formatter_if(
+    RPC.eth_newFilter: integer_to_hex,
+    RPC.eth_newBlockFilter: integer_to_hex,
+    RPC.eth_newPendingTransactionFilter: integer_to_hex,
+    RPC.eth_getLogs: format_logs,
+    RPC.eth_getFilterChanges: format_logs,
+    RPC.eth_getFilterLogs: format_logs,
+    RPC.eth_feeHistory: apply_formatter_if(
         is_dict, fee_history_result_remapper
     ),
     # EVM
-    RPCEndpoint("evm_snapshot"): integer_to_hex,
+    RPC.evm_snapshot: integer_to_hex,
 }
 
 
