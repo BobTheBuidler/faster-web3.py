@@ -722,7 +722,7 @@ class PersistentConnectionProviderTest:
             response = cast(FormattedEthSubscriptionResponse, msg)
             assert response.keys() == {"subscription", "result"}
             assert response["subscription"] == sub_id
-            assert response["result"]["proofOfAuthorityData"] == HexBytes(  # noqa: E501
+            assert response["result"]["proofOfAuthorityData"] == HexBytes(  # type: ignore  # noqa: E501
                 f"0x{'00' * 100}"
             )
 

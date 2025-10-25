@@ -840,7 +840,7 @@ class AsyncEthModuleTest:
         def gas_price_strategy(_w3: "Web3", _txn: TxParams) -> str:
             return hex(two_gwei_in_wei)
 
-        async_w3.eth.set_gas_price_strategy(gas_price_strategy)
+        async_w3.eth.set_gas_price_strategy(gas_price_strategy)  # type: ignore
 
         txn_hash = await async_w3.eth.send_transaction(txn_params)
         txn = await async_w3.eth.get_transaction(txn_hash)
@@ -1229,7 +1229,7 @@ class AsyncEthModuleTest:
             ),
         ):
             # type ignored because we are testing an invalid block identifier
-            await async_w3.eth.get_raw_transaction_by_block(unknown_identifier, 0)  # noqa: E501
+            await async_w3.eth.get_raw_transaction_by_block(unknown_identifier, 0)  # type: ignore  # noqa: E501
 
     @pytest.mark.asyncio
     async def test_eth_get_balance(self, async_w3: "AsyncWeb3[Any]") -> None:
@@ -3526,7 +3526,7 @@ class EthModuleTest:
         def gas_price_strategy(_w3: "Web3", _txn: TxParams) -> str:
             return hex(two_gwei_in_wei)
 
-        w3.eth.set_gas_price_strategy(gas_price_strategy)
+        w3.eth.set_gas_price_strategy(gas_price_strategy)  # type: ignore
 
         txn_hash = w3.eth.send_transaction(txn_params)
         txn = w3.eth.get_transaction(txn_hash)
@@ -5032,7 +5032,7 @@ class EthModuleTest:
             ),
         ):
             # type ignored because we are testing an invalid input
-            w3.eth.get_raw_transaction_by_block(unknown_identifier, 0)
+            w3.eth.get_raw_transaction_by_block(unknown_identifier, 0)  # type: ignore
 
     def test_default_account(
         self, w3: "Web3", keyfile_account_address_dual_type: ChecksumAddress

@@ -257,9 +257,10 @@ class BaseContractEvent:
                 if errors == DISCARD:
                     continue
                 elif errors == IGNORE:
-                    new_log = MutableAttributeDict(log)
+                    # type ignores b/c rich_log set on 1092 conflicts with mutated types
+                    new_log = MutableAttributeDict(log)  # type: ignore
                     new_log["errors"] = e
-                    rich_log = AttributeDict(new_log)
+                    rich_log = AttributeDict(new_log)  # type: ignore
                 elif errors == STRICT:
                     raise e
                 else:
@@ -1338,7 +1339,7 @@ class BaseContract:
                 abi=fallback_abi,
             )()
 
-        return cast(function_type, NonExistentFallbackFunction())  # type: ignore [valid-type]
+        return cast(function_type, NonExistentFallbackFunction())  # type: ignore
 
     @staticmethod
     def get_receive_function(
@@ -1358,7 +1359,7 @@ class BaseContract:
                 abi=receive_abi,
             )()
 
-        return cast(function_type, NonExistentReceiveFunction())  # type: ignore [valid-type]
+        return cast(function_type, NonExistentReceiveFunction())  # type: ignore
 
     #
     # Private Helpers

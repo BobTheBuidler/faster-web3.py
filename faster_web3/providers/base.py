@@ -190,9 +190,11 @@ class JSONBaseProvider(BaseProvider):
             accumulator_fn = self.make_batch_request
             for mw in reversed(middleware):
                 initialized = mw(w3)
-                accumulator_fn = cast(
-                    MakeBatchRequestFn,
-                    initialized.wrap_make_batch_request(accumulator_fn),
+                # type ignore bc in order to wrap the method, we have to call
+                # `wrap_make_batch_request` with the accumulator_fn as the argument
+                # which breaks the type hinting for this particular case.
+                accumulator_fn = initialized.wrap_make_batch_request(  # type: ignore
+                    accumulator_fn
                 )
             self._batch_request_func_cache = (middleware, accumulator_fn)
 
