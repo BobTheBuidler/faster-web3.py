@@ -609,7 +609,7 @@ def NFC(unistr: str) -> str:
     return "".join(map(chr, _compose(list(map(ord, NFD(unistr))))))
 
 
-def _compose(elements: List[int]) -> List[int]:
+def _compose(elements_: List[int]) -> List[int]:
     # Canonical composition algorithm to transform a fully decomposed
     # and canonically ordered string into its most fully composed but still
     # canonically equivalent sequence.
@@ -619,14 +619,15 @@ def _compose(elements: List[int]) -> List[int]:
     composite_by_cdecomp = _COMPOSITE_BY_CDECOMP
     composition_exclusions = _COMPOSITION_EXCLUSIONS
 
+    elements: List[Optional[int]] = elements_.copy()
     for i, x in enumerate(elements):
-        if x in non_zero_table:
+        if x is None or x in non_zero_table:
             continue
 
         last_cc = False
         blocked = False
 
-        for j, y in enumerate(elements[i + 1 :], i + 1):
+        for j, y in enumerate(cast(List[int], elements[i + 1 :]), i + 1):
             if y in non_zero_table:
                 last_cc = True
             else:
