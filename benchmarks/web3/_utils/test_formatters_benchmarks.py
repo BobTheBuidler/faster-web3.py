@@ -114,13 +114,13 @@ def test_faster_hex_to_integer(benchmark: BenchmarkFixture, hexstr):
 @pytest.mark.parametrize("args", APPLY_FORMATTERS_TO_ARGS_CASES, ids=APPLY_FORMATTERS_TO_ARGS_IDS)
 def test_apply_formatters_to_args(benchmark: BenchmarkFixture, args):
     f = web3._utils.formatters.apply_formatters_to_args(noop, noop)
-    benchmark(run_100, f, *args)
+    benchmark(run_100, f, args)
 
 @pytest.mark.benchmark(group="formatters-apply_formatters_to_args")
 @pytest.mark.parametrize("args", APPLY_FORMATTERS_TO_ARGS_CASES, ids=APPLY_FORMATTERS_TO_ARGS_IDS)
 def test_faster_apply_formatters_to_args(benchmark: BenchmarkFixture, args):
     f = faster_web3._utils.formatters.apply_formatters_to_args(noop, noop)
-    benchmark(run_100, f, *args)
+    benchmark(run_100, f, args)
 
 @pytest.mark.benchmark(group="formatters-map_collection")
 @pytest.mark.parametrize("collection", MAP_COLLECTION_CASES, ids=MAP_COLLECTION_IDS)
