@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_5f8b22f5f815a3776376_H
-#define MYPYC_NATIVE_5f8b22f5f815a3776376_H
+#ifndef MYPYC_NATIVE_2c3297a056130187a890_H
+#define MYPYC_NATIVE_2c3297a056130187a890_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T3CIO
@@ -36,6 +36,14 @@ typedef struct tuple_T3OOO {
     PyObject *f1;
     PyObject *f2;
 } tuple_T3OOO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T2II
+#define MYPYC_DECLARED_tuple_T2II
+typedef struct tuple_T2II {
+    CPyTagged f0;
+    CPyTagged f1;
+} tuple_T2II;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T1O
@@ -147,28 +155,28 @@ typedef struct tuple_T6OOOOOO {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
-    PyObject *__original_text;
-    PyObject *__original_codepoints;
-    PyObject *__normalized_codepoints;
     char _restricted;
+    PyObject *__original_codepoints;
+    PyObject *__original_text;
+    PyObject *__normalized_codepoints;
 } faster_ens____normalization___TokenObject;
 
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
-    PyObject *__original_text;
-    PyObject *__original_codepoints;
-    PyObject *__normalized_codepoints;
     char _restricted;
+    PyObject *__original_codepoints;
+    PyObject *__original_text;
+    PyObject *__normalized_codepoints;
 } faster_ens____normalization___EmojiTokenObject;
 
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
-    PyObject *__original_text;
-    PyObject *__original_codepoints;
-    PyObject *__normalized_codepoints;
     char _restricted;
+    PyObject *__original_codepoints;
+    PyObject *__original_text;
+    PyObject *__normalized_codepoints;
 } faster_ens____normalization___TextTokenObject;
 
 typedef struct {

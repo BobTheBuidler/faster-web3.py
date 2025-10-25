@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_5f8b22f5f815a3776376_H
-#define MYPYC_NATIVE_INTERNAL_5f8b22f5f815a3776376_H
+#ifndef MYPYC_NATIVE_INTERNAL_2c3297a056130187a890_H
+#define MYPYC_NATIVE_INTERNAL_2c3297a056130187a890_H
 #include <Python.h>
 #include <CPy.h>
-#include "__native_5f8b22f5f815a3776376.h"
+#include "__native_2c3297a056130187a890.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2318];
+extern PyObject *CPyStatics[2344];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -196,6 +196,10 @@ extern PyObject *CPyStatic_time_based___globals;
 extern CPyModule *CPyModule_collections;
 extern CPyModule *CPyModule_math;
 extern CPyModule *CPyModule_operator;
+extern CPyModule *CPyModule_faster_web3___logs__internal;
+extern CPyModule *CPyModule_faster_web3___logs;
+extern PyObject *CPyStatic_logs___globals;
+extern CPyModule *CPyModule_faster_web3____utils___events;
 extern CPyModule *CPyModule_faster_web3___providers___eth_tester__internal;
 extern CPyModule *CPyModule_faster_web3___providers___eth_tester;
 extern PyObject *CPyStatic_eth_tester___globals;
@@ -249,8 +253,22 @@ extern CPyModule *CPyModule_faster_web3___utils___exception_handling__internal;
 extern CPyModule *CPyModule_faster_web3___utils___exception_handling;
 extern PyObject *CPyStatic_exception_handling___globals;
 extern char CPyDef_faster_ens_____top_level__(void);
-extern PyObject *CPyStatic__normalization___NFC;
-extern PyObject *CPyStatic__normalization___NFD;
+extern PyObject *CPyStatic__normalization____NFC__QC_NO_OR_MAYBE;
+extern PyObject *CPyStatic__normalization____NFD__QC_NO;
+extern PyObject *CPyStatic__normalization____NON_ZERO_CCC_TABLE;
+extern PyObject *CPyStatic__normalization____COMPOSITION_EXCLUSIONS;
+extern PyObject *CPyStatic__normalization____COMPOSITE_BY_CDECOMP;
+extern PyObject *CPyStatic__normalization____FULL_CDECOMP_BY_CHAR;
+extern PyObject *CPyStatic__normalization____LB;
+extern PyObject *CPyStatic__normalization____LL;
+extern PyObject *CPyStatic__normalization____SB;
+extern PyObject *CPyStatic__normalization____SL;
+extern PyObject *CPyStatic__normalization____TB;
+extern PyObject *CPyStatic__normalization____TL;
+extern PyObject *CPyStatic__normalization____TCOUNT;
+extern PyObject *CPyStatic__normalization____VB;
+extern PyObject *CPyStatic__normalization____VL;
+extern PyObject *CPyStatic__normalization____VCOUNT;
 extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC;
 extern PyObject *CPyStatic__normalization___EMOJI_NORMALIZATION_SPEC;
 extern PyObject *CPyStatic__normalization___NORMALIZATION_SPEC_CM;
@@ -312,10 +330,22 @@ extern PyObject *CPyDef__normalization____validate_tokens_and_get_label_type(PyO
 extern PyObject *CPyPy__normalization____validate_tokens_and_get_label_type(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization____build_and_validate_label_from_tokens(PyObject *cpy_r_tokens);
 extern PyObject *CPyPy__normalization____build_and_validate_label_from_tokens(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-extern PyObject *CPyDef__normalization____buffer_codepoints_to_chars(PyObject *cpy_r_buffer);
-extern PyObject *CPyPy__normalization____buffer_codepoints_to_chars(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern PyObject *CPyDef__normalization___normalize_name_ensip15(PyObject *cpy_r_name);
 extern PyObject *CPyPy__normalization___normalize_name_ensip15(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization___NFC(PyObject *cpy_r_unistr);
+extern PyObject *CPyPy__normalization___NFC(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization____compose(PyObject *cpy_r_elements_);
+extern PyObject *CPyPy__normalization____compose(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization____compose_hangul_syllable(CPyTagged cpy_r_x, CPyTagged cpy_r_y);
+extern PyObject *CPyPy__normalization____compose_hangul_syllable(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization___NFD(PyObject *cpy_r_unistr);
+extern PyObject *CPyPy__normalization___NFD(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization____reorder(PyObject *cpy_r_elements);
+extern PyObject *CPyPy__normalization____reorder(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization____decompose(PyObject *cpy_r_unistr);
+extern PyObject *CPyPy__normalization____decompose(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+extern PyObject *CPyDef__normalization____decompose_hangul_syllable(CPyTagged cpy_r_cp);
+extern PyObject *CPyPy__normalization____decompose_hangul_syllable(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef__normalization_____top_level__(void);
 extern PyObject *CPyStatic_faster_ens___auto___ns;
 extern char CPyDef_faster_ens___auto_____top_level__(void);
@@ -2817,6 +2847,11 @@ extern PyObject *CPyPy_time_based___time_based_gas_price_strategy_construct_time
 extern PyObject *CPyDef_time_based___construct_time_based_gas_price_strategy(CPyTagged cpy_r_max_wait_seconds, CPyTagged cpy_r_sample_size, CPyTagged cpy_r_probability, char cpy_r_weighted);
 extern PyObject *CPyPy_time_based___construct_time_based_gas_price_strategy(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_time_based_____top_level__(void);
+extern PyObject *CPyStatic_logs___DISCARD;
+extern PyObject *CPyStatic_logs___IGNORE;
+extern PyObject *CPyStatic_logs___STRICT;
+extern PyObject *CPyStatic_logs___WARN;
+extern char CPyDef_logs_____top_level__(void);
 extern char CPyDef_eth_tester_____top_level__(void);
 extern PyObject *CPyStatic_defaults___null_if_block_not_found;
 extern PyObject *CPyStatic_defaults___null_if_transaction_not_found;
