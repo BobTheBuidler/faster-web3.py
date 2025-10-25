@@ -9,11 +9,11 @@ from eth_tester.exceptions import (
     TransactionFailed,
 )
 
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3 import (
     EthereumTesterProvider,
-)
-from faster_web3.types import (
-    RPCEndpoint,
 )
 
 
@@ -66,12 +66,12 @@ def test_eth_tester_provider_properly_handles_eth_tester_error_messages(
     with pytest.raises(
         TransactionFailed, match="execution reverted: The error message."
     ):
-        provider.make_request(RPCEndpoint("eth_blockNumber"), [])
+        provider.make_request(RPC.eth_blockNumber, [])
 
 
 def test_eth_tester_provider_properly_handles_eth_tester_key_error_messages():
     provider = EthereumTesterProvider(api_endpoints={})
-    response = provider.make_request(RPCEndpoint("eth_blockNumber"), [])
+    response = provider.make_request(RPC.eth_blockNumber, [])
 
     assert response["error"]["code"] == -32601
     assert response["error"]["message"] == "Unknown RPC Endpoint: eth_blockNumber"
@@ -86,7 +86,7 @@ def test_eth_tester_provider_properly_handles_eth_tester_not_implemented_error_m
     )
 
     provider = EthereumTesterProvider()
-    response = provider.make_request(RPCEndpoint("eth_blockNumber"), [])
+    response = provider.make_request(RPC.eth_blockNumber, [])
 
     assert response["error"]["code"] == -32601
     assert (
@@ -117,4 +117,4 @@ def test_eth_tester_provider_properly_handles_transaction_failed_with_decode_err
     with pytest.raises(TransactionFailed, match="execution reverted: b'0x1234'"):
         # Assert that parametrized ``exception_type`` exception is caught and that
         # the original message is re-raised inside a ``TransactionFailed``.
-        provider.make_request(RPCEndpoint("eth_blockNumber"), [])
+        provider.make_request(RPC.eth_blockNumber, [])

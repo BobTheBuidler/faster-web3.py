@@ -13,6 +13,9 @@ from unittest.mock import (
     patch,
 )
 
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.exceptions import (
     ProviderConnectionError,
     Web3ValueError,
@@ -21,9 +24,6 @@ from faster_web3.providers.ipc import (
     IPCProvider,
     get_default_ipc_path,
     get_dev_ipc_path,
-)
-from faster_web3.types import (
-    RPCEndpoint,
 )
 
 
@@ -222,7 +222,7 @@ def test_web3_auto_gethdev(request_mocker):
     with request_mocker(
         w3,
         mock_results={
-            RPCEndpoint("eth_getBlockByNumber"): {"extraData": "0x" + "ff" * 33}
+            RPC.eth_getBlockByNumber: {"extraData": "0x" + "ff" * 33}
         },
     ):
         block = w3.eth.get_block("latest")

@@ -16,6 +16,9 @@ from faster_web3 import (
     Web3,
     WebSocketProvider,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.providers import (
     HTTPProvider,
     IPCProvider,
@@ -78,7 +81,7 @@ def test_check_if_retry_on_failure_true():
 def test_check_send_transaction_called_once(make_post_request_mock, w3):
     with pytest.raises(ConnectionError):
         w3.provider.make_request(
-            RPCEndpoint("eth_sendTransaction"), [{"to": f"0x{'00' * 20}", "value": 1}]
+            RPC.eth_sendTransaction, [{"to": f"0x{'00' * 20}", "value": 1}]
         )
     assert make_post_request_mock.call_count == 1
 
@@ -89,7 +92,7 @@ def test_check_send_transaction_called_once(make_post_request_mock, w3):
 )
 def test_valid_method_retried(make_post_request_mock, w3):
     with pytest.raises(ConnectionError):
-        w3.provider.make_request(RPCEndpoint("eth_getBalance"), [f"0x{'00' * 20}"])
+        w3.provider.make_request(RPC.eth_getBalance, [f"0x{'00' * 20}"])
     assert make_post_request_mock.call_count == TEST_RETRY_COUNT
 
 
@@ -122,7 +125,7 @@ def test_exception_retry_middleware_with_allow_list_kwarg(make_post_request_mock
 
     make_post_request_mock.reset_mock()
     with pytest.raises(ConnectionError):
-        w3.provider.make_request(RPCEndpoint("eth_getBalance"), [])
+        w3.provider.make_request(RPC.eth_getBalance, [])
         assert make_post_request_mock.call_count == 1
 
 
@@ -164,7 +167,7 @@ async def test_async_check_retry_middleware(async_w3, error):
         async_make_post_request_mock.side_effect = error
 
         with pytest.raises(error):
-            await async_w3.provider.make_request(RPCEndpoint("eth_getBalance"), [])
+            await async_w3.provider.make_request(RPC.eth_getBalance, [])
         assert async_make_post_request_mock.call_count == TEST_RETRY_COUNT
 
 
@@ -204,5 +207,5 @@ async def test_async_exception_retry_middleware_with_allow_list_kwarg():
 
         async_make_post_request_mock.reset_mock()
         with pytest.raises(TimeoutError):
-            await async_w3.provider.make_request(RPCEndpoint("eth_getBalance"), [])
+            await async_w3.provider.make_request(RPC.eth_getBalance, [])
         assert async_make_post_request_mock.call_count == 1

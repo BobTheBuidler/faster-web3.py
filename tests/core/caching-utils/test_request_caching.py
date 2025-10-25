@@ -34,6 +34,9 @@ from faster_web3._utils.caching.caching_utils import (
     DEFAULT_VALIDATION_THRESHOLD,
     INTERNAL_VALIDATION_MAP,
 )
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.exceptions import (
     Web3RPCError,
 )
@@ -153,10 +156,10 @@ def test_caching_requests_does_not_share_state_between_providers(
     # strap w3_a_shared_cache with w3_a's cache
     w3_a_shared_cache.provider._request_cache = w3_a.provider._request_cache
 
-    mock_results_a = {RPCEndpoint("eth_chainId"): hex(11111)}
-    mock_results_a_shared_cache = {RPCEndpoint("eth_chainId"): hex(00000)}
-    mock_results_b = {RPCEndpoint("eth_chainId"): hex(22222)}
-    mock_results_c = {RPCEndpoint("eth_chainId"): hex(33333)}
+    mock_results_a = {RPC.eth_chainId: hex(11111)}
+    mock_results_a_shared_cache = {RPC.eth_chainId: hex(00000)}
+    mock_results_b = {RPC.eth_chainId: hex(22222)}
+    mock_results_c = {RPC.eth_chainId: hex(33333)}
 
     with request_mocker(w3_a, mock_results=mock_results_a):
         with request_mocker(w3_b, mock_results=mock_results_b):
@@ -351,7 +354,7 @@ def test_request_caching_validation_threshold_defaults(
 ):
     w3 = Web3(sync_provider(cache_allowed_requests=True))
     with request_mocker(w3, mock_results={"eth_chainId": hex(chain_id)}):
-        w3.manager.request_blocking(RPCEndpoint("eth_chainId"), [])
+        w3.manager.request_blocking(RPC.eth_chainId, [])
         assert w3.provider.request_cache_validation_threshold == expected_threshold
         # assert chain_id is cached
         cache_items = w3.provider._request_cache.items()
@@ -611,10 +614,10 @@ async def test_async_request_caching_does_not_share_state_between_providers(
     # strap async_w3_a_shared_cache with async_w3_a's cache
     async_w3_a_shared_cache.provider._request_cache = async_w3_a.provider._request_cache
 
-    mock_results_a = {RPCEndpoint("eth_chainId"): hex(11111)}
-    mock_results_a_shared_cache = {RPCEndpoint("eth_chainId"): hex(00000)}
-    mock_results_b = {RPCEndpoint("eth_chainId"): hex(22222)}
-    mock_results_c = {RPCEndpoint("eth_chainId"): hex(33333)}
+    mock_results_a = {RPC.eth_chainId: hex(11111)}
+    mock_results_a_shared_cache = {RPC.eth_chainId: hex(00000)}
+    mock_results_b = {RPC.eth_chainId: hex(22222)}
+    mock_results_c = {RPC.eth_chainId: hex(33333)}
 
     async with request_mocker(async_w3_a, mock_results=mock_results_a):
         async with request_mocker(async_w3_b, mock_results=mock_results_b):
@@ -786,7 +789,7 @@ async def test_async_request_caching_validation_threshold_defaults(
 ):
     async_w3 = await _async_w3_init(async_provider)
     async with request_mocker(async_w3, mock_results={"eth_chainId": hex(chain_id)}):
-        await async_w3.manager.coro_request(RPCEndpoint("eth_chainId"), [])
+        await async_w3.manager.coro_request(RPC.eth_chainId, [])
         assert (
             async_w3.provider.request_cache_validation_threshold == expected_threshold
         )

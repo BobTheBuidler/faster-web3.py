@@ -226,7 +226,7 @@ def set_threshold_if_empty(provider: SYNC_PROVIDER_TYPE) -> None:
         try:
             # turn off momentarily to avoid recursion
             provider.cache_allowed_requests = False
-            chain_id_result = provider.make_request(RPCEndpoint("eth_chainId"), [])[
+            chain_id_result = provider.make_request(RPC.eth_chainId, [])[
                 "result"
             ]
             chain_id = int(chain_id_result, 16)
@@ -323,7 +323,7 @@ async def async_set_threshold_if_empty(provider: ASYNC_PROVIDER_TYPE) -> None:
             # turn off momentarily to avoid recursion
             provider.cache_allowed_requests = False
             chain_id_result = await provider.make_request(
-                RPCEndpoint("eth_chainId"), []
+                RPC.eth_chainId, []
             )
             chain_id = int(chain_id_result["result"], 16)
 

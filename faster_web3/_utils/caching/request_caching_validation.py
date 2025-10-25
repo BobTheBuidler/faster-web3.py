@@ -10,8 +10,8 @@ from typing import (
     Union,
 )
 
-from faster_web3.types import (
-    RPCEndpoint,
+from faster_web3._utils.rpc_abi import (
+    RPC,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -56,7 +56,7 @@ def is_beyond_validation_threshold(
         if isinstance(threshold, RequestCacheValidationThreshold):
             # if mainnet and threshold is "finalized" or "safe"
             threshold_block = provider.make_request(
-                RPCEndpoint("eth_getBlockByNumber"), [threshold.value, False]
+                RPC.eth_getBlockByNumber, [threshold.value, False]
             )["result"]
             # we should have a `blocknum` to compare against
             return blocknum <= int(threshold_block["number"], 16)
@@ -65,7 +65,7 @@ def is_beyond_validation_threshold(
                 # if validating via `blocknum` from params, we need to get the timestamp
                 # for the block with `blocknum`.
                 block = provider.make_request(
-                    RPCEndpoint("eth_getBlockByNumber"), [hex(blocknum), False]
+                    RPC.eth_getBlockByNumber, [hex(blocknum), False]
                 )["result"]
                 block_timestamp = int(block["timestamp"], 16)
 
@@ -115,7 +115,7 @@ def validate_from_blocknum_in_result(
             blocknum = result.get("blockNumber")
             # make an extra call to get the block values
             block = provider.make_request(
-                RPCEndpoint("eth_getBlockByNumber"), [blocknum, False]
+                RPC.eth_getBlockByNumber, [blocknum, False]
             )["result"]
             return is_beyond_validation_threshold(
                 provider,
@@ -154,7 +154,7 @@ def validate_from_blockhash_in_params(
 
         # make an extra call to get the block number from the hash
         block = provider.make_request(
-            RPCEndpoint("eth_getBlockByHash"), [params[0], False]
+            RPC.eth_getBlockByHash, [params[0], False]
         )["result"]
         return is_beyond_validation_threshold(
             provider,
@@ -185,14 +185,14 @@ async def async_is_beyond_validation_threshold(
         if isinstance(threshold, RequestCacheValidationThreshold):
             # if mainnet and threshold is "finalized" or "safe"
             threshold_block = await provider.make_request(
-                RPCEndpoint("eth_getBlockByNumber"), [threshold.value, False]
+                RPC.eth_getBlockByNumber, [threshold.value, False]
             )
             # we should have a `blocknum` to compare against
             return blocknum <= int(threshold_block["result"]["number"], 16)
         elif isinstance(threshold, int):
             if not block_timestamp:
                 block = await provider.make_request(
-                    RPCEndpoint("eth_getBlockByNumber"), [hex(blocknum), False]
+                    RPC.eth_getBlockByNumber, [hex(blocknum), False]
                 )
                 block_timestamp = int(block["result"]["timestamp"], 16)
 
@@ -242,7 +242,7 @@ async def async_validate_from_blocknum_in_result(
             blocknum = result.get("blockNumber")
             # make an extra call to get the block values
             block = await provider.make_request(
-                RPCEndpoint("eth_getBlockByNumber"), [blocknum, False]
+                RPC.eth_getBlockByNumber, [blocknum, False]
             )
             return await async_is_beyond_validation_threshold(
                 provider,
@@ -281,7 +281,7 @@ async def async_validate_from_blockhash_in_params(
 
         # make an extra call to get the block number from the hash
         response = await provider.make_request(
-            RPCEndpoint("eth_getBlockByHash"), [params[0], False]
+            RPC.eth_getBlockByHash, [params[0], False]
         )
         return await async_is_beyond_validation_threshold(
             provider,

@@ -4,11 +4,11 @@ from eth_tester.exceptions import (
     TransactionFailed,
 )
 
+from faster_web3._utils.rpc_abi import (
+    RPC,
+)
 from faster_web3.providers.eth_tester.main import (
     AsyncEthereumTesterProvider,
-)
-from faster_web3.types import (
-    RPCEndpoint,
 )
 
 
@@ -67,4 +67,4 @@ async def test_async_tester_provider_properly_handles_eth_tester_error_messages(
     with pytest.raises(
         TransactionFailed, match="execution reverted: The error message."
     ):
-        await provider.make_request(RPCEndpoint("eth_blockNumber"), [])
+        await provider.make_request(RPC.eth_blockNumber, [])
