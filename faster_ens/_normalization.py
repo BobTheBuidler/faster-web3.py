@@ -420,13 +420,6 @@ def _build_and_validate_label_from_tokens(tokens: List[Token]) -> Label:
     return Label(label_type, tokens)
 
 
-def _buffer_codepoints_to_chars(buffer: Union[List[int], List[List[int]]]) -> str:
-    return "".join(
-        "".join(chr(c) for c in char) if isinstance(char, list) else chr(char)
-        for char in buffer
-    )
-
-
 # -----
 
 
@@ -681,7 +674,7 @@ def _compose_hangul_syllable(x: int, y: int) -> Optional[int]:
 
     return None
 
-
+'''
 def NFD(unistr: str) -> str:
     """Return the canonical equivalent "decomposed" form of the original
     Unicode string `unistr`. This function transforms the Unicode string into
@@ -828,3 +821,4 @@ def _decompose_hangul_syllable(cp: int) -> Tuple[int, ...]:
 
     # LV syllable
     return (L, V)
+'''
