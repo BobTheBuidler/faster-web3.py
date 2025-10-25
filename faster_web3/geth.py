@@ -150,7 +150,7 @@ class GethDebug(Module):
         self,
         transaction_hash: _Hash32,
         trace_config: Optional[TraceConfig] = None,
-    ) -> Tuple[_Hash32, TraceConfig]:
+    ) -> Tuple[_Hash32, Optional[TraceConfig]]:
         return (transaction_hash, trace_config)
 
     trace_transaction: Method[

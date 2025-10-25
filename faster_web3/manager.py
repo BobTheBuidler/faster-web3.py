@@ -357,7 +357,7 @@ class RequestManager:
             "Receiving batch request from open socket connection: %s",
             self._provider.get_endpoint_uri_or_ipc_path(),
         )
-        return await recv_func(requests)
+        return cast(List[RPCResponse], await recv_func(requests))
 
     async def _async_make_socket_batch_request(
         self,

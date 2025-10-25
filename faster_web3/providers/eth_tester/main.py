@@ -180,7 +180,7 @@ class EthereumTesterProvider(BaseProvider):
                 provider_request_fn=self.make_request,
             )
             self._request_func_cache = middleware, func
-        return func
+        return cast(Callable[..., RPCResponse], func)
 
     def make_request(self, method: RPCEndpoint, params: Any) -> RPCResponse:
         response = _make_request(

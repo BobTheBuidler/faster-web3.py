@@ -12,6 +12,7 @@ requires = [
 	"faster-eth-abi>=5.2,<5.3; platform_system != 'Linux' or platform_machine != 'i686'",
 	"faster-hexbytes<3",
 	"py-geth>=5.1.0; platform_system != 'Windows' and platform_machine != 'i686'",
+	"pyunormalize>=17.0.0",
 ]
 
 [tool.autoflake]

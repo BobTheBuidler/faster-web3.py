@@ -18,18 +18,40 @@ from typing import (
     Set,
     Tuple,
     Union,
+    cast,
     final,
 )
 
-import pyunormalize
+from pyunormalize import (
+    _unicode_data,
+    normalization,
+)
 
 from .exceptions import (
     InvalidName,
 )
 
+# Constants vendored from pyunormalize
+
+_NFC__QC_NO_OR_MAYBE: Final = _unicode_data._NFC__QC_NO_OR_MAYBE
+_NFD__QC_NO: Final = _unicode_data._NFD__QC_NO
+_NON_ZERO_CCC_TABLE: Final = _unicode_data._NON_ZERO_CCC_TABLE
+_COMPOSITION_EXCLUSIONS: Final = _unicode_data._COMPOSITION_EXCLUSIONS
+_COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
+_FULL_CDECOMP_BY_CHAR: Final[Dict[int, List[int]]] = normalization._FULL_CDECOMP_BY_CHAR
+_LB: Final = normalization._LB
+_LL: Final = normalization._LL
+_SB: Final = normalization._SB
+_SL: Final = normalization._SL
+_TB: Final = normalization._TB
+_TL: Final = normalization._TL
+_TCOUNT: Final = normalization._TCOUNT
+_VB: Final = normalization._VB
+_VL: Final = normalization._VL
+_VCOUNT: Final = normalization._VCOUNT
+
+
 # -- setup -- #
-NFC: Final = pyunormalize.NFC
-NFD: Final = pyunormalize.NFD
 
 
 def _json_list_mapping_to_dict(
@@ -40,13 +62,13 @@ def _json_list_mapping_to_dict(
     Takes a `[key, [value]]` mapping from the original ENS spec json files and turns it
     into a `{key: value}` mapping.
     """
-    f[list_mapped_key] = {k: v for k, v in f[list_mapped_key]}
+    f[list_mapped_key] = dict(f[list_mapped_key])
     return f
 
 
 # get the normalization spec json files downloaded from links in ENSIP-15
 # https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
-specs_dir_path = Path(sys.modules["faster_ens"].__file__).parent.joinpath("specs")
+specs_dir_path = Path(cast(str, sys.modules["faster_ens"].__file__)).parent.joinpath("specs")
 with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
@@ -84,16 +106,12 @@ class TokenType(Enum):
 
 class Token:
     type: ClassVar[Literal[TokenType.TEXT, TokenType.EMOJI]]
-    _original_text: str
-    _original_codepoints: List[int]
-    _normalized_codepoints: Optional[List[int]]
-
     restricted: Final = False
 
     def __init__(self, codepoints: List[int]) -> None:
         self._original_codepoints: Final = codepoints
-        self._original_text: Final = "".join(chr(cp) for cp in codepoints)
-        self._normalized_codepoints = None
+        self._original_text: Final = "".join(map(chr, codepoints))
+        self._normalized_codepoints: Optional[List[int]] = None
 
     @property
     def codepoints(self) -> List[int]:
@@ -130,8 +148,6 @@ class Label:
 
 @final
 class ENSNormalizedName:
-    labels: List[Label]
-
     def __init__(self, normalized_labels: List[Label]) -> None:
         self.labels: Final = normalized_labels
 
@@ -229,9 +245,9 @@ def _codepoints_to_text(cps: Union[List[List[int]], List[int]]) -> str:
     if not cps:
         return ""
     elif isinstance(cps[0], int):
-        return "".join(map(chr, cps))
+        return "".join(map(chr, cast(List[int], cps)))
     else:
-        return "".join(map(_codepoints_to_text, cps))
+        return "".join(map(_codepoints_to_text, cast(List[List[int]], cps)))
 
 
 def _validate_tokens_and_get_label_type(tokens: List[Token]) -> str:
@@ -413,20 +429,13 @@ def _build_and_validate_label_from_tokens(tokens: List[Token]) -> Label:
     for token in tokens:
         if token.type == TokenType.TEXT:
             # apply NFC normalization to text tokens
-            chars = [chr(cp) for cp in token._original_codepoints]
+            chars = "".join(map(chr, token._original_codepoints))
             nfc = NFC(chars)
-            token._normalized_codepoints = [ord(c) for c in nfc]
+            token._normalized_codepoints = list(map(ord, nfc))
 
     label_type = _validate_tokens_and_get_label_type(tokens)
 
     return Label(label_type, tokens)
-
-
-def _buffer_codepoints_to_chars(buffer: Union[List[int], List[List[int]]]) -> str:
-    return "".join(
-        "".join(chr(c) for c in char) if isinstance(char, list) else chr(char)
-        for char in buffer
-    )
 
 
 # -----
@@ -528,3 +537,296 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 
     # - join labels back together after normalization
     return ENSNormalizedName(normalized_labels)
+
+
+# Vendored from pyunormalize
+
+def NFC(unistr: str) -> str:
+    """Return the canonical equivalent "composed" form of the original Unicode
+    string `unistr`. This function transforms the Unicode string into the
+    Unicode "normalization form C", where character sequences are replaced by
+    canonically equivalent composites, where possible, while compatibility
+    characters are unaffected.
+
+    For performance optimization, the function verifies whether the input
+    string is already in NFC. If it is, the original string is returned
+    directly to avoid unnecessary processing.
+
+    Args:
+        unistr (str): The input Unicode string.
+
+    Returns:
+        str: The NFC normalized Unicode string.
+
+    Examples:
+
+        >>> unistr = "élève"
+        >>> nfc = NFC(unistr)
+        >>> unistr, nfc
+        ('élève', 'élève')
+        >>> nfc == unistr
+        False
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '0065 0301 006C 0065 0300 0076 0065'
+        >>> " ".join(f"{ord(x):04X}" for x in nfc)
+        '00E9 006C 00E8 0076 0065'
+
+        >>> unistr = "한국"
+        >>> nfc = NFC(unistr)
+        >>> unistr, nfc
+        ('한국', '한국')
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '1112 1161 11AB 1100 116E 11A8'
+        >>> " ".join(f"{ord(x):04X}" for x in nfc)
+        'D55C AD6D'
+
+        >>> NFC("ﬃ")
+        'ﬃ'
+
+    """
+    prev_ccc = 0
+    
+    # Read these C constants into locals only once
+    qc_no_or_maybe = _NFC__QC_NO_OR_MAYBE
+    non_zero_table = _NON_ZERO_CCC_TABLE
+
+    for u in map(ord, unistr):
+        if u in qc_no_or_maybe:
+            break
+
+        if u not in non_zero_table:
+            continue
+
+        curr_ccc = non_zero_table[u]
+
+        if curr_ccc < prev_ccc:
+            break
+
+        prev_ccc = curr_ccc
+    else:
+        return unistr
+
+    return "".join(map(chr, _compose(list(map(ord, NFD(unistr))))))
+
+
+def _compose(elements_: List[int]) -> List[int]:
+    # Canonical composition algorithm to transform a fully decomposed
+    # and canonically ordered string into its most fully composed but still
+    # canonically equivalent sequence.
+
+    # Read these C constants into locals only once
+    non_zero_table = _NON_ZERO_CCC_TABLE
+    composite_by_cdecomp = _COMPOSITE_BY_CDECOMP
+    composition_exclusions = _COMPOSITION_EXCLUSIONS
+
+    elements: List[Optional[int]] = elements_.copy()
+    for i, x in enumerate(elements):
+        if x is None or x in non_zero_table:
+            continue
+
+        last_cc = False
+        blocked = False
+
+        for j, y in enumerate(cast(List[int], elements[i + 1 :]), i + 1):
+            if y in non_zero_table:
+                last_cc = True
+            else:
+                blocked = True
+
+            if blocked and last_cc:
+                continue
+
+            prev = elements[j - 1]
+
+            if (
+                prev is None
+                or prev not in non_zero_table
+                or non_zero_table[prev] < non_zero_table[y]
+            ):
+
+                pair = (x, y)
+                
+                precomp = (
+                    composite_by_cdecomp[pair]
+                    if pair in composite_by_cdecomp
+                    else _compose_hangul_syllable(x, y)
+                )
+
+                if precomp is None or precomp in composition_exclusions:
+                    if blocked:
+                        break
+                else:
+                    elements[i] = x = precomp
+                    elements[j] = None
+
+                    if blocked:
+                        blocked = False
+                    else:
+                        last_cc = False
+
+    return list(filter(None, elements))
+
+
+def _compose_hangul_syllable(x: int, y: int) -> Optional[int]:
+    # Perform Hangul syllable composition algorithm to derive the mapping
+    # of a canonically decomposed sequence of Hangul jamo characters
+    # to an equivalent precomposed Hangul syllable.
+
+    if _LB <= x <= _LL and _VB <= y <= _VL:
+        # Compose a leading consonant and a vowel into an LV syllable
+        return _SB + (((x - _LB) * _VCOUNT) + y - _VB) * _TCOUNT
+
+    if _SB <= x <= _SL and not (x - _SB) % _TCOUNT and _TB <= y <= _TL:
+        # Compose an LV syllable and a trailing consonant into an LVT syllable
+        return x + y - (_TB - 1)
+
+    return None
+
+
+def NFD(unistr: str) -> str:
+    """Return the canonical equivalent "decomposed" form of the original
+    Unicode string `unistr`. This function transforms the Unicode string into
+    the Unicode "normalization form D", where composite characters are replaced
+    by canonically equivalent character sequences, in canonical order, while
+    compatibility characters are unaffected.
+
+    For performance optimization, the function verifies whether the input
+    string is already in NFD. If it is, the original string is returned
+    directly to avoid unnecessary processing.
+
+    Args:
+        unistr (str): The input Unicode string.
+
+    Returns:
+        str: The NFD normalized Unicode string.
+
+    Examples:
+
+        >>> unistr = "élève"
+        >>> nfd = NFD(unistr)
+        >>> unistr, nfd
+        ('élève', 'élève')
+        >>> nfd == unistr
+        False
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '00E9 006C 00E8 0076 0065'
+        >>> " ".join(f"{ord(x):04X}" for x in nfd)
+        '0065 0301 006C 0065 0300 0076 0065'
+
+        >>> unistr = "한국"
+        >>> nfd = NFD(unistr)
+        >>> unistr, nfd
+        ('한국', '한국')
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        'D55C AD6D'
+        >>> " ".join(f"{ord(x):04X}" for x in nfd)
+        '1112 1161 11AB 1100 116E 11A8'
+
+        >>> NFD("ﬃ")
+        'ﬃ'
+
+    """
+    prev_ccc = 0
+
+    qc_no = _NFD__QC_NO
+    non_zero_table = _NON_ZERO_CCC_TABLE
+
+    for u in map(ord, unistr):
+        if u in qc_no:
+            break
+
+        curr_ccc = non_zero_table.get(u)
+        if curr_ccc is None:
+            continue
+
+        if curr_ccc < prev_ccc:
+            break
+
+        prev_ccc = curr_ccc
+    else:
+        return unistr
+
+    return "".join(map(chr, _reorder(_decompose(unistr))))
+
+
+
+def _reorder(elements: List[int]) -> List[int]:
+    # Perform canonical ordering algorithm. Once a string has been fully
+    # decomposed, this algorithm ensures that any sequences of combining marks
+    # within it are arranged in a well-defined order. Only combining marks with
+    # non-zero Canonical_Combining_Class property values are subject to
+    # potential reordering. The canonical ordering imposed by both composed
+    # and decomposed normalization forms is crucial for ensuring the uniqueness
+    # of normal forms.
+
+    n = len(elements)
+
+    non_zero_table = _NON_ZERO_CCC_TABLE
+
+    while n > 1:
+        new_n = 0
+        i = 1
+
+        while i < n:
+            second = elements[i]
+            ccc_b = non_zero_table.get(second)
+
+            if not ccc_b:
+                i += 2
+                continue
+
+            first = elements[i - 1]
+            ccc_a = non_zero_table.get(first)
+
+            if not ccc_a or ccc_a <= ccc_b:
+                i += 1
+                continue
+
+            elements[i - 1], elements[i] = second, first
+
+            new_n = i
+            i += 1
+
+        n = new_n
+
+    return elements
+
+
+def _decompose(unistr: str) -> List[int]:
+    # Compute the full decomposition of the Unicode string based
+    # on the specified normalization form. The type of full decomposition
+    # chosen depends on which Unicode normalization form is involved. For NFC
+    # or NFD, it performs a full canonical decomposition. For NFKC or NFKD,
+    # it performs a full compatibility decomposition.
+
+    result: List[int] = []
+    decomp = _FULL_CDECOMP_BY_CHAR
+
+    for u in map(ord, unistr):
+        if u in decomp:
+            result.extend(decomp[u])
+        elif _SB <= u <= _SL:
+            result.extend(_decompose_hangul_syllable(u))
+        else:
+            result.append(u)
+
+    return result
+
+
+def _decompose_hangul_syllable(cp: int) -> Tuple[int, ...]:
+    # Perform Hangul syllable decomposition algorithm to derive the full
+    # canonical decomposition of a precomposed Hangul syllable into its
+    # constituent jamo characters.
+
+    sindex = cp - _SB
+    tindex = sindex % _TCOUNT
+    q = (sindex - tindex) // _TCOUNT
+    V = _VB + (q  % _VCOUNT)
+    L = _LB + (q // _VCOUNT)
+
+    if tindex:
+        # LVT syllable
+        return (L, V, _TB - 1 + tindex)
+
+    # LV syllable
+    return (L, V)

@@ -105,6 +105,7 @@ else:
         "faster_web3/constants.py",
         "faster_web3/contract/utils.py",
         "faster_web3/gas_strategies",
+        "faster_web3/logs.py",
         "faster_web3/providers/eth_tester",
         "faster_web3/providers/persistent/persistent_connection.py",
         "faster_web3/providers/persistent/request_processor.py",
@@ -144,7 +145,6 @@ else:
         "--disable-error-code=return-value",
         "--disable-error-code=arg-type",
         "--disable-error-code=union-attr",
-        "--disable-error-code=redundant-cast",
         "--disable-error-code=type-arg",
         "--disable-error-code=type-var",
         "--disable-error-code=call-arg",
@@ -157,6 +157,8 @@ else:
         "--disable-error-code=operator",
         "--disable-error-code=override",
         "--disable-error-code=misc",
+        # keep these flags to ensure backward compatability
+        "--disable-error-code=redundant-cast",
         "--disable-error-code=unused-ignore",
     ]
 
@@ -212,7 +214,7 @@ setup(
         "typing-extensions>=4.0.1",
         "types-requests>=2.0.0",
         "websockets>=10.0.0,<16.0.0",
-        "pyunormalize>=15.0.0",
+        "pyunormalize>=17.0.0",
     ],
     python_requires=">=3.9, <4",
     extras_require=extras_require,

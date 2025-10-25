@@ -1563,13 +1563,11 @@ class BaseContractConstructor:
 
             arguments = get_normalized_abi_inputs(constructor_abi, *args, **kwargs)
 
-            data = add_0x_prefix(
+            return add_0x_prefix(
                 encode_abi(self.w3, constructor_abi, arguments, data=self.bytecode)
             )
         else:
-            data = to_hex(self.bytecode)
-
-        return data
+            return to_hex(self.bytecode)
 
     @combomethod
     def _estimate_gas(self, transaction: Optional[TxParams] = None) -> TxParams:
@@ -1618,8 +1616,7 @@ class BaseContractConstructor:
     def check_forbidden_keys_in_transaction(
         transaction: TxParams, forbidden_keys: Optional[Collection[str]] = None
     ) -> None:
-        keys_found = transaction.keys() & forbidden_keys
-        if keys_found:
+        if keys_found := transaction.keys() & forbidden_keys:
             raise Web3ValueError(
                 f"Cannot set '{', '.join(keys_found)}' field(s) in transaction"
             )

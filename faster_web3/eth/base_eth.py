@@ -5,6 +5,7 @@ from typing import (
     Optional,
     Tuple,
     Union,
+    cast,
 )
 
 from eth_account import (
@@ -206,7 +207,7 @@ class BaseEth(Module):
             return [filter_params]
         elif is_string(filter_params):
             if filter_params in {"latest", "pending"}:
-                return [filter_params]
+                return [cast(str, filter_params)]
             else:
                 raise Web3ValueError(
                     "The filter API only accepts the values of `pending` or "
