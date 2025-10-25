@@ -2162,8 +2162,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    PyObject *___mypyc_temp__2_0;
-    int64_t ___mypyc_temp__2_1;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {
@@ -2227,6 +2227,7 @@ typedef struct {
     PyObject *___mypyc_generator_attribute__result;
     PyObject *___mypyc_temp__11;
     tuple_T3OOO ___mypyc_temp__12;
+    PyObject *___mypyc_generator_attribute__data;
     PyObject *___mypyc_generator_attribute__fourbyte;
     PyObject *___mypyc_temp__13;
     tuple_T3OOO ___mypyc_temp__14;
