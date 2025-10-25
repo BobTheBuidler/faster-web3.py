@@ -13,13 +13,13 @@ from benchmarks.web3._utils.params import (
 
 
 # --- Helpers ---
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
+def run_5000(func, *args, **kwargs):
+    for _ in range(5000):
         func(*args, **kwargs)
 
 
-def run_100_exc(exc, func, *args, **kwargs):
-    for _ in range(100):
+def run_5000_exc(exc, func, *args, **kwargs):
+    for _ in range(5000):
         try:
             func(*args, **kwargs)
         except exc:
@@ -105,13 +105,13 @@ MAP_COLLECTION_IDS = [
 @pytest.mark.benchmark(group="formatters-hex_to_integer")
 @pytest.mark.parametrize("hexstr", HEX_TO_INTEGER_CASES, ids=HEX_TO_INTEGER_IDS)
 def test_hex_to_integer(benchmark: BenchmarkFixture, hexstr):
-    benchmark(run_100, web3._utils.formatters.hex_to_integer, hexstr)
+    benchmark(run_5000, web3._utils.formatters.hex_to_integer, hexstr)
 
 
 @pytest.mark.benchmark(group="formatters-hex_to_integer")
 @pytest.mark.parametrize("hexstr", HEX_TO_INTEGER_CASES, ids=HEX_TO_INTEGER_IDS)
 def test_faster_hex_to_integer(benchmark: BenchmarkFixture, hexstr):
-    benchmark(run_100, faster_web3._utils.formatters.hex_to_integer, hexstr)
+    benchmark(run_5000, faster_web3._utils.formatters.hex_to_integer, hexstr)
 
 
 @pytest.mark.benchmark(group="formatters-apply_formatters_to_args")
@@ -122,7 +122,7 @@ def test_apply_formatters_to_args(benchmark: BenchmarkFixture, num_args):
     formatters = [noop] * num_args
     args = [object()] * num_args
     f = web3._utils.formatters.apply_formatters_to_args(*formatters)
-    benchmark(run_100, f, args)
+    benchmark(run_5000, f, args)
 
 
 @pytest.mark.benchmark(group="formatters-apply_formatters_to_args")
@@ -133,19 +133,19 @@ def test_faster_apply_formatters_to_args(benchmark: BenchmarkFixture, num_args):
     formatters = [noop] * num_args
     args = [object()] * num_args
     f = faster_web3._utils.formatters.apply_formatters_to_args(*formatters)
-    benchmark(run_100, f, args)
+    benchmark(run_5000, f, args)
 
 
 @pytest.mark.benchmark(group="formatters-map_collection")
 @pytest.mark.parametrize("collection", MAP_COLLECTION_CASES, ids=MAP_COLLECTION_IDS)
 def test_map_collection(benchmark: BenchmarkFixture, collection):
-    benchmark(run_100, web3._utils.formatters.map_collection, noop, collection)
+    benchmark(run_5000, web3._utils.formatters.map_collection, noop, collection)
 
 
 @pytest.mark.benchmark(group="formatters-map_collection")
 @pytest.mark.parametrize("collection", MAP_COLLECTION_CASES, ids=MAP_COLLECTION_IDS)
 def test_faster_map_collection(benchmark: BenchmarkFixture, collection):
-    benchmark(run_100, faster_web3._utils.formatters.map_collection, noop, collection)
+    benchmark(run_5000, faster_web3._utils.formatters.map_collection, noop, collection)
 
 
 # --- The rest of the original benchmarks remain unchanged ---
@@ -162,7 +162,7 @@ def test_faster_map_collection(benchmark: BenchmarkFixture, collection):
     ids=["nested_topics", "nested_blocks", "empty_nested"],
 )
 def test_recursive_map(benchmark: BenchmarkFixture, data):
-    benchmark(run_100, web3._utils.formatters.recursive_map, noop, data)
+    benchmark(run_5000, web3._utils.formatters.recursive_map, noop, data)
 
 
 @pytest.mark.benchmark(group="formatters-recursive_map")
@@ -176,31 +176,31 @@ def test_recursive_map(benchmark: BenchmarkFixture, data):
     ids=["nested_topics", "nested_blocks", "empty_nested"],
 )
 def test_faster_recursive_map(benchmark: BenchmarkFixture, data):
-    benchmark(run_100, faster_web3._utils.formatters.recursive_map, noop, data)
+    benchmark(run_5000, faster_web3._utils.formatters.recursive_map, noop, data)
 
 
 @pytest.mark.benchmark(group="formatters-static_return")
 def test_static_return(benchmark: BenchmarkFixture):
     f = web3._utils.formatters.static_return(TX_DICT)
-    benchmark(run_100, f)
+    benchmark(run_5000, f)
 
 
 @pytest.mark.benchmark(group="formatters-static_return")
 def test_faster_static_return(benchmark: BenchmarkFixture):
     f = faster_web3._utils.formatters.static_return(TX_DICT)
-    benchmark(run_100, f)
+    benchmark(run_5000, f)
 
 
 @pytest.mark.benchmark(group="formatters-static_result")
 def test_static_result(benchmark: BenchmarkFixture):
     f = web3._utils.formatters.static_result(TX_DICT)
-    benchmark(run_100, f)
+    benchmark(run_5000, f)
 
 
 @pytest.mark.benchmark(group="formatters-static_result")
 def test_faster_static_result(benchmark: BenchmarkFixture):
     f = faster_web3._utils.formatters.static_result(TX_DICT)
-    benchmark(run_100, f)
+    benchmark(run_5000, f)
 
 
 @pytest.mark.benchmark(group="formatters-apply_key_map")
@@ -215,7 +215,7 @@ def test_faster_static_result(benchmark: BenchmarkFixture):
 )
 def test_apply_key_map(benchmark: BenchmarkFixture, input_dict):
     f = web3._utils.formatters.apply_key_map(KEY_MAP)
-    benchmark(run_100, f, input_dict)
+    benchmark(run_5000, f, input_dict)
 
 
 @pytest.mark.benchmark(group="formatters-apply_key_map")
@@ -230,7 +230,7 @@ def test_apply_key_map(benchmark: BenchmarkFixture, input_dict):
 )
 def test_faster_apply_key_map(benchmark: BenchmarkFixture, input_dict):
     f = faster_web3._utils.formatters.apply_key_map(KEY_MAP)
-    benchmark(run_100, f, input_dict)
+    benchmark(run_5000, f, input_dict)
 
 
 @pytest.mark.benchmark(group="formatters-is_array_of_strings")
@@ -245,7 +245,7 @@ def test_faster_apply_key_map(benchmark: BenchmarkFixture, input_dict):
     ids=["real_topics", "log_topics", "empty_list", "mixed_array"],
 )
 def test_is_array_of_strings(benchmark: BenchmarkFixture, arr):
-    benchmark(run_100, web3._utils.formatters.is_array_of_strings, arr)
+    benchmark(run_5000, web3._utils.formatters.is_array_of_strings, arr)
 
 
 @pytest.mark.benchmark(group="formatters-is_array_of_strings")
@@ -260,7 +260,7 @@ def test_is_array_of_strings(benchmark: BenchmarkFixture, arr):
     ids=["real_topics", "log_topics", "empty_list", "mixed_array"],
 )
 def test_faster_is_array_of_strings(benchmark: BenchmarkFixture, arr):
-    benchmark(run_100, faster_web3._utils.formatters.is_array_of_strings, arr)
+    benchmark(run_5000, faster_web3._utils.formatters.is_array_of_strings, arr)
 
 
 @pytest.mark.benchmark(group="formatters-is_array_of_dicts")
@@ -275,7 +275,7 @@ def test_faster_is_array_of_strings(benchmark: BenchmarkFixture, arr):
     ids=["log_entries", "block_logs", "empty_list", "mixed_array"],
 )
 def test_is_array_of_dicts(benchmark: BenchmarkFixture, arr):
-    benchmark(run_100, web3._utils.formatters.is_array_of_dicts, arr)
+    benchmark(run_5000, web3._utils.formatters.is_array_of_dicts, arr)
 
 
 @pytest.mark.benchmark(group="formatters-is_array_of_dicts")
@@ -290,7 +290,7 @@ def test_is_array_of_dicts(benchmark: BenchmarkFixture, arr):
     ids=["log_entries", "block_logs", "empty_list", "mixed_array"],
 )
 def test_faster_is_array_of_dicts(benchmark: BenchmarkFixture, arr):
-    benchmark(run_100, faster_web3._utils.formatters.is_array_of_dicts, arr)
+    benchmark(run_5000, faster_web3._utils.formatters.is_array_of_dicts, arr)
 
 
 @pytest.mark.benchmark(group="formatters-remove_key_if")
@@ -306,7 +306,7 @@ def test_faster_is_array_of_dicts(benchmark: BenchmarkFixture, arr):
 )
 def test_remove_key_if(benchmark: BenchmarkFixture, d):
     f = web3._utils.formatters.remove_key_if("remove_me", REMOVE_IF_TRUE)
-    benchmark(run_100, f, d)
+    benchmark(run_5000, f, d)
 
 
 @pytest.mark.benchmark(group="formatters-remove_key_if")
@@ -322,7 +322,7 @@ def test_remove_key_if(benchmark: BenchmarkFixture, d):
 )
 def test_faster_remove_key_if(benchmark: BenchmarkFixture, d):
     f = faster_web3._utils.formatters.remove_key_if("remove_me", REMOVE_IF_TRUE)
-    benchmark(run_100, f, d)
+    benchmark(run_5000, f, d)
 
 
 @pytest.mark.benchmark(group="formatters-apply_error_formatters")
@@ -335,7 +335,7 @@ def test_faster_remove_key_if(benchmark: BenchmarkFixture, d):
     ids=["real_error", "empty_response"],
 )
 def test_apply_error_formatters(benchmark: BenchmarkFixture, response):
-    benchmark(run_100, web3._utils.formatters.apply_error_formatters, None, response)
+    benchmark(run_5000, web3._utils.formatters.apply_error_formatters, None, response)
 
 
 @pytest.mark.benchmark(group="formatters-apply_error_formatters")
@@ -349,7 +349,7 @@ def test_apply_error_formatters(benchmark: BenchmarkFixture, response):
 )
 def test_faster_apply_error_formatters(benchmark: BenchmarkFixture, response):
     benchmark(
-        run_100, faster_web3._utils.formatters.apply_error_formatters, None, response
+        run_5000, faster_web3._utils.formatters.apply_error_formatters, None, response
     )
 
 
@@ -364,7 +364,7 @@ def test_faster_apply_error_formatters(benchmark: BenchmarkFixture, response):
 )
 def test_apply_null_result_formatters(benchmark: BenchmarkFixture, response):
     benchmark(
-        run_100, web3._utils.formatters.apply_null_result_formatters, None, response
+        run_5000, web3._utils.formatters.apply_null_result_formatters, None, response
     )
 
 
@@ -379,7 +379,7 @@ def test_apply_null_result_formatters(benchmark: BenchmarkFixture, response):
 )
 def test_faster_apply_null_result_formatters(benchmark: BenchmarkFixture, response):
     benchmark(
-        run_100,
+        run_5000,
         faster_web3._utils.formatters.apply_null_result_formatters,
         None,
         response,
