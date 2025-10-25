@@ -22,7 +22,10 @@ from typing import (
     final,
 )
 
-from pyunormalize import normalization
+from pyunormalize import (
+    normalization,
+    _unicode,
+)
 
 from .exceptions import (
     InvalidName,
@@ -30,11 +33,11 @@ from .exceptions import (
 
 # Constants vendored from pyunormalize
 
-_NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
-_NFD__QC_NO: Final = normalization._NFD__QC_NO
-_NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
+_NFC__QC_NO_OR_MAYBE: Final = _unicode._NFC__QC_NO_OR_MAYBE
+_NFD__QC_NO: Final = _unicode._NFD__QC_NO
+_NON_ZERO_CCC_TABLE: Final = _unicode._NON_ZERO_CCC_TABLE
+_COMPOSITION_EXCLUSIONS: Final = _unicode._COMPOSITION_EXCLUSIONS
 _COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
-_COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
 _FULL_CDECOMP_BY_CHAR: Final[Dict[int, List[int]]] = normalization._FULL_CDECOMP_BY_CHAR
 _LB: Final = normalization._LB
 _LL: Final = normalization._LL
@@ -606,7 +609,7 @@ def NFC(unistr: str) -> str:
     return "".join(map(chr, _compose(list(map(ord, NFD(unistr))))))
 
 
-def _compose(elements: List[Optional[int]]) -> List[int]:
+def _compose(elements: List[int]) -> List[int]:
     # Canonical composition algorithm to transform a fully decomposed
     # and canonically ordered string into its most fully composed but still
     # canonically equivalent sequence.
@@ -617,14 +620,13 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
     composition_exclusions = _COMPOSITION_EXCLUSIONS
 
     for i, x in enumerate(elements):
-        if x is None or x in non_zero_table:
+        if x in non_zero_table:
             continue
 
         last_cc = False
         blocked = False
 
         for j, y in enumerate(elements[i + 1 :], i + 1):
-            y = cast(int, y)
             if y in non_zero_table:
                 last_cc = True
             else:
