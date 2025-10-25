@@ -666,7 +666,7 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
     return list(filter(None, elements))
 
 
-def _compose_hangul_syllable(x: int, y: int) -> int:
+def _compose_hangul_syllable(x: int, y: int) -> Optional[int]:
     # Perform Hangul syllable composition algorithm to derive the mapping
     # of a canonically decomposed sequence of Hangul jamo characters
     # to an equivalent precomposed Hangul syllable.
