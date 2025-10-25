@@ -33,10 +33,10 @@ def make_fake_aiohttp_request(result=None):
     return fake_aiohttp_request
 
 def run_async_in_loop(loop, fn, *args):
-    return loop.run_until_complete(_run_100(fn, *args))
+    return loop.run_until_complete(_run_1000(fn, *args))
 
-async def _run_100(fn, *args):
-    for _ in range(100):
+async def _run_1000(fn, *args):
+    for _ in range(1000):
         await fn(*args)
 
 # --- Parameter Sets for AsyncBeacon Methods ---
