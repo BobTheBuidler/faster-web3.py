@@ -18,7 +18,10 @@ TX_PARAMS = {"to": b"\x00" * 20}
 
 
 cases = []
-for payload, payload_name in [(OFFCHAIN_LOOKUP_PAYLOAD_BYTES, "bytes"), (OFFCHAIN_LOOKUP_PAYLOAD_HEX, "hexstr")]:
+for payload, payload_name in [
+    (OFFCHAIN_LOOKUP_PAYLOAD_BYTES, "bytes"),
+    (OFFCHAIN_LOOKUP_PAYLOAD_HEX, "hexstr"),
+]:
     for url, patch_method in [
         ("https://fake.node/", "post"),
         ("https://fake.node/{sender}/{data}", "get"),
@@ -51,7 +54,7 @@ for payload, payload_name in [(OFFCHAIN_LOOKUP_PAYLOAD_BYTES, "bytes"), (OFFCHAI
                 ),
             )
         )
-    
+
 parametrize_offchain_lookup = pytest.mark.parametrize(
     "payload,urls,patch_method,fail_indices", cases
 )
