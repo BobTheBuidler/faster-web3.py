@@ -7,7 +7,7 @@ import ens.exceptions
 import faster_ens._normalization
 import faster_ens.exceptions
 
-from benchmarks.ens.params import NAMES
+from benchmarks.ens.params import parametrize_names_full_coverage
 
 
 def run_1000(func, exc, *args, **kwargs):
@@ -20,7 +20,7 @@ def run_1000(func, exc, *args, **kwargs):
 
 
 @pytest.mark.benchmark(group="normalize_name_ensip15")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_normalize_name_ensip15(benchmark: BenchmarkFixture, name):
     benchmark(
         run_1000,
@@ -31,7 +31,7 @@ def test_normalize_name_ensip15(benchmark: BenchmarkFixture, name):
 
 
 @pytest.mark.benchmark(group="faster_normalize_name_ensip15")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_normalize_name_ensip15(benchmark: BenchmarkFixture, name):
     benchmark(
         run_1000,

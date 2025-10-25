@@ -5,7 +5,13 @@ import ens.base_ens
 import ens.exceptions
 import faster_ens.base_ens
 import faster_ens.exceptions
-from benchmarks.ens.params import LABELS, NAMES, NAMES_VALIDITY, ADDRESSES, PARENT_NAMES
+from benchmarks.ens.params import (
+    LABELS,
+    NAMES_VALIDITY,
+    ADDRESSES,
+    PARENT_NAMES,
+    parametrize_names_full_coverage,
+)
 
 
 def run_10(func, *args, **kwargs):
@@ -41,25 +47,25 @@ def test_faster_labelhash(benchmark: BenchmarkFixture, label):
 
 
 @pytest.mark.benchmark(group="BaseENS.namehash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_namehash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.base_ens.BaseENS.namehash, name)
 
 
 @pytest.mark.benchmark(group="BaseENS.namehash")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_namehash(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.base_ens.BaseENS.namehash, name)
 
 
 @pytest.mark.benchmark(group="BaseENS.nameprep")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_nameprep(benchmark: BenchmarkFixture, name):
     benchmark(run_10, ens.base_ens.BaseENS.nameprep, name)
 
 
 @pytest.mark.benchmark(group="BaseENS.nameprep")
-@pytest.mark.parametrize("name", NAMES)
+@parametrize_names_full_coverage
 def test_faster_nameprep(benchmark: BenchmarkFixture, name):
     benchmark(run_10, faster_ens.base_ens.BaseENS.nameprep, name)
 
