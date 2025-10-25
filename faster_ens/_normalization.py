@@ -18,10 +18,11 @@ from typing import (
     Set,
     Tuple,
     Union,
+    cast,
     final,
 )
 
-from pyunormalize import NFD, normalization
+from pyunormalize import normalization
 
 from .exceptions import (
     InvalidName,
@@ -38,13 +39,13 @@ def _json_list_mapping_to_dict(
     Takes a `[key, [value]]` mapping from the original ENS spec json files and turns it
     into a `{key: value}` mapping.
     """
-    f[list_mapped_key] = {k: v for k, v in f[list_mapped_key]}
+    f[list_mapped_key] = dict(f[list_mapped_key])
     return f
 
 
 # get the normalization spec json files downloaded from links in ENSIP-15
 # https://docs.ens.domains/ens-improvement-proposals/ensip-15-normalization-standard
-specs_dir_path = Path(sys.modules["faster_ens"].__file__).parent.joinpath("specs")
+specs_dir_path = Path(cast(str, sys.modules["faster_ens"].__file__)).parent.joinpath("specs")
 with specs_dir_path.joinpath("normalization_spec.json").open() as spec:
     f = json.load(spec)
 
@@ -82,16 +83,12 @@ class TokenType(Enum):
 
 class Token:
     type: ClassVar[Literal[TokenType.TEXT, TokenType.EMOJI]]
-    _original_text: str
-    _original_codepoints: List[int]
-    _normalized_codepoints: Optional[List[int]]
-
     restricted: Final = False
 
     def __init__(self, codepoints: List[int]) -> None:
         self._original_codepoints: Final = codepoints
-        self._original_text: Final = "".join(chr(cp) for cp in codepoints)
-        self._normalized_codepoints = None
+        self._original_text: Final = "".join(map(chr, codepoints))
+        self._normalized_codepoints: Optional[List[int]] = None
 
     @property
     def codepoints(self) -> List[int]:
@@ -128,8 +125,6 @@ class Label:
 
 @final
 class ENSNormalizedName:
-    labels: List[Label]
-
     def __init__(self, normalized_labels: List[Label]) -> None:
         self.labels: Final = normalized_labels
 
@@ -411,9 +406,9 @@ def _build_and_validate_label_from_tokens(tokens: List[Token]) -> Label:
     for token in tokens:
         if token.type == TokenType.TEXT:
             # apply NFC normalization to text tokens
-            chars = [chr(cp) for cp in token._original_codepoints]
+            chars = "".join(map(chr, token._original_codepoints))
             nfc = NFC(chars)
-            token._normalized_codepoints = [ord(c) for c in nfc]
+            token._normalized_codepoints = list(map(ord, nfc))
 
     label_type = _validate_tokens_and_get_label_type(tokens)
 
@@ -622,6 +617,7 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
         blocked = False
 
         for j, y in enumerate(elements[i + 1 :], i + 1):
+            y = cast(int, y)
             if y in non_zero_table:
                 last_cc = True
             else:
@@ -638,11 +634,12 @@ def _compose(elements: List[Optional[int]]) -> List[int]:
                     or non_zero_table[prev] < non_zero_table[y]):
 
                 pair = (x, y)
-
-                if pair in composite_by_cdecomp:
-                    precomp = composite_by_cdecomp[pair]
-                else:
-                    precomp = _compose_hangul_syllable(x, y)
+                
+                precomp = (
+                    composite_by_cdecomp[pair]
+                    if pair in composite_by_cdecomp
+                    else _compose_hangul_syllable(x, y)
+                )
 
                 if precomp is None or precomp in composition_exclusions:
                     if blocked:
@@ -674,7 +671,7 @@ def _compose_hangul_syllable(x: int, y: int) -> Optional[int]:
 
     return None
 
-'''
+
 def NFD(unistr: str) -> str:
     """Return the canonical equivalent "decomposed" form of the original
     Unicode string `unistr`. This function transforms the Unicode string into
@@ -720,11 +717,15 @@ def NFD(unistr: str) -> str:
     """
     prev_ccc = 0
 
+    # Read these C constants into locals only once
+    qc_no = _NFD__QC_NO
+    non_zero_table = _NON_ZERO_CCC_TABLE
+
     for u in map(ord, unistr):
-        if u in _NFD__QC_NO:
+        if u in qc_no:
             break
 
-        curr_ccc = _NON_ZERO_CCC_TABLE.get(u)
+        curr_ccc = non_zero_table.get(u)
         if curr_ccc is None:
             continue
 
@@ -735,13 +736,11 @@ def NFD(unistr: str) -> str:
     else:
         return unistr
 
-    result = map(chr, _reorder(_decompose(unistr)))
-
-    return "".join(result)
+    return "".join(map(chr, _reorder(_decompose(unistr))))
 
 
 
-def _reorder(elements: List[str]) -> List[str]:
+def _reorder(elements: List[int]) -> List[int]:
     # Perform canonical ordering algorithm. Once a string has been fully
     # decomposed, this algorithm ensures that any sequences of combining marks
     # within it are arranged in a well-defined order. Only combining marks with
@@ -821,4 +820,3 @@ def _decompose_hangul_syllable(cp: int) -> Tuple[int, ...]:
 
     # LV syllable
     return (L, V)
-'''

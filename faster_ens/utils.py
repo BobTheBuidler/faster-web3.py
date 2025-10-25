@@ -33,11 +33,6 @@ from faster_hexbytes import (
     HexBytes,
 )
 
-from faster_ens.exceptions import (
-    ENSTypeError,
-    ENSValueError,
-)
-
 from .constants import (
     ACCEPTABLE_STALE_HOURS,
     AUCTION_START_GAS_CONSTANT,
@@ -47,7 +42,9 @@ from .constants import (
     REVERSE_REGISTRAR_DOMAIN,
 )
 from .exceptions import (
+    ENSTypeError,
     ENSValidationError,
+    ENSValueError,
     InvalidName,
 )
 
@@ -131,7 +128,7 @@ def normalize_name(name: Optional[str]) -> str:
     elif isinstance(name, (bytes, bytearray)):
         name = name.decode("utf-8")
 
-    return normalize_name_ensip15(name).as_text
+    return normalize_name_ensip15(cast(str, name)).as_text
 
 
 def dns_encode_name(name: Optional[str]) -> HexBytes:
