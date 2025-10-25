@@ -28,6 +28,26 @@ from .exceptions import (
     InvalidName,
 )
 
+# Constants vendored from pyunormalize
+
+_NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
+_NFD__QC_NO: Final = normalization._NFD__QC_NO
+_NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
+_COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
+_COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
+_FULL_CDECOMP_BY_CHAR: Final[Dict[int, List[int]]] = normalization._FULL_CDECOMP_BY_CHAR
+_LB: Final = normalization._LB
+_LL: Final = normalization._LL
+_SB: Final = normalization._SB
+_SL: Final = normalization._SL
+_TB: Final = normalization._TB
+_TL: Final = normalization._TL
+_TCOUNT: Final = normalization._TCOUNT
+_VB: Final = normalization._VB
+_VL: Final = normalization._VL
+_VCOUNT: Final = normalization._VCOUNT
+
+
 # -- setup -- #
 
 
@@ -518,23 +538,6 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 
 # Vendored from pyunormalize
 
-_NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
-_NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
-_COMPOSITE_BY_CDECOMP: Final[Dict[Tuple[int, Optional[int]], int]] = normalization._COMPOSITE_BY_CDECOMP
-_COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
-_FULL_CDECOMP_BY_CHAR: Final = normalization._FULL_CDECOMP_BY_CHAR
-_LB: Final = normalization._LB
-_LL: Final = normalization._LL
-_SB: Final = normalization._SB
-_SL: Final = normalization._SL
-_TB: Final = normalization._TB
-_TL: Final = normalization._TL
-_TCOUNT: Final = normalization._TCOUNT
-_VB: Final = normalization._VB
-_VL: Final = normalization._VL
-_VCOUNT: Final = normalization._VCOUNT
-
-
 def NFC(unistr: str) -> str:
     """Return the canonical equivalent "composed" form of the original Unicode
     string `unistr`. This function transforms the Unicode string into the
@@ -722,7 +725,7 @@ def NFD(unistr: str) -> str:
     """
     prev_ccc = 0
 
-    qc_no = normalization._NFD__QC_NO
+    qc_no = _NFD__QC_NO
     non_zero_table = _NON_ZERO_CCC_TABLE
 
     for u in map(ord, unistr):
