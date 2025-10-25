@@ -122,7 +122,7 @@ def test_apply_formatters_to_args(benchmark: BenchmarkFixture, num_args):
     formatters = [noop] * num_args
     args = [object()] * num_args
     f = web3._utils.formatters.apply_formatters_to_args(*formatters)
-    benchmark(run_100, f, *args)
+    benchmark(run_100, f, args)
 
 
 @pytest.mark.benchmark(group="formatters-apply_formatters_to_args")
@@ -133,7 +133,7 @@ def test_faster_apply_formatters_to_args(benchmark: BenchmarkFixture, num_args):
     formatters = [noop] * num_args
     args = [object()] * num_args
     f = faster_web3._utils.formatters.apply_formatters_to_args(*formatters)
-    benchmark(run_100, f, *args)
+    benchmark(run_100, f, args)
 
 
 @pytest.mark.benchmark(group="formatters-map_collection")
