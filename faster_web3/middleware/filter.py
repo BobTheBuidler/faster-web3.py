@@ -6,6 +6,7 @@ from typing import (
     AsyncIterable,
     AsyncIterator,
     Dict,
+    Final,
     Generator,
     Iterable,
     Iterator,
@@ -31,7 +32,6 @@ from faster_eth_utils import (
     to_int,
 )
 from faster_eth_utils.toolz import (
-    concat,
     valfilter,
 )
 
@@ -66,10 +66,11 @@ if TYPE_CHECKING:
         RPCResponse,
     )
 
-if "WEB3_MAX_BLOCK_REQUEST" in os.environ:
-    MAX_BLOCK_REQUEST = to_int(text=os.environ["WEB3_MAX_BLOCK_REQUEST"])
-else:
-    MAX_BLOCK_REQUEST = 50
+MAX_BLOCK_REQUEST: Final[int] = (
+    to_int(text=os.environ["WEB3_MAX_BLOCK_REQUEST"])
+    if "WEB3_MAX_BLOCK_REQUEST" in os.environ
+    else 50
+)
 
 
 def segment_count(start: int, stop: int, step: int = 5) -> Iterable[Tuple[int, int]]:
@@ -278,38 +279,39 @@ class RequestLogs:
         return to_block
 
     def _get_filter_changes(self) -> Iterator[List[LogReceipt]]:
-        for start, stop in iter_latest_block_ranges(
-            self.w3, self.from_block, self.to_block
-        ):
+        w3 = self.w3
+        address = self.address
+        topics = self.topics
+        for start, stop in iter_latest_block_ranges(w3, self.from_block, self.to_block):
             if None in (start, stop):
                 yield []
             else:
-                yield list(
-                    concat(
-                        get_logs_multipart(
-                            self.w3,
-                            start,
-                            stop,
-                            self.address,
-                            self.topics,
-                            max_blocks=MAX_BLOCK_REQUEST,
-                        )
+                yield [
+                    log
+                    for logs in get_logs_multipart(
+                        w3,
+                        start,
+                        stop,
+                        address,
+                        topics,
+                        max_blocks=MAX_BLOCK_REQUEST,
                     )
-                )
+                    for log in logs
+                ]
 
     def get_logs(self) -> List[LogReceipt]:
-        return list(
-            concat(
-                get_logs_multipart(
-                    self.w3,
-                    self.from_block,
-                    self.to_block,
-                    self.address,
-                    self.topics,
-                    max_blocks=MAX_BLOCK_REQUEST,
-                )
+        return [
+            log
+            for logs in get_logs_multipart(
+                self.w3,
+                self.from_block,
+                self.to_block,
+                self.address,
+                self.topics,
+                max_blocks=MAX_BLOCK_REQUEST,
             )
-        )
+            for log in logs
+        ]
 
 
 FILTER_PARAMS_KEY_MAP = {"toBlock": "to_block", "fromBlock": "from_block"}
@@ -638,9 +640,7 @@ class LocalFilterMiddleware(Web3Middleware):
                 elif method == RPC.eth_getFilterLogs:
                     # type ignored b/c logic prevents RequestBlocks which
                     # doesn't implement get_logs
-                    return _simulate_rpc_response_with_result(
-                        _filter.get_logs()
-                    )
+                    return _simulate_rpc_response_with_result(_filter.get_logs())
                 else:
                     raise NotImplementedError(method)
             else:
@@ -690,9 +690,7 @@ class LocalFilterMiddleware(Web3Middleware):
                 elif method == RPC.eth_getFilterLogs:
                     # type ignored b/c logic prevents RequestBlocks which
                     # doesn't implement get_logs
-                    return _simulate_rpc_response_with_result(
-                        await _filter.get_logs()
-                    )
+                    return _simulate_rpc_response_with_result(await _filter.get_logs())
                 else:
                     raise NotImplementedError(method)
             else:
