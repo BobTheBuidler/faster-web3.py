@@ -11,6 +11,7 @@ from benchmarks.web3.utils.offchain_lookup import (
     parametrize_offchain_lookup,
 )
 
+
 class FakeAsyncResponse:
     def __init__(self, result, status=200):
         self.status = status
@@ -30,27 +31,35 @@ class FakeAsyncResponse:
     async def close(self):
         pass
 
+
 def make_fake_aiohttp_request(urls, fail_indices):
     call_count = {"i": 0}
+
     async def fake_aiohttp_request(*args, **kwargs):
         idx = call_count["i"]
         call_count["i"] += 1
         if idx in fail_indices:
             raise Exception("Simulated request failure")
         return FakeAsyncResponse({"data": "0xdeadbeef"}, status=200)
+
     return fake_aiohttp_request
+
 
 def run_async_in_loop(fn, *args):
     loop = asyncio.new_event_loop()
     return loop.run_until_complete(_run_100(fn, *args))
 
+
 async def _run_100(fn, *args):
     for i in range(100):
         await fn(*args)
 
+
 @pytest.mark.benchmark(group="async_handle_offchain_lookup")
 @parametrize_offchain_lookup
-def test_async_handle_offchain_lookup(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
+def test_async_handle_offchain_lookup(
+    benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices
+):
     payload = payload.copy()
     payload["urls"] = urls
 
@@ -64,9 +73,12 @@ def test_async_handle_offchain_lookup(benchmark: BenchmarkFixture, payload, urls
             TX_PARAMS,
         )
 
+
 @pytest.mark.benchmark(group="async_handle_offchain_lookup")
 @parametrize_offchain_lookup
-def test_faster_async_handle_offchain_lookup(benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices):
+def test_faster_async_handle_offchain_lookup(
+    benchmark: BenchmarkFixture, payload, urls, patch_method, fail_indices
+):
     payload = payload.copy()
     payload["urls"] = urls
 
