@@ -1,14 +1,14 @@
 #include <Python.h>
 
 PyMODINIT_FUNC
-PyInit_beacon(void)
+PyInit_websocket(void)
 {
     PyObject *tmp;
     if (!(tmp = PyImport_ImportModule("7d394682a7adb9fafdee__mypyc"))) return NULL;
-    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___beacon");
+    PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3___providers___persistent___websocket");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "7d394682a7adb9fafdee__mypyc.init_faster_web3___beacon");
+    void *init_func = PyCapsule_GetPointer(capsule, "7d394682a7adb9fafdee__mypyc.init_faster_web3___providers___persistent___websocket");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
@@ -18,4 +18,4 @@ PyInit_beacon(void)
 
 // distutils sometimes spuriously tells cl to export CPyInit___init__,
 // so provide that so it chills out
-PyMODINIT_FUNC PyInit___init__(void) { return PyInit_beacon(); }
+PyMODINIT_FUNC PyInit___init__(void) { return PyInit_websocket(); }
