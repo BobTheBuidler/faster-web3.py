@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2321];
+extern PyObject *CPyStatics[2319];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -58,7 +58,6 @@ extern CPyModule *CPyModule_faster_web3___middleware;
 extern CPyModule *CPyModule_faster_web3____utils___async_transactions__internal;
 extern CPyModule *CPyModule_faster_web3____utils___async_transactions;
 extern PyObject *CPyStatic_async_transactions___globals;
-extern CPyModule *CPyModule_faster_eth_utils___toolz;
 extern CPyModule *CPyModule_faster_web3____utils___transactions;
 extern CPyModule *CPyModule_faster_web3____utils___utility_methods__internal;
 extern CPyModule *CPyModule_faster_web3____utils___utility_methods;
@@ -109,6 +108,7 @@ extern CPyModule *CPyModule_faster_web3___utils___abi;
 extern CPyModule *CPyModule_faster_web3____utils___datatypes__internal;
 extern CPyModule *CPyModule_faster_web3____utils___datatypes;
 extern PyObject *CPyStatic_datatypes___globals;
+extern CPyModule *CPyModule_faster_eth_utils___toolz;
 extern CPyModule *CPyModule_faster_web3____utils___decorators__internal;
 extern CPyModule *CPyModule_faster_web3____utils___decorators;
 extern PyObject *CPyStatic_decorators___globals;

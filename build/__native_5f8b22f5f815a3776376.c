@@ -21481,7 +21481,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions____estimate_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_estimate_gas", "_estimate_gas_gen", "async_w3", 52, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_estimate_gas", "_estimate_gas_gen", "async_w3", 49, CPyStatic_async_transactions___globals);
         goto CPyL46;
     }
     CPy_INCREF(cpy_r_r5);
@@ -21495,7 +21495,7 @@ CPyL5: ;
     }
     cpy_r_r8 = ((faster_web3____utils___async_transactions____estimate_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx;
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_estimate_gas", "_estimate_gas_gen", "tx", 52, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_estimate_gas", "_estimate_gas_gen", "tx", 49, CPyStatic_async_transactions___globals);
         goto CPyL47;
     }
     CPy_INCREF(cpy_r_r8);
@@ -22202,7 +22202,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "async_w3", 58, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "async_w3", 55, CPyStatic_async_transactions___globals);
         goto CPyL60;
     }
     CPy_INCREF(cpy_r_r5);
@@ -22395,7 +22395,7 @@ CPyL35: ;
     }
     cpy_r_r38 = ((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx;
     if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "tx", 59, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "tx", 56, CPyStatic_async_transactions___globals);
         goto CPyL60;
     }
     CPy_INCREF(cpy_r_r38);
@@ -22403,7 +22403,7 @@ CPyL37: ;
     cpy_r_r39 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'maxPriorityFeePerGas' */
     cpy_r_r40 = ((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__defaults;
     if (unlikely(cpy_r_r40 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "defaults", 60, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "defaults", 57, CPyStatic_async_transactions___globals);
         goto CPyL69;
     }
     CPy_INCREF(cpy_r_r40);
@@ -22433,7 +22433,7 @@ CPyL38: ;
         cpy_r_r43 = NULL;
     }
     if (cpy_r_r43 != NULL) goto __LL75;
-    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", 60, CPyStatic_async_transactions___globals, "union[bytes, int, None]", cpy_r_r42);
+    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", 57, CPyStatic_async_transactions___globals, "union[bytes, int, None]", cpy_r_r42);
     goto CPyL69;
 __LL75: ;
     cpy_r_r44 = CPyDict_Get(cpy_r_r38, cpy_r_r39, cpy_r_r43);
@@ -22467,7 +22467,7 @@ __LL75: ;
         cpy_r_r45 = NULL;
     }
     if (cpy_r_r45 != NULL) goto __LL76;
-    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", 59, CPyStatic_async_transactions___globals, "union[str, bytes, int, None]", cpy_r_r44);
+    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", 56, CPyStatic_async_transactions___globals, "union[str, bytes, int, None]", cpy_r_r44);
     goto CPyL60;
 __LL76: ;
     if (((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__max_priority_fee != NULL) {
@@ -22481,7 +22481,7 @@ __LL76: ;
     }
     cpy_r_r47 = ((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__max_priority_fee;
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "max_priority_fee", 62, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "max_priority_fee", 59, CPyStatic_async_transactions___globals);
         goto CPyL60;
     }
     CPy_INCREF(cpy_r_r47);
@@ -22507,7 +22507,7 @@ CPyL44: ;
     }
     cpy_r_r53 = ((faster_web3____utils___async_transactions____max_fee_per_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "block", 62, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_fee_per_gas", "_max_fee_per_gas_gen", "block", 59, CPyStatic_async_transactions___globals);
         goto CPyL71;
     }
     CPy_INCREF(cpy_r_r53);
@@ -23049,7 +23049,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions____max_priority_fee_gas_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_priority_fee_gas", "_max_priority_fee_gas_gen", "async_w3", 68, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_max_priority_fee_gas", "_max_priority_fee_gas_gen", "async_w3", 65, CPyStatic_async_transactions___globals);
         goto CPyL45;
     }
     CPy_INCREF(cpy_r_r5);
@@ -23726,7 +23726,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions____chain_id_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_chain_id", "_chain_id_gen", "async_w3", 74, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "_chain_id", "_chain_id_gen", "async_w3", 71, CPyStatic_async_transactions___globals);
         goto CPyL45;
     }
     CPy_INCREF(cpy_r_r5);
@@ -24502,14 +24502,14 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions___get_block_gas_limit_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__web3_eth;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "web3_eth", 91, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "web3_eth", 88, CPyStatic_async_transactions___globals);
         goto CPyL52;
     }
     CPy_INCREF(cpy_r_r5);
 CPyL5: ;
     cpy_r_r6 = ((faster_web3____utils___async_transactions___get_block_gas_limit_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_identifier;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "block_identifier", 91, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "block_identifier", 88, CPyStatic_async_transactions___globals);
         goto CPyL53;
     }
     CPy_INCREF(cpy_r_r6);
@@ -24710,7 +24710,7 @@ CPyL39: ;
     }
     cpy_r_r41 = ((faster_web3____utils___async_transactions___get_block_gas_limit_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r41 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "block", 92, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_block_gas_limit", "get_block_gas_limit_gen", "block", 89, CPyStatic_async_transactions___globals);
         goto CPyL52;
     }
     CPy_INCREF(cpy_r_r41);
@@ -25332,7 +25332,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r9 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r9 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "transaction", 98, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "transaction", 95, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPy_INCREF(cpy_r_r9);
@@ -25355,7 +25355,7 @@ CPyL5: ;
     if (likely(PyDict_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", 98, CPyStatic_async_transactions___globals, "dict", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", 95, CPyStatic_async_transactions___globals, "dict", cpy_r_r13);
         goto CPyL110;
     }
     if (((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_estimate_transaction != NULL) {
@@ -25369,7 +25369,7 @@ CPyL5: ;
     }
     cpy_r_r16 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "async_w3", 100, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "async_w3", 97, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPy_INCREF(cpy_r_r16);
@@ -25383,7 +25383,7 @@ CPyL10: ;
     }
     cpy_r_r19 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_estimate_transaction;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate_transaction", 100, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate_transaction", 97, CPyStatic_async_transactions___globals);
         goto CPyL112;
     }
     CPy_INCREF(cpy_r_r19);
@@ -25579,7 +25579,7 @@ CPyL41: ;
     }
     cpy_r_r50 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r50 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "async_w3", 102, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "async_w3", 99, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPy_INCREF(cpy_r_r50);
@@ -25777,14 +25777,14 @@ CPyL73: ;
     }
     cpy_r_r83 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_estimate;
     if (unlikely(cpy_r_r83 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 104, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 101, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPyTagged_INCREF(cpy_r_r83);
 CPyL76: ;
     cpy_r_r84 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_limit;
     if (unlikely(cpy_r_r84 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 104, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 101, CPyStatic_async_transactions___globals);
         goto CPyL130;
     }
     CPyTagged_INCREF(cpy_r_r84);
@@ -25811,7 +25811,7 @@ CPyL81: ;
                                     'Estimated: ') */
     cpy_r_r93 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_estimate;
     if (unlikely(cpy_r_r93 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 107, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 104, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPyTagged_INCREF(cpy_r_r93);
@@ -25825,7 +25825,7 @@ CPyL83: ;
     cpy_r_r95 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '. Current gas limit: ' */
     cpy_r_r96 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_limit;
     if (unlikely(cpy_r_r96 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 108, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 105, CPyStatic_async_transactions___globals);
         goto CPyL131;
     }
     CPyTagged_INCREF(cpy_r_r96);
@@ -25869,21 +25869,21 @@ CPyL85: ;
 CPyL91: ;
     cpy_r_r105 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_limit;
     if (unlikely(cpy_r_r105 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 111, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_limit", 108, CPyStatic_async_transactions___globals);
         goto CPyL110;
     }
     CPyTagged_INCREF(cpy_r_r105);
 CPyL92: ;
     cpy_r_r106 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_estimate;
     if (unlikely(cpy_r_r106 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 111, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_estimate", 108, CPyStatic_async_transactions___globals);
         goto CPyL133;
     }
     CPyTagged_INCREF(cpy_r_r106);
 CPyL93: ;
     cpy_r_r107 = ((faster_web3____utils___async_transactions___get_buffered_gas_estimate_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_buffer;
     if (unlikely(cpy_r_r107 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_buffer", 111, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "get_buffered_gas_estimate", "get_buffered_gas_estimate_gen", "gas_buffer", 108, CPyStatic_async_transactions___globals);
         goto CPyL134;
     }
     CPyTagged_INCREF(cpy_r_r107);
@@ -26487,24 +26487,23 @@ PyObject *CPyDef_async_transactions___async_fill_nonce_gen_____mypyc_generator_h
     char cpy_r_r55;
     PyObject *cpy_r_r56;
     PyObject *cpy_r_r57;
-    CPyTagged cpy_r_r58;
-    PyObject *cpy_r_r59;
+    char cpy_r_r58;
+    CPyTagged cpy_r_r59;
     PyObject *cpy_r_r60;
     PyObject *cpy_r_r61;
     PyObject *cpy_r_r62;
-    PyObject **cpy_r_r64;
+    int32_t cpy_r_r63;
+    char cpy_r_r64;
     PyObject *cpy_r_r65;
     char cpy_r_r66;
-    PyObject *cpy_r_r67;
+    char cpy_r_r67;
     char cpy_r_r68;
     char cpy_r_r69;
-    char cpy_r_r70;
-    char cpy_r_r71;
-    PyObject *cpy_r_r72;
+    PyObject *cpy_r_r70;
     cpy_r_r0 = NULL;
     cpy_r_r1 = cpy_r_r0;
     cpy_r_r2 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL62;
+    goto CPyL59;
 CPyL1: ;
     cpy_r_r3 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r4 = cpy_r_type != cpy_r_r3;
@@ -26512,15 +26511,15 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'from' */
     cpy_r_r6 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 117, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 114, CPyStatic_async_transactions___globals);
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r6);
 CPyL5: ;
@@ -26529,15 +26528,15 @@ CPyL5: ;
     cpy_r_r8 = cpy_r_r7 >= 0;
     if (unlikely(!cpy_r_r8)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r9 = cpy_r_r7;
-    if (!cpy_r_r9) goto CPyL56;
+    if (!cpy_r_r9) goto CPyL53;
     cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonce' */
     cpy_r_r11 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 117, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 114, CPyStatic_async_transactions___globals);
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r11);
 CPyL8: ;
@@ -26546,15 +26545,15 @@ CPyL8: ;
     cpy_r_r13 = cpy_r_r12 >= 0;
     if (unlikely(!cpy_r_r13)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r14 = cpy_r_r12;
     cpy_r_r15 = cpy_r_r14 ^ 1;
-    if (!cpy_r_r15) goto CPyL56;
+    if (!cpy_r_r15) goto CPyL53;
     cpy_r_r16 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "async_w3", 118, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "async_w3", 115, CPyStatic_async_transactions___globals);
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r16);
 CPyL11: ;
@@ -26563,12 +26562,12 @@ CPyL11: ;
     CPy_DECREF(cpy_r_r16);
     if (unlikely(cpy_r_r18 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r19 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 119, CPyStatic_async_transactions___globals);
-        goto CPyL67;
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 116, CPyStatic_async_transactions___globals);
+        goto CPyL64;
     }
     CPy_INCREF(cpy_r_r19);
 CPyL13: ;
@@ -26577,7 +26576,7 @@ CPyL13: ;
     CPy_DECREF(cpy_r_r19);
     if (unlikely(cpy_r_r21 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL67;
+        goto CPyL64;
     }
     if (PyBytes_Check(cpy_r_r21) || PyByteArray_Check(cpy_r_r21))
         cpy_r_r22 = cpy_r_r21;
@@ -26591,14 +26590,14 @@ CPyL13: ;
         cpy_r_r22 = NULL;
     }
     if (cpy_r_r22 != NULL) goto __LL88;
-    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", 119, CPyStatic_async_transactions___globals, "union[bytes, str]", cpy_r_r21);
-    goto CPyL67;
+    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", 116, CPyStatic_async_transactions___globals, "union[bytes, str]", cpy_r_r21);
+    goto CPyL64;
 __LL88: ;
     if (likely(PyUnicode_Check(cpy_r_r22)))
         cpy_r_r23 = cpy_r_r22;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", 119, CPyStatic_async_transactions___globals, "str", cpy_r_r22);
-        goto CPyL67;
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", 116, CPyStatic_async_transactions___globals, "str", cpy_r_r22);
+        goto CPyL64;
     }
     cpy_r_r24 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'pending' */
     cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'get_transaction_count' */
@@ -26608,7 +26607,7 @@ __LL88: ;
     cpy_r_r29 = PyObject_VectorcallMethod(cpy_r_r25, cpy_r_r27, 9223372036854775810ULL, cpy_r_r28);
     if (unlikely(cpy_r_r29 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL68;
+        goto CPyL65;
     }
     CPy_DECREF(cpy_r_r18);
     CPy_DECREF(cpy_r_r23);
@@ -26616,7 +26615,7 @@ __LL88: ;
     CPy_DECREF(cpy_r_r29);
     if (unlikely(cpy_r_r30 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     if (((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14 != NULL) {
         CPy_DECREF(((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14);
@@ -26625,12 +26624,12 @@ __LL88: ;
     cpy_r_r31 = 1;
     if (unlikely(!cpy_r_r31)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", -1, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r32 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__14", -1, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r32);
 CPyL20: ;
@@ -26640,7 +26639,7 @@ CPyL20: ;
     cpy_r_r34 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r34 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r35 = cpy_r_r34;
     cpy_r_r36 = NULL;
@@ -26651,7 +26650,7 @@ CPyL20: ;
     cpy_r_r37 = 1;
     if (unlikely(!cpy_r_r37)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL69;
+        goto CPyL66;
     } else
         goto CPyL45;
 CPyL23: ;
@@ -26662,13 +26661,13 @@ CPyL24: ;
 CPyL25: ;
     cpy_r_r40 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r41 = cpy_r_type != cpy_r_r40;
-    if (!cpy_r_r41) goto CPyL70;
+    if (!cpy_r_r41) goto CPyL67;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
         goto CPyL29;
     } else
-        goto CPyL71;
+        goto CPyL68;
 CPyL27: ;
     CPy_Unreachable();
 CPyL28: ;
@@ -26685,13 +26684,13 @@ CPyL29: ;
     cpy_r_r43 = 1;
     if (unlikely(!cpy_r_r43)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", -1, CPyStatic_async_transactions___globals);
-        goto CPyL72;
+        goto CPyL69;
     }
     cpy_r_r44 = (PyObject **)&cpy_r_r1;
     cpy_r_r45 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r45 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__14", -1, CPyStatic_async_transactions___globals);
-        goto CPyL72;
+        goto CPyL69;
     }
     CPy_INCREF(cpy_r_r45);
 CPyL31: ;
@@ -26699,14 +26698,14 @@ CPyL31: ;
     CPy_DecRef(cpy_r_r45);
     if (unlikely(cpy_r_r46 == 2)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL72;
+        goto CPyL69;
     }
     if (cpy_r_r46) goto CPyL35;
     cpy_r_r38 = cpy_r_r1;
     cpy_r_r47 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
     if (unlikely(cpy_r_r47.f0 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__15", -1, CPyStatic_async_transactions___globals);
-        goto CPyL73;
+        goto CPyL70;
     }
     CPy_INCREF(cpy_r_r47.f0);
     CPy_INCREF(cpy_r_r47.f1);
@@ -26722,7 +26721,7 @@ CPyL35: ;
     cpy_r_r48 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
     if (unlikely(cpy_r_r48.f0 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__15", -1, CPyStatic_async_transactions___globals);
-        goto CPyL74;
+        goto CPyL71;
     }
     CPy_INCREF(cpy_r_r48.f0);
     CPy_INCREF(cpy_r_r48.f1);
@@ -26737,7 +26736,7 @@ CPyL37: ;
     cpy_r_r49 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__15;
     if (unlikely(cpy_r_r49.f0 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__15", -1, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r49.f0);
     CPy_INCREF(cpy_r_r49.f1);
@@ -26748,13 +26747,13 @@ CPyL38: ;
     CPy_DecRef(cpy_r_r49.f1);
     CPy_DecRef(cpy_r_r49.f2);
     cpy_r_r50 = CPy_KeepPropagating();
-    if (!cpy_r_r50) goto CPyL66;
+    if (!cpy_r_r50) goto CPyL63;
     CPy_Unreachable();
 CPyL40: ;
     cpy_r_r51 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__14;
     if (unlikely(cpy_r_r51 == NULL)) {
         CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "__mypyc_temp__14", -1, CPyStatic_async_transactions___globals);
-        goto CPyL75;
+        goto CPyL72;
     }
     CPy_INCREF(cpy_r_r51);
 CPyL41: ;
@@ -26768,7 +26767,7 @@ CPyL43: ;
     cpy_r_r53 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r53 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r35 = cpy_r_r53;
 CPyL45: ;
@@ -26780,7 +26779,7 @@ CPyL45: ;
     CPy_DECREF(cpy_r_r35);
     if (unlikely(cpy_r_r54 == CPY_INT_TAG)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     if (((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx_count != CPY_INT_TAG) {
         CPyTagged_DECREF(((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx_count);
@@ -26789,131 +26788,127 @@ CPyL45: ;
     cpy_r_r55 = 1;
     if (unlikely(!cpy_r_r55)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     cpy_r_r56 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r56 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 122, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 119, CPyStatic_async_transactions___globals);
+        goto CPyL63;
     }
     CPy_INCREF(cpy_r_r56);
 CPyL48: ;
-    cpy_r_r57 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonce' */
-    cpy_r_r58 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx_count;
-    if (unlikely(cpy_r_r58 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "tx_count", 122, CPyStatic_async_transactions___globals);
-        goto CPyL76;
-    }
-    CPyTagged_INCREF(cpy_r_r58);
-CPyL49: ;
-    cpy_r_r59 = CPyStatic_async_transactions___globals;
-    cpy_r_r60 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'assoc' */
-    cpy_r_r61 = CPyDict_GetItem(cpy_r_r59, cpy_r_r60);
-    if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL77;
-    }
-    cpy_r_r62 = CPyTagged_StealAsObject(cpy_r_r58);
-    PyObject *cpy_r_r63[3] = {cpy_r_r56, cpy_r_r57, cpy_r_r62};
-    cpy_r_r64 = (PyObject **)&cpy_r_r63;
-    cpy_r_r65 = PyObject_Vectorcall(cpy_r_r61, cpy_r_r64, 3, 0);
-    CPy_DECREF(cpy_r_r61);
-    if (unlikely(cpy_r_r65 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL78;
-    }
+    cpy_r_r57 = CPyDict_Copy(cpy_r_r56);
     CPy_DECREF(cpy_r_r56);
+    if (unlikely(cpy_r_r57 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
+        goto CPyL63;
+    }
+    if (((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction != NULL) {
+        CPy_DECREF(((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction);
+    }
+    ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r57;
+    cpy_r_r58 = 1;
+    if (unlikely(!cpy_r_r58)) {
+        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
+        goto CPyL63;
+    }
+    cpy_r_r59 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__tx_count;
+    if (unlikely(cpy_r_r59 == CPY_INT_TAG)) {
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "tx_count", 120, CPyStatic_async_transactions___globals);
+        goto CPyL63;
+    }
+    CPyTagged_INCREF(cpy_r_r59);
+CPyL51: ;
+    cpy_r_r60 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    if (unlikely(cpy_r_r60 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 120, CPyStatic_async_transactions___globals);
+        goto CPyL73;
+    }
+    CPy_INCREF(cpy_r_r60);
+CPyL52: ;
+    cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'nonce' */
+    cpy_r_r62 = CPyTagged_StealAsObject(cpy_r_r59);
+    cpy_r_r63 = CPyDict_SetItem(cpy_r_r60, cpy_r_r61, cpy_r_r62);
+    CPy_DECREF(cpy_r_r60);
     CPy_DECREF(cpy_r_r62);
+    cpy_r_r64 = cpy_r_r63 >= 0;
+    if (unlikely(!cpy_r_r64)) {
+        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
+        goto CPyL63;
+    }
+CPyL53: ;
+    cpy_r_r65 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    if (unlikely(cpy_r_r65 == NULL)) {
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 121, CPyStatic_async_transactions___globals);
+        goto CPyL63;
+    }
+    CPy_INCREF(cpy_r_r65);
+CPyL54: ;
     ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL55;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL58;
     CPyGen_SetStopIterationValue(cpy_r_r65);
     CPy_DECREF(cpy_r_r65);
-    if (!0) goto CPyL66;
+    if (!0) goto CPyL63;
     CPy_Unreachable();
-CPyL55: ;
+CPyL58: ;
     *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r65;
     return 0;
-CPyL56: ;
-    cpy_r_r67 = ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
-    if (unlikely(cpy_r_r67 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_nonce", "async_fill_nonce_gen", "transaction", 123, CPyStatic_async_transactions___globals);
-        goto CPyL66;
-    }
-    CPy_INCREF(cpy_r_r67);
-CPyL57: ;
-    ((faster_web3____utils___async_transactions___async_fill_nonce_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL61;
-    CPyGen_SetStopIterationValue(cpy_r_r67);
-    CPy_DECREF(cpy_r_r67);
-    if (!0) goto CPyL66;
-    CPy_Unreachable();
-CPyL61: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r67;
-    return 0;
-CPyL62: ;
-    cpy_r_r69 = cpy_r_r2 == 0;
-    if (cpy_r_r69) goto CPyL79;
-    cpy_r_r70 = cpy_r_r2 == 1;
-    if (cpy_r_r70) {
+CPyL59: ;
+    cpy_r_r67 = cpy_r_r2 == 0;
+    if (cpy_r_r67) goto CPyL74;
+    cpy_r_r68 = cpy_r_r2 == 1;
+    if (cpy_r_r68) {
         goto CPyL25;
     } else
-        goto CPyL80;
-CPyL64: ;
+        goto CPyL75;
+CPyL61: ;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r71 = 0;
-    if (unlikely(!cpy_r_r71)) {
+    cpy_r_r69 = 0;
+    if (unlikely(!cpy_r_r69)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "async_fill_nonce", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL66;
+        goto CPyL63;
     }
     CPy_Unreachable();
-CPyL66: ;
-    cpy_r_r72 = NULL;
-    return cpy_r_r72;
-CPyL67: ;
+CPyL63: ;
+    cpy_r_r70 = NULL;
+    return cpy_r_r70;
+CPyL64: ;
     CPy_DecRef(cpy_r_r18);
-    goto CPyL66;
-CPyL68: ;
+    goto CPyL63;
+CPyL65: ;
     CPy_DecRef(cpy_r_r18);
     CPy_DecRef(cpy_r_r23);
-    goto CPyL66;
-CPyL69: ;
+    goto CPyL63;
+CPyL66: ;
     CPy_DecRef(cpy_r_r35);
-    goto CPyL66;
-CPyL70: ;
+    goto CPyL63;
+CPyL67: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL28;
-CPyL71: ;
+CPyL68: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL27;
-CPyL72: ;
+CPyL69: ;
     CPy_XDecRef(cpy_r_r1);
     goto CPyL37;
-CPyL73: ;
+CPyL70: ;
     CPy_DecRef(cpy_r_r38);
     goto CPyL37;
-CPyL74: ;
+CPyL71: ;
     CPy_DecRef(cpy_r_r35);
     goto CPyL37;
-CPyL75: ;
+CPyL72: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL66;
-CPyL76: ;
-    CPy_DecRef(cpy_r_r56);
-    goto CPyL66;
-CPyL77: ;
-    CPy_DecRef(cpy_r_r56);
-    CPyTagged_DecRef(cpy_r_r58);
-    goto CPyL66;
-CPyL78: ;
-    CPy_DecRef(cpy_r_r56);
-    CPy_DecRef(cpy_r_r62);
-    goto CPyL66;
-CPyL79: ;
+    goto CPyL63;
+CPyL73: ;
+    CPyTagged_DecRef(cpy_r_r59);
+    goto CPyL63;
+CPyL74: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL1;
-CPyL80: ;
+CPyL75: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL64;
+    goto CPyL61;
 }
 
 PyObject *CPyDef_async_transactions___async_fill_nonce_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -27448,7 +27443,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 132, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 130, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r5);
@@ -27462,7 +27457,7 @@ CPyL5: ;
     }
     cpy_r_r8 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 132, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 130, CPyStatic_async_transactions___globals);
         goto CPyL142;
     }
     CPy_INCREF(cpy_r_r8);
@@ -27489,7 +27484,7 @@ CPyL7: ;
         cpy_r_r13 = NULL;
     }
     if (cpy_r_r13 != NULL) goto __LL91;
-    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 132, CPyStatic_async_transactions___globals, "int or None", cpy_r_r12);
+    CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 130, CPyStatic_async_transactions___globals, "int or None", cpy_r_r12);
     goto CPyL141;
 __LL91: ;
     if (((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__strategy_based_gas_price != NULL) {
@@ -27503,7 +27498,7 @@ __LL91: ;
     }
     cpy_r_r15 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__strategy_based_gas_price;
     if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "strategy_based_gas_price", 134, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "strategy_based_gas_price", 132, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r15);
@@ -27518,7 +27513,7 @@ CPyL13: ;
     cpy_r_r19 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
     cpy_r_r20 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 135, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 133, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r20);
@@ -27548,7 +27543,7 @@ CPyL17: ;
 CPyL20: ;
     cpy_r_r28 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r28 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 136, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 134, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r28);
@@ -27621,7 +27616,7 @@ CPyL30: ;
     }
     cpy_r_r38 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
     if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__16", 140, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__16", 138, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r38);
@@ -27651,14 +27646,14 @@ CPyL33: ;
 CPyL36: ;
     cpy_r_r43 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__19;
     if (unlikely(cpy_r_r43 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__19", 140, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__19", 138, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r43);
 CPyL37: ;
     cpy_r_r44 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__17;
     if (unlikely(cpy_r_r44 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__17", 140, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__17", 138, CPyStatic_async_transactions___globals);
         goto CPyL144;
     }
 CPyL38: ;
@@ -27682,7 +27677,7 @@ CPyL38: ;
     if (likely(PyUnicode_Check(cpy_r_r49)))
         cpy_r_r51 = cpy_r_r49;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 140, CPyStatic_async_transactions___globals, "str", cpy_r_r49);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 138, CPyStatic_async_transactions___globals, "str", cpy_r_r49);
         goto CPyL147;
     }
     if (((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key != NULL) {
@@ -27705,14 +27700,14 @@ CPyL38: ;
     }
     cpy_r_r54 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r54 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 141, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 139, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r54);
 CPyL44: ;
     cpy_r_r55 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 141, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 139, CPyStatic_async_transactions___globals);
         goto CPyL148;
     }
     CPy_INCREF(cpy_r_r55);
@@ -27730,7 +27725,7 @@ CPyL45: ;
     if (!cpy_r_r59) goto CPyL124;
     cpy_r_r60 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__is_dynamic_fee_transaction;
     if (unlikely(cpy_r_r60 == 2)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "is_dynamic_fee_transaction", 143, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "is_dynamic_fee_transaction", 141, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
 CPyL48: ;
@@ -27738,7 +27733,7 @@ CPyL48: ;
 CPyL49: ;
     cpy_r_r61 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 144, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 142, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r61);
@@ -27750,7 +27745,7 @@ CPyL50: ;
 CPyL51: ;
     cpy_r_r64 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__is_dynamic_fee_transaction;
     if (unlikely(cpy_r_r64 == 2)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "is_dynamic_fee_transaction", 145, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "is_dynamic_fee_transaction", 143, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
 CPyL52: ;
@@ -27758,7 +27753,7 @@ CPyL52: ;
 CPyL53: ;
     cpy_r_r65 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r65 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 146, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 144, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r65);
@@ -27797,7 +27792,7 @@ CPyL60: ;
 CPyL61: ;
     cpy_r_r72 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__default_getter;
     if (unlikely(cpy_r_r72 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 152, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 150, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r72);
@@ -27830,7 +27825,7 @@ CPyL62: ;
     if (!cpy_r_r79) goto CPyL118;
     cpy_r_r80 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r80 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 153, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 151, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r80);
@@ -27844,7 +27839,7 @@ CPyL67: ;
     cpy_r_r85 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{:{}}' */
     cpy_r_r86 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r86 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 155, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 153, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r86);
@@ -27906,7 +27901,7 @@ CPyL69: ;
 CPyL76: ;
     cpy_r_r105 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r105 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 157, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 155, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r105);
@@ -27917,28 +27912,28 @@ CPyL77: ;
     if (!cpy_r_r107) goto CPyL84;
     cpy_r_r108 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r108 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 160, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 158, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r108);
 CPyL79: ;
     cpy_r_r109 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r109 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 160, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 158, CPyStatic_async_transactions___globals);
         goto CPyL155;
     }
     CPy_INCREF(cpy_r_r109);
 CPyL80: ;
     cpy_r_r110 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__defaults;
     if (unlikely(cpy_r_r110 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 160, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 158, CPyStatic_async_transactions___globals);
         goto CPyL156;
     }
     CPy_INCREF(cpy_r_r110);
 CPyL81: ;
     cpy_r_r111 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__default_getter;
     if (unlikely(cpy_r_r111 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 160, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 158, CPyStatic_async_transactions___globals);
         goto CPyL157;
     }
     CPy_INCREF(cpy_r_r111);
@@ -27967,28 +27962,28 @@ CPyL82: ;
 CPyL84: ;
     cpy_r_r116 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r116 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 162, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "async_w3", 160, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r116);
 CPyL85: ;
     cpy_r_r117 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r117 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 162, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 160, CPyStatic_async_transactions___globals);
         goto CPyL158;
     }
     CPy_INCREF(cpy_r_r117);
 CPyL86: ;
     cpy_r_r118 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__defaults;
     if (unlikely(cpy_r_r118 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 162, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 160, CPyStatic_async_transactions___globals);
         goto CPyL159;
     }
     CPy_INCREF(cpy_r_r118);
 CPyL87: ;
     cpy_r_r119 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__default_getter;
     if (unlikely(cpy_r_r119 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 162, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 160, CPyStatic_async_transactions___globals);
         goto CPyL160;
     }
     CPy_INCREF(cpy_r_r119);
@@ -28177,7 +28172,7 @@ CPyL117: ;
 CPyL118: ;
     cpy_r_r148 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__default_getter;
     if (unlikely(cpy_r_r148 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 164, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_getter", 162, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r148);
@@ -28194,21 +28189,21 @@ CPyL119: ;
 CPyL120: ;
     cpy_r_r150 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__default_val;
     if (unlikely(cpy_r_r150 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_val", 166, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "default_val", 164, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r150);
 CPyL121: ;
     cpy_r_r151 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__defaults;
     if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 166, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 164, CPyStatic_async_transactions___globals);
         goto CPyL168;
     }
     CPy_INCREF(cpy_r_r151);
 CPyL122: ;
     cpy_r_r152 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__key;
     if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 166, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "key", 164, CPyStatic_async_transactions___globals);
         goto CPyL169;
     }
     CPy_INCREF(cpy_r_r152);
@@ -28225,14 +28220,14 @@ CPyL123: ;
 CPyL124: ;
     cpy_r_r155 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__16;
     if (unlikely(cpy_r_r155 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__16", 140, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__16", 138, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r155);
 CPyL125: ;
     cpy_r_r156 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__18;
     if (unlikely(cpy_r_r156 == -113)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__18", 140, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "__mypyc_temp__18", 138, CPyStatic_async_transactions___globals);
         goto CPyL170;
     }
 CPyL126: ;
@@ -28251,14 +28246,14 @@ CPyL127: ;
     }
     cpy_r_r159 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__defaults;
     if (unlikely(cpy_r_r159 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 167, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "defaults", 165, CPyStatic_async_transactions___globals);
         goto CPyL141;
     }
     CPy_INCREF(cpy_r_r159);
 CPyL129: ;
     cpy_r_r160 = ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r160 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 167, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", "async_fill_transaction_defaults_gen", "transaction", 165, CPyStatic_async_transactions___globals);
         goto CPyL171;
     }
     CPy_INCREF(cpy_r_r160);
@@ -28273,7 +28268,7 @@ CPyL130: ;
     if (likely(PyDict_Check(cpy_r_r161)))
         cpy_r_r162 = cpy_r_r161;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 167, CPyStatic_async_transactions___globals, "dict", cpy_r_r161);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_fill_transaction_defaults", 165, CPyStatic_async_transactions___globals, "dict", cpy_r_r161);
         goto CPyL141;
     }
     ((faster_web3____utils___async_transactions___async_fill_transaction_defaults_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
@@ -28852,7 +28847,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "async_w3", 173, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "async_w3", 171, CPyStatic_async_transactions___globals);
         goto CPyL59;
     }
     CPy_INCREF(cpy_r_r5);
@@ -28866,7 +28861,7 @@ CPyL5: ;
     }
     cpy_r_r8 = ((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction_hash;
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "transaction_hash", 173, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "transaction_hash", 171, CPyStatic_async_transactions___globals);
         goto CPyL60;
     }
     CPy_INCREF(cpy_r_r8);
@@ -29044,7 +29039,7 @@ CPyL36: ;
     if (likely(PyDict_Check(cpy_r_r18)))
         cpy_r_r37 = cpy_r_r18;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", 173, CPyStatic_async_transactions___globals, "dict", cpy_r_r18);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", 171, CPyStatic_async_transactions___globals, "dict", cpy_r_r18);
         goto CPyL59;
     }
     if (((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_transaction != NULL) {
@@ -29058,7 +29053,7 @@ CPyL36: ;
     }
     cpy_r_r39 = ((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_transaction;
     if (unlikely(cpy_r_r39 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "current_transaction", 174, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "current_transaction", 172, CPyStatic_async_transactions___globals);
         goto CPyL59;
     }
     CPy_INCREF(cpy_r_r39);
@@ -29073,7 +29068,7 @@ CPyL39: ;
     cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '{!r:{}}' */
     cpy_r_r46 = ((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction_hash;
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "transaction_hash", 176, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "transaction_hash", 174, CPyStatic_async_transactions___globals);
         goto CPyL59;
     }
     CPy_INCREF(cpy_r_r46);
@@ -29091,7 +29086,7 @@ CPyL41: ;
     if (likely(PyUnicode_Check(cpy_r_r51)))
         cpy_r_r52 = cpy_r_r51;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", 176, CPyStatic_async_transactions___globals, "str", cpy_r_r51);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", 174, CPyStatic_async_transactions___globals, "str", cpy_r_r51);
         goto CPyL59;
     }
     cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' does not exist' */
@@ -29141,7 +29136,7 @@ CPyL41: ;
 CPyL49: ;
     cpy_r_r66 = ((faster_web3____utils___async_transactions___async_get_required_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_transaction;
     if (unlikely(cpy_r_r66 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "current_transaction", 178, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_get_required_transaction", "async_get_required_transaction_gen", "current_transaction", 176, CPyStatic_async_transactions___globals);
         goto CPyL59;
     }
     CPy_INCREF(cpy_r_r66);
@@ -29651,21 +29646,21 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r5 = ((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "async_w3", 185, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "async_w3", 183, CPyStatic_async_transactions___globals);
         goto CPyL52;
     }
     CPy_INCREF(cpy_r_r5);
 CPyL5: ;
     cpy_r_r6 = ((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__current_transaction;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "current_transaction", 185, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "current_transaction", 183, CPyStatic_async_transactions___globals);
         goto CPyL53;
     }
     CPy_INCREF(cpy_r_r6);
 CPyL6: ;
     cpy_r_r7 = ((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_transaction;
     if (unlikely(cpy_r_r7 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "new_transaction", 185, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "new_transaction", 183, CPyStatic_async_transactions___globals);
         goto CPyL54;
     }
     CPy_INCREF(cpy_r_r7);
@@ -29691,7 +29686,7 @@ CPyL7: ;
     if (likely(PyDict_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_replace_transaction", 184, CPyStatic_async_transactions___globals, "dict", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/_utils/async_transactions.py", "async_replace_transaction", 182, CPyStatic_async_transactions___globals, "dict", cpy_r_r13);
         goto CPyL52;
     }
     if (((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_transaction != NULL) {
@@ -29705,7 +29700,7 @@ CPyL7: ;
     }
     cpy_r_r16 = ((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "async_w3", 187, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "async_w3", 185, CPyStatic_async_transactions___globals);
         goto CPyL52;
     }
     CPy_INCREF(cpy_r_r16);
@@ -29719,7 +29714,7 @@ CPyL12: ;
     }
     cpy_r_r19 = ((faster_web3____utils___async_transactions___async_replace_transaction_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__new_transaction;
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "new_transaction", 187, CPyStatic_async_transactions___globals);
+        CPy_AttributeError("faster_web3/_utils/async_transactions.py", "async_replace_transaction", "async_replace_transaction_gen", "new_transaction", 185, CPyStatic_async_transactions___globals);
         goto CPyL56;
     }
     CPy_INCREF(cpy_r_r19);
@@ -30404,13 +30399,9 @@ char CPyDef_async_transactions_____top_level__(void) {
     PyObject *cpy_r_r59;
     PyObject *cpy_r_r60;
     PyObject *cpy_r_r61;
-    PyObject *cpy_r_r62;
-    PyObject *cpy_r_r63;
-    PyObject *cpy_r_r64;
-    PyObject *cpy_r_r65;
-    int32_t cpy_r_r66;
-    char cpy_r_r67;
-    char cpy_r_r68;
+    int32_t cpy_r_r62;
+    char cpy_r_r63;
+    char cpy_r_r64;
     cpy_r_r0 = CPyModule_builtins;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
@@ -30419,7 +30410,7 @@ char CPyDef_async_transactions_____top_level__(void) {
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", -1, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
     CPyModule_builtins = cpy_r_r4;
     CPy_INCREF(CPyModule_builtins);
@@ -30432,7 +30423,7 @@ CPyL3: ;
     cpy_r_r8 = CPyImport_ImportFromMany(cpy_r_r6, cpy_r_r5, cpy_r_r5, cpy_r_r7);
     if (unlikely(cpy_r_r8 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
     CPyModule_typing = cpy_r_r8;
     CPy_INCREF(CPyModule_typing);
@@ -30443,174 +30434,163 @@ CPyL3: ;
     cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
     CPyModule_eth_typing = cpy_r_r12;
     CPy_INCREF(CPyModule_eth_typing);
     CPy_DECREF(cpy_r_r12);
-    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('assoc',) */
-    cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_eth_utils.toolz' */
+    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('HexBytes',) */
+    cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_hexbytes' */
     cpy_r_r15 = CPyStatic_async_transactions___globals;
     cpy_r_r16 = CPyImport_ImportFromMany(cpy_r_r14, cpy_r_r13, cpy_r_r13, cpy_r_r15);
     if (unlikely(cpy_r_r16 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_eth_utils___toolz = cpy_r_r16;
-    CPy_INCREF(CPyModule_faster_eth_utils___toolz);
+    CPyModule_faster_hexbytes = cpy_r_r16;
+    CPy_INCREF(CPyModule_faster_hexbytes);
     CPy_DECREF(cpy_r_r16);
-    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('HexBytes',) */
-    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_hexbytes' */
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('prepare_replacement_transaction',) */
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3._utils.transactions' */
     cpy_r_r19 = CPyStatic_async_transactions___globals;
     cpy_r_r20 = CPyImport_ImportFromMany(cpy_r_r18, cpy_r_r17, cpy_r_r17, cpy_r_r19);
     if (unlikely(cpy_r_r20 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_hexbytes = cpy_r_r20;
-    CPy_INCREF(CPyModule_faster_hexbytes);
+    CPyModule_faster_web3____utils___transactions = cpy_r_r20;
+    CPy_INCREF(CPyModule_faster_web3____utils___transactions);
     CPy_DECREF(cpy_r_r20);
-    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('prepare_replacement_transaction',) */
-    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3._utils.transactions' */
+    cpy_r_r21 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('any_in_dict',) */
+    cpy_r_r22 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3._utils.utility_methods' */
     cpy_r_r23 = CPyStatic_async_transactions___globals;
     cpy_r_r24 = CPyImport_ImportFromMany(cpy_r_r22, cpy_r_r21, cpy_r_r21, cpy_r_r23);
     if (unlikely(cpy_r_r24 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_web3____utils___transactions = cpy_r_r24;
-    CPy_INCREF(CPyModule_faster_web3____utils___transactions);
+    CPyModule_faster_web3____utils___utility_methods = cpy_r_r24;
+    CPy_INCREF(CPyModule_faster_web3____utils___utility_methods);
     CPy_DECREF(cpy_r_r24);
-    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('any_in_dict',) */
-    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3._utils.utility_methods' */
+    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('DYNAMIC_FEE_TXN_PARAMS',) */
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.constants' */
     cpy_r_r27 = CPyStatic_async_transactions___globals;
     cpy_r_r28 = CPyImport_ImportFromMany(cpy_r_r26, cpy_r_r25, cpy_r_r25, cpy_r_r27);
     if (unlikely(cpy_r_r28 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_web3____utils___utility_methods = cpy_r_r28;
-    CPy_INCREF(CPyModule_faster_web3____utils___utility_methods);
+    CPyModule_faster_web3___constants = cpy_r_r28;
+    CPy_INCREF(CPyModule_faster_web3___constants);
     CPy_DECREF(cpy_r_r28);
-    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('DYNAMIC_FEE_TXN_PARAMS',) */
-    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.constants' */
+    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Web3ValueError',) */
+    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
     cpy_r_r31 = CPyStatic_async_transactions___globals;
     cpy_r_r32 = CPyImport_ImportFromMany(cpy_r_r30, cpy_r_r29, cpy_r_r29, cpy_r_r31);
     if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_web3___constants = cpy_r_r32;
-    CPy_INCREF(CPyModule_faster_web3___constants);
+    CPyModule_faster_web3___exceptions = cpy_r_r32;
+    CPy_INCREF(CPyModule_faster_web3___exceptions);
     CPy_DECREF(cpy_r_r32);
-    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Web3ValueError',) */
-    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
+    cpy_r_r33 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BlockIdentifier', 'TxData', 'TxParams', 'Wei',
+                                     '_Hash32') */
+    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
     cpy_r_r35 = CPyStatic_async_transactions___globals;
     cpy_r_r36 = CPyImport_ImportFromMany(cpy_r_r34, cpy_r_r33, cpy_r_r33, cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyModule_faster_web3___exceptions = cpy_r_r36;
-    CPy_INCREF(CPyModule_faster_web3___exceptions);
-    CPy_DECREF(cpy_r_r36);
-    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BlockIdentifier', 'TxData', 'TxParams', 'Wei',
-                                     '_Hash32') */
-    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
-    cpy_r_r39 = CPyStatic_async_transactions___globals;
-    cpy_r_r40 = CPyImport_ImportFromMany(cpy_r_r38, cpy_r_r37, cpy_r_r37, cpy_r_r39);
-    if (unlikely(cpy_r_r40 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
-    }
-    CPyModule_faster_web3___types = cpy_r_r40;
+    CPyModule_faster_web3___types = cpy_r_r36;
     CPy_INCREF(CPyModule_faster_web3___types);
-    CPy_DECREF(cpy_r_r40);
-    cpy_r_r41 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
-    cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
-    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* b'' */
-    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gas' */
-    cpy_r_r45 = CPyStatic_async_transactions___globals;
-    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_estimate_gas' */
-    cpy_r_r47 = CPyDict_GetItem(cpy_r_r45, cpy_r_r46);
-    if (unlikely(cpy_r_r47 == NULL)) {
+    CPy_DECREF(cpy_r_r36);
+    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'value' */
+    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'data' */
+    cpy_r_r39 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* b'' */
+    cpy_r_r40 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gas' */
+    cpy_r_r41 = CPyStatic_async_transactions___globals;
+    cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_estimate_gas' */
+    cpy_r_r43 = CPyDict_GetItem(cpy_r_r41, cpy_r_r42);
+    if (unlikely(cpy_r_r43 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
+        goto CPyL20;
+    }
+    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
+    cpy_r_r45 = CPyDef_async_transactions_____mypyc_lambda__0_obj();
+    if (unlikely(cpy_r_r45 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
         goto CPyL21;
     }
-    cpy_r_r48 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
-    cpy_r_r49 = CPyDef_async_transactions_____mypyc_lambda__0_obj();
+    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'maxPriorityFeePerGas' */
+    cpy_r_r47 = CPyStatic_async_transactions___globals;
+    cpy_r_r48 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_max_priority_fee_gas' */
+    cpy_r_r49 = CPyDict_GetItem(cpy_r_r47, cpy_r_r48);
     if (unlikely(cpy_r_r49 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
         goto CPyL22;
     }
-    cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'maxPriorityFeePerGas' */
+    cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'maxFeePerGas' */
     cpy_r_r51 = CPyStatic_async_transactions___globals;
-    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_max_priority_fee_gas' */
+    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_max_fee_per_gas' */
     cpy_r_r53 = CPyDict_GetItem(cpy_r_r51, cpy_r_r52);
     if (unlikely(cpy_r_r53 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
         goto CPyL23;
     }
-    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'maxFeePerGas' */
+    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'chainId' */
     cpy_r_r55 = CPyStatic_async_transactions___globals;
-    cpy_r_r56 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_max_fee_per_gas' */
+    cpy_r_r56 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_chain_id' */
     cpy_r_r57 = CPyDict_GetItem(cpy_r_r55, cpy_r_r56);
     if (unlikely(cpy_r_r57 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
         goto CPyL24;
     }
-    cpy_r_r58 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'chainId' */
-    cpy_r_r59 = CPyStatic_async_transactions___globals;
-    cpy_r_r60 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_chain_id' */
-    cpy_r_r61 = CPyDict_GetItem(cpy_r_r59, cpy_r_r60);
-    if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL25;
-    }
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 0 */
-    cpy_r_r63 = CPyDict_Build(7, cpy_r_r41, cpy_r_r62, cpy_r_r42, cpy_r_r43, cpy_r_r44, cpy_r_r47, cpy_r_r48, cpy_r_r49, cpy_r_r50, cpy_r_r53, cpy_r_r54, cpy_r_r57, cpy_r_r58, cpy_r_r61);
-    CPy_DECREF(cpy_r_r47);
-    CPy_DECREF_NO_IMM(cpy_r_r49);
+    cpy_r_r58 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 0 */
+    cpy_r_r59 = CPyDict_Build(7, cpy_r_r37, cpy_r_r58, cpy_r_r38, cpy_r_r39, cpy_r_r40, cpy_r_r43, cpy_r_r44, cpy_r_r45, cpy_r_r46, cpy_r_r49, cpy_r_r50, cpy_r_r53, cpy_r_r54, cpy_r_r57);
+    CPy_DECREF(cpy_r_r43);
+    CPy_DECREF_NO_IMM(cpy_r_r45);
+    CPy_DECREF(cpy_r_r49);
     CPy_DECREF(cpy_r_r53);
     CPy_DECREF(cpy_r_r57);
-    CPy_DECREF(cpy_r_r61);
-    if (unlikely(cpy_r_r63 == NULL)) {
+    if (unlikely(cpy_r_r59 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
-    CPyStatic_async_transactions___TRANSACTION_DEFAULTS = cpy_r_r63;
+    CPyStatic_async_transactions___TRANSACTION_DEFAULTS = cpy_r_r59;
     CPy_INCREF(CPyStatic_async_transactions___TRANSACTION_DEFAULTS);
-    cpy_r_r64 = CPyStatic_async_transactions___globals;
-    cpy_r_r65 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TRANSACTION_DEFAULTS' */
-    cpy_r_r66 = CPyDict_SetItem(cpy_r_r64, cpy_r_r65, cpy_r_r63);
-    CPy_DECREF(cpy_r_r63);
-    cpy_r_r67 = cpy_r_r66 >= 0;
-    if (unlikely(!cpy_r_r67)) {
+    cpy_r_r60 = CPyStatic_async_transactions___globals;
+    cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TRANSACTION_DEFAULTS' */
+    cpy_r_r62 = CPyDict_SetItem(cpy_r_r60, cpy_r_r61, cpy_r_r59);
+    CPy_DECREF(cpy_r_r59);
+    cpy_r_r63 = cpy_r_r62 >= 0;
+    if (unlikely(!cpy_r_r63)) {
         CPy_AddTraceback("faster_web3/_utils/async_transactions.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_async_transactions___globals);
-        goto CPyL21;
+        goto CPyL20;
     }
     return 1;
+CPyL20: ;
+    cpy_r_r64 = 2;
+    return cpy_r_r64;
 CPyL21: ;
-    cpy_r_r68 = 2;
-    return cpy_r_r68;
+    CPy_DecRef(cpy_r_r43);
+    goto CPyL20;
 CPyL22: ;
-    CPy_DecRef(cpy_r_r47);
-    goto CPyL21;
+    CPy_DecRef(cpy_r_r43);
+    CPy_DecRef(cpy_r_r45);
+    goto CPyL20;
 CPyL23: ;
-    CPy_DecRef(cpy_r_r47);
+    CPy_DecRef(cpy_r_r43);
+    CPy_DecRef(cpy_r_r45);
     CPy_DecRef(cpy_r_r49);
-    goto CPyL21;
+    goto CPyL20;
 CPyL24: ;
-    CPy_DecRef(cpy_r_r47);
+    CPy_DecRef(cpy_r_r43);
+    CPy_DecRef(cpy_r_r45);
     CPy_DecRef(cpy_r_r49);
     CPy_DecRef(cpy_r_r53);
-    goto CPyL21;
-CPyL25: ;
-    CPy_DecRef(cpy_r_r47);
-    CPy_DecRef(cpy_r_r49);
-    CPy_DecRef(cpy_r_r53);
-    CPy_DecRef(cpy_r_r57);
-    goto CPyL21;
+    goto CPyL20;
 }
 
 static int
@@ -109206,7 +109186,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -226717,7 +226697,7 @@ PyObject *CPyDef_middleware___to_integer_if_hex(PyObject *cpy_r_value) {
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r1 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "to_integer_if_hex", 75, CPyStatic_middleware___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "to_integer_if_hex", 74, CPyStatic_middleware___globals, "str", cpy_r_value);
         goto CPyL7;
     }
     cpy_r_r2 = CPyDef_formatters___hex_to_integer(cpy_r_r1);
@@ -226905,7 +226885,7 @@ CPyL7: ;
     if (likely(PyUnicode_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 365, CPyStatic_middleware___globals, "str", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 364, CPyStatic_middleware___globals, "str", cpy_r_r13);
         goto CPyL14;
     }
     cpy_r_r15 = cpy_r_r14;
@@ -226917,7 +226897,7 @@ CPyL12: ;
     if (likely(cpy_r_r15 != Py_None))
         cpy_r_r17 = cpy_r_r15;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 365, CPyStatic_middleware___globals, "str", cpy_r_r15);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "guess_from", 364, CPyStatic_middleware___globals, "str", cpy_r_r15);
         goto CPyL14;
     }
     return cpy_r_r17;
@@ -226956,77 +226936,58 @@ fail: ;
 }
 
 PyObject *CPyDef_middleware___fill_default(PyObject *cpy_r_field, PyObject *cpy_r_guess_func, PyObject *cpy_r_w3, PyObject *cpy_r_transaction) {
-    int32_t cpy_r_r0;
-    char cpy_r_r1;
+    PyObject *cpy_r_r0;
+    PyObject *cpy_r_r1;
     char cpy_r_r2;
-    PyObject *cpy_r_r3;
-    PyObject *cpy_r_r4;
-    char cpy_r_r5;
-    PyObject **cpy_r_r7;
-    PyObject *cpy_r_r8;
+    PyObject **cpy_r_r4;
+    PyObject *cpy_r_r5;
+    PyObject *cpy_r_r6;
+    int32_t cpy_r_r7;
+    char cpy_r_r8;
     PyObject *cpy_r_r9;
-    PyObject *cpy_r_r10;
-    PyObject *cpy_r_r11;
-    PyObject **cpy_r_r13;
-    PyObject *cpy_r_r14;
-    PyObject *cpy_r_r15;
-    PyObject *cpy_r_r16;
-    cpy_r_r0 = PyDict_Contains(cpy_r_transaction, cpy_r_field);
-    cpy_r_r1 = cpy_r_r0 >= 0;
-    if (unlikely(!cpy_r_r1)) {
+    cpy_r_r0 = CPyDict_GetWithNone(cpy_r_transaction, cpy_r_field);
+    if (unlikely(cpy_r_r0 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL10;
+        goto CPyL6;
     }
-    cpy_r_r2 = cpy_r_r0;
-    if (!cpy_r_r2) goto CPyL5;
-    cpy_r_r3 = CPyDict_GetItem(cpy_r_transaction, cpy_r_field);
-    if (unlikely(cpy_r_r3 == NULL)) {
+    cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r2 = cpy_r_r0 == cpy_r_r1;
+    CPy_DECREF(cpy_r_r0);
+    if (!cpy_r_r2) goto CPyL7;
+    PyObject *cpy_r_r3[2] = {cpy_r_w3, cpy_r_transaction};
+    cpy_r_r4 = (PyObject **)&cpy_r_r3;
+    cpy_r_r5 = PyObject_Vectorcall(cpy_r_guess_func, cpy_r_r4, 2, 0);
+    if (unlikely(cpy_r_r5 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL10;
+        goto CPyL6;
     }
-    cpy_r_r4 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r5 = cpy_r_r3 != cpy_r_r4;
-    CPy_DECREF(cpy_r_r3);
-    if (!cpy_r_r5) goto CPyL5;
-    CPy_INCREF(cpy_r_transaction);
-    return cpy_r_transaction;
+    cpy_r_r6 = CPyDict_Copy(cpy_r_transaction);
+    if (unlikely(cpy_r_r6 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL8;
+    }
+    cpy_r_transaction = cpy_r_r6;
+    cpy_r_r7 = CPyDict_SetItem(cpy_r_transaction, cpy_r_field, cpy_r_r5);
+    CPy_DECREF(cpy_r_r5);
+    cpy_r_r8 = cpy_r_r7 >= 0;
+    if (unlikely(!cpy_r_r8)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL9;
+    }
 CPyL5: ;
-    PyObject *cpy_r_r6[2] = {cpy_r_w3, cpy_r_transaction};
-    cpy_r_r7 = (PyObject **)&cpy_r_r6;
-    cpy_r_r8 = PyObject_Vectorcall(cpy_r_guess_func, cpy_r_r7, 2, 0);
-    if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL10;
-    }
-    cpy_r_r9 = CPyStatic_middleware___globals;
-    cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'assoc' */
-    cpy_r_r11 = CPyDict_GetItem(cpy_r_r9, cpy_r_r10);
-    if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL11;
-    }
-    PyObject *cpy_r_r12[3] = {cpy_r_transaction, cpy_r_field, cpy_r_r8};
-    cpy_r_r13 = (PyObject **)&cpy_r_r12;
-    cpy_r_r14 = PyObject_Vectorcall(cpy_r_r11, cpy_r_r13, 3, 0);
-    CPy_DECREF(cpy_r_r11);
-    if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL11;
-    }
-    CPy_DECREF(cpy_r_r8);
-    if (likely(PyDict_Check(cpy_r_r14)))
-        cpy_r_r15 = cpy_r_r14;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "fill_default", 377, CPyStatic_middleware___globals, "dict", cpy_r_r14);
-        goto CPyL10;
-    }
-    return cpy_r_r15;
-CPyL10: ;
-    cpy_r_r16 = NULL;
-    return cpy_r_r16;
-CPyL11: ;
-    CPy_DecRef(cpy_r_r8);
-    goto CPyL10;
+    return cpy_r_transaction;
+CPyL6: ;
+    cpy_r_r9 = NULL;
+    return cpy_r_r9;
+CPyL7: ;
+    CPy_INCREF(cpy_r_transaction);
+    goto CPyL5;
+CPyL8: ;
+    CPy_DecRef(cpy_r_r5);
+    goto CPyL6;
+CPyL9: ;
+    CPy_DecRef(cpy_r_transaction);
+    goto CPyL6;
 }
 
 PyObject *CPyPy_middleware___fill_default(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -227099,32 +227060,24 @@ PyObject *CPyDef_middleware___async_guess_from_gen_____mypyc_generator_helper__(
     PyObject *cpy_r_r33;
     char cpy_r_r34;
     PyObject *cpy_r_r35;
-    PyObject *cpy_r_r36;
+    int32_t cpy_r_r36;
     char cpy_r_r37;
-    PyObject *cpy_r_r38;
-    CPyTagged cpy_r_r39;
-    int64_t cpy_r_r40;
-    char cpy_r_r41;
-    int64_t cpy_r_r42;
-    char cpy_r_r43;
-    char cpy_r_r44;
+    char cpy_r_r38;
+    PyObject *cpy_r_r39;
+    PyObject *cpy_r_r40;
+    PyObject *cpy_r_r41;
+    PyObject *cpy_r_r42;
+    PyObject *cpy_r_r43;
+    PyObject *cpy_r_r44;
     char cpy_r_r45;
     char cpy_r_r46;
-    PyObject *cpy_r_r47;
-    PyObject *cpy_r_r48;
+    char cpy_r_r47;
+    char cpy_r_r48;
     PyObject *cpy_r_r49;
-    PyObject *cpy_r_r50;
-    char cpy_r_r51;
-    PyObject *cpy_r_r52;
-    char cpy_r_r53;
-    char cpy_r_r54;
-    char cpy_r_r55;
-    char cpy_r_r56;
-    PyObject *cpy_r_r57;
     cpy_r_r0 = NULL;
     cpy_r_r1 = cpy_r_r0;
     cpy_r_r2 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL58;
+    goto CPyL49;
 CPyL1: ;
     cpy_r_r3 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r4 = cpy_r_type != cpy_r_r3;
@@ -227132,14 +227085,14 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r5 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "async_w3", 386, CPyStatic_middleware___globals);
-        goto CPyL62;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "async_w3", 384, CPyStatic_middleware___globals);
+        goto CPyL53;
     }
     CPy_INCREF(cpy_r_r5);
 CPyL5: ;
@@ -227148,20 +227101,20 @@ CPyL5: ;
     CPy_DECREF(cpy_r_r5);
     if (unlikely(cpy_r_r7 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r8 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'accounts' */
     cpy_r_r9 = CPyObject_GetAttr(cpy_r_r7, cpy_r_r8);
     CPy_DECREF(cpy_r_r7);
     if (unlikely(cpy_r_r9 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r10 = CPy_GetCoro(cpy_r_r9);
     CPy_DECREF(cpy_r_r9);
     if (unlikely(cpy_r_r10 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     if (((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0 != NULL) {
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0);
@@ -227170,12 +227123,12 @@ CPyL5: ;
     cpy_r_r11 = 1;
     if (unlikely(!cpy_r_r11)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", -1, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r12 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__0", -1, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     CPy_INCREF(cpy_r_r12);
 CPyL10: ;
@@ -227185,7 +227138,7 @@ CPyL10: ;
     cpy_r_r14 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r14 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r15 = cpy_r_r14;
     cpy_r_r16 = NULL;
@@ -227196,7 +227149,7 @@ CPyL10: ;
     cpy_r_r17 = 1;
     if (unlikely(!cpy_r_r17)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL63;
+        goto CPyL54;
     } else
         goto CPyL35;
 CPyL13: ;
@@ -227207,13 +227160,13 @@ CPyL14: ;
 CPyL15: ;
     cpy_r_r20 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r21 = cpy_r_type != cpy_r_r20;
-    if (!cpy_r_r21) goto CPyL64;
+    if (!cpy_r_r21) goto CPyL55;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
         goto CPyL19;
     } else
-        goto CPyL65;
+        goto CPyL56;
 CPyL17: ;
     CPy_Unreachable();
 CPyL18: ;
@@ -227230,13 +227183,13 @@ CPyL19: ;
     cpy_r_r23 = 1;
     if (unlikely(!cpy_r_r23)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", -1, CPyStatic_middleware___globals);
-        goto CPyL66;
+        goto CPyL57;
     }
     cpy_r_r24 = (PyObject **)&cpy_r_r1;
     cpy_r_r25 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
     if (unlikely(cpy_r_r25 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__0", -1, CPyStatic_middleware___globals);
-        goto CPyL66;
+        goto CPyL57;
     }
     CPy_INCREF(cpy_r_r25);
 CPyL21: ;
@@ -227244,14 +227197,14 @@ CPyL21: ;
     CPy_DecRef(cpy_r_r25);
     if (unlikely(cpy_r_r26 == 2)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL66;
+        goto CPyL57;
     }
     if (cpy_r_r26) goto CPyL25;
     cpy_r_r18 = cpy_r_r1;
     cpy_r_r27 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r27.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__1", -1, CPyStatic_middleware___globals);
-        goto CPyL67;
+        goto CPyL58;
     }
     CPy_INCREF(cpy_r_r27.f0);
     CPy_INCREF(cpy_r_r27.f1);
@@ -227267,7 +227220,7 @@ CPyL25: ;
     cpy_r_r28 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r28.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__1", -1, CPyStatic_middleware___globals);
-        goto CPyL68;
+        goto CPyL59;
     }
     CPy_INCREF(cpy_r_r28.f0);
     CPy_INCREF(cpy_r_r28.f1);
@@ -227282,7 +227235,7 @@ CPyL27: ;
     cpy_r_r29 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r29.f0 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__1", -1, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     CPy_INCREF(cpy_r_r29.f0);
     CPy_INCREF(cpy_r_r29.f1);
@@ -227293,13 +227246,13 @@ CPyL28: ;
     CPy_DecRef(cpy_r_r29.f1);
     CPy_DecRef(cpy_r_r29.f2);
     cpy_r_r30 = CPy_KeepPropagating();
-    if (!cpy_r_r30) goto CPyL62;
+    if (!cpy_r_r30) goto CPyL53;
     CPy_Unreachable();
 CPyL30: ;
     cpy_r_r31 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0;
     if (unlikely(cpy_r_r31 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "__mypyc_temp__0", -1, CPyStatic_middleware___globals);
-        goto CPyL69;
+        goto CPyL60;
     }
     CPy_INCREF(cpy_r_r31);
 CPyL31: ;
@@ -227313,7 +227266,7 @@ CPyL33: ;
     cpy_r_r33 = CPy_FetchStopIterationValue();
     if (unlikely(cpy_r_r33 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r15 = cpy_r_r33;
 CPyL35: ;
@@ -227324,133 +227277,105 @@ CPyL35: ;
     cpy_r_r34 = 1;
     if (unlikely(!cpy_r_r34)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
     cpy_r_r35 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
     if (unlikely(cpy_r_r35 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 387, CPyStatic_middleware___globals);
-        goto CPyL62;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 385, CPyStatic_middleware___globals);
+        goto CPyL53;
     }
     CPy_INCREF(cpy_r_r35);
 CPyL37: ;
-    cpy_r_r36 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r37 = cpy_r_r35 != cpy_r_r36;
+    cpy_r_r36 = PyObject_IsTrue(cpy_r_r35);
     CPy_DECREF(cpy_r_r35);
-    if (!cpy_r_r37) goto CPyL53;
-    cpy_r_r38 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
-    if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 387, CPyStatic_middleware___globals);
-        goto CPyL62;
-    }
-    CPy_INCREF(cpy_r_r38);
-CPyL39: ;
-    cpy_r_r39 = CPyObject_Size(cpy_r_r38);
-    CPy_DECREF(cpy_r_r38);
-    if (unlikely(cpy_r_r39 == CPY_INT_TAG)) {
+    cpy_r_r37 = cpy_r_r36 >= 0;
+    if (unlikely(!cpy_r_r37)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
+        goto CPyL53;
     }
-    cpy_r_r40 = cpy_r_r39 & 1;
-    cpy_r_r41 = cpy_r_r40 != 0;
-    if (cpy_r_r41) goto CPyL42;
-    cpy_r_r42 = 0 & 1;
-    cpy_r_r43 = cpy_r_r42 != 0;
-    if (!cpy_r_r43) goto CPyL43;
-CPyL42: ;
-    cpy_r_r44 = CPyTagged_IsLt_(0, cpy_r_r39);
-    cpy_r_r45 = cpy_r_r44;
+    cpy_r_r38 = cpy_r_r36;
+    if (!cpy_r_r38) goto CPyL43;
+    cpy_r_r39 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
+    if (unlikely(cpy_r_r39 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 385, CPyStatic_middleware___globals);
+        goto CPyL53;
+    }
+    CPy_INCREF(cpy_r_r39);
+CPyL40: ;
+    cpy_r_r40 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 0 */
+    cpy_r_r41 = PyObject_GetItem(cpy_r_r39, cpy_r_r40);
+    CPy_DECREF(cpy_r_r39);
+    if (unlikely(cpy_r_r41 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL53;
+    }
+    if (likely(PyUnicode_Check(cpy_r_r41)))
+        cpy_r_r42 = cpy_r_r41;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", 385, CPyStatic_middleware___globals, "str", cpy_r_r41);
+        goto CPyL53;
+    }
+    cpy_r_r43 = cpy_r_r42;
     goto CPyL44;
 CPyL43: ;
-    cpy_r_r46 = (Py_ssize_t)cpy_r_r39 > (Py_ssize_t)0;
-    cpy_r_r45 = cpy_r_r46;
+    cpy_r_r44 = Py_None;
+    cpy_r_r43 = cpy_r_r44;
 CPyL44: ;
-    CPyTagged_DECREF(cpy_r_r39);
-    if (!cpy_r_r45) goto CPyL53;
-    cpy_r_r47 = ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__accounts;
-    if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", "async_guess_from_gen", "accounts", 388, CPyStatic_middleware___globals);
-        goto CPyL62;
-    }
-    CPy_INCREF(cpy_r_r47);
-CPyL46: ;
-    cpy_r_r48 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 0 */
-    cpy_r_r49 = PyObject_GetItem(cpy_r_r47, cpy_r_r48);
-    CPy_DECREF(cpy_r_r47);
-    if (unlikely(cpy_r_r49 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL62;
-    }
-    if (likely(PyUnicode_Check(cpy_r_r49)))
-        cpy_r_r50 = cpy_r_r49;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", 388, CPyStatic_middleware___globals, "str", cpy_r_r49);
-        goto CPyL62;
-    }
     ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL52;
-    CPyGen_SetStopIterationValue(cpy_r_r50);
-    CPy_DECREF(cpy_r_r50);
-    if (!0) goto CPyL62;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL48;
+    CPyGen_SetStopIterationValue(cpy_r_r43);
+    CPy_DECREF(cpy_r_r43);
+    if (!0) goto CPyL53;
     CPy_Unreachable();
-CPyL52: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r50;
+CPyL48: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r43;
     return 0;
-CPyL53: ;
-    cpy_r_r52 = Py_None;
-    ((faster_web3___providers___eth_tester___middleware___async_guess_from_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL57;
-    CPyGen_SetStopIterationValue(cpy_r_r52);
-    if (!0) goto CPyL62;
-    CPy_Unreachable();
-CPyL57: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r52;
-    return 0;
-CPyL58: ;
-    cpy_r_r54 = cpy_r_r2 == 0;
-    if (cpy_r_r54) goto CPyL70;
-    cpy_r_r55 = cpy_r_r2 == 1;
-    if (cpy_r_r55) {
+CPyL49: ;
+    cpy_r_r46 = cpy_r_r2 == 0;
+    if (cpy_r_r46) goto CPyL61;
+    cpy_r_r47 = cpy_r_r2 == 1;
+    if (cpy_r_r47) {
         goto CPyL15;
     } else
-        goto CPyL71;
-CPyL60: ;
-    PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r56 = 0;
-    if (unlikely(!cpy_r_r56)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
         goto CPyL62;
+CPyL51: ;
+    PyErr_SetNone(PyExc_StopIteration);
+    cpy_r_r48 = 0;
+    if (unlikely(!cpy_r_r48)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_guess_from", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL53;
     }
     CPy_Unreachable();
-CPyL62: ;
-    cpy_r_r57 = NULL;
-    return cpy_r_r57;
-CPyL63: ;
+CPyL53: ;
+    cpy_r_r49 = NULL;
+    return cpy_r_r49;
+CPyL54: ;
     CPy_DecRef(cpy_r_r15);
-    goto CPyL62;
-CPyL64: ;
+    goto CPyL53;
+CPyL55: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL18;
-CPyL65: ;
+CPyL56: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL17;
-CPyL66: ;
+CPyL57: ;
     CPy_XDecRef(cpy_r_r1);
     goto CPyL27;
-CPyL67: ;
+CPyL58: ;
     CPy_DecRef(cpy_r_r18);
     goto CPyL27;
-CPyL68: ;
+CPyL59: ;
     CPy_DecRef(cpy_r_r15);
     goto CPyL27;
-CPyL69: ;
+CPyL60: ;
     CPy_DecRef(cpy_r_arg);
-    goto CPyL62;
-CPyL70: ;
+    goto CPyL53;
+CPyL61: ;
     CPy_XDECREF(cpy_r_r1);
     goto CPyL1;
-CPyL71: ;
+CPyL62: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL60;
+    goto CPyL51;
 }
 
 PyObject *CPyDef_middleware___async_guess_from_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -227813,63 +227738,57 @@ PyObject *CPyDef_middleware___async_fill_default_gen_____mypyc_generator_helper_
     char cpy_r_r4;
     PyObject *cpy_r_r5;
     PyObject *cpy_r_r6;
-    int32_t cpy_r_r7;
-    char cpy_r_r8;
+    PyObject *cpy_r_r7;
+    PyObject *cpy_r_r8;
     char cpy_r_r9;
     PyObject *cpy_r_r10;
     PyObject *cpy_r_r11;
     PyObject *cpy_r_r12;
-    PyObject *cpy_r_r13;
-    char cpy_r_r14;
+    PyObject **cpy_r_r14;
     PyObject *cpy_r_r15;
-    char cpy_r_r16;
-    PyObject *cpy_r_r17;
+    PyObject *cpy_r_r16;
+    char cpy_r_r17;
     PyObject *cpy_r_r18;
     PyObject *cpy_r_r19;
-    PyObject **cpy_r_r21;
+    PyObject *cpy_r_r20;
+    PyObject *cpy_r_r21;
     PyObject *cpy_r_r22;
-    PyObject *cpy_r_r23;
-    char cpy_r_r24;
-    PyObject *cpy_r_r25;
+    char cpy_r_r23;
+    PyObject *cpy_r_r24;
+    char cpy_r_r25;
     PyObject *cpy_r_r26;
-    PyObject *cpy_r_r27;
-    PyObject *cpy_r_r28;
-    PyObject *cpy_r_r29;
-    char cpy_r_r30;
+    char cpy_r_r27;
+    tuple_T3OOO cpy_r_r28;
+    char cpy_r_r29;
+    PyObject **cpy_r_r30;
     PyObject *cpy_r_r31;
     char cpy_r_r32;
-    PyObject *cpy_r_r33;
-    char cpy_r_r34;
+    tuple_T3OOO cpy_r_r33;
+    tuple_T3OOO cpy_r_r34;
     tuple_T3OOO cpy_r_r35;
     char cpy_r_r36;
-    PyObject **cpy_r_r37;
+    PyObject *cpy_r_r37;
     PyObject *cpy_r_r38;
-    char cpy_r_r39;
-    tuple_T3OOO cpy_r_r40;
-    tuple_T3OOO cpy_r_r41;
-    tuple_T3OOO cpy_r_r42;
+    PyObject *cpy_r_r39;
+    char cpy_r_r40;
+    PyObject *cpy_r_r41;
+    PyObject *cpy_r_r42;
     char cpy_r_r43;
     PyObject *cpy_r_r44;
     PyObject *cpy_r_r45;
     PyObject *cpy_r_r46;
-    char cpy_r_r47;
-    PyObject *cpy_r_r48;
+    int32_t cpy_r_r47;
+    char cpy_r_r48;
     PyObject *cpy_r_r49;
-    PyObject *cpy_r_r50;
-    PyObject *cpy_r_r51;
-    PyObject *cpy_r_r52;
-    PyObject *cpy_r_r53;
-    PyObject **cpy_r_r55;
-    PyObject *cpy_r_r56;
-    char cpy_r_r57;
-    char cpy_r_r58;
-    char cpy_r_r59;
-    char cpy_r_r60;
-    PyObject *cpy_r_r61;
+    char cpy_r_r50;
+    char cpy_r_r51;
+    char cpy_r_r52;
+    char cpy_r_r53;
+    PyObject *cpy_r_r54;
     cpy_r_r0 = NULL;
     cpy_r_r1 = cpy_r_r0;
     cpy_r_r2 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL61;
+    goto CPyL54;
 CPyL1: ;
     cpy_r_r3 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r4 = cpy_r_type != cpy_r_r3;
@@ -227877,395 +227796,367 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
     CPy_Unreachable();
 CPyL4: ;
-    cpy_r_r5 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
+    cpy_r_r5 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r5 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 400, CPyStatic_middleware___globals);
-        goto CPyL65;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 395, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
     CPy_INCREF(cpy_r_r5);
 CPyL5: ;
-    cpy_r_r6 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    cpy_r_r6 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 400, CPyStatic_middleware___globals);
-        goto CPyL66;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 395, CPyStatic_middleware___globals);
+        goto CPyL59;
     }
     CPy_INCREF(cpy_r_r6);
 CPyL6: ;
-    cpy_r_r7 = PyDict_Contains(cpy_r_r6, cpy_r_r5);
-    CPy_DECREF(cpy_r_r6);
+    cpy_r_r7 = CPyDict_GetWithNone(cpy_r_r5, cpy_r_r6);
     CPy_DECREF(cpy_r_r5);
-    cpy_r_r8 = cpy_r_r7 >= 0;
-    if (unlikely(!cpy_r_r8)) {
+    CPy_DECREF(cpy_r_r6);
+    if (unlikely(cpy_r_r7 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
-    cpy_r_r9 = cpy_r_r7;
-    if (!cpy_r_r9) goto CPyL18;
-    cpy_r_r10 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    cpy_r_r8 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r9 = cpy_r_r7 == cpy_r_r8;
+    CPy_DECREF(cpy_r_r7);
+    if (!cpy_r_r9) goto CPyL48;
+    cpy_r_r10 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
     if (unlikely(cpy_r_r10 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 400, CPyStatic_middleware___globals);
-        goto CPyL65;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "async_w3", 396, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
     CPy_INCREF(cpy_r_r10);
 CPyL9: ;
-    cpy_r_r11 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
+    cpy_r_r11 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r11 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 400, CPyStatic_middleware___globals);
-        goto CPyL67;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 396, CPyStatic_middleware___globals);
+        goto CPyL60;
     }
     CPy_INCREF(cpy_r_r11);
 CPyL10: ;
-    cpy_r_r12 = CPyDict_GetItem(cpy_r_r10, cpy_r_r11);
+    cpy_r_r12 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_func;
+    if (unlikely(cpy_r_r12 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_func", 396, CPyStatic_middleware___globals);
+        goto CPyL61;
+    }
+    CPy_INCREF(cpy_r_r12);
+CPyL11: ;
+    PyObject *cpy_r_r13[2] = {cpy_r_r10, cpy_r_r11};
+    cpy_r_r14 = (PyObject **)&cpy_r_r13;
+    cpy_r_r15 = PyObject_Vectorcall(cpy_r_r12, cpy_r_r14, 2, 0);
+    CPy_DECREF(cpy_r_r12);
+    if (unlikely(cpy_r_r15 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL61;
+    }
     CPy_DECREF(cpy_r_r10);
     CPy_DECREF(cpy_r_r11);
-    if (unlikely(cpy_r_r12 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
-    }
-    cpy_r_r13 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r14 = cpy_r_r12 != cpy_r_r13;
-    CPy_DECREF(cpy_r_r12);
-    if (!cpy_r_r14) goto CPyL18;
-    cpy_r_r15 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
-    if (unlikely(cpy_r_r15 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 401, CPyStatic_middleware___globals);
-        goto CPyL65;
-    }
-    CPy_INCREF(cpy_r_r15);
-CPyL13: ;
-    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL17;
-    CPyGen_SetStopIterationValue(cpy_r_r15);
+    cpy_r_r16 = CPy_GetCoro(cpy_r_r15);
     CPy_DECREF(cpy_r_r15);
-    if (!0) goto CPyL65;
-    CPy_Unreachable();
-CPyL17: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r15;
-    return 0;
-CPyL18: ;
-    cpy_r_r17 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__async_w3;
-    if (unlikely(cpy_r_r17 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "async_w3", 403, CPyStatic_middleware___globals);
-        goto CPyL65;
+    if (unlikely(cpy_r_r16 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
-    CPy_INCREF(cpy_r_r17);
-CPyL19: ;
-    cpy_r_r18 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 != NULL) {
+        CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2);
+    }
+    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 = cpy_r_r16;
+    cpy_r_r17 = 1;
+    if (unlikely(!cpy_r_r17)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", -1, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+    cpy_r_r18 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
     if (unlikely(cpy_r_r18 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 403, CPyStatic_middleware___globals);
-        goto CPyL68;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__2", -1, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
     CPy_INCREF(cpy_r_r18);
-CPyL20: ;
-    cpy_r_r19 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_func;
-    if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_func", 403, CPyStatic_middleware___globals);
-        goto CPyL69;
-    }
-    CPy_INCREF(cpy_r_r19);
-CPyL21: ;
-    PyObject *cpy_r_r20[2] = {cpy_r_r17, cpy_r_r18};
-    cpy_r_r21 = (PyObject **)&cpy_r_r20;
-    cpy_r_r22 = PyObject_Vectorcall(cpy_r_r19, cpy_r_r21, 2, 0);
-    CPy_DECREF(cpy_r_r19);
-    if (unlikely(cpy_r_r22 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL69;
-    }
-    CPy_DECREF(cpy_r_r17);
+CPyL15: ;
+    cpy_r_r19 = CPyIter_Next(cpy_r_r18);
     CPy_DECREF(cpy_r_r18);
-    cpy_r_r23 = CPy_GetCoro(cpy_r_r22);
-    CPy_DECREF(cpy_r_r22);
-    if (unlikely(cpy_r_r23 == NULL)) {
+    if (cpy_r_r19 != NULL) goto CPyL18;
+    cpy_r_r20 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r20 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
+    cpy_r_r21 = cpy_r_r20;
+    cpy_r_r22 = NULL;
     if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 != NULL) {
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2);
     }
-    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 = cpy_r_r23;
-    cpy_r_r24 = 1;
-    if (unlikely(!cpy_r_r24)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", -1, CPyStatic_middleware___globals);
-        goto CPyL65;
-    }
-    cpy_r_r25 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
-    if (unlikely(cpy_r_r25 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__2", -1, CPyStatic_middleware___globals);
-        goto CPyL65;
-    }
-    CPy_INCREF(cpy_r_r25);
-CPyL25: ;
-    cpy_r_r26 = CPyIter_Next(cpy_r_r25);
-    CPy_DECREF(cpy_r_r25);
-    if (cpy_r_r26 != NULL) goto CPyL28;
-    cpy_r_r27 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r27 == NULL)) {
+    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 = cpy_r_r22;
+    cpy_r_r23 = 1;
+    if (unlikely(!cpy_r_r23)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
-    }
-    cpy_r_r28 = cpy_r_r27;
-    cpy_r_r29 = NULL;
-    if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 != NULL) {
-        CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2);
-    }
-    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 = cpy_r_r29;
-    cpy_r_r30 = 1;
-    if (unlikely(!cpy_r_r30)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL70;
+        goto CPyL62;
     } else
-        goto CPyL50;
-CPyL28: ;
-    cpy_r_r31 = cpy_r_r26;
-CPyL29: ;
+        goto CPyL40;
+CPyL18: ;
+    cpy_r_r24 = cpy_r_r19;
+CPyL19: ;
     ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
-    return cpy_r_r31;
-CPyL30: ;
-    cpy_r_r33 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r34 = cpy_r_type != cpy_r_r33;
-    if (!cpy_r_r34) goto CPyL71;
+    return cpy_r_r24;
+CPyL20: ;
+    cpy_r_r26 = (PyObject *)&_Py_NoneStruct;
+    cpy_r_r27 = cpy_r_type != cpy_r_r26;
+    if (!cpy_r_r27) goto CPyL63;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL34;
+        goto CPyL24;
     } else
-        goto CPyL72;
-CPyL32: ;
+        goto CPyL64;
+CPyL22: ;
     CPy_Unreachable();
-CPyL33: ;
+CPyL23: ;
     CPy_INCREF(cpy_r_arg);
-    goto CPyL45;
-CPyL34: ;
-    cpy_r_r35 = CPy_CatchError();
+    goto CPyL35;
+CPyL24: ;
+    cpy_r_r28 = CPy_CatchError();
     if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3.f0 != NULL) {
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3.f0);
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3.f1);
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3.f2);
     }
-    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3 = cpy_r_r35;
-    cpy_r_r36 = 1;
-    if (unlikely(!cpy_r_r36)) {
+    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3 = cpy_r_r28;
+    cpy_r_r29 = 1;
+    if (unlikely(!cpy_r_r29)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", -1, CPyStatic_middleware___globals);
-        goto CPyL73;
-    }
-    cpy_r_r37 = (PyObject **)&cpy_r_r1;
-    cpy_r_r38 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
-    if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__2", -1, CPyStatic_middleware___globals);
-        goto CPyL73;
-    }
-    CPy_INCREF(cpy_r_r38);
-CPyL36: ;
-    cpy_r_r39 = CPy_YieldFromErrorHandle(cpy_r_r38, cpy_r_r37);
-    CPy_DecRef(cpy_r_r38);
-    if (unlikely(cpy_r_r39 == 2)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL73;
-    }
-    if (cpy_r_r39) goto CPyL40;
-    cpy_r_r31 = cpy_r_r1;
-    cpy_r_r40 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
-    if (unlikely(cpy_r_r40.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
-        goto CPyL74;
-    }
-    CPy_INCREF(cpy_r_r40.f0);
-    CPy_INCREF(cpy_r_r40.f1);
-    CPy_INCREF(cpy_r_r40.f2);
-CPyL39: ;
-    CPy_RestoreExcInfo(cpy_r_r40);
-    CPy_DecRef(cpy_r_r40.f0);
-    CPy_DecRef(cpy_r_r40.f1);
-    CPy_DecRef(cpy_r_r40.f2);
-    goto CPyL29;
-CPyL40: ;
-    cpy_r_r28 = cpy_r_r1;
-    cpy_r_r41 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
-    if (unlikely(cpy_r_r41.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
-        goto CPyL75;
-    }
-    CPy_INCREF(cpy_r_r41.f0);
-    CPy_INCREF(cpy_r_r41.f1);
-    CPy_INCREF(cpy_r_r41.f2);
-CPyL41: ;
-    CPy_RestoreExcInfo(cpy_r_r41);
-    CPy_DecRef(cpy_r_r41.f0);
-    CPy_DecRef(cpy_r_r41.f1);
-    CPy_DecRef(cpy_r_r41.f2);
-    goto CPyL50;
-CPyL42: ;
-    cpy_r_r42 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
-    if (unlikely(cpy_r_r42.f0 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
         goto CPyL65;
     }
-    CPy_INCREF(cpy_r_r42.f0);
-    CPy_INCREF(cpy_r_r42.f1);
-    CPy_INCREF(cpy_r_r42.f2);
-CPyL43: ;
-    CPy_RestoreExcInfo(cpy_r_r42);
-    CPy_DecRef(cpy_r_r42.f0);
-    CPy_DecRef(cpy_r_r42.f1);
-    CPy_DecRef(cpy_r_r42.f2);
-    cpy_r_r43 = CPy_KeepPropagating();
-    if (!cpy_r_r43) goto CPyL65;
+    cpy_r_r30 = (PyObject **)&cpy_r_r1;
+    cpy_r_r31 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
+    if (unlikely(cpy_r_r31 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__2", -1, CPyStatic_middleware___globals);
+        goto CPyL65;
+    }
+    CPy_INCREF(cpy_r_r31);
+CPyL26: ;
+    cpy_r_r32 = CPy_YieldFromErrorHandle(cpy_r_r31, cpy_r_r30);
+    CPy_DecRef(cpy_r_r31);
+    if (unlikely(cpy_r_r32 == 2)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL65;
+    }
+    if (cpy_r_r32) goto CPyL30;
+    cpy_r_r24 = cpy_r_r1;
+    cpy_r_r33 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
+    if (unlikely(cpy_r_r33.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
+        goto CPyL66;
+    }
+    CPy_INCREF(cpy_r_r33.f0);
+    CPy_INCREF(cpy_r_r33.f1);
+    CPy_INCREF(cpy_r_r33.f2);
+CPyL29: ;
+    CPy_RestoreExcInfo(cpy_r_r33);
+    CPy_DecRef(cpy_r_r33.f0);
+    CPy_DecRef(cpy_r_r33.f1);
+    CPy_DecRef(cpy_r_r33.f2);
+    goto CPyL19;
+CPyL30: ;
+    cpy_r_r21 = cpy_r_r1;
+    cpy_r_r34 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
+    if (unlikely(cpy_r_r34.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
+        goto CPyL67;
+    }
+    CPy_INCREF(cpy_r_r34.f0);
+    CPy_INCREF(cpy_r_r34.f1);
+    CPy_INCREF(cpy_r_r34.f2);
+CPyL31: ;
+    CPy_RestoreExcInfo(cpy_r_r34);
+    CPy_DecRef(cpy_r_r34.f0);
+    CPy_DecRef(cpy_r_r34.f1);
+    CPy_DecRef(cpy_r_r34.f2);
+    goto CPyL40;
+CPyL32: ;
+    cpy_r_r35 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
+    if (unlikely(cpy_r_r35.f0 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__3", -1, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+    CPy_INCREF(cpy_r_r35.f0);
+    CPy_INCREF(cpy_r_r35.f1);
+    CPy_INCREF(cpy_r_r35.f2);
+CPyL33: ;
+    CPy_RestoreExcInfo(cpy_r_r35);
+    CPy_DecRef(cpy_r_r35.f0);
+    CPy_DecRef(cpy_r_r35.f1);
+    CPy_DecRef(cpy_r_r35.f2);
+    cpy_r_r36 = CPy_KeepPropagating();
+    if (!cpy_r_r36) goto CPyL58;
     CPy_Unreachable();
-CPyL45: ;
-    cpy_r_r44 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
-    if (unlikely(cpy_r_r44 == NULL)) {
+CPyL35: ;
+    cpy_r_r37 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
+    if (unlikely(cpy_r_r37 == NULL)) {
         CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "__mypyc_temp__2", -1, CPyStatic_middleware___globals);
-        goto CPyL76;
+        goto CPyL68;
     }
-    CPy_INCREF(cpy_r_r44);
-CPyL46: ;
-    cpy_r_r45 = CPyIter_Send(cpy_r_r44, cpy_r_arg);
-    CPy_DECREF(cpy_r_r44);
+    CPy_INCREF(cpy_r_r37);
+CPyL36: ;
+    cpy_r_r38 = CPyIter_Send(cpy_r_r37, cpy_r_arg);
+    CPy_DECREF(cpy_r_r37);
     CPy_DECREF(cpy_r_arg);
-    if (cpy_r_r45 == NULL) goto CPyL48;
-    cpy_r_r31 = cpy_r_r45;
-    goto CPyL29;
-CPyL48: ;
-    cpy_r_r46 = CPy_FetchStopIterationValue();
-    if (unlikely(cpy_r_r46 == NULL)) {
+    if (cpy_r_r38 == NULL) goto CPyL38;
+    cpy_r_r24 = cpy_r_r38;
+    goto CPyL19;
+CPyL38: ;
+    cpy_r_r39 = CPy_FetchStopIterationValue();
+    if (unlikely(cpy_r_r39 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
-    cpy_r_r28 = cpy_r_r46;
-CPyL50: ;
+    cpy_r_r21 = cpy_r_r39;
+CPyL40: ;
     if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val != NULL) {
         CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val);
     }
-    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val = cpy_r_r28;
-    cpy_r_r47 = 1;
-    if (unlikely(!cpy_r_r47)) {
+    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val = cpy_r_r21;
+    cpy_r_r40 = 1;
+    if (unlikely(!cpy_r_r40)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
-    cpy_r_r48 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
-    if (unlikely(cpy_r_r48 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 404, CPyStatic_middleware___globals);
-        goto CPyL65;
+    cpy_r_r41 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    if (unlikely(cpy_r_r41 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 397, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
-    CPy_INCREF(cpy_r_r48);
-CPyL52: ;
-    cpy_r_r49 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
+    CPy_INCREF(cpy_r_r41);
+CPyL42: ;
+    cpy_r_r42 = CPyDict_Copy(cpy_r_r41);
+    CPy_DECREF(cpy_r_r41);
+    if (unlikely(cpy_r_r42 == NULL)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+    if (((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction != NULL) {
+        CPy_DECREF(((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction);
+    }
+    ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r42;
+    cpy_r_r43 = 1;
+    if (unlikely(!cpy_r_r43)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+    cpy_r_r44 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val;
+    if (unlikely(cpy_r_r44 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_val", 398, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+    CPy_INCREF(cpy_r_r44);
+CPyL45: ;
+    cpy_r_r45 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
+    if (unlikely(cpy_r_r45 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 398, CPyStatic_middleware___globals);
+        goto CPyL69;
+    }
+    CPy_INCREF(cpy_r_r45);
+CPyL46: ;
+    cpy_r_r46 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__field;
+    if (unlikely(cpy_r_r46 == NULL)) {
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 398, CPyStatic_middleware___globals);
+        goto CPyL70;
+    }
+    CPy_INCREF(cpy_r_r46);
+CPyL47: ;
+    cpy_r_r47 = CPyDict_SetItem(cpy_r_r45, cpy_r_r46, cpy_r_r44);
+    CPy_DECREF(cpy_r_r45);
+    CPy_DECREF(cpy_r_r46);
+    CPy_DECREF(cpy_r_r44);
+    cpy_r_r48 = cpy_r_r47 >= 0;
+    if (unlikely(!cpy_r_r48)) {
+        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
+        goto CPyL58;
+    }
+CPyL48: ;
+    cpy_r_r49 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r49 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "field", 404, CPyStatic_middleware___globals);
-        goto CPyL77;
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "transaction", 399, CPyStatic_middleware___globals);
+        goto CPyL58;
     }
     CPy_INCREF(cpy_r_r49);
-CPyL53: ;
-    cpy_r_r50 = ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__guess_val;
-    if (unlikely(cpy_r_r50 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", "async_fill_default_gen", "guess_val", 404, CPyStatic_middleware___globals);
-        goto CPyL78;
-    }
-    CPy_INCREF(cpy_r_r50);
-CPyL54: ;
-    cpy_r_r51 = CPyStatic_middleware___globals;
-    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'assoc' */
-    cpy_r_r53 = CPyDict_GetItem(cpy_r_r51, cpy_r_r52);
-    if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL79;
-    }
-    PyObject *cpy_r_r54[3] = {cpy_r_r48, cpy_r_r49, cpy_r_r50};
-    cpy_r_r55 = (PyObject **)&cpy_r_r54;
-    cpy_r_r56 = PyObject_Vectorcall(cpy_r_r53, cpy_r_r55, 3, 0);
-    CPy_DECREF(cpy_r_r53);
-    if (unlikely(cpy_r_r56 == NULL)) {
-        CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL79;
-    }
-    CPy_DECREF(cpy_r_r48);
-    CPy_DECREF(cpy_r_r49);
-    CPy_DECREF(cpy_r_r50);
+CPyL49: ;
     ((faster_web3___providers___eth_tester___middleware___async_fill_default_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL60;
-    CPyGen_SetStopIterationValue(cpy_r_r56);
-    CPy_DECREF(cpy_r_r56);
-    if (!0) goto CPyL65;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL53;
+    CPyGen_SetStopIterationValue(cpy_r_r49);
+    CPy_DECREF(cpy_r_r49);
+    if (!0) goto CPyL58;
     CPy_Unreachable();
-CPyL60: ;
-    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r56;
+CPyL53: ;
+    *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r49;
     return 0;
-CPyL61: ;
-    cpy_r_r58 = cpy_r_r2 == 0;
-    if (cpy_r_r58) goto CPyL80;
-    cpy_r_r59 = cpy_r_r2 == 1;
-    if (cpy_r_r59) {
-        goto CPyL30;
+CPyL54: ;
+    cpy_r_r51 = cpy_r_r2 == 0;
+    if (cpy_r_r51) goto CPyL71;
+    cpy_r_r52 = cpy_r_r2 == 1;
+    if (cpy_r_r52) {
+        goto CPyL20;
     } else
-        goto CPyL81;
-CPyL63: ;
+        goto CPyL72;
+CPyL56: ;
     PyErr_SetNone(PyExc_StopIteration);
-    cpy_r_r60 = 0;
-    if (unlikely(!cpy_r_r60)) {
+    cpy_r_r53 = 0;
+    if (unlikely(!cpy_r_r53)) {
         CPy_AddTraceback("faster_web3/providers/eth_tester/middleware.py", "async_fill_default", DIFFCHECK_PLACEHOLDER, CPyStatic_middleware___globals);
-        goto CPyL65;
+        goto CPyL58;
     }
     CPy_Unreachable();
-CPyL65: ;
-    cpy_r_r61 = NULL;
-    return cpy_r_r61;
-CPyL66: ;
+CPyL58: ;
+    cpy_r_r54 = NULL;
+    return cpy_r_r54;
+CPyL59: ;
     CPy_DecRef(cpy_r_r5);
-    goto CPyL65;
-CPyL67: ;
+    goto CPyL58;
+CPyL60: ;
     CPy_DecRef(cpy_r_r10);
-    goto CPyL65;
+    goto CPyL58;
+CPyL61: ;
+    CPy_DecRef(cpy_r_r10);
+    CPy_DecRef(cpy_r_r11);
+    goto CPyL58;
+CPyL62: ;
+    CPy_DecRef(cpy_r_r21);
+    goto CPyL58;
+CPyL63: ;
+    CPy_XDECREF(cpy_r_r1);
+    goto CPyL23;
+CPyL64: ;
+    CPy_XDECREF(cpy_r_r1);
+    goto CPyL22;
+CPyL65: ;
+    CPy_XDecRef(cpy_r_r1);
+    goto CPyL32;
+CPyL66: ;
+    CPy_DecRef(cpy_r_r24);
+    goto CPyL32;
+CPyL67: ;
+    CPy_DecRef(cpy_r_r21);
+    goto CPyL32;
 CPyL68: ;
-    CPy_DecRef(cpy_r_r17);
-    goto CPyL65;
+    CPy_DecRef(cpy_r_arg);
+    goto CPyL58;
 CPyL69: ;
-    CPy_DecRef(cpy_r_r17);
-    CPy_DecRef(cpy_r_r18);
-    goto CPyL65;
+    CPy_DecRef(cpy_r_r44);
+    goto CPyL58;
 CPyL70: ;
-    CPy_DecRef(cpy_r_r28);
-    goto CPyL65;
+    CPy_DecRef(cpy_r_r44);
+    CPy_DecRef(cpy_r_r45);
+    goto CPyL58;
 CPyL71: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL33;
+    goto CPyL1;
 CPyL72: ;
     CPy_XDECREF(cpy_r_r1);
-    goto CPyL32;
-CPyL73: ;
-    CPy_XDecRef(cpy_r_r1);
-    goto CPyL42;
-CPyL74: ;
-    CPy_DecRef(cpy_r_r31);
-    goto CPyL42;
-CPyL75: ;
-    CPy_DecRef(cpy_r_r28);
-    goto CPyL42;
-CPyL76: ;
-    CPy_DecRef(cpy_r_arg);
-    goto CPyL65;
-CPyL77: ;
-    CPy_DecRef(cpy_r_r48);
-    goto CPyL65;
-CPyL78: ;
-    CPy_DecRef(cpy_r_r48);
-    CPy_DecRef(cpy_r_r49);
-    goto CPyL65;
-CPyL79: ;
-    CPy_DecRef(cpy_r_r48);
-    CPy_DecRef(cpy_r_r49);
-    CPy_DecRef(cpy_r_r50);
-    goto CPyL65;
-CPyL80: ;
-    CPy_XDECREF(cpy_r_r1);
-    goto CPyL1;
-CPyL81: ;
-    CPy_XDECREF(cpy_r_r1);
-    goto CPyL63;
+    goto CPyL56;
 }
 
 PyObject *CPyDef_middleware___async_fill_default_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -228750,7 +228641,7 @@ PyObject *CPyDef_middleware___DefaultTransactionFieldsMiddleware___request_proce
     if (likely(PyList_Check(cpy_r_r22)))
         cpy_r_r23 = cpy_r_r22;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "request_processor", 420, CPyStatic_middleware___globals, "list", cpy_r_r22);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "request_processor", 415, CPyStatic_middleware___globals, "list", cpy_r_r22);
         goto CPyL20;
     }
     cpy_r_r24 = PySequence_Concat(cpy_r_r18, cpy_r_r23);
@@ -228919,7 +228810,7 @@ CPyL4: ;
                                               'eth_estimateGas', 'eth_sendTransaction'}) */
     cpy_r_r6 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__method;
     if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 426, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 421, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r6);
@@ -228943,7 +228834,7 @@ CPyL5: ;
     }
     cpy_r_r14 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__self;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "self", 433, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "self", 428, CPyStatic_middleware___globals);
         goto CPyL63;
     }
     CPy_INCREF_NO_IMM(cpy_r_r14);
@@ -228957,7 +228848,7 @@ CPyL9: ;
     }
     cpy_r_r17 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r17 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 433, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 428, CPyStatic_middleware___globals);
         goto CPyL64;
     }
     CPy_INCREF(cpy_r_r17);
@@ -229158,7 +229049,7 @@ CPyL42: ;
     }
     cpy_r_r51 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__filled_transaction;
     if (unlikely(cpy_r_r51 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "filled_transaction", 435, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "filled_transaction", 430, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r51);
@@ -229173,7 +229064,7 @@ CPyL44: ;
     *(PyObject * *)cpy_r_r54 = cpy_r_r51;
     cpy_r_r55 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r55 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 435, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 430, CPyStatic_middleware___globals);
         goto CPyL74;
     }
     CPy_INCREF(cpy_r_r55);
@@ -229193,7 +229084,7 @@ CPyL46: ;
     if (likely(PyList_Check(cpy_r_r57)))
         cpy_r_r58 = cpy_r_r57;
     else {
-        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", 435, CPyStatic_middleware___globals, "list", cpy_r_r57);
+        CPy_TypeErrorTraceback("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", 430, CPyStatic_middleware___globals, "list", cpy_r_r57);
         goto CPyL74;
     }
     cpy_r_r59 = PySequence_Concat(cpy_r_r52, cpy_r_r58);
@@ -229215,14 +229106,14 @@ CPyL46: ;
 CPyL51: ;
     cpy_r_r61 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__method;
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 437, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "method", 432, CPyStatic_middleware___globals);
         goto CPyL62;
     }
     CPy_INCREF(cpy_r_r61);
 CPyL52: ;
     cpy_r_r62 = ((faster_web3___providers___eth_tester___middleware___async_request_processor_DefaultTransactionFieldsMiddleware_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__params;
     if (unlikely(cpy_r_r62 == NULL)) {
-        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 437, CPyStatic_middleware___globals);
+        CPy_AttributeError("faster_web3/providers/eth_tester/middleware.py", "async_request_processor", "async_request_processor_DefaultTransactionFieldsMiddleware_gen", "params", 432, CPyStatic_middleware___globals);
         goto CPyL75;
     }
     CPy_INCREF(cpy_r_r62);
@@ -230597,7 +230488,7 @@ CPyL3: ;
     CPyModule_faster_eth_utils___curried = cpy_r_r30;
     CPy_INCREF(CPyModule_faster_eth_utils___curried);
     CPy_DECREF(cpy_r_r30);
-    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('assoc', 'compose', 'curry', 'identity', 'partial') */
+    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('compose', 'curry', 'identity', 'partial') */
     cpy_r_r32 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_eth_utils.toolz' */
     cpy_r_r33 = CPyStatic_middleware___globals;
     cpy_r_r34 = CPyImport_ImportFromMany(cpy_r_r32, cpy_r_r31, cpy_r_r31, cpy_r_r33);
@@ -287153,7 +287044,6 @@ int CPyGlobalsInit(void)
     CPyModule_builtins = Py_None;
     CPyModule_typing = Py_None;
     CPyModule_eth_typing = Py_None;
-    CPyModule_faster_eth_utils___toolz = Py_None;
     CPyModule_faster_hexbytes = Py_None;
     CPyModule_faster_web3____utils___transactions = Py_None;
     CPyModule_faster_web3____utils___utility_methods = Py_None;
@@ -287633,11 +287523,11 @@ const char * const CPyLit_Str[] = {
     "\002\022generate_gas_price\bgasLimit",
     "\001rGas estimate for transaction is higher than current network gas limits. Transaction could not be sent. Estimated: ",
     "\004\025. Current gas limit: \016Web3ValueError\005nonce\apending",
-    "\005\025get_transaction_count\020block_identifier\005assoc\bgasPrice\bcallable",
+    "\004\025get_transaction_count\020block_identifier\bgasPrice\bcallable",
     "\004\024You must specify a \'\005{:{}}\032\' value in the transaction\017get_transaction",
     "\002\037Supplied transaction with hash \017 does not exist",
     "\002\037prepare_replacement_transaction\020send_transaction",
-    "\003\026faster_eth_utils.toolz\037faster_web3._utils.transactions\vany_in_dict",
+    "\002\037faster_web3._utils.transactions\vany_in_dict",
     "\002\"faster_web3._utils.utility_methods\026DYNAMIC_FEE_TXN_PARAMS",
     "\004\025faster_web3.constants\026faster_web3.exceptions\017BlockIdentifier\006TxData",
     "\b\bTxParams\003Wei\a_Hash32\021faster_web3.types\005value\004data\003gas\r_estimate_gas",
@@ -287656,7 +287546,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\005\016RequestBatcher\ais_text\bis_bytes\alatin-1\nis_integer",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\bearliest\004safe",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
@@ -287731,13 +287621,13 @@ const char * const CPyLit_Str[] = {
     "\002\016 not found on \t class. `",
     "\001B.factory` only accepts keyword arguments which are present on the ",
     "\005\006 class\022Web3AttributeError\b__init__\a__mro__\a__new__",
-    "\003\037faster_web3/_utils/datatypes.py\030apply_formatters_to_dict\006concat",
-    "\003\027PropertyCheckingFactory\fstaticmethod\034faster_web3._utils.datatypes",
-    "\005\023Recursively called \006 with \020__already_called\016AttributeError\005wraps",
-    "\004\awrapped\020 is deprecated: \bcategory\awrapper",
-    "\003 faster_web3/_utils/decorators.py\rget_thread_id\fsize_of_type",
-    "\004\ris_array_type\026sub_type_of_array_type\fis_bool_type\fis_uint_type",
-    "\004\vis_int_type\017is_address_type\ris_bytes_type\016is_string_type",
+    "\002\026faster_eth_utils.toolz\037faster_web3/_utils/datatypes.py",
+    "\004\030apply_formatters_to_dict\006concat\027PropertyCheckingFactory\fstaticmethod",
+    "\003\034faster_web3._utils.datatypes\023Recursively called \006 with ",
+    "\005\020__already_called\016AttributeError\005wraps\awrapped\020 is deprecated: ",
+    "\004\bcategory\awrapper faster_web3/_utils/decorators.py\rget_thread_id",
+    "\004\fsize_of_type\ris_array_type\026sub_type_of_array_type\fis_bool_type",
+    "\005\fis_uint_type\vis_int_type\017is_address_type\ris_bytes_type\016is_string_type",
     "\b\026Unsupported ABI type: \001L\005zfill\0030x0\005^0x0+\0020x\003sub\005rjust",
     "\0032when sending a str, it must be a hex string. Got: \006hexstr\v: because (",
     "\006\005dumps\003cls\005items\002; %dict had unencodable value at keys: {\001}",
@@ -287818,7 +287708,7 @@ const char * const CPyLit_Str[] = {
     "\002)Storage key must be a 32-byte value, got \017variable_length",
     "\005\023to_checksum_address\abalance\astorage\nis_address\022apply_formatter_if",
     "\003\021has_pretrace_keys#type_aware_apply_formatters_to_dict\tis_hexstr",
-    "\005\asyncing\006status\017Block with id: \v not found.\nIndexError",
+    "\005\006status\asyncing\017Block with id: \v not found.\nIndexError",
     "\003\030Unknown block identifier\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
     "\003\030Unknown transaction hash\023TransactionNotFound\023Transaction index: ",
@@ -288213,99 +288103,98 @@ const char * const CPyLit_Int[] = {
 const double CPyLit_Float[] = {0};
 const double CPyLit_Complex[] = {0};
 const int CPyLit_Tuple[] = {
-    335, 1, 4, 1, 6, 1, 8, 7, 10, 11, 12, 13, 14, 15, 16, 3, 63, 63, 63,
-    3, 64, 64, 64, 2, 1986, 1987, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
-    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1992, 1, 13, 1, 74, 1,
+    334, 1, 4, 1, 6, 1, 8, 7, 10, 11, 12, 13, 14, 15, 16, 3, 63, 63, 63,
+    3, 64, 64, 64, 2, 1985, 1986, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
+    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1991, 1, 13, 1, 74, 1,
     170, 5, 172, 71, 78, 173, 81, 2, 174, 175, 1, 167, 1, 178, 1, 180, 5,
     182, 160, 183, 184, 185, 3, 175, 191, 192, 1, 82, 3, 219, 220, 220, 1,
-    2005, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
+    2004, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
     43, 1, 252, 1, 123, 1, 259, 1, 278, 1, 279, 1, 280, 1, 281, 3, 282,
     188, 87, 2, 260, 261, 10, 172, 71, 283, 74, 78, 284, 80, 173, 81, 285,
-    3, 286, 286, 286, 1, 2025, 5, 288, 174, 175, 191, 192, 4, 269, 271,
+    3, 286, 286, 286, 1, 2024, 5, 288, 174, 175, 191, 192, 4, 269, 271,
     255, 270, 2, 229, 227, 6, 193, 194, 195, 198, 196, 200, 2, 235, 13, 1,
-    310, 7, 172, 71, 73, 74, 78, 81, 285, 1, 175, 1, 311, 1, 320, 1, 324,
-    1, 326, 1, 306, 5, 329, 330, 331, 332, 333, 1, 359, 1, 362, 13, 172,
-    71, 364, 365, 73, 74, 366, 76, 80, 173, 81, 285, 82, 1, 368, 3, 370,
-    371, 372, 4, 71, 364, 78, 81, 1, 192, 6, 390, 399, 392, 398, 389, 271,
-    1, 401, 2, 394, 306, 1, 370, 2, 403, 404, 6, 406, 407, 408, 409, 410,
-    411, 3, 441, 441, 441, 3, 442, 442, 442, 2, 2054, 2055, 1, 436, 13,
-    172, 71, 364, 365, 73, 74, 415, 76, 78, 284, 80, 81, 82, 3, 289, 289,
-    289, 1, 2059, 1, 445, 8, 447, 448, 449, 450, 451, 452, 453, 454, 1,
-    427, 1, 456, 1, 394, 5, 370, 458, 459, 460, 372, 1, 461, 1, 514, 3,
-    517, 517, 517, 1, 2069, 8, 172, 71, 73, 74, 78, 284, 522, 81, 1, 523,
-    3, 570, 570, 570, 3, 575, 575, 575, 2, 2073, 2074, 10, 172, 71, 364,
-    73, 76, 78, 284, 80, 81, 285, 12, 577, 578, 579, 580, 581, 582, 583,
-    584, 288, 175, 192, 585, 1, 559, 1, 587, 1, 558, 5, 557, 542, 526,
-    525, 530, 5, 527, 544, 547, 539, 561, 1, 590, 1, 541, 1, 593, 4, 535,
-    536, 538, 537, 4, 569, 394, 567, 306, 6, 596, 329, 597, 598, 599, 331,
-    3, 531, 548, 553, 7, 71, 283, 73, 74, 78, 80, 173, 3, 322, 289, 289,
-    2, 2059, 2091, 1, 606, 2, 623, 259, 2, 2074, 2055, 7, 71, 364, 74, 79,
-    80, 522, 285, 1, 645, 1, 648, 1, 668, 1, 669, 2, 671, 587, 1, 688, 3,
-    690, 690, 690, 2, 1986, 2103, 12, 71, 364, 73, 74, 692, 693, 78, 284,
-    173, 522, 81, 82, 1, 694, 3, 192, 696, 585, 8, 557, 542, 390, 399,
-    467, 271, 255, 541, 1, 697, 1, 686, 9, 633, 628, 630, 634, 632, 635,
-    631, 627, 629, 2, 699, 700, 1, 685, 1, 336, 5, 71, 73, 74, 78, 81, 3,
-    739, 670, 670, 2, 2116, 2059, 7, 737, 726, 717, 724, 722, 732, 306, 2,
-    740, 459, 4, 172, 74, 81, 285, 2, 780, 332, 1, 693, 8, 172, 71, 364,
-    73, 692, 78, 284, 81, 3, 466, 467, 398, 1, 784, 3, 785, 697, 787, 1,
-    790, 3, 459, 372, 792, 1, 795, 1, 796, 1, 801, 1, 571, 2, 825, 826, 2,
-    814, 828, 3, 850, 850, 850, 1, 2135, 1, 800, 3, 853, 853, 853, 3, 854,
-    854, 854, 4, 2138, 2139, 2055, 2069, 7, 71, 73, 74, 76, 78, 81, 82, 4,
-    855, 827, 840, 824, 1, 857, 3, 858, 858, 858, 1, 2144, 1, 823, 1, 408,
-    1, 799, 1, 820, 1, 861, 1, 284, 2, 872, 306, 1, 885, 1, 911, 3, 667,
-    667, 667, 1, 2155, 13, 172, 71, 364, 283, 73, 74, 692, 77, 923, 80,
-    522, 81, 285, 1, 893, 13, 784, 890, 880, 611, 924, 925, 926, 889, 390,
-    392, 398, 886, 881, 4, 785, 927, 697, 921, 1, 928, 3, 929, 930, 931,
-    6, 910, 917, 914, 912, 918, 915, 5, 934, 793, 935, 936, 794, 4, 535,
-    938, 939, 940, 3, 456, 941, 942, 1, 943, 1, 945, 2, 685, 946, 4, 737,
-    905, 394, 306, 9, 329, 947, 370, 459, 948, 949, 372, 331, 333, 2, 74,
-    81, 5, 71, 692, 693, 79, 81, 2, 330, 331, 2, 1217, 1218, 1, 1217, 3,
-    1226, 1226, 1226, 2, 2177, 2138, 6, 71, 364, 73, 74, 923, 78, 4, 577,
-    583, 192, 585, 13, 1161, 525, 1168, 926, 1187, 465, 390, 1182, 466,
-    1183, 392, 467, 398, 1, 880, 1, 542, 4, 785, 1169, 1170, 1028, 1,
-    1229, 10, 633, 628, 630, 634, 632, 1172, 635, 631, 1174, 629, 1, 1230,
-    8, 1203, 1186, 1221, 1223, 905, 1224, 394, 306, 1, 459, 4, 1234, 278,
-    1235, 236, 1, 1236, 1, 1237, 1, 1240, 1, 1242, 1, 1244, 1, 840, 2,
-    857, 192, 1, 870, 43, 1291, 1331, 1325, 1293, 1309, 1307, 1277, 1281,
-    1271, 1275, 1269, 1267, 1327, 1273, 1299, 1305, 1261, 1265, 1263,
-    1253, 1251, 1301, 1247, 1249, 1319, 1283, 1287, 1289, 1285, 1311,
-    1315, 1317, 1313, 1295, 1279, 1303, 1329, 1323, 1257, 1259, 1255,
-    1321, 1297, 8, 71, 73, 74, 76, 78, 81, 285, 82, 3, 310, 1355, 1356, 5,
-    187, 1363, 170, 1364, 166, 4, 187, 1363, 170, 166, 11, 172, 71, 364,
-    74, 76, 78, 284, 80, 173, 81, 285, 1, 1347, 7, 577, 578, 581, 583,
-    288, 175, 585, 3, 1161, 525, 167, 2, 785, 697, 3, 539, 561, 1354, 1,
-    1371, 1, 375, 1, 1373, 1, 1352, 1, 1360, 2, 1351, 306, 6, 596, 329,
-    1375, 598, 599, 331, 1, 548, 1, 78, 2, 331, 332, 1, 1379, 2, 359,
-    1384, 2, 1391, 1392, 3, 1393, 1393, 1393, 3, 1394, 1394, 1394, 3,
-    1395, 1395, 1395, 3, 2223, 2224, 2225, 5, 74, 692, 78, 284, 80, 1,
-    1397, 3, 697, 1169, 1386, 1, 1398, 2, 872, 567, 5, 597, 1400, 330,
-    331, 332, 2, 1405, 1392, 2, 1410, 1411, 3, 1433, 1433, 1433, 3, 1434,
-    1434, 1434, 4, 2235, 2225, 2236, 1987, 10, 172, 71, 364, 74, 76, 923,
-    78, 80, 173, 522, 1, 166, 4, 737, 1436, 1414, 905, 2, 191, 192, 4,
-    1438, 542, 468, 264, 1, 890, 3, 785, 697, 1426, 1, 1439, 2, 752, 774,
-    2, 724, 722, 5, 1440, 1441, 372, 792, 1442, 1, 1470, 1, 1572, 1, 1570,
-    3, 282, 1241, 1577, 1, 1578, 3, 282, 187, 1577, 1, 1414, 9, 172, 71,
-    364, 73, 74, 77, 78, 81, 285, 1, 390, 1, 470, 1, 506, 4, 370, 740,
-    459, 460, 2, 1576, 1582, 2, 1588, 1589, 1, 2225, 7, 172, 71, 364, 73,
-    74, 78, 82, 2, 175, 192, 3, 466, 399, 398, 2, 890, 611, 5, 311, 785,
-    697, 1601, 921, 6, 1602, 1603, 934, 793, 935, 1604, 1, 1605, 1, 1606,
-    1, 1608, 3, 1610, 370, 331, 2, 1675, 1677, 7, 172, 71, 73, 74, 81,
-    285, 82, 3, 1683, 370, 459, 10, 172, 71, 364, 73, 74, 78, 80, 522, 81,
-    82, 1, 374, 2, 411, 408, 3, 1716, 1717, 306, 1, 1718, 4, 1720, 370,
-    1721, 459, 7, 71, 73, 74, 1736, 76, 78, 82, 1, 1737, 1, 727, 2, 2135,
-    2138, 11, 172, 71, 74, 76, 78, 284, 79, 81, 285, 82, 1780, 5, 1750,
-    1716, 1717, 394, 306, 2, 1683, 459, 2, 1737, 1771, 4, 1786, 1787,
-    1788, 1789, 6, 74, 78, 284, 79, 173, 82, 15, 172, 71, 364, 365, 73,
-    76, 77, 1796, 78, 284, 80, 173, 1797, 522, 81, 1, 1798, 5, 288, 597,
-    175, 1800, 192, 2, 1801, 1802, 1, 1804, 1, 839, 3, 1917, 1917, 1917,
-    2, 2059, 2299, 2, 175, 191, 1, 567, 2, 192, 1808, 1, 812, 2, 63, 812,
-    3, 71, 73, 74, 3, 856, 856, 856, 1, 2307, 2, 1926, 943, 2, 1924, 567,
-    1, 331, 1, 1928, 1, 1927, 3, 517, 517, 1931, 1, 2314, 8, 73, 74, 366,
-    76, 78, 80, 522, 82
+    310, 7, 172, 71, 73, 74, 78, 81, 285, 1, 175, 1, 319, 1, 322, 1, 324,
+    1, 306, 5, 327, 328, 329, 330, 331, 1, 357, 1, 360, 13, 172, 71, 362,
+    363, 73, 74, 364, 76, 80, 173, 81, 285, 82, 1, 366, 3, 368, 369, 370,
+    4, 71, 362, 78, 81, 1, 192, 6, 388, 397, 390, 396, 387, 271, 1, 399,
+    2, 392, 306, 1, 368, 2, 401, 402, 6, 404, 405, 406, 407, 408, 409, 3,
+    439, 439, 439, 3, 440, 440, 440, 2, 2052, 2053, 1, 434, 13, 172, 71,
+    362, 363, 73, 74, 413, 76, 78, 284, 80, 81, 82, 3, 289, 289, 289, 1,
+    2057, 1, 443, 8, 445, 446, 447, 448, 449, 450, 451, 452, 1, 425, 1,
+    454, 1, 392, 5, 368, 456, 457, 458, 370, 1, 459, 1, 512, 3, 515, 515,
+    515, 1, 2067, 8, 172, 71, 73, 74, 78, 284, 520, 81, 1, 521, 3, 568,
+    568, 568, 3, 573, 573, 573, 2, 2071, 2072, 10, 172, 71, 362, 73, 76,
+    78, 284, 80, 81, 285, 12, 575, 576, 577, 578, 579, 580, 581, 582, 288,
+    175, 192, 583, 1, 557, 1, 585, 1, 556, 5, 555, 540, 524, 523, 528, 5,
+    525, 542, 545, 537, 559, 1, 588, 1, 539, 1, 591, 4, 533, 534, 536,
+    535, 4, 567, 392, 565, 306, 6, 594, 327, 595, 596, 597, 329, 3, 529,
+    546, 551, 7, 71, 283, 73, 74, 78, 80, 173, 3, 608, 289, 289, 2, 2057,
+    2089, 1, 604, 2, 622, 259, 2, 2072, 2053, 7, 71, 362, 74, 79, 80, 520,
+    285, 1, 644, 1, 647, 1, 667, 1, 668, 2, 670, 585, 1, 687, 3, 689, 689,
+    689, 2, 1985, 2101, 12, 71, 362, 73, 74, 691, 692, 78, 284, 173, 520,
+    81, 82, 1, 693, 3, 192, 695, 583, 8, 555, 540, 388, 397, 465, 271,
+    255, 539, 1, 696, 1, 685, 9, 632, 627, 629, 633, 631, 634, 630, 626,
+    628, 2, 698, 699, 1, 684, 1, 334, 5, 71, 73, 74, 78, 81, 3, 738, 669,
+    669, 2, 2114, 2057, 7, 736, 725, 716, 723, 721, 731, 306, 2, 739, 457,
+    4, 172, 74, 81, 285, 2, 779, 330, 1, 692, 8, 172, 71, 362, 73, 691,
+    78, 284, 81, 3, 464, 465, 396, 1, 783, 3, 784, 696, 786, 1, 789, 3,
+    457, 370, 791, 1, 794, 1, 795, 1, 800, 1, 569, 2, 824, 825, 2, 813,
+    827, 3, 849, 849, 849, 1, 2133, 1, 799, 3, 852, 852, 852, 3, 853, 853,
+    853, 4, 2136, 2137, 2053, 2067, 7, 71, 73, 74, 76, 78, 81, 82, 4, 854,
+    826, 839, 823, 1, 856, 3, 857, 857, 857, 1, 2142, 1, 822, 1, 406, 1,
+    798, 1, 819, 1, 860, 1, 284, 2, 871, 306, 1, 884, 1, 910, 3, 666, 666,
+    666, 1, 2153, 13, 172, 71, 362, 283, 73, 74, 691, 77, 922, 80, 520,
+    81, 285, 1, 892, 13, 783, 889, 879, 610, 923, 924, 925, 888, 388, 390,
+    396, 885, 880, 4, 784, 926, 696, 920, 1, 927, 3, 928, 929, 930, 6,
+    909, 916, 913, 911, 917, 914, 5, 933, 792, 934, 935, 793, 4, 533, 937,
+    938, 939, 3, 454, 940, 941, 1, 942, 1, 944, 2, 684, 945, 4, 736, 904,
+    392, 306, 9, 327, 946, 368, 457, 947, 948, 370, 329, 331, 2, 74, 81,
+    5, 71, 691, 692, 79, 81, 2, 328, 329, 2, 1216, 1217, 1, 1216, 3, 1225,
+    1225, 1225, 2, 2175, 2136, 6, 71, 362, 73, 74, 922, 78, 4, 575, 581,
+    192, 583, 13, 1160, 523, 1167, 925, 1186, 463, 388, 1181, 464, 1182,
+    390, 465, 396, 1, 879, 1, 540, 4, 784, 1168, 1169, 1027, 1, 1228, 10,
+    632, 627, 629, 633, 631, 1171, 634, 630, 1173, 628, 1, 1229, 8, 1202,
+    1185, 1220, 1222, 904, 1223, 392, 306, 1, 457, 4, 1233, 278, 1234,
+    236, 1, 1235, 1, 1236, 1, 1239, 1, 1241, 1, 1243, 1, 839, 2, 856, 192,
+    1, 869, 43, 1290, 1330, 1324, 1292, 1308, 1306, 1276, 1280, 1270,
+    1274, 1268, 1266, 1326, 1272, 1298, 1304, 1260, 1264, 1262, 1252,
+    1250, 1300, 1246, 1248, 1318, 1282, 1286, 1288, 1284, 1310, 1314,
+    1316, 1312, 1294, 1278, 1302, 1328, 1322, 1256, 1258, 1254, 1320,
+    1296, 8, 71, 73, 74, 76, 78, 81, 285, 82, 3, 310, 1354, 1355, 5, 187,
+    1362, 170, 1363, 166, 4, 187, 1362, 170, 166, 11, 172, 71, 362, 74,
+    76, 78, 284, 80, 173, 81, 285, 1, 1346, 7, 575, 576, 579, 581, 288,
+    175, 583, 3, 1160, 523, 167, 2, 784, 696, 3, 537, 559, 1353, 1, 1370,
+    1, 373, 1, 1372, 1, 1351, 1, 1359, 2, 1350, 306, 6, 594, 327, 1374,
+    596, 597, 329, 1, 546, 1, 78, 2, 329, 330, 1, 1378, 2, 357, 1383, 2,
+    1390, 1391, 3, 1392, 1392, 1392, 3, 1393, 1393, 1393, 3, 1394, 1394,
+    1394, 3, 2221, 2222, 2223, 5, 74, 691, 78, 284, 80, 1, 1396, 3, 696,
+    1168, 1385, 1, 1397, 2, 871, 565, 5, 595, 1399, 328, 329, 330, 2,
+    1404, 1391, 2, 1409, 1410, 3, 1432, 1432, 1432, 3, 1433, 1433, 1433,
+    4, 2233, 2223, 2234, 1986, 10, 172, 71, 362, 74, 76, 922, 78, 80, 173,
+    520, 1, 166, 4, 736, 1435, 1413, 904, 2, 191, 192, 4, 1437, 540, 466,
+    264, 1, 889, 3, 784, 696, 1425, 1, 1438, 2, 751, 773, 2, 723, 721, 5,
+    1439, 1440, 370, 791, 1441, 1, 1469, 1, 1571, 1, 1569, 3, 282, 1240,
+    1576, 1, 1577, 3, 282, 187, 1576, 1, 1413, 9, 172, 71, 362, 73, 74,
+    77, 78, 81, 285, 1, 388, 1, 468, 1, 504, 4, 368, 739, 457, 458, 2,
+    1575, 1581, 2, 1587, 1588, 1, 2223, 7, 172, 71, 362, 73, 74, 78, 82,
+    2, 175, 192, 3, 464, 397, 396, 2, 889, 610, 4, 784, 696, 1600, 920, 6,
+    1601, 1602, 933, 792, 934, 1603, 1, 1604, 1, 1605, 1, 1607, 3, 1609,
+    368, 329, 2, 1674, 1676, 7, 172, 71, 73, 74, 81, 285, 82, 3, 1682,
+    368, 457, 10, 172, 71, 362, 73, 74, 78, 80, 520, 81, 82, 1, 372, 2,
+    409, 406, 3, 1715, 1716, 306, 1, 1717, 4, 1719, 368, 1720, 457, 7, 71,
+    73, 74, 1735, 76, 78, 82, 1, 1736, 1, 726, 2, 2133, 2136, 11, 172, 71,
+    74, 76, 78, 284, 79, 81, 285, 82, 1779, 5, 1749, 1715, 1716, 392, 306,
+    2, 1682, 457, 2, 1736, 1770, 4, 1785, 1786, 1787, 1788, 6, 74, 78,
+    284, 79, 173, 82, 15, 172, 71, 362, 363, 73, 76, 77, 1795, 78, 284,
+    80, 173, 1796, 520, 81, 1, 1797, 5, 288, 595, 175, 1799, 192, 2, 1800,
+    1801, 1, 1803, 1, 838, 3, 1916, 1916, 1916, 2, 2057, 2297, 2, 175,
+    191, 1, 565, 2, 192, 1807, 1, 811, 2, 63, 811, 3, 71, 73, 74, 3, 855,
+    855, 855, 1, 2305, 2, 1925, 942, 2, 1923, 565, 1, 329, 1, 1927, 1,
+    1926, 3, 515, 515, 1930, 1, 2312, 8, 73, 74, 364, 76, 78, 80, 520, 82
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 395, 308, 396, 397, 296, 3, 19, 1940, 0, 2, 894, 895, 4, 1091,
-    1088, 379, 1090
+    4, 5, 296, 308, 393, 394, 395, 3, 19, 1939, 0, 2, 893, 894, 4, 1089,
+    1090, 1087, 377
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
@@ -288351,7 +288240,6 @@ CPyModule *CPyModule_faster_web3___middleware;
 CPyModule *CPyModule_faster_web3____utils___async_transactions__internal = NULL;
 CPyModule *CPyModule_faster_web3____utils___async_transactions;
 PyObject *CPyStatic_async_transactions___globals;
-CPyModule *CPyModule_faster_eth_utils___toolz;
 CPyModule *CPyModule_faster_web3____utils___transactions;
 CPyModule *CPyModule_faster_web3____utils___utility_methods__internal = NULL;
 CPyModule *CPyModule_faster_web3____utils___utility_methods;
@@ -288402,6 +288290,7 @@ CPyModule *CPyModule_faster_web3___utils___abi;
 CPyModule *CPyModule_faster_web3____utils___datatypes__internal = NULL;
 CPyModule *CPyModule_faster_web3____utils___datatypes;
 PyObject *CPyStatic_datatypes___globals;
+CPyModule *CPyModule_faster_eth_utils___toolz;
 CPyModule *CPyModule_faster_web3____utils___decorators__internal = NULL;
 CPyModule *CPyModule_faster_web3____utils___decorators;
 PyObject *CPyStatic_decorators___globals;
