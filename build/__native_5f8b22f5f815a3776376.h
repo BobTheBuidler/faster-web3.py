@@ -431,6 +431,23 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *_if_hash;
+    PyObject *_if_number;
+    PyObject *_if_predefined;
+    PyObject *_select_method_for_block_identifier_curried;
+} faster_web3____utils___blocks___select_method_for_block_identifier_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3____utils___blocks___select_method_for_block_identifier_curried_select_method_for_block_identifier_objObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     PyObject *_method;
     PyObject *_params;
     tuple_T3OOO _response_formatters;
@@ -539,7 +556,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_370Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_366Object;
 
 typedef struct {
     PyObject_HEAD
@@ -581,7 +598,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_400Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_396Object;
 
 typedef struct {
     PyObject_HEAD
@@ -639,7 +656,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_426Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_422Object;
 
 typedef struct {
     PyObject_HEAD
@@ -2145,8 +2162,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    PyObject *___mypyc_temp__2_0;
-    int64_t ___mypyc_temp__2_1;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {
@@ -2210,6 +2227,7 @@ typedef struct {
     PyObject *___mypyc_generator_attribute__result;
     PyObject *___mypyc_temp__11;
     tuple_T3OOO ___mypyc_temp__12;
+    PyObject *___mypyc_generator_attribute__data;
     PyObject *___mypyc_generator_attribute__fourbyte;
     PyObject *___mypyc_temp__13;
     tuple_T3OOO ___mypyc_temp__14;

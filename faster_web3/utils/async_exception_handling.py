@@ -76,11 +76,12 @@ async def async_handle_offchain_lookup(
         if not 200 <= status_code <= 299:  # if not 400 error, try next url
             continue
 
-        result = await response.json()
+        result: Dict[str, Any] = await response.json()
 
         await session.close()
 
-        if "data" not in result.keys():
+        data = result.get("data")
+        if data is None:
             raise Web3ValidationError(
                 "Improperly formatted response for offchain lookup HTTP request"
                 " - missing 'data' field."
@@ -93,7 +94,7 @@ async def async_handle_offchain_lookup(
         return fourbyte + encode(
             ("bytes", "bytes"),
             [
-                to_bytes_if_hex(result["data"]),
+                to_bytes_if_hex(data),
                 to_bytes_if_hex(offchain_lookup_payload["extraData"]),
             ],
         )
