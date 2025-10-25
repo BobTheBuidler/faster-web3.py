@@ -21,15 +21,13 @@ from typing import (
     final,
 )
 
-import pyunormalize
+from pyunormalize import normalization
 
 from .exceptions import (
     InvalidName,
 )
 
 # -- setup -- #
-NFC: Final = pyunormalize.NFC
-NFD: Final = pyunormalize.NFD
 
 
 def _json_list_mapping_to_dict(
@@ -528,3 +526,305 @@ def normalize_name_ensip15(name: str) -> ENSNormalizedName:
 
     # - join labels back together after normalization
     return ENSNormalizedName(normalized_labels)
+
+
+# Vendored from pyunormalize
+
+_NFC__QC_NO_OR_MAYBE: Final = normalization._NFC__QC_NO_OR_MAYBE
+_NFD__QC_NO: Final = normalization._NFD__QC_NO
+_NON_ZERO_CCC_TABLE: Final = normalization._NON_ZERO_CCC_TABLE
+_COMPOSITE_BY_CDECOMP: Final = normalization._COMPOSITE_BY_CDECOMP
+_COMPOSITION_EXCLUSIONS: Final = normalization._COMPOSITION_EXCLUSIONS
+_FULL_CDECOMP_BY_CHAR: Final = normalization._FULL_CDECOMP_BY_CHAR
+_LB: Final = normalization._LB
+_LL: Final = normalization._LL
+_SB: Final = normalization._SB
+_SL: Final = normalization._SL
+_TB: Final = normalization._TB
+_TL: Final = normalization._TL
+_TCOUNT: Final = normalization._TCOUNT
+_VB: Final = normalization._VB
+_VL: Final = normalization._VL
+_VCOUNT: Final = normalization._VCOUNT
+
+
+def NFC(unistr: str) -> str:
+    """Return the canonical equivalent "composed" form of the original Unicode
+    string `unistr`. This function transforms the Unicode string into the
+    Unicode "normalization form C", where character sequences are replaced by
+    canonically equivalent composites, where possible, while compatibility
+    characters are unaffected.
+
+    For performance optimization, the function verifies whether the input
+    string is already in NFC. If it is, the original string is returned
+    directly to avoid unnecessary processing.
+
+    Args:
+        unistr (str): The input Unicode string.
+
+    Returns:
+        str: The NFC normalized Unicode string.
+
+    Examples:
+
+        >>> unistr = "élève"
+        >>> nfc = NFC(unistr)
+        >>> unistr, nfc
+        ('élève', 'élève')
+        >>> nfc == unistr
+        False
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '0065 0301 006C 0065 0300 0076 0065'
+        >>> " ".join(f"{ord(x):04X}" for x in nfc)
+        '00E9 006C 00E8 0076 0065'
+
+        >>> unistr = "한국"
+        >>> nfc = NFC(unistr)
+        >>> unistr, nfc
+        ('한국', '한국')
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '1112 1161 11AB 1100 116E 11A8'
+        >>> " ".join(f"{ord(x):04X}" for x in nfc)
+        'D55C AD6D'
+
+        >>> NFC("ﬃ")
+        'ﬃ'
+
+    """
+    prev_ccc = 0
+
+    for u in map(ord, unistr):
+        if u in _NFC__QC_NO_OR_MAYBE:
+            break
+
+        if u not in _NON_ZERO_CCC_TABLE:
+            continue
+
+        curr_ccc = _NON_ZERO_CCC_TABLE[u]
+
+        if curr_ccc < prev_ccc:
+            break
+
+        prev_ccc = curr_ccc
+    else:
+        return unistr
+
+    return "".join(map(chr, _compose(list(map(ord, NFD(unistr))))))
+
+
+def _compose(elements: List[Optional[int]]) -> List[int]:
+    # Canonical composition algorithm to transform a fully decomposed
+    # and canonically ordered string into its most fully composed but still
+    # canonically equivalent sequence.
+
+    non_zero_table = _NON_ZERO_CCC_TABLE
+    composite_by_cdecomp = _COMPOSITE_BY_CDECOMP
+    composition_exclusions = _COMPOSITION_EXCLUSIONS
+
+    for i, x in enumerate(elements):
+        if x is None or x in non_zero_table:
+            continue
+
+        last_cc = False
+        blocked = False
+
+        for j, y in enumerate(elements[i + 1 :], i + 1):
+            if y in non_zero_table:
+                last_cc = True
+            else:
+                blocked = True
+
+            if blocked and last_cc:
+                continue
+
+            prev = elements[j - 1]
+
+            if (
+                prev is None
+                    or prev not in non_zero_table
+                    or non_zero_table[prev] < non_zero_table[y]):
+
+                pair = (x, y)
+
+                if pair in composite_by_cdecomp:
+                    precomp = composite_by_cdecomp[pair]
+                else:
+                    precomp = _compose_hangul_syllable(x, y)
+
+                if precomp is None or precomp in composition_exclusions:
+                    if blocked:
+                        break
+                else:
+                    elements[i] = x = precomp
+                    elements[j] = None
+
+                    if blocked:
+                        blocked = False
+                    else:
+                        last_cc = False
+
+    return list(filter(None, elements))
+
+
+def _compose_hangul_syllable(x: int, y: int) -> int:
+    # Perform Hangul syllable composition algorithm to derive the mapping
+    # of a canonically decomposed sequence of Hangul jamo characters
+    # to an equivalent precomposed Hangul syllable.
+
+    if _LB <= x <= _LL and _VB <= y <= _VL:
+        # Compose a leading consonant and a vowel into an LV syllable
+        return _SB + (((x - _LB) * _VCOUNT) + y - _VB) * _TCOUNT
+
+    if _SB <= x <= _SL and not (x - _SB) % _TCOUNT and _TB <= y <= _TL:
+        # Compose an LV syllable and a trailing consonant into an LVT syllable
+        return x + y - (_TB - 1)
+
+    return None
+
+
+def NFD(unistr: str) -> str:
+    """Return the canonical equivalent "decomposed" form of the original
+    Unicode string `unistr`. This function transforms the Unicode string into
+    the Unicode "normalization form D", where composite characters are replaced
+    by canonically equivalent character sequences, in canonical order, while
+    compatibility characters are unaffected.
+
+    For performance optimization, the function verifies whether the input
+    string is already in NFD. If it is, the original string is returned
+    directly to avoid unnecessary processing.
+
+    Args:
+        unistr (str): The input Unicode string.
+
+    Returns:
+        str: The NFD normalized Unicode string.
+
+    Examples:
+
+        >>> unistr = "élève"
+        >>> nfd = NFD(unistr)
+        >>> unistr, nfd
+        ('élève', 'élève')
+        >>> nfd == unistr
+        False
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        '00E9 006C 00E8 0076 0065'
+        >>> " ".join(f"{ord(x):04X}" for x in nfd)
+        '0065 0301 006C 0065 0300 0076 0065'
+
+        >>> unistr = "한국"
+        >>> nfd = NFD(unistr)
+        >>> unistr, nfd
+        ('한국', '한국')
+        >>> " ".join(f"{ord(x):04X}" for x in unistr)
+        'D55C AD6D'
+        >>> " ".join(f"{ord(x):04X}" for x in nfd)
+        '1112 1161 11AB 1100 116E 11A8'
+
+        >>> NFD("ﬃ")
+        'ﬃ'
+
+    """
+    prev_ccc = 0
+
+    for u in map(ord, unistr):
+        if u in _NFD__QC_NO:
+            break
+
+        curr_ccc = _NON_ZERO_CCC_TABLE.get(u)
+        if curr_ccc is None:
+            continue
+
+        if curr_ccc < prev_ccc:
+            break
+
+        prev_ccc = curr_ccc
+    else:
+        return unistr
+
+    result = map(chr, _reorder(_decompose(unistr)))
+
+    return "".join(result)
+
+
+
+def _reorder(elements: List[str]) -> List[str]:
+    # Perform canonical ordering algorithm. Once a string has been fully
+    # decomposed, this algorithm ensures that any sequences of combining marks
+    # within it are arranged in a well-defined order. Only combining marks with
+    # non-zero Canonical_Combining_Class property values are subject to
+    # potential reordering. The canonical ordering imposed by both composed
+    # and decomposed normalization forms is crucial for ensuring the uniqueness
+    # of normal forms.
+
+    n = len(elements)
+
+    non_zero_table = _NON_ZERO_CCC_TABLE
+
+    while n > 1:
+        new_n = 0
+        i = 1
+
+        while i < n:
+            second = elements[i]
+            ccc_b = non_zero_table.get(second)
+
+            if not ccc_b:
+                i += 2
+                continue
+
+            first = elements[i - 1]
+            ccc_a = non_zero_table.get(first)
+
+            if not ccc_a or ccc_a <= ccc_b:
+                i += 1
+                continue
+
+            elements[i - 1], elements[i] = second, first
+
+            new_n = i
+            i += 1
+
+        n = new_n
+
+    return elements
+
+
+def _decompose(unistr: str) -> List[int]:
+    # Compute the full decomposition of the Unicode string based
+    # on the specified normalization form. The type of full decomposition
+    # chosen depends on which Unicode normalization form is involved. For NFC
+    # or NFD, it performs a full canonical decomposition. For NFKC or NFKD,
+    # it performs a full compatibility decomposition.
+
+    result: List[int] = []
+    decomp = _FULL_CDECOMP_BY_CHAR
+
+    for u in map(ord, unistr):
+        if u in decomp:
+            result.extend(decomp[u])
+        elif _SB <= u <= _SL:
+            result.extend(_decompose_hangul_syllable(u))
+        else:
+            result.append(u)
+
+    return result
+
+
+def _decompose_hangul_syllable(cp: int) -> Tuple[int, ...]:
+    # Perform Hangul syllable decomposition algorithm to derive the full
+    # canonical decomposition of a precomposed Hangul syllable into its
+    # constituent jamo characters.
+
+    sindex = cp - _SB
+    tindex = sindex % _TCOUNT
+    q = (sindex - tindex) // _TCOUNT
+    V = _VB + (q  % _VCOUNT)
+    L = _LB + (q // _VCOUNT)
+
+    if tindex:
+        # LVT syllable
+        return (L, V, _TB - 1 + tindex)
+
+    # LV syllable
+    return (L, V)
