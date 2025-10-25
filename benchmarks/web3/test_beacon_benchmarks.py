@@ -17,6 +17,10 @@ class FakeResponse:
     def json(self):
         return self._result
 
+    def raise_for_status(self):
+        # No-op for benchmarks; could simulate errors if needed
+        pass
+
 def make_fake_send(result=None):
     def fake_send(*args, **kwargs):
         return FakeResponse(result or {"data": "mocked"}, status_code=200)
