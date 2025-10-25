@@ -23,6 +23,7 @@ from faster_web3.types import (
 
 if TYPE_CHECKING:
     from faster_web3.main import (  # noqa: F401
+        AsyncProviderT,
         AsyncWeb3,
     )
 
