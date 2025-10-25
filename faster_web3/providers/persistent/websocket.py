@@ -1,12 +1,14 @@
-import asyncio
-import json
 import logging
 import os
+from asyncio import wait_for
+from json import loads
 from typing import (
     Any,
     Dict,
+    Final,
     Optional,
     Union,
+    final,
 )
 
 from eth_typing import (
@@ -33,12 +35,12 @@ from faster_web3.types import (
     RPCResponse,
 )
 
-DEFAULT_PING_INTERVAL = 30  # 30 seconds
-DEFAULT_PING_TIMEOUT = 300  # 5 minutes
+DEFAULT_PING_INTERVAL: Final = 30  # 30 seconds
+DEFAULT_PING_TIMEOUT: Final = 300  # 5 minutes
 
-VALID_WEBSOCKET_URI_PREFIXES = {"ws://", "wss://"}
-RESTRICTED_WEBSOCKET_KWARGS = {"uri", "loop"}
-DEFAULT_WEBSOCKET_KWARGS = {
+VALID_WEBSOCKET_URI_PREFIXES: Final = frozenset({"ws://", "wss://"})
+RESTRICTED_WEBSOCKET_KWARGS: Final = frozenset({"uri", "loop"})
+DEFAULT_WEBSOCKET_KWARGS: Final = {
     # set how long to wait between pings from the server
     "ping_interval": DEFAULT_PING_INTERVAL,
     # set how long to wait without a pong response before closing the connection
@@ -50,9 +52,10 @@ def get_default_endpoint() -> URI:
     return URI(os.environ.get("WEB3_WS_PROVIDER_URI", "ws://127.0.0.1:8546"))
 
 
+@final
 class WebSocketProvider(PersistentConnectionProvider):
-    logger = logging.getLogger("faster_web3.providers.WebSocketProvider")
-    is_async: bool = True
+    logger: Final = logging.getLogger("faster_web3.providers.WebSocketProvider")
+    is_async: Final = True
 
     def __init__(
         self,
@@ -64,17 +67,13 @@ class WebSocketProvider(PersistentConnectionProvider):
         **kwargs: Any,
     ) -> None:
         # initialize the endpoint_uri before calling the super constructor
-        self.endpoint_uri = (
-            URI(endpoint_uri) if endpoint_uri is not None else get_default_endpoint()
-        )
+        endpoint = URI(endpoint_uri) if endpoint_uri else get_default_endpoint()
+        self.endpoint_uri: Final = endpoint
         super().__init__(**kwargs)
-        self.use_text_frames = use_text_frames
+        self.use_text_frames: Final = use_text_frames
         self._ws: Optional[WebSocketClientProtocol] = None
 
-        if not any(
-            self.endpoint_uri.startswith(prefix)
-            for prefix in VALID_WEBSOCKET_URI_PREFIXES
-        ):
+        if not any(map(endpoint.startswith, VALID_WEBSOCKET_URI_PREFIXES)):
             raise Web3ValidationError(
                 "WebSocket endpoint uri must begin with 'ws://' or 'wss://': "
                 f"{self.endpoint_uri}"
@@ -89,7 +88,7 @@ class WebSocketProvider(PersistentConnectionProvider):
                     f"{found_restricted_keys}."
                 )
 
-        self.websocket_kwargs = DEFAULT_WEBSOCKET_KWARGS | (websocket_kwargs or {})
+        self.websocket_kwargs: Final[Dict[str, Any]] = DEFAULT_WEBSOCKET_KWARGS | (websocket_kwargs or {})
 
     def __str__(self) -> str:
         return f"WebSocket connection: {self.endpoint_uri}"
@@ -119,11 +118,11 @@ class WebSocketProvider(PersistentConnectionProvider):
         if self.use_text_frames:
             payload = request_data.decode("utf-8")
 
-        await asyncio.wait_for(self._ws.send(payload), timeout=self.request_timeout)
+        await wait_for(self._ws.send(payload), timeout=self.request_timeout)
 
     async def socket_recv(self) -> RPCResponse:
         raw_response = await self._ws.recv()
-        return json.loads(raw_response)
+        return loads(raw_response)
 
     # -- private methods -- #
 

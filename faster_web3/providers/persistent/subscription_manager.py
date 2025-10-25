@@ -1,4 +1,5 @@
 import asyncio
+import functools
 import logging
 from typing import (
     TYPE_CHECKING,
@@ -139,6 +140,7 @@ class SubscriptionManager:
         self, subscriptions: Sequence[EthSubscription[Any]]
     ) -> List[HexStr]: ...
 
+    @functools.singledispatchmethod
     async def subscribe(
         self, subscriptions: Union[EthSubscription[Any], Sequence[EthSubscription[Any]]]
     ) -> Union[HexStr, List[HexStr]]:
@@ -149,27 +151,29 @@ class SubscriptionManager:
         :type subscriptions: Union[EthSubscription, Sequence[EthSubscription]]
         :return:
         """
-        if isinstance(subscriptions, EthSubscription):
-            subscriptions.manager = self
-            self._validate_and_normalize_label(subscriptions)
-            sub_id = await self._w3.eth._subscribe(*subscriptions.subscription_params)
-            subscriptions._id = sub_id
-            self._add_subscription(subscriptions)
-            self.logger.info(
-                "Successfully subscribed to subscription:\n    label: %s\n    id: %s",
-                subscriptions.label,
-                sub_id,
-            )
-            return sub_id
-        elif isinstance(subscriptions, Sequence):
-            if len(subscriptions) == 0:
-                raise Web3ValueError("No subscriptions provided.")
-
-            sub_ids: List[HexStr] = []
-            for sub in subscriptions:
-                sub_ids.append(await self.subscribe(sub))
-            return sub_ids
         raise Web3TypeError("Expected a Subscription or a sequence of Subscriptions.")
+
+    @subscribe.register(EthSubscription)  # type: ignore [attr-defined]
+    async def subscribe(self, subscription: EthSubscription[Any]) -> HexStr:
+        subscription.manager = self
+        self._validate_and_normalize_label(subscription)
+        sub_id = await self._w3.eth._subscribe(*subscription.subscription_params)
+        subscription._id = sub_id
+        self._add_subscription(subscription)
+        self.logger.info(
+            "Successfully subscribed to subscription:\n    label: %s\n    id: %s",
+            subscription.label,
+            sub_id,
+        )
+        return sub_id
+
+    @subscribe.register(Sequence)  # type: ignore [attr-defined]
+    async def subscribe(
+        self, subscriptions: Sequence[EthSubscription[Any]]
+    ) -> List[HexStr]:
+        if len(subscriptions) == 0:
+            raise Web3ValueError("No subscriptions provided.")
+        return [await sub for sub in map(self.subscribe, subscriptions)]
 
     @overload
     async def unsubscribe(self, subscriptions: EthSubscription[Any]) -> bool: ...
