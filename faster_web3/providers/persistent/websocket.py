@@ -73,9 +73,7 @@ class WebSocketProvider(PersistentConnectionProvider):
         self.use_text_frames: Final = use_text_frames
         self._ws: Optional[WebSocketClientProtocol] = None
 
-        if not any(
-            map(endpoint.startswith, VALID_WEBSOCKET_URI_PREFIXES)
-        ):
+        if not any(map(endpoint.startswith, VALID_WEBSOCKET_URI_PREFIXES)):
             raise Web3ValidationError(
                 "WebSocket endpoint uri must begin with 'ws://' or 'wss://': "
                 f"{self.endpoint_uri}"
