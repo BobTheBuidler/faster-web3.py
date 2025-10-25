@@ -111,6 +111,7 @@ else:
         "faster_web3/providers/persistent/subscription_container.py",
         "faster_web3/providers/persistent/subscription_manager.py",
         "faster_web3/providers/rpc/utils.py",
+        "faster_web3/providers/persistent/websocket.py",
         "faster_web3/types.py",
         "faster_web3/utils/address.py",
         "faster_web3/utils/async_exception_handling.py",
