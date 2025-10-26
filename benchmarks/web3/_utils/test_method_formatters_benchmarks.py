@@ -29,6 +29,40 @@ TX_DATA = {
     "input": "0x",
 }
 
+
+# PYTHONIC_REQUEST_FORMATTERS
+
+REQUEST_DATA = {
+    "eth_feeHistory": ("0x10", "latest", [10, 20]),
+    "eth_getBalance": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
+    "eth_getBlockReceipts": ("latest",),
+    "eth_getBlockTransactionCountByNumber": ("latest",),
+    "eth_getUncleCountByBlockNumber": ("latest",),
+    "eth_getTransactionByBlockNumberAndIndex": ("latest", "0x0"),
+    "eth_getRawTransactionByBlockNumberAndIndex": ("latest", "0x0"),
+    "eth_getUncleByBlockNumberAndIndex": ("latest", "0x0"),
+    "eth_getTransactionByBlockHashAndIndex": ("0xabc", "0x0"),
+    "eth_getRawTransactionByBlockHashAndIndex": ("0xabc", "0x0"),
+    "eth_getUncleByBlockHashAndIndex": ("0xabc", "0x0"),
+    "eth_getBlockByNumber": ("latest", True),
+    "eth_getCode": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
+    "eth_getTransactionCount": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
+    "eth_getStorageAt": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "0x0", "latest"),
+    "eth_getLogs": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
+    "eth_newFilter": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
+}
+
+@pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
+def test_PYTHONIC_REQUEST_FORMATTERS(benchmark: BenchmarkFixture, endpoint: RPCEndpoint) -> None:
+    f = web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
+    benchmark(run_1000, f, *REQUEST_DATA[endpoint])
+
+@pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
+def test_faster_PYTHONIC_REQUEST_FORMATTERS(benchmark: BenchmarkFixture, endpoint: RPCEndpoint) -> None:
+    f = faster_web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
+    benchmark(run_1000, f, *REQUEST_DATA[endpoint])
+
+
 # Realistic RLP-encoded proof nodes (hex, plausible structure)
 PROOF_NODE_1 = (
     "0xf90211a0b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2"
@@ -43,7 +77,7 @@ PROOF_NODE_2 = (
     "f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6"
 )
 
-DATA = {
+RESULT_DATA = {
     "eth_accounts": [
         "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
         "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
@@ -139,17 +173,17 @@ DATA = {
 }
 
 
-@pytest.mark.parametrize("endpoint", list(DATA))
+@pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_PYTHONIC_RESULT_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
-    benchmark(run_1000, f, DATA[endpoint])
+    benchmark(run_1000, f, RESULT_DATA[endpoint])
 
 
-@pytest.mark.parametrize("endpoint", list(DATA))
+@pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_faster_PYTHONIC_RESULT_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = faster_web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
-    benchmark(run_1000, f, DATA[endpoint])
+    benchmark(run_1000, f, RESULT_DATA[endpoint])
