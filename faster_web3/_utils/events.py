@@ -54,7 +54,6 @@ from faster_eth_utils.toolz import (
     compose,
     cons,
     curry,
-    valfilter,
 )
 from typing_extensions import (
     TypeGuard,

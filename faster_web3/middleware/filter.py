@@ -31,9 +31,6 @@ from faster_eth_utils import (
     to_hex,
     to_int,
 )
-from faster_eth_utils.toolz import (
-    valfilter,
-)
 
 from faster_web3._utils.formatters import (
     hex_to_integer,
@@ -208,7 +205,7 @@ def iter_latest_block_ranges(
 
 
 def drop_items_with_none_value(params: Dict[str, Any]) -> Dict[str, Any]:
-    return valfilter(lambda x: x is not None, params)
+    return {k: v for k, v in params.items() if v is not None}
 
 
 def get_logs_multipart(
