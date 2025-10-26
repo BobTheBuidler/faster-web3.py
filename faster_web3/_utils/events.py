@@ -279,10 +279,7 @@ def get_event_data(
         BASE_RETURN_NORMALIZERS, log_topic_types, decoded_topic_data
     )
 
-    event_args: Dict[str, Any] = dict(
-        zip(log_topic_names, normalized_topic_data),
-        **named_log_data.items()
-    )
+    event_args: Dict[str, Any] = dict(zip(log_topic_names, normalized_topic_data), **named_log_data)
 
     event_data = EventData(
         args=event_args,
