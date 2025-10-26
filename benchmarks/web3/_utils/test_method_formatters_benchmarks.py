@@ -41,7 +41,6 @@ REQUEST_DATA = {
     "eth_getTransactionByBlockNumberAndIndex": ("latest", "0x0"),
     "eth_getRawTransactionByBlockNumberAndIndex": ("latest", "0x0"),
     "eth_getUncleByBlockNumberAndIndex": ("latest", "0x0"),
-    "eth_getTransactionByBlockHashAndIndex": ("0xabc", "0x0"),
     "eth_getRawTransactionByBlockHashAndIndex": ("0xabc", "0x0"),
     "eth_getUncleByBlockHashAndIndex": ("0xabc", "0x0"),
     "eth_getBlockByNumber": ("latest", True),
