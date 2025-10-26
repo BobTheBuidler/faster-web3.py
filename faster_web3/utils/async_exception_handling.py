@@ -13,7 +13,7 @@ from eth_typing import (
 )
 
 from faster_web3._utils.http import (
-    DEFAULT_HTTP_TIMEOUT,
+    DEFAULT_AIOHTTP_TIMEOUT,
 )
 from faster_web3._utils.type_conversion import (
     to_bytes_if_hex,
@@ -29,7 +29,6 @@ from faster_web3.types import (
 
 
 ClientSession: Final = aiohttp.ClientSession
-ClientTimeout: Final = aiohttp.ClientTimeout
 
 encode: Final = abi.encode
 
@@ -48,7 +47,7 @@ async def async_handle_offchain_lookup(
         )
 
     session = ClientSession()
-    timeout = ClientTimeout(DEFAULT_HTTP_TIMEOUT)
+    timeout = DEFAULT_AIOHTTP_TIMEOUT
 
     for url in offchain_lookup_payload["urls"]:
         formatted_url = URI(

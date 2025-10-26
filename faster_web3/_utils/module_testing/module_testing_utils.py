@@ -13,7 +13,6 @@ from typing import (
 
 from aiohttp import (
     ClientSession,
-    ClientTimeout,
 )
 from eth_typing import (
     ChecksumAddress,
@@ -28,6 +27,7 @@ from faster_hexbytes import (
 import requests
 
 from faster_web3._utils.http import (
+    DEFAULT_AIOHTTP_TIMEOUT,
     DEFAULT_HTTP_TIMEOUT,
 )
 from faster_web3.types import (
@@ -142,7 +142,7 @@ def async_mock_offchain_lookup_request_response(
 
         # mock response only to specified url while validating appropriate fields
         if url_from_args == mocked_request_url:
-            assert kwargs["timeout"] == ClientTimeout(DEFAULT_HTTP_TIMEOUT)
+            assert kwargs["timeout"] == DEFAULT_AIOHTTP_TIMEOUT
             if http_method.upper() == "POST":
                 assert kwargs["json"] == {"data": calldata, "sender": sender}
             return AsyncMockedResponse()
