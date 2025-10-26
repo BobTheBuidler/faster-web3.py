@@ -150,7 +150,6 @@ else:
         "--disable-error-code=call-arg",
         "--disable-error-code=dict-item",
         "--disable-error-code=typeddict-item",
-        "--disable-error-code=truthy-function",
         "--disable-error-code=var-annotated",
         "--disable-error-code=assignment",
         "--disable-error-code=index",
