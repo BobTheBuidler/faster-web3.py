@@ -144,7 +144,7 @@ def test_PYTHONIC_RESULT_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
-    benchmark(run_100, f, DATA[endpoint])
+    benchmark(run_1000, f, DATA[endpoint])
 
 
 @pytest.mark.parametrize("endpoint", list(DATA))
@@ -152,4 +152,4 @@ def test_faster_PYTHONIC_RESULT_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = faster_web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
-    benchmark(run_100, f, DATA[endpoint])
+    benchmark(run_1000, f, DATA[endpoint])
