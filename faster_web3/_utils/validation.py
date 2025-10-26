@@ -5,6 +5,7 @@ from typing import (
     Callable,
     Dict,
     Final,
+    List,
     NoReturn,
     Optional,
 )
@@ -39,8 +40,6 @@ from faster_eth_utils.hexadecimal import (
 from faster_eth_utils.toolz import (
     compose,
     groupby,
-    valfilter,
-    valmap,
 )
 from typing_extensions import (
     TypeGuard,
@@ -79,13 +78,14 @@ from faster_web3.types import (
 )
 
 
-def _prepare_selector_collision_msg(duplicates: Dict[HexStr, ABIFunction]) -> str:
-    dup_sel = valmap(apply_formatter_to_array(abi_to_signature), duplicates)
-    joined_funcs = valmap(lambda funcs: ", ".join(funcs), dup_sel)
-    func_sel_msg_list = [
-        funcs + " have selector " + sel for sel, funcs in joined_funcs.items()
-    ]
-    return " and\n".join(func_sel_msg_list)
+def _prepare_selector_collision_msg(duplicates: Dict[HexStr, List[ABIFunction]]) -> str:
+    formatter = apply_formatter_to_array(abi_to_signature)
+    joined_funcs = {
+        sel: ", ".join(formatter(funcs)) for sel, funcs in duplicates.items()
+    }
+    return " and\n".join(
+        f"{funcs} have selector {sel}" for sel, funcs in joined_funcs.items()
+    )
 
 
 def validate_abi(abi: ABI) -> None:
@@ -103,8 +103,11 @@ def validate_abi(abi: ABI) -> None:
 
     functions = filter_abi_by_type("function", abi)
     selectors = groupby(compose(encode_hex, function_abi_to_4byte_selector), functions)
-    duplicates = valfilter(lambda funcs: len(funcs) > 1, selectors)
-    if duplicates:
+    if duplicates := {
+        selector: funcs
+        for selector, funcs in selectors.items()
+        if len(funcs) > 1
+    }:
         raise Web3ValueError(
             "Abi contains functions with colliding selectors. "
             f"Functions {_prepare_selector_collision_msg(duplicates)}"

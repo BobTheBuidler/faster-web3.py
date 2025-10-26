@@ -109450,7 +109450,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -140721,572 +140721,6 @@ CPyL6: ;
     return cpy_r_r13;
 }
 
-PyObject *CPyDef_validation_____mypyc___3_prepare_selector_collision_msg_env_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_validation____prepare_selector_collision_msg_env(void);
-
-static PyObject *
-validation____prepare_selector_collision_msg_env_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_validation____prepare_selector_collision_msg_env) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_validation_____mypyc___3_prepare_selector_collision_msg_env_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static int
-validation____prepare_selector_collision_msg_env_traverse(faster_web3____utils___validation____prepare_selector_collision_msg_envObject *self, visitproc visit, void *arg)
-{
-    Py_VISIT(self->___mypyc_self__);
-    Py_VISIT(self->_duplicates);
-    Py_VISIT(self->_dup_sel);
-    return 0;
-}
-
-static int
-validation____prepare_selector_collision_msg_env_clear(faster_web3____utils___validation____prepare_selector_collision_msg_envObject *self)
-{
-    Py_CLEAR(self->___mypyc_self__);
-    Py_CLEAR(self->_duplicates);
-    Py_CLEAR(self->_dup_sel);
-    return 0;
-}
-
-static void
-validation____prepare_selector_collision_msg_env_dealloc(faster_web3____utils___validation____prepare_selector_collision_msg_envObject *self)
-{
-    PyObject_GC_UnTrack(self);
-    if (validation____prepare_selector_collision_msg_env_free_instance == NULL) {
-        validation____prepare_selector_collision_msg_env_free_instance = self;
-        Py_CLEAR(self->___mypyc_self__);
-        Py_CLEAR(self->_duplicates);
-        Py_CLEAR(self->_dup_sel);
-        return;
-    }
-    CPy_TRASHCAN_BEGIN(self, validation____prepare_selector_collision_msg_env_dealloc)
-    validation____prepare_selector_collision_msg_env_clear(self);
-    Py_TYPE(self)->tp_free((PyObject *)self);
-    CPy_TRASHCAN_END(self)
-}
-
-static CPyVTableItem validation____prepare_selector_collision_msg_env_vtable[1];
-static bool
-CPyDef_validation____prepare_selector_collision_msg_env_trait_vtable_setup(void)
-{
-    CPyVTableItem validation____prepare_selector_collision_msg_env_vtable_scratch[] = {
-        NULL
-    };
-    memcpy(validation____prepare_selector_collision_msg_env_vtable, validation____prepare_selector_collision_msg_env_vtable_scratch, sizeof(validation____prepare_selector_collision_msg_env_vtable));
-    return 1;
-}
-
-static PyMethodDef validation____prepare_selector_collision_msg_env_methods[] = {
-    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
-    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
-    {NULL}  /* Sentinel */
-};
-
-static PyTypeObject CPyType_validation____prepare_selector_collision_msg_env_template_ = {
-    PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "_prepare_selector_collision_msg_env",
-    .tp_new = validation____prepare_selector_collision_msg_env_new,
-    .tp_dealloc = (destructor)validation____prepare_selector_collision_msg_env_dealloc,
-    .tp_traverse = (traverseproc)validation____prepare_selector_collision_msg_env_traverse,
-    .tp_clear = (inquiry)validation____prepare_selector_collision_msg_env_clear,
-    .tp_methods = validation____prepare_selector_collision_msg_env_methods,
-    .tp_basicsize = sizeof(faster_web3____utils___validation____prepare_selector_collision_msg_envObject),
-    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC,
-    .tp_doc = PyDoc_STR("_prepare_selector_collision_msg_env()\n--\n\n"),
-};
-static PyTypeObject *CPyType_validation____prepare_selector_collision_msg_env_template = &CPyType_validation____prepare_selector_collision_msg_env_template_;
-
-PyObject *CPyDef_validation_____mypyc___3_prepare_selector_collision_msg_env_setup(PyObject *cpy_r_type)
-{
-    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
-    faster_web3____utils___validation____prepare_selector_collision_msg_envObject *self;
-    if (validation____prepare_selector_collision_msg_env_free_instance != NULL) {
-        self = validation____prepare_selector_collision_msg_env_free_instance;
-        validation____prepare_selector_collision_msg_env_free_instance = NULL;
-        Py_SET_REFCNT(self, 1);
-        PyObject_GC_Track(self);
-        return (PyObject *)self;
-    }
-    self = (faster_web3____utils___validation____prepare_selector_collision_msg_envObject *)type->tp_alloc(type, 0);
-    if (self == NULL)
-        return NULL;
-    self->vtable = validation____prepare_selector_collision_msg_env_vtable;
-    return (PyObject *)self;
-}
-
-PyObject *CPyDef_validation____prepare_selector_collision_msg_env(void)
-{
-    PyObject *self = CPyDef_validation_____mypyc___3_prepare_selector_collision_msg_env_setup((PyObject *)CPyType_validation____prepare_selector_collision_msg_env);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-
-static PyObject *CPyDunder___get__validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj(PyObject *self, PyObject *instance, PyObject *owner) {
-    instance = instance ? instance : Py_None;
-    return CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(self, instance, owner);
-}
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__0__prepare_selector_collision_msg_obj_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj(void);
-
-static PyObject *
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__0__prepare_selector_collision_msg_obj_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static int
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_traverse(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self, visitproc visit, void *arg)
-{
-    Py_VISIT(self->___mypyc_env__);
-    PyObject_VisitManagedDict((PyObject *)self, visit, arg);
-    return 0;
-}
-
-static int
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_clear(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self)
-{
-    Py_CLEAR(self->___mypyc_env__);
-    PyObject_ClearManagedDict((PyObject *)self);
-    return 0;
-}
-
-static void
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_dealloc(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self)
-{
-    PyObject_GC_UnTrack(self);
-    if (validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance == NULL) {
-        validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance = self;
-        Py_CLEAR(self->___mypyc_env__);
-        return;
-    }
-    CPy_TRASHCAN_BEGIN(self, validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_dealloc)
-    validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_clear(self);
-    Py_TYPE(self)->tp_free((PyObject *)self);
-    CPy_TRASHCAN_END(self)
-}
-
-static CPyVTableItem validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable[2];
-static bool
-CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_trait_vtable_setup(void)
-{
-    CPyVTableItem validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable_scratch[] = {
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__,
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__,
-    };
-    memcpy(validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable, validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable_scratch, sizeof(validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable));
-    return 1;
-}
-
-static PyObject *
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self, void *closure);
-static int
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self, PyObject *value, void *closure);
-
-static PyGetSetDef validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_getseters[] = {
-    {"__mypyc_env__",
-     (getter)validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_get___3_mypyc_env__, (setter)validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_set___3_mypyc_env__,
-     NULL, NULL},
-    {"__dict__", PyObject_GenericGetDict, PyObject_GenericSetDict},
-    {NULL}  /* Sentinel */
-};
-
-static PyMethodDef validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_methods[] = {
-    {"__call__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__,
-     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__call__($funcs)\n--\n\n")},
-    {"__get__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__,
-     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__get__($instance, owner)\n--\n\n")},
-    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
-    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
-    {NULL}  /* Sentinel */
-};
-
-static PyTypeObject CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_template_ = {
-    PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "__mypyc_lambda__0__prepare_selector_collision_msg_obj",
-    .tp_new = validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_new,
-    .tp_dealloc = (destructor)validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_dealloc,
-    .tp_traverse = (traverseproc)validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_traverse,
-    .tp_clear = (inquiry)validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_clear,
-    .tp_getset = validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_getseters,
-    .tp_methods = validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_methods,
-    .tp_call = PyVectorcall_Call,
-    .tp_descr_get = CPyDunder___get__validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj,
-    .tp_basicsize = sizeof(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject),
-    .tp_vectorcall_offset = offsetof(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject, vectorcall),
-    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC | _Py_TPFLAGS_HAVE_VECTORCALL | Py_TPFLAGS_MANAGED_DICT,
-    .tp_doc = PyDoc_STR("__mypyc_lambda__0__prepare_selector_collision_msg_obj()\n--\n\n"),
-};
-static PyTypeObject *CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_template = &CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_template_;
-
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__0__prepare_selector_collision_msg_obj_setup(PyObject *cpy_r_type)
-{
-    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
-    faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self;
-    if (validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance != NULL) {
-        self = validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance;
-        validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance = NULL;
-        Py_SET_REFCNT(self, 1);
-        PyObject_GC_Track(self);
-        return (PyObject *)self;
-    }
-    self = (faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *)type->tp_alloc(type, 0);
-    if (self == NULL)
-        return NULL;
-    self->vtable = validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_vtable;
-    self->vectorcall = CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__;
-    return (PyObject *)self;
-}
-
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj(void)
-{
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__0__prepare_selector_collision_msg_obj_setup((PyObject *)CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static PyObject *
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self, void *closure)
-{
-    if (unlikely(self->___mypyc_env__ == NULL)) {
-        PyErr_SetString(PyExc_AttributeError,
-            "attribute '__mypyc_env__' of '__mypyc_lambda__0__prepare_selector_collision_msg_obj' undefined");
-        return NULL;
-    }
-    CPy_INCREF_NO_IMM(self->___mypyc_env__);
-    PyObject *retval = self->___mypyc_env__;
-    return retval;
-}
-
-static int
-validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *self, PyObject *value, void *closure)
-{
-    if (value == NULL) {
-        PyErr_SetString(PyExc_AttributeError,
-            "'__mypyc_lambda__0__prepare_selector_collision_msg_obj' object attribute '__mypyc_env__' cannot be deleted");
-        return -1;
-    }
-    if (self->___mypyc_env__ != NULL) {
-        CPy_DECREF_NO_IMM(self->___mypyc_env__);
-    }
-    PyObject *tmp;
-    if (likely(Py_TYPE(value) == CPyType_validation____prepare_selector_collision_msg_env))
-        tmp = value;
-    else {
-        CPy_TypeError("faster_web3._utils.validation._prepare_selector_collision_msg_env", value); 
-        tmp = NULL;
-    }
-    if (!tmp)
-        return -1;
-    CPy_INCREF_NO_IMM(tmp);
-    self->___mypyc_env__ = tmp;
-    return 0;
-}
-
-PyObject *CPyDef_validation_____mypyc__validate_abi_env_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_validation___validate_abi_env(void);
-
-static PyObject *
-validation___validate_abi_env_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_validation___validate_abi_env) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_validation_____mypyc__validate_abi_env_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static int
-validation___validate_abi_env_traverse(faster_web3____utils___validation___validate_abi_envObject *self, visitproc visit, void *arg)
-{
-    Py_VISIT(self->___mypyc_self__);
-    Py_VISIT(self->_abi);
-    Py_VISIT(self->_e);
-    Py_VISIT(self->_functions);
-    Py_VISIT(self->_selectors);
-    return 0;
-}
-
-static int
-validation___validate_abi_env_clear(faster_web3____utils___validation___validate_abi_envObject *self)
-{
-    Py_CLEAR(self->___mypyc_self__);
-    Py_CLEAR(self->_abi);
-    Py_CLEAR(self->_e);
-    Py_CLEAR(self->_functions);
-    Py_CLEAR(self->_selectors);
-    return 0;
-}
-
-static void
-validation___validate_abi_env_dealloc(faster_web3____utils___validation___validate_abi_envObject *self)
-{
-    PyObject_GC_UnTrack(self);
-    if (validation___validate_abi_env_free_instance == NULL) {
-        validation___validate_abi_env_free_instance = self;
-        Py_CLEAR(self->___mypyc_self__);
-        Py_CLEAR(self->_abi);
-        Py_CLEAR(self->_e);
-        Py_CLEAR(self->_functions);
-        Py_CLEAR(self->_selectors);
-        return;
-    }
-    CPy_TRASHCAN_BEGIN(self, validation___validate_abi_env_dealloc)
-    validation___validate_abi_env_clear(self);
-    Py_TYPE(self)->tp_free((PyObject *)self);
-    CPy_TRASHCAN_END(self)
-}
-
-static CPyVTableItem validation___validate_abi_env_vtable[1];
-static bool
-CPyDef_validation___validate_abi_env_trait_vtable_setup(void)
-{
-    CPyVTableItem validation___validate_abi_env_vtable_scratch[] = {
-        NULL
-    };
-    memcpy(validation___validate_abi_env_vtable, validation___validate_abi_env_vtable_scratch, sizeof(validation___validate_abi_env_vtable));
-    return 1;
-}
-
-static PyMethodDef validation___validate_abi_env_methods[] = {
-    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
-    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
-    {NULL}  /* Sentinel */
-};
-
-static PyTypeObject CPyType_validation___validate_abi_env_template_ = {
-    PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "validate_abi_env",
-    .tp_new = validation___validate_abi_env_new,
-    .tp_dealloc = (destructor)validation___validate_abi_env_dealloc,
-    .tp_traverse = (traverseproc)validation___validate_abi_env_traverse,
-    .tp_clear = (inquiry)validation___validate_abi_env_clear,
-    .tp_methods = validation___validate_abi_env_methods,
-    .tp_basicsize = sizeof(faster_web3____utils___validation___validate_abi_envObject),
-    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC,
-    .tp_doc = PyDoc_STR("validate_abi_env()\n--\n\n"),
-};
-static PyTypeObject *CPyType_validation___validate_abi_env_template = &CPyType_validation___validate_abi_env_template_;
-
-PyObject *CPyDef_validation_____mypyc__validate_abi_env_setup(PyObject *cpy_r_type)
-{
-    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
-    faster_web3____utils___validation___validate_abi_envObject *self;
-    if (validation___validate_abi_env_free_instance != NULL) {
-        self = validation___validate_abi_env_free_instance;
-        validation___validate_abi_env_free_instance = NULL;
-        Py_SET_REFCNT(self, 1);
-        PyObject_GC_Track(self);
-        return (PyObject *)self;
-    }
-    self = (faster_web3____utils___validation___validate_abi_envObject *)type->tp_alloc(type, 0);
-    if (self == NULL)
-        return NULL;
-    self->vtable = validation___validate_abi_env_vtable;
-    return (PyObject *)self;
-}
-
-PyObject *CPyDef_validation___validate_abi_env(void)
-{
-    PyObject *self = CPyDef_validation_____mypyc__validate_abi_env_setup((PyObject *)CPyType_validation___validate_abi_env);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-
-static PyObject *CPyDunder___get__validation_____mypyc_lambda__1_validate_abi_obj(PyObject *self, PyObject *instance, PyObject *owner) {
-    instance = instance ? instance : Py_None;
-    return CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__(self, instance, owner);
-}
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__1_validate_abi_obj_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj(void);
-
-static PyObject *
-validation_____mypyc_lambda__1_validate_abi_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_validation_____mypyc_lambda__1_validate_abi_obj) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__1_validate_abi_obj_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static int
-validation_____mypyc_lambda__1_validate_abi_obj_traverse(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self, visitproc visit, void *arg)
-{
-    Py_VISIT(self->___mypyc_env__);
-    PyObject_VisitManagedDict((PyObject *)self, visit, arg);
-    return 0;
-}
-
-static int
-validation_____mypyc_lambda__1_validate_abi_obj_clear(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self)
-{
-    Py_CLEAR(self->___mypyc_env__);
-    PyObject_ClearManagedDict((PyObject *)self);
-    return 0;
-}
-
-static void
-validation_____mypyc_lambda__1_validate_abi_obj_dealloc(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self)
-{
-    PyObject_GC_UnTrack(self);
-    if (validation_____mypyc_lambda__1_validate_abi_obj_free_instance == NULL) {
-        validation_____mypyc_lambda__1_validate_abi_obj_free_instance = self;
-        Py_CLEAR(self->___mypyc_env__);
-        return;
-    }
-    CPy_TRASHCAN_BEGIN(self, validation_____mypyc_lambda__1_validate_abi_obj_dealloc)
-    validation_____mypyc_lambda__1_validate_abi_obj_clear(self);
-    Py_TYPE(self)->tp_free((PyObject *)self);
-    CPy_TRASHCAN_END(self)
-}
-
-static CPyVTableItem validation_____mypyc_lambda__1_validate_abi_obj_vtable[2];
-static bool
-CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_trait_vtable_setup(void)
-{
-    CPyVTableItem validation_____mypyc_lambda__1_validate_abi_obj_vtable_scratch[] = {
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____call__,
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__,
-    };
-    memcpy(validation_____mypyc_lambda__1_validate_abi_obj_vtable, validation_____mypyc_lambda__1_validate_abi_obj_vtable_scratch, sizeof(validation_____mypyc_lambda__1_validate_abi_obj_vtable));
-    return 1;
-}
-
-static PyObject *
-validation_____mypyc_lambda__1_validate_abi_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self, void *closure);
-static int
-validation_____mypyc_lambda__1_validate_abi_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self, PyObject *value, void *closure);
-
-static PyGetSetDef validation_____mypyc_lambda__1_validate_abi_obj_getseters[] = {
-    {"__mypyc_env__",
-     (getter)validation_____mypyc_lambda__1_validate_abi_obj_get___3_mypyc_env__, (setter)validation_____mypyc_lambda__1_validate_abi_obj_set___3_mypyc_env__,
-     NULL, NULL},
-    {"__dict__", PyObject_GenericGetDict, PyObject_GenericSetDict},
-    {NULL}  /* Sentinel */
-};
-
-static PyMethodDef validation_____mypyc_lambda__1_validate_abi_obj_methods[] = {
-    {"__call__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____call__,
-     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__call__($funcs)\n--\n\n")},
-    {"__get__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____get__,
-     METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__get__($instance, owner)\n--\n\n")},
-    {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
-    {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
-    {NULL}  /* Sentinel */
-};
-
-static PyTypeObject CPyType_validation_____mypyc_lambda__1_validate_abi_obj_template_ = {
-    PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "__mypyc_lambda__1_validate_abi_obj",
-    .tp_new = validation_____mypyc_lambda__1_validate_abi_obj_new,
-    .tp_dealloc = (destructor)validation_____mypyc_lambda__1_validate_abi_obj_dealloc,
-    .tp_traverse = (traverseproc)validation_____mypyc_lambda__1_validate_abi_obj_traverse,
-    .tp_clear = (inquiry)validation_____mypyc_lambda__1_validate_abi_obj_clear,
-    .tp_getset = validation_____mypyc_lambda__1_validate_abi_obj_getseters,
-    .tp_methods = validation_____mypyc_lambda__1_validate_abi_obj_methods,
-    .tp_call = PyVectorcall_Call,
-    .tp_descr_get = CPyDunder___get__validation_____mypyc_lambda__1_validate_abi_obj,
-    .tp_basicsize = sizeof(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject),
-    .tp_vectorcall_offset = offsetof(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject, vectorcall),
-    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC | _Py_TPFLAGS_HAVE_VECTORCALL | Py_TPFLAGS_MANAGED_DICT,
-    .tp_doc = PyDoc_STR("__mypyc_lambda__1_validate_abi_obj()\n--\n\n"),
-};
-static PyTypeObject *CPyType_validation_____mypyc_lambda__1_validate_abi_obj_template = &CPyType_validation_____mypyc_lambda__1_validate_abi_obj_template_;
-
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__1_validate_abi_obj_setup(PyObject *cpy_r_type)
-{
-    PyTypeObject *type = (PyTypeObject*)cpy_r_type;
-    faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self;
-    if (validation_____mypyc_lambda__1_validate_abi_obj_free_instance != NULL) {
-        self = validation_____mypyc_lambda__1_validate_abi_obj_free_instance;
-        validation_____mypyc_lambda__1_validate_abi_obj_free_instance = NULL;
-        Py_SET_REFCNT(self, 1);
-        PyObject_GC_Track(self);
-        return (PyObject *)self;
-    }
-    self = (faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *)type->tp_alloc(type, 0);
-    if (self == NULL)
-        return NULL;
-    self->vtable = validation_____mypyc_lambda__1_validate_abi_obj_vtable;
-    self->vectorcall = CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____call__;
-    return (PyObject *)self;
-}
-
-PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj(void)
-{
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__1_validate_abi_obj_setup((PyObject *)CPyType_validation_____mypyc_lambda__1_validate_abi_obj);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
-static PyObject *
-validation_____mypyc_lambda__1_validate_abi_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self, void *closure)
-{
-    if (unlikely(self->___mypyc_env__ == NULL)) {
-        PyErr_SetString(PyExc_AttributeError,
-            "attribute '__mypyc_env__' of '__mypyc_lambda__1_validate_abi_obj' undefined");
-        return NULL;
-    }
-    CPy_INCREF_NO_IMM(self->___mypyc_env__);
-    PyObject *retval = self->___mypyc_env__;
-    return retval;
-}
-
-static int
-validation_____mypyc_lambda__1_validate_abi_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *self, PyObject *value, void *closure)
-{
-    if (value == NULL) {
-        PyErr_SetString(PyExc_AttributeError,
-            "'__mypyc_lambda__1_validate_abi_obj' object attribute '__mypyc_env__' cannot be deleted");
-        return -1;
-    }
-    if (self->___mypyc_env__ != NULL) {
-        CPy_DECREF_NO_IMM(self->___mypyc_env__);
-    }
-    PyObject *tmp;
-    if (likely(Py_TYPE(value) == CPyType_validation___validate_abi_env))
-        tmp = value;
-    else {
-        CPy_TypeError("faster_web3._utils.validation.validate_abi_env", value); 
-        tmp = NULL;
-    }
-    if (!tmp)
-        return -1;
-    CPy_INCREF_NO_IMM(tmp);
-    self->___mypyc_env__ = tmp;
-    return 0;
-}
-
 PyObject *CPyDef_validation_____mypyc__has_one_val_env_setup(PyObject *cpy_r_type);
 PyObject *CPyDef_validation___has_one_val_env(void);
 
@@ -141399,28 +140833,28 @@ PyObject *CPyDef_validation___has_one_val_env(void)
 }
 
 
-static PyObject *CPyDunder___get__validation_____mypyc_lambda__2_has_one_val_obj(PyObject *self, PyObject *instance, PyObject *owner) {
+static PyObject *CPyDunder___get__validation_____mypyc_lambda__0_has_one_val_obj(PyObject *self, PyObject *instance, PyObject *owner) {
     instance = instance ? instance : Py_None;
-    return CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__(self, instance, owner);
+    return CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____get__(self, instance, owner);
 }
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__2_has_one_val_obj_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj(void);
+PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__0_has_one_val_obj_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_validation_____mypyc_lambda__0_has_one_val_obj(void);
 
 static PyObject *
-validation_____mypyc_lambda__2_has_one_val_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+validation_____mypyc_lambda__0_has_one_val_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 {
-    if (type != CPyType_validation_____mypyc_lambda__2_has_one_val_obj) {
+    if (type != CPyType_validation_____mypyc_lambda__0_has_one_val_obj) {
         PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
         return NULL;
     }
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__2_has_one_val_obj_setup((PyObject*)type);
+    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__0_has_one_val_obj_setup((PyObject*)type);
     if (self == NULL)
         return NULL;
     return self;
 }
 
 static int
-validation_____mypyc_lambda__2_has_one_val_obj_traverse(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self, visitproc visit, void *arg)
+validation_____mypyc_lambda__0_has_one_val_obj_traverse(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self, visitproc visit, void *arg)
 {
     Py_VISIT(self->___mypyc_env__);
     PyObject_VisitManagedDict((PyObject *)self, visit, arg);
@@ -141428,7 +140862,7 @@ validation_____mypyc_lambda__2_has_one_val_obj_traverse(faster_web3____utils___v
 }
 
 static int
-validation_____mypyc_lambda__2_has_one_val_obj_clear(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self)
+validation_____mypyc_lambda__0_has_one_val_obj_clear(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self)
 {
     Py_CLEAR(self->___mypyc_env__);
     PyObject_ClearManagedDict((PyObject *)self);
@@ -141436,108 +140870,108 @@ validation_____mypyc_lambda__2_has_one_val_obj_clear(faster_web3____utils___vali
 }
 
 static void
-validation_____mypyc_lambda__2_has_one_val_obj_dealloc(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self)
+validation_____mypyc_lambda__0_has_one_val_obj_dealloc(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self)
 {
     PyObject_GC_UnTrack(self);
-    if (validation_____mypyc_lambda__2_has_one_val_obj_free_instance == NULL) {
-        validation_____mypyc_lambda__2_has_one_val_obj_free_instance = self;
+    if (validation_____mypyc_lambda__0_has_one_val_obj_free_instance == NULL) {
+        validation_____mypyc_lambda__0_has_one_val_obj_free_instance = self;
         Py_CLEAR(self->___mypyc_env__);
         return;
     }
-    CPy_TRASHCAN_BEGIN(self, validation_____mypyc_lambda__2_has_one_val_obj_dealloc)
-    validation_____mypyc_lambda__2_has_one_val_obj_clear(self);
+    CPy_TRASHCAN_BEGIN(self, validation_____mypyc_lambda__0_has_one_val_obj_dealloc)
+    validation_____mypyc_lambda__0_has_one_val_obj_clear(self);
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
 }
 
-static CPyVTableItem validation_____mypyc_lambda__2_has_one_val_obj_vtable[2];
+static CPyVTableItem validation_____mypyc_lambda__0_has_one_val_obj_vtable[2];
 static bool
-CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_trait_vtable_setup(void)
+CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_trait_vtable_setup(void)
 {
-    CPyVTableItem validation_____mypyc_lambda__2_has_one_val_obj_vtable_scratch[] = {
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____call__,
-        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__,
+    CPyVTableItem validation_____mypyc_lambda__0_has_one_val_obj_vtable_scratch[] = {
+        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____call__,
+        (CPyVTableItem)CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____get__,
     };
-    memcpy(validation_____mypyc_lambda__2_has_one_val_obj_vtable, validation_____mypyc_lambda__2_has_one_val_obj_vtable_scratch, sizeof(validation_____mypyc_lambda__2_has_one_val_obj_vtable));
+    memcpy(validation_____mypyc_lambda__0_has_one_val_obj_vtable, validation_____mypyc_lambda__0_has_one_val_obj_vtable_scratch, sizeof(validation_____mypyc_lambda__0_has_one_val_obj_vtable));
     return 1;
 }
 
 static PyObject *
-validation_____mypyc_lambda__2_has_one_val_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self, void *closure);
+validation_____mypyc_lambda__0_has_one_val_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self, void *closure);
 static int
-validation_____mypyc_lambda__2_has_one_val_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self, PyObject *value, void *closure);
+validation_____mypyc_lambda__0_has_one_val_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self, PyObject *value, void *closure);
 
-static PyGetSetDef validation_____mypyc_lambda__2_has_one_val_obj_getseters[] = {
+static PyGetSetDef validation_____mypyc_lambda__0_has_one_val_obj_getseters[] = {
     {"__mypyc_env__",
-     (getter)validation_____mypyc_lambda__2_has_one_val_obj_get___3_mypyc_env__, (setter)validation_____mypyc_lambda__2_has_one_val_obj_set___3_mypyc_env__,
+     (getter)validation_____mypyc_lambda__0_has_one_val_obj_get___3_mypyc_env__, (setter)validation_____mypyc_lambda__0_has_one_val_obj_set___3_mypyc_env__,
      NULL, NULL},
     {"__dict__", PyObject_GenericGetDict, PyObject_GenericSetDict},
     {NULL}  /* Sentinel */
 };
 
-static PyMethodDef validation_____mypyc_lambda__2_has_one_val_obj_methods[] = {
+static PyMethodDef validation_____mypyc_lambda__0_has_one_val_obj_methods[] = {
     {"__call__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__,
+     (PyCFunction)CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____call__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__call__($val)\n--\n\n")},
     {"__get__",
-     (PyCFunction)CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____get__,
+     (PyCFunction)CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____get__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__get__($instance, owner)\n--\n\n")},
     {"__setstate__", (PyCFunction)CPyPickle_SetState, METH_O, NULL},
     {"__getstate__", (PyCFunction)CPyPickle_GetState, METH_NOARGS, NULL},
     {NULL}  /* Sentinel */
 };
 
-static PyTypeObject CPyType_validation_____mypyc_lambda__2_has_one_val_obj_template_ = {
+static PyTypeObject CPyType_validation_____mypyc_lambda__0_has_one_val_obj_template_ = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "__mypyc_lambda__2_has_one_val_obj",
-    .tp_new = validation_____mypyc_lambda__2_has_one_val_obj_new,
-    .tp_dealloc = (destructor)validation_____mypyc_lambda__2_has_one_val_obj_dealloc,
-    .tp_traverse = (traverseproc)validation_____mypyc_lambda__2_has_one_val_obj_traverse,
-    .tp_clear = (inquiry)validation_____mypyc_lambda__2_has_one_val_obj_clear,
-    .tp_getset = validation_____mypyc_lambda__2_has_one_val_obj_getseters,
-    .tp_methods = validation_____mypyc_lambda__2_has_one_val_obj_methods,
+    .tp_name = "__mypyc_lambda__0_has_one_val_obj",
+    .tp_new = validation_____mypyc_lambda__0_has_one_val_obj_new,
+    .tp_dealloc = (destructor)validation_____mypyc_lambda__0_has_one_val_obj_dealloc,
+    .tp_traverse = (traverseproc)validation_____mypyc_lambda__0_has_one_val_obj_traverse,
+    .tp_clear = (inquiry)validation_____mypyc_lambda__0_has_one_val_obj_clear,
+    .tp_getset = validation_____mypyc_lambda__0_has_one_val_obj_getseters,
+    .tp_methods = validation_____mypyc_lambda__0_has_one_val_obj_methods,
     .tp_call = PyVectorcall_Call,
-    .tp_descr_get = CPyDunder___get__validation_____mypyc_lambda__2_has_one_val_obj,
-    .tp_basicsize = sizeof(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject),
-    .tp_vectorcall_offset = offsetof(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject, vectorcall),
+    .tp_descr_get = CPyDunder___get__validation_____mypyc_lambda__0_has_one_val_obj,
+    .tp_basicsize = sizeof(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject),
+    .tp_vectorcall_offset = offsetof(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject, vectorcall),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HEAPTYPE | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC | _Py_TPFLAGS_HAVE_VECTORCALL | Py_TPFLAGS_MANAGED_DICT,
-    .tp_doc = PyDoc_STR("__mypyc_lambda__2_has_one_val_obj()\n--\n\n"),
+    .tp_doc = PyDoc_STR("__mypyc_lambda__0_has_one_val_obj()\n--\n\n"),
 };
-static PyTypeObject *CPyType_validation_____mypyc_lambda__2_has_one_val_obj_template = &CPyType_validation_____mypyc_lambda__2_has_one_val_obj_template_;
+static PyTypeObject *CPyType_validation_____mypyc_lambda__0_has_one_val_obj_template = &CPyType_validation_____mypyc_lambda__0_has_one_val_obj_template_;
 
-PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__2_has_one_val_obj_setup(PyObject *cpy_r_type)
+PyObject *CPyDef_validation_____mypyc___3__mypyc_lambda__0_has_one_val_obj_setup(PyObject *cpy_r_type)
 {
     PyTypeObject *type = (PyTypeObject*)cpy_r_type;
-    faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self;
-    if (validation_____mypyc_lambda__2_has_one_val_obj_free_instance != NULL) {
-        self = validation_____mypyc_lambda__2_has_one_val_obj_free_instance;
-        validation_____mypyc_lambda__2_has_one_val_obj_free_instance = NULL;
+    faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self;
+    if (validation_____mypyc_lambda__0_has_one_val_obj_free_instance != NULL) {
+        self = validation_____mypyc_lambda__0_has_one_val_obj_free_instance;
+        validation_____mypyc_lambda__0_has_one_val_obj_free_instance = NULL;
         Py_SET_REFCNT(self, 1);
         PyObject_GC_Track(self);
         return (PyObject *)self;
     }
-    self = (faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *)type->tp_alloc(type, 0);
+    self = (faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *)type->tp_alloc(type, 0);
     if (self == NULL)
         return NULL;
-    self->vtable = validation_____mypyc_lambda__2_has_one_val_obj_vtable;
-    self->vectorcall = CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__;
+    self->vtable = validation_____mypyc_lambda__0_has_one_val_obj_vtable;
+    self->vectorcall = CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____call__;
     return (PyObject *)self;
 }
 
-PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj(void)
+PyObject *CPyDef_validation_____mypyc_lambda__0_has_one_val_obj(void)
 {
-    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__2_has_one_val_obj_setup((PyObject *)CPyType_validation_____mypyc_lambda__2_has_one_val_obj);
+    PyObject *self = CPyDef_validation_____mypyc___3__mypyc_lambda__0_has_one_val_obj_setup((PyObject *)CPyType_validation_____mypyc_lambda__0_has_one_val_obj);
     if (self == NULL)
         return NULL;
     return self;
 }
 
 static PyObject *
-validation_____mypyc_lambda__2_has_one_val_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self, void *closure)
+validation_____mypyc_lambda__0_has_one_val_obj_get___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self, void *closure)
 {
     if (unlikely(self->___mypyc_env__ == NULL)) {
         PyErr_SetString(PyExc_AttributeError,
-            "attribute '__mypyc_env__' of '__mypyc_lambda__2_has_one_val_obj' undefined");
+            "attribute '__mypyc_env__' of '__mypyc_lambda__0_has_one_val_obj' undefined");
         return NULL;
     }
     CPy_INCREF_NO_IMM(self->___mypyc_env__);
@@ -141546,11 +140980,11 @@ validation_____mypyc_lambda__2_has_one_val_obj_get___3_mypyc_env__(faster_web3__
 }
 
 static int
-validation_____mypyc_lambda__2_has_one_val_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *self, PyObject *value, void *closure)
+validation_____mypyc_lambda__0_has_one_val_obj_set___3_mypyc_env__(faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *self, PyObject *value, void *closure)
 {
     if (value == NULL) {
         PyErr_SetString(PyExc_AttributeError,
-            "'__mypyc_lambda__2_has_one_val_obj' object attribute '__mypyc_env__' cannot be deleted");
+            "'__mypyc_lambda__0_has_one_val_obj' object attribute '__mypyc_env__' cannot be deleted");
         return -1;
     }
     if (self->___mypyc_env__ != NULL) {
@@ -141592,23 +141026,11 @@ int CPyExec_faster_web3____utils___validation(PyObject *module)
     CPyStatic_validation___globals = PyModule_GetDict(CPyModule_faster_web3____utils___validation__internal);
     if (unlikely(CPyStatic_validation___globals == NULL))
         goto fail;
-    CPyType_validation____prepare_selector_collision_msg_env = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation____prepare_selector_collision_msg_env_template, NULL, modname);
-    if (unlikely(!CPyType_validation____prepare_selector_collision_msg_env))
-        goto fail;
-    CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_template, NULL, modname);
-    if (unlikely(!CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj))
-        goto fail;
-    CPyType_validation___validate_abi_env = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation___validate_abi_env_template, NULL, modname);
-    if (unlikely(!CPyType_validation___validate_abi_env))
-        goto fail;
-    CPyType_validation_____mypyc_lambda__1_validate_abi_obj = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation_____mypyc_lambda__1_validate_abi_obj_template, NULL, modname);
-    if (unlikely(!CPyType_validation_____mypyc_lambda__1_validate_abi_obj))
-        goto fail;
     CPyType_validation___has_one_val_env = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation___has_one_val_env_template, NULL, modname);
     if (unlikely(!CPyType_validation___has_one_val_env))
         goto fail;
-    CPyType_validation_____mypyc_lambda__2_has_one_val_obj = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation_____mypyc_lambda__2_has_one_val_obj_template, NULL, modname);
-    if (unlikely(!CPyType_validation_____mypyc_lambda__2_has_one_val_obj))
+    CPyType_validation_____mypyc_lambda__0_has_one_val_obj = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_validation_____mypyc_lambda__0_has_one_val_obj_template, NULL, modname);
+    if (unlikely(!CPyType_validation_____mypyc_lambda__0_has_one_val_obj))
         goto fail;
     if (CPyGlobalsInit() < 0)
         goto fail;
@@ -141622,12 +141044,8 @@ int CPyExec_faster_web3____utils___validation(PyObject *module)
     Py_CLEAR(modname);
     CPy_XDECREF(CPyStatic_validation___KNOWN_REQUEST_TIMEOUT_MESSAGING);
     CPyStatic_validation___KNOWN_REQUEST_TIMEOUT_MESSAGING = NULL;
-    Py_CLEAR(CPyType_validation____prepare_selector_collision_msg_env);
-    Py_CLEAR(CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj);
-    Py_CLEAR(CPyType_validation___validate_abi_env);
-    Py_CLEAR(CPyType_validation_____mypyc_lambda__1_validate_abi_obj);
     Py_CLEAR(CPyType_validation___has_one_val_env);
-    Py_CLEAR(CPyType_validation_____mypyc_lambda__2_has_one_val_obj);
+    Py_CLEAR(CPyType_validation_____mypyc_lambda__0_has_one_val_obj);
     return -1;
 }
 static struct PyModuleDef validationmodule = {
@@ -141655,89 +141073,6 @@ PyObject *CPyInit_faster_web3____utils___validation(void)
     return NULL;
 }
 
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner) {
-    PyObject *cpy_r_r0;
-    char cpy_r_r1;
-    PyObject *cpy_r_r2;
-    PyObject *cpy_r_r3;
-    cpy_r_r0 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r1 = cpy_r_instance == cpy_r_r0;
-    if (!cpy_r_r1) goto CPyL2;
-    CPy_INCREF(cpy_r___mypyc_self__);
-    return cpy_r___mypyc_self__;
-CPyL2: ;
-    cpy_r_r2 = PyMethod_New(cpy_r___mypyc_self__, cpy_r_instance);
-    if (cpy_r_r2 == NULL) goto CPyL4;
-    return cpy_r_r2;
-CPyL4: ;
-    cpy_r_r3 = NULL;
-    return cpy_r_r3;
-}
-
-PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
-    PyObject *obj___mypyc_self__ = self;
-    static const char * const kwlist[] = {"instance", "owner", 0};
-    static CPyArg_Parser parser = {"OO:__get__", kwlist, 0};
-    PyObject *obj_instance;
-    PyObject *obj_owner;
-    if (!CPyArg_ParseStackAndKeywordsSimple(args, nargs, kwnames, &parser, &obj_instance, &obj_owner)) {
-        return NULL;
-    }
-    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
-    PyObject *arg_instance = obj_instance;
-    PyObject *arg_owner = obj_owner;
-    PyObject *retval = CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(arg___mypyc_self__, arg_instance, arg_owner);
-    return retval;
-fail: ;
-    CPy_AddTraceback("faster_web3/_utils/validation.py", "__get__", -1, CPyStatic_validation___globals);
-    return NULL;
-}
-
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs) {
-    PyObject *cpy_r_r0;
-    PyObject *cpy_r_r1;
-    PyObject *cpy_r_r2;
-    PyObject *cpy_r_r3;
-    cpy_r_r0 = ((faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
-    if (unlikely(cpy_r_r0 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/validation.py", "<lambda>", "__mypyc_lambda__0__prepare_selector_collision_msg_obj", "__mypyc_env__", 84, CPyStatic_validation___globals);
-        goto CPyL3;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r0);
-    goto CPyL4;
-CPyL1: ;
-    cpy_r_r1 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', ' */
-    cpy_r_r2 = PyUnicode_Join(cpy_r_r1, cpy_r_funcs);
-    if (unlikely(cpy_r_r2 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "<lambda>", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL3;
-    }
-    return cpy_r_r2;
-CPyL3: ;
-    cpy_r_r3 = NULL;
-    return cpy_r_r3;
-CPyL4: ;
-    CPy_DECREF_NO_IMM(cpy_r_r0);
-    goto CPyL1;
-}
-
-PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
-    PyObject *obj___mypyc_self__ = self;
-    static const char * const kwlist[] = {"funcs", 0};
-    static CPyArg_Parser parser = {"O:__call__", kwlist, 0};
-    PyObject *obj_funcs;
-    if (!CPyArg_ParseStackAndKeywordsOneArg(args, PyVectorcall_NARGS(nargs), kwnames, &parser, &obj_funcs)) {
-        return NULL;
-    }
-    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
-    PyObject *arg_funcs = obj_funcs;
-    PyObject *retval = CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(arg___mypyc_self__, arg_funcs);
-    return retval;
-fail: ;
-    CPy_AddTraceback("faster_web3/_utils/validation.py", "<lambda>", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-    return NULL;
-}
-
 PyObject *CPyDef_validation____prepare_selector_collision_msg(PyObject *cpy_r_duplicates) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -141745,288 +141080,297 @@ PyObject *CPyDef_validation____prepare_selector_collision_msg(PyObject *cpy_r_du
     PyObject *cpy_r_r3;
     PyObject *cpy_r_r4;
     PyObject *cpy_r_r5;
-    PyObject *cpy_r_r6;
-    PyObject **cpy_r_r8;
+    PyObject **cpy_r_r7;
+    PyObject *cpy_r_r8;
     PyObject *cpy_r_r9;
-    PyObject *cpy_r_r10;
-    PyObject *cpy_r_r11;
+    CPyTagged cpy_r_r10;
+    int64_t cpy_r_r11;
     PyObject *cpy_r_r12;
-    PyObject **cpy_r_r14;
-    PyObject *cpy_r_r15;
+    tuple_T4CIOO cpy_r_r13;
+    CPyTagged cpy_r_r14;
+    char cpy_r_r15;
     PyObject *cpy_r_r16;
-    char cpy_r_r17;
+    PyObject *cpy_r_r17;
     PyObject *cpy_r_r18;
     PyObject *cpy_r_r19;
     PyObject *cpy_r_r20;
     PyObject **cpy_r_r22;
     PyObject *cpy_r_r23;
     PyObject *cpy_r_r24;
-    PyObject *cpy_r_r25;
-    PyObject **cpy_r_r27;
-    PyObject *cpy_r_r28;
+    int32_t cpy_r_r25;
+    char cpy_r_r26;
+    char cpy_r_r27;
+    char cpy_r_r28;
     PyObject *cpy_r_r29;
     PyObject *cpy_r_r30;
-    PyObject *cpy_r_r31;
-    PyObject *cpy_r_r32;
-    char cpy_r_r33;
-    PyObject *cpy_r_r34;
-    char cpy_r_r35;
-    PyObject *cpy_r_r36;
-    char cpy_r_r37;
+    CPyTagged cpy_r_r31;
+    int64_t cpy_r_r32;
+    PyObject *cpy_r_r33;
+    tuple_T4CIOO cpy_r_r34;
+    CPyTagged cpy_r_r35;
+    char cpy_r_r36;
+    PyObject *cpy_r_r37;
     PyObject *cpy_r_r38;
     PyObject *cpy_r_r39;
     PyObject *cpy_r_r40;
-    int32_t cpy_r_r41;
-    char cpy_r_r42;
-    char cpy_r_r43;
-    PyObject *cpy_r_r44;
-    PyObject *cpy_r_r45;
-    PyObject *cpy_r_r46;
-    cpy_r_r0 = CPyDef_validation____prepare_selector_collision_msg_env();
-    if (unlikely(cpy_r_r0 == NULL)) {
+    PyObject *cpy_r_r41;
+    PyObject *cpy_r_r42;
+    int32_t cpy_r_r43;
+    char cpy_r_r44;
+    char cpy_r_r45;
+    char cpy_r_r46;
+    PyObject *cpy_r_r47;
+    PyObject *cpy_r_r48;
+    cpy_r_r0 = CPyStatic_validation___globals;
+    cpy_r_r1 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'abi_to_signature' */
+    cpy_r_r2 = CPyDict_GetItem(cpy_r_r0, cpy_r_r1);
+    if (unlikely(cpy_r_r2 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL24;
+    }
+    cpy_r_r3 = CPyStatic_validation___globals;
+    cpy_r_r4 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'apply_formatter_to_array' */
+    cpy_r_r5 = CPyDict_GetItem(cpy_r_r3, cpy_r_r4);
+    if (unlikely(cpy_r_r5 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL25;
+    }
+    PyObject *cpy_r_r6[1] = {cpy_r_r2};
+    cpy_r_r7 = (PyObject **)&cpy_r_r6;
+    cpy_r_r8 = PyObject_Vectorcall(cpy_r_r5, cpy_r_r7, 1, 0);
+    CPy_DECREF(cpy_r_r5);
+    if (unlikely(cpy_r_r8 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL25;
+    }
+    CPy_DECREF(cpy_r_r2);
+    cpy_r_r9 = PyDict_New();
+    if (unlikely(cpy_r_r9 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL26;
+    }
+    cpy_r_r10 = 0;
+    cpy_r_r11 = PyDict_Size(cpy_r_duplicates);
+    cpy_r_r12 = CPyDict_GetItemsIter(cpy_r_duplicates);
+    if (unlikely(cpy_r_r12 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL27;
+    }
+CPyL5: ;
+    cpy_r_r13 = CPyDict_NextItem(cpy_r_r12, cpy_r_r10);
+    cpy_r_r14 = cpy_r_r13.f1;
+    cpy_r_r10 = cpy_r_r14;
+    cpy_r_r15 = cpy_r_r13.f0;
+    if (!cpy_r_r15) goto CPyL28;
+    cpy_r_r16 = cpy_r_r13.f2;
+    CPy_INCREF(cpy_r_r16);
+    cpy_r_r17 = cpy_r_r13.f3;
+    CPy_INCREF(cpy_r_r17);
+    CPy_DECREF(cpy_r_r13.f2);
+    CPy_DECREF(cpy_r_r13.f3);
+    if (likely(PyUnicode_Check(cpy_r_r16)))
+        cpy_r_r18 = cpy_r_r16;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", 83, CPyStatic_validation___globals, "str", cpy_r_r16);
+        goto CPyL29;
+    }
+    if (likely(PyList_Check(cpy_r_r17)))
+        cpy_r_r19 = cpy_r_r17;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", 83, CPyStatic_validation___globals, "list", cpy_r_r17);
         goto CPyL30;
     }
-    cpy_r_r1 = CPyStatic_validation___globals;
-    cpy_r_r2 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'abi_to_signature' */
-    cpy_r_r3 = CPyDict_GetItem(cpy_r_r1, cpy_r_r2);
-    if (unlikely(cpy_r_r3 == NULL)) {
+    cpy_r_r20 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', ' */
+    PyObject *cpy_r_r21[1] = {cpy_r_r19};
+    cpy_r_r22 = (PyObject **)&cpy_r_r21;
+    cpy_r_r23 = PyObject_Vectorcall(cpy_r_r8, cpy_r_r22, 1, 0);
+    if (unlikely(cpy_r_r23 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL31;
     }
-    cpy_r_r4 = CPyStatic_validation___globals;
-    cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'apply_formatter_to_array' */
-    cpy_r_r6 = CPyDict_GetItem(cpy_r_r4, cpy_r_r5);
-    if (unlikely(cpy_r_r6 == NULL)) {
+    CPy_DECREF_NO_IMM(cpy_r_r19);
+    cpy_r_r24 = PyUnicode_Join(cpy_r_r20, cpy_r_r23);
+    CPy_DECREF(cpy_r_r23);
+    if (unlikely(cpy_r_r24 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL32;
     }
-    PyObject *cpy_r_r7[1] = {cpy_r_r3};
-    cpy_r_r8 = (PyObject **)&cpy_r_r7;
-    cpy_r_r9 = PyObject_Vectorcall(cpy_r_r6, cpy_r_r8, 1, 0);
-    CPy_DECREF(cpy_r_r6);
-    if (unlikely(cpy_r_r9 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL32;
-    }
-    CPy_DECREF(cpy_r_r3);
-    cpy_r_r10 = CPyStatic_validation___globals;
-    cpy_r_r11 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'valmap' */
-    cpy_r_r12 = CPyDict_GetItem(cpy_r_r10, cpy_r_r11);
-    if (unlikely(cpy_r_r12 == NULL)) {
+    cpy_r_r25 = PyDict_SetItem(cpy_r_r9, cpy_r_r18, cpy_r_r24);
+    CPy_DECREF(cpy_r_r18);
+    CPy_DECREF(cpy_r_r24);
+    cpy_r_r26 = cpy_r_r25 >= 0;
+    if (unlikely(!cpy_r_r26)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL33;
     }
-    PyObject *cpy_r_r13[2] = {cpy_r_r9, cpy_r_duplicates};
-    cpy_r_r14 = (PyObject **)&cpy_r_r13;
-    cpy_r_r15 = PyObject_Vectorcall(cpy_r_r12, cpy_r_r14, 2, 0);
-    CPy_DECREF(cpy_r_r12);
-    if (unlikely(cpy_r_r15 == NULL)) {
+    cpy_r_r27 = CPyDict_CheckSize(cpy_r_duplicates, cpy_r_r11);
+    if (unlikely(!cpy_r_r27)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL33;
-    }
-    CPy_DECREF(cpy_r_r9);
-    cpy_r_r16 = CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj();
-    if (unlikely(cpy_r_r16 == NULL)) {
+    } else
+        goto CPyL5;
+CPyL12: ;
+    cpy_r_r28 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r28)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL34;
     }
-    if (((faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *)cpy_r_r16)->___mypyc_env__ != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *)cpy_r_r16)->___mypyc_env__);
-    }
-    ((faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *)cpy_r_r16)->___mypyc_env__ = cpy_r_r0;
-    cpy_r_r17 = 1;
-    if (unlikely(!cpy_r_r17)) {
+    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' and\n' */
+    cpy_r_r30 = PyList_New(0);
+    if (unlikely(cpy_r_r30 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL35;
     }
-    cpy_r_r18 = CPyStatic_validation___globals;
-    cpy_r_r19 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'valmap' */
-    cpy_r_r20 = CPyDict_GetItem(cpy_r_r18, cpy_r_r19);
-    if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL35;
-    }
-    PyObject *cpy_r_r21[2] = {cpy_r_r16, cpy_r_r15};
-    cpy_r_r22 = (PyObject **)&cpy_r_r21;
-    cpy_r_r23 = PyObject_Vectorcall(cpy_r_r20, cpy_r_r22, 2, 0);
-    CPy_DECREF(cpy_r_r20);
-    if (unlikely(cpy_r_r23 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL35;
-    }
-    CPy_DECREF_NO_IMM(cpy_r_r16);
-    CPy_DECREF(cpy_r_r15);
-    cpy_r_r24 = PyList_New(0);
-    if (unlikely(cpy_r_r24 == NULL)) {
+    cpy_r_r31 = 0;
+    cpy_r_r32 = PyDict_Size(cpy_r_r9);
+    cpy_r_r33 = CPyDict_GetItemsIter(cpy_r_r9);
+    if (unlikely(cpy_r_r33 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL36;
     }
-    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'items' */
-    PyObject *cpy_r_r26[1] = {cpy_r_r23};
-    cpy_r_r27 = (PyObject **)&cpy_r_r26;
-    cpy_r_r28 = PyObject_VectorcallMethod(cpy_r_r25, cpy_r_r27, 9223372036854775809ULL, 0);
-    if (unlikely(cpy_r_r28 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL37;
-    }
-    CPy_DECREF(cpy_r_r23);
-    cpy_r_r29 = PyObject_GetIter(cpy_r_r28);
-    CPy_DECREF(cpy_r_r28);
-    if (unlikely(cpy_r_r29 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+CPyL15: ;
+    cpy_r_r34 = CPyDict_NextItem(cpy_r_r33, cpy_r_r31);
+    cpy_r_r35 = cpy_r_r34.f1;
+    cpy_r_r31 = cpy_r_r35;
+    cpy_r_r36 = cpy_r_r34.f0;
+    if (!cpy_r_r36) goto CPyL37;
+    cpy_r_r37 = cpy_r_r34.f2;
+    CPy_INCREF(cpy_r_r37);
+    cpy_r_r38 = cpy_r_r34.f3;
+    CPy_INCREF(cpy_r_r38);
+    CPy_DECREF(cpy_r_r34.f2);
+    CPy_DECREF(cpy_r_r34.f3);
+    if (likely(PyUnicode_Check(cpy_r_r37)))
+        cpy_r_r39 = cpy_r_r37;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", 86, CPyStatic_validation___globals, "str", cpy_r_r37);
         goto CPyL38;
     }
-CPyL13: ;
-    cpy_r_r30 = PyIter_Next(cpy_r_r29);
-    if (cpy_r_r30 == NULL) goto CPyL39;
-    cpy_r_r31 = PyObject_GetIter(cpy_r_r30);
-    CPy_DECREF(cpy_r_r30);
-    if (unlikely(cpy_r_r31 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL40;
+    if (likely(PyUnicode_Check(cpy_r_r38)))
+        cpy_r_r40 = cpy_r_r38;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", 86, CPyStatic_validation___globals, "str", cpy_r_r38);
+        goto CPyL39;
     }
-    cpy_r_r32 = PyIter_Next(cpy_r_r31);
-    if (cpy_r_r32 == NULL) {
-        goto CPyL41;
-    } else
-        goto CPyL18;
-CPyL16: ;
-    PyErr_SetString(PyExc_ValueError, "not enough values to unpack");
-    cpy_r_r33 = 0;
-    if (unlikely(!cpy_r_r33)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL30;
-    }
-    CPy_Unreachable();
-CPyL18: ;
-    cpy_r_r34 = PyIter_Next(cpy_r_r31);
-    if (cpy_r_r34 == NULL) {
-        goto CPyL42;
-    } else
-        goto CPyL21;
-CPyL19: ;
-    PyErr_SetString(PyExc_ValueError, "not enough values to unpack");
-    cpy_r_r35 = 0;
-    if (unlikely(!cpy_r_r35)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL30;
-    }
-    CPy_Unreachable();
-CPyL21: ;
-    cpy_r_r36 = PyIter_Next(cpy_r_r31);
-    CPy_DECREF(cpy_r_r31);
-    if (cpy_r_r36 == NULL) {
-        goto CPyL24;
-    } else
-        goto CPyL43;
-CPyL22: ;
-    PyErr_SetString(PyExc_ValueError, "too many values to unpack");
-    cpy_r_r37 = 0;
-    if (unlikely(!cpy_r_r37)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL30;
-    }
-    CPy_Unreachable();
-CPyL24: ;
-    cpy_r_r38 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' have selector ' */
-    cpy_r_r39 = PyNumber_Add(cpy_r_r34, cpy_r_r38);
-    CPy_DECREF(cpy_r_r34);
-    if (unlikely(cpy_r_r39 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL44;
-    }
-    cpy_r_r40 = PyNumber_Add(cpy_r_r39, cpy_r_r32);
-    CPy_DECREF(cpy_r_r39);
-    CPy_DECREF(cpy_r_r32);
-    if (unlikely(cpy_r_r40 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL40;
-    }
-    cpy_r_r41 = PyList_Append(cpy_r_r24, cpy_r_r40);
+    cpy_r_r41 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' have selector ' */
+    cpy_r_r42 = CPyStr_Build(3, cpy_r_r40, cpy_r_r41, cpy_r_r39);
     CPy_DECREF(cpy_r_r40);
-    cpy_r_r42 = cpy_r_r41 >= 0;
-    if (unlikely(!cpy_r_r42)) {
+    CPy_DECREF(cpy_r_r39);
+    if (unlikely(cpy_r_r42 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL40;
+    }
+    cpy_r_r43 = PyList_Append(cpy_r_r30, cpy_r_r42);
+    CPy_DECREF(cpy_r_r42);
+    cpy_r_r44 = cpy_r_r43 >= 0;
+    if (unlikely(!cpy_r_r44)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL40;
+    }
+    cpy_r_r45 = CPyDict_CheckSize(cpy_r_r9, cpy_r_r32);
+    if (unlikely(!cpy_r_r45)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL40;
     } else
-        goto CPyL13;
+        goto CPyL15;
+CPyL21: ;
+    cpy_r_r46 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r46)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL41;
+    }
+    cpy_r_r47 = PyUnicode_Join(cpy_r_r29, cpy_r_r30);
+    CPy_DECREF_NO_IMM(cpy_r_r30);
+    if (unlikely(cpy_r_r47 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL24;
+    }
+    return cpy_r_r47;
+CPyL24: ;
+    cpy_r_r48 = NULL;
+    return cpy_r_r48;
+CPyL25: ;
+    CPy_DecRef(cpy_r_r2);
+    goto CPyL24;
+CPyL26: ;
+    CPy_DecRef(cpy_r_r8);
+    goto CPyL24;
 CPyL27: ;
-    cpy_r_r43 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r43)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL38;
-    }
-    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' and\n' */
-    cpy_r_r45 = PyUnicode_Join(cpy_r_r44, cpy_r_r24);
-    CPy_DECREF_NO_IMM(cpy_r_r24);
-    if (unlikely(cpy_r_r45 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "_prepare_selector_collision_msg", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL30;
-    }
-    return cpy_r_r45;
-CPyL30: ;
-    cpy_r_r46 = NULL;
-    return cpy_r_r46;
-CPyL31: ;
-    CPy_DecRef(cpy_r_r0);
-    goto CPyL30;
-CPyL32: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r3);
-    goto CPyL30;
-CPyL33: ;
-    CPy_DecRef(cpy_r_r0);
+    CPy_DecRef(cpy_r_r8);
     CPy_DecRef(cpy_r_r9);
-    goto CPyL30;
+    goto CPyL24;
+CPyL28: ;
+    CPy_DECREF(cpy_r_r8);
+    CPy_DECREF(cpy_r_r12);
+    CPy_DECREF(cpy_r_r13.f2);
+    CPy_DECREF(cpy_r_r13.f3);
+    goto CPyL12;
+CPyL29: ;
+    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r12);
+    CPy_DecRef(cpy_r_r17);
+    goto CPyL24;
+CPyL30: ;
+    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r12);
+    CPy_DecRef(cpy_r_r18);
+    goto CPyL24;
+CPyL31: ;
+    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r12);
+    CPy_DecRef(cpy_r_r18);
+    CPy_DecRef(cpy_r_r19);
+    goto CPyL24;
+CPyL32: ;
+    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r12);
+    CPy_DecRef(cpy_r_r18);
+    goto CPyL24;
+CPyL33: ;
+    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r12);
+    goto CPyL24;
 CPyL34: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r15);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r9);
+    goto CPyL24;
 CPyL35: ;
-    CPy_DecRef(cpy_r_r15);
-    CPy_DecRef(cpy_r_r16);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r9);
+    goto CPyL24;
 CPyL36: ;
-    CPy_DecRef(cpy_r_r23);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r30);
+    goto CPyL24;
 CPyL37: ;
-    CPy_DecRef(cpy_r_r23);
-    CPy_DecRef(cpy_r_r24);
-    goto CPyL30;
+    CPy_DECREF(cpy_r_r9);
+    CPy_DECREF(cpy_r_r33);
+    CPy_DECREF(cpy_r_r34.f2);
+    CPy_DECREF(cpy_r_r34.f3);
+    goto CPyL21;
 CPyL38: ;
-    CPy_DecRef(cpy_r_r24);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r30);
+    CPy_DecRef(cpy_r_r33);
+    CPy_DecRef(cpy_r_r38);
+    goto CPyL24;
 CPyL39: ;
-    CPy_DECREF(cpy_r_r29);
-    goto CPyL27;
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r30);
+    CPy_DecRef(cpy_r_r33);
+    CPy_DecRef(cpy_r_r39);
+    goto CPyL24;
 CPyL40: ;
-    CPy_DecRef(cpy_r_r24);
-    CPy_DecRef(cpy_r_r29);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r9);
+    CPy_DecRef(cpy_r_r30);
+    CPy_DecRef(cpy_r_r33);
+    goto CPyL24;
 CPyL41: ;
-    CPy_DECREF_NO_IMM(cpy_r_r24);
-    CPy_DECREF(cpy_r_r29);
-    CPy_DECREF(cpy_r_r31);
-    goto CPyL16;
-CPyL42: ;
-    CPy_DECREF_NO_IMM(cpy_r_r24);
-    CPy_DECREF(cpy_r_r29);
-    CPy_DECREF(cpy_r_r31);
-    CPy_DECREF(cpy_r_r32);
-    goto CPyL19;
-CPyL43: ;
-    CPy_DECREF_NO_IMM(cpy_r_r24);
-    CPy_DECREF(cpy_r_r29);
-    CPy_DECREF(cpy_r_r32);
-    CPy_DECREF(cpy_r_r34);
-    CPy_DECREF(cpy_r_r36);
-    goto CPyL22;
-CPyL44: ;
-    CPy_DecRef(cpy_r_r24);
-    CPy_DecRef(cpy_r_r29);
-    CPy_DecRef(cpy_r_r32);
-    goto CPyL30;
+    CPy_DecRef(cpy_r_r30);
+    goto CPyL24;
 }
 
 PyObject *CPyPy_validation____prepare_selector_collision_msg(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -142050,165 +141394,57 @@ fail: ;
     return NULL;
 }
 
-PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner) {
-    PyObject *cpy_r_r0;
-    char cpy_r_r1;
-    PyObject *cpy_r_r2;
-    PyObject *cpy_r_r3;
-    cpy_r_r0 = (PyObject *)&_Py_NoneStruct;
-    cpy_r_r1 = cpy_r_instance == cpy_r_r0;
-    if (!cpy_r_r1) goto CPyL2;
-    CPy_INCREF(cpy_r___mypyc_self__);
-    return cpy_r___mypyc_self__;
-CPyL2: ;
-    cpy_r_r2 = PyMethod_New(cpy_r___mypyc_self__, cpy_r_instance);
-    if (cpy_r_r2 == NULL) goto CPyL4;
-    return cpy_r_r2;
-CPyL4: ;
-    cpy_r_r3 = NULL;
-    return cpy_r_r3;
-}
-
-PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
-    PyObject *obj___mypyc_self__ = self;
-    static const char * const kwlist[] = {"instance", "owner", 0};
-    static CPyArg_Parser parser = {"OO:__get__", kwlist, 0};
-    PyObject *obj_instance;
-    PyObject *obj_owner;
-    if (!CPyArg_ParseStackAndKeywordsSimple(args, nargs, kwnames, &parser, &obj_instance, &obj_owner)) {
-        return NULL;
-    }
-    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
-    PyObject *arg_instance = obj_instance;
-    PyObject *arg_owner = obj_owner;
-    PyObject *retval = CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__(arg___mypyc_self__, arg_instance, arg_owner);
-    return retval;
-fail: ;
-    CPy_AddTraceback("faster_web3/_utils/validation.py", "__get__", -1, CPyStatic_validation___globals);
-    return NULL;
-}
-
-char CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs) {
-    PyObject *cpy_r_r0;
-    CPyTagged cpy_r_r1;
-    int64_t cpy_r_r2;
-    char cpy_r_r3;
-    int64_t cpy_r_r4;
-    char cpy_r_r5;
-    char cpy_r_r6;
-    char cpy_r_r7;
-    char cpy_r_r8;
-    char cpy_r_r9;
-    cpy_r_r0 = ((faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
-    if (unlikely(cpy_r_r0 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/validation.py", "<lambda>", "__mypyc_lambda__1_validate_abi_obj", "__mypyc_env__", 106, CPyStatic_validation___globals);
-        goto CPyL7;
-    }
-    CPy_INCREF_NO_IMM(cpy_r_r0);
-    goto CPyL8;
-CPyL1: ;
-    cpy_r_r1 = CPyObject_Size(cpy_r_funcs);
-    if (unlikely(cpy_r_r1 == CPY_INT_TAG)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "<lambda>", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL7;
-    }
-    cpy_r_r2 = cpy_r_r1 & 1;
-    cpy_r_r3 = cpy_r_r2 != 0;
-    if (cpy_r_r3) goto CPyL4;
-    cpy_r_r4 = 2 & 1;
-    cpy_r_r5 = cpy_r_r4 != 0;
-    if (!cpy_r_r5) goto CPyL5;
-CPyL4: ;
-    cpy_r_r6 = CPyTagged_IsLt_(2, cpy_r_r1);
-    cpy_r_r7 = cpy_r_r6;
-    goto CPyL6;
-CPyL5: ;
-    cpy_r_r8 = (Py_ssize_t)cpy_r_r1 > (Py_ssize_t)2;
-    cpy_r_r7 = cpy_r_r8;
-CPyL6: ;
-    CPyTagged_DECREF(cpy_r_r1);
-    return cpy_r_r7;
-CPyL7: ;
-    cpy_r_r9 = 2;
-    return cpy_r_r9;
-CPyL8: ;
-    CPy_DECREF_NO_IMM(cpy_r_r0);
-    goto CPyL1;
-}
-
-PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
-    PyObject *obj___mypyc_self__ = self;
-    static const char * const kwlist[] = {"funcs", 0};
-    static CPyArg_Parser parser = {"O:__call__", kwlist, 0};
-    PyObject *obj_funcs;
-    if (!CPyArg_ParseStackAndKeywordsOneArg(args, PyVectorcall_NARGS(nargs), kwnames, &parser, &obj_funcs)) {
-        return NULL;
-    }
-    PyObject *arg___mypyc_self__ = obj___mypyc_self__;
-    PyObject *arg_funcs = obj_funcs;
-    char retval = CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____call__(arg___mypyc_self__, arg_funcs);
-    if (retval == 2) {
-        return NULL;
-    }
-    PyObject *retbox = retval ? Py_True : Py_False;
-    CPy_INCREF(retbox);
-    return retbox;
-fail: ;
-    CPy_AddTraceback("faster_web3/_utils/validation.py", "<lambda>", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-    return NULL;
-}
-
 char CPyDef_validation___validate_abi(PyObject *cpy_r_abi) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
     PyObject *cpy_r_r2;
-    PyObject *cpy_r_r3;
-    PyObject **cpy_r_r5;
-    PyObject *cpy_r_r6;
-    char cpy_r_r7;
+    PyObject **cpy_r_r4;
+    PyObject *cpy_r_r5;
+    char cpy_r_r6;
+    PyObject *cpy_r_r7;
     PyObject *cpy_r_r8;
     PyObject *cpy_r_r9;
     PyObject *cpy_r_r10;
-    PyObject *cpy_r_r11;
-    PyObject **cpy_r_r13;
-    PyObject *cpy_r_r14;
-    char cpy_r_r15;
+    PyObject **cpy_r_r12;
+    PyObject *cpy_r_r13;
+    char cpy_r_r14;
+    PyObject *cpy_r_r15;
     PyObject *cpy_r_r16;
     PyObject *cpy_r_r17;
     PyObject *cpy_r_r18;
     PyObject *cpy_r_r19;
-    PyObject *cpy_r_r20;
-    PyObject **cpy_r_r22;
-    PyObject *cpy_r_r23;
+    PyObject **cpy_r_r21;
+    PyObject *cpy_r_r22;
+    char cpy_r_r23;
     char cpy_r_r24;
     char cpy_r_r25;
-    char cpy_r_r26;
+    PyObject *cpy_r_r26;
     PyObject *cpy_r_r27;
     PyObject *cpy_r_r28;
     PyObject *cpy_r_r29;
-    PyObject *cpy_r_r30;
-    PyObject **cpy_r_r32;
-    PyObject *cpy_r_r33;
-    char cpy_r_r34;
+    PyObject **cpy_r_r31;
+    PyObject *cpy_r_r32;
+    char cpy_r_r33;
+    PyObject *cpy_r_r34;
     PyObject *cpy_r_r35;
     PyObject *cpy_r_r36;
-    PyObject *cpy_r_r37;
-    int32_t cpy_r_r38;
+    int32_t cpy_r_r37;
+    char cpy_r_r38;
     char cpy_r_r39;
     char cpy_r_r40;
     char cpy_r_r41;
-    char cpy_r_r42;
+    PyObject *cpy_r_r42;
     PyObject *cpy_r_r43;
     PyObject *cpy_r_r44;
     PyObject *cpy_r_r45;
-    PyObject *cpy_r_r46;
-    PyObject **cpy_r_r48;
+    PyObject **cpy_r_r47;
+    PyObject *cpy_r_r48;
     PyObject *cpy_r_r49;
     PyObject *cpy_r_r50;
     PyObject *cpy_r_r51;
     PyObject *cpy_r_r52;
-    PyObject *cpy_r_r53;
-    PyObject **cpy_r_r55;
+    PyObject **cpy_r_r54;
+    PyObject *cpy_r_r55;
     PyObject *cpy_r_r56;
     PyObject *cpy_r_r57;
     PyObject *cpy_r_r58;
@@ -142219,463 +141455,545 @@ char CPyDef_validation___validate_abi(PyObject *cpy_r_abi) {
     PyObject *cpy_r_r63;
     PyObject *cpy_r_r64;
     PyObject *cpy_r_r65;
-    PyObject *cpy_r_r66;
-    PyObject **cpy_r_r68;
+    PyObject **cpy_r_r67;
+    PyObject *cpy_r_r68;
     PyObject *cpy_r_r69;
     PyObject *cpy_r_r70;
     PyObject *cpy_r_r71;
-    PyObject *cpy_r_r72;
-    PyObject **cpy_r_r74;
+    PyObject **cpy_r_r73;
+    PyObject *cpy_r_r74;
     PyObject *cpy_r_r75;
     PyObject *cpy_r_r76;
-    char cpy_r_r77;
-    PyObject *cpy_r_r78;
+    PyObject **cpy_r_r78;
     PyObject *cpy_r_r79;
     PyObject *cpy_r_r80;
-    PyObject **cpy_r_r82;
+    PyObject *cpy_r_r81;
+    PyObject *cpy_r_r82;
     PyObject *cpy_r_r83;
-    int32_t cpy_r_r84;
-    char cpy_r_r85;
+    char cpy_r_r84;
+    PyObject *cpy_r_r85;
     char cpy_r_r86;
     PyObject *cpy_r_r87;
-    PyObject *cpy_r_r88;
-    PyObject *cpy_r_r89;
-    PyObject *cpy_r_r90;
-    PyObject *cpy_r_r91;
-    PyObject *cpy_r_r92;
-    PyObject *cpy_r_r93;
-    PyObject **cpy_r_r95;
-    PyObject *cpy_r_r96;
-    char cpy_r_r97;
-    cpy_r_r0 = CPyDef_validation___validate_abi_env();
-    if (unlikely(cpy_r_r0 == NULL)) {
+    char cpy_r_r88;
+    CPyTagged cpy_r_r89;
+    int64_t cpy_r_r90;
+    char cpy_r_r91;
+    int64_t cpy_r_r92;
+    char cpy_r_r93;
+    char cpy_r_r94;
+    char cpy_r_r95;
+    char cpy_r_r96;
+    int32_t cpy_r_r97;
+    char cpy_r_r98;
+    char cpy_r_r99;
+    int64_t cpy_r_r100;
+    CPyTagged cpy_r_r101;
+    char cpy_r_r102;
+    PyObject *cpy_r_r103;
+    PyObject *cpy_r_r104;
+    PyObject *cpy_r_r105;
+    PyObject *cpy_r_r106;
+    PyObject *cpy_r_r107;
+    PyObject *cpy_r_r108;
+    PyObject **cpy_r_r110;
+    PyObject *cpy_r_r111;
+    char cpy_r_r112;
+    cpy_r_r0 = CPyStatic_validation___globals;
+    cpy_r_r1 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_list_like' */
+    cpy_r_r2 = CPyDict_GetItem(cpy_r_r0, cpy_r_r1);
+    if (unlikely(cpy_r_r2 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
-    cpy_r_r1 = CPyStatic_validation___globals;
-    cpy_r_r2 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_list_like' */
-    cpy_r_r3 = CPyDict_GetItem(cpy_r_r1, cpy_r_r2);
-    if (unlikely(cpy_r_r3 == NULL)) {
+    PyObject *cpy_r_r3[1] = {cpy_r_abi};
+    cpy_r_r4 = (PyObject **)&cpy_r_r3;
+    cpy_r_r5 = PyObject_Vectorcall(cpy_r_r2, cpy_r_r4, 1, 0);
+    CPy_DECREF(cpy_r_r2);
+    if (unlikely(cpy_r_r5 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
+        goto CPyL71;
     }
-    PyObject *cpy_r_r4[1] = {cpy_r_abi};
-    cpy_r_r5 = (PyObject **)&cpy_r_r4;
-    cpy_r_r6 = PyObject_Vectorcall(cpy_r_r3, cpy_r_r5, 1, 0);
-    CPy_DECREF(cpy_r_r3);
-    if (unlikely(cpy_r_r6 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-    if (unlikely(!PyBool_Check(cpy_r_r6))) {
-        CPy_TypeError("bool", cpy_r_r6); cpy_r_r7 = 2;
+    if (unlikely(!PyBool_Check(cpy_r_r5))) {
+        CPy_TypeError("bool", cpy_r_r5); cpy_r_r6 = 2;
     } else
-        cpy_r_r7 = cpy_r_r6 == Py_True;
-    CPy_DECREF(cpy_r_r6);
-    if (unlikely(cpy_r_r7 == 2)) {
+        cpy_r_r6 = cpy_r_r5 == Py_True;
+    CPy_DECREF(cpy_r_r5);
+    if (unlikely(cpy_r_r6 == 2)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
+        goto CPyL71;
     }
-    if (cpy_r_r7) {
-        goto CPyL9;
-    } else
-        goto CPyL58;
-CPyL5: ;
-    cpy_r_r8 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' is not a list" */
-    cpy_r_r9 = CPyStatic_validation___globals;
-    cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r11 = CPyDict_GetItem(cpy_r_r9, cpy_r_r10);
-    if (unlikely(cpy_r_r11 == NULL)) {
+    if (cpy_r_r6) goto CPyL8;
+    cpy_r_r7 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' is not a list" */
+    cpy_r_r8 = CPyStatic_validation___globals;
+    cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
+    cpy_r_r10 = CPyDict_GetItem(cpy_r_r8, cpy_r_r9);
+    if (unlikely(cpy_r_r10 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
-    PyObject *cpy_r_r12[1] = {cpy_r_r8};
-    cpy_r_r13 = (PyObject **)&cpy_r_r12;
-    cpy_r_r14 = PyObject_Vectorcall(cpy_r_r11, cpy_r_r13, 1, 0);
-    CPy_DECREF(cpy_r_r11);
-    if (unlikely(cpy_r_r14 == NULL)) {
+    PyObject *cpy_r_r11[1] = {cpy_r_r7};
+    cpy_r_r12 = (PyObject **)&cpy_r_r11;
+    cpy_r_r13 = PyObject_Vectorcall(cpy_r_r10, cpy_r_r12, 1, 0);
+    CPy_DECREF(cpy_r_r10);
+    if (unlikely(cpy_r_r13 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
-    CPy_Raise(cpy_r_r14);
-    CPy_DECREF(cpy_r_r14);
+    CPy_Raise(cpy_r_r13);
+    CPy_DECREF(cpy_r_r13);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
     CPy_Unreachable();
+CPyL8: ;
+    cpy_r_r14 = 1;
+    cpy_r_r15 = PyObject_GetIter(cpy_r_abi);
+    if (unlikely(cpy_r_r15 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
 CPyL9: ;
-    cpy_r_r15 = 1;
-    cpy_r_r16 = PyObject_GetIter(cpy_r_abi);
-    if (unlikely(cpy_r_r16 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-CPyL10: ;
-    cpy_r_r17 = PyIter_Next(cpy_r_r16);
-    if (cpy_r_r17 == NULL) goto CPyL59;
-    cpy_r_r18 = CPyStatic_validation___globals;
-    cpy_r_r19 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_dict' */
-    cpy_r_r20 = CPyDict_GetItem(cpy_r_r18, cpy_r_r19);
-    if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL60;
-    }
-    PyObject *cpy_r_r21[1] = {cpy_r_r17};
-    cpy_r_r22 = (PyObject **)&cpy_r_r21;
-    cpy_r_r23 = PyObject_Vectorcall(cpy_r_r20, cpy_r_r22, 1, 0);
-    CPy_DECREF(cpy_r_r20);
-    if (unlikely(cpy_r_r23 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL60;
-    }
-    CPy_DECREF(cpy_r_r17);
-    if (unlikely(!PyBool_Check(cpy_r_r23))) {
-        CPy_TypeError("bool", cpy_r_r23); cpy_r_r24 = 2;
-    } else
-        cpy_r_r24 = cpy_r_r23 == Py_True;
-    CPy_DECREF(cpy_r_r23);
-    if (unlikely(cpy_r_r24 == 2)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL61;
-    }
-    cpy_r_r25 = cpy_r_r24 ^ 1;
-    if (cpy_r_r25) {
-        goto CPyL62;
-    } else
-        goto CPyL10;
-CPyL15: ;
-    cpy_r_r15 = 0;
-    goto CPyL17;
-CPyL16: ;
-    cpy_r_r26 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r26)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-CPyL17: ;
-    if (cpy_r_r15) {
-        goto CPyL22;
-    } else
-        goto CPyL63;
-CPyL18: ;
-    cpy_r_r27 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' is not a list of dictionaries" */
-    cpy_r_r28 = CPyStatic_validation___globals;
-    cpy_r_r29 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r30 = CPyDict_GetItem(cpy_r_r28, cpy_r_r29);
-    if (unlikely(cpy_r_r30 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    PyObject *cpy_r_r31[1] = {cpy_r_r27};
-    cpy_r_r32 = (PyObject **)&cpy_r_r31;
-    cpy_r_r33 = PyObject_Vectorcall(cpy_r_r30, cpy_r_r32, 1, 0);
-    CPy_DECREF(cpy_r_r30);
-    if (unlikely(cpy_r_r33 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    CPy_Raise(cpy_r_r33);
-    CPy_DECREF(cpy_r_r33);
-    if (unlikely(!0)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    CPy_Unreachable();
-CPyL22: ;
-    cpy_r_r34 = 1;
-    cpy_r_r35 = PyObject_GetIter(cpy_r_abi);
-    if (unlikely(cpy_r_r35 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-CPyL23: ;
-    cpy_r_r36 = PyIter_Next(cpy_r_r35);
-    if (cpy_r_r36 == NULL) goto CPyL64;
-    cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
-    cpy_r_r38 = PySequence_Contains(cpy_r_r36, cpy_r_r37);
-    CPy_DECREF(cpy_r_r36);
-    cpy_r_r39 = cpy_r_r38 >= 0;
-    if (unlikely(!cpy_r_r39)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL65;
-    }
-    cpy_r_r40 = cpy_r_r38;
-    cpy_r_r41 = cpy_r_r40 ^ 1;
-    if (cpy_r_r41) {
-        goto CPyL66;
-    } else
-        goto CPyL23;
-CPyL26: ;
-    cpy_r_r34 = 0;
-    goto CPyL28;
-CPyL27: ;
-    cpy_r_r42 = CPy_NoErrOccurred();
-    if (unlikely(!cpy_r_r42)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-CPyL28: ;
-    if (cpy_r_r34) {
-        goto CPyL33;
-    } else
-        goto CPyL67;
-CPyL29: ;
-    cpy_r_r43 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' must contain a list of elements each with a type" */
-    cpy_r_r44 = CPyStatic_validation___globals;
-    cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r46 = CPyDict_GetItem(cpy_r_r44, cpy_r_r45);
-    if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    PyObject *cpy_r_r47[1] = {cpy_r_r43};
-    cpy_r_r48 = (PyObject **)&cpy_r_r47;
-    cpy_r_r49 = PyObject_Vectorcall(cpy_r_r46, cpy_r_r48, 1, 0);
-    CPy_DECREF(cpy_r_r46);
-    if (unlikely(cpy_r_r49 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    CPy_Raise(cpy_r_r49);
-    CPy_DECREF(cpy_r_r49);
-    if (unlikely(!0)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
-    }
-    CPy_Unreachable();
-CPyL33: ;
-    cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
-    cpy_r_r51 = CPyStatic_validation___globals;
-    cpy_r_r52 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'filter_abi_by_type' */
-    cpy_r_r53 = CPyDict_GetItem(cpy_r_r51, cpy_r_r52);
-    if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-    PyObject *cpy_r_r54[2] = {cpy_r_r50, cpy_r_abi};
-    cpy_r_r55 = (PyObject **)&cpy_r_r54;
-    cpy_r_r56 = PyObject_Vectorcall(cpy_r_r53, cpy_r_r55, 2, 0);
-    CPy_DECREF(cpy_r_r53);
-    if (unlikely(cpy_r_r56 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL57;
-    }
-    if (likely(PyList_Check(cpy_r_r56)))
-        cpy_r_r57 = cpy_r_r56;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi", 104, CPyStatic_validation___globals, "list", cpy_r_r56);
-        goto CPyL57;
-    }
-    cpy_r_r58 = CPyStatic_validation___globals;
-    cpy_r_r59 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'encode_hex' */
-    cpy_r_r60 = CPyDict_GetItem(cpy_r_r58, cpy_r_r59);
-    if (unlikely(cpy_r_r60 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL68;
-    }
-    cpy_r_r61 = CPyStatic_validation___globals;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function_abi_to_4byte_selector' */
-    cpy_r_r63 = CPyDict_GetItem(cpy_r_r61, cpy_r_r62);
-    if (unlikely(cpy_r_r63 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL69;
-    }
-    cpy_r_r64 = CPyStatic_validation___globals;
-    cpy_r_r65 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'compose' */
-    cpy_r_r66 = CPyDict_GetItem(cpy_r_r64, cpy_r_r65);
-    if (unlikely(cpy_r_r66 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL70;
-    }
-    PyObject *cpy_r_r67[2] = {cpy_r_r60, cpy_r_r63};
-    cpy_r_r68 = (PyObject **)&cpy_r_r67;
-    cpy_r_r69 = PyObject_Vectorcall(cpy_r_r66, cpy_r_r68, 2, 0);
-    CPy_DECREF(cpy_r_r66);
-    if (unlikely(cpy_r_r69 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL70;
-    }
-    CPy_DECREF(cpy_r_r60);
-    CPy_DECREF(cpy_r_r63);
-    cpy_r_r70 = CPyStatic_validation___globals;
-    cpy_r_r71 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'groupby' */
-    cpy_r_r72 = CPyDict_GetItem(cpy_r_r70, cpy_r_r71);
-    if (unlikely(cpy_r_r72 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL71;
-    }
-    PyObject *cpy_r_r73[2] = {cpy_r_r69, cpy_r_r57};
-    cpy_r_r74 = (PyObject **)&cpy_r_r73;
-    cpy_r_r75 = PyObject_Vectorcall(cpy_r_r72, cpy_r_r74, 2, 0);
-    CPy_DECREF(cpy_r_r72);
-    if (unlikely(cpy_r_r75 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL71;
-    }
-    CPy_DECREF(cpy_r_r69);
-    CPy_DECREF_NO_IMM(cpy_r_r57);
-    cpy_r_r76 = CPyDef_validation_____mypyc_lambda__1_validate_abi_obj();
-    if (unlikely(cpy_r_r76 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL72;
-    }
-    if (((faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *)cpy_r_r76)->___mypyc_env__ != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *)cpy_r_r76)->___mypyc_env__);
-    }
-    ((faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *)cpy_r_r76)->___mypyc_env__ = cpy_r_r0;
-    cpy_r_r77 = 1;
-    if (unlikely(!cpy_r_r77)) {
+    cpy_r_r16 = PyIter_Next(cpy_r_r15);
+    if (cpy_r_r16 == NULL) goto CPyL72;
+    cpy_r_r17 = CPyStatic_validation___globals;
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'is_dict' */
+    cpy_r_r19 = CPyDict_GetItem(cpy_r_r17, cpy_r_r18);
+    if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL73;
     }
-    cpy_r_r78 = CPyStatic_validation___globals;
-    cpy_r_r79 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'valfilter' */
-    cpy_r_r80 = CPyDict_GetItem(cpy_r_r78, cpy_r_r79);
-    if (unlikely(cpy_r_r80 == NULL)) {
+    PyObject *cpy_r_r20[1] = {cpy_r_r16};
+    cpy_r_r21 = (PyObject **)&cpy_r_r20;
+    cpy_r_r22 = PyObject_Vectorcall(cpy_r_r19, cpy_r_r21, 1, 0);
+    CPy_DECREF(cpy_r_r19);
+    if (unlikely(cpy_r_r22 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL73;
     }
-    PyObject *cpy_r_r81[2] = {cpy_r_r76, cpy_r_r75};
-    cpy_r_r82 = (PyObject **)&cpy_r_r81;
-    cpy_r_r83 = PyObject_Vectorcall(cpy_r_r80, cpy_r_r82, 2, 0);
-    CPy_DECREF(cpy_r_r80);
-    if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL73;
-    }
-    CPy_DECREF_NO_IMM(cpy_r_r76);
-    CPy_DECREF(cpy_r_r75);
-    cpy_r_r84 = PyObject_IsTrue(cpy_r_r83);
-    cpy_r_r85 = cpy_r_r84 >= 0;
-    if (unlikely(!cpy_r_r85)) {
+    CPy_DECREF(cpy_r_r16);
+    if (unlikely(!PyBool_Check(cpy_r_r22))) {
+        CPy_TypeError("bool", cpy_r_r22); cpy_r_r23 = 2;
+    } else
+        cpy_r_r23 = cpy_r_r22 == Py_True;
+    CPy_DECREF(cpy_r_r22);
+    if (unlikely(cpy_r_r23 == 2)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL74;
     }
-    cpy_r_r86 = cpy_r_r84;
-    if (!cpy_r_r86) goto CPyL75;
-    cpy_r_r87 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Abi contains functions with colliding selectors. '
-                                     'Functions ') */
-    if (likely(PyDict_Check(cpy_r_r83)))
-        cpy_r_r88 = cpy_r_r83;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi", 110, CPyStatic_validation___globals, "dict", cpy_r_r83);
-        goto CPyL56;
-    }
-    cpy_r_r89 = CPyDef_validation____prepare_selector_collision_msg(cpy_r_r88);
-    CPy_DECREF(cpy_r_r88);
-    if (unlikely(cpy_r_r89 == NULL)) {
+    cpy_r_r24 = cpy_r_r23 ^ 1;
+    if (cpy_r_r24) {
+        goto CPyL75;
+    } else
+        goto CPyL9;
+CPyL14: ;
+    cpy_r_r14 = 0;
+    goto CPyL16;
+CPyL15: ;
+    cpy_r_r25 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r25)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
-    cpy_r_r90 = CPyStr_Build(2, cpy_r_r87, cpy_r_r89);
-    CPy_DECREF(cpy_r_r89);
-    if (unlikely(cpy_r_r90 == NULL)) {
+CPyL16: ;
+    if (cpy_r_r14) goto CPyL21;
+    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' is not a list of dictionaries" */
+    cpy_r_r27 = CPyStatic_validation___globals;
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
+    cpy_r_r29 = CPyDict_GetItem(cpy_r_r27, cpy_r_r28);
+    if (unlikely(cpy_r_r29 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
     }
-    cpy_r_r91 = CPyStatic_validation___globals;
-    cpy_r_r92 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r93 = CPyDict_GetItem(cpy_r_r91, cpy_r_r92);
-    if (unlikely(cpy_r_r93 == NULL)) {
+    PyObject *cpy_r_r30[1] = {cpy_r_r26};
+    cpy_r_r31 = (PyObject **)&cpy_r_r30;
+    cpy_r_r32 = PyObject_Vectorcall(cpy_r_r29, cpy_r_r31, 1, 0);
+    CPy_DECREF(cpy_r_r29);
+    if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL76;
+        goto CPyL71;
     }
-    PyObject *cpy_r_r94[1] = {cpy_r_r90};
-    cpy_r_r95 = (PyObject **)&cpy_r_r94;
-    cpy_r_r96 = PyObject_Vectorcall(cpy_r_r93, cpy_r_r95, 1, 0);
-    CPy_DECREF(cpy_r_r93);
-    if (unlikely(cpy_r_r96 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL76;
-    }
-    CPy_DECREF(cpy_r_r90);
-    CPy_Raise(cpy_r_r96);
-    CPy_DECREF(cpy_r_r96);
+    CPy_Raise(cpy_r_r32);
+    CPy_DECREF(cpy_r_r32);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
-        goto CPyL56;
+        goto CPyL71;
+    }
+    CPy_Unreachable();
+CPyL21: ;
+    cpy_r_r33 = 1;
+    cpy_r_r34 = PyObject_GetIter(cpy_r_abi);
+    if (unlikely(cpy_r_r34 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+CPyL22: ;
+    cpy_r_r35 = PyIter_Next(cpy_r_r34);
+    if (cpy_r_r35 == NULL) goto CPyL76;
+    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'type' */
+    cpy_r_r37 = PySequence_Contains(cpy_r_r35, cpy_r_r36);
+    CPy_DECREF(cpy_r_r35);
+    cpy_r_r38 = cpy_r_r37 >= 0;
+    if (unlikely(!cpy_r_r38)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL77;
+    }
+    cpy_r_r39 = cpy_r_r37;
+    cpy_r_r40 = cpy_r_r39 ^ 1;
+    if (cpy_r_r40) {
+        goto CPyL78;
+    } else
+        goto CPyL22;
+CPyL25: ;
+    cpy_r_r33 = 0;
+    goto CPyL27;
+CPyL26: ;
+    cpy_r_r41 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r41)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+CPyL27: ;
+    if (cpy_r_r33) goto CPyL32;
+    cpy_r_r42 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "'abi' must contain a list of elements each with a type" */
+    cpy_r_r43 = CPyStatic_validation___globals;
+    cpy_r_r44 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
+    cpy_r_r45 = CPyDict_GetItem(cpy_r_r43, cpy_r_r44);
+    if (unlikely(cpy_r_r45 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    PyObject *cpy_r_r46[1] = {cpy_r_r42};
+    cpy_r_r47 = (PyObject **)&cpy_r_r46;
+    cpy_r_r48 = PyObject_Vectorcall(cpy_r_r45, cpy_r_r47, 1, 0);
+    CPy_DECREF(cpy_r_r45);
+    if (unlikely(cpy_r_r48 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    CPy_Raise(cpy_r_r48);
+    CPy_DECREF(cpy_r_r48);
+    if (unlikely(!0)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    CPy_Unreachable();
+CPyL32: ;
+    cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function' */
+    cpy_r_r50 = CPyStatic_validation___globals;
+    cpy_r_r51 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'filter_abi_by_type' */
+    cpy_r_r52 = CPyDict_GetItem(cpy_r_r50, cpy_r_r51);
+    if (unlikely(cpy_r_r52 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    PyObject *cpy_r_r53[2] = {cpy_r_r49, cpy_r_abi};
+    cpy_r_r54 = (PyObject **)&cpy_r_r53;
+    cpy_r_r55 = PyObject_Vectorcall(cpy_r_r52, cpy_r_r54, 2, 0);
+    CPy_DECREF(cpy_r_r52);
+    if (unlikely(cpy_r_r55 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    if (likely(PyList_Check(cpy_r_r55)))
+        cpy_r_r56 = cpy_r_r55;
+    else {
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi", 104, CPyStatic_validation___globals, "list", cpy_r_r55);
+        goto CPyL71;
+    }
+    cpy_r_r57 = CPyStatic_validation___globals;
+    cpy_r_r58 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'encode_hex' */
+    cpy_r_r59 = CPyDict_GetItem(cpy_r_r57, cpy_r_r58);
+    if (unlikely(cpy_r_r59 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL79;
+    }
+    cpy_r_r60 = CPyStatic_validation___globals;
+    cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'function_abi_to_4byte_selector' */
+    cpy_r_r62 = CPyDict_GetItem(cpy_r_r60, cpy_r_r61);
+    if (unlikely(cpy_r_r62 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL80;
+    }
+    cpy_r_r63 = CPyStatic_validation___globals;
+    cpy_r_r64 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'compose' */
+    cpy_r_r65 = CPyDict_GetItem(cpy_r_r63, cpy_r_r64);
+    if (unlikely(cpy_r_r65 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL81;
+    }
+    PyObject *cpy_r_r66[2] = {cpy_r_r59, cpy_r_r62};
+    cpy_r_r67 = (PyObject **)&cpy_r_r66;
+    cpy_r_r68 = PyObject_Vectorcall(cpy_r_r65, cpy_r_r67, 2, 0);
+    CPy_DECREF(cpy_r_r65);
+    if (unlikely(cpy_r_r68 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL81;
+    }
+    CPy_DECREF(cpy_r_r59);
+    CPy_DECREF(cpy_r_r62);
+    cpy_r_r69 = CPyStatic_validation___globals;
+    cpy_r_r70 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'groupby' */
+    cpy_r_r71 = CPyDict_GetItem(cpy_r_r69, cpy_r_r70);
+    if (unlikely(cpy_r_r71 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL82;
+    }
+    PyObject *cpy_r_r72[2] = {cpy_r_r68, cpy_r_r56};
+    cpy_r_r73 = (PyObject **)&cpy_r_r72;
+    cpy_r_r74 = PyObject_Vectorcall(cpy_r_r71, cpy_r_r73, 2, 0);
+    CPy_DECREF(cpy_r_r71);
+    if (unlikely(cpy_r_r74 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL82;
+    }
+    CPy_DECREF(cpy_r_r68);
+    CPy_DECREF_NO_IMM(cpy_r_r56);
+    cpy_r_r75 = PyDict_New();
+    if (unlikely(cpy_r_r75 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL83;
+    }
+    cpy_r_r76 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'items' */
+    PyObject *cpy_r_r77[1] = {cpy_r_r74};
+    cpy_r_r78 = (PyObject **)&cpy_r_r77;
+    cpy_r_r79 = PyObject_VectorcallMethod(cpy_r_r76, cpy_r_r78, 9223372036854775809ULL, 0);
+    if (unlikely(cpy_r_r79 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL84;
+    }
+    CPy_DECREF(cpy_r_r74);
+    cpy_r_r80 = PyObject_GetIter(cpy_r_r79);
+    CPy_DECREF(cpy_r_r79);
+    if (unlikely(cpy_r_r80 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL85;
+    }
+CPyL44: ;
+    cpy_r_r81 = PyIter_Next(cpy_r_r80);
+    if (cpy_r_r81 == NULL) goto CPyL86;
+    cpy_r_r82 = PyObject_GetIter(cpy_r_r81);
+    CPy_DECREF(cpy_r_r81);
+    if (unlikely(cpy_r_r82 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL87;
+    }
+    cpy_r_r83 = PyIter_Next(cpy_r_r82);
+    if (cpy_r_r83 == NULL) {
+        goto CPyL88;
+    } else
+        goto CPyL49;
+CPyL47: ;
+    PyErr_SetString(PyExc_ValueError, "not enough values to unpack");
+    cpy_r_r84 = 0;
+    if (unlikely(!cpy_r_r84)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    CPy_Unreachable();
+CPyL49: ;
+    cpy_r_r85 = PyIter_Next(cpy_r_r82);
+    if (cpy_r_r85 == NULL) {
+        goto CPyL89;
+    } else
+        goto CPyL52;
+CPyL50: ;
+    PyErr_SetString(PyExc_ValueError, "not enough values to unpack");
+    cpy_r_r86 = 0;
+    if (unlikely(!cpy_r_r86)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    CPy_Unreachable();
+CPyL52: ;
+    cpy_r_r87 = PyIter_Next(cpy_r_r82);
+    CPy_DECREF(cpy_r_r82);
+    if (cpy_r_r87 == NULL) {
+        goto CPyL55;
+    } else
+        goto CPyL90;
+CPyL53: ;
+    PyErr_SetString(PyExc_ValueError, "too many values to unpack");
+    cpy_r_r88 = 0;
+    if (unlikely(!cpy_r_r88)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
     }
     CPy_Unreachable();
 CPyL55: ;
-    return 1;
-CPyL56: ;
-    cpy_r_r97 = 2;
-    return cpy_r_r97;
-CPyL57: ;
-    CPy_DecRef(cpy_r_r0);
-    goto CPyL56;
+    cpy_r_r89 = CPyObject_Size(cpy_r_r85);
+    if (unlikely(cpy_r_r89 == CPY_INT_TAG)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL91;
+    }
+    cpy_r_r90 = cpy_r_r89 & 1;
+    cpy_r_r91 = cpy_r_r90 != 0;
+    if (cpy_r_r91) goto CPyL58;
+    cpy_r_r92 = 2 & 1;
+    cpy_r_r93 = cpy_r_r92 != 0;
+    if (!cpy_r_r93) goto CPyL59;
 CPyL58: ;
-    CPy_DECREF_NO_IMM(cpy_r_r0);
-    goto CPyL5;
+    cpy_r_r94 = CPyTagged_IsLt_(2, cpy_r_r89);
+    cpy_r_r95 = cpy_r_r94;
+    goto CPyL60;
 CPyL59: ;
-    CPy_DECREF(cpy_r_r16);
-    goto CPyL16;
+    cpy_r_r96 = (Py_ssize_t)cpy_r_r89 > (Py_ssize_t)2;
+    cpy_r_r95 = cpy_r_r96;
 CPyL60: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r16);
-    CPy_DecRef(cpy_r_r17);
-    goto CPyL56;
-CPyL61: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r16);
-    goto CPyL56;
-CPyL62: ;
-    CPy_DECREF(cpy_r_r16);
-    goto CPyL15;
-CPyL63: ;
-    CPy_DECREF_NO_IMM(cpy_r_r0);
-    goto CPyL18;
-CPyL64: ;
-    CPy_DECREF(cpy_r_r35);
-    goto CPyL27;
-CPyL65: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r35);
-    goto CPyL56;
-CPyL66: ;
-    CPy_DECREF(cpy_r_r35);
-    goto CPyL26;
-CPyL67: ;
-    CPy_DECREF_NO_IMM(cpy_r_r0);
-    goto CPyL29;
-CPyL68: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r57);
-    goto CPyL56;
-CPyL69: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r57);
-    CPy_DecRef(cpy_r_r60);
-    goto CPyL56;
-CPyL70: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r57);
-    CPy_DecRef(cpy_r_r60);
-    CPy_DecRef(cpy_r_r63);
-    goto CPyL56;
-CPyL71: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r57);
-    CPy_DecRef(cpy_r_r69);
-    goto CPyL56;
-CPyL72: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r75);
-    goto CPyL56;
-CPyL73: ;
-    CPy_DecRef(cpy_r_r75);
-    CPy_DecRef(cpy_r_r76);
-    goto CPyL56;
-CPyL74: ;
-    CPy_DecRef(cpy_r_r83);
-    goto CPyL56;
-CPyL75: ;
+    CPyTagged_DECREF(cpy_r_r89);
+    if (!cpy_r_r95) goto CPyL92;
+    cpy_r_r97 = PyDict_SetItem(cpy_r_r75, cpy_r_r83, cpy_r_r85);
     CPy_DECREF(cpy_r_r83);
-    goto CPyL55;
+    CPy_DECREF(cpy_r_r85);
+    cpy_r_r98 = cpy_r_r97 >= 0;
+    if (unlikely(!cpy_r_r98)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL87;
+    } else
+        goto CPyL44;
+CPyL62: ;
+    cpy_r_r99 = CPy_NoErrOccurred();
+    if (unlikely(!cpy_r_r99)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL85;
+    }
+    CPy_INCREF(cpy_r_r75);
+    cpy_r_r100 = PyDict_Size(cpy_r_r75);
+    CPy_DECREF(cpy_r_r75);
+    cpy_r_r101 = cpy_r_r100 << 1;
+    cpy_r_r102 = cpy_r_r101 != 0;
+    if (!cpy_r_r102) goto CPyL93;
+    cpy_r_r103 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Abi contains functions with colliding selectors. '
+                                      'Functions ') */
+    cpy_r_r104 = CPyDef_validation____prepare_selector_collision_msg(cpy_r_r75);
+    CPy_DECREF(cpy_r_r75);
+    if (unlikely(cpy_r_r104 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    cpy_r_r105 = CPyStr_Build(2, cpy_r_r103, cpy_r_r104);
+    CPy_DECREF(cpy_r_r104);
+    if (unlikely(cpy_r_r105 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    cpy_r_r106 = CPyStatic_validation___globals;
+    cpy_r_r107 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
+    cpy_r_r108 = CPyDict_GetItem(cpy_r_r106, cpy_r_r107);
+    if (unlikely(cpy_r_r108 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL94;
+    }
+    PyObject *cpy_r_r109[1] = {cpy_r_r105};
+    cpy_r_r110 = (PyObject **)&cpy_r_r109;
+    cpy_r_r111 = PyObject_Vectorcall(cpy_r_r108, cpy_r_r110, 1, 0);
+    CPy_DECREF(cpy_r_r108);
+    if (unlikely(cpy_r_r111 == NULL)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL94;
+    }
+    CPy_DECREF(cpy_r_r105);
+    CPy_Raise(cpy_r_r111);
+    CPy_DECREF(cpy_r_r111);
+    if (unlikely(!0)) {
+        CPy_AddTraceback("faster_web3/_utils/validation.py", "validate_abi", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
+        goto CPyL71;
+    }
+    CPy_Unreachable();
+CPyL70: ;
+    return 1;
+CPyL71: ;
+    cpy_r_r112 = 2;
+    return cpy_r_r112;
+CPyL72: ;
+    CPy_DECREF(cpy_r_r15);
+    goto CPyL15;
+CPyL73: ;
+    CPy_DecRef(cpy_r_r15);
+    CPy_DecRef(cpy_r_r16);
+    goto CPyL71;
+CPyL74: ;
+    CPy_DecRef(cpy_r_r15);
+    goto CPyL71;
+CPyL75: ;
+    CPy_DECREF(cpy_r_r15);
+    goto CPyL14;
 CPyL76: ;
-    CPy_DecRef(cpy_r_r90);
-    goto CPyL56;
+    CPy_DECREF(cpy_r_r34);
+    goto CPyL26;
+CPyL77: ;
+    CPy_DecRef(cpy_r_r34);
+    goto CPyL71;
+CPyL78: ;
+    CPy_DECREF(cpy_r_r34);
+    goto CPyL25;
+CPyL79: ;
+    CPy_DecRef(cpy_r_r56);
+    goto CPyL71;
+CPyL80: ;
+    CPy_DecRef(cpy_r_r56);
+    CPy_DecRef(cpy_r_r59);
+    goto CPyL71;
+CPyL81: ;
+    CPy_DecRef(cpy_r_r56);
+    CPy_DecRef(cpy_r_r59);
+    CPy_DecRef(cpy_r_r62);
+    goto CPyL71;
+CPyL82: ;
+    CPy_DecRef(cpy_r_r56);
+    CPy_DecRef(cpy_r_r68);
+    goto CPyL71;
+CPyL83: ;
+    CPy_DecRef(cpy_r_r74);
+    goto CPyL71;
+CPyL84: ;
+    CPy_DecRef(cpy_r_r74);
+    CPy_DecRef(cpy_r_r75);
+    goto CPyL71;
+CPyL85: ;
+    CPy_DecRef(cpy_r_r75);
+    goto CPyL71;
+CPyL86: ;
+    CPy_DECREF(cpy_r_r80);
+    goto CPyL62;
+CPyL87: ;
+    CPy_DecRef(cpy_r_r75);
+    CPy_DecRef(cpy_r_r80);
+    goto CPyL71;
+CPyL88: ;
+    CPy_DECREF(cpy_r_r75);
+    CPy_DECREF(cpy_r_r80);
+    CPy_DECREF(cpy_r_r82);
+    goto CPyL47;
+CPyL89: ;
+    CPy_DECREF(cpy_r_r75);
+    CPy_DECREF(cpy_r_r80);
+    CPy_DECREF(cpy_r_r82);
+    CPy_DECREF(cpy_r_r83);
+    goto CPyL50;
+CPyL90: ;
+    CPy_DECREF(cpy_r_r75);
+    CPy_DECREF(cpy_r_r80);
+    CPy_DECREF(cpy_r_r83);
+    CPy_DECREF(cpy_r_r85);
+    CPy_DECREF(cpy_r_r87);
+    goto CPyL53;
+CPyL91: ;
+    CPy_DecRef(cpy_r_r75);
+    CPy_DecRef(cpy_r_r80);
+    CPy_DecRef(cpy_r_r83);
+    CPy_DecRef(cpy_r_r85);
+    goto CPyL71;
+CPyL92: ;
+    CPy_DECREF(cpy_r_r83);
+    CPy_DECREF(cpy_r_r85);
+    goto CPyL44;
+CPyL93: ;
+    CPy_DECREF(cpy_r_r75);
+    goto CPyL70;
+CPyL94: ;
+    CPy_DecRef(cpy_r_r105);
+    goto CPyL71;
 }
 
 PyObject *CPyPy_validation___validate_abi(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -143048,7 +142366,7 @@ char CPyDef_validation___validate_abi_value(PyObject *cpy_r_abi_type, PyObject *
         cpy_r_r20 = NULL;
     }
     if (cpy_r_r20 != NULL) goto __LL487;
-    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi_value", 129, CPyStatic_validation___globals, "int or None", cpy_r_r19);
+    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi_value", 132, CPyStatic_validation___globals, "int or None", cpy_r_r19);
     goto CPyL119;
 __LL487: ;
     cpy_r_r21 = (PyObject *)&_Py_NoneStruct;
@@ -143199,7 +142517,7 @@ CPyL35: ;
     if (likely(PyUnicode_Check(cpy_r_r63)))
         cpy_r_r64 = cpy_r_r63;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi_value", 143, CPyStatic_validation___globals, "str", cpy_r_r63);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_abi_value", 146, CPyStatic_validation___globals, "str", cpy_r_r63);
         goto CPyL119;
     }
     cpy_r_r65 = PyObject_GetIter(cpy_r_value);
@@ -143990,7 +143308,7 @@ char CPyDef_validation___validate_address(PyObject *cpy_r_value) {
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r1 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 187, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 190, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r2 = CPyDef_faster_ens___utils___is_valid_ens_name(cpy_r_r1);
@@ -144005,7 +143323,7 @@ char CPyDef_validation___validate_address(PyObject *cpy_r_value) {
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r4 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 188, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 191, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* "' is invalid." */
@@ -144160,7 +143478,7 @@ CPyL32: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r45 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 199, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 202, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r46 = CPyStatic_validation___globals;
@@ -144195,7 +143513,7 @@ CPyL32: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r54 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 201, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 204, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r55 = CPyStatic_validation___globals;
@@ -144226,7 +143544,7 @@ CPyL42: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r61 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 203, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 206, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r62 = CPyStatic_validation___globals;
@@ -144259,14 +143577,14 @@ CPyL42: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r69 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 204, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 207, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     CPy_INCREF(cpy_r_value);
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r70 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 204, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 207, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL69;
     }
     cpy_r_r71 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'lower' */
@@ -144281,7 +143599,7 @@ CPyL42: ;
     if (likely(PyUnicode_Check(cpy_r_r74)))
         cpy_r_r75 = cpy_r_r74;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 204, CPyStatic_validation___globals, "str", cpy_r_r74);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 207, CPyStatic_validation___globals, "str", cpy_r_r74);
         goto CPyL69;
     }
     cpy_r_r76 = CPyStr_Equal(cpy_r_r69, cpy_r_r75);
@@ -144298,7 +143616,7 @@ CPyL42: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r78 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 211, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 214, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r79 = CPyStatic_validation___globals;
@@ -144331,7 +143649,7 @@ CPyL57: ;
     if (likely(PyUnicode_Check(cpy_r_value)))
         cpy_r_r86 = cpy_r_value;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 217, CPyStatic_validation___globals, "str", cpy_r_value);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_address", 220, CPyStatic_validation___globals, "str", cpy_r_value);
         goto CPyL63;
     }
     cpy_r_r87 = CPyStatic_validation___globals;
@@ -144412,7 +143730,7 @@ fail: ;
     return NULL;
 }
 
-PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner) {
+PyObject *CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner) {
     PyObject *cpy_r_r0;
     char cpy_r_r1;
     PyObject *cpy_r_r2;
@@ -144431,7 +143749,7 @@ CPyL4: ;
     return cpy_r_r3;
 }
 
-PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
+PyObject *CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
     PyObject *obj___mypyc_self__ = self;
     static const char * const kwlist[] = {"instance", "owner", 0};
     static CPyArg_Parser parser = {"OO:__get__", kwlist, 0};
@@ -144443,21 +143761,21 @@ PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObjec
     PyObject *arg___mypyc_self__ = obj___mypyc_self__;
     PyObject *arg_instance = obj_instance;
     PyObject *arg_owner = obj_owner;
-    PyObject *retval = CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__(arg___mypyc_self__, arg_instance, arg_owner);
+    PyObject *retval = CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____get__(arg___mypyc_self__, arg_instance, arg_owner);
     return retval;
 fail: ;
     CPy_AddTraceback("faster_web3/_utils/validation.py", "__get__", -1, CPyStatic_validation___globals);
     return NULL;
 }
 
-char CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_val) {
+char CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_val) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
     char cpy_r_r2;
     char cpy_r_r3;
-    cpy_r_r0 = ((faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
+    cpy_r_r0 = ((faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
     if (unlikely(cpy_r_r0 == NULL)) {
-        CPy_AttributeError("faster_web3/_utils/validation.py", "<lambda>", "__mypyc_lambda__2_has_one_val_obj", "__mypyc_env__", 223, CPyStatic_validation___globals);
+        CPy_AttributeError("faster_web3/_utils/validation.py", "<lambda>", "__mypyc_lambda__0_has_one_val_obj", "__mypyc_env__", 226, CPyStatic_validation___globals);
         goto CPyL2;
     }
     CPy_INCREF_NO_IMM(cpy_r_r0);
@@ -144474,7 +143792,7 @@ CPyL3: ;
     goto CPyL1;
 }
 
-PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
+PyObject *CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
     PyObject *obj___mypyc_self__ = self;
     static const char * const kwlist[] = {"val", 0};
     static CPyArg_Parser parser = {"O:__call__", kwlist, 0};
@@ -144484,7 +143802,7 @@ PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObje
     }
     PyObject *arg___mypyc_self__ = obj___mypyc_self__;
     PyObject *arg_val = obj_val;
-    char retval = CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____call__(arg___mypyc_self__, arg_val);
+    char retval = CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____call__(arg___mypyc_self__, arg_val);
     if (retval == 2) {
         return NULL;
     }
@@ -144543,15 +143861,15 @@ char CPyDef_validation___has_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kwarg
         goto CPyL12;
     }
     CPy_DECREF(cpy_r_r1);
-    cpy_r_r8 = CPyDef_validation_____mypyc_lambda__2_has_one_val_obj();
+    cpy_r_r8 = CPyDef_validation_____mypyc_lambda__0_has_one_val_obj();
     if (unlikely(cpy_r_r8 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "has_one_val", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
         goto CPyL13;
     }
-    if (((faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__ != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__);
+    if (((faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__ != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__);
     }
-    ((faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__ = cpy_r_r0;
+    ((faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *)cpy_r_r8)->___mypyc_env__ = cpy_r_r0;
     cpy_r_r9 = 1;
     if (unlikely(!cpy_r_r9)) {
         CPy_AddTraceback("faster_web3/_utils/validation.py", "has_one_val", DIFFCHECK_PLACEHOLDER, CPyStatic_validation___globals);
@@ -144712,7 +144030,7 @@ char CPyDef_validation___assert_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kw
     if (likely(PyUnicode_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "assert_one_val", 231, CPyStatic_validation___globals, "str", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "assert_one_val", 234, CPyStatic_validation___globals, "str", cpy_r_r13);
         goto CPyL16;
     }
     cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ', ' */
@@ -144729,7 +144047,7 @@ char CPyDef_validation___assert_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kw
     if (likely(PyUnicode_Check(cpy_r_r21)))
         cpy_r_r22 = cpy_r_r21;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "assert_one_val", 231, CPyStatic_validation___globals, "str", cpy_r_r21);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "assert_one_val", 234, CPyStatic_validation___globals, "str", cpy_r_r21);
         goto CPyL18;
     }
     cpy_r_r23 = PyList_New(4);
@@ -144844,7 +144162,7 @@ char CPyDef_validation____validate_subscription_fields(PyObject *cpy_r_response)
     if (likely(PyDict_Check(cpy_r_r1)))
         cpy_r_r2 = cpy_r_r1;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_validate_subscription_fields", 248, CPyStatic_validation___globals, "dict", cpy_r_r1);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_validate_subscription_fields", 251, CPyStatic_validation___globals, "dict", cpy_r_r1);
         goto CPyL8;
     }
     cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'subscription' */
@@ -144978,7 +144296,7 @@ CPyL2: ;
     if (likely(PyUnicode_Check(cpy_r_r13)))
         cpy_r_r14 = cpy_r_r13;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_raise_bad_response_format", 261, CPyStatic_validation___globals, "str", cpy_r_r13);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "_raise_bad_response_format", 264, CPyStatic_validation___globals, "str", cpy_r_r13);
         goto CPyL23;
     }
     cpy_r_r15 = cpy_r_r14;
@@ -145132,7 +144450,7 @@ CPyL2: ;
         cpy_r_r3 = NULL;
     }
     if (cpy_r_r3 != NULL) goto __LL488;
-    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "raise_error_for_batch_response", 273, CPyStatic_validation___globals, "dict or None", cpy_r_r2);
+    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "raise_error_for_batch_response", 276, CPyStatic_validation___globals, "dict or None", cpy_r_r2);
     goto CPyL14;
 __LL488: ;
     cpy_r_r4 = (PyObject *)&_Py_NoneStruct;
@@ -145458,7 +144776,7 @@ CPyL6: ;
     if (likely(PyUnicode_Check(cpy_r_r8)))
         cpy_r_r9 = cpy_r_r8;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 300, CPyStatic_validation___globals, "str", cpy_r_r8);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 303, CPyStatic_validation___globals, "str", cpy_r_r8);
         goto CPyL127;
     }
     cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '2.0' */
@@ -145499,7 +144817,7 @@ CPyL12: ;
         cpy_r_r17 = NULL;
     }
     if (cpy_r_r17 != NULL) goto __LL490;
-    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 305, CPyStatic_validation___globals, "union[int, str, None]", cpy_r_r16);
+    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 308, CPyStatic_validation___globals, "union[int, str, None]", cpy_r_r16);
     goto CPyL127;
 __LL490: ;
     cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'id' */
@@ -145566,7 +144884,7 @@ CPyL22: ;
     if (likely(PyUnicode_Check(cpy_r_r17)))
         cpy_r_r38 = cpy_r_r17;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 317, CPyStatic_validation___globals, "str", cpy_r_r17);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 320, CPyStatic_validation___globals, "str", cpy_r_r17);
         goto CPyL26;
     }
     cpy_r_r39 = CPyLong_FromStr(cpy_r_r38);
@@ -145669,7 +144987,7 @@ CPyL38: ;
     if (likely(PyUnicode_Check(cpy_r_r57)))
         cpy_r_r58 = cpy_r_r57;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 330, CPyStatic_validation___globals, "str", cpy_r_r57);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 333, CPyStatic_validation___globals, "str", cpy_r_r57);
         goto CPyL139;
     }
     cpy_r_r59 = PyDict_Contains(cpy_r_response, cpy_r_r58);
@@ -145734,7 +145052,7 @@ CPyL47: ;
     if (likely(PyUnicode_Check(cpy_r_r72)))
         cpy_r_r73 = cpy_r_r72;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 335, CPyStatic_validation___globals, "str", cpy_r_r72);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 338, CPyStatic_validation___globals, "str", cpy_r_r72);
         goto CPyL143;
     }
     cpy_r_r74 = PyDict_Contains(cpy_r_response, cpy_r_r73);
@@ -145793,7 +145111,7 @@ CPyL56: ;
     if (likely(PyDict_Check(cpy_r_r86)))
         cpy_r_r87 = cpy_r_r86;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 343, CPyStatic_validation___globals, "dict", cpy_r_r86);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 346, CPyStatic_validation___globals, "dict", cpy_r_r86);
         goto CPyL147;
     }
     cpy_r_r88 = (PyObject *)&_Py_NoneStruct;
@@ -145828,7 +145146,7 @@ CPyL63: ;
         cpy_r_r95 = NULL;
     }
     if (cpy_r_r95 != NULL) goto __LL497;
-    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 354, CPyStatic_validation___globals, "str or None", cpy_r_r94);
+    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 357, CPyStatic_validation___globals, "str or None", cpy_r_r94);
     goto CPyL148;
 __LL497: ;
     cpy_r_r96 = PyUnicode_Check(cpy_r_r95);
@@ -145850,7 +145168,7 @@ CPyL67: ;
     if (likely(cpy_r_r95 != Py_None))
         cpy_r_r99 = cpy_r_r95;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 359, CPyStatic_validation___globals, "str", cpy_r_r95);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 362, CPyStatic_validation___globals, "str", cpy_r_r95);
         goto CPyL151;
     }
     cpy_r_r100 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transaction not found' */
@@ -145890,7 +145208,7 @@ CPyL69: ;
     if (likely(PyUnicode_Check(cpy_r_r113)))
         cpy_r_r114 = cpy_r_r113;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 364, CPyStatic_validation___globals, "str", cpy_r_r113);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 367, CPyStatic_validation___globals, "str", cpy_r_r113);
         goto CPyL157;
     }
     cpy_r_r115 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ' not found.' */
@@ -145952,7 +145270,7 @@ CPyL79: ;
         cpy_r_r131 = NULL;
     }
     if (cpy_r_r131 != NULL) goto __LL498;
-    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 368, CPyStatic_validation___globals, "int or None", cpy_r_r130);
+    CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 371, CPyStatic_validation___globals, "int or None", cpy_r_r130);
     goto CPyL150;
 __LL498: ;
     cpy_r_r132 = PyLong_Check(cpy_r_r131);
@@ -146041,7 +145359,7 @@ CPyL93: ;
     if (likely(PyUnicode_Check(cpy_r_r150)))
         cpy_r_r151 = cpy_r_r150;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 383, CPyStatic_validation___globals, "str", cpy_r_r150);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 386, CPyStatic_validation___globals, "str", cpy_r_r150);
         goto CPyL167;
     }
     CPy_INCREF(cpy_r_r95);
@@ -146150,7 +145468,7 @@ CPyL111: ;
     if (likely(PyDict_Check(cpy_r_r181)))
         cpy_r_r182 = cpy_r_r181;
     else {
-        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 401, CPyStatic_validation___globals, "dict", cpy_r_r181);
+        CPy_TypeErrorTraceback("faster_web3/_utils/validation.py", "validate_rpc_response_and_raise_if_error", 404, CPyStatic_validation___globals, "dict", cpy_r_r181);
         goto CPyL176;
     }
     cpy_r_response = cpy_r_r182;
@@ -146644,7 +145962,7 @@ CPyL3: ;
     cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '<module>' */
     cpy_r_r15 = CPyImport_ImportMany(cpy_r_r11, cpy_r_r8, cpy_r_r12, cpy_r_r13, cpy_r_r14, cpy_r_r10);
     if (!cpy_r_r15) goto CPyL21;
-    cpy_r_r16 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Any', 'Callable', 'Dict', 'Final', 'NoReturn',
+    cpy_r_r16 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Any', 'Callable', 'Dict', 'Final', 'List', 'NoReturn',
                                      'Optional') */
     cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing' */
     cpy_r_r18 = CPyStatic_validation___globals;
@@ -146704,7 +146022,7 @@ CPyL3: ;
     CPyModule_faster_eth_utils___hexadecimal = cpy_r_r35;
     CPy_INCREF(CPyModule_faster_eth_utils___hexadecimal);
     CPy_DECREF(cpy_r_r35);
-    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('compose', 'groupby', 'valfilter', 'valmap') */
+    cpy_r_r36 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('compose', 'groupby') */
     cpy_r_r37 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_eth_utils.toolz' */
     cpy_r_r38 = CPyStatic_validation___globals;
     cpy_r_r39 = CPyImport_ImportFromMany(cpy_r_r37, cpy_r_r36, cpy_r_r36, cpy_r_r38);
@@ -290099,7 +289417,7 @@ const char * const CPyLit_Str[] = {
     "\002)Storage key must be a 32-byte value, got \017variable_length",
     "\005\023to_checksum_address\abalance\astorage\nis_address\022apply_formatter_if",
     "\003\021has_pretrace_keys#type_aware_apply_formatters_to_dict\tis_hexstr",
-    "\005\006status\asyncing\017Block with id: \v not found.\nIndexError",
+    "\005\asyncing\006status\017Block with id: \v not found.\nIndexError",
     "\003\030Unknown block identifier\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
     "\003\030Unknown transaction hash\023TransactionNotFound\023Transaction index: ",
@@ -290187,11 +289505,11 @@ const char * const CPyLit_Str[] = {
     "\002(raise_block_not_found_for_uncle_at_index\033raise_transaction_not_found",
     "\002&raise_transaction_not_found_with_index\026NULL_RESULT_FORMATTERS",
     "\003\016filter_wrapper\030FILTER_RESULT_FORMATTERS\034Expected a hex string. Got: ",
-    "\002%faster_web3/_utils/type_conversion.py\020abi_to_signature",
-    "\003\017 have selector \005 and\n\023\'abi\' is not a list",
+    "\003%faster_web3/_utils/type_conversion.py\020abi_to_signature\005 and\n",
+    "\002\017 have selector \023\'abi\' is not a list",
     "\001#\'abi\' is not a list of dictionaries",
     "\0026\'abi\' must contain a list of elements each with a type\bfunction",
-    "\003\036function_abi_to_4byte_selector\agroupby\tvalfilter",
+    "\002\036function_abi_to_4byte_selector\agroupby",
     "\001;Abi contains functions with colliding selectors. Functions ",
     "\003\022is_recognized_type\027Unrecognized abi_type: \024length_of_array_type",
     "\001\022Invalid abi-type: ",
@@ -290495,97 +289813,97 @@ const double CPyLit_Float[] = {0};
 const double CPyLit_Complex[] = {0};
 const int CPyLit_Tuple[] = {
     333, 1, 4, 1, 6, 1, 8, 7, 10, 11, 12, 13, 14, 15, 16, 3, 63, 63, 63,
-    3, 64, 64, 64, 2, 1985, 1986, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
-    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1991, 1, 13, 1, 74, 1,
+    3, 64, 64, 64, 2, 1984, 1985, 1, 67, 1, 69, 12, 71, 72, 73, 74, 75,
+    76, 77, 78, 79, 80, 81, 82, 3, 84, 84, 84, 1, 1990, 1, 13, 1, 74, 1,
     170, 5, 172, 71, 78, 173, 81, 2, 174, 175, 1, 167, 1, 178, 1, 180, 5,
     182, 160, 183, 184, 185, 3, 175, 191, 192, 1, 82, 3, 219, 220, 220, 1,
-    2004, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
+    2003, 1, 224, 1, 236, 1, 237, 1, 239, 1, 240, 2, 188, 87, 1, 243, 1,
     43, 1, 252, 1, 123, 1, 259, 1, 278, 1, 279, 1, 280, 1, 281, 3, 282,
     188, 87, 2, 260, 261, 10, 172, 71, 283, 74, 78, 284, 80, 173, 81, 285,
-    3, 286, 286, 286, 1, 2024, 5, 288, 174, 175, 191, 192, 4, 269, 271,
+    3, 286, 286, 286, 1, 2023, 5, 288, 174, 175, 191, 192, 4, 269, 271,
     255, 270, 2, 229, 227, 6, 193, 194, 195, 198, 196, 200, 2, 235, 13, 1,
     310, 7, 172, 71, 73, 74, 78, 81, 285, 1, 175, 1, 311, 1, 320, 1, 324,
     1, 326, 1, 306, 5, 329, 330, 331, 332, 333, 1, 359, 1, 362, 13, 172,
     71, 364, 365, 73, 74, 366, 76, 80, 173, 81, 285, 82, 1, 368, 3, 370,
     371, 372, 4, 71, 364, 78, 81, 1, 192, 6, 390, 399, 392, 398, 389, 271,
     1, 401, 2, 394, 306, 1, 370, 2, 403, 404, 6, 406, 407, 408, 409, 410,
-    411, 3, 442, 442, 442, 3, 443, 443, 443, 2, 2053, 2054, 1, 437, 13,
+    411, 3, 442, 442, 442, 3, 443, 443, 443, 2, 2052, 2053, 1, 437, 13,
     172, 71, 364, 365, 73, 74, 415, 76, 78, 284, 80, 81, 82, 3, 289, 289,
-    289, 1, 2058, 1, 446, 8, 448, 449, 450, 451, 452, 453, 454, 455, 1,
+    289, 1, 2057, 1, 446, 8, 448, 449, 450, 451, 452, 453, 454, 455, 1,
     427, 1, 428, 1, 394, 5, 370, 458, 459, 460, 372, 1, 461, 1, 514, 3,
-    517, 517, 517, 1, 2068, 8, 172, 71, 73, 74, 78, 284, 522, 81, 1, 523,
-    3, 570, 570, 570, 3, 575, 575, 575, 2, 2072, 2073, 10, 172, 71, 364,
+    517, 517, 517, 1, 2067, 8, 172, 71, 73, 74, 78, 284, 522, 81, 1, 523,
+    3, 570, 570, 570, 3, 575, 575, 575, 2, 2071, 2072, 10, 172, 71, 364,
     73, 76, 78, 284, 80, 81, 285, 12, 577, 578, 579, 580, 581, 582, 583,
     584, 288, 175, 192, 585, 1, 559, 1, 587, 1, 558, 5, 557, 542, 526,
     525, 530, 5, 527, 544, 547, 539, 561, 1, 590, 1, 541, 1, 593, 4, 535,
     536, 538, 537, 4, 569, 394, 567, 306, 6, 596, 329, 597, 598, 599, 331,
     3, 531, 548, 553, 7, 71, 283, 73, 74, 78, 80, 173, 1, 606, 2, 622,
-    259, 2, 2073, 2054, 7, 71, 364, 74, 79, 80, 522, 285, 1, 644, 1, 647,
-    1, 667, 1, 668, 2, 670, 587, 1, 687, 3, 689, 689, 689, 2, 1985, 2100,
+    259, 2, 2072, 2053, 7, 71, 364, 74, 79, 80, 522, 285, 1, 644, 1, 647,
+    1, 667, 1, 668, 2, 670, 587, 1, 687, 3, 689, 689, 689, 2, 1984, 2099,
     12, 71, 364, 73, 74, 691, 692, 78, 284, 173, 522, 81, 82, 1, 693, 3,
     192, 695, 585, 8, 557, 542, 390, 399, 467, 271, 255, 541, 1, 696, 1,
     685, 9, 632, 627, 629, 633, 631, 634, 630, 626, 628, 2, 698, 699, 1,
-    684, 1, 336, 5, 71, 73, 74, 78, 81, 3, 738, 669, 669, 2, 2113, 2058,
+    684, 1, 336, 5, 71, 73, 74, 78, 81, 3, 738, 669, 669, 2, 2112, 2057,
     7, 736, 725, 716, 723, 721, 731, 306, 2, 739, 459, 4, 172, 74, 81,
     285, 2, 779, 332, 1, 692, 8, 172, 71, 364, 73, 691, 78, 284, 81, 3,
     466, 467, 398, 1, 783, 3, 784, 696, 786, 1, 789, 3, 459, 372, 791, 1,
     794, 1, 795, 1, 800, 1, 571, 2, 824, 825, 2, 813, 827, 3, 849, 849,
-    849, 1, 2132, 1, 799, 3, 852, 852, 852, 3, 853, 853, 853, 4, 2135,
-    2136, 2054, 2068, 7, 71, 73, 74, 76, 78, 81, 82, 4, 854, 826, 839,
-    823, 1, 856, 3, 857, 857, 857, 1, 2141, 1, 822, 1, 408, 1, 798, 1,
+    849, 1, 2131, 1, 799, 3, 852, 852, 852, 3, 853, 853, 853, 4, 2134,
+    2135, 2053, 2067, 7, 71, 73, 74, 76, 78, 81, 82, 4, 854, 826, 839,
+    823, 1, 856, 3, 857, 857, 857, 1, 2140, 1, 822, 1, 408, 1, 798, 1,
     819, 1, 860, 1, 284, 2, 871, 306, 1, 884, 1, 910, 3, 666, 666, 666, 1,
-    2152, 13, 172, 71, 364, 283, 73, 74, 691, 77, 922, 80, 522, 81, 285,
+    2151, 13, 172, 71, 364, 283, 73, 74, 691, 77, 922, 80, 522, 81, 285,
     1, 892, 13, 783, 889, 879, 611, 923, 924, 925, 888, 390, 392, 398,
     885, 880, 4, 784, 926, 696, 920, 1, 927, 3, 928, 929, 930, 6, 909,
     916, 913, 911, 917, 914, 5, 933, 792, 934, 935, 793, 4, 535, 937, 938,
     939, 3, 428, 940, 941, 1, 942, 1, 944, 2, 684, 945, 4, 736, 904, 394,
     306, 9, 329, 946, 370, 459, 947, 948, 372, 331, 333, 2, 74, 81, 5, 71,
-    691, 692, 79, 81, 2, 330, 331, 2, 1216, 1217, 1, 1216, 3, 1225, 1225,
-    1225, 2, 2174, 2135, 6, 71, 364, 73, 74, 922, 78, 4, 577, 583, 192,
-    585, 13, 1160, 525, 1167, 925, 1186, 465, 390, 1181, 466, 1182, 392,
-    467, 398, 1, 879, 1, 542, 4, 784, 1168, 1169, 1027, 1, 1228, 10, 632,
-    627, 629, 633, 631, 1171, 634, 630, 1173, 628, 1, 1229, 8, 1202, 1185,
-    1220, 1222, 904, 1223, 394, 306, 1, 459, 4, 1233, 278, 1234, 236, 1,
-    1235, 1, 1236, 1, 1239, 1, 1241, 1, 1243, 1, 839, 2, 856, 192, 1, 869,
-    43, 1290, 1330, 1324, 1292, 1308, 1306, 1276, 1280, 1270, 1274, 1268,
-    1266, 1326, 1272, 1298, 1304, 1260, 1264, 1262, 1252, 1250, 1300,
-    1246, 1248, 1318, 1282, 1286, 1288, 1284, 1310, 1314, 1316, 1312,
-    1294, 1278, 1302, 1328, 1322, 1256, 1258, 1254, 1320, 1296, 8, 71, 73,
-    74, 76, 78, 81, 285, 82, 3, 310, 1354, 1355, 5, 187, 1362, 170, 1363,
-    166, 4, 187, 1362, 170, 166, 11, 172, 71, 364, 74, 76, 78, 284, 80,
-    173, 81, 285, 1, 1346, 7, 577, 578, 581, 583, 288, 175, 585, 3, 1160,
-    525, 167, 2, 784, 696, 3, 539, 561, 1353, 1, 1370, 1, 375, 1, 1372, 1,
-    1351, 1, 1359, 2, 1350, 306, 6, 596, 329, 1374, 598, 599, 331, 1, 548,
-    1, 78, 2, 331, 332, 1, 1378, 2, 359, 1383, 2, 1390, 1391, 3, 1392,
-    1392, 1392, 3, 1393, 1393, 1393, 3, 1394, 1394, 1394, 3, 2220, 2221,
-    2222, 5, 74, 691, 78, 284, 80, 1, 1396, 3, 696, 1168, 1385, 1, 1397,
-    2, 871, 567, 5, 597, 1399, 330, 331, 332, 2, 1404, 1391, 2, 1409,
-    1410, 3, 1432, 1432, 1432, 3, 1433, 1433, 1433, 4, 2232, 2222, 2233,
-    1986, 10, 172, 71, 364, 74, 76, 922, 78, 80, 173, 522, 1, 166, 4, 736,
-    1435, 1413, 904, 2, 191, 192, 4, 1437, 542, 468, 264, 1, 889, 3, 784,
-    696, 1425, 1, 1438, 2, 751, 773, 2, 723, 721, 5, 1439, 1440, 372, 791,
-    1441, 1, 1469, 1, 1571, 1, 1569, 3, 282, 1240, 1576, 1, 1577, 3, 282,
-    187, 1576, 1, 1413, 9, 172, 71, 364, 73, 74, 77, 78, 81, 285, 1, 390,
-    1, 470, 1, 506, 4, 370, 739, 459, 460, 2, 1575, 1581, 2, 1587, 1588,
-    1, 2222, 7, 172, 71, 364, 73, 74, 78, 82, 2, 175, 192, 3, 466, 399,
-    398, 2, 889, 611, 5, 311, 784, 696, 1600, 920, 6, 1601, 1602, 933,
-    792, 934, 1603, 1, 1604, 1, 1605, 1, 1607, 3, 1609, 370, 331, 2, 1674,
-    1676, 7, 172, 71, 73, 74, 81, 285, 82, 3, 1682, 370, 459, 10, 172, 71,
-    364, 73, 74, 78, 80, 522, 81, 82, 1, 374, 2, 411, 408, 3, 1715, 1716,
-    306, 1, 1717, 4, 1719, 370, 1720, 459, 7, 71, 73, 74, 1735, 76, 78,
-    82, 1, 1736, 1, 726, 2, 2132, 2135, 11, 172, 71, 74, 76, 78, 284, 79,
-    81, 285, 82, 1779, 5, 1749, 1715, 1716, 394, 306, 2, 1682, 459, 2,
-    1736, 1770, 4, 1785, 1786, 1787, 1788, 6, 74, 78, 284, 79, 173, 82,
-    15, 172, 71, 364, 365, 73, 76, 77, 1795, 78, 284, 80, 173, 1796, 522,
-    81, 1, 1797, 5, 288, 597, 175, 1799, 192, 2, 1800, 1801, 1, 1803, 1,
-    838, 3, 1916, 1916, 1916, 2, 2058, 2296, 2, 175, 191, 1, 567, 2, 192,
-    1807, 1, 811, 2, 63, 811, 3, 71, 73, 74, 3, 855, 855, 855, 1, 2304, 2,
-    1925, 942, 2, 1923, 567, 1, 331, 1, 1927, 1, 1926, 3, 517, 517, 1930,
-    1, 2311, 8, 73, 74, 366, 76, 78, 80, 522, 82
+    691, 692, 79, 81, 2, 330, 331, 2, 1215, 1216, 1, 1215, 3, 1224, 1224,
+    1224, 2, 2173, 2134, 7, 71, 364, 73, 74, 76, 922, 78, 4, 577, 583,
+    192, 585, 13, 1160, 525, 1167, 925, 1185, 465, 390, 1180, 466, 1181,
+    392, 467, 398, 1, 879, 1, 542, 2, 784, 1168, 1, 1227, 10, 632, 627,
+    629, 633, 631, 1170, 634, 630, 1172, 628, 1, 1228, 8, 1201, 1184,
+    1219, 1221, 904, 1222, 394, 306, 1, 459, 4, 1232, 278, 1233, 236, 1,
+    1234, 1, 1235, 1, 1238, 1, 1240, 1, 1242, 1, 839, 2, 856, 192, 1, 869,
+    43, 1289, 1329, 1323, 1291, 1307, 1305, 1275, 1279, 1269, 1273, 1267,
+    1265, 1325, 1271, 1297, 1303, 1259, 1263, 1261, 1251, 1249, 1299,
+    1245, 1247, 1317, 1281, 1285, 1287, 1283, 1309, 1313, 1315, 1311,
+    1293, 1277, 1301, 1327, 1321, 1255, 1257, 1253, 1319, 1295, 8, 71, 73,
+    74, 76, 78, 81, 285, 82, 3, 310, 1353, 1354, 5, 187, 1361, 170, 1362,
+    166, 4, 187, 1361, 170, 166, 11, 172, 71, 364, 74, 76, 78, 284, 80,
+    173, 81, 285, 1, 1345, 7, 577, 578, 581, 583, 288, 175, 585, 3, 1160,
+    525, 167, 2, 784, 696, 3, 539, 561, 1352, 1, 1369, 1, 375, 1, 1371, 1,
+    1350, 1, 1358, 2, 1349, 306, 6, 596, 329, 1373, 598, 599, 331, 1, 548,
+    1, 78, 2, 331, 332, 1, 1377, 2, 359, 1382, 2, 1389, 1390, 3, 1391,
+    1391, 1391, 3, 1392, 1392, 1392, 3, 1393, 1393, 1393, 3, 2219, 2220,
+    2221, 5, 74, 691, 78, 284, 80, 1, 1395, 3, 696, 1168, 1384, 1, 1396,
+    2, 871, 567, 5, 597, 1398, 330, 331, 332, 2, 1403, 1390, 2, 1408,
+    1409, 3, 1431, 1431, 1431, 3, 1432, 1432, 1432, 4, 2231, 2221, 2232,
+    1985, 10, 172, 71, 364, 74, 76, 922, 78, 80, 173, 522, 1, 166, 4, 736,
+    1434, 1412, 904, 2, 191, 192, 4, 1436, 542, 468, 264, 1, 889, 3, 784,
+    696, 1424, 1, 1437, 2, 751, 773, 2, 723, 721, 5, 1438, 1439, 372, 791,
+    1440, 1, 1468, 1, 1570, 1, 1568, 3, 282, 1239, 1575, 1, 1576, 3, 282,
+    187, 1575, 1, 1412, 9, 172, 71, 364, 73, 74, 77, 78, 81, 285, 1, 390,
+    1, 470, 1, 506, 4, 370, 739, 459, 460, 2, 1574, 1580, 2, 1586, 1587,
+    1, 2221, 7, 172, 71, 364, 73, 74, 78, 82, 2, 175, 192, 3, 466, 399,
+    398, 2, 889, 611, 5, 311, 784, 696, 1599, 920, 6, 1600, 1601, 933,
+    792, 934, 1602, 1, 1603, 1, 1604, 1, 1606, 3, 1608, 370, 331, 2, 1673,
+    1675, 7, 172, 71, 73, 74, 81, 285, 82, 3, 1681, 370, 459, 10, 172, 71,
+    364, 73, 74, 78, 80, 522, 81, 82, 1, 374, 2, 411, 408, 3, 1714, 1715,
+    306, 1, 1716, 4, 1718, 370, 1719, 459, 7, 71, 73, 74, 1734, 76, 78,
+    82, 1, 1735, 1, 726, 2, 2131, 2134, 11, 172, 71, 74, 76, 78, 284, 79,
+    81, 285, 82, 1778, 5, 1748, 1714, 1715, 394, 306, 2, 1681, 459, 2,
+    1735, 1769, 4, 1784, 1785, 1786, 1787, 6, 74, 78, 284, 79, 173, 82,
+    15, 172, 71, 364, 365, 73, 76, 77, 1794, 78, 284, 80, 173, 1795, 522,
+    81, 1, 1796, 5, 288, 597, 175, 1798, 192, 2, 1799, 1800, 1, 1802, 1,
+    838, 3, 1915, 1915, 1915, 2, 2057, 2295, 2, 175, 191, 1, 567, 2, 192,
+    1806, 1, 811, 2, 63, 811, 3, 71, 73, 74, 3, 855, 855, 855, 1, 2303, 2,
+    1924, 942, 2, 1922, 567, 1, 331, 1, 1926, 1, 1925, 3, 517, 517, 1929,
+    1, 2310, 8, 73, 74, 366, 76, 78, 80, 522, 82
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 395, 396, 397, 296, 308, 3, 19, 1939, 0, 2, 893, 894, 4, 1089,
-    1087, 1090, 379
+    4, 5, 296, 395, 396, 308, 397, 3, 19, 1938, 0, 2, 893, 894, 4, 379,
+    1087, 1089, 1090
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
@@ -292241,34 +291559,14 @@ char CPyDef_utility_methods___either_set_is_a_subset(PyObject *cpy_r_set1, PyObj
 PyObject *CPyPy_utility_methods___either_set_is_a_subset(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_utility_methods_____top_level__(void);
 PyObject *CPyStatic_validation___KNOWN_REQUEST_TIMEOUT_MESSAGING = NULL;
-PyTypeObject *CPyType_validation____prepare_selector_collision_msg_env;
-PyObject *CPyDef_validation____prepare_selector_collision_msg_env(void);
-CPyThreadLocal faster_web3____utils___validation____prepare_selector_collision_msg_envObject *validation____prepare_selector_collision_msg_env_free_instance;
-PyTypeObject *CPyType_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj;
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj(void);
-CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__0__prepare_selector_collision_msg_objObject *validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_free_instance;
-PyTypeObject *CPyType_validation___validate_abi_env;
-PyObject *CPyDef_validation___validate_abi_env(void);
-CPyThreadLocal faster_web3____utils___validation___validate_abi_envObject *validation___validate_abi_env_free_instance;
-PyTypeObject *CPyType_validation_____mypyc_lambda__1_validate_abi_obj;
-PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj(void);
-CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__1_validate_abi_objObject *validation_____mypyc_lambda__1_validate_abi_obj_free_instance;
 PyTypeObject *CPyType_validation___has_one_val_env;
 PyObject *CPyDef_validation___has_one_val_env(void);
 CPyThreadLocal faster_web3____utils___validation___has_one_val_envObject *validation___has_one_val_env_free_instance;
-PyTypeObject *CPyType_validation_____mypyc_lambda__2_has_one_val_obj;
-PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj(void);
-CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__2_has_one_val_objObject *validation_____mypyc_lambda__2_has_one_val_obj_free_instance;
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
-PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-PyObject *CPyDef_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs);
-PyObject *CPyPy_validation_____mypyc_lambda__0__prepare_selector_collision_msg_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+PyTypeObject *CPyType_validation_____mypyc_lambda__0_has_one_val_obj;
+PyObject *CPyDef_validation_____mypyc_lambda__0_has_one_val_obj(void);
+CPyThreadLocal faster_web3____utils___validation_____mypyc_lambda__0_has_one_val_objObject *validation_____mypyc_lambda__0_has_one_val_obj_free_instance;
 PyObject *CPyDef_validation____prepare_selector_collision_msg(PyObject *cpy_r_duplicates);
 PyObject *CPyPy_validation____prepare_selector_collision_msg(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-PyObject *CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
-PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-char CPyDef_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_funcs);
-PyObject *CPyPy_validation_____mypyc_lambda__1_validate_abi_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_validation___validate_abi(PyObject *cpy_r_abi);
 PyObject *CPyPy_validation___validate_abi(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_validation___validate_abi_type(PyObject *cpy_r_abi_type);
@@ -292279,10 +291577,10 @@ char CPyDef_validation___is_not_address_string(PyObject *cpy_r_value);
 PyObject *CPyPy_validation___is_not_address_string(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_validation___validate_address(PyObject *cpy_r_value);
 PyObject *CPyPy_validation___validate_address(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-PyObject *CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
-PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
-char CPyDef_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_val);
-PyObject *CPyPy_validation_____mypyc_lambda__2_has_one_val_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+PyObject *CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____get__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_instance, PyObject *cpy_r_owner);
+PyObject *CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____get__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
+char CPyDef_validation_____mypyc_lambda__0_has_one_val_obj_____call__(PyObject *cpy_r___mypyc_self__, PyObject *cpy_r_val);
+PyObject *CPyPy_validation_____mypyc_lambda__0_has_one_val_obj_____call__(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_validation___has_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);
 PyObject *CPyPy_validation___has_one_val(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 char CPyDef_validation___assert_one_val(PyObject *cpy_r_args, PyObject *cpy_r_kwargs);

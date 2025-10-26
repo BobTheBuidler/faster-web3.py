@@ -54,7 +54,6 @@ from faster_eth_utils.toolz import (
     compose,
     cons,
     curry,
-    valfilter,
 )
 from typing_extensions import (
     TypeGuard,
@@ -422,13 +421,25 @@ class BaseEventFilterBuilder:
 
     @property
     def filter_params(self) -> FilterParams:
-        params = {
-            "topics": self.topics,
-            "fromBlock": self.from_block,
-            "toBlock": self.to_block,
-            "address": self.address,
-        }
-        return valfilter(lambda x: x is not None, params)
+        params = {}
+        
+        topics = self.topics
+        if topics is not None:
+            params["topics"] = topics
+        
+        from_block = self.from_block
+        if from_block is not None:
+            params["fromBlock"] = from_block
+            
+        to_block = self.to_block
+        if to_block is not None:
+            params["toBlock"] = to_block
+            
+        address = self.address
+        if address is not None:
+            params["address"] = address
+            
+        return params
 
 
 class EventFilterBuilder(BaseEventFilterBuilder):
