@@ -1153,6 +1153,7 @@ typedef struct {
     char _is_async;
     PyObject *_base_url;
     double _request_timeout;
+    PyObject *__request_timeout;
     PyObject *__request_session_manager;
 } faster_web3___beacon___async_beacon___AsyncBeaconObject;
 
@@ -2141,8 +2142,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    PyObject *___mypyc_temp__2_0;
-    int64_t ___mypyc_temp__2_1;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {

@@ -77,6 +77,7 @@ class AsyncBeacon:
     ) -> None:
         self.base_url: Final = base_url
         self.request_timeout: Final = request_timeout
+        self._request_timeout: Final = ClientTimeout(request_timeout)
         self._request_session_manager: Final = HTTPSessionManager()
 
     async def _async_make_get_request(
@@ -84,7 +85,7 @@ class AsyncBeacon:
     ) -> Dict[str, Any]:
         uri = URI(self.base_url + endpoint_uri)
         return await self._request_session_manager.async_json_make_get_request(
-            uri, params=params, timeout=ClientTimeout(self.request_timeout)
+            uri, params=params, timeout=self._request_timeout
         )
 
     async def _async_make_post_request(

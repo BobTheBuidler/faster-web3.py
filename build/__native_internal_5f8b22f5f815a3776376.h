@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2317];
+extern PyObject *CPyStatics[2321];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -136,6 +136,7 @@ extern CPyModule *CPyModule_faster_eth_utils___curried;
 extern CPyModule *CPyModule_faster_web3____utils___http__internal;
 extern CPyModule *CPyModule_faster_web3____utils___http;
 extern PyObject *CPyStatic_http___globals;
+extern CPyModule *CPyModule_aiohttp;
 extern CPyModule *CPyModule_faster_web3____utils___http_session_manager__internal;
 extern CPyModule *CPyModule_faster_web3____utils___http_session_manager;
 extern PyObject *CPyStatic_http_session_manager___globals;
@@ -143,7 +144,6 @@ extern CPyModule *CPyModule_asyncio;
 extern CPyModule *CPyModule_concurrent___futures;
 extern CPyModule *CPyModule_logging;
 extern CPyModule *CPyModule_os;
-extern CPyModule *CPyModule_aiohttp;
 extern CPyModule *CPyModule_requests;
 extern CPyModule *CPyModule_faster_web3____utils___async_caching;
 extern CPyModule *CPyModule_faster_web3___utils___caching__internal;
@@ -1304,6 +1304,7 @@ extern PyObject *CPyPy_formatters___apply_error_formatters(PyObject *self, PyObj
 extern PyObject *CPyDef_formatters___apply_null_result_formatters(PyObject *cpy_r_null_result_formatters, PyObject *cpy_r_response, PyObject *cpy_r_params);
 extern PyObject *CPyPy_formatters___apply_null_result_formatters(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_formatters_____top_level__(void);
+extern PyObject *CPyStatic_http___DEFAULT_AIOHTTP_TIMEOUT;
 extern PyObject *CPyDef_http___construct_user_agent(PyObject *cpy_r_module, PyObject *cpy_r_class_name);
 extern PyObject *CPyPy_http___construct_user_agent(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_http_____top_level__(void);
@@ -3418,7 +3419,6 @@ extern PyObject *CPyDef_address___get_create2_address(PyObject *cpy_r_sender, Py
 extern PyObject *CPyPy_address___get_create2_address(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames);
 extern char CPyDef_address_____top_level__(void);
 extern PyObject *CPyStatic_async_exception_handling___ClientSession;
-extern PyObject *CPyStatic_async_exception_handling___ClientTimeout;
 extern PyObject *CPyStatic_async_exception_handling___encode;
 extern PyTypeObject *CPyType_async_exception_handling___async_handle_offchain_lookup_gen;
 extern PyObject *CPyDef_async_exception_handling___async_handle_offchain_lookup_gen(void);

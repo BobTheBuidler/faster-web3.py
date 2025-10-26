@@ -1,7 +1,10 @@
 from typing import Final
 
+from aiohttp import ClientTimeout
+
 
 DEFAULT_HTTP_TIMEOUT: Final = 30.0
+DEFAULT_AIOHTTP_TIMEOUT: Final = ClientTimeout(DEFAULT_HTTP_TIMEOUT)
 
 
 def construct_user_agent(

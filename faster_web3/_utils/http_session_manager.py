@@ -34,6 +34,7 @@ from faster_web3._utils.caching import (
     generate_cache_key,
 )
 from faster_web3._utils.http import (
+    DEFAULT_AIOHTTP_TIMEOUT,
     DEFAULT_HTTP_TIMEOUT,
 )
 from faster_web3.exceptions import (
@@ -286,7 +287,7 @@ class HTTPSessionManager:
     async def async_get_response_from_get_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
     ) -> ClientResponse:
-        kwargs.setdefault("timeout", ClientTimeout(DEFAULT_HTTP_TIMEOUT))
+        kwargs.setdefault("timeout", DEFAULT_AIOHTTP_TIMEOUT)
         session = await self.async_cache_and_return_session(
             endpoint_uri, request_timeout=kwargs["timeout"]
         )
@@ -304,7 +305,7 @@ class HTTPSessionManager:
     async def async_get_response_from_post_request(
         self, endpoint_uri: URI, *args: Any, **kwargs: Any
     ) -> ClientResponse:
-        kwargs.setdefault("timeout", ClientTimeout(DEFAULT_HTTP_TIMEOUT))
+        kwargs.setdefault("timeout", DEFAULT_AIOHTTP_TIMEOUT)
         session = await self.async_cache_and_return_session(
             endpoint_uri, request_timeout=kwargs["timeout"]
         )
