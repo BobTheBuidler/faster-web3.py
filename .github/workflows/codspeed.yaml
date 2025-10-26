@@ -122,10 +122,10 @@ jobs:
           name: wheel-ubuntu-latest-py3.14
           path: .
 
-      - name: Install built wheel
+      - name: Install built wheel and codspeed dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ./*.whl[codspeed]
+          pip install "$(find . -name '*.whl')" -r requirements-codspeed.txt
 
       - name: Remove Python files from test env
         run: rm -r faster_web3 faster_ens

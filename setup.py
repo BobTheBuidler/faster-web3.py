@@ -9,6 +9,10 @@ from setuptools import (
 )
 from mypyc.build import mypycify
 
+def read_requirements(path):
+    with open(path) as f:
+        return [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
 extras_require = {
     "tester": [
         # Note: ethereum-maintained libraries in this list should be added to the
@@ -42,13 +46,7 @@ extras_require = {
         f"mypy=={'1.14.1' if sys.version_info < (3, 9) else '1.18.2'}",
         "pre-commit>=3.4.0",
     ],
-    "codspeed": [
-        "pytest>=7.0.0",
-        "pytest-asyncio>=1.2,<1.3",
-        "pytest-codspeed>=4.2,<4.3",
-        "pytest-test-groups",
-        "web3>=7.14.0, <8",
-    ]
+    "codspeed": read_requirements("requirements-codspeed.txt"),
 }
 
 extras_require["dev"] = (
