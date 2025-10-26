@@ -16,9 +16,9 @@ def run_100(fn, *args):
 # All data below is based on real mainnet-style values or representative realistic examples.
 
 TX_DATA = {
-    "hash": "0xfaceb00c1234567890b0b7b1d1e2feedbeefcafe1234567890deadbeefcafeba",
+    "hash": "0xfaceb00c1234567890b00b7be2feedbeefcafe1234567890deadbeefcafebaba",
     "nonce": "0x42",
-    "blockHash": "0xfeedbeefcafebabe1234567890b0b7b1d1e2facefeedbeefcafe1234567890",
+    "blockHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c",
     "blockNumber": "0x1337",
     "transactionIndex": "0x0",
     "from": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
@@ -74,8 +74,8 @@ DATA = {
     "eth_protocolVersion": "0x41",
     "evm_snapshot": "0x5",
     "net_peerCount": "0x8",
-    "eth_getRawTransactionByBlockHashAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
-    "eth_getRawTransactionByBlockNumberAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
+    "eth_getRawTransactionByBlockHashAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
+    "eth_getRawTransactionByBlockNumberAndIndex": "0xf86c808504a817c80082520894bBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1",
     "eth_sendRawTransaction": "0xdeadbeefcafebabe1234567890b0b7b1d1e2facefeedbeefcafe1234567890aa",
     "eth_sign": "0x2c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
     "eth_sendTransaction": "0xfeedbabe1234567890cafebabe1234567890feedbabe1234567890cafebabe12",
