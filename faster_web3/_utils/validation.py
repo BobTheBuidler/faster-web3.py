@@ -77,7 +77,7 @@ from faster_web3.types import (
 )
 
 
-def _prepare_selector_collision_msg(duplicates: Dict[HexStr, ABIFunction]) -> str:
+def _prepare_selector_collision_msg(duplicates: Dict[HexStr, List[ABIFunction]]) -> str:
     formatter = apply_formatter_to_array(abi_to_signature)
     joined_funcs = {
         sel: ", ".join(formatter(funcs)) for sel, funcs in duplicates.items()
