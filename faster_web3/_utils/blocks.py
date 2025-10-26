@@ -11,7 +11,6 @@ from eth_typing import (
 from faster_eth_utils import (
     is_bytes,
     is_hex,
-    is_integer,
     is_string,
     is_text,
     remove_0x_prefix,
@@ -38,7 +37,7 @@ def is_predefined_block_number(value: Any) -> TypeGuard[Union[str, bytes]]:
         # We cannot decode the bytes as utf8, because random bytes likely won't be
         # valid. So we speculatively decode as 'latin-1', which cannot fail.
         value_text = value.decode("latin-1")
-    elif is_integer(value):
+    elif isinstance(value, int):
         return False
     else:
         raise Web3TypeError(f"unrecognized block reference: {value!r}")
@@ -74,7 +73,7 @@ def select_method_for_block_identifier(
             return if_hash
         elif is_hex_encoded_block_hash(value):
             return if_hash
-        elif is_integer(value) and (0 <= value < 2**256):
+        elif isinstance(value, int) and (0 <= value < 2**256):
             return if_number
         elif is_hex_encoded_block_number(value):
             return if_number

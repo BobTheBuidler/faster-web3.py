@@ -135,7 +135,7 @@ def to_integer_if_hex(value: Any) -> Any:
 
 
 def to_hex_if_integer(value: Any) -> Any:
-    return integer_to_hex(value) if is_integer(value) else value
+    return integer_to_hex(value) if isinstance(value, int) else value
 
 
 def is_false(value: Any) -> TypeGuard[Literal[False]]:
