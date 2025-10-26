@@ -63,27 +63,10 @@ jobs:
             setup.py
             tox.ini
 
-      - name: Cache .mypy_cache
-        uses: actions/cache@v4
-        with:
-          path: .mypy_cache
-          key: mypy-cache-${{ runner.os }}-${{ hashFiles('**/*.py', 'pyproject.toml') }}
-
-      - name: Restore ccache cache
-        id: restore-ccache
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
-          restore-keys: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-
-
-      - name: Install ccache on Linux
-        run: sudo apt-get update && sudo apt-get install -y ccache
-
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          name: wheel-ubuntu-latest-py3.14
+          name: wheel-Linux-py3.14
           path: .
 
       - name: Install built wheel and codspeed dependencies
@@ -99,9 +82,3 @@ jobs:
         with:
           mode: instrumentation
           run: pytest --codspeed -k "test_faster_" --test-group=${{ matrix.shard }} --test-group-count=10 benchmarks/
-
-      - name: Save ccache cache
-        uses: actions/cache/save@v4
-        with:
-          path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
