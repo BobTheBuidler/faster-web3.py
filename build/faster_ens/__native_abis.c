@@ -3332,7 +3332,7 @@ CPyL3: ;
     cpy_r_r7 = CPyStatic_globals;
     cpy_r_r8 = CPyImport_ImportFromMany(cpy_r_r6, cpy_r_r5, cpy_r_r5, cpy_r_r7);
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 2, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 3, CPyStatic_globals);
         goto CPyL547;
     }
     CPyModule_typing = cpy_r_r8;
@@ -3343,7 +3343,7 @@ CPyL3: ;
     cpy_r_r11 = CPyStatic_globals;
     cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 7, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 8, CPyStatic_globals);
         goto CPyL547;
     }
     CPyModule_eth_typing = cpy_r_r12;
@@ -3357,12 +3357,12 @@ CPyL3: ;
     cpy_r_r18 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r19 = CPyDict_Build(2, cpy_r_r15, cpy_r_r16, cpy_r_r17, cpy_r_r18);
     if (unlikely(cpy_r_r19 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 14, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 15, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r20 = PyList_New(1);
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 14, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 15, CPyStatic_globals);
         goto CPyL548;
     }
     cpy_r_r21 = (CPyPtr)&((PyListObject *)cpy_r_r20)->ob_item;
@@ -3377,12 +3377,12 @@ CPyL3: ;
     cpy_r_r29 = CPyStatics[18]; /* 'address' */
     cpy_r_r30 = CPyDict_Build(2, cpy_r_r26, cpy_r_r27, cpy_r_r28, cpy_r_r29);
     if (unlikely(cpy_r_r30 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 16, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 17, CPyStatic_globals);
         goto CPyL549;
     }
     cpy_r_r31 = PyList_New(1);
     if (unlikely(cpy_r_r31 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 16, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 17, CPyStatic_globals);
         goto CPyL550;
     }
     cpy_r_r32 = (CPyPtr)&((PyListObject *)cpy_r_r31)->ob_item;
@@ -3397,7 +3397,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r20);
     CPy_DECREF_NO_IMM(cpy_r_r31);
     if (unlikely(cpy_r_r39 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 12, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 13, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r40 = CPyStatics[9]; /* 'constant' */
@@ -3408,12 +3408,12 @@ CPyL3: ;
     cpy_r_r45 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r46 = CPyDict_Build(2, cpy_r_r42, cpy_r_r43, cpy_r_r44, cpy_r_r45);
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 22, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 23, CPyStatic_globals);
         goto CPyL551;
     }
     cpy_r_r47 = PyList_New(1);
     if (unlikely(cpy_r_r47 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 22, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 23, CPyStatic_globals);
         goto CPyL552;
     }
     cpy_r_r48 = (CPyPtr)&((PyListObject *)cpy_r_r47)->ob_item;
@@ -3428,12 +3428,12 @@ CPyL3: ;
     cpy_r_r56 = CPyStatics[18]; /* 'address' */
     cpy_r_r57 = CPyDict_Build(2, cpy_r_r53, cpy_r_r54, cpy_r_r55, cpy_r_r56);
     if (unlikely(cpy_r_r57 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 24, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 25, CPyStatic_globals);
         goto CPyL553;
     }
     cpy_r_r58 = PyList_New(1);
     if (unlikely(cpy_r_r58 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 24, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 25, CPyStatic_globals);
         goto CPyL554;
     }
     cpy_r_r59 = (CPyPtr)&((PyListObject *)cpy_r_r58)->ob_item;
@@ -3448,7 +3448,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r47);
     CPy_DECREF_NO_IMM(cpy_r_r58);
     if (unlikely(cpy_r_r66 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 20, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 21, CPyStatic_globals);
         goto CPyL551;
     }
     cpy_r_r67 = CPyStatics[9]; /* 'constant' */
@@ -3459,7 +3459,7 @@ CPyL3: ;
     cpy_r_r72 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r73 = CPyDict_Build(2, cpy_r_r69, cpy_r_r70, cpy_r_r71, cpy_r_r72);
     if (unlikely(cpy_r_r73 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 31, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 32, CPyStatic_globals);
         goto CPyL555;
     }
     cpy_r_r74 = CPyStatics[11]; /* 'name' */
@@ -3468,7 +3468,7 @@ CPyL3: ;
     cpy_r_r77 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r78 = CPyDict_Build(2, cpy_r_r74, cpy_r_r75, cpy_r_r76, cpy_r_r77);
     if (unlikely(cpy_r_r78 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 32, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 33, CPyStatic_globals);
         goto CPyL556;
     }
     cpy_r_r79 = CPyStatics[11]; /* 'name' */
@@ -3477,12 +3477,12 @@ CPyL3: ;
     cpy_r_r82 = CPyStatics[18]; /* 'address' */
     cpy_r_r83 = CPyDict_Build(2, cpy_r_r79, cpy_r_r80, cpy_r_r81, cpy_r_r82);
     if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 33, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 34, CPyStatic_globals);
         goto CPyL557;
     }
     cpy_r_r84 = PyList_New(3);
     if (unlikely(cpy_r_r84 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 30, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 31, CPyStatic_globals);
         goto CPyL558;
     }
     cpy_r_r85 = (CPyPtr)&((PyListObject *)cpy_r_r84)->ob_item;
@@ -3497,7 +3497,7 @@ CPyL3: ;
     cpy_r_r91 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r92 = PyList_New(0);
     if (unlikely(cpy_r_r92 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 36, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 37, CPyStatic_globals);
         goto CPyL559;
     }
     cpy_r_r93 = CPyStatics[19]; /* 'payable' */
@@ -3509,7 +3509,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r84);
     CPy_DECREF_NO_IMM(cpy_r_r92);
     if (unlikely(cpy_r_r98 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 28, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 29, CPyStatic_globals);
         goto CPyL555;
     }
     cpy_r_r99 = CPyStatics[9]; /* 'constant' */
@@ -3520,7 +3520,7 @@ CPyL3: ;
     cpy_r_r104 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r105 = CPyDict_Build(2, cpy_r_r101, cpy_r_r102, cpy_r_r103, cpy_r_r104);
     if (unlikely(cpy_r_r105 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 43, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 44, CPyStatic_globals);
         goto CPyL560;
     }
     cpy_r_r106 = CPyStatics[11]; /* 'name' */
@@ -3529,12 +3529,12 @@ CPyL3: ;
     cpy_r_r109 = CPyStatics[25]; /* 'uint64' */
     cpy_r_r110 = CPyDict_Build(2, cpy_r_r106, cpy_r_r107, cpy_r_r108, cpy_r_r109);
     if (unlikely(cpy_r_r110 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 44, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 45, CPyStatic_globals);
         goto CPyL561;
     }
     cpy_r_r111 = PyList_New(2);
     if (unlikely(cpy_r_r111 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 42, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 43, CPyStatic_globals);
         goto CPyL562;
     }
     cpy_r_r112 = (CPyPtr)&((PyListObject *)cpy_r_r111)->ob_item;
@@ -3547,7 +3547,7 @@ CPyL3: ;
     cpy_r_r117 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r118 = PyList_New(0);
     if (unlikely(cpy_r_r118 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 47, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 48, CPyStatic_globals);
         goto CPyL563;
     }
     cpy_r_r119 = CPyStatics[19]; /* 'payable' */
@@ -3559,7 +3559,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r111);
     CPy_DECREF_NO_IMM(cpy_r_r118);
     if (unlikely(cpy_r_r124 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 40, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 41, CPyStatic_globals);
         goto CPyL560;
     }
     cpy_r_r125 = CPyStatics[9]; /* 'constant' */
@@ -3570,12 +3570,12 @@ CPyL3: ;
     cpy_r_r130 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r131 = CPyDict_Build(2, cpy_r_r127, cpy_r_r128, cpy_r_r129, cpy_r_r130);
     if (unlikely(cpy_r_r131 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 53, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 54, CPyStatic_globals);
         goto CPyL564;
     }
     cpy_r_r132 = PyList_New(1);
     if (unlikely(cpy_r_r132 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 53, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 54, CPyStatic_globals);
         goto CPyL565;
     }
     cpy_r_r133 = (CPyPtr)&((PyListObject *)cpy_r_r132)->ob_item;
@@ -3590,12 +3590,12 @@ CPyL3: ;
     cpy_r_r141 = CPyStatics[25]; /* 'uint64' */
     cpy_r_r142 = CPyDict_Build(2, cpy_r_r138, cpy_r_r139, cpy_r_r140, cpy_r_r141);
     if (unlikely(cpy_r_r142 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 55, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 56, CPyStatic_globals);
         goto CPyL566;
     }
     cpy_r_r143 = PyList_New(1);
     if (unlikely(cpy_r_r143 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 55, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 56, CPyStatic_globals);
         goto CPyL567;
     }
     cpy_r_r144 = (CPyPtr)&((PyListObject *)cpy_r_r143)->ob_item;
@@ -3610,7 +3610,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r132);
     CPy_DECREF_NO_IMM(cpy_r_r143);
     if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 51, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 52, CPyStatic_globals);
         goto CPyL564;
     }
     cpy_r_r152 = CPyStatics[9]; /* 'constant' */
@@ -3621,7 +3621,7 @@ CPyL3: ;
     cpy_r_r157 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r158 = CPyDict_Build(2, cpy_r_r154, cpy_r_r155, cpy_r_r156, cpy_r_r157);
     if (unlikely(cpy_r_r158 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 62, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 63, CPyStatic_globals);
         goto CPyL568;
     }
     cpy_r_r159 = CPyStatics[11]; /* 'name' */
@@ -3630,12 +3630,12 @@ CPyL3: ;
     cpy_r_r162 = CPyStatics[18]; /* 'address' */
     cpy_r_r163 = CPyDict_Build(2, cpy_r_r159, cpy_r_r160, cpy_r_r161, cpy_r_r162);
     if (unlikely(cpy_r_r163 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 63, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 64, CPyStatic_globals);
         goto CPyL569;
     }
     cpy_r_r164 = PyList_New(2);
     if (unlikely(cpy_r_r164 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 61, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 62, CPyStatic_globals);
         goto CPyL570;
     }
     cpy_r_r165 = (CPyPtr)&((PyListObject *)cpy_r_r164)->ob_item;
@@ -3648,7 +3648,7 @@ CPyL3: ;
     cpy_r_r170 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r171 = PyList_New(0);
     if (unlikely(cpy_r_r171 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 66, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 67, CPyStatic_globals);
         goto CPyL571;
     }
     cpy_r_r172 = CPyStatics[19]; /* 'payable' */
@@ -3660,7 +3660,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r164);
     CPy_DECREF_NO_IMM(cpy_r_r171);
     if (unlikely(cpy_r_r177 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 59, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 60, CPyStatic_globals);
         goto CPyL568;
     }
     cpy_r_r178 = CPyStatics[9]; /* 'constant' */
@@ -3671,7 +3671,7 @@ CPyL3: ;
     cpy_r_r183 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r184 = CPyDict_Build(2, cpy_r_r180, cpy_r_r181, cpy_r_r182, cpy_r_r183);
     if (unlikely(cpy_r_r184 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 73, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 74, CPyStatic_globals);
         goto CPyL572;
     }
     cpy_r_r185 = CPyStatics[11]; /* 'name' */
@@ -3680,12 +3680,12 @@ CPyL3: ;
     cpy_r_r188 = CPyStatics[18]; /* 'address' */
     cpy_r_r189 = CPyDict_Build(2, cpy_r_r185, cpy_r_r186, cpy_r_r187, cpy_r_r188);
     if (unlikely(cpy_r_r189 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 74, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 75, CPyStatic_globals);
         goto CPyL573;
     }
     cpy_r_r190 = PyList_New(2);
     if (unlikely(cpy_r_r190 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 72, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 73, CPyStatic_globals);
         goto CPyL574;
     }
     cpy_r_r191 = (CPyPtr)&((PyListObject *)cpy_r_r190)->ob_item;
@@ -3698,7 +3698,7 @@ CPyL3: ;
     cpy_r_r196 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r197 = PyList_New(0);
     if (unlikely(cpy_r_r197 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 77, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 78, CPyStatic_globals);
         goto CPyL575;
     }
     cpy_r_r198 = CPyStatics[19]; /* 'payable' */
@@ -3710,7 +3710,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r190);
     CPy_DECREF_NO_IMM(cpy_r_r197);
     if (unlikely(cpy_r_r203 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 70, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 71, CPyStatic_globals);
         goto CPyL572;
     }
     cpy_r_r204 = CPyStatics[29]; /* 'anonymous' */
@@ -3723,7 +3723,7 @@ CPyL3: ;
     cpy_r_r211 = 1 ? Py_True : Py_False;
     cpy_r_r212 = CPyDict_Build(3, cpy_r_r206, cpy_r_r211, cpy_r_r207, cpy_r_r208, cpy_r_r209, cpy_r_r210);
     if (unlikely(cpy_r_r212 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 84, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 85, CPyStatic_globals);
         goto CPyL576;
     }
     cpy_r_r213 = CPyStatics[30]; /* 'indexed' */
@@ -3734,12 +3734,12 @@ CPyL3: ;
     cpy_r_r218 = 0 ? Py_True : Py_False;
     cpy_r_r219 = CPyDict_Build(3, cpy_r_r213, cpy_r_r218, cpy_r_r214, cpy_r_r215, cpy_r_r216, cpy_r_r217);
     if (unlikely(cpy_r_r219 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 85, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 86, CPyStatic_globals);
         goto CPyL577;
     }
     cpy_r_r220 = PyList_New(2);
     if (unlikely(cpy_r_r220 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 83, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 84, CPyStatic_globals);
         goto CPyL578;
     }
     cpy_r_r221 = (CPyPtr)&((PyListObject *)cpy_r_r220)->ob_item;
@@ -3755,7 +3755,7 @@ CPyL3: ;
     cpy_r_r229 = CPyDict_Build(4, cpy_r_r204, cpy_r_r228, cpy_r_r205, cpy_r_r220, cpy_r_r224, cpy_r_r225, cpy_r_r226, cpy_r_r227);
     CPy_DECREF_NO_IMM(cpy_r_r220);
     if (unlikely(cpy_r_r229 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 81, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 82, CPyStatic_globals);
         goto CPyL576;
     }
     cpy_r_r230 = CPyStatics[29]; /* 'anonymous' */
@@ -3768,7 +3768,7 @@ CPyL3: ;
     cpy_r_r237 = 1 ? Py_True : Py_False;
     cpy_r_r238 = CPyDict_Build(3, cpy_r_r232, cpy_r_r237, cpy_r_r233, cpy_r_r234, cpy_r_r235, cpy_r_r236);
     if (unlikely(cpy_r_r238 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 93, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 94, CPyStatic_globals);
         goto CPyL579;
     }
     cpy_r_r239 = CPyStatics[30]; /* 'indexed' */
@@ -3779,7 +3779,7 @@ CPyL3: ;
     cpy_r_r244 = 1 ? Py_True : Py_False;
     cpy_r_r245 = CPyDict_Build(3, cpy_r_r239, cpy_r_r244, cpy_r_r240, cpy_r_r241, cpy_r_r242, cpy_r_r243);
     if (unlikely(cpy_r_r245 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 94, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 95, CPyStatic_globals);
         goto CPyL580;
     }
     cpy_r_r246 = CPyStatics[30]; /* 'indexed' */
@@ -3790,12 +3790,12 @@ CPyL3: ;
     cpy_r_r251 = 0 ? Py_True : Py_False;
     cpy_r_r252 = CPyDict_Build(3, cpy_r_r246, cpy_r_r251, cpy_r_r247, cpy_r_r248, cpy_r_r249, cpy_r_r250);
     if (unlikely(cpy_r_r252 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 95, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 96, CPyStatic_globals);
         goto CPyL581;
     }
     cpy_r_r253 = PyList_New(3);
     if (unlikely(cpy_r_r253 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 92, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 93, CPyStatic_globals);
         goto CPyL582;
     }
     cpy_r_r254 = (CPyPtr)&((PyListObject *)cpy_r_r253)->ob_item;
@@ -3813,7 +3813,7 @@ CPyL3: ;
     cpy_r_r263 = CPyDict_Build(4, cpy_r_r230, cpy_r_r262, cpy_r_r231, cpy_r_r253, cpy_r_r258, cpy_r_r259, cpy_r_r260, cpy_r_r261);
     CPy_DECREF_NO_IMM(cpy_r_r253);
     if (unlikely(cpy_r_r263 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 90, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 91, CPyStatic_globals);
         goto CPyL579;
     }
     cpy_r_r264 = CPyStatics[29]; /* 'anonymous' */
@@ -3826,7 +3826,7 @@ CPyL3: ;
     cpy_r_r271 = 1 ? Py_True : Py_False;
     cpy_r_r272 = CPyDict_Build(3, cpy_r_r266, cpy_r_r271, cpy_r_r267, cpy_r_r268, cpy_r_r269, cpy_r_r270);
     if (unlikely(cpy_r_r272 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 103, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 104, CPyStatic_globals);
         goto CPyL583;
     }
     cpy_r_r273 = CPyStatics[30]; /* 'indexed' */
@@ -3837,12 +3837,12 @@ CPyL3: ;
     cpy_r_r278 = 0 ? Py_True : Py_False;
     cpy_r_r279 = CPyDict_Build(3, cpy_r_r273, cpy_r_r278, cpy_r_r274, cpy_r_r275, cpy_r_r276, cpy_r_r277);
     if (unlikely(cpy_r_r279 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 104, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 105, CPyStatic_globals);
         goto CPyL584;
     }
     cpy_r_r280 = PyList_New(2);
     if (unlikely(cpy_r_r280 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 102, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 103, CPyStatic_globals);
         goto CPyL585;
     }
     cpy_r_r281 = (CPyPtr)&((PyListObject *)cpy_r_r280)->ob_item;
@@ -3858,7 +3858,7 @@ CPyL3: ;
     cpy_r_r289 = CPyDict_Build(4, cpy_r_r264, cpy_r_r288, cpy_r_r265, cpy_r_r280, cpy_r_r284, cpy_r_r285, cpy_r_r286, cpy_r_r287);
     CPy_DECREF_NO_IMM(cpy_r_r280);
     if (unlikely(cpy_r_r289 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 100, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 101, CPyStatic_globals);
         goto CPyL583;
     }
     cpy_r_r290 = CPyStatics[29]; /* 'anonymous' */
@@ -3871,7 +3871,7 @@ CPyL3: ;
     cpy_r_r297 = 1 ? Py_True : Py_False;
     cpy_r_r298 = CPyDict_Build(3, cpy_r_r292, cpy_r_r297, cpy_r_r293, cpy_r_r294, cpy_r_r295, cpy_r_r296);
     if (unlikely(cpy_r_r298 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 112, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 113, CPyStatic_globals);
         goto CPyL586;
     }
     cpy_r_r299 = CPyStatics[30]; /* 'indexed' */
@@ -3882,12 +3882,12 @@ CPyL3: ;
     cpy_r_r304 = 0 ? Py_True : Py_False;
     cpy_r_r305 = CPyDict_Build(3, cpy_r_r299, cpy_r_r304, cpy_r_r300, cpy_r_r301, cpy_r_r302, cpy_r_r303);
     if (unlikely(cpy_r_r305 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 113, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 114, CPyStatic_globals);
         goto CPyL587;
     }
     cpy_r_r306 = PyList_New(2);
     if (unlikely(cpy_r_r306 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 111, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 112, CPyStatic_globals);
         goto CPyL588;
     }
     cpy_r_r307 = (CPyPtr)&((PyListObject *)cpy_r_r306)->ob_item;
@@ -3903,12 +3903,12 @@ CPyL3: ;
     cpy_r_r315 = CPyDict_Build(4, cpy_r_r290, cpy_r_r314, cpy_r_r291, cpy_r_r306, cpy_r_r310, cpy_r_r311, cpy_r_r312, cpy_r_r313);
     CPy_DECREF_NO_IMM(cpy_r_r306);
     if (unlikely(cpy_r_r315 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 109, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 110, CPyStatic_globals);
         goto CPyL586;
     }
     cpy_r_r316 = CPyList_Build(11, cpy_r_r39, cpy_r_r66, cpy_r_r98, cpy_r_r124, cpy_r_r151, cpy_r_r177, cpy_r_r203, cpy_r_r229, cpy_r_r263, cpy_r_r289, cpy_r_r315);
     if (unlikely(cpy_r_r316 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 11, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 12, CPyStatic_globals);
         goto CPyL547;
     }
     CPyStatic_ENS = cpy_r_r316;
@@ -3919,7 +3919,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r316);
     cpy_r_r320 = cpy_r_r319 >= 0;
     if (unlikely(!cpy_r_r320)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 11, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 12, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r321 = CPyStatics[9]; /* 'constant' */
@@ -3930,12 +3930,12 @@ CPyL3: ;
     cpy_r_r326 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r327 = CPyDict_Build(2, cpy_r_r323, cpy_r_r324, cpy_r_r325, cpy_r_r326);
     if (unlikely(cpy_r_r327 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 123, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 124, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r328 = PyList_New(1);
     if (unlikely(cpy_r_r328 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 123, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 124, CPyStatic_globals);
         goto CPyL589;
     }
     cpy_r_r329 = (CPyPtr)&((PyListObject *)cpy_r_r328)->ob_item;
@@ -3946,7 +3946,7 @@ CPyL3: ;
     cpy_r_r333 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r334 = PyList_New(0);
     if (unlikely(cpy_r_r334 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 125, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 126, CPyStatic_globals);
         goto CPyL590;
     }
     cpy_r_r335 = CPyStatics[19]; /* 'payable' */
@@ -3958,7 +3958,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r328);
     CPy_DECREF_NO_IMM(cpy_r_r334);
     if (unlikely(cpy_r_r340 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 121, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 122, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r341 = CPyStatics[9]; /* 'constant' */
@@ -3969,12 +3969,12 @@ CPyL3: ;
     cpy_r_r346 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r347 = CPyDict_Build(2, cpy_r_r343, cpy_r_r344, cpy_r_r345, cpy_r_r346);
     if (unlikely(cpy_r_r347 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 131, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 132, CPyStatic_globals);
         goto CPyL591;
     }
     cpy_r_r348 = PyList_New(1);
     if (unlikely(cpy_r_r348 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 131, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 132, CPyStatic_globals);
         goto CPyL592;
     }
     cpy_r_r349 = (CPyPtr)&((PyListObject *)cpy_r_r348)->ob_item;
@@ -3989,12 +3989,12 @@ CPyL3: ;
     cpy_r_r357 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r358 = CPyDict_Build(2, cpy_r_r354, cpy_r_r355, cpy_r_r356, cpy_r_r357);
     if (unlikely(cpy_r_r358 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 133, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 134, CPyStatic_globals);
         goto CPyL593;
     }
     cpy_r_r359 = PyList_New(1);
     if (unlikely(cpy_r_r359 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 133, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 134, CPyStatic_globals);
         goto CPyL594;
     }
     cpy_r_r360 = (CPyPtr)&((PyListObject *)cpy_r_r359)->ob_item;
@@ -4009,7 +4009,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r348);
     CPy_DECREF_NO_IMM(cpy_r_r359);
     if (unlikely(cpy_r_r367 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 129, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 130, CPyStatic_globals);
         goto CPyL591;
     }
     cpy_r_r368 = CPyStatics[9]; /* 'constant' */
@@ -4020,12 +4020,12 @@ CPyL3: ;
     cpy_r_r373 = CPyStatics[43]; /* 'string' */
     cpy_r_r374 = CPyDict_Build(2, cpy_r_r370, cpy_r_r371, cpy_r_r372, cpy_r_r373);
     if (unlikely(cpy_r_r374 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 139, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 140, CPyStatic_globals);
         goto CPyL595;
     }
     cpy_r_r375 = PyList_New(1);
     if (unlikely(cpy_r_r375 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 139, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 140, CPyStatic_globals);
         goto CPyL596;
     }
     cpy_r_r376 = (CPyPtr)&((PyListObject *)cpy_r_r375)->ob_item;
@@ -4036,7 +4036,7 @@ CPyL3: ;
     cpy_r_r380 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r381 = PyList_New(0);
     if (unlikely(cpy_r_r381 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 141, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 142, CPyStatic_globals);
         goto CPyL597;
     }
     cpy_r_r382 = CPyStatics[19]; /* 'payable' */
@@ -4048,7 +4048,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r375);
     CPy_DECREF_NO_IMM(cpy_r_r381);
     if (unlikely(cpy_r_r387 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 137, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 138, CPyStatic_globals);
         goto CPyL595;
     }
     cpy_r_r388 = CPyStatics[9]; /* 'constant' */
@@ -4059,7 +4059,7 @@ CPyL3: ;
     cpy_r_r393 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r394 = CPyDict_Build(2, cpy_r_r390, cpy_r_r391, cpy_r_r392, cpy_r_r393);
     if (unlikely(cpy_r_r394 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 148, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 149, CPyStatic_globals);
         goto CPyL598;
     }
     cpy_r_r395 = CPyStatics[11]; /* 'name' */
@@ -4068,7 +4068,7 @@ CPyL3: ;
     cpy_r_r398 = CPyStatics[18]; /* 'address' */
     cpy_r_r399 = CPyDict_Build(2, cpy_r_r395, cpy_r_r396, cpy_r_r397, cpy_r_r398);
     if (unlikely(cpy_r_r399 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 149, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 150, CPyStatic_globals);
         goto CPyL599;
     }
     cpy_r_r400 = CPyStatics[11]; /* 'name' */
@@ -4077,7 +4077,7 @@ CPyL3: ;
     cpy_r_r403 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r404 = CPyDict_Build(2, cpy_r_r400, cpy_r_r401, cpy_r_r402, cpy_r_r403);
     if (unlikely(cpy_r_r404 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 150, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 151, CPyStatic_globals);
         goto CPyL600;
     }
     cpy_r_r405 = CPyStatics[11]; /* 'name' */
@@ -4086,12 +4086,12 @@ CPyL3: ;
     cpy_r_r408 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r409 = CPyDict_Build(2, cpy_r_r405, cpy_r_r406, cpy_r_r407, cpy_r_r408);
     if (unlikely(cpy_r_r409 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 151, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 152, CPyStatic_globals);
         goto CPyL601;
     }
     cpy_r_r410 = PyList_New(4);
     if (unlikely(cpy_r_r410 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 147, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 148, CPyStatic_globals);
         goto CPyL602;
     }
     cpy_r_r411 = (CPyPtr)&((PyListObject *)cpy_r_r410)->ob_item;
@@ -4112,12 +4112,12 @@ CPyL3: ;
     cpy_r_r422 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r423 = CPyDict_Build(2, cpy_r_r419, cpy_r_r420, cpy_r_r421, cpy_r_r422);
     if (unlikely(cpy_r_r423 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 154, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 155, CPyStatic_globals);
         goto CPyL603;
     }
     cpy_r_r424 = PyList_New(1);
     if (unlikely(cpy_r_r424 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 154, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 155, CPyStatic_globals);
         goto CPyL604;
     }
     cpy_r_r425 = (CPyPtr)&((PyListObject *)cpy_r_r424)->ob_item;
@@ -4132,7 +4132,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r410);
     CPy_DECREF_NO_IMM(cpy_r_r424);
     if (unlikely(cpy_r_r432 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 145, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 146, CPyStatic_globals);
         goto CPyL598;
     }
     cpy_r_r433 = CPyStatics[9]; /* 'constant' */
@@ -4143,7 +4143,7 @@ CPyL3: ;
     cpy_r_r438 = CPyStatics[18]; /* 'address' */
     cpy_r_r439 = CPyDict_Build(2, cpy_r_r435, cpy_r_r436, cpy_r_r437, cpy_r_r438);
     if (unlikely(cpy_r_r439 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 161, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 162, CPyStatic_globals);
         goto CPyL605;
     }
     cpy_r_r440 = CPyStatics[11]; /* 'name' */
@@ -4152,12 +4152,12 @@ CPyL3: ;
     cpy_r_r443 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r444 = CPyDict_Build(2, cpy_r_r440, cpy_r_r441, cpy_r_r442, cpy_r_r443);
     if (unlikely(cpy_r_r444 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 162, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 163, CPyStatic_globals);
         goto CPyL606;
     }
     cpy_r_r445 = PyList_New(2);
     if (unlikely(cpy_r_r445 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 160, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 161, CPyStatic_globals);
         goto CPyL607;
     }
     cpy_r_r446 = (CPyPtr)&((PyListObject *)cpy_r_r445)->ob_item;
@@ -4170,7 +4170,7 @@ CPyL3: ;
     cpy_r_r451 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r452 = PyList_New(0);
     if (unlikely(cpy_r_r452 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 165, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 166, CPyStatic_globals);
         goto CPyL608;
     }
     cpy_r_r453 = CPyStatics[19]; /* 'payable' */
@@ -4182,7 +4182,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r445);
     CPy_DECREF_NO_IMM(cpy_r_r452);
     if (unlikely(cpy_r_r458 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 158, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 159, CPyStatic_globals);
         goto CPyL605;
     }
     cpy_r_r459 = CPyStatics[9]; /* 'constant' */
@@ -4193,12 +4193,12 @@ CPyL3: ;
     cpy_r_r464 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r465 = CPyDict_Build(2, cpy_r_r461, cpy_r_r462, cpy_r_r463, cpy_r_r464);
     if (unlikely(cpy_r_r465 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 171, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 172, CPyStatic_globals);
         goto CPyL609;
     }
     cpy_r_r466 = PyList_New(1);
     if (unlikely(cpy_r_r466 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 171, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 172, CPyStatic_globals);
         goto CPyL610;
     }
     cpy_r_r467 = (CPyPtr)&((PyListObject *)cpy_r_r466)->ob_item;
@@ -4213,7 +4213,7 @@ CPyL3: ;
     cpy_r_r475 = CPyStatics[54]; /* 'uint8' */
     cpy_r_r476 = CPyDict_Build(2, cpy_r_r472, cpy_r_r473, cpy_r_r474, cpy_r_r475);
     if (unlikely(cpy_r_r476 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 174, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 175, CPyStatic_globals);
         goto CPyL611;
     }
     cpy_r_r477 = CPyStatics[11]; /* 'name' */
@@ -4222,7 +4222,7 @@ CPyL3: ;
     cpy_r_r480 = CPyStatics[18]; /* 'address' */
     cpy_r_r481 = CPyDict_Build(2, cpy_r_r477, cpy_r_r478, cpy_r_r479, cpy_r_r480);
     if (unlikely(cpy_r_r481 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 175, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 176, CPyStatic_globals);
         goto CPyL612;
     }
     cpy_r_r482 = CPyStatics[11]; /* 'name' */
@@ -4231,7 +4231,7 @@ CPyL3: ;
     cpy_r_r485 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r486 = CPyDict_Build(2, cpy_r_r482, cpy_r_r483, cpy_r_r484, cpy_r_r485);
     if (unlikely(cpy_r_r486 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 176, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 177, CPyStatic_globals);
         goto CPyL613;
     }
     cpy_r_r487 = CPyStatics[11]; /* 'name' */
@@ -4240,7 +4240,7 @@ CPyL3: ;
     cpy_r_r490 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r491 = CPyDict_Build(2, cpy_r_r487, cpy_r_r488, cpy_r_r489, cpy_r_r490);
     if (unlikely(cpy_r_r491 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 177, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 178, CPyStatic_globals);
         goto CPyL614;
     }
     cpy_r_r492 = CPyStatics[11]; /* 'name' */
@@ -4249,12 +4249,12 @@ CPyL3: ;
     cpy_r_r495 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r496 = CPyDict_Build(2, cpy_r_r492, cpy_r_r493, cpy_r_r494, cpy_r_r495);
     if (unlikely(cpy_r_r496 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 178, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 179, CPyStatic_globals);
         goto CPyL615;
     }
     cpy_r_r497 = PyList_New(5);
     if (unlikely(cpy_r_r497 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 173, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 174, CPyStatic_globals);
         goto CPyL616;
     }
     cpy_r_r498 = (CPyPtr)&((PyListObject *)cpy_r_r497)->ob_item;
@@ -4277,14 +4277,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r466);
     CPy_DECREF_NO_IMM(cpy_r_r497);
     if (unlikely(cpy_r_r509 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 169, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 170, CPyStatic_globals);
         goto CPyL609;
     }
     cpy_r_r510 = CPyStatics[9]; /* 'constant' */
     cpy_r_r511 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r512 = PyList_New(0);
     if (unlikely(cpy_r_r512 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 185, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 186, CPyStatic_globals);
         goto CPyL617;
     }
     cpy_r_r513 = CPyStatics[11]; /* 'name' */
@@ -4296,12 +4296,12 @@ CPyL3: ;
     cpy_r_r519 = CPyStatics[18]; /* 'address' */
     cpy_r_r520 = CPyDict_Build(2, cpy_r_r516, cpy_r_r517, cpy_r_r518, cpy_r_r519);
     if (unlikely(cpy_r_r520 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 187, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 188, CPyStatic_globals);
         goto CPyL618;
     }
     cpy_r_r521 = PyList_New(1);
     if (unlikely(cpy_r_r521 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 187, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 188, CPyStatic_globals);
         goto CPyL619;
     }
     cpy_r_r522 = (CPyPtr)&((PyListObject *)cpy_r_r521)->ob_item;
@@ -4316,7 +4316,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r512);
     CPy_DECREF_NO_IMM(cpy_r_r521);
     if (unlikely(cpy_r_r529 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 183, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 184, CPyStatic_globals);
         goto CPyL617;
     }
     cpy_r_r530 = CPyStatics[9]; /* 'constant' */
@@ -4327,7 +4327,7 @@ CPyL3: ;
     cpy_r_r535 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r536 = CPyDict_Build(2, cpy_r_r532, cpy_r_r533, cpy_r_r534, cpy_r_r535);
     if (unlikely(cpy_r_r536 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 194, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 195, CPyStatic_globals);
         goto CPyL620;
     }
     cpy_r_r537 = CPyStatics[11]; /* 'name' */
@@ -4336,7 +4336,7 @@ CPyL3: ;
     cpy_r_r540 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r541 = CPyDict_Build(2, cpy_r_r537, cpy_r_r538, cpy_r_r539, cpy_r_r540);
     if (unlikely(cpy_r_r541 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 195, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 196, CPyStatic_globals);
         goto CPyL621;
     }
     cpy_r_r542 = CPyStatics[11]; /* 'name' */
@@ -4345,12 +4345,12 @@ CPyL3: ;
     cpy_r_r545 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r546 = CPyDict_Build(2, cpy_r_r542, cpy_r_r543, cpy_r_r544, cpy_r_r545);
     if (unlikely(cpy_r_r546 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 196, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 197, CPyStatic_globals);
         goto CPyL622;
     }
     cpy_r_r547 = PyList_New(3);
     if (unlikely(cpy_r_r547 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 193, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 194, CPyStatic_globals);
         goto CPyL623;
     }
     cpy_r_r548 = (CPyPtr)&((PyListObject *)cpy_r_r547)->ob_item;
@@ -4365,7 +4365,7 @@ CPyL3: ;
     cpy_r_r554 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r555 = PyList_New(0);
     if (unlikely(cpy_r_r555 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 199, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 200, CPyStatic_globals);
         goto CPyL624;
     }
     cpy_r_r556 = CPyStatics[19]; /* 'payable' */
@@ -4377,7 +4377,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r547);
     CPy_DECREF_NO_IMM(cpy_r_r555);
     if (unlikely(cpy_r_r561 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 191, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 192, CPyStatic_globals);
         goto CPyL620;
     }
     cpy_r_r562 = CPyStatics[9]; /* 'constant' */
@@ -4388,12 +4388,12 @@ CPyL3: ;
     cpy_r_r567 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r568 = CPyDict_Build(2, cpy_r_r564, cpy_r_r565, cpy_r_r566, cpy_r_r567);
     if (unlikely(cpy_r_r568 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 205, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 206, CPyStatic_globals);
         goto CPyL625;
     }
     cpy_r_r569 = PyList_New(1);
     if (unlikely(cpy_r_r569 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 205, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 206, CPyStatic_globals);
         goto CPyL626;
     }
     cpy_r_r570 = (CPyPtr)&((PyListObject *)cpy_r_r569)->ob_item;
@@ -4404,7 +4404,7 @@ CPyL3: ;
     cpy_r_r574 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r575 = PyList_New(0);
     if (unlikely(cpy_r_r575 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 207, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 208, CPyStatic_globals);
         goto CPyL627;
     }
     cpy_r_r576 = CPyStatics[19]; /* 'payable' */
@@ -4416,7 +4416,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r569);
     CPy_DECREF_NO_IMM(cpy_r_r575);
     if (unlikely(cpy_r_r581 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 203, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 204, CPyStatic_globals);
         goto CPyL625;
     }
     cpy_r_r582 = CPyStatics[9]; /* 'constant' */
@@ -4427,7 +4427,7 @@ CPyL3: ;
     cpy_r_r587 = CPyStatics[18]; /* 'address' */
     cpy_r_r588 = CPyDict_Build(2, cpy_r_r584, cpy_r_r585, cpy_r_r586, cpy_r_r587);
     if (unlikely(cpy_r_r588 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 213, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 214, CPyStatic_globals);
         goto CPyL628;
     }
     cpy_r_r589 = CPyStatics[11]; /* 'name' */
@@ -4436,12 +4436,12 @@ CPyL3: ;
     cpy_r_r592 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r593 = CPyDict_Build(2, cpy_r_r589, cpy_r_r590, cpy_r_r591, cpy_r_r592);
     if (unlikely(cpy_r_r593 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 213, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 214, CPyStatic_globals);
         goto CPyL629;
     }
     cpy_r_r594 = PyList_New(2);
     if (unlikely(cpy_r_r594 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 213, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 214, CPyStatic_globals);
         goto CPyL630;
     }
     cpy_r_r595 = (CPyPtr)&((PyListObject *)cpy_r_r594)->ob_item;
@@ -4458,12 +4458,12 @@ CPyL3: ;
     cpy_r_r604 = CPyStatics[18]; /* 'address' */
     cpy_r_r605 = CPyDict_Build(2, cpy_r_r601, cpy_r_r602, cpy_r_r603, cpy_r_r604);
     if (unlikely(cpy_r_r605 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 215, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 216, CPyStatic_globals);
         goto CPyL631;
     }
     cpy_r_r606 = PyList_New(1);
     if (unlikely(cpy_r_r606 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 215, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 216, CPyStatic_globals);
         goto CPyL632;
     }
     cpy_r_r607 = (CPyPtr)&((PyListObject *)cpy_r_r606)->ob_item;
@@ -4478,7 +4478,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r594);
     CPy_DECREF_NO_IMM(cpy_r_r606);
     if (unlikely(cpy_r_r614 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 211, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 212, CPyStatic_globals);
         goto CPyL628;
     }
     cpy_r_r615 = CPyStatics[9]; /* 'constant' */
@@ -4489,12 +4489,12 @@ CPyL3: ;
     cpy_r_r620 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r621 = CPyDict_Build(2, cpy_r_r617, cpy_r_r618, cpy_r_r619, cpy_r_r620);
     if (unlikely(cpy_r_r621 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 221, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 222, CPyStatic_globals);
         goto CPyL633;
     }
     cpy_r_r622 = PyList_New(1);
     if (unlikely(cpy_r_r622 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 221, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 222, CPyStatic_globals);
         goto CPyL634;
     }
     cpy_r_r623 = (CPyPtr)&((PyListObject *)cpy_r_r622)->ob_item;
@@ -4509,12 +4509,12 @@ CPyL3: ;
     cpy_r_r631 = CPyStatics[54]; /* 'uint8' */
     cpy_r_r632 = CPyDict_Build(2, cpy_r_r628, cpy_r_r629, cpy_r_r630, cpy_r_r631);
     if (unlikely(cpy_r_r632 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 223, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 224, CPyStatic_globals);
         goto CPyL635;
     }
     cpy_r_r633 = PyList_New(1);
     if (unlikely(cpy_r_r633 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 223, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 224, CPyStatic_globals);
         goto CPyL636;
     }
     cpy_r_r634 = (CPyPtr)&((PyListObject *)cpy_r_r633)->ob_item;
@@ -4529,7 +4529,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r622);
     CPy_DECREF_NO_IMM(cpy_r_r633);
     if (unlikely(cpy_r_r641 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 219, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 220, CPyStatic_globals);
         goto CPyL633;
     }
     cpy_r_r642 = CPyStatics[9]; /* 'constant' */
@@ -4540,7 +4540,7 @@ CPyL3: ;
     cpy_r_r647 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r648 = CPyDict_Build(2, cpy_r_r644, cpy_r_r645, cpy_r_r646, cpy_r_r647);
     if (unlikely(cpy_r_r648 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 230, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 231, CPyStatic_globals);
         goto CPyL637;
     }
     cpy_r_r649 = CPyStatics[11]; /* 'name' */
@@ -4549,12 +4549,12 @@ CPyL3: ;
     cpy_r_r652 = CPyStatics[18]; /* 'address' */
     cpy_r_r653 = CPyDict_Build(2, cpy_r_r649, cpy_r_r650, cpy_r_r651, cpy_r_r652);
     if (unlikely(cpy_r_r653 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 231, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 232, CPyStatic_globals);
         goto CPyL638;
     }
     cpy_r_r654 = PyList_New(2);
     if (unlikely(cpy_r_r654 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 229, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 230, CPyStatic_globals);
         goto CPyL639;
     }
     cpy_r_r655 = (CPyPtr)&((PyListObject *)cpy_r_r654)->ob_item;
@@ -4567,7 +4567,7 @@ CPyL3: ;
     cpy_r_r660 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r661 = PyList_New(0);
     if (unlikely(cpy_r_r661 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 234, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 235, CPyStatic_globals);
         goto CPyL640;
     }
     cpy_r_r662 = CPyStatics[19]; /* 'payable' */
@@ -4579,7 +4579,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r654);
     CPy_DECREF_NO_IMM(cpy_r_r661);
     if (unlikely(cpy_r_r667 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 227, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 228, CPyStatic_globals);
         goto CPyL637;
     }
     cpy_r_r668 = CPyStatics[9]; /* 'constant' */
@@ -4590,7 +4590,7 @@ CPyL3: ;
     cpy_r_r673 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r674 = CPyDict_Build(2, cpy_r_r670, cpy_r_r671, cpy_r_r672, cpy_r_r673);
     if (unlikely(cpy_r_r674 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 241, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 242, CPyStatic_globals);
         goto CPyL641;
     }
     cpy_r_r675 = CPyStatics[11]; /* 'name' */
@@ -4599,12 +4599,12 @@ CPyL3: ;
     cpy_r_r678 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r679 = CPyDict_Build(2, cpy_r_r675, cpy_r_r676, cpy_r_r677, cpy_r_r678);
     if (unlikely(cpy_r_r679 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 242, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 243, CPyStatic_globals);
         goto CPyL642;
     }
     cpy_r_r680 = PyList_New(2);
     if (unlikely(cpy_r_r680 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 240, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 241, CPyStatic_globals);
         goto CPyL643;
     }
     cpy_r_r681 = (CPyPtr)&((PyListObject *)cpy_r_r680)->ob_item;
@@ -4621,12 +4621,12 @@ CPyL3: ;
     cpy_r_r690 = CPyStatics[67]; /* 'bool' */
     cpy_r_r691 = CPyDict_Build(2, cpy_r_r687, cpy_r_r688, cpy_r_r689, cpy_r_r690);
     if (unlikely(cpy_r_r691 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 245, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 246, CPyStatic_globals);
         goto CPyL644;
     }
     cpy_r_r692 = PyList_New(1);
     if (unlikely(cpy_r_r692 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 245, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 246, CPyStatic_globals);
         goto CPyL645;
     }
     cpy_r_r693 = (CPyPtr)&((PyListObject *)cpy_r_r692)->ob_item;
@@ -4641,7 +4641,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r680);
     CPy_DECREF_NO_IMM(cpy_r_r692);
     if (unlikely(cpy_r_r700 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 238, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 239, CPyStatic_globals);
         goto CPyL641;
     }
     cpy_r_r701 = CPyStatics[9]; /* 'constant' */
@@ -4652,12 +4652,12 @@ CPyL3: ;
     cpy_r_r706 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r707 = CPyDict_Build(2, cpy_r_r703, cpy_r_r704, cpy_r_r705, cpy_r_r706);
     if (unlikely(cpy_r_r707 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 251, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 252, CPyStatic_globals);
         goto CPyL646;
     }
     cpy_r_r708 = PyList_New(1);
     if (unlikely(cpy_r_r708 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 251, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 252, CPyStatic_globals);
         goto CPyL647;
     }
     cpy_r_r709 = (CPyPtr)&((PyListObject *)cpy_r_r708)->ob_item;
@@ -4668,7 +4668,7 @@ CPyL3: ;
     cpy_r_r713 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r714 = PyList_New(0);
     if (unlikely(cpy_r_r714 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 253, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 254, CPyStatic_globals);
         goto CPyL648;
     }
     cpy_r_r715 = CPyStatics[19]; /* 'payable' */
@@ -4680,14 +4680,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r708);
     CPy_DECREF_NO_IMM(cpy_r_r714);
     if (unlikely(cpy_r_r720 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 249, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 250, CPyStatic_globals);
         goto CPyL646;
     }
     cpy_r_r721 = CPyStatics[9]; /* 'constant' */
     cpy_r_r722 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r723 = PyList_New(0);
     if (unlikely(cpy_r_r723 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 259, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 260, CPyStatic_globals);
         goto CPyL649;
     }
     cpy_r_r724 = CPyStatics[11]; /* 'name' */
@@ -4699,12 +4699,12 @@ CPyL3: ;
     cpy_r_r730 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r731 = CPyDict_Build(2, cpy_r_r727, cpy_r_r728, cpy_r_r729, cpy_r_r730);
     if (unlikely(cpy_r_r731 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 261, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 262, CPyStatic_globals);
         goto CPyL650;
     }
     cpy_r_r732 = PyList_New(1);
     if (unlikely(cpy_r_r732 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 261, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 262, CPyStatic_globals);
         goto CPyL651;
     }
     cpy_r_r733 = (CPyPtr)&((PyListObject *)cpy_r_r732)->ob_item;
@@ -4719,14 +4719,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r723);
     CPy_DECREF_NO_IMM(cpy_r_r732);
     if (unlikely(cpy_r_r740 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 257, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 258, CPyStatic_globals);
         goto CPyL649;
     }
     cpy_r_r741 = CPyStatics[9]; /* 'constant' */
     cpy_r_r742 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r743 = PyList_New(0);
     if (unlikely(cpy_r_r743 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 267, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 268, CPyStatic_globals);
         goto CPyL652;
     }
     cpy_r_r744 = CPyStatics[11]; /* 'name' */
@@ -4738,12 +4738,12 @@ CPyL3: ;
     cpy_r_r750 = CPyStatics[71]; /* 'uint32' */
     cpy_r_r751 = CPyDict_Build(2, cpy_r_r747, cpy_r_r748, cpy_r_r749, cpy_r_r750);
     if (unlikely(cpy_r_r751 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 269, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 270, CPyStatic_globals);
         goto CPyL653;
     }
     cpy_r_r752 = PyList_New(1);
     if (unlikely(cpy_r_r752 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 269, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 270, CPyStatic_globals);
         goto CPyL654;
     }
     cpy_r_r753 = (CPyPtr)&((PyListObject *)cpy_r_r752)->ob_item;
@@ -4758,7 +4758,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r743);
     CPy_DECREF_NO_IMM(cpy_r_r752);
     if (unlikely(cpy_r_r760 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 265, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 266, CPyStatic_globals);
         goto CPyL652;
     }
     cpy_r_r761 = CPyStatics[9]; /* 'constant' */
@@ -4769,12 +4769,12 @@ CPyL3: ;
     cpy_r_r766 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r767 = CPyDict_Build(2, cpy_r_r763, cpy_r_r764, cpy_r_r765, cpy_r_r766);
     if (unlikely(cpy_r_r767 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 275, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 276, CPyStatic_globals);
         goto CPyL655;
     }
     cpy_r_r768 = PyList_New(1);
     if (unlikely(cpy_r_r768 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 275, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 276, CPyStatic_globals);
         goto CPyL656;
     }
     cpy_r_r769 = (CPyPtr)&((PyListObject *)cpy_r_r768)->ob_item;
@@ -4785,7 +4785,7 @@ CPyL3: ;
     cpy_r_r773 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r774 = PyList_New(0);
     if (unlikely(cpy_r_r774 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 277, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 278, CPyStatic_globals);
         goto CPyL657;
     }
     cpy_r_r775 = CPyStatics[19]; /* 'payable' */
@@ -4797,7 +4797,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r768);
     CPy_DECREF_NO_IMM(cpy_r_r774);
     if (unlikely(cpy_r_r780 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 273, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 274, CPyStatic_globals);
         goto CPyL655;
     }
     cpy_r_r781 = CPyStatics[9]; /* 'constant' */
@@ -4808,12 +4808,12 @@ CPyL3: ;
     cpy_r_r786 = CPyStatics[74]; /* 'bytes32[]' */
     cpy_r_r787 = CPyDict_Build(2, cpy_r_r783, cpy_r_r784, cpy_r_r785, cpy_r_r786);
     if (unlikely(cpy_r_r787 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 283, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 284, CPyStatic_globals);
         goto CPyL658;
     }
     cpy_r_r788 = PyList_New(1);
     if (unlikely(cpy_r_r788 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 283, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 284, CPyStatic_globals);
         goto CPyL659;
     }
     cpy_r_r789 = (CPyPtr)&((PyListObject *)cpy_r_r788)->ob_item;
@@ -4824,7 +4824,7 @@ CPyL3: ;
     cpy_r_r793 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r794 = PyList_New(0);
     if (unlikely(cpy_r_r794 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 285, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 286, CPyStatic_globals);
         goto CPyL660;
     }
     cpy_r_r795 = CPyStatics[19]; /* 'payable' */
@@ -4836,7 +4836,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r788);
     CPy_DECREF_NO_IMM(cpy_r_r794);
     if (unlikely(cpy_r_r800 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 281, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 282, CPyStatic_globals);
         goto CPyL658;
     }
     cpy_r_r801 = CPyStatics[9]; /* 'constant' */
@@ -4847,12 +4847,12 @@ CPyL3: ;
     cpy_r_r806 = CPyStatics[74]; /* 'bytes32[]' */
     cpy_r_r807 = CPyDict_Build(2, cpy_r_r803, cpy_r_r804, cpy_r_r805, cpy_r_r806);
     if (unlikely(cpy_r_r807 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 291, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 292, CPyStatic_globals);
         goto CPyL661;
     }
     cpy_r_r808 = PyList_New(1);
     if (unlikely(cpy_r_r808 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 291, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 292, CPyStatic_globals);
         goto CPyL662;
     }
     cpy_r_r809 = (CPyPtr)&((PyListObject *)cpy_r_r808)->ob_item;
@@ -4863,7 +4863,7 @@ CPyL3: ;
     cpy_r_r813 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r814 = PyList_New(0);
     if (unlikely(cpy_r_r814 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 293, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 294, CPyStatic_globals);
         goto CPyL663;
     }
     cpy_r_r815 = CPyStatics[19]; /* 'payable' */
@@ -4875,7 +4875,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r808);
     CPy_DECREF_NO_IMM(cpy_r_r814);
     if (unlikely(cpy_r_r820 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 289, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 290, CPyStatic_globals);
         goto CPyL661;
     }
     cpy_r_r821 = CPyStatics[9]; /* 'constant' */
@@ -4886,7 +4886,7 @@ CPyL3: ;
     cpy_r_r826 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r827 = CPyDict_Build(2, cpy_r_r823, cpy_r_r824, cpy_r_r825, cpy_r_r826);
     if (unlikely(cpy_r_r827 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 300, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 301, CPyStatic_globals);
         goto CPyL664;
     }
     cpy_r_r828 = CPyStatics[11]; /* 'name' */
@@ -4895,7 +4895,7 @@ CPyL3: ;
     cpy_r_r831 = CPyStatics[18]; /* 'address' */
     cpy_r_r832 = CPyDict_Build(2, cpy_r_r828, cpy_r_r829, cpy_r_r830, cpy_r_r831);
     if (unlikely(cpy_r_r832 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 301, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 302, CPyStatic_globals);
         goto CPyL665;
     }
     cpy_r_r833 = CPyStatics[11]; /* 'name' */
@@ -4904,12 +4904,12 @@ CPyL3: ;
     cpy_r_r836 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r837 = CPyDict_Build(2, cpy_r_r833, cpy_r_r834, cpy_r_r835, cpy_r_r836);
     if (unlikely(cpy_r_r837 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 302, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 303, CPyStatic_globals);
         goto CPyL666;
     }
     cpy_r_r838 = PyList_New(3);
     if (unlikely(cpy_r_r838 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 299, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 300, CPyStatic_globals);
         goto CPyL667;
     }
     cpy_r_r839 = (CPyPtr)&((PyListObject *)cpy_r_r838)->ob_item;
@@ -4924,7 +4924,7 @@ CPyL3: ;
     cpy_r_r845 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r846 = PyList_New(0);
     if (unlikely(cpy_r_r846 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 305, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 306, CPyStatic_globals);
         goto CPyL668;
     }
     cpy_r_r847 = CPyStatics[19]; /* 'payable' */
@@ -4936,7 +4936,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r838);
     CPy_DECREF_NO_IMM(cpy_r_r846);
     if (unlikely(cpy_r_r852 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 297, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 298, CPyStatic_globals);
         goto CPyL664;
     }
     cpy_r_r853 = CPyStatics[9]; /* 'constant' */
@@ -4947,12 +4947,12 @@ CPyL3: ;
     cpy_r_r858 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r859 = CPyDict_Build(2, cpy_r_r855, cpy_r_r856, cpy_r_r857, cpy_r_r858);
     if (unlikely(cpy_r_r859 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 311, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 312, CPyStatic_globals);
         goto CPyL669;
     }
     cpy_r_r860 = PyList_New(1);
     if (unlikely(cpy_r_r860 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 311, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 312, CPyStatic_globals);
         goto CPyL670;
     }
     cpy_r_r861 = (CPyPtr)&((PyListObject *)cpy_r_r860)->ob_item;
@@ -4963,7 +4963,7 @@ CPyL3: ;
     cpy_r_r865 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r866 = PyList_New(0);
     if (unlikely(cpy_r_r866 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 313, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 314, CPyStatic_globals);
         goto CPyL671;
     }
     cpy_r_r867 = CPyStatics[19]; /* 'payable' */
@@ -4975,14 +4975,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r860);
     CPy_DECREF_NO_IMM(cpy_r_r866);
     if (unlikely(cpy_r_r872 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 309, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 310, CPyStatic_globals);
         goto CPyL669;
     }
     cpy_r_r873 = CPyStatics[9]; /* 'constant' */
     cpy_r_r874 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r875 = PyList_New(0);
     if (unlikely(cpy_r_r875 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 319, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 320, CPyStatic_globals);
         goto CPyL672;
     }
     cpy_r_r876 = CPyStatics[11]; /* 'name' */
@@ -4994,12 +4994,12 @@ CPyL3: ;
     cpy_r_r882 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r883 = CPyDict_Build(2, cpy_r_r879, cpy_r_r880, cpy_r_r881, cpy_r_r882);
     if (unlikely(cpy_r_r883 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 321, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 322, CPyStatic_globals);
         goto CPyL673;
     }
     cpy_r_r884 = PyList_New(1);
     if (unlikely(cpy_r_r884 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 321, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 322, CPyStatic_globals);
         goto CPyL674;
     }
     cpy_r_r885 = (CPyPtr)&((PyListObject *)cpy_r_r884)->ob_item;
@@ -5014,7 +5014,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r875);
     CPy_DECREF_NO_IMM(cpy_r_r884);
     if (unlikely(cpy_r_r892 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 317, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 318, CPyStatic_globals);
         goto CPyL672;
     }
     cpy_r_r893 = CPyStatics[9]; /* 'constant' */
@@ -5025,7 +5025,7 @@ CPyL3: ;
     cpy_r_r898 = CPyStatics[74]; /* 'bytes32[]' */
     cpy_r_r899 = CPyDict_Build(2, cpy_r_r895, cpy_r_r896, cpy_r_r897, cpy_r_r898);
     if (unlikely(cpy_r_r899 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 328, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 329, CPyStatic_globals);
         goto CPyL675;
     }
     cpy_r_r900 = CPyStatics[11]; /* 'name' */
@@ -5034,12 +5034,12 @@ CPyL3: ;
     cpy_r_r903 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r904 = CPyDict_Build(2, cpy_r_r900, cpy_r_r901, cpy_r_r902, cpy_r_r903);
     if (unlikely(cpy_r_r904 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 329, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 330, CPyStatic_globals);
         goto CPyL676;
     }
     cpy_r_r905 = PyList_New(2);
     if (unlikely(cpy_r_r905 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 327, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 328, CPyStatic_globals);
         goto CPyL677;
     }
     cpy_r_r906 = (CPyPtr)&((PyListObject *)cpy_r_r905)->ob_item;
@@ -5052,7 +5052,7 @@ CPyL3: ;
     cpy_r_r911 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r912 = PyList_New(0);
     if (unlikely(cpy_r_r912 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 332, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 333, CPyStatic_globals);
         goto CPyL678;
     }
     cpy_r_r913 = CPyStatics[19]; /* 'payable' */
@@ -5064,7 +5064,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r905);
     CPy_DECREF_NO_IMM(cpy_r_r912);
     if (unlikely(cpy_r_r918 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 325, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 326, CPyStatic_globals);
         goto CPyL675;
     }
     cpy_r_r919 = CPyStatics[10]; /* 'inputs' */
@@ -5074,7 +5074,7 @@ CPyL3: ;
     cpy_r_r923 = CPyStatics[18]; /* 'address' */
     cpy_r_r924 = CPyDict_Build(2, cpy_r_r920, cpy_r_r921, cpy_r_r922, cpy_r_r923);
     if (unlikely(cpy_r_r924 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 338, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 339, CPyStatic_globals);
         goto CPyL679;
     }
     cpy_r_r925 = CPyStatics[11]; /* 'name' */
@@ -5083,7 +5083,7 @@ CPyL3: ;
     cpy_r_r928 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r929 = CPyDict_Build(2, cpy_r_r925, cpy_r_r926, cpy_r_r927, cpy_r_r928);
     if (unlikely(cpy_r_r929 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 339, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 340, CPyStatic_globals);
         goto CPyL680;
     }
     cpy_r_r930 = CPyStatics[11]; /* 'name' */
@@ -5092,12 +5092,12 @@ CPyL3: ;
     cpy_r_r933 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r934 = CPyDict_Build(2, cpy_r_r930, cpy_r_r931, cpy_r_r932, cpy_r_r933);
     if (unlikely(cpy_r_r934 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 340, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 341, CPyStatic_globals);
         goto CPyL681;
     }
     cpy_r_r935 = PyList_New(3);
     if (unlikely(cpy_r_r935 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 337, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 338, CPyStatic_globals);
         goto CPyL682;
     }
     cpy_r_r936 = (CPyPtr)&((PyListObject *)cpy_r_r935)->ob_item;
@@ -5114,7 +5114,7 @@ CPyL3: ;
     cpy_r_r944 = CPyDict_Build(3, cpy_r_r919, cpy_r_r935, cpy_r_r940, cpy_r_r943, cpy_r_r941, cpy_r_r942);
     CPy_DECREF_NO_IMM(cpy_r_r935);
     if (unlikely(cpy_r_r944 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 336, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 337, CPyStatic_globals);
         goto CPyL679;
     }
     cpy_r_r945 = CPyStatics[29]; /* 'anonymous' */
@@ -5127,7 +5127,7 @@ CPyL3: ;
     cpy_r_r952 = 1 ? Py_True : Py_False;
     cpy_r_r953 = CPyDict_Build(3, cpy_r_r947, cpy_r_r952, cpy_r_r948, cpy_r_r949, cpy_r_r950, cpy_r_r951);
     if (unlikely(cpy_r_r953 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 348, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 349, CPyStatic_globals);
         goto CPyL683;
     }
     cpy_r_r954 = CPyStatics[30]; /* 'indexed' */
@@ -5138,12 +5138,12 @@ CPyL3: ;
     cpy_r_r959 = 0 ? Py_True : Py_False;
     cpy_r_r960 = CPyDict_Build(3, cpy_r_r954, cpy_r_r959, cpy_r_r955, cpy_r_r956, cpy_r_r957, cpy_r_r958);
     if (unlikely(cpy_r_r960 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 349, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 350, CPyStatic_globals);
         goto CPyL684;
     }
     cpy_r_r961 = PyList_New(2);
     if (unlikely(cpy_r_r961 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 347, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 348, CPyStatic_globals);
         goto CPyL685;
     }
     cpy_r_r962 = (CPyPtr)&((PyListObject *)cpy_r_r961)->ob_item;
@@ -5159,7 +5159,7 @@ CPyL3: ;
     cpy_r_r970 = CPyDict_Build(4, cpy_r_r945, cpy_r_r969, cpy_r_r946, cpy_r_r961, cpy_r_r965, cpy_r_r966, cpy_r_r967, cpy_r_r968);
     CPy_DECREF_NO_IMM(cpy_r_r961);
     if (unlikely(cpy_r_r970 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 345, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 346, CPyStatic_globals);
         goto CPyL683;
     }
     cpy_r_r971 = CPyStatics[29]; /* 'anonymous' */
@@ -5172,7 +5172,7 @@ CPyL3: ;
     cpy_r_r978 = 1 ? Py_True : Py_False;
     cpy_r_r979 = CPyDict_Build(3, cpy_r_r973, cpy_r_r978, cpy_r_r974, cpy_r_r975, cpy_r_r976, cpy_r_r977);
     if (unlikely(cpy_r_r979 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 357, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 358, CPyStatic_globals);
         goto CPyL686;
     }
     cpy_r_r980 = CPyStatics[30]; /* 'indexed' */
@@ -5183,7 +5183,7 @@ CPyL3: ;
     cpy_r_r985 = 1 ? Py_True : Py_False;
     cpy_r_r986 = CPyDict_Build(3, cpy_r_r980, cpy_r_r985, cpy_r_r981, cpy_r_r982, cpy_r_r983, cpy_r_r984);
     if (unlikely(cpy_r_r986 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 358, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 359, CPyStatic_globals);
         goto CPyL687;
     }
     cpy_r_r987 = CPyStatics[30]; /* 'indexed' */
@@ -5194,12 +5194,12 @@ CPyL3: ;
     cpy_r_r992 = 0 ? Py_True : Py_False;
     cpy_r_r993 = CPyDict_Build(3, cpy_r_r987, cpy_r_r992, cpy_r_r988, cpy_r_r989, cpy_r_r990, cpy_r_r991);
     if (unlikely(cpy_r_r993 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 359, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 360, CPyStatic_globals);
         goto CPyL688;
     }
     cpy_r_r994 = PyList_New(3);
     if (unlikely(cpy_r_r994 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 356, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 357, CPyStatic_globals);
         goto CPyL689;
     }
     cpy_r_r995 = (CPyPtr)&((PyListObject *)cpy_r_r994)->ob_item;
@@ -5217,7 +5217,7 @@ CPyL3: ;
     cpy_r_r1004 = CPyDict_Build(4, cpy_r_r971, cpy_r_r1003, cpy_r_r972, cpy_r_r994, cpy_r_r999, cpy_r_r1000, cpy_r_r1001, cpy_r_r1002);
     CPy_DECREF_NO_IMM(cpy_r_r994);
     if (unlikely(cpy_r_r1004 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 354, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 355, CPyStatic_globals);
         goto CPyL686;
     }
     cpy_r_r1005 = CPyStatics[29]; /* 'anonymous' */
@@ -5230,7 +5230,7 @@ CPyL3: ;
     cpy_r_r1012 = 1 ? Py_True : Py_False;
     cpy_r_r1013 = CPyDict_Build(3, cpy_r_r1007, cpy_r_r1012, cpy_r_r1008, cpy_r_r1009, cpy_r_r1010, cpy_r_r1011);
     if (unlikely(cpy_r_r1013 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 367, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 368, CPyStatic_globals);
         goto CPyL690;
     }
     cpy_r_r1014 = CPyStatics[30]; /* 'indexed' */
@@ -5241,7 +5241,7 @@ CPyL3: ;
     cpy_r_r1019 = 1 ? Py_True : Py_False;
     cpy_r_r1020 = CPyDict_Build(3, cpy_r_r1014, cpy_r_r1019, cpy_r_r1015, cpy_r_r1016, cpy_r_r1017, cpy_r_r1018);
     if (unlikely(cpy_r_r1020 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 368, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 369, CPyStatic_globals);
         goto CPyL691;
     }
     cpy_r_r1021 = CPyStatics[30]; /* 'indexed' */
@@ -5252,7 +5252,7 @@ CPyL3: ;
     cpy_r_r1026 = 0 ? Py_True : Py_False;
     cpy_r_r1027 = CPyDict_Build(3, cpy_r_r1021, cpy_r_r1026, cpy_r_r1022, cpy_r_r1023, cpy_r_r1024, cpy_r_r1025);
     if (unlikely(cpy_r_r1027 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 369, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 370, CPyStatic_globals);
         goto CPyL692;
     }
     cpy_r_r1028 = CPyStatics[30]; /* 'indexed' */
@@ -5263,12 +5263,12 @@ CPyL3: ;
     cpy_r_r1033 = 0 ? Py_True : Py_False;
     cpy_r_r1034 = CPyDict_Build(3, cpy_r_r1028, cpy_r_r1033, cpy_r_r1029, cpy_r_r1030, cpy_r_r1031, cpy_r_r1032);
     if (unlikely(cpy_r_r1034 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 370, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 371, CPyStatic_globals);
         goto CPyL693;
     }
     cpy_r_r1035 = PyList_New(4);
     if (unlikely(cpy_r_r1035 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 366, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 367, CPyStatic_globals);
         goto CPyL694;
     }
     cpy_r_r1036 = (CPyPtr)&((PyListObject *)cpy_r_r1035)->ob_item;
@@ -5288,7 +5288,7 @@ CPyL3: ;
     cpy_r_r1046 = CPyDict_Build(4, cpy_r_r1005, cpy_r_r1045, cpy_r_r1006, cpy_r_r1035, cpy_r_r1041, cpy_r_r1042, cpy_r_r1043, cpy_r_r1044);
     CPy_DECREF_NO_IMM(cpy_r_r1035);
     if (unlikely(cpy_r_r1046 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 364, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 365, CPyStatic_globals);
         goto CPyL690;
     }
     cpy_r_r1047 = CPyStatics[29]; /* 'anonymous' */
@@ -5301,7 +5301,7 @@ CPyL3: ;
     cpy_r_r1054 = 1 ? Py_True : Py_False;
     cpy_r_r1055 = CPyDict_Build(3, cpy_r_r1049, cpy_r_r1054, cpy_r_r1050, cpy_r_r1051, cpy_r_r1052, cpy_r_r1053);
     if (unlikely(cpy_r_r1055 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 378, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 379, CPyStatic_globals);
         goto CPyL695;
     }
     cpy_r_r1056 = CPyStatics[30]; /* 'indexed' */
@@ -5312,7 +5312,7 @@ CPyL3: ;
     cpy_r_r1061 = 1 ? Py_True : Py_False;
     cpy_r_r1062 = CPyDict_Build(3, cpy_r_r1056, cpy_r_r1061, cpy_r_r1057, cpy_r_r1058, cpy_r_r1059, cpy_r_r1060);
     if (unlikely(cpy_r_r1062 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 379, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 380, CPyStatic_globals);
         goto CPyL696;
     }
     cpy_r_r1063 = CPyStatics[30]; /* 'indexed' */
@@ -5323,7 +5323,7 @@ CPyL3: ;
     cpy_r_r1068 = 0 ? Py_True : Py_False;
     cpy_r_r1069 = CPyDict_Build(3, cpy_r_r1063, cpy_r_r1068, cpy_r_r1064, cpy_r_r1065, cpy_r_r1066, cpy_r_r1067);
     if (unlikely(cpy_r_r1069 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 380, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 381, CPyStatic_globals);
         goto CPyL697;
     }
     cpy_r_r1070 = CPyStatics[30]; /* 'indexed' */
@@ -5334,12 +5334,12 @@ CPyL3: ;
     cpy_r_r1075 = 0 ? Py_True : Py_False;
     cpy_r_r1076 = CPyDict_Build(3, cpy_r_r1070, cpy_r_r1075, cpy_r_r1071, cpy_r_r1072, cpy_r_r1073, cpy_r_r1074);
     if (unlikely(cpy_r_r1076 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 381, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 382, CPyStatic_globals);
         goto CPyL698;
     }
     cpy_r_r1077 = PyList_New(4);
     if (unlikely(cpy_r_r1077 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 377, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 378, CPyStatic_globals);
         goto CPyL699;
     }
     cpy_r_r1078 = (CPyPtr)&((PyListObject *)cpy_r_r1077)->ob_item;
@@ -5359,7 +5359,7 @@ CPyL3: ;
     cpy_r_r1088 = CPyDict_Build(4, cpy_r_r1047, cpy_r_r1087, cpy_r_r1048, cpy_r_r1077, cpy_r_r1083, cpy_r_r1084, cpy_r_r1085, cpy_r_r1086);
     CPy_DECREF_NO_IMM(cpy_r_r1077);
     if (unlikely(cpy_r_r1088 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 375, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 376, CPyStatic_globals);
         goto CPyL695;
     }
     cpy_r_r1089 = CPyStatics[29]; /* 'anonymous' */
@@ -5372,7 +5372,7 @@ CPyL3: ;
     cpy_r_r1096 = 1 ? Py_True : Py_False;
     cpy_r_r1097 = CPyDict_Build(3, cpy_r_r1091, cpy_r_r1096, cpy_r_r1092, cpy_r_r1093, cpy_r_r1094, cpy_r_r1095);
     if (unlikely(cpy_r_r1097 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 389, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 390, CPyStatic_globals);
         goto CPyL700;
     }
     cpy_r_r1098 = CPyStatics[30]; /* 'indexed' */
@@ -5383,12 +5383,12 @@ CPyL3: ;
     cpy_r_r1103 = 0 ? Py_True : Py_False;
     cpy_r_r1104 = CPyDict_Build(3, cpy_r_r1098, cpy_r_r1103, cpy_r_r1099, cpy_r_r1100, cpy_r_r1101, cpy_r_r1102);
     if (unlikely(cpy_r_r1104 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 390, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 391, CPyStatic_globals);
         goto CPyL701;
     }
     cpy_r_r1105 = PyList_New(2);
     if (unlikely(cpy_r_r1105 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 388, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 389, CPyStatic_globals);
         goto CPyL702;
     }
     cpy_r_r1106 = (CPyPtr)&((PyListObject *)cpy_r_r1105)->ob_item;
@@ -5404,7 +5404,7 @@ CPyL3: ;
     cpy_r_r1114 = CPyDict_Build(4, cpy_r_r1089, cpy_r_r1113, cpy_r_r1090, cpy_r_r1105, cpy_r_r1109, cpy_r_r1110, cpy_r_r1111, cpy_r_r1112);
     CPy_DECREF_NO_IMM(cpy_r_r1105);
     if (unlikely(cpy_r_r1114 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 386, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 387, CPyStatic_globals);
         goto CPyL700;
     }
     cpy_r_r1115 = CPyStatics[29]; /* 'anonymous' */
@@ -5417,7 +5417,7 @@ CPyL3: ;
     cpy_r_r1122 = 1 ? Py_True : Py_False;
     cpy_r_r1123 = CPyDict_Build(3, cpy_r_r1117, cpy_r_r1122, cpy_r_r1118, cpy_r_r1119, cpy_r_r1120, cpy_r_r1121);
     if (unlikely(cpy_r_r1123 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 398, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 399, CPyStatic_globals);
         goto CPyL703;
     }
     cpy_r_r1124 = CPyStatics[30]; /* 'indexed' */
@@ -5428,7 +5428,7 @@ CPyL3: ;
     cpy_r_r1129 = 1 ? Py_True : Py_False;
     cpy_r_r1130 = CPyDict_Build(3, cpy_r_r1124, cpy_r_r1129, cpy_r_r1125, cpy_r_r1126, cpy_r_r1127, cpy_r_r1128);
     if (unlikely(cpy_r_r1130 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 399, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 400, CPyStatic_globals);
         goto CPyL704;
     }
     cpy_r_r1131 = CPyStatics[30]; /* 'indexed' */
@@ -5439,7 +5439,7 @@ CPyL3: ;
     cpy_r_r1136 = 0 ? Py_True : Py_False;
     cpy_r_r1137 = CPyDict_Build(3, cpy_r_r1131, cpy_r_r1136, cpy_r_r1132, cpy_r_r1133, cpy_r_r1134, cpy_r_r1135);
     if (unlikely(cpy_r_r1137 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 400, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 401, CPyStatic_globals);
         goto CPyL705;
     }
     cpy_r_r1138 = CPyStatics[30]; /* 'indexed' */
@@ -5450,12 +5450,12 @@ CPyL3: ;
     cpy_r_r1143 = 0 ? Py_True : Py_False;
     cpy_r_r1144 = CPyDict_Build(3, cpy_r_r1138, cpy_r_r1143, cpy_r_r1139, cpy_r_r1140, cpy_r_r1141, cpy_r_r1142);
     if (unlikely(cpy_r_r1144 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 401, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 402, CPyStatic_globals);
         goto CPyL706;
     }
     cpy_r_r1145 = PyList_New(4);
     if (unlikely(cpy_r_r1145 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 397, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 398, CPyStatic_globals);
         goto CPyL707;
     }
     cpy_r_r1146 = (CPyPtr)&((PyListObject *)cpy_r_r1145)->ob_item;
@@ -5475,12 +5475,12 @@ CPyL3: ;
     cpy_r_r1156 = CPyDict_Build(4, cpy_r_r1115, cpy_r_r1155, cpy_r_r1116, cpy_r_r1145, cpy_r_r1151, cpy_r_r1152, cpy_r_r1153, cpy_r_r1154);
     CPy_DECREF_NO_IMM(cpy_r_r1145);
     if (unlikely(cpy_r_r1156 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 395, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 396, CPyStatic_globals);
         goto CPyL703;
     }
     cpy_r_r1157 = CPyList_Build(30, cpy_r_r340, cpy_r_r367, cpy_r_r387, cpy_r_r432, cpy_r_r458, cpy_r_r509, cpy_r_r529, cpy_r_r561, cpy_r_r581, cpy_r_r614, cpy_r_r641, cpy_r_r667, cpy_r_r700, cpy_r_r720, cpy_r_r740, cpy_r_r760, cpy_r_r780, cpy_r_r800, cpy_r_r820, cpy_r_r852, cpy_r_r872, cpy_r_r892, cpy_r_r918, cpy_r_r944, cpy_r_r970, cpy_r_r1004, cpy_r_r1046, cpy_r_r1088, cpy_r_r1114, cpy_r_r1156);
     if (unlikely(cpy_r_r1157 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 120, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 121, CPyStatic_globals);
         goto CPyL547;
     }
     CPyStatic_AUCTION_REGISTRAR = cpy_r_r1157;
@@ -5491,14 +5491,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1157);
     cpy_r_r1161 = cpy_r_r1160 >= 0;
     if (unlikely(!cpy_r_r1161)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 120, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 121, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1162 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1163 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1164 = PyList_New(0);
     if (unlikely(cpy_r_r1164 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 411, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 412, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1165 = CPyStatics[11]; /* 'name' */
@@ -5510,12 +5510,12 @@ CPyL3: ;
     cpy_r_r1171 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1172 = CPyDict_Build(2, cpy_r_r1168, cpy_r_r1169, cpy_r_r1170, cpy_r_r1171);
     if (unlikely(cpy_r_r1172 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 413, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 414, CPyStatic_globals);
         goto CPyL708;
     }
     cpy_r_r1173 = PyList_New(1);
     if (unlikely(cpy_r_r1173 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 413, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 414, CPyStatic_globals);
         goto CPyL709;
     }
     cpy_r_r1174 = (CPyPtr)&((PyListObject *)cpy_r_r1173)->ob_item;
@@ -5530,14 +5530,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1164);
     CPy_DECREF_NO_IMM(cpy_r_r1173);
     if (unlikely(cpy_r_r1181 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 409, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 410, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1182 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1183 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1184 = PyList_New(0);
     if (unlikely(cpy_r_r1184 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 419, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 420, CPyStatic_globals);
         goto CPyL710;
     }
     cpy_r_r1185 = CPyStatics[11]; /* 'name' */
@@ -5545,7 +5545,7 @@ CPyL3: ;
     cpy_r_r1187 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1188 = PyList_New(0);
     if (unlikely(cpy_r_r1188 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 421, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 422, CPyStatic_globals);
         goto CPyL711;
     }
     cpy_r_r1189 = CPyStatics[19]; /* 'payable' */
@@ -5557,7 +5557,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1184);
     CPy_DECREF_NO_IMM(cpy_r_r1188);
     if (unlikely(cpy_r_r1194 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 417, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 418, CPyStatic_globals);
         goto CPyL710;
     }
     cpy_r_r1195 = CPyStatics[9]; /* 'constant' */
@@ -5568,12 +5568,12 @@ CPyL3: ;
     cpy_r_r1200 = CPyStatics[18]; /* 'address' */
     cpy_r_r1201 = CPyDict_Build(2, cpy_r_r1197, cpy_r_r1198, cpy_r_r1199, cpy_r_r1200);
     if (unlikely(cpy_r_r1201 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 427, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 428, CPyStatic_globals);
         goto CPyL712;
     }
     cpy_r_r1202 = PyList_New(1);
     if (unlikely(cpy_r_r1202 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 427, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 428, CPyStatic_globals);
         goto CPyL713;
     }
     cpy_r_r1203 = (CPyPtr)&((PyListObject *)cpy_r_r1202)->ob_item;
@@ -5584,7 +5584,7 @@ CPyL3: ;
     cpy_r_r1207 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1208 = PyList_New(0);
     if (unlikely(cpy_r_r1208 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 429, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 430, CPyStatic_globals);
         goto CPyL714;
     }
     cpy_r_r1209 = CPyStatics[19]; /* 'payable' */
@@ -5596,14 +5596,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1202);
     CPy_DECREF_NO_IMM(cpy_r_r1208);
     if (unlikely(cpy_r_r1214 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 425, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 426, CPyStatic_globals);
         goto CPyL712;
     }
     cpy_r_r1215 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1216 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1217 = PyList_New(0);
     if (unlikely(cpy_r_r1217 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 435, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 436, CPyStatic_globals);
         goto CPyL715;
     }
     cpy_r_r1218 = CPyStatics[11]; /* 'name' */
@@ -5615,12 +5615,12 @@ CPyL3: ;
     cpy_r_r1224 = CPyStatics[18]; /* 'address' */
     cpy_r_r1225 = CPyDict_Build(2, cpy_r_r1221, cpy_r_r1222, cpy_r_r1223, cpy_r_r1224);
     if (unlikely(cpy_r_r1225 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 437, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 438, CPyStatic_globals);
         goto CPyL716;
     }
     cpy_r_r1226 = PyList_New(1);
     if (unlikely(cpy_r_r1226 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 437, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 438, CPyStatic_globals);
         goto CPyL717;
     }
     cpy_r_r1227 = (CPyPtr)&((PyListObject *)cpy_r_r1226)->ob_item;
@@ -5635,14 +5635,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1217);
     CPy_DECREF_NO_IMM(cpy_r_r1226);
     if (unlikely(cpy_r_r1234 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 433, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 434, CPyStatic_globals);
         goto CPyL715;
     }
     cpy_r_r1235 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1236 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1237 = PyList_New(0);
     if (unlikely(cpy_r_r1237 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 443, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 444, CPyStatic_globals);
         goto CPyL718;
     }
     cpy_r_r1238 = CPyStatics[11]; /* 'name' */
@@ -5654,12 +5654,12 @@ CPyL3: ;
     cpy_r_r1244 = CPyStatics[18]; /* 'address' */
     cpy_r_r1245 = CPyDict_Build(2, cpy_r_r1241, cpy_r_r1242, cpy_r_r1243, cpy_r_r1244);
     if (unlikely(cpy_r_r1245 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 445, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 446, CPyStatic_globals);
         goto CPyL719;
     }
     cpy_r_r1246 = PyList_New(1);
     if (unlikely(cpy_r_r1246 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 445, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 446, CPyStatic_globals);
         goto CPyL720;
     }
     cpy_r_r1247 = (CPyPtr)&((PyListObject *)cpy_r_r1246)->ob_item;
@@ -5674,7 +5674,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1237);
     CPy_DECREF_NO_IMM(cpy_r_r1246);
     if (unlikely(cpy_r_r1254 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 441, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 442, CPyStatic_globals);
         goto CPyL718;
     }
     cpy_r_r1255 = CPyStatics[9]; /* 'constant' */
@@ -5685,12 +5685,12 @@ CPyL3: ;
     cpy_r_r1260 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1261 = CPyDict_Build(2, cpy_r_r1257, cpy_r_r1258, cpy_r_r1259, cpy_r_r1260);
     if (unlikely(cpy_r_r1261 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 451, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 452, CPyStatic_globals);
         goto CPyL721;
     }
     cpy_r_r1262 = PyList_New(1);
     if (unlikely(cpy_r_r1262 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 451, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 452, CPyStatic_globals);
         goto CPyL722;
     }
     cpy_r_r1263 = (CPyPtr)&((PyListObject *)cpy_r_r1262)->ob_item;
@@ -5701,7 +5701,7 @@ CPyL3: ;
     cpy_r_r1267 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1268 = PyList_New(0);
     if (unlikely(cpy_r_r1268 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 453, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 454, CPyStatic_globals);
         goto CPyL723;
     }
     cpy_r_r1269 = CPyStatics[19]; /* 'payable' */
@@ -5713,7 +5713,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1262);
     CPy_DECREF_NO_IMM(cpy_r_r1268);
     if (unlikely(cpy_r_r1274 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 449, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 450, CPyStatic_globals);
         goto CPyL721;
     }
     cpy_r_r1275 = CPyStatics[9]; /* 'constant' */
@@ -5724,12 +5724,12 @@ CPyL3: ;
     cpy_r_r1280 = CPyStatics[18]; /* 'address' */
     cpy_r_r1281 = CPyDict_Build(2, cpy_r_r1277, cpy_r_r1278, cpy_r_r1279, cpy_r_r1280);
     if (unlikely(cpy_r_r1281 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 459, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 460, CPyStatic_globals);
         goto CPyL724;
     }
     cpy_r_r1282 = PyList_New(1);
     if (unlikely(cpy_r_r1282 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 459, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 460, CPyStatic_globals);
         goto CPyL725;
     }
     cpy_r_r1283 = (CPyPtr)&((PyListObject *)cpy_r_r1282)->ob_item;
@@ -5740,7 +5740,7 @@ CPyL3: ;
     cpy_r_r1287 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1288 = PyList_New(0);
     if (unlikely(cpy_r_r1288 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 461, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 462, CPyStatic_globals);
         goto CPyL726;
     }
     cpy_r_r1289 = CPyStatics[19]; /* 'payable' */
@@ -5752,7 +5752,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1282);
     CPy_DECREF_NO_IMM(cpy_r_r1288);
     if (unlikely(cpy_r_r1294 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 457, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 458, CPyStatic_globals);
         goto CPyL724;
     }
     cpy_r_r1295 = CPyStatics[9]; /* 'constant' */
@@ -5763,12 +5763,12 @@ CPyL3: ;
     cpy_r_r1300 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1301 = CPyDict_Build(2, cpy_r_r1297, cpy_r_r1298, cpy_r_r1299, cpy_r_r1300);
     if (unlikely(cpy_r_r1301 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 467, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 468, CPyStatic_globals);
         goto CPyL727;
     }
     cpy_r_r1302 = PyList_New(1);
     if (unlikely(cpy_r_r1302 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 467, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 468, CPyStatic_globals);
         goto CPyL728;
     }
     cpy_r_r1303 = (CPyPtr)&((PyListObject *)cpy_r_r1302)->ob_item;
@@ -5779,7 +5779,7 @@ CPyL3: ;
     cpy_r_r1307 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1308 = PyList_New(0);
     if (unlikely(cpy_r_r1308 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 469, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 470, CPyStatic_globals);
         goto CPyL729;
     }
     cpy_r_r1309 = CPyStatics[19]; /* 'payable' */
@@ -5791,13 +5791,13 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1302);
     CPy_DECREF_NO_IMM(cpy_r_r1308);
     if (unlikely(cpy_r_r1314 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 465, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 466, CPyStatic_globals);
         goto CPyL727;
     }
     cpy_r_r1315 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1316 = PyList_New(0);
     if (unlikely(cpy_r_r1316 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 473, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 474, CPyStatic_globals);
         goto CPyL730;
     }
     cpy_r_r1317 = CPyStatics[13]; /* 'type' */
@@ -5805,7 +5805,7 @@ CPyL3: ;
     cpy_r_r1319 = CPyDict_Build(2, cpy_r_r1315, cpy_r_r1316, cpy_r_r1317, cpy_r_r1318);
     CPy_DECREF_NO_IMM(cpy_r_r1316);
     if (unlikely(cpy_r_r1319 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 473, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 474, CPyStatic_globals);
         goto CPyL730;
     }
     cpy_r_r1320 = CPyStatics[19]; /* 'payable' */
@@ -5814,7 +5814,7 @@ CPyL3: ;
     cpy_r_r1323 = 1 ? Py_True : Py_False;
     cpy_r_r1324 = CPyDict_Build(2, cpy_r_r1320, cpy_r_r1323, cpy_r_r1321, cpy_r_r1322);
     if (unlikely(cpy_r_r1324 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 474, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 475, CPyStatic_globals);
         goto CPyL731;
     }
     cpy_r_r1325 = CPyStatics[29]; /* 'anonymous' */
@@ -5827,12 +5827,12 @@ CPyL3: ;
     cpy_r_r1332 = 0 ? Py_True : Py_False;
     cpy_r_r1333 = CPyDict_Build(3, cpy_r_r1327, cpy_r_r1332, cpy_r_r1328, cpy_r_r1329, cpy_r_r1330, cpy_r_r1331);
     if (unlikely(cpy_r_r1333 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 477, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 478, CPyStatic_globals);
         goto CPyL732;
     }
     cpy_r_r1334 = PyList_New(1);
     if (unlikely(cpy_r_r1334 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 477, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 478, CPyStatic_globals);
         goto CPyL733;
     }
     cpy_r_r1335 = (CPyPtr)&((PyListObject *)cpy_r_r1334)->ob_item;
@@ -5846,14 +5846,14 @@ CPyL3: ;
     cpy_r_r1342 = CPyDict_Build(4, cpy_r_r1325, cpy_r_r1341, cpy_r_r1326, cpy_r_r1334, cpy_r_r1337, cpy_r_r1338, cpy_r_r1339, cpy_r_r1340);
     CPy_DECREF_NO_IMM(cpy_r_r1334);
     if (unlikely(cpy_r_r1342 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 475, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 476, CPyStatic_globals);
         goto CPyL732;
     }
     cpy_r_r1343 = CPyStatics[29]; /* 'anonymous' */
     cpy_r_r1344 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1345 = PyList_New(0);
     if (unlikely(cpy_r_r1345 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 481, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 482, CPyStatic_globals);
         goto CPyL734;
     }
     cpy_r_r1346 = CPyStatics[11]; /* 'name' */
@@ -5864,12 +5864,12 @@ CPyL3: ;
     cpy_r_r1351 = CPyDict_Build(4, cpy_r_r1343, cpy_r_r1350, cpy_r_r1344, cpy_r_r1345, cpy_r_r1346, cpy_r_r1347, cpy_r_r1348, cpy_r_r1349);
     CPy_DECREF_NO_IMM(cpy_r_r1345);
     if (unlikely(cpy_r_r1351 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 481, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 482, CPyStatic_globals);
         goto CPyL734;
     }
     cpy_r_r1352 = CPyList_Build(12, cpy_r_r1181, cpy_r_r1194, cpy_r_r1214, cpy_r_r1234, cpy_r_r1254, cpy_r_r1274, cpy_r_r1294, cpy_r_r1314, cpy_r_r1319, cpy_r_r1324, cpy_r_r1342, cpy_r_r1351);
     if (unlikely(cpy_r_r1352 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 408, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 409, CPyStatic_globals);
         goto CPyL547;
     }
     CPyStatic_DEED = cpy_r_r1352;
@@ -5880,14 +5880,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1352);
     cpy_r_r1356 = cpy_r_r1355 >= 0;
     if (unlikely(!cpy_r_r1356)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 408, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 409, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1357 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1358 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1359 = PyList_New(0);
     if (unlikely(cpy_r_r1359 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 487, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 488, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1360 = CPyStatics[11]; /* 'name' */
@@ -5899,12 +5899,12 @@ CPyL3: ;
     cpy_r_r1366 = CPyStatics[18]; /* 'address' */
     cpy_r_r1367 = CPyDict_Build(2, cpy_r_r1363, cpy_r_r1364, cpy_r_r1365, cpy_r_r1366);
     if (unlikely(cpy_r_r1367 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 489, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 490, CPyStatic_globals);
         goto CPyL735;
     }
     cpy_r_r1368 = PyList_New(1);
     if (unlikely(cpy_r_r1368 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 489, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 490, CPyStatic_globals);
         goto CPyL736;
     }
     cpy_r_r1369 = (CPyPtr)&((PyListObject *)cpy_r_r1368)->ob_item;
@@ -5919,7 +5919,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1359);
     CPy_DECREF_NO_IMM(cpy_r_r1368);
     if (unlikely(cpy_r_r1376 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 485, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 486, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1377 = CPyStatics[9]; /* 'constant' */
@@ -5930,12 +5930,12 @@ CPyL3: ;
     cpy_r_r1382 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1383 = CPyDict_Build(2, cpy_r_r1379, cpy_r_r1380, cpy_r_r1381, cpy_r_r1382);
     if (unlikely(cpy_r_r1383 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 495, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 496, CPyStatic_globals);
         goto CPyL737;
     }
     cpy_r_r1384 = PyList_New(1);
     if (unlikely(cpy_r_r1384 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 495, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 496, CPyStatic_globals);
         goto CPyL738;
     }
     cpy_r_r1385 = (CPyPtr)&((PyListObject *)cpy_r_r1384)->ob_item;
@@ -5950,12 +5950,12 @@ CPyL3: ;
     cpy_r_r1393 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1394 = CPyDict_Build(2, cpy_r_r1390, cpy_r_r1391, cpy_r_r1392, cpy_r_r1393);
     if (unlikely(cpy_r_r1394 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 497, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 498, CPyStatic_globals);
         goto CPyL739;
     }
     cpy_r_r1395 = PyList_New(1);
     if (unlikely(cpy_r_r1395 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 497, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 498, CPyStatic_globals);
         goto CPyL740;
     }
     cpy_r_r1396 = (CPyPtr)&((PyListObject *)cpy_r_r1395)->ob_item;
@@ -5970,7 +5970,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1384);
     CPy_DECREF_NO_IMM(cpy_r_r1395);
     if (unlikely(cpy_r_r1403 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 493, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 494, CPyStatic_globals);
         goto CPyL737;
     }
     cpy_r_r1404 = CPyStatics[9]; /* 'constant' */
@@ -5981,7 +5981,7 @@ CPyL3: ;
     cpy_r_r1409 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1410 = CPyDict_Build(2, cpy_r_r1406, cpy_r_r1407, cpy_r_r1408, cpy_r_r1409);
     if (unlikely(cpy_r_r1410 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 504, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 505, CPyStatic_globals);
         goto CPyL741;
     }
     cpy_r_r1411 = CPyStatics[11]; /* 'name' */
@@ -5990,12 +5990,12 @@ CPyL3: ;
     cpy_r_r1414 = CPyStatics[18]; /* 'address' */
     cpy_r_r1415 = CPyDict_Build(2, cpy_r_r1411, cpy_r_r1412, cpy_r_r1413, cpy_r_r1414);
     if (unlikely(cpy_r_r1415 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 505, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 506, CPyStatic_globals);
         goto CPyL742;
     }
     cpy_r_r1416 = PyList_New(2);
     if (unlikely(cpy_r_r1416 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 503, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 504, CPyStatic_globals);
         goto CPyL743;
     }
     cpy_r_r1417 = (CPyPtr)&((PyListObject *)cpy_r_r1416)->ob_item;
@@ -6008,7 +6008,7 @@ CPyL3: ;
     cpy_r_r1422 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r1423 = PyList_New(0);
     if (unlikely(cpy_r_r1423 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 508, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 509, CPyStatic_globals);
         goto CPyL744;
     }
     cpy_r_r1424 = CPyStatics[19]; /* 'payable' */
@@ -6020,14 +6020,14 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1416);
     CPy_DECREF_NO_IMM(cpy_r_r1423);
     if (unlikely(cpy_r_r1429 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 501, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 502, CPyStatic_globals);
         goto CPyL741;
     }
     cpy_r_r1430 = CPyStatics[9]; /* 'constant' */
     cpy_r_r1431 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r1432 = PyList_New(0);
     if (unlikely(cpy_r_r1432 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 514, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 515, CPyStatic_globals);
         goto CPyL745;
     }
     cpy_r_r1433 = CPyStatics[11]; /* 'name' */
@@ -6039,12 +6039,12 @@ CPyL3: ;
     cpy_r_r1439 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1440 = CPyDict_Build(2, cpy_r_r1436, cpy_r_r1437, cpy_r_r1438, cpy_r_r1439);
     if (unlikely(cpy_r_r1440 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 516, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 517, CPyStatic_globals);
         goto CPyL746;
     }
     cpy_r_r1441 = PyList_New(1);
     if (unlikely(cpy_r_r1441 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 516, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 517, CPyStatic_globals);
         goto CPyL747;
     }
     cpy_r_r1442 = (CPyPtr)&((PyListObject *)cpy_r_r1441)->ob_item;
@@ -6059,7 +6059,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1432);
     CPy_DECREF_NO_IMM(cpy_r_r1441);
     if (unlikely(cpy_r_r1449 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 512, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 513, CPyStatic_globals);
         goto CPyL745;
     }
     cpy_r_r1450 = CPyStatics[10]; /* 'inputs' */
@@ -6069,7 +6069,7 @@ CPyL3: ;
     cpy_r_r1454 = CPyStatics[18]; /* 'address' */
     cpy_r_r1455 = CPyDict_Build(2, cpy_r_r1451, cpy_r_r1452, cpy_r_r1453, cpy_r_r1454);
     if (unlikely(cpy_r_r1455 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 522, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 523, CPyStatic_globals);
         goto CPyL748;
     }
     cpy_r_r1456 = CPyStatics[11]; /* 'name' */
@@ -6078,12 +6078,12 @@ CPyL3: ;
     cpy_r_r1459 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1460 = CPyDict_Build(2, cpy_r_r1456, cpy_r_r1457, cpy_r_r1458, cpy_r_r1459);
     if (unlikely(cpy_r_r1460 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 523, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 524, CPyStatic_globals);
         goto CPyL749;
     }
     cpy_r_r1461 = PyList_New(2);
     if (unlikely(cpy_r_r1461 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 521, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 522, CPyStatic_globals);
         goto CPyL750;
     }
     cpy_r_r1462 = (CPyPtr)&((PyListObject *)cpy_r_r1461)->ob_item;
@@ -6096,12 +6096,12 @@ CPyL3: ;
     cpy_r_r1467 = CPyDict_Build(2, cpy_r_r1450, cpy_r_r1461, cpy_r_r1465, cpy_r_r1466);
     CPy_DECREF_NO_IMM(cpy_r_r1461);
     if (unlikely(cpy_r_r1467 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 520, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 521, CPyStatic_globals);
         goto CPyL748;
     }
     cpy_r_r1468 = PyList_New(5);
     if (unlikely(cpy_r_r1468 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 484, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 485, CPyStatic_globals);
         goto CPyL751;
     }
     cpy_r_r1469 = (CPyPtr)&((PyListObject *)cpy_r_r1468)->ob_item;
@@ -6123,7 +6123,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1468);
     cpy_r_r1478 = cpy_r_r1477 >= 0;
     if (unlikely(!cpy_r_r1478)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 484, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 485, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1479 = CPyStatics[10]; /* 'inputs' */
@@ -6135,12 +6135,12 @@ CPyL3: ;
     cpy_r_r1485 = CPyStatics[18]; /* 'address' */
     cpy_r_r1486 = CPyDict_Build(3, cpy_r_r1480, cpy_r_r1481, cpy_r_r1482, cpy_r_r1483, cpy_r_r1484, cpy_r_r1485);
     if (unlikely(cpy_r_r1486 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 531, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 532, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1487 = PyList_New(1);
     if (unlikely(cpy_r_r1487 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 531, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 532, CPyStatic_globals);
         goto CPyL752;
     }
     cpy_r_r1488 = (CPyPtr)&((PyListObject *)cpy_r_r1487)->ob_item;
@@ -6155,7 +6155,7 @@ CPyL3: ;
     cpy_r_r1496 = CPyDict_Build(4, cpy_r_r1479, cpy_r_r1487, cpy_r_r1490, cpy_r_r1495, cpy_r_r1491, cpy_r_r1492, cpy_r_r1493, cpy_r_r1494);
     CPy_DECREF_NO_IMM(cpy_r_r1487);
     if (unlikely(cpy_r_r1496 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 530, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 531, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r1497 = CPyStatics[29]; /* 'anonymous' */
@@ -6170,7 +6170,7 @@ CPyL3: ;
     cpy_r_r1506 = 1 ? Py_True : Py_False;
     cpy_r_r1507 = CPyDict_Build(4, cpy_r_r1499, cpy_r_r1506, cpy_r_r1500, cpy_r_r1501, cpy_r_r1502, cpy_r_r1503, cpy_r_r1504, cpy_r_r1505);
     if (unlikely(cpy_r_r1507 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 539, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 540, CPyStatic_globals);
         goto CPyL753;
     }
     cpy_r_r1508 = CPyStatics[30]; /* 'indexed' */
@@ -6183,12 +6183,12 @@ CPyL3: ;
     cpy_r_r1515 = 1 ? Py_True : Py_False;
     cpy_r_r1516 = CPyDict_Build(4, cpy_r_r1508, cpy_r_r1515, cpy_r_r1509, cpy_r_r1510, cpy_r_r1511, cpy_r_r1512, cpy_r_r1513, cpy_r_r1514);
     if (unlikely(cpy_r_r1516 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 545, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 546, CPyStatic_globals);
         goto CPyL754;
     }
     cpy_r_r1517 = PyList_New(2);
     if (unlikely(cpy_r_r1517 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 538, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 539, CPyStatic_globals);
         goto CPyL755;
     }
     cpy_r_r1518 = (CPyPtr)&((PyListObject *)cpy_r_r1517)->ob_item;
@@ -6204,7 +6204,7 @@ CPyL3: ;
     cpy_r_r1526 = CPyDict_Build(4, cpy_r_r1497, cpy_r_r1525, cpy_r_r1498, cpy_r_r1517, cpy_r_r1521, cpy_r_r1522, cpy_r_r1523, cpy_r_r1524);
     CPy_DECREF_NO_IMM(cpy_r_r1517);
     if (unlikely(cpy_r_r1526 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 536, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 537, CPyStatic_globals);
         goto CPyL753;
     }
     cpy_r_r1527 = CPyStatics[29]; /* 'anonymous' */
@@ -6219,7 +6219,7 @@ CPyL3: ;
     cpy_r_r1536 = 1 ? Py_True : Py_False;
     cpy_r_r1537 = CPyDict_Build(4, cpy_r_r1529, cpy_r_r1536, cpy_r_r1530, cpy_r_r1531, cpy_r_r1532, cpy_r_r1533, cpy_r_r1534, cpy_r_r1535);
     if (unlikely(cpy_r_r1537 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 558, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 559, CPyStatic_globals);
         goto CPyL756;
     }
     cpy_r_r1538 = CPyStatics[30]; /* 'indexed' */
@@ -6232,12 +6232,12 @@ CPyL3: ;
     cpy_r_r1545 = 0 ? Py_True : Py_False;
     cpy_r_r1546 = CPyDict_Build(4, cpy_r_r1538, cpy_r_r1545, cpy_r_r1539, cpy_r_r1540, cpy_r_r1541, cpy_r_r1542, cpy_r_r1543, cpy_r_r1544);
     if (unlikely(cpy_r_r1546 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 564, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 565, CPyStatic_globals);
         goto CPyL757;
     }
     cpy_r_r1547 = PyList_New(2);
     if (unlikely(cpy_r_r1547 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 557, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 558, CPyStatic_globals);
         goto CPyL758;
     }
     cpy_r_r1548 = (CPyPtr)&((PyListObject *)cpy_r_r1547)->ob_item;
@@ -6253,7 +6253,7 @@ CPyL3: ;
     cpy_r_r1556 = CPyDict_Build(4, cpy_r_r1527, cpy_r_r1555, cpy_r_r1528, cpy_r_r1547, cpy_r_r1551, cpy_r_r1552, cpy_r_r1553, cpy_r_r1554);
     CPy_DECREF_NO_IMM(cpy_r_r1547);
     if (unlikely(cpy_r_r1556 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 555, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 556, CPyStatic_globals);
         goto CPyL756;
     }
     cpy_r_r1557 = CPyStatics[29]; /* 'anonymous' */
@@ -6268,7 +6268,7 @@ CPyL3: ;
     cpy_r_r1566 = 1 ? Py_True : Py_False;
     cpy_r_r1567 = CPyDict_Build(4, cpy_r_r1559, cpy_r_r1566, cpy_r_r1560, cpy_r_r1561, cpy_r_r1562, cpy_r_r1563, cpy_r_r1564, cpy_r_r1565);
     if (unlikely(cpy_r_r1567 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 577, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 578, CPyStatic_globals);
         goto CPyL759;
     }
     cpy_r_r1568 = CPyStatics[30]; /* 'indexed' */
@@ -6281,7 +6281,7 @@ CPyL3: ;
     cpy_r_r1575 = 0 ? Py_True : Py_False;
     cpy_r_r1576 = CPyDict_Build(4, cpy_r_r1568, cpy_r_r1575, cpy_r_r1569, cpy_r_r1570, cpy_r_r1571, cpy_r_r1572, cpy_r_r1573, cpy_r_r1574);
     if (unlikely(cpy_r_r1576 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 583, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 584, CPyStatic_globals);
         goto CPyL760;
     }
     cpy_r_r1577 = CPyStatics[30]; /* 'indexed' */
@@ -6294,12 +6294,12 @@ CPyL3: ;
     cpy_r_r1584 = 0 ? Py_True : Py_False;
     cpy_r_r1585 = CPyDict_Build(4, cpy_r_r1577, cpy_r_r1584, cpy_r_r1578, cpy_r_r1579, cpy_r_r1580, cpy_r_r1581, cpy_r_r1582, cpy_r_r1583);
     if (unlikely(cpy_r_r1585 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 589, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 590, CPyStatic_globals);
         goto CPyL761;
     }
     cpy_r_r1586 = PyList_New(3);
     if (unlikely(cpy_r_r1586 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 576, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 577, CPyStatic_globals);
         goto CPyL762;
     }
     cpy_r_r1587 = (CPyPtr)&((PyListObject *)cpy_r_r1586)->ob_item;
@@ -6317,7 +6317,7 @@ CPyL3: ;
     cpy_r_r1596 = CPyDict_Build(4, cpy_r_r1557, cpy_r_r1595, cpy_r_r1558, cpy_r_r1586, cpy_r_r1591, cpy_r_r1592, cpy_r_r1593, cpy_r_r1594);
     CPy_DECREF_NO_IMM(cpy_r_r1586);
     if (unlikely(cpy_r_r1596 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 574, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 575, CPyStatic_globals);
         goto CPyL759;
     }
     cpy_r_r1597 = CPyStatics[29]; /* 'anonymous' */
@@ -6332,7 +6332,7 @@ CPyL3: ;
     cpy_r_r1606 = 1 ? Py_True : Py_False;
     cpy_r_r1607 = CPyDict_Build(4, cpy_r_r1599, cpy_r_r1606, cpy_r_r1600, cpy_r_r1601, cpy_r_r1602, cpy_r_r1603, cpy_r_r1604, cpy_r_r1605);
     if (unlikely(cpy_r_r1607 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 602, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 603, CPyStatic_globals);
         goto CPyL763;
     }
     cpy_r_r1608 = CPyStatics[30]; /* 'indexed' */
@@ -6345,7 +6345,7 @@ CPyL3: ;
     cpy_r_r1615 = 1 ? Py_True : Py_False;
     cpy_r_r1616 = CPyDict_Build(4, cpy_r_r1608, cpy_r_r1615, cpy_r_r1609, cpy_r_r1610, cpy_r_r1611, cpy_r_r1612, cpy_r_r1613, cpy_r_r1614);
     if (unlikely(cpy_r_r1616 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 608, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 609, CPyStatic_globals);
         goto CPyL764;
     }
     cpy_r_r1617 = CPyStatics[30]; /* 'indexed' */
@@ -6358,7 +6358,7 @@ CPyL3: ;
     cpy_r_r1624 = 1 ? Py_True : Py_False;
     cpy_r_r1625 = CPyDict_Build(4, cpy_r_r1617, cpy_r_r1624, cpy_r_r1618, cpy_r_r1619, cpy_r_r1620, cpy_r_r1621, cpy_r_r1622, cpy_r_r1623);
     if (unlikely(cpy_r_r1625 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 614, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 615, CPyStatic_globals);
         goto CPyL765;
     }
     cpy_r_r1626 = CPyStatics[30]; /* 'indexed' */
@@ -6371,12 +6371,12 @@ CPyL3: ;
     cpy_r_r1633 = 0 ? Py_True : Py_False;
     cpy_r_r1634 = CPyDict_Build(4, cpy_r_r1626, cpy_r_r1633, cpy_r_r1627, cpy_r_r1628, cpy_r_r1629, cpy_r_r1630, cpy_r_r1631, cpy_r_r1632);
     if (unlikely(cpy_r_r1634 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 620, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 621, CPyStatic_globals);
         goto CPyL766;
     }
     cpy_r_r1635 = PyList_New(4);
     if (unlikely(cpy_r_r1635 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 601, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 602, CPyStatic_globals);
         goto CPyL767;
     }
     cpy_r_r1636 = (CPyPtr)&((PyListObject *)cpy_r_r1635)->ob_item;
@@ -6396,7 +6396,7 @@ CPyL3: ;
     cpy_r_r1646 = CPyDict_Build(4, cpy_r_r1597, cpy_r_r1645, cpy_r_r1598, cpy_r_r1635, cpy_r_r1641, cpy_r_r1642, cpy_r_r1643, cpy_r_r1644);
     CPy_DECREF_NO_IMM(cpy_r_r1635);
     if (unlikely(cpy_r_r1646 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 599, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 600, CPyStatic_globals);
         goto CPyL763;
     }
     cpy_r_r1647 = CPyStatics[29]; /* 'anonymous' */
@@ -6411,7 +6411,7 @@ CPyL3: ;
     cpy_r_r1656 = 1 ? Py_True : Py_False;
     cpy_r_r1657 = CPyDict_Build(4, cpy_r_r1649, cpy_r_r1656, cpy_r_r1650, cpy_r_r1651, cpy_r_r1652, cpy_r_r1653, cpy_r_r1654, cpy_r_r1655);
     if (unlikely(cpy_r_r1657 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 633, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 634, CPyStatic_globals);
         goto CPyL768;
     }
     cpy_r_r1658 = CPyStatics[30]; /* 'indexed' */
@@ -6424,12 +6424,12 @@ CPyL3: ;
     cpy_r_r1665 = 0 ? Py_True : Py_False;
     cpy_r_r1666 = CPyDict_Build(4, cpy_r_r1658, cpy_r_r1665, cpy_r_r1659, cpy_r_r1660, cpy_r_r1661, cpy_r_r1662, cpy_r_r1663, cpy_r_r1664);
     if (unlikely(cpy_r_r1666 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 639, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 640, CPyStatic_globals);
         goto CPyL769;
     }
     cpy_r_r1667 = PyList_New(2);
     if (unlikely(cpy_r_r1667 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 632, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 633, CPyStatic_globals);
         goto CPyL770;
     }
     cpy_r_r1668 = (CPyPtr)&((PyListObject *)cpy_r_r1667)->ob_item;
@@ -6445,7 +6445,7 @@ CPyL3: ;
     cpy_r_r1676 = CPyDict_Build(4, cpy_r_r1647, cpy_r_r1675, cpy_r_r1648, cpy_r_r1667, cpy_r_r1671, cpy_r_r1672, cpy_r_r1673, cpy_r_r1674);
     CPy_DECREF_NO_IMM(cpy_r_r1667);
     if (unlikely(cpy_r_r1676 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 630, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 631, CPyStatic_globals);
         goto CPyL768;
     }
     cpy_r_r1677 = CPyStatics[29]; /* 'anonymous' */
@@ -6460,7 +6460,7 @@ CPyL3: ;
     cpy_r_r1686 = 1 ? Py_True : Py_False;
     cpy_r_r1687 = CPyDict_Build(4, cpy_r_r1679, cpy_r_r1686, cpy_r_r1680, cpy_r_r1681, cpy_r_r1682, cpy_r_r1683, cpy_r_r1684, cpy_r_r1685);
     if (unlikely(cpy_r_r1687 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 652, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 653, CPyStatic_globals);
         goto CPyL771;
     }
     cpy_r_r1688 = CPyStatics[30]; /* 'indexed' */
@@ -6473,7 +6473,7 @@ CPyL3: ;
     cpy_r_r1695 = 0 ? Py_True : Py_False;
     cpy_r_r1696 = CPyDict_Build(4, cpy_r_r1688, cpy_r_r1695, cpy_r_r1689, cpy_r_r1690, cpy_r_r1691, cpy_r_r1692, cpy_r_r1693, cpy_r_r1694);
     if (unlikely(cpy_r_r1696 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 658, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 659, CPyStatic_globals);
         goto CPyL772;
     }
     cpy_r_r1697 = CPyStatics[30]; /* 'indexed' */
@@ -6486,7 +6486,7 @@ CPyL3: ;
     cpy_r_r1704 = 0 ? Py_True : Py_False;
     cpy_r_r1705 = CPyDict_Build(4, cpy_r_r1697, cpy_r_r1704, cpy_r_r1698, cpy_r_r1699, cpy_r_r1700, cpy_r_r1701, cpy_r_r1702, cpy_r_r1703);
     if (unlikely(cpy_r_r1705 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 664, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 665, CPyStatic_globals);
         goto CPyL773;
     }
     cpy_r_r1706 = CPyStatics[30]; /* 'indexed' */
@@ -6499,12 +6499,12 @@ CPyL3: ;
     cpy_r_r1713 = 0 ? Py_True : Py_False;
     cpy_r_r1714 = CPyDict_Build(4, cpy_r_r1706, cpy_r_r1713, cpy_r_r1707, cpy_r_r1708, cpy_r_r1709, cpy_r_r1710, cpy_r_r1711, cpy_r_r1712);
     if (unlikely(cpy_r_r1714 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 670, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 671, CPyStatic_globals);
         goto CPyL774;
     }
     cpy_r_r1715 = PyList_New(4);
     if (unlikely(cpy_r_r1715 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 651, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 652, CPyStatic_globals);
         goto CPyL775;
     }
     cpy_r_r1716 = (CPyPtr)&((PyListObject *)cpy_r_r1715)->ob_item;
@@ -6524,7 +6524,7 @@ CPyL3: ;
     cpy_r_r1726 = CPyDict_Build(4, cpy_r_r1677, cpy_r_r1725, cpy_r_r1678, cpy_r_r1715, cpy_r_r1721, cpy_r_r1722, cpy_r_r1723, cpy_r_r1724);
     CPy_DECREF_NO_IMM(cpy_r_r1715);
     if (unlikely(cpy_r_r1726 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 649, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 650, CPyStatic_globals);
         goto CPyL771;
     }
     cpy_r_r1727 = CPyStatics[29]; /* 'anonymous' */
@@ -6539,7 +6539,7 @@ CPyL3: ;
     cpy_r_r1736 = 1 ? Py_True : Py_False;
     cpy_r_r1737 = CPyDict_Build(4, cpy_r_r1729, cpy_r_r1736, cpy_r_r1730, cpy_r_r1731, cpy_r_r1732, cpy_r_r1733, cpy_r_r1734, cpy_r_r1735);
     if (unlikely(cpy_r_r1737 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 683, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 684, CPyStatic_globals);
         goto CPyL776;
     }
     cpy_r_r1738 = CPyStatics[30]; /* 'indexed' */
@@ -6552,7 +6552,7 @@ CPyL3: ;
     cpy_r_r1745 = 0 ? Py_True : Py_False;
     cpy_r_r1746 = CPyDict_Build(4, cpy_r_r1738, cpy_r_r1745, cpy_r_r1739, cpy_r_r1740, cpy_r_r1741, cpy_r_r1742, cpy_r_r1743, cpy_r_r1744);
     if (unlikely(cpy_r_r1746 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 689, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 690, CPyStatic_globals);
         goto CPyL777;
     }
     cpy_r_r1747 = CPyStatics[30]; /* 'indexed' */
@@ -6565,12 +6565,12 @@ CPyL3: ;
     cpy_r_r1754 = 0 ? Py_True : Py_False;
     cpy_r_r1755 = CPyDict_Build(4, cpy_r_r1747, cpy_r_r1754, cpy_r_r1748, cpy_r_r1749, cpy_r_r1750, cpy_r_r1751, cpy_r_r1752, cpy_r_r1753);
     if (unlikely(cpy_r_r1755 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 695, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 696, CPyStatic_globals);
         goto CPyL778;
     }
     cpy_r_r1756 = PyList_New(3);
     if (unlikely(cpy_r_r1756 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 682, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 683, CPyStatic_globals);
         goto CPyL779;
     }
     cpy_r_r1757 = (CPyPtr)&((PyListObject *)cpy_r_r1756)->ob_item;
@@ -6588,7 +6588,7 @@ CPyL3: ;
     cpy_r_r1766 = CPyDict_Build(4, cpy_r_r1727, cpy_r_r1765, cpy_r_r1728, cpy_r_r1756, cpy_r_r1761, cpy_r_r1762, cpy_r_r1763, cpy_r_r1764);
     CPy_DECREF_NO_IMM(cpy_r_r1756);
     if (unlikely(cpy_r_r1766 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 680, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 681, CPyStatic_globals);
         goto CPyL776;
     }
     cpy_r_r1767 = CPyStatics[29]; /* 'anonymous' */
@@ -6603,12 +6603,12 @@ CPyL3: ;
     cpy_r_r1776 = 1 ? Py_True : Py_False;
     cpy_r_r1777 = CPyDict_Build(4, cpy_r_r1769, cpy_r_r1776, cpy_r_r1770, cpy_r_r1771, cpy_r_r1772, cpy_r_r1773, cpy_r_r1774, cpy_r_r1775);
     if (unlikely(cpy_r_r1777 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 708, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 709, CPyStatic_globals);
         goto CPyL780;
     }
     cpy_r_r1778 = PyList_New(1);
     if (unlikely(cpy_r_r1778 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 707, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 708, CPyStatic_globals);
         goto CPyL781;
     }
     cpy_r_r1779 = (CPyPtr)&((PyListObject *)cpy_r_r1778)->ob_item;
@@ -6622,7 +6622,7 @@ CPyL3: ;
     cpy_r_r1786 = CPyDict_Build(4, cpy_r_r1767, cpy_r_r1785, cpy_r_r1768, cpy_r_r1778, cpy_r_r1781, cpy_r_r1782, cpy_r_r1783, cpy_r_r1784);
     CPy_DECREF_NO_IMM(cpy_r_r1778);
     if (unlikely(cpy_r_r1786 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 705, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 706, CPyStatic_globals);
         goto CPyL780;
     }
     cpy_r_r1787 = CPyStatics[29]; /* 'anonymous' */
@@ -6637,7 +6637,7 @@ CPyL3: ;
     cpy_r_r1796 = 1 ? Py_True : Py_False;
     cpy_r_r1797 = CPyDict_Build(4, cpy_r_r1789, cpy_r_r1796, cpy_r_r1790, cpy_r_r1791, cpy_r_r1792, cpy_r_r1793, cpy_r_r1794, cpy_r_r1795);
     if (unlikely(cpy_r_r1797 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 721, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 722, CPyStatic_globals);
         goto CPyL782;
     }
     cpy_r_r1798 = CPyStatics[30]; /* 'indexed' */
@@ -6650,7 +6650,7 @@ CPyL3: ;
     cpy_r_r1805 = 1 ? Py_True : Py_False;
     cpy_r_r1806 = CPyDict_Build(4, cpy_r_r1798, cpy_r_r1805, cpy_r_r1799, cpy_r_r1800, cpy_r_r1801, cpy_r_r1802, cpy_r_r1803, cpy_r_r1804);
     if (unlikely(cpy_r_r1806 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 727, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 728, CPyStatic_globals);
         goto CPyL783;
     }
     cpy_r_r1807 = CPyStatics[30]; /* 'indexed' */
@@ -6663,12 +6663,12 @@ CPyL3: ;
     cpy_r_r1814 = 0 ? Py_True : Py_False;
     cpy_r_r1815 = CPyDict_Build(4, cpy_r_r1807, cpy_r_r1814, cpy_r_r1808, cpy_r_r1809, cpy_r_r1810, cpy_r_r1811, cpy_r_r1812, cpy_r_r1813);
     if (unlikely(cpy_r_r1815 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 733, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 734, CPyStatic_globals);
         goto CPyL784;
     }
     cpy_r_r1816 = PyList_New(3);
     if (unlikely(cpy_r_r1816 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 720, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 721, CPyStatic_globals);
         goto CPyL785;
     }
     cpy_r_r1817 = (CPyPtr)&((PyListObject *)cpy_r_r1816)->ob_item;
@@ -6686,7 +6686,7 @@ CPyL3: ;
     cpy_r_r1826 = CPyDict_Build(4, cpy_r_r1787, cpy_r_r1825, cpy_r_r1788, cpy_r_r1816, cpy_r_r1821, cpy_r_r1822, cpy_r_r1823, cpy_r_r1824);
     CPy_DECREF_NO_IMM(cpy_r_r1816);
     if (unlikely(cpy_r_r1826 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 718, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 719, CPyStatic_globals);
         goto CPyL782;
     }
     cpy_r_r1827 = CPyStatics[29]; /* 'anonymous' */
@@ -6701,7 +6701,7 @@ CPyL3: ;
     cpy_r_r1836 = 1 ? Py_True : Py_False;
     cpy_r_r1837 = CPyDict_Build(4, cpy_r_r1829, cpy_r_r1836, cpy_r_r1830, cpy_r_r1831, cpy_r_r1832, cpy_r_r1833, cpy_r_r1834, cpy_r_r1835);
     if (unlikely(cpy_r_r1837 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 746, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 747, CPyStatic_globals);
         goto CPyL786;
     }
     cpy_r_r1838 = CPyStatics[30]; /* 'indexed' */
@@ -6714,12 +6714,12 @@ CPyL3: ;
     cpy_r_r1845 = 0 ? Py_True : Py_False;
     cpy_r_r1846 = CPyDict_Build(4, cpy_r_r1838, cpy_r_r1845, cpy_r_r1839, cpy_r_r1840, cpy_r_r1841, cpy_r_r1842, cpy_r_r1843, cpy_r_r1844);
     if (unlikely(cpy_r_r1846 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 752, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 753, CPyStatic_globals);
         goto CPyL787;
     }
     cpy_r_r1847 = PyList_New(2);
     if (unlikely(cpy_r_r1847 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 745, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 746, CPyStatic_globals);
         goto CPyL788;
     }
     cpy_r_r1848 = (CPyPtr)&((PyListObject *)cpy_r_r1847)->ob_item;
@@ -6735,7 +6735,7 @@ CPyL3: ;
     cpy_r_r1856 = CPyDict_Build(4, cpy_r_r1827, cpy_r_r1855, cpy_r_r1828, cpy_r_r1847, cpy_r_r1851, cpy_r_r1852, cpy_r_r1853, cpy_r_r1854);
     CPy_DECREF_NO_IMM(cpy_r_r1847);
     if (unlikely(cpy_r_r1856 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 743, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 744, CPyStatic_globals);
         goto CPyL786;
     }
     cpy_r_r1857 = CPyStatics[29]; /* 'anonymous' */
@@ -6750,7 +6750,7 @@ CPyL3: ;
     cpy_r_r1866 = 1 ? Py_True : Py_False;
     cpy_r_r1867 = CPyDict_Build(4, cpy_r_r1859, cpy_r_r1866, cpy_r_r1860, cpy_r_r1861, cpy_r_r1862, cpy_r_r1863, cpy_r_r1864, cpy_r_r1865);
     if (unlikely(cpy_r_r1867 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 765, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 766, CPyStatic_globals);
         goto CPyL789;
     }
     cpy_r_r1868 = CPyStatics[30]; /* 'indexed' */
@@ -6763,7 +6763,7 @@ CPyL3: ;
     cpy_r_r1875 = 0 ? Py_True : Py_False;
     cpy_r_r1876 = CPyDict_Build(4, cpy_r_r1868, cpy_r_r1875, cpy_r_r1869, cpy_r_r1870, cpy_r_r1871, cpy_r_r1872, cpy_r_r1873, cpy_r_r1874);
     if (unlikely(cpy_r_r1876 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 771, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 772, CPyStatic_globals);
         goto CPyL790;
     }
     cpy_r_r1877 = CPyStatics[30]; /* 'indexed' */
@@ -6776,12 +6776,12 @@ CPyL3: ;
     cpy_r_r1884 = 0 ? Py_True : Py_False;
     cpy_r_r1885 = CPyDict_Build(4, cpy_r_r1877, cpy_r_r1884, cpy_r_r1878, cpy_r_r1879, cpy_r_r1880, cpy_r_r1881, cpy_r_r1882, cpy_r_r1883);
     if (unlikely(cpy_r_r1885 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 777, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 778, CPyStatic_globals);
         goto CPyL791;
     }
     cpy_r_r1886 = PyList_New(3);
     if (unlikely(cpy_r_r1886 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 764, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 765, CPyStatic_globals);
         goto CPyL792;
     }
     cpy_r_r1887 = (CPyPtr)&((PyListObject *)cpy_r_r1886)->ob_item;
@@ -6799,7 +6799,7 @@ CPyL3: ;
     cpy_r_r1896 = CPyDict_Build(4, cpy_r_r1857, cpy_r_r1895, cpy_r_r1858, cpy_r_r1886, cpy_r_r1891, cpy_r_r1892, cpy_r_r1893, cpy_r_r1894);
     CPy_DECREF_NO_IMM(cpy_r_r1886);
     if (unlikely(cpy_r_r1896 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 762, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 763, CPyStatic_globals);
         goto CPyL789;
     }
     cpy_r_r1897 = CPyStatics[29]; /* 'anonymous' */
@@ -6814,7 +6814,7 @@ CPyL3: ;
     cpy_r_r1906 = 1 ? Py_True : Py_False;
     cpy_r_r1907 = CPyDict_Build(4, cpy_r_r1899, cpy_r_r1906, cpy_r_r1900, cpy_r_r1901, cpy_r_r1902, cpy_r_r1903, cpy_r_r1904, cpy_r_r1905);
     if (unlikely(cpy_r_r1907 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 790, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 791, CPyStatic_globals);
         goto CPyL793;
     }
     cpy_r_r1908 = CPyStatics[30]; /* 'indexed' */
@@ -6827,7 +6827,7 @@ CPyL3: ;
     cpy_r_r1915 = 1 ? Py_True : Py_False;
     cpy_r_r1916 = CPyDict_Build(4, cpy_r_r1908, cpy_r_r1915, cpy_r_r1909, cpy_r_r1910, cpy_r_r1911, cpy_r_r1912, cpy_r_r1913, cpy_r_r1914);
     if (unlikely(cpy_r_r1916 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 796, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 797, CPyStatic_globals);
         goto CPyL794;
     }
     cpy_r_r1917 = CPyStatics[30]; /* 'indexed' */
@@ -6840,12 +6840,12 @@ CPyL3: ;
     cpy_r_r1924 = 0 ? Py_True : Py_False;
     cpy_r_r1925 = CPyDict_Build(4, cpy_r_r1917, cpy_r_r1924, cpy_r_r1918, cpy_r_r1919, cpy_r_r1920, cpy_r_r1921, cpy_r_r1922, cpy_r_r1923);
     if (unlikely(cpy_r_r1925 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 802, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 803, CPyStatic_globals);
         goto CPyL795;
     }
     cpy_r_r1926 = PyList_New(3);
     if (unlikely(cpy_r_r1926 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 789, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 790, CPyStatic_globals);
         goto CPyL796;
     }
     cpy_r_r1927 = (CPyPtr)&((PyListObject *)cpy_r_r1926)->ob_item;
@@ -6863,7 +6863,7 @@ CPyL3: ;
     cpy_r_r1936 = CPyDict_Build(4, cpy_r_r1897, cpy_r_r1935, cpy_r_r1898, cpy_r_r1926, cpy_r_r1931, cpy_r_r1932, cpy_r_r1933, cpy_r_r1934);
     CPy_DECREF_NO_IMM(cpy_r_r1926);
     if (unlikely(cpy_r_r1936 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 787, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 788, CPyStatic_globals);
         goto CPyL793;
     }
     cpy_r_r1937 = CPyStatics[9]; /* 'constant' */
@@ -6876,7 +6876,7 @@ CPyL3: ;
     cpy_r_r1944 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1945 = CPyDict_Build(3, cpy_r_r1939, cpy_r_r1940, cpy_r_r1941, cpy_r_r1942, cpy_r_r1943, cpy_r_r1944);
     if (unlikely(cpy_r_r1945 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 815, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 816, CPyStatic_globals);
         goto CPyL797;
     }
     cpy_r_r1946 = CPyStatics[116]; /* 'internalType' */
@@ -6887,12 +6887,12 @@ CPyL3: ;
     cpy_r_r1951 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1952 = CPyDict_Build(3, cpy_r_r1946, cpy_r_r1947, cpy_r_r1948, cpy_r_r1949, cpy_r_r1950, cpy_r_r1951);
     if (unlikely(cpy_r_r1952 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 816, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 817, CPyStatic_globals);
         goto CPyL798;
     }
     cpy_r_r1953 = PyList_New(2);
     if (unlikely(cpy_r_r1953 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 814, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 815, CPyStatic_globals);
         goto CPyL799;
     }
     cpy_r_r1954 = (CPyPtr)&((PyListObject *)cpy_r_r1953)->ob_item;
@@ -6911,7 +6911,7 @@ CPyL3: ;
     cpy_r_r1965 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r1966 = CPyDict_Build(3, cpy_r_r1960, cpy_r_r1961, cpy_r_r1962, cpy_r_r1963, cpy_r_r1964, cpy_r_r1965);
     if (unlikely(cpy_r_r1966 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 820, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 821, CPyStatic_globals);
         goto CPyL800;
     }
     cpy_r_r1967 = CPyStatics[116]; /* 'internalType' */
@@ -6922,12 +6922,12 @@ CPyL3: ;
     cpy_r_r1972 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r1973 = CPyDict_Build(3, cpy_r_r1967, cpy_r_r1968, cpy_r_r1969, cpy_r_r1970, cpy_r_r1971, cpy_r_r1972);
     if (unlikely(cpy_r_r1973 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 821, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 822, CPyStatic_globals);
         goto CPyL801;
     }
     cpy_r_r1974 = PyList_New(2);
     if (unlikely(cpy_r_r1974 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 819, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 820, CPyStatic_globals);
         goto CPyL802;
     }
     cpy_r_r1975 = (CPyPtr)&((PyListObject *)cpy_r_r1974)->ob_item;
@@ -6946,7 +6946,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1953);
     CPy_DECREF_NO_IMM(cpy_r_r1974);
     if (unlikely(cpy_r_r1985 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 812, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 813, CPyStatic_globals);
         goto CPyL797;
     }
     cpy_r_r1986 = CPyStatics[9]; /* 'constant' */
@@ -6959,12 +6959,12 @@ CPyL3: ;
     cpy_r_r1993 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r1994 = CPyDict_Build(3, cpy_r_r1988, cpy_r_r1989, cpy_r_r1990, cpy_r_r1991, cpy_r_r1992, cpy_r_r1993);
     if (unlikely(cpy_r_r1994 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 829, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 830, CPyStatic_globals);
         goto CPyL803;
     }
     cpy_r_r1995 = PyList_New(1);
     if (unlikely(cpy_r_r1995 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 829, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 830, CPyStatic_globals);
         goto CPyL804;
     }
     cpy_r_r1996 = (CPyPtr)&((PyListObject *)cpy_r_r1995)->ob_item;
@@ -6981,12 +6981,12 @@ CPyL3: ;
     cpy_r_r2006 = CPyStatics[18]; /* 'address' */
     cpy_r_r2007 = CPyDict_Build(3, cpy_r_r2001, cpy_r_r2002, cpy_r_r2003, cpy_r_r2004, cpy_r_r2005, cpy_r_r2006);
     if (unlikely(cpy_r_r2007 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 831, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 832, CPyStatic_globals);
         goto CPyL805;
     }
     cpy_r_r2008 = PyList_New(1);
     if (unlikely(cpy_r_r2008 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 831, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 832, CPyStatic_globals);
         goto CPyL806;
     }
     cpy_r_r2009 = (CPyPtr)&((PyListObject *)cpy_r_r2008)->ob_item;
@@ -7003,7 +7003,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r1995);
     CPy_DECREF_NO_IMM(cpy_r_r2008);
     if (unlikely(cpy_r_r2018 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 827, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 828, CPyStatic_globals);
         goto CPyL803;
     }
     cpy_r_r2019 = CPyStatics[9]; /* 'constant' */
@@ -7016,7 +7016,7 @@ CPyL3: ;
     cpy_r_r2026 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2027 = CPyDict_Build(3, cpy_r_r2021, cpy_r_r2022, cpy_r_r2023, cpy_r_r2024, cpy_r_r2025, cpy_r_r2026);
     if (unlikely(cpy_r_r2027 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 839, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 840, CPyStatic_globals);
         goto CPyL807;
     }
     cpy_r_r2028 = CPyStatics[116]; /* 'internalType' */
@@ -7027,12 +7027,12 @@ CPyL3: ;
     cpy_r_r2033 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r2034 = CPyDict_Build(3, cpy_r_r2028, cpy_r_r2029, cpy_r_r2030, cpy_r_r2031, cpy_r_r2032, cpy_r_r2033);
     if (unlikely(cpy_r_r2034 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 840, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 841, CPyStatic_globals);
         goto CPyL808;
     }
     cpy_r_r2035 = PyList_New(2);
     if (unlikely(cpy_r_r2035 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 838, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 839, CPyStatic_globals);
         goto CPyL809;
     }
     cpy_r_r2036 = (CPyPtr)&((PyListObject *)cpy_r_r2035)->ob_item;
@@ -7051,12 +7051,12 @@ CPyL3: ;
     cpy_r_r2047 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2048 = CPyDict_Build(3, cpy_r_r2042, cpy_r_r2043, cpy_r_r2044, cpy_r_r2045, cpy_r_r2046, cpy_r_r2047);
     if (unlikely(cpy_r_r2048 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 843, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 844, CPyStatic_globals);
         goto CPyL810;
     }
     cpy_r_r2049 = PyList_New(1);
     if (unlikely(cpy_r_r2049 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 843, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 844, CPyStatic_globals);
         goto CPyL811;
     }
     cpy_r_r2050 = (CPyPtr)&((PyListObject *)cpy_r_r2049)->ob_item;
@@ -7073,7 +7073,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2035);
     CPy_DECREF_NO_IMM(cpy_r_r2049);
     if (unlikely(cpy_r_r2059 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 836, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 837, CPyStatic_globals);
         goto CPyL807;
     }
     cpy_r_r2060 = CPyStatics[9]; /* 'constant' */
@@ -7086,7 +7086,7 @@ CPyL3: ;
     cpy_r_r2067 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2068 = CPyDict_Build(3, cpy_r_r2062, cpy_r_r2063, cpy_r_r2064, cpy_r_r2065, cpy_r_r2066, cpy_r_r2067);
     if (unlikely(cpy_r_r2068 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 851, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 852, CPyStatic_globals);
         goto CPyL812;
     }
     cpy_r_r2069 = CPyStatics[116]; /* 'internalType' */
@@ -7097,7 +7097,7 @@ CPyL3: ;
     cpy_r_r2074 = CPyStatics[18]; /* 'address' */
     cpy_r_r2075 = CPyDict_Build(3, cpy_r_r2069, cpy_r_r2070, cpy_r_r2071, cpy_r_r2072, cpy_r_r2073, cpy_r_r2074);
     if (unlikely(cpy_r_r2075 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 852, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 853, CPyStatic_globals);
         goto CPyL813;
     }
     cpy_r_r2076 = CPyStatics[116]; /* 'internalType' */
@@ -7108,12 +7108,12 @@ CPyL3: ;
     cpy_r_r2081 = CPyStatics[18]; /* 'address' */
     cpy_r_r2082 = CPyDict_Build(3, cpy_r_r2076, cpy_r_r2077, cpy_r_r2078, cpy_r_r2079, cpy_r_r2080, cpy_r_r2081);
     if (unlikely(cpy_r_r2082 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 853, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 854, CPyStatic_globals);
         goto CPyL814;
     }
     cpy_r_r2083 = PyList_New(3);
     if (unlikely(cpy_r_r2083 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 850, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 851, CPyStatic_globals);
         goto CPyL815;
     }
     cpy_r_r2084 = (CPyPtr)&((PyListObject *)cpy_r_r2083)->ob_item;
@@ -7134,12 +7134,12 @@ CPyL3: ;
     cpy_r_r2096 = CPyStatics[67]; /* 'bool' */
     cpy_r_r2097 = CPyDict_Build(3, cpy_r_r2091, cpy_r_r2092, cpy_r_r2093, cpy_r_r2094, cpy_r_r2095, cpy_r_r2096);
     if (unlikely(cpy_r_r2097 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 856, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 857, CPyStatic_globals);
         goto CPyL816;
     }
     cpy_r_r2098 = PyList_New(1);
     if (unlikely(cpy_r_r2098 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 856, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 857, CPyStatic_globals);
         goto CPyL817;
     }
     cpy_r_r2099 = (CPyPtr)&((PyListObject *)cpy_r_r2098)->ob_item;
@@ -7156,7 +7156,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2083);
     CPy_DECREF_NO_IMM(cpy_r_r2098);
     if (unlikely(cpy_r_r2108 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 848, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 849, CPyStatic_globals);
         goto CPyL812;
     }
     cpy_r_r2109 = CPyStatics[9]; /* 'constant' */
@@ -7169,12 +7169,12 @@ CPyL3: ;
     cpy_r_r2116 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2117 = CPyDict_Build(3, cpy_r_r2111, cpy_r_r2112, cpy_r_r2113, cpy_r_r2114, cpy_r_r2115, cpy_r_r2116);
     if (unlikely(cpy_r_r2117 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 863, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 864, CPyStatic_globals);
         goto CPyL818;
     }
     cpy_r_r2118 = PyList_New(1);
     if (unlikely(cpy_r_r2118 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 863, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 864, CPyStatic_globals);
         goto CPyL819;
     }
     cpy_r_r2119 = (CPyPtr)&((PyListObject *)cpy_r_r2118)->ob_item;
@@ -7185,7 +7185,7 @@ CPyL3: ;
     cpy_r_r2123 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2124 = PyList_New(0);
     if (unlikely(cpy_r_r2124 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 865, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 866, CPyStatic_globals);
         goto CPyL820;
     }
     cpy_r_r2125 = CPyStatics[19]; /* 'payable' */
@@ -7199,7 +7199,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2118);
     CPy_DECREF_NO_IMM(cpy_r_r2124);
     if (unlikely(cpy_r_r2132 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 861, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 862, CPyStatic_globals);
         goto CPyL818;
     }
     cpy_r_r2133 = CPyStatics[9]; /* 'constant' */
@@ -7212,12 +7212,12 @@ CPyL3: ;
     cpy_r_r2140 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2141 = CPyDict_Build(3, cpy_r_r2135, cpy_r_r2136, cpy_r_r2137, cpy_r_r2138, cpy_r_r2139, cpy_r_r2140);
     if (unlikely(cpy_r_r2141 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 872, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 873, CPyStatic_globals);
         goto CPyL821;
     }
     cpy_r_r2142 = PyList_New(1);
     if (unlikely(cpy_r_r2142 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 872, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 873, CPyStatic_globals);
         goto CPyL822;
     }
     cpy_r_r2143 = (CPyPtr)&((PyListObject *)cpy_r_r2142)->ob_item;
@@ -7234,12 +7234,12 @@ CPyL3: ;
     cpy_r_r2153 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2154 = CPyDict_Build(3, cpy_r_r2148, cpy_r_r2149, cpy_r_r2150, cpy_r_r2151, cpy_r_r2152, cpy_r_r2153);
     if (unlikely(cpy_r_r2154 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 874, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 875, CPyStatic_globals);
         goto CPyL823;
     }
     cpy_r_r2155 = PyList_New(1);
     if (unlikely(cpy_r_r2155 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 874, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 875, CPyStatic_globals);
         goto CPyL824;
     }
     cpy_r_r2156 = (CPyPtr)&((PyListObject *)cpy_r_r2155)->ob_item;
@@ -7256,7 +7256,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2142);
     CPy_DECREF_NO_IMM(cpy_r_r2155);
     if (unlikely(cpy_r_r2165 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 870, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 871, CPyStatic_globals);
         goto CPyL821;
     }
     cpy_r_r2166 = CPyStatics[9]; /* 'constant' */
@@ -7269,7 +7269,7 @@ CPyL3: ;
     cpy_r_r2173 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2174 = CPyDict_Build(3, cpy_r_r2168, cpy_r_r2169, cpy_r_r2170, cpy_r_r2171, cpy_r_r2172, cpy_r_r2173);
     if (unlikely(cpy_r_r2174 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 882, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 883, CPyStatic_globals);
         goto CPyL825;
     }
     cpy_r_r2175 = CPyStatics[116]; /* 'internalType' */
@@ -7280,7 +7280,7 @@ CPyL3: ;
     cpy_r_r2180 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2181 = CPyDict_Build(3, cpy_r_r2175, cpy_r_r2176, cpy_r_r2177, cpy_r_r2178, cpy_r_r2179, cpy_r_r2180);
     if (unlikely(cpy_r_r2181 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 883, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 884, CPyStatic_globals);
         goto CPyL826;
     }
     cpy_r_r2182 = CPyStatics[116]; /* 'internalType' */
@@ -7291,12 +7291,12 @@ CPyL3: ;
     cpy_r_r2187 = CPyStatics[132]; /* 'uint16' */
     cpy_r_r2188 = CPyDict_Build(3, cpy_r_r2182, cpy_r_r2183, cpy_r_r2184, cpy_r_r2185, cpy_r_r2186, cpy_r_r2187);
     if (unlikely(cpy_r_r2188 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 884, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 885, CPyStatic_globals);
         goto CPyL827;
     }
     cpy_r_r2189 = PyList_New(3);
     if (unlikely(cpy_r_r2189 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 881, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 882, CPyStatic_globals);
         goto CPyL828;
     }
     cpy_r_r2190 = (CPyPtr)&((PyListObject *)cpy_r_r2189)->ob_item;
@@ -7317,12 +7317,12 @@ CPyL3: ;
     cpy_r_r2202 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2203 = CPyDict_Build(3, cpy_r_r2197, cpy_r_r2198, cpy_r_r2199, cpy_r_r2200, cpy_r_r2201, cpy_r_r2202);
     if (unlikely(cpy_r_r2203 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 887, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 888, CPyStatic_globals);
         goto CPyL829;
     }
     cpy_r_r2204 = PyList_New(1);
     if (unlikely(cpy_r_r2204 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 887, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 888, CPyStatic_globals);
         goto CPyL830;
     }
     cpy_r_r2205 = (CPyPtr)&((PyListObject *)cpy_r_r2204)->ob_item;
@@ -7339,7 +7339,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2189);
     CPy_DECREF_NO_IMM(cpy_r_r2204);
     if (unlikely(cpy_r_r2214 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 879, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 880, CPyStatic_globals);
         goto CPyL825;
     }
     cpy_r_r2215 = CPyStatics[9]; /* 'constant' */
@@ -7352,7 +7352,7 @@ CPyL3: ;
     cpy_r_r2222 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2223 = CPyDict_Build(3, cpy_r_r2217, cpy_r_r2218, cpy_r_r2219, cpy_r_r2220, cpy_r_r2221, cpy_r_r2222);
     if (unlikely(cpy_r_r2223 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 895, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 896, CPyStatic_globals);
         goto CPyL831;
     }
     cpy_r_r2224 = CPyStatics[116]; /* 'internalType' */
@@ -7363,12 +7363,12 @@ CPyL3: ;
     cpy_r_r2229 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2230 = CPyDict_Build(3, cpy_r_r2224, cpy_r_r2225, cpy_r_r2226, cpy_r_r2227, cpy_r_r2228, cpy_r_r2229);
     if (unlikely(cpy_r_r2230 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 896, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 897, CPyStatic_globals);
         goto CPyL832;
     }
     cpy_r_r2231 = PyList_New(2);
     if (unlikely(cpy_r_r2231 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 894, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 895, CPyStatic_globals);
         goto CPyL833;
     }
     cpy_r_r2232 = (CPyPtr)&((PyListObject *)cpy_r_r2231)->ob_item;
@@ -7387,12 +7387,12 @@ CPyL3: ;
     cpy_r_r2243 = CPyStatics[67]; /* 'bool' */
     cpy_r_r2244 = CPyDict_Build(3, cpy_r_r2238, cpy_r_r2239, cpy_r_r2240, cpy_r_r2241, cpy_r_r2242, cpy_r_r2243);
     if (unlikely(cpy_r_r2244 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 899, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 900, CPyStatic_globals);
         goto CPyL834;
     }
     cpy_r_r2245 = PyList_New(1);
     if (unlikely(cpy_r_r2245 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 899, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 900, CPyStatic_globals);
         goto CPyL835;
     }
     cpy_r_r2246 = (CPyPtr)&((PyListObject *)cpy_r_r2245)->ob_item;
@@ -7409,7 +7409,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2231);
     CPy_DECREF_NO_IMM(cpy_r_r2245);
     if (unlikely(cpy_r_r2255 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 892, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 893, CPyStatic_globals);
         goto CPyL831;
     }
     cpy_r_r2256 = CPyStatics[9]; /* 'constant' */
@@ -7422,7 +7422,7 @@ CPyL3: ;
     cpy_r_r2263 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2264 = CPyDict_Build(3, cpy_r_r2258, cpy_r_r2259, cpy_r_r2260, cpy_r_r2261, cpy_r_r2262, cpy_r_r2263);
     if (unlikely(cpy_r_r2264 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 907, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 908, CPyStatic_globals);
         goto CPyL836;
     }
     cpy_r_r2265 = CPyStatics[116]; /* 'internalType' */
@@ -7433,12 +7433,12 @@ CPyL3: ;
     cpy_r_r2270 = CPyStatics[138]; /* 'bytes4' */
     cpy_r_r2271 = CPyDict_Build(3, cpy_r_r2265, cpy_r_r2266, cpy_r_r2267, cpy_r_r2268, cpy_r_r2269, cpy_r_r2270);
     if (unlikely(cpy_r_r2271 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 908, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 909, CPyStatic_globals);
         goto CPyL837;
     }
     cpy_r_r2272 = PyList_New(2);
     if (unlikely(cpy_r_r2272 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 906, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 907, CPyStatic_globals);
         goto CPyL838;
     }
     cpy_r_r2273 = (CPyPtr)&((PyListObject *)cpy_r_r2272)->ob_item;
@@ -7457,12 +7457,12 @@ CPyL3: ;
     cpy_r_r2284 = CPyStatics[18]; /* 'address' */
     cpy_r_r2285 = CPyDict_Build(3, cpy_r_r2279, cpy_r_r2280, cpy_r_r2281, cpy_r_r2282, cpy_r_r2283, cpy_r_r2284);
     if (unlikely(cpy_r_r2285 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 911, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 912, CPyStatic_globals);
         goto CPyL839;
     }
     cpy_r_r2286 = PyList_New(1);
     if (unlikely(cpy_r_r2286 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 911, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 912, CPyStatic_globals);
         goto CPyL840;
     }
     cpy_r_r2287 = (CPyPtr)&((PyListObject *)cpy_r_r2286)->ob_item;
@@ -7479,7 +7479,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2272);
     CPy_DECREF_NO_IMM(cpy_r_r2286);
     if (unlikely(cpy_r_r2296 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 904, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 905, CPyStatic_globals);
         goto CPyL836;
     }
     cpy_r_r2297 = CPyStatics[9]; /* 'constant' */
@@ -7492,12 +7492,12 @@ CPyL3: ;
     cpy_r_r2304 = CPyStatics[160]; /* 'bytes[]' */
     cpy_r_r2305 = CPyDict_Build(3, cpy_r_r2299, cpy_r_r2300, cpy_r_r2301, cpy_r_r2302, cpy_r_r2303, cpy_r_r2304);
     if (unlikely(cpy_r_r2305 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 918, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 919, CPyStatic_globals);
         goto CPyL841;
     }
     cpy_r_r2306 = PyList_New(1);
     if (unlikely(cpy_r_r2306 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 918, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 919, CPyStatic_globals);
         goto CPyL842;
     }
     cpy_r_r2307 = (CPyPtr)&((PyListObject *)cpy_r_r2306)->ob_item;
@@ -7514,12 +7514,12 @@ CPyL3: ;
     cpy_r_r2317 = CPyStatics[160]; /* 'bytes[]' */
     cpy_r_r2318 = CPyDict_Build(3, cpy_r_r2312, cpy_r_r2313, cpy_r_r2314, cpy_r_r2315, cpy_r_r2316, cpy_r_r2317);
     if (unlikely(cpy_r_r2318 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 920, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 921, CPyStatic_globals);
         goto CPyL843;
     }
     cpy_r_r2319 = PyList_New(1);
     if (unlikely(cpy_r_r2319 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 920, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 921, CPyStatic_globals);
         goto CPyL844;
     }
     cpy_r_r2320 = (CPyPtr)&((PyListObject *)cpy_r_r2319)->ob_item;
@@ -7536,7 +7536,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2306);
     CPy_DECREF_NO_IMM(cpy_r_r2319);
     if (unlikely(cpy_r_r2329 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 916, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 917, CPyStatic_globals);
         goto CPyL841;
     }
     cpy_r_r2330 = CPyStatics[9]; /* 'constant' */
@@ -7549,12 +7549,12 @@ CPyL3: ;
     cpy_r_r2337 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2338 = CPyDict_Build(3, cpy_r_r2332, cpy_r_r2333, cpy_r_r2334, cpy_r_r2335, cpy_r_r2336, cpy_r_r2337);
     if (unlikely(cpy_r_r2338 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 927, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 928, CPyStatic_globals);
         goto CPyL845;
     }
     cpy_r_r2339 = PyList_New(1);
     if (unlikely(cpy_r_r2339 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 927, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 928, CPyStatic_globals);
         goto CPyL846;
     }
     cpy_r_r2340 = (CPyPtr)&((PyListObject *)cpy_r_r2339)->ob_item;
@@ -7571,12 +7571,12 @@ CPyL3: ;
     cpy_r_r2350 = CPyStatics[43]; /* 'string' */
     cpy_r_r2351 = CPyDict_Build(3, cpy_r_r2345, cpy_r_r2346, cpy_r_r2347, cpy_r_r2348, cpy_r_r2349, cpy_r_r2350);
     if (unlikely(cpy_r_r2351 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 929, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 930, CPyStatic_globals);
         goto CPyL847;
     }
     cpy_r_r2352 = PyList_New(1);
     if (unlikely(cpy_r_r2352 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 929, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 930, CPyStatic_globals);
         goto CPyL848;
     }
     cpy_r_r2353 = (CPyPtr)&((PyListObject *)cpy_r_r2352)->ob_item;
@@ -7593,7 +7593,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2339);
     CPy_DECREF_NO_IMM(cpy_r_r2352);
     if (unlikely(cpy_r_r2362 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 925, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 926, CPyStatic_globals);
         goto CPyL845;
     }
     cpy_r_r2363 = CPyStatics[9]; /* 'constant' */
@@ -7606,12 +7606,12 @@ CPyL3: ;
     cpy_r_r2370 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2371 = CPyDict_Build(3, cpy_r_r2365, cpy_r_r2366, cpy_r_r2367, cpy_r_r2368, cpy_r_r2369, cpy_r_r2370);
     if (unlikely(cpy_r_r2371 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 936, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 937, CPyStatic_globals);
         goto CPyL849;
     }
     cpy_r_r2372 = PyList_New(1);
     if (unlikely(cpy_r_r2372 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 936, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 937, CPyStatic_globals);
         goto CPyL850;
     }
     cpy_r_r2373 = (CPyPtr)&((PyListObject *)cpy_r_r2372)->ob_item;
@@ -7628,7 +7628,7 @@ CPyL3: ;
     cpy_r_r2383 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2384 = CPyDict_Build(3, cpy_r_r2378, cpy_r_r2379, cpy_r_r2380, cpy_r_r2381, cpy_r_r2382, cpy_r_r2383);
     if (unlikely(cpy_r_r2384 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 939, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 940, CPyStatic_globals);
         goto CPyL851;
     }
     cpy_r_r2385 = CPyStatics[116]; /* 'internalType' */
@@ -7639,12 +7639,12 @@ CPyL3: ;
     cpy_r_r2390 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2391 = CPyDict_Build(3, cpy_r_r2385, cpy_r_r2386, cpy_r_r2387, cpy_r_r2388, cpy_r_r2389, cpy_r_r2390);
     if (unlikely(cpy_r_r2391 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 940, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 941, CPyStatic_globals);
         goto CPyL852;
     }
     cpy_r_r2392 = PyList_New(2);
     if (unlikely(cpy_r_r2392 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 938, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 939, CPyStatic_globals);
         goto CPyL853;
     }
     cpy_r_r2393 = (CPyPtr)&((PyListObject *)cpy_r_r2392)->ob_item;
@@ -7663,7 +7663,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2372);
     CPy_DECREF_NO_IMM(cpy_r_r2392);
     if (unlikely(cpy_r_r2403 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 934, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 935, CPyStatic_globals);
         goto CPyL849;
     }
     cpy_r_r2404 = CPyStatics[9]; /* 'constant' */
@@ -7676,7 +7676,7 @@ CPyL3: ;
     cpy_r_r2411 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2412 = CPyDict_Build(3, cpy_r_r2406, cpy_r_r2407, cpy_r_r2408, cpy_r_r2409, cpy_r_r2410, cpy_r_r2411);
     if (unlikely(cpy_r_r2412 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 949, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 950, CPyStatic_globals);
         goto CPyL854;
     }
     cpy_r_r2413 = CPyStatics[116]; /* 'internalType' */
@@ -7687,7 +7687,7 @@ CPyL3: ;
     cpy_r_r2418 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r2419 = CPyDict_Build(3, cpy_r_r2413, cpy_r_r2414, cpy_r_r2415, cpy_r_r2416, cpy_r_r2417, cpy_r_r2418);
     if (unlikely(cpy_r_r2419 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 950, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 951, CPyStatic_globals);
         goto CPyL855;
     }
     cpy_r_r2420 = CPyStatics[116]; /* 'internalType' */
@@ -7698,12 +7698,12 @@ CPyL3: ;
     cpy_r_r2425 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2426 = CPyDict_Build(3, cpy_r_r2420, cpy_r_r2421, cpy_r_r2422, cpy_r_r2423, cpy_r_r2424, cpy_r_r2425);
     if (unlikely(cpy_r_r2426 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 951, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 952, CPyStatic_globals);
         goto CPyL856;
     }
     cpy_r_r2427 = PyList_New(3);
     if (unlikely(cpy_r_r2427 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 948, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 949, CPyStatic_globals);
         goto CPyL857;
     }
     cpy_r_r2428 = (CPyPtr)&((PyListObject *)cpy_r_r2427)->ob_item;
@@ -7718,7 +7718,7 @@ CPyL3: ;
     cpy_r_r2434 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2435 = PyList_New(0);
     if (unlikely(cpy_r_r2435 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 954, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 955, CPyStatic_globals);
         goto CPyL858;
     }
     cpy_r_r2436 = CPyStatics[19]; /* 'payable' */
@@ -7732,7 +7732,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2427);
     CPy_DECREF_NO_IMM(cpy_r_r2435);
     if (unlikely(cpy_r_r2443 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 946, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 947, CPyStatic_globals);
         goto CPyL854;
     }
     cpy_r_r2444 = CPyStatics[9]; /* 'constant' */
@@ -7745,7 +7745,7 @@ CPyL3: ;
     cpy_r_r2451 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2452 = CPyDict_Build(3, cpy_r_r2446, cpy_r_r2447, cpy_r_r2448, cpy_r_r2449, cpy_r_r2450, cpy_r_r2451);
     if (unlikely(cpy_r_r2452 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 962, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 963, CPyStatic_globals);
         goto CPyL859;
     }
     cpy_r_r2453 = CPyStatics[116]; /* 'internalType' */
@@ -7756,7 +7756,7 @@ CPyL3: ;
     cpy_r_r2458 = CPyStatics[41]; /* 'uint256' */
     cpy_r_r2459 = CPyDict_Build(3, cpy_r_r2453, cpy_r_r2454, cpy_r_r2455, cpy_r_r2456, cpy_r_r2457, cpy_r_r2458);
     if (unlikely(cpy_r_r2459 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 963, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 964, CPyStatic_globals);
         goto CPyL860;
     }
     cpy_r_r2460 = CPyStatics[116]; /* 'internalType' */
@@ -7767,12 +7767,12 @@ CPyL3: ;
     cpy_r_r2465 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2466 = CPyDict_Build(3, cpy_r_r2460, cpy_r_r2461, cpy_r_r2462, cpy_r_r2463, cpy_r_r2464, cpy_r_r2465);
     if (unlikely(cpy_r_r2466 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 964, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 965, CPyStatic_globals);
         goto CPyL861;
     }
     cpy_r_r2467 = PyList_New(3);
     if (unlikely(cpy_r_r2467 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 961, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 962, CPyStatic_globals);
         goto CPyL862;
     }
     cpy_r_r2468 = (CPyPtr)&((PyListObject *)cpy_r_r2467)->ob_item;
@@ -7787,7 +7787,7 @@ CPyL3: ;
     cpy_r_r2474 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2475 = PyList_New(0);
     if (unlikely(cpy_r_r2475 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 967, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 968, CPyStatic_globals);
         goto CPyL863;
     }
     cpy_r_r2476 = CPyStatics[19]; /* 'payable' */
@@ -7801,7 +7801,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2467);
     CPy_DECREF_NO_IMM(cpy_r_r2475);
     if (unlikely(cpy_r_r2483 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 959, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 960, CPyStatic_globals);
         goto CPyL859;
     }
     cpy_r_r2484 = CPyStatics[9]; /* 'constant' */
@@ -7814,7 +7814,7 @@ CPyL3: ;
     cpy_r_r2491 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2492 = CPyDict_Build(3, cpy_r_r2486, cpy_r_r2487, cpy_r_r2488, cpy_r_r2489, cpy_r_r2490, cpy_r_r2491);
     if (unlikely(cpy_r_r2492 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 975, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 976, CPyStatic_globals);
         goto CPyL864;
     }
     cpy_r_r2493 = CPyStatics[116]; /* 'internalType' */
@@ -7825,12 +7825,12 @@ CPyL3: ;
     cpy_r_r2498 = CPyStatics[18]; /* 'address' */
     cpy_r_r2499 = CPyDict_Build(3, cpy_r_r2493, cpy_r_r2494, cpy_r_r2495, cpy_r_r2496, cpy_r_r2497, cpy_r_r2498);
     if (unlikely(cpy_r_r2499 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 976, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 977, CPyStatic_globals);
         goto CPyL865;
     }
     cpy_r_r2500 = PyList_New(2);
     if (unlikely(cpy_r_r2500 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 974, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 975, CPyStatic_globals);
         goto CPyL866;
     }
     cpy_r_r2501 = (CPyPtr)&((PyListObject *)cpy_r_r2500)->ob_item;
@@ -7843,7 +7843,7 @@ CPyL3: ;
     cpy_r_r2506 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2507 = PyList_New(0);
     if (unlikely(cpy_r_r2507 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 979, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 980, CPyStatic_globals);
         goto CPyL867;
     }
     cpy_r_r2508 = CPyStatics[19]; /* 'payable' */
@@ -7857,7 +7857,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2500);
     CPy_DECREF_NO_IMM(cpy_r_r2507);
     if (unlikely(cpy_r_r2515 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 972, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 973, CPyStatic_globals);
         goto CPyL864;
     }
     cpy_r_r2516 = CPyStatics[9]; /* 'constant' */
@@ -7870,7 +7870,7 @@ CPyL3: ;
     cpy_r_r2523 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2524 = CPyDict_Build(3, cpy_r_r2518, cpy_r_r2519, cpy_r_r2520, cpy_r_r2521, cpy_r_r2522, cpy_r_r2523);
     if (unlikely(cpy_r_r2524 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 987, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 988, CPyStatic_globals);
         goto CPyL868;
     }
     cpy_r_r2525 = CPyStatics[116]; /* 'internalType' */
@@ -7881,7 +7881,7 @@ CPyL3: ;
     cpy_r_r2530 = CPyStatics[18]; /* 'address' */
     cpy_r_r2531 = CPyDict_Build(3, cpy_r_r2525, cpy_r_r2526, cpy_r_r2527, cpy_r_r2528, cpy_r_r2529, cpy_r_r2530);
     if (unlikely(cpy_r_r2531 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 988, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 989, CPyStatic_globals);
         goto CPyL869;
     }
     cpy_r_r2532 = CPyStatics[116]; /* 'internalType' */
@@ -7892,12 +7892,12 @@ CPyL3: ;
     cpy_r_r2537 = CPyStatics[67]; /* 'bool' */
     cpy_r_r2538 = CPyDict_Build(3, cpy_r_r2532, cpy_r_r2533, cpy_r_r2534, cpy_r_r2535, cpy_r_r2536, cpy_r_r2537);
     if (unlikely(cpy_r_r2538 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 989, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 990, CPyStatic_globals);
         goto CPyL870;
     }
     cpy_r_r2539 = PyList_New(3);
     if (unlikely(cpy_r_r2539 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 986, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 987, CPyStatic_globals);
         goto CPyL871;
     }
     cpy_r_r2540 = (CPyPtr)&((PyListObject *)cpy_r_r2539)->ob_item;
@@ -7912,7 +7912,7 @@ CPyL3: ;
     cpy_r_r2546 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2547 = PyList_New(0);
     if (unlikely(cpy_r_r2547 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 992, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 993, CPyStatic_globals);
         goto CPyL872;
     }
     cpy_r_r2548 = CPyStatics[19]; /* 'payable' */
@@ -7926,7 +7926,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2539);
     CPy_DECREF_NO_IMM(cpy_r_r2547);
     if (unlikely(cpy_r_r2555 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 984, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 985, CPyStatic_globals);
         goto CPyL868;
     }
     cpy_r_r2556 = CPyStatics[9]; /* 'constant' */
@@ -7939,7 +7939,7 @@ CPyL3: ;
     cpy_r_r2563 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2564 = CPyDict_Build(3, cpy_r_r2558, cpy_r_r2559, cpy_r_r2560, cpy_r_r2561, cpy_r_r2562, cpy_r_r2563);
     if (unlikely(cpy_r_r2564 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1000, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1001, CPyStatic_globals);
         goto CPyL873;
     }
     cpy_r_r2565 = CPyStatics[116]; /* 'internalType' */
@@ -7950,12 +7950,12 @@ CPyL3: ;
     cpy_r_r2570 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2571 = CPyDict_Build(3, cpy_r_r2565, cpy_r_r2566, cpy_r_r2567, cpy_r_r2568, cpy_r_r2569, cpy_r_r2570);
     if (unlikely(cpy_r_r2571 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1001, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1002, CPyStatic_globals);
         goto CPyL874;
     }
     cpy_r_r2572 = PyList_New(2);
     if (unlikely(cpy_r_r2572 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 999, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1000, CPyStatic_globals);
         goto CPyL875;
     }
     cpy_r_r2573 = (CPyPtr)&((PyListObject *)cpy_r_r2572)->ob_item;
@@ -7968,7 +7968,7 @@ CPyL3: ;
     cpy_r_r2578 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2579 = PyList_New(0);
     if (unlikely(cpy_r_r2579 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1004, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1005, CPyStatic_globals);
         goto CPyL876;
     }
     cpy_r_r2580 = CPyStatics[19]; /* 'payable' */
@@ -7982,7 +7982,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2572);
     CPy_DECREF_NO_IMM(cpy_r_r2579);
     if (unlikely(cpy_r_r2587 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 997, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 998, CPyStatic_globals);
         goto CPyL873;
     }
     cpy_r_r2588 = CPyStatics[9]; /* 'constant' */
@@ -7995,7 +7995,7 @@ CPyL3: ;
     cpy_r_r2595 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2596 = CPyDict_Build(3, cpy_r_r2590, cpy_r_r2591, cpy_r_r2592, cpy_r_r2593, cpy_r_r2594, cpy_r_r2595);
     if (unlikely(cpy_r_r2596 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1012, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1013, CPyStatic_globals);
         goto CPyL877;
     }
     cpy_r_r2597 = CPyStatics[116]; /* 'internalType' */
@@ -8006,12 +8006,12 @@ CPyL3: ;
     cpy_r_r2602 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2603 = CPyDict_Build(3, cpy_r_r2597, cpy_r_r2598, cpy_r_r2599, cpy_r_r2600, cpy_r_r2601, cpy_r_r2602);
     if (unlikely(cpy_r_r2603 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1013, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1014, CPyStatic_globals);
         goto CPyL878;
     }
     cpy_r_r2604 = PyList_New(2);
     if (unlikely(cpy_r_r2604 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1011, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1012, CPyStatic_globals);
         goto CPyL879;
     }
     cpy_r_r2605 = (CPyPtr)&((PyListObject *)cpy_r_r2604)->ob_item;
@@ -8024,7 +8024,7 @@ CPyL3: ;
     cpy_r_r2610 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2611 = PyList_New(0);
     if (unlikely(cpy_r_r2611 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1016, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1017, CPyStatic_globals);
         goto CPyL880;
     }
     cpy_r_r2612 = CPyStatics[19]; /* 'payable' */
@@ -8038,7 +8038,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2604);
     CPy_DECREF_NO_IMM(cpy_r_r2611);
     if (unlikely(cpy_r_r2619 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1009, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1010, CPyStatic_globals);
         goto CPyL877;
     }
     cpy_r_r2620 = CPyStatics[9]; /* 'constant' */
@@ -8051,7 +8051,7 @@ CPyL3: ;
     cpy_r_r2627 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2628 = CPyDict_Build(3, cpy_r_r2622, cpy_r_r2623, cpy_r_r2624, cpy_r_r2625, cpy_r_r2626, cpy_r_r2627);
     if (unlikely(cpy_r_r2628 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1024, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1025, CPyStatic_globals);
         goto CPyL881;
     }
     cpy_r_r2629 = CPyStatics[116]; /* 'internalType' */
@@ -8062,7 +8062,7 @@ CPyL3: ;
     cpy_r_r2634 = CPyStatics[138]; /* 'bytes4' */
     cpy_r_r2635 = CPyDict_Build(3, cpy_r_r2629, cpy_r_r2630, cpy_r_r2631, cpy_r_r2632, cpy_r_r2633, cpy_r_r2634);
     if (unlikely(cpy_r_r2635 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1025, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1026, CPyStatic_globals);
         goto CPyL882;
     }
     cpy_r_r2636 = CPyStatics[116]; /* 'internalType' */
@@ -8073,12 +8073,12 @@ CPyL3: ;
     cpy_r_r2641 = CPyStatics[18]; /* 'address' */
     cpy_r_r2642 = CPyDict_Build(3, cpy_r_r2636, cpy_r_r2637, cpy_r_r2638, cpy_r_r2639, cpy_r_r2640, cpy_r_r2641);
     if (unlikely(cpy_r_r2642 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1026, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1027, CPyStatic_globals);
         goto CPyL883;
     }
     cpy_r_r2643 = PyList_New(3);
     if (unlikely(cpy_r_r2643 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1023, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1024, CPyStatic_globals);
         goto CPyL884;
     }
     cpy_r_r2644 = (CPyPtr)&((PyListObject *)cpy_r_r2643)->ob_item;
@@ -8093,7 +8093,7 @@ CPyL3: ;
     cpy_r_r2650 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2651 = PyList_New(0);
     if (unlikely(cpy_r_r2651 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1029, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1030, CPyStatic_globals);
         goto CPyL885;
     }
     cpy_r_r2652 = CPyStatics[19]; /* 'payable' */
@@ -8107,7 +8107,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2643);
     CPy_DECREF_NO_IMM(cpy_r_r2651);
     if (unlikely(cpy_r_r2659 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1021, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1022, CPyStatic_globals);
         goto CPyL881;
     }
     cpy_r_r2660 = CPyStatics[9]; /* 'constant' */
@@ -8120,7 +8120,7 @@ CPyL3: ;
     cpy_r_r2667 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2668 = CPyDict_Build(3, cpy_r_r2662, cpy_r_r2663, cpy_r_r2664, cpy_r_r2665, cpy_r_r2666, cpy_r_r2667);
     if (unlikely(cpy_r_r2668 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1037, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1038, CPyStatic_globals);
         goto CPyL886;
     }
     cpy_r_r2669 = CPyStatics[116]; /* 'internalType' */
@@ -8131,12 +8131,12 @@ CPyL3: ;
     cpy_r_r2674 = CPyStatics[43]; /* 'string' */
     cpy_r_r2675 = CPyDict_Build(3, cpy_r_r2669, cpy_r_r2670, cpy_r_r2671, cpy_r_r2672, cpy_r_r2673, cpy_r_r2674);
     if (unlikely(cpy_r_r2675 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1038, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1039, CPyStatic_globals);
         goto CPyL887;
     }
     cpy_r_r2676 = PyList_New(2);
     if (unlikely(cpy_r_r2676 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1036, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1037, CPyStatic_globals);
         goto CPyL888;
     }
     cpy_r_r2677 = (CPyPtr)&((PyListObject *)cpy_r_r2676)->ob_item;
@@ -8149,7 +8149,7 @@ CPyL3: ;
     cpy_r_r2682 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2683 = PyList_New(0);
     if (unlikely(cpy_r_r2683 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1041, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1042, CPyStatic_globals);
         goto CPyL889;
     }
     cpy_r_r2684 = CPyStatics[19]; /* 'payable' */
@@ -8163,7 +8163,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2676);
     CPy_DECREF_NO_IMM(cpy_r_r2683);
     if (unlikely(cpy_r_r2691 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1034, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1035, CPyStatic_globals);
         goto CPyL886;
     }
     cpy_r_r2692 = CPyStatics[9]; /* 'constant' */
@@ -8176,7 +8176,7 @@ CPyL3: ;
     cpy_r_r2699 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2700 = CPyDict_Build(3, cpy_r_r2694, cpy_r_r2695, cpy_r_r2696, cpy_r_r2697, cpy_r_r2698, cpy_r_r2699);
     if (unlikely(cpy_r_r2700 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1049, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1050, CPyStatic_globals);
         goto CPyL890;
     }
     cpy_r_r2701 = CPyStatics[116]; /* 'internalType' */
@@ -8187,7 +8187,7 @@ CPyL3: ;
     cpy_r_r2706 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2707 = CPyDict_Build(3, cpy_r_r2701, cpy_r_r2702, cpy_r_r2703, cpy_r_r2704, cpy_r_r2705, cpy_r_r2706);
     if (unlikely(cpy_r_r2707 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1050, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1051, CPyStatic_globals);
         goto CPyL891;
     }
     cpy_r_r2708 = CPyStatics[116]; /* 'internalType' */
@@ -8198,12 +8198,12 @@ CPyL3: ;
     cpy_r_r2713 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2714 = CPyDict_Build(3, cpy_r_r2708, cpy_r_r2709, cpy_r_r2710, cpy_r_r2711, cpy_r_r2712, cpy_r_r2713);
     if (unlikely(cpy_r_r2714 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1051, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1052, CPyStatic_globals);
         goto CPyL892;
     }
     cpy_r_r2715 = PyList_New(3);
     if (unlikely(cpy_r_r2715 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1048, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1049, CPyStatic_globals);
         goto CPyL893;
     }
     cpy_r_r2716 = (CPyPtr)&((PyListObject *)cpy_r_r2715)->ob_item;
@@ -8218,7 +8218,7 @@ CPyL3: ;
     cpy_r_r2722 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2723 = PyList_New(0);
     if (unlikely(cpy_r_r2723 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1054, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1055, CPyStatic_globals);
         goto CPyL894;
     }
     cpy_r_r2724 = CPyStatics[19]; /* 'payable' */
@@ -8232,7 +8232,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2715);
     CPy_DECREF_NO_IMM(cpy_r_r2723);
     if (unlikely(cpy_r_r2731 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1046, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1047, CPyStatic_globals);
         goto CPyL890;
     }
     cpy_r_r2732 = CPyStatics[9]; /* 'constant' */
@@ -8245,7 +8245,7 @@ CPyL3: ;
     cpy_r_r2739 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2740 = CPyDict_Build(3, cpy_r_r2734, cpy_r_r2735, cpy_r_r2736, cpy_r_r2737, cpy_r_r2738, cpy_r_r2739);
     if (unlikely(cpy_r_r2740 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1062, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1063, CPyStatic_globals);
         goto CPyL895;
     }
     cpy_r_r2741 = CPyStatics[116]; /* 'internalType' */
@@ -8256,7 +8256,7 @@ CPyL3: ;
     cpy_r_r2746 = CPyStatics[43]; /* 'string' */
     cpy_r_r2747 = CPyDict_Build(3, cpy_r_r2741, cpy_r_r2742, cpy_r_r2743, cpy_r_r2744, cpy_r_r2745, cpy_r_r2746);
     if (unlikely(cpy_r_r2747 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1063, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1064, CPyStatic_globals);
         goto CPyL896;
     }
     cpy_r_r2748 = CPyStatics[116]; /* 'internalType' */
@@ -8267,12 +8267,12 @@ CPyL3: ;
     cpy_r_r2753 = CPyStatics[43]; /* 'string' */
     cpy_r_r2754 = CPyDict_Build(3, cpy_r_r2748, cpy_r_r2749, cpy_r_r2750, cpy_r_r2751, cpy_r_r2752, cpy_r_r2753);
     if (unlikely(cpy_r_r2754 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1064, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1065, CPyStatic_globals);
         goto CPyL897;
     }
     cpy_r_r2755 = PyList_New(3);
     if (unlikely(cpy_r_r2755 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1061, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1062, CPyStatic_globals);
         goto CPyL898;
     }
     cpy_r_r2756 = (CPyPtr)&((PyListObject *)cpy_r_r2755)->ob_item;
@@ -8287,7 +8287,7 @@ CPyL3: ;
     cpy_r_r2762 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r2763 = PyList_New(0);
     if (unlikely(cpy_r_r2763 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1067, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1068, CPyStatic_globals);
         goto CPyL899;
     }
     cpy_r_r2764 = CPyStatics[19]; /* 'payable' */
@@ -8301,7 +8301,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2755);
     CPy_DECREF_NO_IMM(cpy_r_r2763);
     if (unlikely(cpy_r_r2771 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1059, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1060, CPyStatic_globals);
         goto CPyL895;
     }
     cpy_r_r2772 = CPyStatics[9]; /* 'constant' */
@@ -8314,12 +8314,12 @@ CPyL3: ;
     cpy_r_r2779 = CPyStatics[138]; /* 'bytes4' */
     cpy_r_r2780 = CPyDict_Build(3, cpy_r_r2774, cpy_r_r2775, cpy_r_r2776, cpy_r_r2777, cpy_r_r2778, cpy_r_r2779);
     if (unlikely(cpy_r_r2780 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1074, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1075, CPyStatic_globals);
         goto CPyL900;
     }
     cpy_r_r2781 = PyList_New(1);
     if (unlikely(cpy_r_r2781 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1074, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1075, CPyStatic_globals);
         goto CPyL901;
     }
     cpy_r_r2782 = (CPyPtr)&((PyListObject *)cpy_r_r2781)->ob_item;
@@ -8336,12 +8336,12 @@ CPyL3: ;
     cpy_r_r2792 = CPyStatics[67]; /* 'bool' */
     cpy_r_r2793 = CPyDict_Build(3, cpy_r_r2787, cpy_r_r2788, cpy_r_r2789, cpy_r_r2790, cpy_r_r2791, cpy_r_r2792);
     if (unlikely(cpy_r_r2793 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1076, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1077, CPyStatic_globals);
         goto CPyL902;
     }
     cpy_r_r2794 = PyList_New(1);
     if (unlikely(cpy_r_r2794 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1076, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1077, CPyStatic_globals);
         goto CPyL903;
     }
     cpy_r_r2795 = (CPyPtr)&((PyListObject *)cpy_r_r2794)->ob_item;
@@ -8358,7 +8358,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2781);
     CPy_DECREF_NO_IMM(cpy_r_r2794);
     if (unlikely(cpy_r_r2804 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1072, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1073, CPyStatic_globals);
         goto CPyL900;
     }
     cpy_r_r2805 = CPyStatics[9]; /* 'constant' */
@@ -8371,7 +8371,7 @@ CPyL3: ;
     cpy_r_r2812 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2813 = CPyDict_Build(3, cpy_r_r2807, cpy_r_r2808, cpy_r_r2809, cpy_r_r2810, cpy_r_r2811, cpy_r_r2812);
     if (unlikely(cpy_r_r2813 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1084, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1085, CPyStatic_globals);
         goto CPyL904;
     }
     cpy_r_r2814 = CPyStatics[116]; /* 'internalType' */
@@ -8382,12 +8382,12 @@ CPyL3: ;
     cpy_r_r2819 = CPyStatics[43]; /* 'string' */
     cpy_r_r2820 = CPyDict_Build(3, cpy_r_r2814, cpy_r_r2815, cpy_r_r2816, cpy_r_r2817, cpy_r_r2818, cpy_r_r2819);
     if (unlikely(cpy_r_r2820 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1085, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1086, CPyStatic_globals);
         goto CPyL905;
     }
     cpy_r_r2821 = PyList_New(2);
     if (unlikely(cpy_r_r2821 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1083, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1084, CPyStatic_globals);
         goto CPyL906;
     }
     cpy_r_r2822 = (CPyPtr)&((PyListObject *)cpy_r_r2821)->ob_item;
@@ -8406,12 +8406,12 @@ CPyL3: ;
     cpy_r_r2833 = CPyStatics[43]; /* 'string' */
     cpy_r_r2834 = CPyDict_Build(3, cpy_r_r2828, cpy_r_r2829, cpy_r_r2830, cpy_r_r2831, cpy_r_r2832, cpy_r_r2833);
     if (unlikely(cpy_r_r2834 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1088, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1089, CPyStatic_globals);
         goto CPyL907;
     }
     cpy_r_r2835 = PyList_New(1);
     if (unlikely(cpy_r_r2835 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1088, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1089, CPyStatic_globals);
         goto CPyL908;
     }
     cpy_r_r2836 = (CPyPtr)&((PyListObject *)cpy_r_r2835)->ob_item;
@@ -8428,12 +8428,12 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2821);
     CPy_DECREF_NO_IMM(cpy_r_r2835);
     if (unlikely(cpy_r_r2845 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1081, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1082, CPyStatic_globals);
         goto CPyL904;
     }
     cpy_r_r2846 = CPyList_Build(37, cpy_r_r1496, cpy_r_r1526, cpy_r_r1556, cpy_r_r1596, cpy_r_r1646, cpy_r_r1676, cpy_r_r1726, cpy_r_r1766, cpy_r_r1786, cpy_r_r1826, cpy_r_r1856, cpy_r_r1896, cpy_r_r1936, cpy_r_r1985, cpy_r_r2018, cpy_r_r2059, cpy_r_r2108, cpy_r_r2132, cpy_r_r2165, cpy_r_r2214, cpy_r_r2255, cpy_r_r2296, cpy_r_r2329, cpy_r_r2362, cpy_r_r2403, cpy_r_r2443, cpy_r_r2483, cpy_r_r2515, cpy_r_r2555, cpy_r_r2587, cpy_r_r2619, cpy_r_r2659, cpy_r_r2691, cpy_r_r2731, cpy_r_r2771, cpy_r_r2804, cpy_r_r2845);
     if (unlikely(cpy_r_r2846 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 529, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 530, CPyStatic_globals);
         goto CPyL547;
     }
     CPyStatic_PUBLIC_RESOLVER_2 = cpy_r_r2846;
@@ -8444,7 +8444,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r2846);
     cpy_r_r2850 = cpy_r_r2849 >= 0;
     if (unlikely(!cpy_r_r2850)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 529, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 530, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2851 = CPyStatic_PUBLIC_RESOLVER_2;
@@ -8452,7 +8452,7 @@ CPyL3: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"PUBLIC_RESOLVER_2\" was not set");
     cpy_r_r2852 = 0;
     if (unlikely(!cpy_r_r2852)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1095, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
         goto CPyL547;
     }
     CPy_Unreachable();
@@ -8467,7 +8467,7 @@ CPyL477: ;
     cpy_r_r2860 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2861 = CPyDict_Build(3, cpy_r_r2855, cpy_r_r2856, cpy_r_r2857, cpy_r_r2858, cpy_r_r2859, cpy_r_r2860);
     if (unlikely(cpy_r_r2861 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1099, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1100, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2862 = CPyStatics[116]; /* 'internalType' */
@@ -8478,12 +8478,12 @@ CPyL477: ;
     cpy_r_r2867 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2868 = CPyDict_Build(3, cpy_r_r2862, cpy_r_r2863, cpy_r_r2864, cpy_r_r2865, cpy_r_r2866, cpy_r_r2867);
     if (unlikely(cpy_r_r2868 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1100, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1101, CPyStatic_globals);
         goto CPyL909;
     }
     cpy_r_r2869 = PyList_New(2);
     if (unlikely(cpy_r_r2869 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1098, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1099, CPyStatic_globals);
         goto CPyL910;
     }
     cpy_r_r2870 = (CPyPtr)&((PyListObject *)cpy_r_r2869)->ob_item;
@@ -8502,12 +8502,12 @@ CPyL477: ;
     cpy_r_r2881 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2882 = CPyDict_Build(3, cpy_r_r2876, cpy_r_r2877, cpy_r_r2878, cpy_r_r2879, cpy_r_r2880, cpy_r_r2881);
     if (unlikely(cpy_r_r2882 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1103, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1104, CPyStatic_globals);
         goto CPyL911;
     }
     cpy_r_r2883 = PyList_New(1);
     if (unlikely(cpy_r_r2883 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1103, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1104, CPyStatic_globals);
         goto CPyL912;
     }
     cpy_r_r2884 = (CPyPtr)&((PyListObject *)cpy_r_r2883)->ob_item;
@@ -8522,7 +8522,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r2869);
     CPy_DECREF_NO_IMM(cpy_r_r2883);
     if (unlikely(cpy_r_r2891 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1097, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2892 = CPyStatics[9]; /* 'constant' */
@@ -8535,7 +8535,7 @@ CPyL477: ;
     cpy_r_r2899 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2900 = CPyDict_Build(3, cpy_r_r2894, cpy_r_r2895, cpy_r_r2896, cpy_r_r2897, cpy_r_r2898, cpy_r_r2899);
     if (unlikely(cpy_r_r2900 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1110, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1111, CPyStatic_globals);
         goto CPyL913;
     }
     cpy_r_r2901 = CPyStatics[116]; /* 'internalType' */
@@ -8546,12 +8546,12 @@ CPyL477: ;
     cpy_r_r2906 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2907 = CPyDict_Build(3, cpy_r_r2901, cpy_r_r2902, cpy_r_r2903, cpy_r_r2904, cpy_r_r2905, cpy_r_r2906);
     if (unlikely(cpy_r_r2907 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1111, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1112, CPyStatic_globals);
         goto CPyL914;
     }
     cpy_r_r2908 = PyList_New(2);
     if (unlikely(cpy_r_r2908 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1109, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1110, CPyStatic_globals);
         goto CPyL915;
     }
     cpy_r_r2909 = (CPyPtr)&((PyListObject *)cpy_r_r2908)->ob_item;
@@ -8570,12 +8570,12 @@ CPyL477: ;
     cpy_r_r2920 = CPyStatics[125]; /* 'bytes' */
     cpy_r_r2921 = CPyDict_Build(3, cpy_r_r2915, cpy_r_r2916, cpy_r_r2917, cpy_r_r2918, cpy_r_r2919, cpy_r_r2920);
     if (unlikely(cpy_r_r2921 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1114, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1115, CPyStatic_globals);
         goto CPyL916;
     }
     cpy_r_r2922 = PyList_New(1);
     if (unlikely(cpy_r_r2922 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1114, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1115, CPyStatic_globals);
         goto CPyL917;
     }
     cpy_r_r2923 = (CPyPtr)&((PyListObject *)cpy_r_r2922)->ob_item;
@@ -8590,12 +8590,12 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r2908);
     CPy_DECREF_NO_IMM(cpy_r_r2922);
     if (unlikely(cpy_r_r2930 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1107, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1108, CPyStatic_globals);
         goto CPyL913;
     }
     cpy_r_r2931 = PyList_New(2);
     if (unlikely(cpy_r_r2931 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1095, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
         goto CPyL918;
     }
     cpy_r_r2932 = (CPyPtr)&((PyListObject *)cpy_r_r2931)->ob_item;
@@ -8606,7 +8606,7 @@ CPyL477: ;
     cpy_r_r2935 = PySequence_Concat(cpy_r_r2851, cpy_r_r2931);
     CPy_DECREF_NO_IMM(cpy_r_r2931);
     if (unlikely(cpy_r_r2935 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1095, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
         goto CPyL547;
     }
     CPyStatic_PUBLIC_RESOLVER_2_EXTENDED = cpy_r_r2935;
@@ -8617,14 +8617,14 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r2935);
     cpy_r_r2939 = cpy_r_r2938 >= 0;
     if (unlikely(!cpy_r_r2939)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1095, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2940 = CPyStatics[9]; /* 'constant' */
     cpy_r_r2941 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r2942 = PyList_New(0);
     if (unlikely(cpy_r_r2942 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1123, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1124, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2943 = CPyStatics[11]; /* 'name' */
@@ -8636,12 +8636,12 @@ CPyL477: ;
     cpy_r_r2949 = CPyStatics[18]; /* 'address' */
     cpy_r_r2950 = CPyDict_Build(2, cpy_r_r2946, cpy_r_r2947, cpy_r_r2948, cpy_r_r2949);
     if (unlikely(cpy_r_r2950 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1125, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1126, CPyStatic_globals);
         goto CPyL919;
     }
     cpy_r_r2951 = PyList_New(1);
     if (unlikely(cpy_r_r2951 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1125, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1126, CPyStatic_globals);
         goto CPyL920;
     }
     cpy_r_r2952 = (CPyPtr)&((PyListObject *)cpy_r_r2951)->ob_item;
@@ -8658,7 +8658,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r2942);
     CPy_DECREF_NO_IMM(cpy_r_r2951);
     if (unlikely(cpy_r_r2961 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1121, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1122, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r2962 = CPyStatics[9]; /* 'constant' */
@@ -8669,12 +8669,12 @@ CPyL477: ;
     cpy_r_r2967 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2968 = CPyDict_Build(2, cpy_r_r2964, cpy_r_r2965, cpy_r_r2966, cpy_r_r2967);
     if (unlikely(cpy_r_r2968 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1132, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1133, CPyStatic_globals);
         goto CPyL921;
     }
     cpy_r_r2969 = PyList_New(1);
     if (unlikely(cpy_r_r2969 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1132, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1133, CPyStatic_globals);
         goto CPyL922;
     }
     cpy_r_r2970 = (CPyPtr)&((PyListObject *)cpy_r_r2969)->ob_item;
@@ -8689,12 +8689,12 @@ CPyL477: ;
     cpy_r_r2978 = CPyStatics[43]; /* 'string' */
     cpy_r_r2979 = CPyDict_Build(2, cpy_r_r2975, cpy_r_r2976, cpy_r_r2977, cpy_r_r2978);
     if (unlikely(cpy_r_r2979 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1134, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1135, CPyStatic_globals);
         goto CPyL923;
     }
     cpy_r_r2980 = PyList_New(1);
     if (unlikely(cpy_r_r2980 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1134, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1135, CPyStatic_globals);
         goto CPyL924;
     }
     cpy_r_r2981 = (CPyPtr)&((PyListObject *)cpy_r_r2980)->ob_item;
@@ -8711,7 +8711,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r2969);
     CPy_DECREF_NO_IMM(cpy_r_r2980);
     if (unlikely(cpy_r_r2990 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1130, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1131, CPyStatic_globals);
         goto CPyL921;
     }
     cpy_r_r2991 = CPyStatics[9]; /* 'constant' */
@@ -8722,7 +8722,7 @@ CPyL477: ;
     cpy_r_r2996 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r2997 = CPyDict_Build(2, cpy_r_r2993, cpy_r_r2994, cpy_r_r2995, cpy_r_r2996);
     if (unlikely(cpy_r_r2997 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1142, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1143, CPyStatic_globals);
         goto CPyL925;
     }
     cpy_r_r2998 = CPyStatics[11]; /* 'name' */
@@ -8731,12 +8731,12 @@ CPyL477: ;
     cpy_r_r3001 = CPyStatics[43]; /* 'string' */
     cpy_r_r3002 = CPyDict_Build(2, cpy_r_r2998, cpy_r_r2999, cpy_r_r3000, cpy_r_r3001);
     if (unlikely(cpy_r_r3002 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1143, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1144, CPyStatic_globals);
         goto CPyL926;
     }
     cpy_r_r3003 = PyList_New(2);
     if (unlikely(cpy_r_r3003 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1141, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1142, CPyStatic_globals);
         goto CPyL927;
     }
     cpy_r_r3004 = (CPyPtr)&((PyListObject *)cpy_r_r3003)->ob_item;
@@ -8749,7 +8749,7 @@ CPyL477: ;
     cpy_r_r3009 = CPyStatics[16]; /* 'outputs' */
     cpy_r_r3010 = PyList_New(0);
     if (unlikely(cpy_r_r3010 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1146, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1147, CPyStatic_globals);
         goto CPyL928;
     }
     cpy_r_r3011 = CPyStatics[19]; /* 'payable' */
@@ -8763,7 +8763,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3003);
     CPy_DECREF_NO_IMM(cpy_r_r3010);
     if (unlikely(cpy_r_r3018 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1139, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1140, CPyStatic_globals);
         goto CPyL925;
     }
     cpy_r_r3019 = CPyStatics[10]; /* 'inputs' */
@@ -8773,12 +8773,12 @@ CPyL477: ;
     cpy_r_r3023 = CPyStatics[18]; /* 'address' */
     cpy_r_r3024 = CPyDict_Build(2, cpy_r_r3020, cpy_r_r3021, cpy_r_r3022, cpy_r_r3023);
     if (unlikely(cpy_r_r3024 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1152, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1153, CPyStatic_globals);
         goto CPyL929;
     }
     cpy_r_r3025 = PyList_New(1);
     if (unlikely(cpy_r_r3025 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1152, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1153, CPyStatic_globals);
         goto CPyL930;
     }
     cpy_r_r3026 = (CPyPtr)&((PyListObject *)cpy_r_r3025)->ob_item;
@@ -8793,12 +8793,12 @@ CPyL477: ;
     cpy_r_r3034 = CPyDict_Build(4, cpy_r_r3019, cpy_r_r3025, cpy_r_r3028, cpy_r_r3033, cpy_r_r3029, cpy_r_r3030, cpy_r_r3031, cpy_r_r3032);
     CPy_DECREF_NO_IMM(cpy_r_r3025);
     if (unlikely(cpy_r_r3034 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1151, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1152, CPyStatic_globals);
         goto CPyL929;
     }
     cpy_r_r3035 = PyList_New(4);
     if (unlikely(cpy_r_r3035 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1120, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1121, CPyStatic_globals);
         goto CPyL931;
     }
     cpy_r_r3036 = (CPyPtr)&((PyListObject *)cpy_r_r3035)->ob_item;
@@ -8818,7 +8818,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3035);
     cpy_r_r3044 = cpy_r_r3043 >= 0;
     if (unlikely(!cpy_r_r3044)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1120, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1121, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r3045 = CPyStatics[9]; /* 'constant' */
@@ -8829,7 +8829,7 @@ CPyL477: ;
     cpy_r_r3050 = CPyStatics[18]; /* 'address' */
     cpy_r_r3051 = CPyDict_Build(2, cpy_r_r3047, cpy_r_r3048, cpy_r_r3049, cpy_r_r3050);
     if (unlikely(cpy_r_r3051 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1163, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1164, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r3052 = CPyStatics[11]; /* 'name' */
@@ -8838,12 +8838,12 @@ CPyL477: ;
     cpy_r_r3055 = CPyStatics[18]; /* 'address' */
     cpy_r_r3056 = CPyDict_Build(2, cpy_r_r3052, cpy_r_r3053, cpy_r_r3054, cpy_r_r3055);
     if (unlikely(cpy_r_r3056 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1164, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1165, CPyStatic_globals);
         goto CPyL932;
     }
     cpy_r_r3057 = PyList_New(2);
     if (unlikely(cpy_r_r3057 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1162, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1163, CPyStatic_globals);
         goto CPyL933;
     }
     cpy_r_r3058 = (CPyPtr)&((PyListObject *)cpy_r_r3057)->ob_item;
@@ -8860,12 +8860,12 @@ CPyL477: ;
     cpy_r_r3067 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r3068 = CPyDict_Build(2, cpy_r_r3064, cpy_r_r3065, cpy_r_r3066, cpy_r_r3067);
     if (unlikely(cpy_r_r3068 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1167, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1168, CPyStatic_globals);
         goto CPyL934;
     }
     cpy_r_r3069 = PyList_New(1);
     if (unlikely(cpy_r_r3069 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1167, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1168, CPyStatic_globals);
         goto CPyL935;
     }
     cpy_r_r3070 = (CPyPtr)&((PyListObject *)cpy_r_r3069)->ob_item;
@@ -8880,7 +8880,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3057);
     CPy_DECREF_NO_IMM(cpy_r_r3069);
     if (unlikely(cpy_r_r3077 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1160, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1161, CPyStatic_globals);
         goto CPyL547;
     }
     cpy_r_r3078 = CPyStatics[9]; /* 'constant' */
@@ -8891,12 +8891,12 @@ CPyL477: ;
     cpy_r_r3083 = CPyStatics[18]; /* 'address' */
     cpy_r_r3084 = CPyDict_Build(2, cpy_r_r3080, cpy_r_r3081, cpy_r_r3082, cpy_r_r3083);
     if (unlikely(cpy_r_r3084 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1173, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1174, CPyStatic_globals);
         goto CPyL936;
     }
     cpy_r_r3085 = PyList_New(1);
     if (unlikely(cpy_r_r3085 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1173, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1174, CPyStatic_globals);
         goto CPyL937;
     }
     cpy_r_r3086 = (CPyPtr)&((PyListObject *)cpy_r_r3085)->ob_item;
@@ -8911,12 +8911,12 @@ CPyL477: ;
     cpy_r_r3094 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r3095 = CPyDict_Build(2, cpy_r_r3091, cpy_r_r3092, cpy_r_r3093, cpy_r_r3094);
     if (unlikely(cpy_r_r3095 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1175, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1176, CPyStatic_globals);
         goto CPyL938;
     }
     cpy_r_r3096 = PyList_New(1);
     if (unlikely(cpy_r_r3096 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1175, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1176, CPyStatic_globals);
         goto CPyL939;
     }
     cpy_r_r3097 = (CPyPtr)&((PyListObject *)cpy_r_r3096)->ob_item;
@@ -8931,14 +8931,14 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3085);
     CPy_DECREF_NO_IMM(cpy_r_r3096);
     if (unlikely(cpy_r_r3104 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1171, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1172, CPyStatic_globals);
         goto CPyL936;
     }
     cpy_r_r3105 = CPyStatics[9]; /* 'constant' */
     cpy_r_r3106 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r3107 = PyList_New(0);
     if (unlikely(cpy_r_r3107 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1181, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1182, CPyStatic_globals);
         goto CPyL940;
     }
     cpy_r_r3108 = CPyStatics[11]; /* 'name' */
@@ -8950,12 +8950,12 @@ CPyL477: ;
     cpy_r_r3114 = CPyStatics[18]; /* 'address' */
     cpy_r_r3115 = CPyDict_Build(2, cpy_r_r3111, cpy_r_r3112, cpy_r_r3113, cpy_r_r3114);
     if (unlikely(cpy_r_r3115 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1183, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1184, CPyStatic_globals);
         goto CPyL941;
     }
     cpy_r_r3116 = PyList_New(1);
     if (unlikely(cpy_r_r3116 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1183, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1184, CPyStatic_globals);
         goto CPyL942;
     }
     cpy_r_r3117 = (CPyPtr)&((PyListObject *)cpy_r_r3116)->ob_item;
@@ -8970,14 +8970,14 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3107);
     CPy_DECREF_NO_IMM(cpy_r_r3116);
     if (unlikely(cpy_r_r3124 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1179, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1180, CPyStatic_globals);
         goto CPyL940;
     }
     cpy_r_r3125 = CPyStatics[9]; /* 'constant' */
     cpy_r_r3126 = CPyStatics[10]; /* 'inputs' */
     cpy_r_r3127 = PyList_New(0);
     if (unlikely(cpy_r_r3127 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1189, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1190, CPyStatic_globals);
         goto CPyL943;
     }
     cpy_r_r3128 = CPyStatics[11]; /* 'name' */
@@ -8989,12 +8989,12 @@ CPyL477: ;
     cpy_r_r3134 = CPyStatics[18]; /* 'address' */
     cpy_r_r3135 = CPyDict_Build(2, cpy_r_r3131, cpy_r_r3132, cpy_r_r3133, cpy_r_r3134);
     if (unlikely(cpy_r_r3135 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1191, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1192, CPyStatic_globals);
         goto CPyL944;
     }
     cpy_r_r3136 = PyList_New(1);
     if (unlikely(cpy_r_r3136 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1191, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1192, CPyStatic_globals);
         goto CPyL945;
     }
     cpy_r_r3137 = (CPyPtr)&((PyListObject *)cpy_r_r3136)->ob_item;
@@ -9009,7 +9009,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3127);
     CPy_DECREF_NO_IMM(cpy_r_r3136);
     if (unlikely(cpy_r_r3144 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1187, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1188, CPyStatic_globals);
         goto CPyL943;
     }
     cpy_r_r3145 = CPyStatics[9]; /* 'constant' */
@@ -9020,12 +9020,12 @@ CPyL477: ;
     cpy_r_r3150 = CPyStatics[18]; /* 'address' */
     cpy_r_r3151 = CPyDict_Build(2, cpy_r_r3147, cpy_r_r3148, cpy_r_r3149, cpy_r_r3150);
     if (unlikely(cpy_r_r3151 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1197, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1198, CPyStatic_globals);
         goto CPyL946;
     }
     cpy_r_r3152 = PyList_New(1);
     if (unlikely(cpy_r_r3152 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1197, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1198, CPyStatic_globals);
         goto CPyL947;
     }
     cpy_r_r3153 = (CPyPtr)&((PyListObject *)cpy_r_r3152)->ob_item;
@@ -9040,12 +9040,12 @@ CPyL477: ;
     cpy_r_r3161 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r3162 = CPyDict_Build(2, cpy_r_r3158, cpy_r_r3159, cpy_r_r3160, cpy_r_r3161);
     if (unlikely(cpy_r_r3162 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1199, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1200, CPyStatic_globals);
         goto CPyL948;
     }
     cpy_r_r3163 = PyList_New(1);
     if (unlikely(cpy_r_r3163 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1199, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1200, CPyStatic_globals);
         goto CPyL949;
     }
     cpy_r_r3164 = (CPyPtr)&((PyListObject *)cpy_r_r3163)->ob_item;
@@ -9060,7 +9060,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3152);
     CPy_DECREF_NO_IMM(cpy_r_r3163);
     if (unlikely(cpy_r_r3171 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1195, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1196, CPyStatic_globals);
         goto CPyL946;
     }
     cpy_r_r3172 = CPyStatics[9]; /* 'constant' */
@@ -9071,12 +9071,12 @@ CPyL477: ;
     cpy_r_r3177 = CPyStatics[43]; /* 'string' */
     cpy_r_r3178 = CPyDict_Build(2, cpy_r_r3174, cpy_r_r3175, cpy_r_r3176, cpy_r_r3177);
     if (unlikely(cpy_r_r3178 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1205, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1206, CPyStatic_globals);
         goto CPyL950;
     }
     cpy_r_r3179 = PyList_New(1);
     if (unlikely(cpy_r_r3179 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1205, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1206, CPyStatic_globals);
         goto CPyL951;
     }
     cpy_r_r3180 = (CPyPtr)&((PyListObject *)cpy_r_r3179)->ob_item;
@@ -9091,12 +9091,12 @@ CPyL477: ;
     cpy_r_r3188 = CPyStatics[14]; /* 'bytes32' */
     cpy_r_r3189 = CPyDict_Build(2, cpy_r_r3185, cpy_r_r3186, cpy_r_r3187, cpy_r_r3188);
     if (unlikely(cpy_r_r3189 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1207, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1208, CPyStatic_globals);
         goto CPyL952;
     }
     cpy_r_r3190 = PyList_New(1);
     if (unlikely(cpy_r_r3190 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1207, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1208, CPyStatic_globals);
         goto CPyL953;
     }
     cpy_r_r3191 = (CPyPtr)&((PyListObject *)cpy_r_r3190)->ob_item;
@@ -9111,7 +9111,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3179);
     CPy_DECREF_NO_IMM(cpy_r_r3190);
     if (unlikely(cpy_r_r3198 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1203, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1204, CPyStatic_globals);
         goto CPyL950;
     }
     cpy_r_r3199 = CPyStatics[10]; /* 'inputs' */
@@ -9121,7 +9121,7 @@ CPyL477: ;
     cpy_r_r3203 = CPyStatics[18]; /* 'address' */
     cpy_r_r3204 = CPyDict_Build(2, cpy_r_r3200, cpy_r_r3201, cpy_r_r3202, cpy_r_r3203);
     if (unlikely(cpy_r_r3204 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1213, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1214, CPyStatic_globals);
         goto CPyL954;
     }
     cpy_r_r3205 = CPyStatics[11]; /* 'name' */
@@ -9130,12 +9130,12 @@ CPyL477: ;
     cpy_r_r3208 = CPyStatics[18]; /* 'address' */
     cpy_r_r3209 = CPyDict_Build(2, cpy_r_r3205, cpy_r_r3206, cpy_r_r3207, cpy_r_r3208);
     if (unlikely(cpy_r_r3209 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1214, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1215, CPyStatic_globals);
         goto CPyL955;
     }
     cpy_r_r3210 = PyList_New(2);
     if (unlikely(cpy_r_r3210 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1212, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1213, CPyStatic_globals);
         goto CPyL956;
     }
     cpy_r_r3211 = (CPyPtr)&((PyListObject *)cpy_r_r3210)->ob_item;
@@ -9150,12 +9150,12 @@ CPyL477: ;
     cpy_r_r3218 = CPyDict_Build(3, cpy_r_r3199, cpy_r_r3210, cpy_r_r3214, cpy_r_r3217, cpy_r_r3215, cpy_r_r3216);
     CPy_DECREF_NO_IMM(cpy_r_r3210);
     if (unlikely(cpy_r_r3218 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1211, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1212, CPyStatic_globals);
         goto CPyL954;
     }
     cpy_r_r3219 = PyList_New(7);
     if (unlikely(cpy_r_r3219 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1159, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1160, CPyStatic_globals);
         goto CPyL957;
     }
     cpy_r_r3220 = (CPyPtr)&((PyListObject *)cpy_r_r3219)->ob_item;
@@ -9181,7 +9181,7 @@ CPyL477: ;
     CPy_DECREF_NO_IMM(cpy_r_r3219);
     cpy_r_r3231 = cpy_r_r3230 >= 0;
     if (unlikely(!cpy_r_r3231)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1159, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1160, CPyStatic_globals);
         goto CPyL547;
     }
     return 1;
