@@ -5,6 +5,7 @@ from typing import (
     Callable,
     Dict,
     Final,
+    List,
     NoReturn,
     Optional,
 )
