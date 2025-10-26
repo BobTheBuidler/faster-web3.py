@@ -28,8 +28,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: dist/
-        key: wheel-${{ runner.os }}-py${{ inputs.python-version }}-${{ hashFiles('pyproject.toml', 'setup.py', 'faster_web3/**/*.py', 'faster_ens/**/*.py', '**/*.c', '**/*.h') }}
-        restore-keys: wheel-${{ runner.os }}-py${{ inputs.python-version }}-
+        key: wheel-artifact-${{ runner.os }}-py${{ inputs.python-version }}-${{ hashFiles('pyproject.toml', 'setup.py', 'faster_web3/**/*.py', 'faster_ens/**/*.py', '**/*.c', '**/*.h') }}
 
     - name: Set ccache-dir variable
       if: steps.wheel-cache.outputs.cache-hit != 'true'
