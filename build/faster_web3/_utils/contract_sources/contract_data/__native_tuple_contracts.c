@@ -423,7 +423,7 @@ CPyL3: ;
     cpy_r_r7 = CPyStatic_globals;
     cpy_r_r8 = CPyImport_ImportFromMany(cpy_r_r6, cpy_r_r5, cpy_r_r5, cpy_r_r7);
     if (unlikely(cpy_r_r8 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 6, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 7, CPyStatic_globals);
         goto CPyL76;
     }
     CPyModule_typing = cpy_r_r8;
@@ -434,7 +434,7 @@ CPyL3: ;
     cpy_r_r11 = CPyStatic_globals;
     cpy_r_r12 = CPyImport_ImportFromMany(cpy_r_r10, cpy_r_r9, cpy_r_r9, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 11, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 12, CPyStatic_globals);
         goto CPyL76;
     }
     CPyModule_eth_typing = cpy_r_r12;
@@ -448,7 +448,7 @@ CPyL3: ;
     cpy_r_r16 = CPyDict_SetItem(cpy_r_r14, cpy_r_r15, cpy_r_r13);
     cpy_r_r17 = cpy_r_r16 >= 0;
     if (unlikely(!cpy_r_r17)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 17, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 18, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r18 = CPyStatics[12]; /* '0x608060405234801561000f575f5ffd5b5060043610610029575f3560e01c80638e1ae3c71461002d575b5f5ffd5b6100476004803603810190610042919061064d565b61005d565b6040516100549190610a12565b60405180910390f35b61006561006d565b819050919050565b60405180606001604052805f815260200160608152602001606081525090565b5f604051905090565b5f5ffd5b5f5ffd5b5f5ffd5b5f601f19601f8301169050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6100e8826100a2565b810181811067ffffffffffffffff82111715610107576101066100b2565b5b80604052505050565b5f61011961008d565b905061012582826100df565b919050565b5f5ffd5b5f819050919050565b6101408161012e565b811461014a575f5ffd5b50565b5f8135905061015b81610137565b92915050565b5f5ffd5b5f67ffffffffffffffff82111561017f5761017e6100b2565b5b602082029050602081019050919050565b5f5ffd5b5f6101a66101a184610165565b610110565b905080838252602082019050602084028301858111156101c9576101c8610190565b5b835b818110156101f257806101de888261014d565b8452602084019350506020810190506101cb565b5050509392505050565b5f82601f8301126102105761020f610161565b5b8135610220848260208601610194565b91505092915050565b5f67ffffffffffffffff821115610243576102426100b2565b5b602082029050602081019050919050565b5f819050919050565b61026681610254565b8114610270575f5ffd5b50565b5f813590506102818161025d565b92915050565b5f67ffffffffffffffff8211156102a1576102a06100b2565b5b602082029050919050565b5f8115159050919050565b6102c0816102ac565b81146102ca575f5ffd5b50565b5f813590506102db816102b7565b92915050565b5f6102f36102ee84610287565b610110565b9050806020840283018581111561030d5761030c610190565b5b835b81811015610336578061032288826102cd565b84526020840193505060208101905061030f565b5050509392505050565b5f82601f83011261035457610353610161565b5b60026103618482856102e1565b91505092915050565b5f67ffffffffffffffff821115610384576103836100b2565b5b602082029050602081019050919050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6103be82610395565b9050919050565b6103ce816103b4565b81146103d8575f5ffd5b50565b5f813590506103e9816103c5565b92915050565b5f6104016103fc8461036a565b610110565b9050808382526020820190506020840283018581111561042457610423610190565b5b835b8181101561044d578061043988826103db565b845260208401935050602081019050610426565b5050509392505050565b5f82601f83011261046b5761046a610161565b5b813561047b8482602086016103ef565b91505092915050565b5f608082840312156104995761049861009e565b5b6104a36060610110565b90505f6104b284828501610273565b5f8301525060206104c584828501610340565b602083015250606082013567ffffffffffffffff8111156104e9576104e861012a565b5b6104f584828501610457565b60408301525092915050565b5f61051361050e84610229565b610110565b9050808382526020820190506020840283018581111561053657610535610190565b5b835b8181101561057d57803567ffffffffffffffff81111561055b5761055a610161565b5b8086016105688982610484565b85526020850194505050602081019050610538565b5050509392505050565b5f82601f83011261059b5761059a610161565b5b81356105ab848260208601610501565b91505092915050565b5f606082840312156105c9576105c861009e565b5b6105d36060610110565b90505f6105e28482850161014d565b5f83015250602082013567ffffffffffffffff8111156106055761060461012a565b5b610611848285016101fc565b602083015250604082013567ffffffffffffffff8111156106355761063461012a565b5b61064184828501610587565b60408301525092915050565b5f6020828403121561066257610661610096565b5b5f82013567ffffffffffffffff81111561067f5761067e61009a565b5b61068b848285016105b4565b91505092915050565b61069d8161012e565b82525050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b5f6106d78383610694565b60208301905092915050565b5f602082019050919050565b5f6106f9826106a3565b61070381856106ad565b935061070e836106bd565b805f5b8381101561073e57815161072588826106cc565b9750610730836106e3565b925050600181019050610711565b5085935050505092915050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b61077d81610254565b82525050565b5f60029050919050565b5f81905092915050565b5f819050919050565b6107a9816102ac565b82525050565b5f6107ba83836107a0565b60208301905092915050565b5f602082019050919050565b6107db81610783565b6107e5818461078d565b92506107f082610797565b805f5b8381101561082057815161080787826107af565b9650610812836107c6565b9250506001810190506107f3565b505050505050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b61085a816103b4565b82525050565b5f61086b8383610851565b60208301905092915050565b5f602082019050919050565b5f61088d82610828565b6108978185610832565b93506108a283610842565b805f5b838110156108d25781516108b98882610860565b97506108c483610877565b9250506001810190506108a5565b5085935050505092915050565b5f608083015f8301516108f45f860182610774565b50602083015161090760208601826107d2565b506040830151848203606086015261091f8282610883565b9150508091505092915050565b5f61093783836108df565b905092915050565b5f602082019050919050565b5f6109558261074b565b61095f8185610755565b93508360208202850161097185610765565b805f5b858110156109ac578484038952815161098d858261092c565b94506109988361093f565b925060208a01995050600181019050610974565b50829750879550505050505092915050565b5f606083015f8301516109d35f860182610694565b50602083015184820360208601526109eb82826106ef565b91505060408301518482036040860152610a05828261094b565b9150508091505092915050565b5f6020820190508181035f830152610a2a81846109be565b90509291505056fea26469706673582212207c5620c2257d173ed894791417ffad7e98aad1aab11d2ec22b5148e5d77de0c464736f6c634300081e0033' */
@@ -459,7 +459,7 @@ CPyL3: ;
     cpy_r_r21 = CPyDict_SetItem(cpy_r_r19, cpy_r_r20, cpy_r_r18);
     cpy_r_r22 = cpy_r_r21 >= 0;
     if (unlikely(!cpy_r_r22)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 20, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 21, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r23 = CPyStatics[14]; /* 'inputs' */
@@ -472,7 +472,7 @@ CPyL3: ;
     cpy_r_r30 = CPyStatics[17]; /* 'uint256' */
     cpy_r_r31 = CPyDict_Build(3, cpy_r_r25, cpy_r_r26, cpy_r_r27, cpy_r_r28, cpy_r_r29, cpy_r_r30);
     if (unlikely(cpy_r_r31 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 28, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 29, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r32 = CPyStatics[16]; /* 'internalType' */
@@ -483,7 +483,7 @@ CPyL3: ;
     cpy_r_r37 = CPyStatics[21]; /* 'uint256[]' */
     cpy_r_r38 = CPyDict_Build(3, cpy_r_r32, cpy_r_r33, cpy_r_r34, cpy_r_r35, cpy_r_r36, cpy_r_r37);
     if (unlikely(cpy_r_r38 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 29, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 30, CPyStatic_globals);
         goto CPyL77;
     }
     cpy_r_r39 = CPyStatics[15]; /* 'components' */
@@ -495,7 +495,7 @@ CPyL3: ;
     cpy_r_r45 = CPyStatics[23]; /* 'int256' */
     cpy_r_r46 = CPyDict_Build(3, cpy_r_r40, cpy_r_r41, cpy_r_r42, cpy_r_r43, cpy_r_r44, cpy_r_r45);
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 32, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 33, CPyStatic_globals);
         goto CPyL78;
     }
     cpy_r_r47 = CPyStatics[16]; /* 'internalType' */
@@ -506,7 +506,7 @@ CPyL3: ;
     cpy_r_r52 = CPyStatics[25]; /* 'bool[2]' */
     cpy_r_r53 = CPyDict_Build(3, cpy_r_r47, cpy_r_r48, cpy_r_r49, cpy_r_r50, cpy_r_r51, cpy_r_r52);
     if (unlikely(cpy_r_r53 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 33, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 34, CPyStatic_globals);
         goto CPyL79;
     }
     cpy_r_r54 = CPyStatics[16]; /* 'internalType' */
@@ -517,12 +517,12 @@ CPyL3: ;
     cpy_r_r59 = CPyStatics[27]; /* 'address[]' */
     cpy_r_r60 = CPyDict_Build(3, cpy_r_r54, cpy_r_r55, cpy_r_r56, cpy_r_r57, cpy_r_r58, cpy_r_r59);
     if (unlikely(cpy_r_r60 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 34, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 35, CPyStatic_globals);
         goto CPyL80;
     }
     cpy_r_r61 = PyList_New(3);
     if (unlikely(cpy_r_r61 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 31, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 32, CPyStatic_globals);
         goto CPyL81;
     }
     cpy_r_r62 = (CPyPtr)&((PyListObject *)cpy_r_r61)->ob_item;
@@ -541,12 +541,12 @@ CPyL3: ;
     cpy_r_r72 = CPyDict_Build(4, cpy_r_r39, cpy_r_r61, cpy_r_r66, cpy_r_r67, cpy_r_r68, cpy_r_r69, cpy_r_r70, cpy_r_r71);
     CPy_DECREF_NO_IMM(cpy_r_r61);
     if (unlikely(cpy_r_r72 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 30, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 31, CPyStatic_globals);
         goto CPyL78;
     }
     cpy_r_r73 = PyList_New(3);
     if (unlikely(cpy_r_r73 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 27, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 28, CPyStatic_globals);
         goto CPyL82;
     }
     cpy_r_r74 = (CPyPtr)&((PyListObject *)cpy_r_r73)->ob_item;
@@ -565,12 +565,12 @@ CPyL3: ;
     cpy_r_r84 = CPyDict_Build(4, cpy_r_r24, cpy_r_r73, cpy_r_r78, cpy_r_r79, cpy_r_r80, cpy_r_r81, cpy_r_r82, cpy_r_r83);
     CPy_DECREF_NO_IMM(cpy_r_r73);
     if (unlikely(cpy_r_r84 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 26, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 27, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r85 = PyList_New(1);
     if (unlikely(cpy_r_r85 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 25, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 26, CPyStatic_globals);
         goto CPyL83;
     }
     cpy_r_r86 = (CPyPtr)&((PyListObject *)cpy_r_r85)->ob_item;
@@ -588,7 +588,7 @@ CPyL3: ;
     cpy_r_r97 = CPyStatics[17]; /* 'uint256' */
     cpy_r_r98 = CPyDict_Build(3, cpy_r_r92, cpy_r_r93, cpy_r_r94, cpy_r_r95, cpy_r_r96, cpy_r_r97);
     if (unlikely(cpy_r_r98 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 54, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 55, CPyStatic_globals);
         goto CPyL84;
     }
     cpy_r_r99 = CPyStatics[16]; /* 'internalType' */
@@ -599,7 +599,7 @@ CPyL3: ;
     cpy_r_r104 = CPyStatics[21]; /* 'uint256[]' */
     cpy_r_r105 = CPyDict_Build(3, cpy_r_r99, cpy_r_r100, cpy_r_r101, cpy_r_r102, cpy_r_r103, cpy_r_r104);
     if (unlikely(cpy_r_r105 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 55, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 56, CPyStatic_globals);
         goto CPyL85;
     }
     cpy_r_r106 = CPyStatics[15]; /* 'components' */
@@ -611,7 +611,7 @@ CPyL3: ;
     cpy_r_r112 = CPyStatics[23]; /* 'int256' */
     cpy_r_r113 = CPyDict_Build(3, cpy_r_r107, cpy_r_r108, cpy_r_r109, cpy_r_r110, cpy_r_r111, cpy_r_r112);
     if (unlikely(cpy_r_r113 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 58, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 59, CPyStatic_globals);
         goto CPyL86;
     }
     cpy_r_r114 = CPyStatics[16]; /* 'internalType' */
@@ -622,7 +622,7 @@ CPyL3: ;
     cpy_r_r119 = CPyStatics[25]; /* 'bool[2]' */
     cpy_r_r120 = CPyDict_Build(3, cpy_r_r114, cpy_r_r115, cpy_r_r116, cpy_r_r117, cpy_r_r118, cpy_r_r119);
     if (unlikely(cpy_r_r120 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 59, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 60, CPyStatic_globals);
         goto CPyL87;
     }
     cpy_r_r121 = CPyStatics[16]; /* 'internalType' */
@@ -633,12 +633,12 @@ CPyL3: ;
     cpy_r_r126 = CPyStatics[27]; /* 'address[]' */
     cpy_r_r127 = CPyDict_Build(3, cpy_r_r121, cpy_r_r122, cpy_r_r123, cpy_r_r124, cpy_r_r125, cpy_r_r126);
     if (unlikely(cpy_r_r127 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 60, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 61, CPyStatic_globals);
         goto CPyL88;
     }
     cpy_r_r128 = PyList_New(3);
     if (unlikely(cpy_r_r128 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 57, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 58, CPyStatic_globals);
         goto CPyL89;
     }
     cpy_r_r129 = (CPyPtr)&((PyListObject *)cpy_r_r128)->ob_item;
@@ -657,12 +657,12 @@ CPyL3: ;
     cpy_r_r139 = CPyDict_Build(4, cpy_r_r106, cpy_r_r128, cpy_r_r133, cpy_r_r134, cpy_r_r135, cpy_r_r136, cpy_r_r137, cpy_r_r138);
     CPy_DECREF_NO_IMM(cpy_r_r128);
     if (unlikely(cpy_r_r139 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 56, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 57, CPyStatic_globals);
         goto CPyL86;
     }
     cpy_r_r140 = PyList_New(3);
     if (unlikely(cpy_r_r140 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 53, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 54, CPyStatic_globals);
         goto CPyL90;
     }
     cpy_r_r141 = (CPyPtr)&((PyListObject *)cpy_r_r140)->ob_item;
@@ -681,12 +681,12 @@ CPyL3: ;
     cpy_r_r151 = CPyDict_Build(4, cpy_r_r91, cpy_r_r140, cpy_r_r145, cpy_r_r146, cpy_r_r147, cpy_r_r148, cpy_r_r149, cpy_r_r150);
     CPy_DECREF_NO_IMM(cpy_r_r140);
     if (unlikely(cpy_r_r151 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 52, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 53, CPyStatic_globals);
         goto CPyL84;
     }
     cpy_r_r152 = PyList_New(1);
     if (unlikely(cpy_r_r152 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 51, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 52, CPyStatic_globals);
         goto CPyL91;
     }
     cpy_r_r153 = (CPyPtr)&((PyListObject *)cpy_r_r152)->ob_item;
@@ -700,12 +700,12 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r85);
     CPy_DECREF_NO_IMM(cpy_r_r152);
     if (unlikely(cpy_r_r159 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 24, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 25, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r160 = PyList_New(1);
     if (unlikely(cpy_r_r160 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 23, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 24, CPyStatic_globals);
         goto CPyL92;
     }
     cpy_r_r161 = (CPyPtr)&((PyListObject *)cpy_r_r160)->ob_item;
@@ -719,7 +719,7 @@ CPyL3: ;
     CPy_DECREF_NO_IMM(cpy_r_r160);
     cpy_r_r166 = cpy_r_r165 >= 0;
     if (unlikely(!cpy_r_r166)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 23, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 24, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r167 = CPyStatics[42]; /* 'bytecode' */
@@ -728,7 +728,7 @@ CPyL3: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"TUPLE_CONTRACT_BYTECODE\" was not set");
     cpy_r_r169 = 0;
     if (unlikely(!cpy_r_r169)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 81, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 82, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
@@ -739,7 +739,7 @@ CPyL33: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"TUPLE_CONTRACT_RUNTIME\" was not set");
     cpy_r_r172 = 0;
     if (unlikely(!cpy_r_r172)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 82, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 83, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
@@ -750,14 +750,14 @@ CPyL36: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"TUPLE_CONTRACT_ABI\" was not set");
     cpy_r_r175 = 0;
     if (unlikely(!cpy_r_r175)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 83, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 84, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
 CPyL39: ;
     cpy_r_r176 = CPyDict_Build(3, cpy_r_r167, cpy_r_r168, cpy_r_r170, cpy_r_r171, cpy_r_r173, cpy_r_r174);
     if (unlikely(cpy_r_r176 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 80, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 81, CPyStatic_globals);
         goto CPyL76;
     }
     CPyStatic_TUPLE_CONTRACT_DATA = cpy_r_r176;
@@ -768,7 +768,7 @@ CPyL39: ;
     CPy_DECREF(cpy_r_r176);
     cpy_r_r180 = cpy_r_r179 >= 0;
     if (unlikely(!cpy_r_r180)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 80, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 81, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r181 = CPyStatics[46]; /* '0x6080604052348015600e575f5ffd5b5061067b8061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610029575f3560e01c80632655aef11461002d575b5f5ffd5b610047600480360381019061004291906103f1565b61005d565b6040516100549190610625565b60405180910390f35b61006561006d565b819050919050565b6040518060200160405280606081525090565b5f604051905090565b5f5ffd5b5f5ffd5b5f5ffd5b5f601f19601f8301169050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6100db82610095565b810181811067ffffffffffffffff821117156100fa576100f96100a5565b5b80604052505050565b5f61010c610080565b905061011882826100d2565b919050565b5f5ffd5b5f5ffd5b5f67ffffffffffffffff82111561013f5761013e6100a5565b5b602082029050602081019050919050565b5f5ffd5b5f67ffffffffffffffff82111561016e5761016d6100a5565b5b602082029050602081019050919050565b5f819050919050565b6101918161017f565b811461019b575f5ffd5b50565b5f813590506101ac81610188565b92915050565b5f604082840312156101c7576101c6610091565b5b6101d16040610103565b90505f6101e08482850161019e565b5f8301525060206101f38482850161019e565b60208301525092915050565b5f61021161020c84610154565b610103565b9050808382526020820190506040840283018581111561023457610233610150565b5b835b8181101561025d578061024988826101b2565b845260208401935050604081019050610236565b5050509392505050565b5f82601f83011261027b5761027a610121565b5b813561028b8482602086016101ff565b91505092915050565b5f602082840312156102a9576102a8610091565b5b6102b36020610103565b90505f82013567ffffffffffffffff8111156102d2576102d161011d565b5b6102de84828501610267565b5f8301525092915050565b5f6102fb6102f684610125565b610103565b9050808382526020820190506020840283018581111561031e5761031d610150565b5b835b8181101561036557803567ffffffffffffffff81111561034357610342610121565b5b8086016103508982610294565b85526020850194505050602081019050610320565b5050509392505050565b5f82601f83011261038357610382610121565b5b81356103938482602086016102e9565b91505092915050565b5f602082840312156103b1576103b0610091565b5b6103bb6020610103565b90505f82013567ffffffffffffffff8111156103da576103d961011d565b5b6103e68482850161036f565b5f8301525092915050565b5f6020828403121561040657610405610089565b5b5f82013567ffffffffffffffff8111156104235761042261008d565b5b61042f8482850161039c565b91505092915050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b6104938161017f565b82525050565b604082015f8201516104ad5f85018261048a565b5060208201516104c0602085018261048a565b50505050565b5f6104d18383610499565b60408301905092915050565b5f602082019050919050565b5f6104f382610461565b6104fd818561046b565b93506105088361047b565b805f5b8381101561053857815161051f88826104c6565b975061052a836104dd565b92505060018101905061050b565b5085935050505092915050565b5f602083015f8301518482035f86015261055f82826104e9565b9150508091505092915050565b5f6105778383610545565b905092915050565b5f602082019050919050565b5f61059582610438565b61059f8185610442565b9350836020820285016105b185610452565b805f5b858110156105ec57848403895281516105cd858261056c565b94506105d88361057f565b925060208a019950506001810190506105b4565b50829750879550505050505092915050565b5f602083015f8301518482035f860152610618828261058b565b9150508091505092915050565b5f6020820190508181035f83015261063d81846105fe565b90509291505056fea2646970667358221220e9a46dd271224211ac317ab5deb76259a8309e527c859b3d977cfc261a3780db64736f6c634300081e0033' */
@@ -779,7 +779,7 @@ CPyL39: ;
     cpy_r_r184 = CPyDict_SetItem(cpy_r_r182, cpy_r_r183, cpy_r_r181);
     cpy_r_r185 = cpy_r_r184 >= 0;
     if (unlikely(!cpy_r_r185)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 88, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 89, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r186 = CPyStatics[48]; /* '0x608060405234801561000f575f5ffd5b5060043610610029575f3560e01c80632655aef11461002d575b5f5ffd5b610047600480360381019061004291906103f1565b61005d565b6040516100549190610625565b60405180910390f35b61006561006d565b819050919050565b6040518060200160405280606081525090565b5f604051905090565b5f5ffd5b5f5ffd5b5f5ffd5b5f601f19601f8301169050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6100db82610095565b810181811067ffffffffffffffff821117156100fa576100f96100a5565b5b80604052505050565b5f61010c610080565b905061011882826100d2565b919050565b5f5ffd5b5f5ffd5b5f67ffffffffffffffff82111561013f5761013e6100a5565b5b602082029050602081019050919050565b5f5ffd5b5f67ffffffffffffffff82111561016e5761016d6100a5565b5b602082029050602081019050919050565b5f819050919050565b6101918161017f565b811461019b575f5ffd5b50565b5f813590506101ac81610188565b92915050565b5f604082840312156101c7576101c6610091565b5b6101d16040610103565b90505f6101e08482850161019e565b5f8301525060206101f38482850161019e565b60208301525092915050565b5f61021161020c84610154565b610103565b9050808382526020820190506040840283018581111561023457610233610150565b5b835b8181101561025d578061024988826101b2565b845260208401935050604081019050610236565b5050509392505050565b5f82601f83011261027b5761027a610121565b5b813561028b8482602086016101ff565b91505092915050565b5f602082840312156102a9576102a8610091565b5b6102b36020610103565b90505f82013567ffffffffffffffff8111156102d2576102d161011d565b5b6102de84828501610267565b5f8301525092915050565b5f6102fb6102f684610125565b610103565b9050808382526020820190506020840283018581111561031e5761031d610150565b5b835b8181101561036557803567ffffffffffffffff81111561034357610342610121565b5b8086016103508982610294565b85526020850194505050602081019050610320565b5050509392505050565b5f82601f83011261038357610382610121565b5b81356103938482602086016102e9565b91505092915050565b5f602082840312156103b1576103b0610091565b5b6103bb6020610103565b90505f82013567ffffffffffffffff8111156103da576103d961011d565b5b6103e68482850161036f565b5f8301525092915050565b5f6020828403121561040657610405610089565b5b5f82013567ffffffffffffffff8111156104235761042261008d565b5b61042f8482850161039c565b91505092915050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b6104938161017f565b82525050565b604082015f8201516104ad5f85018261048a565b5060208201516104c0602085018261048a565b50505050565b5f6104d18383610499565b60408301905092915050565b5f602082019050919050565b5f6104f382610461565b6104fd818561046b565b93506105088361047b565b805f5b8381101561053857815161051f88826104c6565b975061052a836104dd565b92505060018101905061050b565b5085935050505092915050565b5f602083015f8301518482035f86015261055f82826104e9565b9150508091505092915050565b5f6105778383610545565b905092915050565b5f602082019050919050565b5f61059582610438565b61059f8185610442565b9350836020820285016105b185610452565b805f5b858110156105ec57848403895281516105cd858261056c565b94506105d88361057f565b925060208a019950506001810190506105b4565b50829750879550505050505092915050565b5f602083015f8301518482035f860152610618828261058b565b9150508091505092915050565b5f6020820190508181035f83015261063d81846105fe565b90509291505056fea2646970667358221220e9a46dd271224211ac317ab5deb76259a8309e527c859b3d977cfc261a3780db64736f6c634300081e0033' */
@@ -790,7 +790,7 @@ CPyL39: ;
     cpy_r_r189 = CPyDict_SetItem(cpy_r_r187, cpy_r_r188, cpy_r_r186);
     cpy_r_r190 = cpy_r_r189 >= 0;
     if (unlikely(!cpy_r_r190)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 91, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 92, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r191 = CPyStatics[14]; /* 'inputs' */
@@ -805,7 +805,7 @@ CPyL39: ;
     cpy_r_r200 = CPyStatics[23]; /* 'int256' */
     cpy_r_r201 = CPyDict_Build(3, cpy_r_r195, cpy_r_r196, cpy_r_r197, cpy_r_r198, cpy_r_r199, cpy_r_r200);
     if (unlikely(cpy_r_r201 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 103, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 104, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r202 = CPyStatics[16]; /* 'internalType' */
@@ -816,12 +816,12 @@ CPyL39: ;
     cpy_r_r207 = CPyStatics[23]; /* 'int256' */
     cpy_r_r208 = CPyDict_Build(3, cpy_r_r202, cpy_r_r203, cpy_r_r204, cpy_r_r205, cpy_r_r206, cpy_r_r207);
     if (unlikely(cpy_r_r208 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 108, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 109, CPyStatic_globals);
         goto CPyL93;
     }
     cpy_r_r209 = PyList_New(2);
     if (unlikely(cpy_r_r209 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 102, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 103, CPyStatic_globals);
         goto CPyL94;
     }
     cpy_r_r210 = (CPyPtr)&((PyListObject *)cpy_r_r209)->ob_item;
@@ -838,12 +838,12 @@ CPyL39: ;
     cpy_r_r219 = CPyDict_Build(4, cpy_r_r194, cpy_r_r209, cpy_r_r213, cpy_r_r214, cpy_r_r215, cpy_r_r216, cpy_r_r217, cpy_r_r218);
     CPy_DECREF_NO_IMM(cpy_r_r209);
     if (unlikely(cpy_r_r219 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 101, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 102, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r220 = PyList_New(1);
     if (unlikely(cpy_r_r220 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 100, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 101, CPyStatic_globals);
         goto CPyL95;
     }
     cpy_r_r221 = (CPyPtr)&((PyListObject *)cpy_r_r220)->ob_item;
@@ -858,12 +858,12 @@ CPyL39: ;
     cpy_r_r229 = CPyDict_Build(4, cpy_r_r193, cpy_r_r220, cpy_r_r223, cpy_r_r224, cpy_r_r225, cpy_r_r226, cpy_r_r227, cpy_r_r228);
     CPy_DECREF_NO_IMM(cpy_r_r220);
     if (unlikely(cpy_r_r229 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 99, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 100, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r230 = PyList_New(1);
     if (unlikely(cpy_r_r230 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 98, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 99, CPyStatic_globals);
         goto CPyL96;
     }
     cpy_r_r231 = (CPyPtr)&((PyListObject *)cpy_r_r230)->ob_item;
@@ -878,12 +878,12 @@ CPyL39: ;
     cpy_r_r239 = CPyDict_Build(4, cpy_r_r192, cpy_r_r230, cpy_r_r233, cpy_r_r234, cpy_r_r235, cpy_r_r236, cpy_r_r237, cpy_r_r238);
     CPy_DECREF_NO_IMM(cpy_r_r230);
     if (unlikely(cpy_r_r239 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 97, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 98, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r240 = PyList_New(1);
     if (unlikely(cpy_r_r240 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 96, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 97, CPyStatic_globals);
         goto CPyL97;
     }
     cpy_r_r241 = (CPyPtr)&((PyListObject *)cpy_r_r240)->ob_item;
@@ -903,7 +903,7 @@ CPyL39: ;
     cpy_r_r254 = CPyStatics[23]; /* 'int256' */
     cpy_r_r255 = CPyDict_Build(3, cpy_r_r249, cpy_r_r250, cpy_r_r251, cpy_r_r252, cpy_r_r253, cpy_r_r254);
     if (unlikely(cpy_r_r255 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 137, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 138, CPyStatic_globals);
         goto CPyL98;
     }
     cpy_r_r256 = CPyStatics[16]; /* 'internalType' */
@@ -914,12 +914,12 @@ CPyL39: ;
     cpy_r_r261 = CPyStatics[23]; /* 'int256' */
     cpy_r_r262 = CPyDict_Build(3, cpy_r_r256, cpy_r_r257, cpy_r_r258, cpy_r_r259, cpy_r_r260, cpy_r_r261);
     if (unlikely(cpy_r_r262 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 142, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 143, CPyStatic_globals);
         goto CPyL99;
     }
     cpy_r_r263 = PyList_New(2);
     if (unlikely(cpy_r_r263 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 136, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 137, CPyStatic_globals);
         goto CPyL100;
     }
     cpy_r_r264 = (CPyPtr)&((PyListObject *)cpy_r_r263)->ob_item;
@@ -936,12 +936,12 @@ CPyL39: ;
     cpy_r_r273 = CPyDict_Build(4, cpy_r_r248, cpy_r_r263, cpy_r_r267, cpy_r_r268, cpy_r_r269, cpy_r_r270, cpy_r_r271, cpy_r_r272);
     CPy_DECREF_NO_IMM(cpy_r_r263);
     if (unlikely(cpy_r_r273 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 135, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 136, CPyStatic_globals);
         goto CPyL98;
     }
     cpy_r_r274 = PyList_New(1);
     if (unlikely(cpy_r_r274 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 134, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 135, CPyStatic_globals);
         goto CPyL101;
     }
     cpy_r_r275 = (CPyPtr)&((PyListObject *)cpy_r_r274)->ob_item;
@@ -956,12 +956,12 @@ CPyL39: ;
     cpy_r_r283 = CPyDict_Build(4, cpy_r_r247, cpy_r_r274, cpy_r_r277, cpy_r_r278, cpy_r_r279, cpy_r_r280, cpy_r_r281, cpy_r_r282);
     CPy_DECREF_NO_IMM(cpy_r_r274);
     if (unlikely(cpy_r_r283 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 133, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 134, CPyStatic_globals);
         goto CPyL98;
     }
     cpy_r_r284 = PyList_New(1);
     if (unlikely(cpy_r_r284 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 132, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 133, CPyStatic_globals);
         goto CPyL102;
     }
     cpy_r_r285 = (CPyPtr)&((PyListObject *)cpy_r_r284)->ob_item;
@@ -976,12 +976,12 @@ CPyL39: ;
     cpy_r_r293 = CPyDict_Build(4, cpy_r_r246, cpy_r_r284, cpy_r_r287, cpy_r_r288, cpy_r_r289, cpy_r_r290, cpy_r_r291, cpy_r_r292);
     CPy_DECREF_NO_IMM(cpy_r_r284);
     if (unlikely(cpy_r_r293 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 131, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 132, CPyStatic_globals);
         goto CPyL98;
     }
     cpy_r_r294 = PyList_New(1);
     if (unlikely(cpy_r_r294 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 130, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 131, CPyStatic_globals);
         goto CPyL103;
     }
     cpy_r_r295 = (CPyPtr)&((PyListObject *)cpy_r_r294)->ob_item;
@@ -995,12 +995,12 @@ CPyL39: ;
     CPy_DECREF_NO_IMM(cpy_r_r240);
     CPy_DECREF_NO_IMM(cpy_r_r294);
     if (unlikely(cpy_r_r301 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 95, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 96, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r302 = PyList_New(1);
     if (unlikely(cpy_r_r302 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 94, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 95, CPyStatic_globals);
         goto CPyL104;
     }
     cpy_r_r303 = (CPyPtr)&((PyListObject *)cpy_r_r302)->ob_item;
@@ -1014,7 +1014,7 @@ CPyL39: ;
     CPy_DECREF_NO_IMM(cpy_r_r302);
     cpy_r_r308 = cpy_r_r307 >= 0;
     if (unlikely(!cpy_r_r308)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 94, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 95, CPyStatic_globals);
         goto CPyL76;
     }
     cpy_r_r309 = CPyStatics[42]; /* 'bytecode' */
@@ -1023,7 +1023,7 @@ CPyL39: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"NESTED_TUPLE_CONTRACT_BYTECODE\" was not set");
     cpy_r_r311 = 0;
     if (unlikely(!cpy_r_r311)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 168, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 169, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
@@ -1034,7 +1034,7 @@ CPyL67: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"NESTED_TUPLE_CONTRACT_RUNTIME\" was not set");
     cpy_r_r314 = 0;
     if (unlikely(!cpy_r_r314)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 169, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 170, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
@@ -1045,14 +1045,14 @@ CPyL70: ;
     PyErr_SetString(PyExc_NameError, "value for final name \"NESTED_TUPLE_CONTRACT_ABI\" was not set");
     cpy_r_r317 = 0;
     if (unlikely(!cpy_r_r317)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 170, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 171, CPyStatic_globals);
         goto CPyL76;
     }
     CPy_Unreachable();
 CPyL73: ;
     cpy_r_r318 = CPyDict_Build(3, cpy_r_r309, cpy_r_r310, cpy_r_r312, cpy_r_r313, cpy_r_r315, cpy_r_r316);
     if (unlikely(cpy_r_r318 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 167, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 168, CPyStatic_globals);
         goto CPyL76;
     }
     CPyStatic_NESTED_TUPLE_CONTRACT_DATA = cpy_r_r318;
@@ -1063,7 +1063,7 @@ CPyL73: ;
     CPy_DECREF(cpy_r_r318);
     cpy_r_r322 = cpy_r_r321 >= 0;
     if (unlikely(!cpy_r_r322)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 167, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py", "<module>", 168, CPyStatic_globals);
         goto CPyL76;
     }
     return 1;
