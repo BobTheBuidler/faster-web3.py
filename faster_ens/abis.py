@@ -1,4 +1,5 @@
 # flake8: noqa
+# mypy: disable-error-code="typeddict-unknown-key"
 from typing import (
     Final,
     List,

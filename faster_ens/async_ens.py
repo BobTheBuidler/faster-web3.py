@@ -216,6 +216,8 @@ class AsyncENS(BaseENS):
             return None
         if address is None:
             address = EMPTY_ADDR_HEX
+        
+        assert owner is not None, "this assert is for mypy"
         transact["from"] = owner
 
         resolver: "AsyncContract" = await self._set_resolver(name, transact=transact)
