@@ -25,16 +25,13 @@ concurrency:
   cancel-in-progress: ${{ !(github.event_name == 'push' && github.ref == 'refs/heads/master') }}
 
 jobs:
-  benchmark:
-    name: Run CodSpeed Benchmarks
+  build:
+    name: Build Python3.14 wheel for ubuntu-latest
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [1, 2, 3, 4, 5, 6, 7]
+
     steps:
       - uses: actions/checkout@v5
-      
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -44,34 +41,95 @@ jobs:
             pyproject.toml
             setup.py
             tox.ini
-            
-      - name: Cache .mypy_cache
-        uses: actions/cache@v4
-        with:
-          path: .mypy_cache
-          key: mypy-cache-${{ runner.os }}-${{ hashFiles('**/*.py', 'pyproject.toml') }}
-        
+
       - name: Restore ccache cache
         id: restore-ccache
         uses: actions/cache/restore@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
-          restore-keys: ccache-${{ runner.os }}-
+          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
+          restore-keys: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-
 
-      - name: Install ccache
+      - name: Install ccache on Linux
         run: sudo apt-get update && sudo apt-get install -y ccache
-          
-      - name: Install dependencies
+
+      - name: Show ccache config and stats before build
+        run: ccache --version && ccache -p -s
+
+      - name: Build wheel
         env:
           CC: ccache gcc
         run: |
           python -m pip install --upgrade pip
-          pip install .[codspeed]
-          
+          python -m pip install --upgrade build
+          python -m build --wheel
+
+      - name: Show ccache stats after build
+        run: ccache -s
+
+      - name: Save ccache cache
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: wheel-ubuntu-latest-py3.14
+          path: dist/*.whl
+
+  benchmark:
+    needs: build
+    name: Run CodSpeed Benchmarks
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            setup.py
+            tox.ini
+
+      - name: Cache .mypy_cache
+        uses: actions/cache@v4
+        with:
+          path: .mypy_cache
+          key: mypy-cache-${{ runner.os }}-${{ hashFiles('**/*.py', 'pyproject.toml') }}
+
+      - name: Restore ccache cache
+        id: restore-ccache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
+          restore-keys: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-
+
+      - name: Install ccache on Linux
+        run: sudo apt-get update && sudo apt-get install -y ccache
+
+      - name: Download wheel
+        uses: actions/download-artifact@v6
+        with:
+          name: wheel-ubuntu-latest-py3.14
+          path: .
+
+      - name: Install built wheel
+        run: |
+          python -m pip install --upgrade pip
+          pip install ./*.whl[codspeed]
+
       - name: Remove Python files from test env
         run: rm -r faster_web3 faster_ens
-          
+
       - name: Run CodSpeed
         uses: CodSpeedHQ/action@v4
         with:
@@ -82,4 +140,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
+          key: ccache-${{ runner.os }}-3.14-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', '**/*.py') }}
