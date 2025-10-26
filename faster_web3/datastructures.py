@@ -23,9 +23,6 @@ from typing import (
     overload,
 )
 
-from faster_eth_utils import (
-    is_integer,
-)
 from typing_extensions import (
     Self,
 )
@@ -221,7 +218,7 @@ class NamedElementOnion(Mapping[TKey, TValue]):
         or at the outermost layer. Note that inserting to the outermost is equivalent
         to calling :meth:`add` .
         """
-        if not is_integer(layer):
+        if not isinstance(layer, int):
             raise Web3TypeError("The layer for insertion must be an int.")
         elif layer != 0 and layer != len(self._queue):
             raise NotImplementedError(

@@ -6,7 +6,6 @@ from typing import (
 
 from faster_eth_utils import (
     is_boolean,
-    is_integer,
     is_string,
 )
 
@@ -32,7 +31,7 @@ class NetModuleTest:
     def test_net_peer_count(self, w3: "Web3") -> None:
         peer_count = w3.net.peer_count
 
-        assert is_integer(peer_count)
+        assert isinstance(peer_count, int)
 
 
 class AsyncNetModuleTest:
@@ -53,4 +52,4 @@ class AsyncNetModuleTest:
     async def test_net_peer_count(self, async_w3: "AsyncWeb3[Any]") -> None:
         peer_count = await async_w3.net.peer_count
 
-        assert is_integer(peer_count)
+        assert isinstance(peer_count, int)
