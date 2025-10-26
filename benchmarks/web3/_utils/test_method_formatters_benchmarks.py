@@ -5,8 +5,8 @@ from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
 
-def run_100(fn, *args):
-    for _ in range(100):
+def run_1000(fn, *args):
+    for _ in range(1000):
         fn(*args)
 
 
