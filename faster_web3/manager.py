@@ -57,9 +57,6 @@ from faster_web3.middleware.base import (
     Middleware,
     MiddlewareOnion,
 )
-from faster_web3.module import (
-    apply_result_formatters,
-)
 from faster_web3.providers import (
     AutoProvider,
     JSONBaseProvider,
@@ -410,8 +407,7 @@ class RequestManager:
             logger=self.logger,
             params=requests_info[0][1],
         )
-        return apply_result_formatters(
-            result_formatters,
+        return result_formatters(
             self.formatted_response(
                 response,
                 requests_info[0][1],
@@ -596,7 +592,7 @@ class RequestManager:
                 error_formatters,
                 null_formatters,
             )
-            return apply_result_formatters(result_formatters, partly_formatted_response)
+            return result_formatters(partly_formatted_response)
 
 
 class _AsyncPersistentMessageStream:

@@ -48,7 +48,7 @@ if TYPE_CHECKING:
 def apply_result_formatters(
     result_formatters: Callable[..., Any], result: RPCResponse
 ) -> RPCResponse:
-    return result_formatters(result) if result_formatters else result
+    return result_formatters(result)
 
 
 TReturn = TypeVar("TReturn")
@@ -106,7 +106,7 @@ def retrieve_blocking_method_call_fn(
         result = w3.manager.request_blocking(
             method_str, params, error_formatters, null_result_formatters
         )
-        return apply_result_formatters(result_formatters, result)
+        return result_formatters(result)
 
     return caller
 
@@ -149,7 +149,7 @@ def retrieve_async_method_call_fn(
             result = await async_w3.manager.coro_request(
                 method_str, params, error_formatters, null_result_formatters
             )
-            return apply_result_formatters(result_formatters, result)
+            return result_formatters(result)
 
     return caller
 
