@@ -85,7 +85,7 @@ def _get_raw_miner_data(
     w3: Web3, sample_size: int
 ) -> Iterable[Tuple[ChecksumAddress, HexBytes, Wei]]:
     transaction: TxData
-    
+
     latest = w3.eth.get_block("latest", full_transactions=True)
 
     for transaction in latest["transactions"]:

@@ -30,6 +30,7 @@ import re
 from collections import defaultdict
 from typing import Dict, Any
 
+
 def get_module_path(bench: dict) -> str:
     """
     Extracts the relative module path from the test file path.
@@ -50,7 +51,8 @@ def get_module_path(bench: dict) -> str:
     fullname = bench.get("fullname", "")
     # Try to match nested directories, e.g. benchmarks/web3/_utils/test_blocks_benchmarks.py
     m = re.search(
-        r"benchmarks/(?P<subdir>.+)/test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py", fullname
+        r"benchmarks/(?P<subdir>.+)/test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py",
+        fullname,
     )
     if m:
         subdir = m.group("subdir")
@@ -64,8 +66,11 @@ def get_module_path(bench: dict) -> str:
     m3 = re.search(r"test_(?P<base>[a-zA-Z0-9_]+)_benchmarks\.py", fullname)
     if m3:
         return m3.group("base")
-    print(f"[parse_benchmark_output.py] WARNING: Could not extract module path from fullname: '{fullname}'")
+    print(
+        f"[parse_benchmark_output.py] WARNING: Could not extract module path from fullname: '{fullname}'"
+    )
     return "unknown"
+
 
 def get_group_name(test_name: str) -> str:
     # Extract group from test name, e.g., test_foo, test_faster_foo -> group: foo
@@ -76,6 +81,7 @@ def get_group_name(test_name: str) -> str:
     if m:
         return m.group(1)
     return test_name
+
 
 def parse_pytest_benchmark_json(data: dict) -> Dict[str, Dict[str, Dict[str, Any]]]:
     """
@@ -99,6 +105,7 @@ def parse_pytest_benchmark_json(data: dict) -> Dict[str, Dict[str, Dict[str, Any
         }
     return results
 
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python parse_benchmark_output.py <benchmark.json> [output.json]")
@@ -111,6 +118,7 @@ def main() -> None:
     with open(outfile, "w") as f:
         json.dump(results, f, indent=2)
     print(f"Parsed results written to {outfile}")
+
 
 if __name__ == "__main__":
     main()

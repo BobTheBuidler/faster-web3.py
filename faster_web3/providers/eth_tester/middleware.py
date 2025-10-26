@@ -355,9 +355,7 @@ result_formatters: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
     RPC.eth_getLogs: format_logs,
     RPC.eth_getFilterChanges: format_logs,
     RPC.eth_getFilterLogs: format_logs,
-    RPC.eth_feeHistory: apply_formatter_if(
-        is_dict, fee_history_result_remapper
-    ),
+    RPC.eth_feeHistory: apply_formatter_if(is_dict, fee_history_result_remapper),
     # EVM
     RPC.evm_snapshot: integer_to_hex,
 }

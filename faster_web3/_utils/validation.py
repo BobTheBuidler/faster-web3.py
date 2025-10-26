@@ -79,7 +79,9 @@ from faster_web3.types import (
 
 
 def _prepare_selector_collision_msg(duplicates: Dict[HexStr, List[ABIFunction]]) -> str:
-    formatter = apply_formatter_to_array(abi_to_signature)
+    formatter: Callable[[List[ABIFunction]], str] = apply_formatter_to_array(
+        abi_to_signature
+    )
     joined_funcs = {
         sel: ", ".join(formatter(funcs)) for sel, funcs in duplicates.items()
     }
@@ -104,9 +106,7 @@ def validate_abi(abi: ABI) -> None:
     functions = filter_abi_by_type("function", abi)
     selectors = groupby(compose(encode_hex, function_abi_to_4byte_selector), functions)
     if duplicates := {
-        selector: funcs
-        for selector, funcs in selectors.items()
-        if len(funcs) > 1
+        selector: funcs for selector, funcs in selectors.items() if len(funcs) > 1
     }:
         raise Web3ValueError(
             "Abi contains functions with colliding selectors. "

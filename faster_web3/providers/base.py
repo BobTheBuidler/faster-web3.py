@@ -6,6 +6,7 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
+    Final,
     Optional,
     Set,
     Tuple,
@@ -82,8 +83,8 @@ class BaseProvider:
             Union[RequestCacheValidationThreshold, int, Empty]
         ] = empty,
     ) -> None:
-        self._request_cache = SimpleCache(1000)
-        self._request_cache_lock: threading.Lock = threading.Lock()
+        self._request_cache: Final[SimpleCache[RPCResponse]] = SimpleCache(1000)
+        self._request_cache_lock: Final[threading.Lock] = threading.Lock()
 
         self.cache_allowed_requests = cache_allowed_requests
         self.cacheable_requests = cacheable_requests or CACHEABLE_REQUESTS
