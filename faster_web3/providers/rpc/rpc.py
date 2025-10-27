@@ -3,6 +3,7 @@ import time
 from typing import (
     Any,
     Dict,
+    Final,
     List,
     Optional,
     Union,
@@ -50,14 +51,13 @@ from .utils import (
 
 
 class HTTPProvider(JSONBaseProvider):
-    logger = logging.getLogger("faster_web3.providers.HTTPProvider")
-    endpoint_uri = None
-    _request_kwargs = None
+    logger: Final = logging.getLogger("faster_web3.providers.HTTPProvider")
+    endpoint_uri: Final[URI]
 
     def __init__(
         self,
         endpoint_uri: Optional[Union[URI, str]] = None,
-        request_kwargs: Optional[Any] = None,
+        request_kwargs: Optional[Dict[str, Any]] = None,
         session: Optional[Any] = None,
         exception_retry_configuration: Optional[
             Union[ExceptionRetryConfiguration, Empty]
@@ -74,7 +74,7 @@ class HTTPProvider(JSONBaseProvider):
         else:
             self.endpoint_uri = URI(endpoint_uri)
 
-        self._request_kwargs = request_kwargs or {}
+        self._request_kwargs: Final[Dict[str, Any]] = request_kwargs or {}
         self._exception_retry_configuration = exception_retry_configuration
 
         if session:
@@ -104,7 +104,7 @@ class HTTPProvider(JSONBaseProvider):
         self._exception_retry_configuration = value
 
     def get_request_kwargs(self) -> Dict[str, Any]:
-        provider_request_kwargs = self._request_kwargs
+        provider_request_kwargs: Dict[str, Any] = self._request_kwargs
         if "headers" in provider_request_kwargs:
             return provider_request_kwargs.copy()
         headers = {"headers": self.get_request_headers()}

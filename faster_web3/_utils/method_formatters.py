@@ -1144,7 +1144,7 @@ ABI_REQUEST_FORMATTERS: Final[Formatters] = abi_request_formatters(
 )
 
 
-ERROR_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
+ERROR_FORMATTERS: Final[Dict[RPCEndpoint, Callable[[RPCResponse], RPCResponse]]] = {
     RPC.eth_estimateGas: raise_contract_logic_error_on_revert,
     RPC.eth_call: raise_contract_logic_error_on_revert,
     RPC.eth_getTransactionReceipt: raise_transaction_indexing_error_if_indexing,
@@ -1239,7 +1239,9 @@ def raise_transaction_not_found_with_index(
     raise TransactionNotFound(message)
 
 
-NULL_RESULT_FORMATTERS: Final[Dict[RPCEndpoint, Callable[..., Any]]] = {
+NULL_RESULT_FORMATTERS: Final[
+    Dict[RPCEndpoint, Callable[[Tuple[Any, ...]], NoReturn]]
+] = {
     RPC.eth_getBlockByHash: raise_block_not_found,
     RPC.eth_getBlockByNumber: raise_block_not_found,
     RPC.eth_getBlockReceipts: raise_block_not_found,

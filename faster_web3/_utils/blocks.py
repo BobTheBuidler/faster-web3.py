@@ -81,4 +81,5 @@ def select_method_for_block_identifier(
             raise Web3ValueError(
                 f"Value did not match any of the recognized block identifiers: {value}"
             )
+
     return select_method_for_block_identifier_curried

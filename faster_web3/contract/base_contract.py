@@ -1618,11 +1618,11 @@ class BaseContractConstructor:
     def check_forbidden_keys_in_transaction(
         transaction: TxParams, forbidden_keys: Optional[Collection[str]] = None
     ) -> None:
-        keys_found = transaction.keys() & forbidden_keys
-        if keys_found:
-            raise Web3ValueError(
-                f"Cannot set '{', '.join(keys_found)}' field(s) in transaction"
-            )
+        if forbidden_keys is not None:
+            if keys_found := transaction.keys() & forbidden_keys:
+                raise Web3ValueError(
+                    f"Cannot set '{', '.join(keys_found)}' field(s) in transaction"
+                )
 
 
 class NonExistentFallbackFunction:

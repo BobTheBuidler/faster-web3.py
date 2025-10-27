@@ -118,7 +118,7 @@ def gen_bounded_segments(start: int, stop: int, step: int) -> Iterable[Tuple[int
 
 
 def block_ranges(
-    start_block: BlockNumber, last_block: Optional[BlockNumber], step: int = 5
+    start_block: BlockNumber, last_block: BlockNumber, step: int = 5
 ) -> Iterable[Tuple[BlockNumber, BlockNumber]]:
     """
     Returns 2-tuple ranges describing ranges of block from start_block to last_block

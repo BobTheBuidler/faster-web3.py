@@ -5,8 +5,10 @@ import operator
 from typing import (
     TYPE_CHECKING,
     Any,
+    Callable,
     Collection,
     Dict,
+    Optional,
     TypeVar,
     Union,
     cast,
@@ -141,8 +143,8 @@ def format_transaction(transaction: TxParams) -> TxParams:
 
 
 class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
-    _accounts = None
-    format_and_fill_tx = None
+    _accounts: Optional[Dict[ChecksumAddress, LocalAccount]] = None
+    format_and_fill_tx: Optional[Callable[[TxParams], TxParams]] = None
 
     @staticmethod
     @curry
@@ -160,17 +162,19 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
         else:
             w3 = cast("Web3", self._w3)
             if self.format_and_fill_tx is None:
-                self.format_and_fill_tx = compose(
+                self.format_and_fill_tx: Callable[[TxParams], TxParams] = compose(
                     format_transaction,
                     fill_transaction_defaults(w3),
                     fill_nonce(w3),
                 )
 
-            filled_transaction = self.format_and_fill_tx(params[0])
+            filled_transaction: TxParams = self.format_and_fill_tx(params[0])
             tx_from = filled_transaction.get("from", None)
 
             if tx_from is None or (
-                tx_from is not None and tx_from not in self._accounts
+                tx_from is not None
+                and tx_from
+                not in cast(Dict[ChecksumAddress, LocalAccount], self._accounts)
             ):
                 return method, params
             else:
@@ -199,7 +203,9 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
             tx_from = filled_transaction.get("from", None)
 
             if tx_from is None or (
-                tx_from is not None and tx_from not in self._accounts
+                tx_from is not None
+                and tx_from
+                not in cast(Dict[ChecksumAddress, LocalAccount], self._accounts)
             ):
                 return method, params
             else:

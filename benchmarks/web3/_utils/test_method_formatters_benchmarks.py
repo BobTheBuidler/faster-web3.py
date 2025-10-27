@@ -51,13 +51,19 @@ REQUEST_DATA = {
     "eth_newFilter": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
 }
 
+
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
-def test_PYTHONIC_REQUEST_FORMATTERS(benchmark: BenchmarkFixture, endpoint: RPCEndpoint) -> None:
+def test_PYTHONIC_REQUEST_FORMATTERS(
+    benchmark: BenchmarkFixture, endpoint: RPCEndpoint
+) -> None:
     f = web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
 
+
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
-def test_faster_PYTHONIC_REQUEST_FORMATTERS(benchmark: BenchmarkFixture, endpoint: RPCEndpoint) -> None:
+def test_faster_PYTHONIC_REQUEST_FORMATTERS(
+    benchmark: BenchmarkFixture, endpoint: RPCEndpoint
+) -> None:
     f = faster_web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
 

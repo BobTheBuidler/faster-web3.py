@@ -9,9 +9,11 @@ from setuptools import (
 )
 from mypyc.build import mypycify
 
+
 def read_requirements(path):
     with open(path) as f:
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
 
 extras_require = {
     "tester": [
@@ -148,7 +150,6 @@ else:
         "--disable-error-code=call-arg",
         "--disable-error-code=assignment",
         "--disable-error-code=index",
-        "--disable-error-code=operator",
         "--disable-error-code=override",
         "--disable-error-code=misc",
         "--disable-error-code=unused-ignore",

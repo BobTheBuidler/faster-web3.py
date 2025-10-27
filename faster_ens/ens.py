@@ -212,7 +212,7 @@ class ENS(BaseENS):
             return None
         if address is None:
             address = EMPTY_ADDR_HEX
-        
+
         assert owner is not None, "this assert is for mypy"
         transact["from"] = owner
 

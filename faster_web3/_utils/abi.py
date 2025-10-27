@@ -319,17 +319,8 @@ class ExactLengthBytesEncoder(BytesEncoder):
     ) -> "ExactLengthBytesEncoder":
         subencoder_cls = cls.get_subencoder_class()
         subencoder = subencoder_cls.from_type_str(abi_type.to_type_str(), registry)  # type: ignore[no-untyped-call]  # noqa: E501
-        return cast(
-            ExactLengthBytesEncoder,
-            # type ignored b/c mypy thinks the __call__ is from BaseEncoder, but it's
-            # from ExactLengthBytesEncoder, which does have value_bit_size and
-            # data_byte_size attributes
-            cls(  # type: ignore[call-arg]
-                subencoder,
-                value_bit_size=abi_type.sub * 8,
-                data_byte_size=abi_type.sub,
-            ),
-        )
+        subtype: int = abi_type.sub
+        return cls(subencoder, value_bit_size=subtype * 8, data_byte_size=subtype)
 
 
 class ByteStringEncoder(AcceptsHexStrEncoder):

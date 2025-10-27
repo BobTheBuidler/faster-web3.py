@@ -119,7 +119,7 @@ def test_faster_readableattributedict_recursive(benchmark: BenchmarkFixture, val
 
 
 @pytest.mark.benchmark(group="MutableAttributeDict-setitem")
-def test_mutableattributedict_setitem(benchmark: BenchmarkFixture):
+def test_MutableAttributeDict_setitem(benchmark: BenchmarkFixture):
     def setitem():
         mad = MutableAttributeDict({})
         for i in range(20):
@@ -129,7 +129,7 @@ def test_mutableattributedict_setitem(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="MutableAttributeDict-setitem")
-def test_faster_mutableattributedict_setitem(benchmark: BenchmarkFixture):
+def test_faster_MutableAttributeDict_setitem(benchmark: BenchmarkFixture):
     def setitem():
         mad = FasterMutableAttributeDict({})
         for i in range(20):
@@ -139,7 +139,7 @@ def test_faster_mutableattributedict_setitem(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="MutableAttributeDict-delitem")
-def test_mutableattributedict_delitem(benchmark: BenchmarkFixture):
+def test_MutableAttributeDict_delitem(benchmark: BenchmarkFixture):
     def delitem():
         mad = MutableAttributeDict({i: i for i in range(20)})
         for i in range(20):
@@ -149,7 +149,7 @@ def test_mutableattributedict_delitem(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="MutableAttributeDict-delitem")
-def test_faster_mutableattributedict_delitem(benchmark: BenchmarkFixture):
+def test_faster_MutableAttributeDict_delitem(benchmark: BenchmarkFixture):
     def delitem():
         mad = FasterMutableAttributeDict({i: i for i in range(20)})
         for i in range(20):
@@ -188,7 +188,7 @@ def test_faster_attributedict_hash(benchmark: BenchmarkFixture, d):
 
 
 @pytest.mark.benchmark(group="AttributeDict-eq")
-def test_attributedict_eq(benchmark: BenchmarkFixture):
+def test_AttributeDict_eq(benchmark: BenchmarkFixture):
     d1 = {"a": 1, "b": 2}
     d2 = {"b": 2, "a": 1}
     ad1 = AttributeDict(d1)
@@ -197,7 +197,7 @@ def test_attributedict_eq(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="AttributeDict-eq")
-def test_faster_attributedict_eq(benchmark: BenchmarkFixture):
+def test_faster_AttributeDict_eq(benchmark: BenchmarkFixture):
     d1 = {"a": 1, "b": 2}
     d2 = {"b": 2, "a": 1}
     ad1 = FasterAttributeDict(d1)
@@ -280,7 +280,7 @@ def test_faster_namedelementonion_inject(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
-def test_namedelementonion_replace(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_replace(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
 
     def replace():
@@ -292,7 +292,7 @@ def test_namedelementonion_replace(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-replace")
-def test_faster_namedelementonion_replace(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_replace(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
 
     def replace():
@@ -304,7 +304,7 @@ def test_faster_namedelementonion_replace(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-remove")
-def test_namedelementonion_remove(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_remove(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
 
     def remove():
@@ -316,7 +316,7 @@ def test_namedelementonion_remove(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-remove")
-def test_faster_namedelementonion_remove(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_remove(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
 
     def remove():
@@ -328,7 +328,7 @@ def test_faster_namedelementonion_remove(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-contains")
-def test_namedelementonion_contains(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_contains(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
     onion = NamedElementOnion(middlewares)
     middleware = middlewares[4]
@@ -336,7 +336,7 @@ def test_namedelementonion_contains(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-contains")
-def test_faster_namedelementonion_contains(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_contains(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
     onion = FasterNamedElementOnion(middlewares)
     middleware = middlewares[4]
@@ -344,7 +344,7 @@ def test_faster_namedelementonion_contains(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-getitem")
-def test_namedelementonion_getitem(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_getitem(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
     onion = NamedElementOnion(middlewares)
     middleware = middlewares[4]
@@ -352,7 +352,7 @@ def test_namedelementonion_getitem(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-getitem")
-def test_faster_namedelementonion_getitem(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_getitem(benchmark: BenchmarkFixture):
     middlewares = [make_callable(i) for i in range(10)]
     onion = FasterNamedElementOnion(middlewares)
     middleware = middlewares[4]

@@ -35,6 +35,7 @@ from faster_web3.exceptions import (
 )
 from faster_web3.types import (
     RPCEndpoint,
+    RPCResponse,
     TFunc,
     TReturn,
     TValue,
@@ -185,9 +186,9 @@ class Method(Generic[TFunc]):
     def process_params(self, module: "Module", *args: Any, **kwargs: Any) -> Tuple[
         Tuple[Union[RPCEndpoint, Callable[..., RPCEndpoint]], Tuple[RPCEndpoint, ...]],
         Tuple[
-            Union[TReturn, Dict[str, Callable[..., Any]]],
-            Callable[..., Any],
-            Union[TReturn, Callable[..., Any]],
+            Union[TReturn, Callable[[RPCResponse], RPCResponse]],
+            Callable[[RPCResponse], Any],
+            Union[TReturn, Callable[[RPCResponse], Any]],
         ],
     ]:
         params = self.input_munger(module, args, kwargs)
