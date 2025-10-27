@@ -1,6 +1,7 @@
 
 import json
 
+import pytest
 from pytest_codspeed import BenchmarkFixture
 from unittest.mock import patch
 

@@ -1,22 +1,24 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.datatypes
-    import web3.exceptions
-except ImportError:
-    pass
-
 import faster_web3._utils.datatypes
 import faster_web3.exceptions
 
-Web3AttributeError = (
-    web3.exceptions.Web3AttributeError,
-    faster_web3.exceptions.Web3AttributeError,
-)
+try:
+    import web3._utils.datatypes
+    import web3.exceptions
+    
+    Web3AttributeError = (
+        web3.exceptions.Web3AttributeError,
+        faster_web3.exceptions.Web3AttributeError,
+    )
+except ImportError:
+    Web3AttributeError = (
+        faster_web3.exceptions.Web3AttributeError,
+    )
 
 
-def run_100(func, *args, **kwargs):
+def run_100(exc, func, *args, **kwargs):
     for _ in range(100):
         try:
             func(*args, **kwargs)
