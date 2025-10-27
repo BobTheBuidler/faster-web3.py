@@ -148,7 +148,6 @@ else:
         "--disable-error-code=call-arg",
         "--disable-error-code=assignment",
         "--disable-error-code=index",
-        "--disable-error-code=operator",
         "--disable-error-code=override",
         "--disable-error-code=misc",
         "--disable-error-code=unused-ignore",
