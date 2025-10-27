@@ -255,8 +255,7 @@ def get_event_data(
 
     # sanity check that there are not name intersections between the topic
     # names and the data argument names.
-    duplicate_names = set(log_topic_names).intersection(log_data_names)
-    if duplicate_names:
+    if duplicate_names := set(log_topic_names).intersection(log_data_names):
         raise InvalidEventABI(
             "The following argument names are duplicated "
             f"between event inputs: '{', '.join(duplicate_names)}'"
@@ -272,7 +271,7 @@ def get_event_data(
     )
 
     decoded_topic_data = [
-        abi_codec.decode([topic_type], topic_data)[0]
+        abi_codec.decode([topic_type], topic_data)[0]  # type: ignore [list-item]
         for topic_type, topic_data in zip(log_topic_types, log_topics_bytes)
     ]
     normalized_topic_data = map_abi_data(
