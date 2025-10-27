@@ -18,7 +18,7 @@ except ImportError:
     )
 
 
-def run_100(exc, func, *args, **kwargs):
+def run_100(func, *args, **kwargs):
     for _ in range(100):
         try:
             func(*args, **kwargs)
