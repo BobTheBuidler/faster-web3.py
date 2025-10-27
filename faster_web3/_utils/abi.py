@@ -1,7 +1,5 @@
-import binascii
 from collections import (
     abc,
-    namedtuple,
 )
 import copy
 import itertools
@@ -13,31 +11,25 @@ from typing import (
     Collection,
     Coroutine,
     Dict,
+    Final,
     Iterable,
     List,
     Literal,
-    Mapping,
     Optional,
     Sequence,
     Tuple,
-    Type,
+    TypeVar,
     Union,
     cast,
+    final,
 )
 
 from faster_eth_abi import (
     decoding,
     encoding,
 )
-from faster_eth_abi.from_type_str import (
-    parse_type_str,
-)
-from faster_eth_abi.exceptions import (
-    ValueOutOfBounds,
-)
 from faster_eth_abi.grammar import (
     ABIType,
-    BasicType,
     TupleType,
     parse,
 )
@@ -56,20 +48,15 @@ from eth_typing import (
     ABIFallback,
     ABIFunction,
     ABIReceive,
-    HexStr,
     TypeStr,
 )
 from faster_eth_utils import (
     collapse_if_tuple,
-    decode_hex,
     filter_abi_by_type,
     get_abi_input_names,
     get_abi_input_types,
-    is_bytes,
     is_list_like,
-    is_string,
     is_text,
-    to_text,
 )
 from faster_eth_utils.toolz import (
     curry,
@@ -78,12 +65,19 @@ from typing_extensions import (
     TypeGuard,
 )
 
+from faster_web3._utils._abi import (
+    ABITypedData,
+    BytesEncoder,
+    ByteStringEncoder,
+    ExactLengthBytesEncoder,
+    StrictByteStringEncoder,
+    TextStringEncoder,
+    abi_decoded_namedtuple_factory,
+    async_recursive_map,
+)
 from faster_web3._utils.abi_element_identifiers import (
     FallbackFn,
     ReceiveFn,
-)
-from faster_web3._utils.decorators import (
-    reject_recursive_repeats,
 )
 from faster_web3._utils.ens import (
     is_ens_name,
@@ -93,19 +87,19 @@ from faster_web3._utils.formatters import (
 )
 from faster_web3.exceptions import (
     MismatchedABI,
-    Web3AttributeError,
     Web3TypeError,
     Web3ValueError,
 )
 from faster_web3.types import (
     ABIElementIdentifier,
-    TReturn,
 )
 
 if TYPE_CHECKING:
     from faster_web3 import (  # noqa: F401
         AsyncWeb3,
     )
+
+T = TypeVar("T")
 
 
 def fallback_func_abi_exists(contract_abi: ABI) -> Sequence[ABIFallback]:
@@ -198,157 +192,17 @@ def get_abi_element_signature(
     return f"{element_name}({argument_types})"
 
 
+@final
 class AddressEncoder(encoding.AddressEncoder):
     @classmethod
     def validate_value(cls, value: Any) -> None:
         if is_ens_name(value):
             return
 
-        super().validate_value(value)  # type: ignore[no-untyped-call]
+        super().validate_value(value)
 
 
-class AcceptsHexStrEncoder(encoding.BaseEncoder):
-    subencoder_cls: Type[encoding.BaseEncoder] = None
-    is_strict: Optional[bool] = None
-    is_big_endian: bool = False
-    data_byte_size: Optional[int] = None
-    value_bit_size: Optional[int] = None
-
-    def __init__(
-        self,
-        subencoder: encoding.BaseEncoder,
-        **kwargs: Dict[str, Any],
-    ) -> None:
-        super().__init__(**kwargs)  # type: ignore[no-untyped-call]
-        self.subencoder = subencoder
-        self.is_dynamic = subencoder.is_dynamic
-
-    @classmethod
-    def from_type_str(
-        cls, abi_type: TypeStr, registry: ABIRegistry
-    ) -> "AcceptsHexStrEncoder":
-        subencoder_cls = cls.get_subencoder_class()
-        # cast b/c expects BaseCoder but `from_type_string`
-        # restricted to BaseEncoder subclasses
-        subencoder = cast(
-            encoding.BaseEncoder, subencoder_cls.from_type_str(abi_type, registry)  # type: ignore[no-untyped-call]  # noqa: E501
-        )
-        return cls(subencoder)
-
-    @classmethod
-    def get_subencoder_class(cls) -> Type[encoding.BaseEncoder]:
-        if cls.subencoder_cls is None:
-            raise Web3AttributeError(f"No subencoder class is set. {cls.__name__}")
-        return cls.subencoder_cls
-
-    def validate_value(self, value: Any) -> None:
-        normalized_value = self.validate_and_normalize(value)
-        self.subencoder.validate_value(normalized_value)
-
-    def encode(self, value: Any) -> bytes:
-        normalized_value = self.validate_and_normalize(value)
-        return self.subencoder.encode(normalized_value)
-
-    def validate_and_normalize(self, value: Any) -> HexStr:
-        if not is_bytes(value) and not is_text(value):
-            self.invalidate_value(value)
-
-        raw_value = value
-        if is_text(value):
-            try:
-                value = decode_hex(value)
-            except binascii.Error:
-                self.invalidate_value(
-                    value,
-                    msg=f"{value} is an invalid hex string",
-                )
-            else:
-                if raw_value[:2] != "0x" and self.is_strict:
-                    self.invalidate_value(
-                        raw_value, msg="hex string must be prefixed with 0x"
-                    )
-
-        if self.is_strict and self.data_byte_size is not None:
-            if len(value) > self.data_byte_size:
-                self.invalidate_value(
-                    value,
-                    exc=ValueOutOfBounds,
-                    msg=f"exceeds total byte size for bytes{self.data_byte_size} "
-                    "encoding",
-                )
-            elif len(value) < self.data_byte_size:
-                self.invalidate_value(
-                    value,
-                    exc=ValueOutOfBounds,
-                    msg=f"less than total byte size for bytes{self.data_byte_size} "
-                    "encoding",
-                )
-
-        return value
-
-
-class BytesEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.BytesEncoder
-    is_strict = False
-
-
-class ExactLengthBytesEncoder(BytesEncoder):
-    is_strict = True
-
-    def validate(self) -> None:
-        super().validate()  # type: ignore[no-untyped-call]
-        if self.value_bit_size is None:
-            raise Web3ValueError("`value_bit_size` may not be none")
-        if self.data_byte_size is None:
-            raise Web3ValueError("`data_byte_size` may not be none")
-        if self.is_big_endian is None:
-            raise Web3ValueError("`is_big_endian` may not be none")
-
-        if self.value_bit_size % 8 != 0:
-            raise Web3ValueError(
-                f"Invalid value bit size: {self.value_bit_size}. "
-                "Must be a multiple of 8"
-            )
-
-        if self.value_bit_size > self.data_byte_size * 8:
-            raise Web3ValueError("Value byte size exceeds data size")
-
-    @parse_type_str("bytes")  # type: ignore[no-untyped-call]
-    def from_type_str(
-        cls, abi_type: BasicType, registry: ABIRegistry
-    ) -> "ExactLengthBytesEncoder":
-        subencoder_cls = cls.get_subencoder_class()
-        subencoder = subencoder_cls.from_type_str(abi_type.to_type_str(), registry)  # type: ignore[no-untyped-call]  # noqa: E501
-        subtype: int = abi_type.sub
-        return cls(subencoder, value_bit_size=subtype * 8, data_byte_size=subtype)
-
-
-class ByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.ByteStringEncoder
-    is_strict = False
-
-
-class StrictByteStringEncoder(AcceptsHexStrEncoder):
-    subencoder_cls = encoding.ByteStringEncoder
-    is_strict = True
-
-
-class TextStringEncoder(encoding.TextStringEncoder):
-    @classmethod
-    def validate_value(cls, value: Any) -> None:
-        if is_bytes(value):
-            try:
-                value = to_text(value)
-            except UnicodeDecodeError:
-                cls.invalidate_value(
-                    value,
-                    msg="not decodable as unicode string",
-                )
-
-        super().validate_value(value)  # type: ignore[no-untyped-call]
-
-
-TUPLE_TYPE_STR_RE = re.compile(r"^(tuple)((\[([1-9]\d*\b)?])*)??$")
+TUPLE_TYPE_STR_RE: Final = re.compile(r"^(tuple)((\[([1-9]\d*\b)?])*)??$")
 
 
 def get_tuple_type_str_parts(s: str) -> Optional[Tuple[str, Optional[str]]]:
@@ -434,30 +288,21 @@ def find_constructor_abi_element_by_type(contract_abi: ABI) -> ABIConstructor:
     return None
 
 
-DYNAMIC_TYPES = ["bytes", "string"]
+DYNAMIC_TYPES: Final = ["bytes", "string"]
 
-INT_SIZES = range(8, 257, 8)
-BYTES_SIZES = range(1, 33)
-UINT_TYPES = [f"uint{i}" for i in INT_SIZES]
-INT_TYPES = [f"int{i}" for i in INT_SIZES]
-BYTES_TYPES = [f"bytes{i}" for i in BYTES_SIZES] + ["bytes32.byte"]
+INT_SIZES: Final = range(8, 257, 8)
+BYTES_SIZES: Final = range(1, 33)
+UINT_TYPES: Final = [f"uint{i}" for i in INT_SIZES]
+INT_TYPES: Final = [f"int{i}" for i in INT_SIZES]
+BYTES_TYPES: Final = [f"bytes{i}" for i in BYTES_SIZES] + ["bytes32.byte"]
 
-STATIC_TYPES = list(
-    itertools.chain(
-        ["address", "bool"],
-        UINT_TYPES,
-        INT_TYPES,
-        BYTES_TYPES,
-    )
-)
+STATIC_TYPES: Final = ["address", "bool"] + UINT_TYPES + INT_TYPES + BYTES_TYPES
 
-BASE_TYPE_REGEX = "|".join(
-    _type + "(?![a-z0-9])" for _type in itertools.chain(STATIC_TYPES, DYNAMIC_TYPES)
-)
+BASE_TYPE_REGEX: Final = "|".join(f"{_type}(?![a-z0-9])" for _type in STATIC_TYPES + DYNAMIC_TYPES)
 
-SUB_TYPE_REGEX = r"\[" "[0-9]*" r"\]"
+SUB_TYPE_REGEX: Final = r"\[" "[0-9]*" r"\]"
 
-TYPE_REGEX = ("^" "(?:{base_type})" "(?:(?:{sub_type})*)?" "$").format(
+TYPE_REGEX: Final = ("^" "(?:{base_type})" "(?:(?:{sub_type})*)?" "$").format(
     base_type=BASE_TYPE_REGEX,
     sub_type=SUB_TYPE_REGEX,
 )
@@ -514,7 +359,7 @@ def size_of_type(abi_type: TypeStr) -> Optional[int]:
     return int(re.sub(r"\D", "", abi_type))
 
 
-END_BRACKETS_OF_ARRAY_TYPE_REGEX = r"\[[^]]*\]$"
+END_BRACKETS_OF_ARRAY_TYPE_REGEX: Final = r"\[[^]]*\]$"
 
 
 def sub_type_of_array_type(abi_type: TypeStr) -> str:
@@ -536,17 +381,17 @@ def length_of_array_type(abi_type: TypeStr) -> Optional[int]:
         return None
 
 
-ARRAY_REGEX = ("^" "[a-zA-Z0-9_]+" "({sub_type})+" "$").format(sub_type=SUB_TYPE_REGEX)
+ARRAY_REGEX: Final = ("^" "[a-zA-Z0-9_]+" "({sub_type})+" "$").format(sub_type=SUB_TYPE_REGEX)
 
 
 def is_array_type(abi_type: TypeStr) -> bool:
     return bool(re.match(ARRAY_REGEX, abi_type))
 
 
-NAME_REGEX = "[a-zA-Z_]" "[a-zA-Z0-9_]*"
+NAME_REGEX: Final = "[a-zA-Z_]" "[a-zA-Z0-9_]*"
 
 
-ENUM_REGEX = ("^" "{lib_name}" r"\." "{enum_name}" "$").format(
+ENUM_REGEX: Final = ("^" "{lib_name}" r"\." "{enum_name}" "$").format(
     lib_name=NAME_REGEX, enum_name=NAME_REGEX
 )
 
@@ -652,29 +497,6 @@ def data_tree_map(
     return data_tree_map_curried
 
 
-class ABITypedData(namedtuple("ABITypedData", "abi_type, data")):
-    """
-    Marks data as having a certain ABI-type.
-
-    >>> a1 = ABITypedData(['address', addr1])
-    >>> a2 = ABITypedData(['address', addr2])
-    >>> addrs = ABITypedData(['address[]', [a1, a2]])
-
-    You can access the fields using tuple() interface, or with
-    attributes:
-
-    >>> assert a1.abi_type == a1[0]
-    >>> assert a1.data == a1[1]
-
-    Unlike a typical `namedtuple`, you initialize with a single
-    positional argument that is iterable, to match the init
-    interface of all other relevant collections.
-    """
-
-    def __new__(cls, iterable: Iterable[Any]) -> "ABITypedData":
-        return super().__new__(cls, *iterable)
-
-
 def abi_sub_tree(
     type_str_or_abi_type: Optional[Union[TypeStr, ABIType]], data_value: Any
 ) -> ABITypedData:
@@ -688,6 +510,7 @@ def abi_sub_tree(
 
     # In the two special cases below, we rebuild the given data structures with
     # annotated items
+    value_to_annotate: Any
     if abi_type.is_array:
         # If type is array, determine item type and annotate all
         # items in iterable with that type
@@ -727,7 +550,7 @@ def strip_abi_types(elements: Any) -> Any:
 def build_non_strict_registry() -> ABIRegistry:
     # We make a copy here just to make sure that eth-abi's default registry is not
     # affected by our custom encoder subclasses
-    registry = default_registry.copy()  # type: ignore[no-untyped-call]
+    registry = default_registry.copy()
 
     registry.unregister("address")
     registry.unregister("bytes<M>")
@@ -735,25 +558,25 @@ def build_non_strict_registry() -> ABIRegistry:
     registry.unregister("string")
 
     registry.register(
-        BaseEquals("address"),  # type: ignore[no-untyped-call]
+        BaseEquals("address"),
         AddressEncoder,
         decoding.AddressDecoder,
         label="address",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=True),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=True),
         BytesEncoder,
         decoding.BytesDecoder,
         label="bytes<M>",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=False),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=False),
         ByteStringEncoder,
         decoding.ByteStringDecoder,
         label="bytes",
     )
     registry.register(
-        BaseEquals("string"),  # type: ignore[no-untyped-call]
+        BaseEquals("string"),
         TextStringEncoder,
         decoding.StringDecoder,
         label="string",
@@ -762,7 +585,7 @@ def build_non_strict_registry() -> ABIRegistry:
 
 
 def build_strict_registry() -> ABIRegistry:
-    registry = default_registry.copy()  # type: ignore[no-untyped-call]
+    registry = default_registry.copy()
 
     registry.unregister("address")
     registry.unregister("bytes<M>")
@@ -770,25 +593,25 @@ def build_strict_registry() -> ABIRegistry:
     registry.unregister("string")
 
     registry.register(
-        BaseEquals("address"),  # type: ignore[no-untyped-call]
+        BaseEquals("address"),
         AddressEncoder,
         decoding.AddressDecoder,
         label="address",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=True),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=True),
         ExactLengthBytesEncoder,
         decoding.BytesDecoder,
         label="bytes<M>",
     )
     registry.register(
-        BaseEquals("bytes", with_sub=False),  # type: ignore[no-untyped-call]
+        BaseEquals("bytes", with_sub=False),
         StrictByteStringEncoder,
         decoding.ByteStringDecoder,
         label="bytes",
     )
     registry.register(
-        BaseEquals("string"),  # type: ignore[no-untyped-call]
+        BaseEquals("string"),
         encoding.TextStringEncoder,
         decoding.StringDecoder,
         label="string",
@@ -859,16 +682,6 @@ def recursive_dict_to_namedtuple(data: Dict[str, Any]) -> Tuple[Any, ...]:
     return recursive_map(_dict_to_namedtuple, data)
 
 
-def abi_decoded_namedtuple_factory(
-    fields: Tuple[Any, ...],
-) -> Callable[..., Tuple[Any, ...]]:
-    class ABIDecodedNamedTuple(namedtuple("ABIDecodedNamedTuple", fields, rename=True)): # noqa: E501
-        def __new__(cls, args: Any) -> "ABIDecodedNamedTuple":
-            return super().__new__(cls, *args)
-
-    return ABIDecodedNamedTuple
-
-
 # -- async -- #
 
 
@@ -886,7 +699,7 @@ async def async_data_tree_map(
         async_w3, abi_type, and data
     """
 
-    async def async_map_to_typed_data(elements: Any) -> "ABITypedData":
+    async def async_map_to_typed_data(elements: T) -> Union["ABITypedData", T]:
         if isinstance(elements, ABITypedData) and elements.abi_type is not None:
             formatted = await func(async_w3, *elements)
             return ABITypedData(formatted)
@@ -894,42 +707,3 @@ async def async_data_tree_map(
             return elements
 
     return await async_recursive_map(async_w3, async_map_to_typed_data, data_tree)
-
-
-@reject_recursive_repeats
-async def async_recursive_map(
-    async_w3: "AsyncWeb3[Any]",
-    func: Callable[[Any], Coroutine[Any, Any, TReturn]],
-    data: Any,
-) -> TReturn:
-    """
-    Apply an awaitable method to data and any collection items inside data
-    (using async_map_collection).
-
-    Define the awaitable method so that it only applies to the type of value that you
-    want it to apply to.
-    """
-
-    async def async_recurse(item: Any) -> TReturn:
-        return await async_recursive_map(async_w3, func, item)
-
-    items_mapped = await async_map_if_collection(async_recurse, data)
-    return await func(items_mapped)
-
-
-async def async_map_if_collection(
-    func: Callable[[Any], Coroutine[Any, Any, Any]], value: Any
-) -> Any:
-    """
-    Apply an awaitable method to each element of a collection or value of a dictionary.
-    If the value is not a collection, return it unmodified.
-    """
-    datatype = type(value)
-    if isinstance(value, Mapping):
-        return datatype({key: await func(val) for key, val in value.values()})
-    if is_string(value):
-        return value
-    elif isinstance(value, Iterable):
-        return datatype([await func(item) for item in value])
-    else:
-        return value

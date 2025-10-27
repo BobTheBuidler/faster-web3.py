@@ -14,6 +14,10 @@ import warnings
 from faster_web3.exceptions import (
     Web3ValueError,
 )
+from faster_web3.types import (
+    P,
+    TReturn,
+)
 
 TFunc = TypeVar("TFunc", bound=Callable[..., Any])
 
@@ -21,7 +25,7 @@ TFunc = TypeVar("TFunc", bound=Callable[..., Any])
 get_thread_id: Final = threading.get_ident
 
 
-def reject_recursive_repeats(to_wrap: Callable[..., Any]) -> Callable[..., Any]:
+def reject_recursive_repeats(to_wrap: Callable[P, TReturn]) -> Callable[P, TReturn]:
     """
     Prevent simple cycles by returning None when called recursively with same instance
     """
@@ -48,7 +52,7 @@ def reject_recursive_repeats(to_wrap: Callable[..., Any]) -> Callable[..., Any]:
     return wrapped
 
 
-def deprecated_for(replace_message: str) -> Callable[..., Any]:
+def deprecated_for(replace_message: str) -> Callable[[TFunc], TFunc]:
     """
     Decorate a deprecated function, with info about what to use instead, like:
 
