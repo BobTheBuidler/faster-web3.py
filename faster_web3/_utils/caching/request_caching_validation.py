@@ -13,6 +13,9 @@ from typing import (
 from faster_web3._utils.rpc_abi import (
     RPC,
 )
+from faster_web3.types import (
+    BlockData,
+)
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
 )
@@ -55,7 +58,8 @@ def is_beyond_validation_threshold(
         provider.cache_allowed_requests = False
         if isinstance(threshold, RequestCacheValidationThreshold):
             # if mainnet and threshold is "finalized" or "safe"
-            threshold_block = provider.make_request(
+            assert isinstance(blocknum, int)
+            threshold_block: BlockData = provider.make_request(
                 RPC.eth_getBlockByNumber, [threshold.value, False]
             )["result"]
             # we should have a `blocknum` to compare against
@@ -64,7 +68,7 @@ def is_beyond_validation_threshold(
             if not block_timestamp:
                 # if validating via `blocknum` from params, we need to get the timestamp
                 # for the block with `blocknum`.
-                block = provider.make_request(
+                block: BlockData = provider.make_request(
                     RPC.eth_getBlockByNumber, [hex(blocknum), False]
                 )["result"]
                 block_timestamp = int(block["timestamp"], 16)
@@ -183,8 +187,9 @@ async def async_is_beyond_validation_threshold(
         # turn off caching to prevent recursion
         provider.cache_allowed_requests = False
         if isinstance(threshold, RequestCacheValidationThreshold):
+            assert isinstance(blocknum, int)
             # if mainnet and threshold is "finalized" or "safe"
-            threshold_block = await provider.make_request(
+            threshold_block: BlockData = await provider.make_request(
                 RPC.eth_getBlockByNumber, [threshold.value, False]
             )
             # we should have a `blocknum` to compare against

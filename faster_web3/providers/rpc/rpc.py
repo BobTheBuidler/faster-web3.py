@@ -57,7 +57,7 @@ class HTTPProvider(JSONBaseProvider):
     def __init__(
         self,
         endpoint_uri: Optional[Union[URI, str]] = None,
-        request_kwargs: Optional[Any] = None,
+        request_kwargs: Optional[Dict[str, Any]] = None,
         session: Optional[Any] = None,
         exception_retry_configuration: Optional[
             Union[ExceptionRetryConfiguration, Empty]
@@ -74,7 +74,7 @@ class HTTPProvider(JSONBaseProvider):
         else:
             self.endpoint_uri = URI(endpoint_uri)
 
-        self._request_kwargs = request_kwargs or {}
+        self._request_kwargs: Dict[str, Any] = request_kwargs or {}
         self._exception_retry_configuration = exception_retry_configuration
 
         if session:

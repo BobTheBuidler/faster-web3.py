@@ -5,6 +5,7 @@ from typing import (
     Final,
     Optional,
     Union,
+    cast,
 )
 
 import faster_eth_abi.abi
@@ -170,7 +171,7 @@ def raise_contract_logic_error_on_revert(response: RPCResponse) -> RPCResponse:
         if error.get("code") == 3:
             raise ContractLogicError(message, data=data)
         # Geth Revert without error message case:
-        elif "execution reverted" in message:
+        elif "execution reverted" in cast(str, message):
             raise ContractLogicError("execution reverted", data=data)
 
     return response

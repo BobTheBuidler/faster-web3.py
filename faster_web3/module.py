@@ -46,7 +46,7 @@ if TYPE_CHECKING:
 
 @curry
 def apply_result_formatters(
-    result_formatters: Callable[..., Any], result: RPCResponse
+    result_formatters: Callable[[RPCResponse], RPCResponse], result: RPCResponse
 ) -> RPCResponse:
     return result_formatters(result)
 
