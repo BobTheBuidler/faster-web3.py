@@ -1,5 +1,5 @@
-pytest>=7.0.0
+-r requirements-pytest.txt
+
 pytest-asyncio==1.2
 pytest-codspeed==4.2
 pytest-test-groups
-web3>=7.14.0,<8

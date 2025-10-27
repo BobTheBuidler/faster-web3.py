@@ -1,7 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3.utils.address
+try:
+    import web3.utils.address
+except ImportError:
+    pass
+
 import faster_web3.utils.address
 
 SENDER = "0x" + "00" * 20

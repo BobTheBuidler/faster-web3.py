@@ -1,7 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3.utils.caching
+try:
+    import web3.utils.caching
+except ImportError:
+    pass
+
 import faster_web3.utils.caching
 
 

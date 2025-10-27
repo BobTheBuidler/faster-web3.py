@@ -1,7 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import ens.utils
+try:
+    import ens.utils
+except ImportError:
+    pass
+
 import faster_ens.utils
 from benchmarks.ens.params import (
     NAMES,

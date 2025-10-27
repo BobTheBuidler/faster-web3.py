@@ -60,7 +60,7 @@ jobs:
           CC: ccache gcc
         run: |
           python -m pip install --upgrade pip
-          pip install .[dev] pytest-codspeed pytest-benchmark web3
+          pip install .[dev,benchmark]
           
       - name: Remove Python files from test env
         run: |

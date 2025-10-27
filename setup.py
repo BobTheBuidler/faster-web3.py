@@ -12,7 +12,15 @@ from mypyc.build import mypycify
 
 def read_requirements(path):
     with open(path) as f:
-        return [line.strip() for line in f if line.strip() and not line.startswith("#")]
+        reqs = set()
+        for line in f:
+            if stripped := line.strip():
+                if not stripped.startswith("#"):
+                    if stripped.startswith("-r "):
+                        reqs.update(read_requirements(stripped[3:]))
+                    else:
+                        reqs.add(stripped)
+        return sorted(reqs)
 
 
 extras_require = {
@@ -48,6 +56,7 @@ extras_require = {
         f"mypy=={'1.14.1' if sys.version_info < (3, 9) else '1.18.2'}",
         "pre-commit>=3.4.0",
     ],
+    "benchmark": read_requirements("requirements-benchmark.txt"),
     "codspeed": read_requirements("requirements-codspeed.txt"),
 }
 

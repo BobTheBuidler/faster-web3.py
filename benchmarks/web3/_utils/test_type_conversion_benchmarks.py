@@ -3,18 +3,28 @@ import binascii
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3._utils.type_conversion
-from web3.exceptions import Web3ValueError
 import faster_web3._utils.type_conversion
 from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
 
-excs = (
-    UnicodeDecodeError,
-    UnicodeEncodeError,
-    binascii.Error,
-    Web3ValueError,
-    FasterWeb3ValueError,
-)
+try:
+    import web3._utils.type_conversion
+    from web3.exceptions import Web3ValueError
+    
+    excs = (
+        UnicodeDecodeError,
+        UnicodeEncodeError,
+        binascii.Error,
+        Web3ValueError,
+        FasterWeb3ValueError,
+    )
+
+except ImportError:
+    excs = (
+        UnicodeDecodeError,
+        UnicodeEncodeError,
+        binascii.Error,
+        FasterWeb3ValueError,
+    )
 
 
 def run_100(func, *args, **kwargs):
