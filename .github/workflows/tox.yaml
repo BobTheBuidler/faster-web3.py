@@ -38,6 +38,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Build wheel for Python${{ matrix.python-version }}
+        id: wheel
         uses: ./.github/actions/build-wheel
         with:
           python-version: ${{ matrix.python-version }}
@@ -101,7 +102,7 @@ jobs:
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          name: wheel-${{ runner.os }}-py${{ matrix.python-version }}
+          name: ${{ needs.build.outputs.wheel-artifact-name }}
           path: .
 
       - name: Run tox
