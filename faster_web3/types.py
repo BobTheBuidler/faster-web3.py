@@ -29,6 +29,9 @@ from eth_typing import (
 from faster_hexbytes import (
     HexBytes,
 )
+from typing_extensions import (
+    ParamSpec,
+)
 
 from faster_web3._utils.abi_element_identifiers import (
     FallbackFn,
@@ -48,6 +51,7 @@ if TYPE_CHECKING:
         Web3,
     )
 
+P = ParamSpec("P")
 
 TFunc = TypeVar("TFunc", bound=Callable[..., Any])
 TParams = TypeVar("TParams")

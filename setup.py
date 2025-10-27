@@ -91,6 +91,7 @@ else:
         # "faster_ens/ens.py",  figure out `default`
         "faster_ens/exceptions.py",
         "faster_ens/utils.py",
+        "faster_web3/_utils/abi.py",
         "faster_web3/_utils/async_transactions.py",
         "faster_web3/_utils/batching.py",
         "faster_web3/_utils/blocks.py",
