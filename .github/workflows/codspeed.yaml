@@ -34,14 +34,21 @@ jobs:
 
       - name: Build wheel for Python3.14
         id: wheel
-        uses: ./.github/actions/build-wheel
+        uses: BobTheBuidler/mypycify@master
         with:
           python-version: "3.14"
-          cache: pip
-          cache-dependency-path: |
+          pip-cache-dependency-path: |
             pyproject.toml
             setup.py
             tox.ini
+          hash-key: |
+            pyproject.toml
+            setup.py
+            faster_web3/**/*.py
+            faster_ens/**/*.py
+            **/*.c
+            **/*.h
+            
 
   benchmark:
     needs: build
