@@ -221,9 +221,7 @@ def test_web3_auto_gethdev(request_mocker):
     assert isinstance(w3.provider, IPCProvider)
     with request_mocker(
         w3,
-        mock_results={
-            RPC.eth_getBlockByNumber: {"extraData": "0x" + "ff" * 33}
-        },
+        mock_results={RPC.eth_getBlockByNumber: {"extraData": "0x" + "ff" * 33}},
     ):
         block = w3.eth.get_block("latest")
 

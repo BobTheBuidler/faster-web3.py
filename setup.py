@@ -9,9 +9,11 @@ from setuptools import (
 )
 from mypyc.build import mypycify
 
+
 def read_requirements(path):
     with open(path) as f:
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
 
 extras_require = {
     "tester": [

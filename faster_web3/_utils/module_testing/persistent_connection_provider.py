@@ -779,9 +779,7 @@ class PersistentConnectionProviderTest:
         async_w3.provider._request_processor.clear_caches()
 
         # send a request over the socket
-        await async_w3.socket.send(
-            RPC.eth_getBlockByNumber, ["latest", True]
-        )
+        await async_w3.socket.send(RPC.eth_getBlockByNumber, ["latest", True])
 
         # recv and validate the unprocessed response
         response = await async_w3.socket.recv()

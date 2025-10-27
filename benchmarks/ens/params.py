@@ -43,7 +43,7 @@ parametrize_names_full_coverage = pytest.mark.parametrize(
 LABELS = [
     "alice",
     "bob",
-    "emoji\U0001F468\U0001F3FB",  # emoji👨🏻
+    "emoji\U0001f468\U0001f3fb",  # emoji👨🏻
     "xn--fiqs8s",
     "a" * 63,
     "",
@@ -64,7 +64,7 @@ LABEL_LISTS = [
 NAMES_VALIDITY = [
     "alice.eth",
     "bob.eth",
-    "emoji\U0001F468\U0001F3FB.eth",  # emoji👨🏻.eth
+    "emoji\U0001f468\U0001f3fb.eth",  # emoji👨🏻.eth
     "subdomain.alice.eth",
     "a" * 63 + ".eth",
     "",

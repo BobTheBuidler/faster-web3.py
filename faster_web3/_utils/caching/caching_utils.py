@@ -10,6 +10,7 @@ from typing import (
     Final,
     Generator,
     List,
+    NoReturn,
     Optional,
     Sequence,
     Tuple,
@@ -113,9 +114,9 @@ class RequestInformation:
         method: RPCEndpoint,
         params: Any,
         response_formatters: Tuple[
-            Union[Dict[str, Callable[..., Any]], Callable[..., Any]],
-            Callable[..., Any],
-            Callable[..., Any],
+            Callable[[RPCResponse], RPCResponse],
+            Callable[[RPCResponse], RPCResponse],
+            Callable[[Tuple[Any, ...]], NoReturn],
         ],
         subscription_id: Optional[str] = None,
     ):
@@ -226,9 +227,7 @@ def set_threshold_if_empty(provider: SYNC_PROVIDER_TYPE) -> None:
         try:
             # turn off momentarily to avoid recursion
             provider.cache_allowed_requests = False
-            chain_id_result = provider.make_request(RPC.eth_chainId, [])[
-                "result"
-            ]
+            chain_id_result = provider.make_request(RPC.eth_chainId, [])["result"]
             chain_id = int(chain_id_result, 16)
 
             if current_threshold is empty:
@@ -322,9 +321,7 @@ async def async_set_threshold_if_empty(provider: ASYNC_PROVIDER_TYPE) -> None:
         try:
             # turn off momentarily to avoid recursion
             provider.cache_allowed_requests = False
-            chain_id_result = await provider.make_request(
-                RPC.eth_chainId, []
-            )
+            chain_id_result = await provider.make_request(RPC.eth_chainId, [])
             chain_id = int(chain_id_result["result"], 16)
 
             if current_threshold is empty:

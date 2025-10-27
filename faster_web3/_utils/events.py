@@ -279,7 +279,9 @@ def get_event_data(
         BASE_RETURN_NORMALIZERS, log_topic_types, decoded_topic_data
     )
 
-    event_args: Dict[str, Any] = dict(zip(log_topic_names, normalized_topic_data), **named_log_data)
+    event_args: Dict[str, Any] = dict(
+        zip(log_topic_names, normalized_topic_data), **named_log_data
+    )
 
     event_data = EventData(
         args=event_args,
@@ -417,23 +419,23 @@ class BaseEventFilterBuilder:
     @property
     def filter_params(self) -> FilterParams:
         params = {}
-        
+
         topics = self.topics
         if topics is not None:
             params["topics"] = topics
-        
+
         from_block = self.from_block
         if from_block is not None:
             params["fromBlock"] = from_block
-            
+
         to_block = self.to_block
         if to_block is not None:
             params["toBlock"] = to_block
-            
+
         address = self.address
         if address is not None:
             params["address"] = address
-            
+
         return params
 
 
