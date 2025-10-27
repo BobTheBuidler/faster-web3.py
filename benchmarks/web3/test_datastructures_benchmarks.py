@@ -71,39 +71,39 @@ def run_500(func, *args, **kwargs):
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-init")
 @pytest.mark.parametrize("d", init_dicts, ids=init_dict_ids)
-def test_readableattributedict_init(benchmark: BenchmarkFixture, d):
+def test_ReadableAttributeDict_init(benchmark: BenchmarkFixture, d):
     benchmark(run_100, web3.datastructures.ReadableAttributeDict, d)
 
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-init")
 @pytest.mark.parametrize("d", init_dicts, ids=init_dict_ids)
-def test_faster_readableattributedict_init(benchmark: BenchmarkFixture, d):
+def test_faster_ReadableAttributeDict_init(benchmark: BenchmarkFixture, d):
     benchmark(run_100, faster_web3.datastructures.ReadableAttributeDict, d)
 
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-getitem")
 @pytest.mark.parametrize("d,key", getitem_cases, ids=getitem_ids)
-def test_readableattributedict_getitem(benchmark: BenchmarkFixture, d, key):
+def test_ReadableAttributeDict_getitem(benchmark: BenchmarkFixture, d, key):
     rad = web3.datastructures.ReadableAttributeDict(d)
     benchmark(run_100, lambda: rad[key])
 
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-getitem")
 @pytest.mark.parametrize("d,key", getitem_cases, ids=getitem_ids)
-def test_faster_readableattributedict_getitem(benchmark: BenchmarkFixture, d, key):
+def test_faster_ReadableAttributeDict_getitem(benchmark: BenchmarkFixture, d, key):
     rad = faster_web3.datastructures.ReadableAttributeDict(d)
     benchmark(run_100, lambda: rad[key])
 
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-recursive")
 @pytest.mark.parametrize("val", recursive_vals, ids=recursive_ids)
-def test_readableattributedict_recursive(benchmark: BenchmarkFixture, val):
+def test_ReadableAttributeDict_recursive(benchmark: BenchmarkFixture, val):
     benchmark(run_100, web3.datastructures.ReadableAttributeDict.recursive, val)
 
 
 @pytest.mark.benchmark(group="ReadableAttributeDict-recursive")
 @pytest.mark.parametrize("val", recursive_vals, ids=recursive_ids)
-def test_faster_readableattributedict_recursive(benchmark: BenchmarkFixture, val):
+def test_faster_ReadableAttributeDict_recursive(benchmark: BenchmarkFixture, val):
     benchmark(run_100, faster_web3.datastructures.ReadableAttributeDict.recursive, val)
 
 
@@ -155,26 +155,26 @@ def test_faster_MutableAttributeDict_delitem(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="AttributeDict-init")
 @pytest.mark.parametrize("d", init_dicts, ids=init_dict_ids)
-def test_attributedict_init(benchmark: BenchmarkFixture, d):
+def test_AttributeDict_init(benchmark: BenchmarkFixture, d):
     benchmark(run_100, web3.datastructures.AttributeDict, d)
 
 
 @pytest.mark.benchmark(group="AttributeDict-init")
 @pytest.mark.parametrize("d", init_dicts, ids=init_dict_ids)
-def test_faster_attributedict_init(benchmark: BenchmarkFixture, d):
+def test_faster_AttributeDict_init(benchmark: BenchmarkFixture, d):
     benchmark(run_100, faster_web3.datastructures.AttributeDict, d)
 
 
 @pytest.mark.benchmark(group="AttributeDict-hash")
 @pytest.mark.parametrize("d", hash_dicts, ids=hash_ids)
-def test_attributedict_hash(benchmark: BenchmarkFixture, d):
+def test_AttributeDict_hash(benchmark: BenchmarkFixture, d):
     ad = web3.datastructures.AttributeDict(d)
     benchmark(run_100, hash, ad)
 
 
 @pytest.mark.benchmark(group="AttributeDict-hash")
 @pytest.mark.parametrize("d", hash_dicts, ids=hash_ids)
-def test_faster_attributedict_hash(benchmark: BenchmarkFixture, d):
+def test_faster_AttributeDict_hash(benchmark: BenchmarkFixture, d):
     ad = faster_web3.datastructures.AttributeDict(d)
     benchmark(run_100, hash, ad)
 
@@ -217,18 +217,18 @@ def test_faster_tupleize_lists_nested(benchmark: BenchmarkFixture, d):
 
 @pytest.mark.benchmark(group="NamedElementOnion-init")
 @pytest.mark.parametrize("elements", onion_elements, ids=onion_ids)
-def test_namedelementonion_init(benchmark: BenchmarkFixture, elements):
+def test_NamedElementOnion_init(benchmark: BenchmarkFixture, elements):
     benchmark(run_100, web3.datastructures.NamedElementOnion, elements)
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-init")
 @pytest.mark.parametrize("elements", onion_elements, ids=onion_ids)
-def test_faster_namedelementonion_init(benchmark: BenchmarkFixture, elements):
+def test_faster_NamedElementOnion_init(benchmark: BenchmarkFixture, elements):
     benchmark(run_100, faster_web3.datastructures.NamedElementOnion, elements)
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-add")
-def test_namedelementonion_add(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_add(benchmark: BenchmarkFixture):
     onion = web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
 
     def add():
@@ -239,7 +239,7 @@ def test_namedelementonion_add(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-add")
-def test_faster_namedelementonion_add(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_add(benchmark: BenchmarkFixture):
     onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
 
     def add():
@@ -250,7 +250,7 @@ def test_faster_namedelementonion_add(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-inject")
-def test_namedelementonion_inject(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_inject(benchmark: BenchmarkFixture):
     onion = web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
 
     def inject():
@@ -261,7 +261,7 @@ def test_namedelementonion_inject(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-inject")
-def test_faster_namedelementonion_inject(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_inject(benchmark: BenchmarkFixture):
     onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
 
     def inject():
@@ -352,24 +352,24 @@ def test_faster_NamedElementOnion_getitem(benchmark: BenchmarkFixture):
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-iter")
-def test_namedelementonion_iter(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_iter(benchmark: BenchmarkFixture):
     onion = web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, list, onion)
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-iter")
-def test_faster_namedelementonion_iter(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_iter(benchmark: BenchmarkFixture):
     onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, list, onion)
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-as_tuple_of_middleware")
-def test_namedelementonion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
+def test_NamedElementOnion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
     onion = web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, onion.as_tuple_of_middleware)
 
 
 @pytest.mark.benchmark(group="NamedElementOnion-as_tuple_of_middleware")
-def test_faster_namedelementonion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
+def test_faster_NamedElementOnion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
     onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
     benchmark(run_100, onion.as_tuple_of_middleware)

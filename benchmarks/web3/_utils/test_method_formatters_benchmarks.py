@@ -1,4 +1,5 @@
 import pytest
+
 try:
     import web3._utils.method_formatters
 except ImportError:
