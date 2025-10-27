@@ -16,6 +16,7 @@ from faster_web3.exceptions import (
     ContractLogicError as FasterContractLogicError,
     ContractCustomError as FasterContractCustomError,
     TransactionIndexingInProgress as FasterTransactionIndexingInProgress,
+    Web3ValueError as FasterWeb3ValueError,
 )
 
 def run_100(func, *args, **kwargs):
