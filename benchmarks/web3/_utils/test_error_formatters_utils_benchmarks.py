@@ -5,14 +5,16 @@ import web3._utils.error_formatters_utils
 import faster_web3._utils.error_formatters_utils
 
 from web3.exceptions import (
-    BlockNotFound as Web3BlockNotFound,
-    ContractLogicError as Web3ContractLogicError,
-    TransactionIndexingInProgress as Web3TransactionIndexingInProgress,
+    BlockNotFound,
+    ContractLogicError,
+    CustomContractError,
+    TransactionIndexingInProgress,
     Web3ValueError,
 )
 from faster_web3.exceptions import (
     BlockNotFound as FasterBlockNotFound,
     ContractLogicError as FasterContractLogicError,
+    CustomContractError as FasterCustomContractError,
     TransactionIndexingInProgress as FasterTransactionIndexingInProgress,
 )
 
@@ -29,27 +31,27 @@ error_data_cases = [
 error_data_ids = ["with-reason", "no-reason", "other", "empty"]
 
 
-def call(fn, *args):
+def call(fn, exc, *args):
     try:
         fn(*args)
-    except FasterContractLogicError:
+    except exc:
         pass
 
 
 @pytest.mark.benchmark(group="_parse_error_with_reverted_prefix")
 @pytest.mark.parametrize("data,exc", error_data_cases, ids=error_data_ids)
 def test_web3_parse_error_with_reverted_prefix(benchmark: BenchmarkFixture, data, exc):
-    if exc is None:
+    if not exc:
         benchmark(run_100, web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
         return
 
-    benchmark(run_100, call, web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
+    benchmark(run_100, call, web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, ContractLogicError, data)
 
 @pytest.mark.benchmark(group="_parse_error_with_reverted_prefix")
 @pytest.mark.parametrize("data,exc", error_data_cases, ids=error_data_ids)
 def test_faster_web3_parse_error_with_reverted_prefix(benchmark: BenchmarkFixture, data, exc):
-    if exc is None:
-        benchmark(run_100, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
+    if not exc:
+        benchmark(run_100, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, FasterContractLogicError, data)
         return
     
     benchmark(run_100, call, faster_web3._utils.error_formatters_utils._parse_error_with_reverted_prefix, data)
@@ -60,12 +62,32 @@ raise_contract_error_ids = ["reverted", "other", "empty"]
 @pytest.mark.benchmark(group="_raise_contract_error")
 @pytest.mark.parametrize("data", raise_contract_error_cases, ids=raise_contract_error_ids)
 def test_web3_raise_contract_error(benchmark: BenchmarkFixture, data):
-    benchmark(run_100, web3._utils.error_formatters_utils._raise_contract_error, data)
+    if data == "":
+        benchmark(run_100, web3._utils.error_formatters_utils._raise_contract_error, data)
+        return
+
+    def call():
+        try:
+            return web3._utils.error_formatters_utils._raise_contract_error(data)
+        except CustomContractError:
+            return
+
+    benchmark(run_100, call)
 
 @pytest.mark.benchmark(group="_raise_contract_error")
 @pytest.mark.parametrize("data", raise_contract_error_cases, ids=raise_contract_error_ids)
 def test_faster_web3_raise_contract_error(benchmark: BenchmarkFixture, data):
-    benchmark(run_100, faster_web3._utils.error_formatters_utils._raise_contract_error, data)
+    if data == "":
+        benchmark(run_100, faster_web3._utils.error_formatters_utils._raise_contract_error, data)
+        return
+
+    def call():
+        try:
+            return faster_web3._utils.error_formatters_utils._raise_contract_error(data)
+        except FasterCustomContractError:
+            return
+
+    benchmark(run_100, call)
 
 # raise_contract_logic_error_on_revert
 logic_error_response_cases = [
@@ -82,7 +104,7 @@ def test_web3_raise_contract_logic_error_on_revert(benchmark: BenchmarkFixture, 
     def call():
         try:
             web3._utils.error_formatters_utils.raise_contract_logic_error_on_revert(response)
-        except (Web3ValueError, Web3ContractLogicError):
+        except Web3ValueError:
             pass
     benchmark(run_100, call)
 
@@ -92,7 +114,7 @@ def test_faster_web3_raise_contract_logic_error_on_revert(benchmark: BenchmarkFi
     def call():
         try:
             faster_web3._utils.error_formatters_utils.raise_contract_logic_error_on_revert(response)
-        except FasterContractLogicError:
+        except FasterWeb3ValueError:
             pass
     benchmark(run_100, call)
 
@@ -111,7 +133,7 @@ def test_web3_raise_transaction_indexing_error_if_indexing(benchmark: BenchmarkF
     def call():
         try:
             web3._utils.error_formatters_utils.raise_transaction_indexing_error_if_indexing(response)
-        except Web3TransactionIndexingInProgress:
+        except TransactionIndexingInProgress:
             pass
     benchmark(run_100, call)
 
@@ -140,7 +162,7 @@ def test_web3_raise_block_not_found_on_error(benchmark: BenchmarkFixture, respon
     def call():
         try:
             web3._utils.error_formatters_utils.raise_block_not_found_on_error(response)
-        except Web3BlockNotFound:
+        except BlockNotFound:
             pass
     benchmark(run_100, call)
 
