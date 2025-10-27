@@ -62,7 +62,9 @@ class HTTPSessionManager:
         cache_size: int = 100,
         session_pool_max_workers: int = 5,
     ) -> None:
-        self.session_cache: Final = SimpleCache(cache_size)
+        self.session_cache: Final[Union[requests.Session, ClientSession]] = SimpleCache(
+            cache_size
+        )
         self.session_pool: Final = ThreadPoolExecutor(
             max_workers=session_pool_max_workers
         )

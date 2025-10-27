@@ -146,7 +146,6 @@ else:
         "--disable-error-code=type-arg",
         "--disable-error-code=type-var",
         "--disable-error-code=call-arg",
-        "--disable-error-code=var-annotated",
         "--disable-error-code=assignment",
         "--disable-error-code=index",
         "--disable-error-code=operator",

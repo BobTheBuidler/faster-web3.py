@@ -257,7 +257,7 @@ class BaseContractEvent:
                 if errors == DISCARD:
                     continue
                 elif errors == IGNORE:
-                    new_log = MutableAttributeDict(log)
+                    new_log: MutableAttributeDict[str, Any] = MutableAttributeDict(log)
                     new_log["errors"] = e
                     rich_log = AttributeDict(new_log)
                 elif errors == STRICT:
