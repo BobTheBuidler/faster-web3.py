@@ -146,10 +146,10 @@ def abi_bytes_to_hex(
         return None
 
     bytes_data = hexstr_if_str(to_bytes, data)
-    if abi_type.sub is None:
+    num_bytes: Optional[int] = abi_type.sub
+    if num_bytes is None:
         return type_str, to_hex(bytes_data)
 
-    num_bytes = abi_type.sub
     if len(bytes_data) > num_bytes:
         raise Web3ValueError(
             f"This value was expected to be at most {num_bytes} bytes, "
