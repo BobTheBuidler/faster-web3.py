@@ -172,7 +172,9 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
             tx_from = filled_transaction.get("from", None)
 
             if tx_from is None or (
-                tx_from is not None and tx_from not in self._accounts
+                tx_from is not None
+                and tx_from
+                not in cast(Dict[ChecksumAddress, LocalAccount], self._accounts)
             ):
                 return method, params
             else:
@@ -201,7 +203,9 @@ class SignAndSendRawMiddlewareBuilder(Web3MiddlewareBuilder):
             tx_from = filled_transaction.get("from", None)
 
             if tx_from is None or (
-                tx_from is not None and tx_from not in self._accounts
+                tx_from is not None
+                and tx_from
+                not in cast(Dict[ChecksumAddress, LocalAccount], self._accounts)
             ):
                 return method, params
             else:
