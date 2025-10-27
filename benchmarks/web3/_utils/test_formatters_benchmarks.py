@@ -1,10 +1,13 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3._utils.formatters
+try:
+    import web3._utils.formatters
+except ImportError:
+    pass
+
 import faster_web3._utils.formatters
-import web3.exceptions
-import faster_web3.exceptions
+
 from benchmarks.web3._utils.params import (
     TX_DICT,
     LOG_ENTRY,

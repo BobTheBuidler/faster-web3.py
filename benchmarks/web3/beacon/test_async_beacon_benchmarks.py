@@ -3,7 +3,11 @@ import pytest
 from pytest_codspeed import BenchmarkFixture
 from unittest.mock import patch, AsyncMock
 
-import web3.beacon
+try:
+    import web3.beacon
+except ImportError:
+    pass
+
 import faster_web3.beacon
 
 # --- Fake Async Response and Mocking Utilities ---

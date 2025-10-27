@@ -1,8 +1,12 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3._utils.datatypes
-import web3.exceptions
+try:
+    import web3._utils.datatypes
+    import web3.exceptions
+except ImportError:
+    pass
+
 import faster_web3._utils.datatypes
 import faster_web3.exceptions
 

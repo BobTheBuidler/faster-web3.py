@@ -3,8 +3,12 @@ import binascii
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3._utils.type_conversion
-from web3.exceptions import Web3ValueError
+try:
+    import web3._utils.type_conversion
+    from web3.exceptions import Web3ValueError
+except ImportError:
+    pass
+
 import faster_web3._utils.type_conversion
 from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
 

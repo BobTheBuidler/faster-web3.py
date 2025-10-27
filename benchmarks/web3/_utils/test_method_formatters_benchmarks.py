@@ -1,5 +1,9 @@
 import pytest
-import web3._utils.method_formatters
+try:
+    import web3._utils.method_formatters
+except ImportError:
+    pass
+
 import faster_web3._utils.method_formatters
 from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture

@@ -1,7 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import web3._utils.utility_methods
+try:
+    import web3._utils.utility_methods
+except ImportError:
+    pass
+
 import faster_web3._utils.utility_methods
 
 

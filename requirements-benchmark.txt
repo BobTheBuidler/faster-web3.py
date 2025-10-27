@@ -1,3 +1,3 @@
--r "requirements-pytest.txt"
+-r requirements-pytest.txt
 
 web3>=7.14.0,<8

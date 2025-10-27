@@ -1,8 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-import ens._normalization
-import ens.exceptions
+try:
+    import ens._normalization
+    import ens.exceptions
+except ImportError:
+    pass
 
 import faster_ens._normalization
 import faster_ens.exceptions
