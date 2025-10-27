@@ -1,3 +1,4 @@
 -r requirements-pytest.txt
 
-web3>=7.14.0,<8
+pytest-benchmark==5.1.0
+web3==7.14.0
