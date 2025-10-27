@@ -4,11 +4,11 @@ PyMODINIT_FUNC
 PyInit_encoding(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("5f8b22f5f815a3776376__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("6e2934ce7263fc33a605__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___encoding");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "5f8b22f5f815a3776376__mypyc.init_faster_web3____utils___encoding");
+    void *init_func = PyCapsule_GetPointer(capsule, "6e2934ce7263fc33a605__mypyc.init_faster_web3____utils___encoding");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
