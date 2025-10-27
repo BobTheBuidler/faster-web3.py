@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_5f8b22f5f815a3776376_H
-#define MYPYC_NATIVE_5f8b22f5f815a3776376_H
+#ifndef MYPYC_NATIVE_6e2934ce7263fc33a605_H
+#define MYPYC_NATIVE_6e2934ce7263fc33a605_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T3CIO
@@ -1703,6 +1703,42 @@ typedef struct {
     PyObject *___mypyc_temp__9;
     tuple_T3OOO ___mypyc_temp__10;
 } faster_web3___contract___utils___async_build_transaction_for_function_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___datastructures___ReadableAttributeDictObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___datastructures___MutableAttributeDictObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+} faster_web3___datastructures___AttributeDictObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *__queue;
+} faster_web3___datastructures___NamedElementOnionObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_self__;
+    PyObject *__to_tuple;
+    PyObject *_d;
+} faster_web3___datastructures___tupleize_lists_nested_envObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    vectorcallfunc vectorcall;
+    PyObject *___mypyc_env__;
+} faster_web3___datastructures____to_tuple_tupleize_lists_nested_objObject;
 
 typedef struct {
     PyObject_HEAD
