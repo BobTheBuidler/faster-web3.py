@@ -33,6 +33,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Build wheel for Python3.14
+        id: wheel
         uses: ./.github/actions/build-wheel
         with:
           python-version: "3.14"
@@ -66,7 +67,7 @@ jobs:
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          name: wheel-Linux-py3.14
+          name: ${{ needs.build.outputs.wheel-artifact-name }}
           path: .
 
       - name: Install built wheel and codspeed dependencies

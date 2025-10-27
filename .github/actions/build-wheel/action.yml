@@ -12,6 +12,9 @@ inputs:
     description: "Dependency files for actions/setup-python cache. This input is passed directly to the 'cache-dependency-path' parameter of actions/setup-python."
     required: false
     default: ""
+outputs:
+  artifact-name:
+    description: "The name of the uploaded wheel artifact."
 runs:
   using: "composite"
   steps:
@@ -23,12 +26,40 @@ runs:
         cache: ${{ inputs.cache }}
         cache-dependency-path: ${{ inputs.cache-dependency-path }}
 
+    - name: Compute ccache restore-key prefix
+      id: ccache_restore_key
+      shell: bash
+      run: |
+        RESTORE_KEY="ccache-${{ runner.os }}-${{ inputs.python-version }}"
+        echo "restore-key=$RESTORE_KEY" >> $GITHUB_OUTPUT
+
+    - name: Compute hash key
+      id: hash_key
+      shell: bash
+      run: |
+        HASH_KEY="${{ hashFiles('pyproject.toml', 'setup.py', 'faster_web3/**/*.py', 'faster_ens/**/*.py', '**/*.c', '**/*.h') }}"
+        echo "hash-key=$HASH_KEY" >> $GITHUB_OUTPUT
+
+    - name: Compute ccache key
+      id: ccache_key
+      shell: bash
+      run: |
+        CCACHE_KEY="${{ steps.ccache_restore_key.outputs.restore-key }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', 'faster_web3/**/*.py', 'faster_ens/**/*.py') }}"
+        echo "ccache-key=$CCACHE_KEY" >> $GITHUB_OUTPUT
+
+    - name: Compute unique artifact name
+      id: artifact_name
+      shell: bash
+      run: |
+        ARTIFACT_NAME="wheel-artifact-${{ runner.os }}-py${{ inputs.python-version }}-${{ steps.hash_key.outputs.hash-key }}"
+        echo "artifact-name=$ARTIFACT_NAME" >> $GITHUB_OUTPUT
+
     - name: Cache built wheel (dist/)
       id: wheel-cache
       uses: actions/cache@v4
       with:
         path: dist/
-        key: wheel-artifact-${{ runner.os }}-py${{ inputs.python-version }}-${{ hashFiles('pyproject.toml', 'setup.py', 'faster_web3/**/*.py', 'faster_ens/**/*.py', '**/*.c', '**/*.h') }}
+        key: ${{ steps.artifact_name.outputs.artifact-name }}
 
     - name: Set ccache-dir variable
       if: steps.wheel-cache.outputs.cache-hit != 'true'
@@ -60,8 +91,8 @@ runs:
       uses: actions/cache/restore@v4
       with:
         path: ${{ env.CCACHE_DIR }}
-        key: ccache-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', 'faster_web3/**/*.py', 'faster_ens/**/*.py') }}
-        restore-keys: ccache-${{ runner.os }}-${{ inputs.python-version }}-
+        key: ${{ steps.ccache_key.outputs.ccache-key }}
+        restore-keys: ${{ steps.ccache_restore_key.outputs.restore-key }}
 
     - name: Show ccache config and stats before build
       if: steps.wheel-cache.outputs.cache-hit != 'true'
@@ -88,10 +119,10 @@ runs:
       uses: actions/cache/save@v4
       with:
         path: ${{ env.CCACHE_DIR }}
-        key: ccache-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('pyproject.toml', '**/*.h', '**/*.c', 'faster_web3/**/*.py', 'faster_ens/**/*.py') }}
+        key: ${{ steps.ccache_key.outputs.ccache-key }}
 
     - name: Upload wheel artifact
       uses: actions/upload-artifact@v5
       with:
-        name: wheel-${{ runner.os }}-py${{ inputs.python-version }}
+        name: ${{ steps.artifact_name.outputs.artifact-name }}
         path: dist/*.whl
