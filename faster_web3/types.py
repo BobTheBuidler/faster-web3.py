@@ -198,6 +198,39 @@ class WithdrawalData(TypedDict):
     amount: Gwei
 
 
+class RawBlockData(TypedDict, total=False):
+    baseFeePerGas: HexStr
+    difficulty: HexStr
+    extraData: HexStr
+    gasLimit: HexStr
+    gasUsed: HexStr
+    hash: HexStr
+    logsBloom: HexStr
+    miner: ChecksumAddress
+    mixHash: HexStr
+    nonce: HexStr
+    number: HexStr
+    parentHash: HexStr
+    receiptsRoot: HexStr
+    sha3Uncles: HexStr
+    size: HexStr
+    stateRoot: HexStr
+    timestamp: HexStr
+    totalDifficulty: HexStr
+    transactions: Union[Sequence[HexStr], Sequence[Dict[str, Any]]]
+    transactionsRoot: HexStr
+    uncles: Sequence[HexStr]
+    withdrawals: Sequence[Dict[str, HexStr]]
+    withdrawalsRoot: HexStr
+    parentBeaconBlockRoot: HexStr
+    blobGasUsed: HexStr
+    excessBlobGas: HexStr
+    requestsHash: HexStr
+
+    # ExtraDataToPOAMiddleware replaces extraData w/ proofOfAuthorityData
+    proofOfAuthorityData: HexStr
+
+
 class BlockData(TypedDict, total=False):
     baseFeePerGas: Wei
     difficulty: int

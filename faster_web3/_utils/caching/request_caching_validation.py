@@ -14,7 +14,7 @@ from faster_web3._utils.rpc_abi import (
     RPC,
 )
 from faster_web3.types import (
-    BlockData,
+    RawBlockData,
 )
 from faster_web3.utils import (
     RequestCacheValidationThreshold,
@@ -59,7 +59,7 @@ def is_beyond_validation_threshold(
         if isinstance(threshold, RequestCacheValidationThreshold):
             # if mainnet and threshold is "finalized" or "safe"
             assert isinstance(blocknum, int)
-            threshold_block: BlockData = provider.make_request(
+            threshold_block: RawBlockData = provider.make_request(
                 RPC.eth_getBlockByNumber, [threshold.value, False]
             )["result"]
             # we should have a `blocknum` to compare against
@@ -68,7 +68,7 @@ def is_beyond_validation_threshold(
             if not block_timestamp:
                 # if validating via `blocknum` from params, we need to get the timestamp
                 # for the block with `blocknum`.
-                block: BlockData = provider.make_request(
+                block: RawBlockData = provider.make_request(
                     RPC.eth_getBlockByNumber, [hex(blocknum), False]
                 )["result"]
                 block_timestamp = int(block["timestamp"], 16)
@@ -189,17 +189,19 @@ async def async_is_beyond_validation_threshold(
         if isinstance(threshold, RequestCacheValidationThreshold):
             assert isinstance(blocknum, int)
             # if mainnet and threshold is "finalized" or "safe"
-            threshold_block: BlockData = await provider.make_request(
+            threshold_block_response = await provider.make_request(
                 RPC.eth_getBlockByNumber, [threshold.value, False]
             )
+            threshold_block: RawBlockData = threshold_block_response["result"]
             # we should have a `blocknum` to compare against
-            return blocknum <= int(threshold_block["result"]["number"], 16)
+            return blocknum <= int(threshold_block["number"], 16)
         elif isinstance(threshold, int):
             if not block_timestamp:
-                block = await provider.make_request(
+                block_response = await provider.make_request(
                     RPC.eth_getBlockByNumber, [hex(blocknum), False]
                 )
-                block_timestamp = int(block["result"]["timestamp"], 16)
+                block: RawBlockData = block_response["result"]
+                block_timestamp = int(block["timestamp"], 16)
 
             # if validating via `block_timestamp` from result, we should have a
             # `block_timestamp` to compare against
