@@ -142,7 +142,7 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
     __hash: Optional[int] = None
 
     def __setattr__(self, attr: str, val: TValue) -> None:
-        if attr in ("__dict__", "__hash"):
+        if attr in ("__dict__", "_AttributeDict__hash"):
             super().__setattr__(attr, val)
         else:
             raise Web3TypeError(
