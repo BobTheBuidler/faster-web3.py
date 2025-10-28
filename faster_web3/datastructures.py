@@ -9,6 +9,7 @@ from typing import (
     Any,
     Callable,
     Dict,
+    Iterable,
     Iterator,
     List,
     Mapping,
@@ -59,13 +60,13 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         self,
         dictionary: Dict[TKey, TValue],
         __arg: Optional[DictPosArg[TKey, TValue]] = None,
-        **kwargs: TValue
+        **__kwargs: TValue
     ) -> None:
         dictionary = dictionary.copy()
-        if iterable is not None:
-            dictionary |= arg
+        if __arg is not None:
+            dictionary |= __arg
         if kwargs:
-            dictionary |= kwargs
+            dictionary |= __kwargs
         self.__dict__ = dictionary
 
     def __getitem__(self, key: TKey) -> TValue:
