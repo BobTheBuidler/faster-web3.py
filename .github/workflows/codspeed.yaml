@@ -42,8 +42,6 @@ jobs:
             setup.py
             faster_web3/**/*.py
             faster_ens/**/*.py
-            **/*.c
-            **/*.h
           ccache: true
           pip-cache-dependency-path: |
             pyproject.toml
