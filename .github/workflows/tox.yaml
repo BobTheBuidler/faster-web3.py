@@ -39,14 +39,21 @@ jobs:
 
       - name: Build wheel for Python${{ matrix.python-version }}
         id: wheel
-        uses: ./.github/actions/build-wheel
+        uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
-          cache-dependency-path: |
+          pip-cache-dependency-path: |
             pyproject.toml
             setup.py
             tox.ini
+          hash-key: |
+            pyproject.toml
+            setup.py
+            faster_web3/**/*.py
+            faster_ens/**/*.py
+            **/*.c
+            **/*.h
+            
 
   tox:
     needs: build
