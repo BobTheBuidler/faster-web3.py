@@ -65,7 +65,7 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         dictionary = dictionary.copy()
         if __arg is not None:
             dictionary |= __arg
-        if kwargs:
+        if __kwargs:
             dictionary |= __kwargs
         self.__dict__ = dictionary
 
