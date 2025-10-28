@@ -139,8 +139,10 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
     Provides superficial immutability, someone could hack around it
     """
 
+    __hash: Optional[int] = None
+
     def __setattr__(self, attr: str, val: TValue) -> None:
-        if attr == "__dict__":
+        if attr in ("__dict__", "_AttributeDict__hash"):
             super().__setattr__(attr, val)
         else:
             raise Web3TypeError(
@@ -153,7 +155,11 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
         )
 
     def __hash__(self) -> int:
-        return hash(tuple(sorted(tupleize_lists_nested(self).items())))
+        cached_hash = self.__hash
+        if cached_hash is None:
+            # The hash value was not cached, let's compute it and store it
+            cached_hash = self.__hash = hash(tuple(sorted(tupleize_lists_nested(self).items())))
+        return cached_hash
 
     def __eq__(self, other: Any) -> bool:
         if isinstance(other, AttributeDict):
