@@ -158,7 +158,7 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
         cached_hash = self.__hash
         if cached_hash is None:
             # The hash value was not cached, let's compute it and store it
-            cached_hash = hash(tuple(sorted(tupleize_lists_nested(self).items())))
+            cached_hash = self.__hash = hash(tuple(sorted(tupleize_lists_nested(self).items())))
         return cached_hash
 
     def __eq__(self, other: Any) -> bool:
