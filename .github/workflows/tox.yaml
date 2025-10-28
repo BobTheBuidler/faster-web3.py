@@ -42,10 +42,6 @@ jobs:
         uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          pip-cache-dependency-path: |
-            pyproject.toml
-            setup.py
-            tox.ini
           hash-key: |
             pyproject.toml
             setup.py
@@ -53,6 +49,11 @@ jobs:
             faster_ens/**/*.py
             **/*.c
             **/*.h
+          ccache: true
+          pip-cache-dependency-path: |
+            pyproject.toml
+            setup.py
+            tox.ini
             
 
   tox:
