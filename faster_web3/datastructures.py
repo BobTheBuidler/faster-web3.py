@@ -5,6 +5,7 @@ from collections.abc import (
     Hashable,
 )
 from typing import (
+    TYPE_CHECKING,
     Any,
     Callable,
     Dict,
@@ -33,6 +34,9 @@ from faster_web3.exceptions import (
     Web3ValueError,
 )
 
+if TYPE_CHECKING:
+    from _typeshed import SupportsKeysAndGetItem
+
 # Hashable must be immutable:
 # "the implementation of hashable collections requires that a
 # key's hash value is immutable"
@@ -42,6 +46,9 @@ T = TypeVar("T")
 TKey = TypeVar("TKey", bound=Hashable)
 TValue = TypeVar("TValue")
 
+DictPosArg = Union[
+    "SupportsKeysAndGetItem[TKey, TValue]", Iterable[Tuple[TKey, TValue]],
+]
 
 class ReadableAttributeDict(Mapping[TKey, TValue]):
     """
@@ -49,16 +56,22 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
     """
 
     def __init__(
-        self, dictionary: Dict[TKey, TValue], *args: Any, **kwargs: Any
+        self,
+        dictionary: Dict[TKey, TValue],
+        __arg: Optional[DictPosArg[TKey, TValue]] = None,
+        **kwargs: TValue
     ) -> None:
-        # type ignored on 46/50 b/c dict() expects str index type not TKey
-        self.__dict__ = dict(dictionary)
-        self.__dict__.update(dict(*args, **kwargs))
+        dictionary = dictionary.copy()
+        if iterable is not None:
+            dictionary |= arg
+        if kwargs:
+            dictionary |= kwargs
+        self.__dict__ = dictionary
 
     def __getitem__(self, key: TKey) -> TValue:
         return self.__dict__[key]
 
-    def __iter__(self) -> Iterator[Any]:
+    def __iter__(self) -> Iterator[TKey]:
         return iter(self.__dict__)
 
     def __len__(self) -> int:
@@ -113,10 +126,10 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
 class MutableAttributeDict(
     MutableMapping[TKey, TValue], ReadableAttributeDict[TKey, TValue]
 ):
-    def __setitem__(self, key: Any, val: Any) -> None:
+    def __setitem__(self, key: TKey, val: TValue) -> None:
         self.__dict__[key] = val
 
-    def __delitem__(self, key: Any) -> None:
+    def __delitem__(self, key: TKey) -> None:
         del self.__dict__[key]
 
 
@@ -164,7 +177,8 @@ def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValu
     for k, v in d.items():
         if isinstance(v, (list, tuple)):
             ret[k] = _to_tuple(v)
-        elif isinstance(v, Mapping):
+        # dict check is fast, Mapping check is slow
+        elif isinstance(v, dict) or isinstance(v, Mapping):
             ret[k] = tupleize_lists_nested(v)
         elif not isinstance(v, Hashable):
             raise Web3TypeError(f"Found unhashable type '{type(v).__name__}': {v}")
