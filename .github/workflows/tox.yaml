@@ -39,14 +39,20 @@ jobs:
 
       - name: Build wheel for Python${{ matrix.python-version }}
         id: wheel
-        uses: ./.github/actions/build-wheel
+        uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
-          cache-dependency-path: |
+          hash-key: |
+            pyproject.toml
+            setup.py
+            faster_web3/**/*.py
+            faster_ens/**/*.py
+          ccache: true
+          pip-cache-dependency-path: |
             pyproject.toml
             setup.py
             tox.ini
+            
 
   tox:
     needs: build
@@ -104,6 +110,7 @@ jobs:
         with:
           name: ${{ needs.build.outputs.wheel-artifact-name }}
           path: .
+          pattern: BobTheBuidler_mypycified_wheel_${{ runner.os }}-${{ matrix.python-version }}-
 
       - name: Run tox
         run: python -m tox run --installpkg=$(find . -name '*.whl') ${{ env.TOX_RECREATE_FLAG }}
