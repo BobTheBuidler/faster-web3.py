@@ -1,8 +1,14 @@
-import pytest
-import faster_web3._utils.http_session_manager
-import web3._utils.http_session_manager
-from unittest.mock import patch
 import asyncio
+from unittest.mock import patch
+
+import pytest
+
+try:
+    import web3._utils.http_session_manager
+except ImportError:
+    pass
+
+import faster_web3._utils.http_session_manager
 
 from benchmarks.mocking import (
     fake_requests_get,
