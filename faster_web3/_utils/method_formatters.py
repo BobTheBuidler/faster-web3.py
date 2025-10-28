@@ -122,6 +122,7 @@ if TYPE_CHECKING:
 TValue = TypeVar("TValue")
 
 
+
 def bytes_to_ascii(value: bytes) -> str:
     return codecs.decode(value, "ascii")
 

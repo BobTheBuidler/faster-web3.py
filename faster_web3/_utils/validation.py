@@ -27,7 +27,6 @@ from faster_eth_utils import (
     is_checksum_address,
     is_dict,
     is_hex_address,
-    is_integer,
     is_list_like,
     is_string,
 )

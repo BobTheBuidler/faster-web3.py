@@ -118,9 +118,9 @@ def validate_from_blocknum_in_result(
         if "blockNumber" in result:
             blocknum = result.get("blockNumber")
             # make an extra call to get the block values
-            block = provider.make_request(
-                RPC.eth_getBlockByNumber, [blocknum, False]
-            )["result"]
+            block = provider.make_request(RPC.eth_getBlockByNumber, [blocknum, False])[
+                "result"
+            ]
             return is_beyond_validation_threshold(
                 provider,
                 blocknum=int(blocknum, 16),
@@ -157,9 +157,9 @@ def validate_from_blockhash_in_params(
         provider.cache_allowed_requests = False
 
         # make an extra call to get the block number from the hash
-        block = provider.make_request(
-            RPC.eth_getBlockByHash, [params[0], False]
-        )["result"]
+        block = provider.make_request(RPC.eth_getBlockByHash, [params[0], False])[
+            "result"
+        ]
         return is_beyond_validation_threshold(
             provider,
             blocknum=int(block["number"], 16),
