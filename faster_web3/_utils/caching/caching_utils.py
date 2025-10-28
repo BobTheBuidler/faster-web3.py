@@ -122,6 +122,7 @@ class RequestInformation:
     ):
         self.method: Final = method
         self.params: Final = params
+        assert all(map(callable, response_formatters))
         self.response_formatters: Final = response_formatters
         self.subscription_id: Final = subscription_id
         self.middleware_response_processors: Final[List[Callable[[Any], Any]]] = []
