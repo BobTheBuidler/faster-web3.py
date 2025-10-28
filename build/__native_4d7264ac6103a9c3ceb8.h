@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_5f8b22f5f815a3776376_H
-#define MYPYC_NATIVE_5f8b22f5f815a3776376_H
+#ifndef MYPYC_NATIVE_4d7264ac6103a9c3ceb8_H
+#define MYPYC_NATIVE_4d7264ac6103a9c3ceb8_H
 #include <Python.h>
 #include <CPy.h>
 #ifndef MYPYC_DECLARED_tuple_T3CIO
@@ -130,6 +130,24 @@ typedef struct tuple_T3OOI {
     PyObject *f1;
     CPyTagged f2;
 } tuple_T3OOI;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T3COO
+#define MYPYC_DECLARED_tuple_T3COO
+typedef struct tuple_T3COO {
+    char f0;
+    PyObject *f1;
+    PyObject *f2;
+} tuple_T3COO;
+#endif
+
+#ifndef MYPYC_DECLARED_tuple_T3T0T0T0
+#define MYPYC_DECLARED_tuple_T3T0T0T0
+typedef struct tuple_T3T0T0T0 {
+    tuple_T0 f0;
+    tuple_T0 f1;
+    tuple_T0 f2;
+} tuple_T3T0T0T0;
 #endif
 
 #ifndef MYPYC_DECLARED_tuple_T6OOOOOO
@@ -1784,6 +1802,253 @@ typedef struct {
 typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
+    PyObject *_logger;
+    PyObject *_middleware_onion;
+    PyObject *_w3;
+    PyObject *__request_processor;
+    PyObject *__provider;
+} faster_web3___manager___RequestManagerObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *_manager;
+    PyObject *_provider;
+} faster_web3___manager____AsyncPersistentMessageStreamObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_temp__0;
+    tuple_T3OOO ___mypyc_temp__1;
+    PyObject *___mypyc_generator_attribute__request_func;
+    PyObject *___mypyc_temp__2;
+    tuple_T3OOO ___mypyc_temp__3;
+} faster_web3___manager____coro_make_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    PyObject *___mypyc_generator_attribute__error_formatters;
+    PyObject *___mypyc_generator_attribute__null_result_formatters;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__4;
+    tuple_T3OOO ___mypyc_temp__5;
+    PyObject *___mypyc_generator_attribute__response;
+} faster_web3___manager___coro_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__requests_info;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_temp__6;
+    tuple_T3OOO ___mypyc_temp__7;
+    PyObject *___mypyc_generator_attribute__request_func;
+    PyObject *___mypyc_temp__8;
+    tuple_T3OOO ___mypyc_temp__9;
+    PyObject *___mypyc_generator_attribute__unpacked_requests_info;
+    PyObject *___mypyc_temp__10;
+    int64_t ___mypyc_temp__11;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    PyObject *___mypyc_generator_attribute___response_formatters;
+    PyObject *___mypyc_temp__12;
+    tuple_T3OOO ___mypyc_temp__13;
+    PyObject *___mypyc_generator_attribute__response;
+    PyObject *___mypyc_temp__14;
+    PyObject *___mypyc_temp__15;
+    int64_t ___mypyc_temp__16;
+    PyObject *___mypyc_temp__17;
+    int64_t ___mypyc_temp__18;
+    tuple_T2T2OOO ___mypyc_generator_attribute__info;
+    PyObject *___mypyc_generator_attribute__resp;
+    PyObject *___mypyc_generator_attribute__formatted_responses;
+} faster_web3___manager____async_make_batch_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__requests;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__19;
+    tuple_T3OOO ___mypyc_temp__20;
+    PyObject *___mypyc_generator_attribute__send_func;
+    PyObject *___mypyc_temp__21;
+    tuple_T3OOO ___mypyc_temp__22;
+} faster_web3___manager____async_send_batch_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__requests;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__23;
+    tuple_T3OOO ___mypyc_temp__24;
+    PyObject *___mypyc_generator_attribute__recv_func;
+    PyObject *___mypyc_temp__25;
+    tuple_T3OOO ___mypyc_temp__26;
+} faster_web3___manager____async_recv_batch_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__requests_info;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__27;
+    tuple_T3OOO ___mypyc_temp__28;
+    PyObject *___mypyc_generator_attribute__unpacked_requests_info;
+    PyObject *___mypyc_temp__29;
+    int64_t ___mypyc_temp__30;
+    tuple_T2OO ___mypyc_generator_attribute__req;
+    PyObject *___mypyc_generator_attribute___;
+    PyObject *___mypyc_generator_attribute__reqs;
+    PyObject *___mypyc_temp__31;
+    int64_t ___mypyc_temp__32;
+    PyObject *___mypyc_generator_attribute__resp_f;
+    PyObject *___mypyc_generator_attribute__response_formatters;
+    PyObject *___mypyc_temp__33;
+    tuple_T3OOO ___mypyc_temp__34;
+    PyObject *___mypyc_generator_attribute__requests;
+    CPyTagged ___mypyc_temp__35;
+    CPyTagged ___mypyc_generator_attribute__i;
+    PyObject *___mypyc_temp__36;
+    int64_t ___mypyc_temp__37;
+    PyObject *___mypyc_generator_attribute__request;
+    PyObject *___mypyc_temp__38;
+    tuple_T3OOO ___mypyc_temp__39;
+    PyObject *___mypyc_generator_attribute__responses;
+    PyObject *___mypyc_temp__40;
+    int64_t ___mypyc_temp__41;
+    PyObject *___mypyc_generator_attribute__resp;
+    PyObject *___mypyc_temp__42;
+    tuple_T3OOO ___mypyc_temp__43;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
+} faster_web3___manager____async_make_socket_batch_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    PyObject *___mypyc_generator_attribute__response_formatters;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_temp__44;
+    tuple_T3OOO ___mypyc_temp__45;
+    PyObject *___mypyc_generator_attribute__rpc_request;
+    PyObject *___mypyc_temp__46;
+    tuple_T3OOO ___mypyc_temp__47;
+} faster_web3___manager___socket_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__method;
+    PyObject *___mypyc_generator_attribute__params;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__middleware_onion;
+    PyObject *___mypyc_temp__48;
+    tuple_T3OOO ___mypyc_temp__49;
+    PyObject *___mypyc_generator_attribute__send_func;
+    PyObject *___mypyc_temp__50;
+    tuple_T3OOO ___mypyc_temp__51;
+} faster_web3___manager___send_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__rpc_request;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_generator_attribute__async_w3;
+    PyObject *___mypyc_generator_attribute__middleware_onion;
+    PyObject *___mypyc_temp__52;
+    tuple_T3OOO ___mypyc_temp__53;
+    PyObject *___mypyc_generator_attribute__recv_func;
+    PyObject *___mypyc_temp__54;
+    tuple_T3OOO ___mypyc_temp__55;
+    PyObject *___mypyc_generator_attribute__response;
+    PyObject *___mypyc_temp__56;
+    tuple_T3OOO ___mypyc_temp__57;
+    tuple_T3OOO ___mypyc_temp__58;
+    PyObject *___mypyc_generator_attribute__response_id_key;
+} faster_web3___manager___recv_for_request_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_generator_attribute__request_response_cache;
+    PyObject *___mypyc_temp__59;
+    tuple_T3OOO ___mypyc_temp__60;
+    PyObject *___mypyc_generator_attribute___key;
+    PyObject *___mypyc_generator_attribute__response;
+    PyObject *___mypyc_temp__61;
+    tuple_T3OOO ___mypyc_temp__62;
+} faster_web3___manager___recv_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__63;
+    tuple_T3OOO ___mypyc_temp__64;
+} faster_web3___manager____get_next_message_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    PyObject *___mypyc_generator_attribute__response;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_generator_attribute__provider;
+    PyObject *___mypyc_generator_attribute__request_info;
+    PyObject *___mypyc_generator_attribute__subscription_id;
+    PyObject *___mypyc_generator_attribute__cache_key;
+    PyObject *___mypyc_temp__65;
+    int64_t ___mypyc_temp__66;
+    PyObject *___mypyc_generator_attribute__formatter;
+    PyObject *___mypyc_generator_attribute__result_formatters;
+    PyObject *___mypyc_generator_attribute__error_formatters;
+    PyObject *___mypyc_generator_attribute__null_formatters;
+    PyObject *___mypyc_generator_attribute__partly_formatted_response;
+} faster_web3___manager____process_response_RequestManager_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
+    PyObject *___mypyc_generator_attribute__self;
+    int32_t ___mypyc_next_label__;
+    PyObject *___mypyc_temp__67;
+    tuple_T3OOO ___mypyc_temp__68;
+} faster_web3___manager_____anext___3__AsyncPersistentMessageStream_genObject;
+
+typedef struct {
+    PyObject_HEAD
+    CPyVTableItem *vtable;
     PyObject *___mypyc_self__;
     PyObject *_fn;
     PyObject *_inner;
@@ -2144,8 +2409,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    int64_t ___mypyc_temp__2_0;
-    PyObject *___mypyc_temp__2_1;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {
