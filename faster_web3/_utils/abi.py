@@ -862,7 +862,9 @@ def recursive_dict_to_namedtuple(data: Dict[str, Any]) -> Tuple[Any, ...]:
 def abi_decoded_namedtuple_factory(
     fields: Tuple[Any, ...],
 ) -> Callable[..., Tuple[Any, ...]]:
-    class ABIDecodedNamedTuple(namedtuple("ABIDecodedNamedTuple", fields, rename=True)): # noqa: E501
+    class ABIDecodedNamedTuple(
+        namedtuple("ABIDecodedNamedTuple", fields, rename=True)
+    ):  # noqa: E501
         def __new__(cls, args: Any) -> "ABIDecodedNamedTuple":
             return super().__new__(cls, *args)
 

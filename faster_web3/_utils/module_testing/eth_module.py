@@ -1231,9 +1231,7 @@ class AsyncEthModuleTest:
                 f"{unknown_identifier}"
             ),
         ):
-            await async_w3.eth.get_raw_transaction_by_block(
-                unknown_identifier, 0
-            )
+            await async_w3.eth.get_raw_transaction_by_block(unknown_identifier, 0)
 
     @pytest.mark.asyncio
     async def test_eth_get_balance(self, async_w3: "AsyncWeb3[Any]") -> None:
