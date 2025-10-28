@@ -7,15 +7,13 @@ import faster_web3.exceptions
 try:
     import web3._utils.datatypes
     import web3.exceptions
-    
+
     Web3AttributeError = (
         web3.exceptions.Web3AttributeError,
         faster_web3.exceptions.Web3AttributeError,
     )
 except ImportError:
-    Web3AttributeError = (
-        faster_web3.exceptions.Web3AttributeError,
-    )
+    Web3AttributeError = (faster_web3.exceptions.Web3AttributeError,)
 
 
 def run_100(func, *args, **kwargs):

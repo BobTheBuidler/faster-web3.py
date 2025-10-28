@@ -9,7 +9,7 @@ from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
 try:
     import web3._utils.type_conversion
     from web3.exceptions import Web3ValueError
-    
+
     excs = (
         UnicodeDecodeError,
         UnicodeEncodeError,

@@ -240,7 +240,9 @@ def test_NamedElementOnion_add(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-add")
 def test_faster_NamedElementOnion_add(benchmark: BenchmarkFixture):
-    onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
+    onion = faster_web3.datastructures.NamedElementOnion(
+        [make_callable(i) for i in range(10)]
+    )
 
     def add():
         for i in range(100, 200):
@@ -262,7 +264,9 @@ def test_NamedElementOnion_inject(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-inject")
 def test_faster_NamedElementOnion_inject(benchmark: BenchmarkFixture):
-    onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
+    onion = faster_web3.datastructures.NamedElementOnion(
+        [make_callable(i) for i in range(10)]
+    )
 
     def inject():
         for i in range(100, 200):
@@ -359,7 +363,9 @@ def test_NamedElementOnion_iter(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-iter")
 def test_faster_NamedElementOnion_iter(benchmark: BenchmarkFixture):
-    onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
+    onion = faster_web3.datastructures.NamedElementOnion(
+        [make_callable(i) for i in range(10)]
+    )
     benchmark(run_100, list, onion)
 
 
@@ -371,5 +377,7 @@ def test_NamedElementOnion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="NamedElementOnion-as_tuple_of_middleware")
 def test_faster_NamedElementOnion_as_tuple_of_middleware(benchmark: BenchmarkFixture):
-    onion = faster_web3.datastructures.NamedElementOnion([make_callable(i) for i in range(10)])
+    onion = faster_web3.datastructures.NamedElementOnion(
+        [make_callable(i) for i in range(10)]
+    )
     benchmark(run_100, onion.as_tuple_of_middleware)
