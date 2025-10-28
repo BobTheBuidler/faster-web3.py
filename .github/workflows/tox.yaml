@@ -23,20 +23,75 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build Python${{ matrix.python-version }} wheel for ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+  build-ubuntu:
+    name: Build wheel (ubuntu-latest, ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
       # limit parallelism for cronjob, otherwise blast it
-      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
-
+      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
+    outputs:
+      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
-
+      - name: Build wheel for Python${{ matrix.python-version }}
+        id: wheel
+        uses: BobTheBuidler/mypycify@master
+        with:
+          python-version: ${{ matrix.python-version }}
+          hash-key: |
+            pyproject.toml
+            setup.py
+            faster_web3/**/*.py
+            faster_ens/**/*.py
+          ccache: true
+          pip-cache-dependency-path: |
+            pyproject.toml
+            setup.py
+            tox.ini
+  build-macos:
+    name: Build wheel (macos-latest, ${{ matrix.python-version }})
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+      # limit parallelism for cronjob, otherwise blast it
+      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
+    outputs:
+      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build wheel for Python${{ matrix.python-version }}
+        id: wheel
+        uses: BobTheBuidler/mypycify@master
+        with:
+          python-version: ${{ matrix.python-version }}
+          hash-key: |
+            pyproject.toml
+            setup.py
+            faster_web3/**/*.py
+            faster_ens/**/*.py
+          ccache: true
+          pip-cache-dependency-path: |
+            pyproject.toml
+            setup.py
+            tox.ini
+  build-windows:
+    name: Build wheel (windows-latest, ${{ matrix.python-version }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+      # limit parallelism for cronjob, otherwise blast it
+      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
+    outputs:
+      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+    steps:
+      - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
         id: wheel
         uses: BobTheBuidler/mypycify@master
@@ -55,7 +110,7 @@ jobs:
             
 
   tox:
-    needs: build
+    needs: [build-ubuntu, build-macos, build-windows]
     name: Test (${{ matrix.jobtype }}, ${{ matrix.python-version}}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -64,11 +119,6 @@ jobs:
         jobtype: [core, ens, integration-ethtester, lint, wheel]
         os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
-        include:
-          - os: ubuntu-latest
-            ccache-dir: ~/.cache/ccache
-          - os: macos-latest
-            ccache-dir: /Users/runner/Library/Caches/ccache
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
     env:
