@@ -144,6 +144,8 @@ class AttributeDict(ReadableAttributeDict[TKey, TValue], Hashable):
     def __eq__(self, other: Any) -> bool:
         if isinstance(other, AttributeDict):
             return hash(self) == hash(other)
+        elif isinstance(other, dict):
+            return self.__dict__ == other
         elif isinstance(other, Mapping):
             return self.__dict__ == dict(other)
         else:
