@@ -1,3 +1,4 @@
+"""We need this helper file until mypyc supports async generators."""
 import asyncio
 from typing import TYPE_CHECKING, Any, AsyncGenerator, cast
 
