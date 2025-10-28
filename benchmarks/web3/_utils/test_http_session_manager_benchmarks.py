@@ -30,20 +30,20 @@ JSON_RPC_PAYLOAD = {
 }
 
 
-def run_100(fn, *args, **kwargs):
-    for _ in range(100):
+def run_10000(fn, *args, **kwargs):
+    for _ in range(10000):
         fn(*args, **kwargs)
 
 
-async def _run_100_async(fn, *args, **kwargs):
-    for _ in range(100):
+async def _run_10000_async(fn, *args, **kwargs):
+    for _ in range(10000):
         await fn(*args, **kwargs)
 
 
-def run_100_async(fn, *args, **kwargs):
+def run_10000_async(fn, *args, **kwargs):
     loop = asyncio.new_event_loop()
     try:
-        return loop.run_until_complete(_run_100_async(fn, *args, **kwargs))
+        return loop.run_until_complete(_run_10000_async(fn, *args, **kwargs))
     finally:
         loop.close()
 
@@ -66,7 +66,7 @@ def test_HTTPSessionManager_cache_and_return_session(
     manager = web3._utils.http_session_manager.HTTPSessionManager(cache_size=2)
     if cache_hit:
         manager.cache_and_return_session(endpoint_uri)
-    benchmark(run_100, manager.cache_and_return_session, endpoint_uri)
+    benchmark(run_10000, manager.cache_and_return_session, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="faster_cache_and_return_session")
@@ -78,7 +78,7 @@ def test_faster_HTTPSessionManager_cache_and_return_session(
     manager = faster_web3._utils.http_session_manager.HTTPSessionManager(cache_size=2)
     if cache_hit:
         manager.cache_and_return_session(endpoint_uri)
-    benchmark(run_100, manager.cache_and_return_session, endpoint_uri)
+    benchmark(run_10000, manager.cache_and_return_session, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="get_response_from_get_request")
@@ -86,7 +86,7 @@ def test_faster_HTTPSessionManager_cache_and_return_session(
 def test_HTTPSessionManager_get_response_from_get_request(benchmark, endpoint_uri):
     with patch("requests.Session.get", side_effect=fake_requests_get):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100, manager.get_response_from_get_request, endpoint_uri)
+        benchmark(run_10000, manager.get_response_from_get_request, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="faster_get_response_from_get_request")
@@ -96,7 +96,7 @@ def test_faster_HTTPSessionManager_get_response_from_get_request(
 ):
     with patch("requests.Session.get", side_effect=fake_requests_get):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100, manager.get_response_from_get_request, endpoint_uri)
+        benchmark(run_10000, manager.get_response_from_get_request, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="json_make_get_request")
@@ -104,7 +104,7 @@ def test_faster_HTTPSessionManager_get_response_from_get_request(
 def test_HTTPSessionManager_json_make_get_request(benchmark, endpoint_uri):
     with patch("requests.Session.get", side_effect=fake_requests_get):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100, manager.json_make_get_request, endpoint_uri)
+        benchmark(run_10000, manager.json_make_get_request, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="faster_json_make_get_request")
@@ -112,7 +112,7 @@ def test_HTTPSessionManager_json_make_get_request(benchmark, endpoint_uri):
 def test_faster_HTTPSessionManager_json_make_get_request(benchmark, endpoint_uri):
     with patch("requests.Session.get", side_effect=fake_requests_get):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100, manager.json_make_get_request, endpoint_uri)
+        benchmark(run_10000, manager.json_make_get_request, endpoint_uri)
 
 
 @pytest.mark.benchmark(group="get_response_from_post_request")
@@ -121,7 +121,7 @@ def test_HTTPSessionManager_get_response_from_post_request(benchmark, endpoint_u
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100,
+            run_10000,
             manager.get_response_from_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
@@ -136,7 +136,7 @@ def test_faster_HTTPSessionManager_get_response_from_post_request(
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100,
+            run_10000,
             manager.get_response_from_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
@@ -149,7 +149,7 @@ def test_HTTPSessionManager_json_make_post_request(benchmark, endpoint_uri):
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100, manager.json_make_post_request, endpoint_uri, json=JSON_RPC_PAYLOAD
+            run_10000, manager.json_make_post_request, endpoint_uri, json=JSON_RPC_PAYLOAD
         )
 
 
@@ -159,7 +159,7 @@ def test_faster_HTTPSessionManager_json_make_post_request(benchmark, endpoint_ur
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100, manager.json_make_post_request, endpoint_uri, json=JSON_RPC_PAYLOAD
+            run_10000, manager.json_make_post_request, endpoint_uri, json=JSON_RPC_PAYLOAD
         )
 
 
@@ -169,7 +169,7 @@ def test_HTTPSessionManager_make_post_request(benchmark, endpoint_uri):
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100,
+            run_10000,
             manager.make_post_request,
             endpoint_uri,
             b'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}',
@@ -182,7 +182,7 @@ def test_faster_HTTPSessionManager_make_post_request(benchmark, endpoint_uri):
     with patch("requests.Session.post", side_effect=fake_requests_post):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100,
+            run_10000,
             manager.make_post_request,
             endpoint_uri,
             b'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}',
@@ -196,7 +196,7 @@ def test_faster_HTTPSessionManager_make_post_request(benchmark, endpoint_uri):
 @pytest.mark.benchmark(group="async_cache_and_return_session")
 def test_HTTPSessionManager_async_cache_and_return_session(benchmark, endpoint_uri):
     manager = web3._utils.http_session_manager.HTTPSessionManager(cache_size=2)
-    benchmark(run_100_async, manager.async_cache_and_return_session, endpoint_uri)
+    benchmark(run_10000_async, manager.async_cache_and_return_session, endpoint_uri)
 
 
 @parametrize_endpoints
@@ -205,7 +205,7 @@ def test_faster_HTTPSessionManager_async_cache_and_return_session(
     benchmark, endpoint_uri
 ):
     manager = faster_web3._utils.http_session_manager.HTTPSessionManager(cache_size=2)
-    benchmark(run_100_async, manager.async_cache_and_return_session, endpoint_uri)
+    benchmark(run_10000_async, manager.async_cache_and_return_session, endpoint_uri)
 
 
 @parametrize_endpoints
@@ -216,7 +216,7 @@ def test_HTTPSessionManager_async_get_response_from_get_request(
     with patch("aiohttp.ClientSession.get", side_effect=fake_aiohttp_get):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async, manager.async_get_response_from_get_request, endpoint_uri
+            run_10000_async, manager.async_get_response_from_get_request, endpoint_uri
         )
 
 
@@ -228,7 +228,7 @@ def test_faster_HTTPSessionManager_async_get_response_from_get_request(
     with patch("aiohttp.ClientSession.get", side_effect=fake_aiohttp_get):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async, manager.async_get_response_from_get_request, endpoint_uri
+            run_10000_async, manager.async_get_response_from_get_request, endpoint_uri
         )
 
 
@@ -237,7 +237,7 @@ def test_faster_HTTPSessionManager_async_get_response_from_get_request(
 def test_HTTPSessionManager_async_json_make_get_request(benchmark, endpoint_uri):
     with patch("aiohttp.ClientSession.get", side_effect=fake_aiohttp_get):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100_async, manager.async_json_make_get_request, endpoint_uri)
+        benchmark(run_10000_async, manager.async_json_make_get_request, endpoint_uri)
 
 
 @parametrize_endpoints
@@ -245,7 +245,7 @@ def test_HTTPSessionManager_async_json_make_get_request(benchmark, endpoint_uri)
 def test_faster_HTTPSessionManager_async_json_make_get_request(benchmark, endpoint_uri):
     with patch("aiohttp.ClientSession.get", side_effect=fake_aiohttp_get):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
-        benchmark(run_100_async, manager.async_json_make_get_request, endpoint_uri)
+        benchmark(run_10000_async, manager.async_json_make_get_request, endpoint_uri)
 
 
 @parametrize_endpoints
@@ -256,7 +256,7 @@ def test_HTTPSessionManager_async_get_response_from_post_request(
     with patch("aiohttp.ClientSession.post", side_effect=fake_aiohttp_post):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async,
+            run_10000_async,
             manager.async_get_response_from_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
@@ -271,7 +271,7 @@ def test_faster_HTTPSessionManager_async_get_response_from_post_request(
     with patch("aiohttp.ClientSession.post", side_effect=fake_aiohttp_post):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async,
+            run_10000_async,
             manager.async_get_response_from_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
@@ -284,7 +284,7 @@ def test_HTTPSessionManager_async_json_make_post_request(benchmark, endpoint_uri
     with patch("aiohttp.ClientSession.post", side_effect=fake_aiohttp_post):
         manager = web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async,
+            run_10000_async,
             manager.async_json_make_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
@@ -299,7 +299,7 @@ def test_faster_HTTPSessionManager_async_json_make_post_request(
     with patch("aiohttp.ClientSession.post", side_effect=fake_aiohttp_post):
         manager = faster_web3._utils.http_session_manager.HTTPSessionManager()
         benchmark(
-            run_100_async,
+            run_10000_async,
             manager.async_json_make_post_request,
             endpoint_uri,
             json=JSON_RPC_PAYLOAD,
