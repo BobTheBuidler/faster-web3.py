@@ -114,6 +114,7 @@ else:
         "faster_web3/constants.py",
         "faster_web3/contract/utils.py",
         "faster_web3/gas_strategies",
+        "faster_web3/manager.py",
         "faster_web3/providers/eth_tester",
         "faster_web3/providers/persistent/persistent_connection.py",
         "faster_web3/providers/persistent/request_processor.py",
