@@ -236283,22 +236283,19 @@ PyObject *CPyDef_persistent_connection___PersistentConnection___subscriptions(Py
         cpy_r_r3 = cpy_r_r2;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", 50, CPyStatic_persistent_connection___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r2);
-        goto CPyL5;
+        goto CPyL4;
     }
     cpy_r_r4 = CPyDef_request_processor___RequestProcessor___active_subscriptions(cpy_r_r3);
+    CPy_DECREF_NO_IMM(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_persistent_connection___globals);
-        goto CPyL5;
+        goto CPyL4;
     }
 CPyL3: ;
-    CPy_DECREF(cpy_r_r2);
     return cpy_r_r4;
 CPyL4: ;
     cpy_r_r5 = NULL;
     return cpy_r_r5;
-CPyL5: ;
-    CPy_DecRef(cpy_r_r2);
-    goto CPyL4;
 }
 
 PyObject *CPyPy_persistent_connection___PersistentConnection___subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -290784,8 +290781,8 @@ const int CPyLit_Tuple[] = {
     517, 1932, 1, 2315, 8, 73, 74, 366, 76, 78, 80, 522, 82, 1, 801
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 394, 296, 395, 396, 308, 3, 19, 1941, 0, 2, 895, 896, 4, 379,
-    1089, 1092, 1091
+    4, 5, 394, 296, 308, 395, 396, 3, 19, 1941, 0, 2, 895, 896, 4, 1092,
+    1091, 1089, 379
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
