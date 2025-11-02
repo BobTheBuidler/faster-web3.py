@@ -22,6 +22,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  HASH_KEY: |
+    pyproject.toml
+    setup.py
+    faster_web3/**/*.py
+    faster_ens/**/*.py
+  PIP_CACHE_DEPENDENCY_PATH: |
+    pyproject.toml
+    setup.py
+    tox.ini
+
 jobs:
   build-ubuntu:
     name: Build wheel (ubuntu-latest, ${{ matrix.python-version }})
@@ -33,7 +44,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
@@ -41,16 +52,15 @@ jobs:
         uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          hash-key: |
-            pyproject.toml
-            setup.py
-            faster_web3/**/*.py
-            faster_ens/**/*.py
+          hash-key: ${{ env.HASH_KEY }}
           ccache: true
-          pip-cache-dependency-path: |
-            pyproject.toml
-            setup.py
-            tox.ini
+          pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
+          # Only enable commit/PR and normalization for Python 3.14 on Linux
+          push-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
+          commit-message: "${{ matrix.python-version == '3.14' && 'chore: compile C files for source control' || '' }}"
+          normalize-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
+          trigger-pr-number: ${{ github.event.pull_request.number }}
+          trigger-branch-name: ${{ github.head_ref || github.ref_name }}
   build-macos:
     name: Build wheel (macos-latest, ${{ matrix.python-version }})
     runs-on: macos-latest
@@ -61,7 +71,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
@@ -69,16 +79,11 @@ jobs:
         uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          hash-key: |
-            pyproject.toml
-            setup.py
-            faster_web3/**/*.py
-            faster_ens/**/*.py
+          hash-key: ${{ env.HASH_KEY }}
           ccache: true
-          pip-cache-dependency-path: |
-            pyproject.toml
-            setup.py
-            tox.ini
+          pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
+          trigger-pr-number: ${{ github.event.pull_request.number }}
+          trigger-branch-name: ${{ github.head_ref || github.ref_name }}
   build-windows:
     name: Build wheel (windows-latest, ${{ matrix.python-version }})
     runs-on: windows-latest
@@ -89,7 +94,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
@@ -97,17 +102,11 @@ jobs:
         uses: BobTheBuidler/mypycify@master
         with:
           python-version: ${{ matrix.python-version }}
-          hash-key: |
-            pyproject.toml
-            setup.py
-            faster_web3/**/*.py
-            faster_ens/**/*.py
+          hash-key: ${{ env.HASH_KEY }}
           ccache: true
-          pip-cache-dependency-path: |
-            pyproject.toml
-            setup.py
-            tox.ini
-            
+          pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
+          trigger-pr-number: ${{ github.event.pull_request.number }}
+          trigger-branch-name: ${{ github.head_ref || github.ref_name }}
 
   tox:
     needs: [build-ubuntu, build-macos, build-windows]
@@ -132,10 +131,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-          cache-dependency-path: |
-            pyproject.toml
-            setup.py
-            tox.ini
+          cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
 
       - name: Install tox
         run: python -m pip install tox
@@ -155,12 +151,12 @@ jobs:
           key: ${{ runner.os }}-tox-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-${{ matrix.python-version }}-${{ matrix.jobtype }}
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
 
+      # Download the correct wheel artifact for this OS and Python version using only the pattern
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          name: ${{ needs.build.outputs.wheel-artifact-name }}
           path: .
-          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-
+          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-*
 
       - name: Run tox
         run: python -m tox run --installpkg=$(find . -name '*.whl') ${{ env.TOX_RECREATE_FLAG }}
