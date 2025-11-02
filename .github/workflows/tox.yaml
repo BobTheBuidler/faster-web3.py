@@ -154,7 +154,8 @@ jobs:
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          name: ${{ needs.build.outputs.wheel-artifact-name }}
+          # Select the correct artifact name for the current OS
+          name: ${{ matrix.os == 'ubuntu-latest' && needs.build-ubuntu.outputs.wheel-artifact-names || matrix.os == 'macos-latest' && needs.build-macos.outputs.wheel-artifact-names || matrix.os == 'windows-latest' && needs.build-windows.outputs.wheel-artifact-names }}
           path: .
           pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-
 
