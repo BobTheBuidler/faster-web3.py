@@ -151,17 +151,12 @@ jobs:
           key: ${{ runner.os }}-tox-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-${{ matrix.python-version }}-${{ matrix.jobtype }}
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
 
-      - name: Print resolved artifact name
-        run: |
-          echo "Resolved artifact name: ${{ (matrix.os == 'ubuntu-latest' && needs.build-ubuntu.outputs.wheel-artifact-names) || (matrix.os == 'macos-latest' && needs.build-macos.outputs.wheel-artifact-names) || (matrix.os == 'windows-latest' && needs.build-windows.outputs.wheel-artifact-names) || '' }}"
-      
+      # Download the correct wheel artifact for this OS and Python version using only the pattern
       - name: Download wheel
         uses: actions/download-artifact@v6
         with:
-          # Select the correct artifact name for the current OS
-          name: ${{ (matrix.os == 'ubuntu-latest' && needs.build-ubuntu.outputs.wheel-artifact-names) || (matrix.os == 'macos-latest' && needs.build-macos.outputs.wheel-artifact-names) || (matrix.os == 'windows-latest' && needs.build-windows.outputs.wheel-artifact-names) || '' }}
           path: .
-          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-
+          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-*
 
       - name: Run tox
         run: python -m tox run --installpkg=$(find . -name '*.whl') ${{ env.TOX_RECREATE_FLAG }}
