@@ -44,7 +44,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
@@ -71,7 +71,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
@@ -94,7 +94,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
-      wheel-artifact-names: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v5
       - name: Build wheel for Python${{ matrix.python-version }}
