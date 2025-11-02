@@ -51,6 +51,10 @@ jobs:
             pyproject.toml
             setup.py
             tox.ini
+          # Only enable commit/PR and normalization for Python 3.14 on Linux
+          push-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
+          commit-message: ${{ matrix.python-version == '3.14' && 'chore: compile C files for source control' || '' }}
+          normalize-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
   build-macos:
     name: Build wheel (macos-latest, ${{ matrix.python-version }})
     runs-on: macos-latest
@@ -107,7 +111,6 @@ jobs:
             pyproject.toml
             setup.py
             tox.ini
-            
 
   tox:
     needs: [build-ubuntu, build-macos, build-windows]
