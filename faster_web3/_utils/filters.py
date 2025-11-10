@@ -11,8 +11,12 @@ from typing import (
     Set,
     Tuple,
     Union,
+    cast,
 )
 
+from faster_eth_abi._grammar import (
+    BasicType,
+)
 from faster_eth_abi.codec import (
     ABICodec,
 )
@@ -333,10 +337,10 @@ def normalize_data_values(type_string: TypeStr, data_value: Any) -> Any:
     eth-abi v1 returns utf-8 bytes for string values.
     This can be removed once eth-abi v2 is required.
     """
-    _type = parse_type_string(type_string)
+    _type = cast(BasicType[Any], parse_type_string(type_string))
     if _type.base == "string":
         if _type.arrlist is not None:
-            return tuple(normalize_to_text(value) for value in data_value)
+            return tuple(map(normalize_to_text, data_value))
         else:
             return normalize_to_text(data_value)
     return data_value
