@@ -13,6 +13,7 @@ from typing import (
     Type,
     TypeVar,
     Union,
+    cast,
     final,
 )
 
@@ -23,6 +24,9 @@ from eth_typing import (
     HexStr,
     Primitives,
     TypeStr,
+)
+from faster_eth_abi._grammar import (
+    BasicType,
 )
 from faster_eth_utils import (
     add_0x_prefix,
@@ -291,9 +295,9 @@ def encode_single_packed(_type: TypeStr, value: Any) -> bytes:
             raise NotImplementedError(
                 "Fixed arrays are not implemented in this packed encoder prototype"
             )
-    elif abi_type.base == "string":
+    elif cast(BasicType, abi_type.base) == "string":
         return codecs.encode(value, "utf8")
-    elif abi_type.base == "bytes":
+    elif cast(BasicType, abi_type.base) == "bytes":
         return value
     return None
 
