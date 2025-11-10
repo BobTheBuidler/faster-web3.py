@@ -295,9 +295,9 @@ def encode_single_packed(_type: TypeStr, value: Any) -> bytes:
             raise NotImplementedError(
                 "Fixed arrays are not implemented in this packed encoder prototype"
             )
-    elif cast(BasicType[Any], abi_type.base) == "string":
+    elif cast(BasicType[Any], abi_type).base == "string":
         return codecs.encode(value, "utf8")
-    elif cast(BasicType[Any], abi_type.base) == "bytes":
+    elif cast(BasicType[Any], abi_type).base == "bytes":
         return value
     return None
 
