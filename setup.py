@@ -206,7 +206,7 @@ setup(
         "eth-account>=0.13.6",
         "eth-hash[pycryptodome]>=0.5.1",
         "eth-typing>=5.0.0",
-        "faster-eth-abi==5.2.19",
+        "faster-eth-abi==5.2.20",
         "faster-eth-utils==5.3.18",
         "faster-hexbytes>=1.2.0",
         "aiohttp>=3.7.4.post0",
