@@ -30,15 +30,7 @@ extras_require = {
         "eth-tester[py-evm]>=0.13.0b1,<0.14.0b1",
         "py-geth>=5.1.0",
     ],
-    "dev": [
-        "build>=0.9.0",
-        "bump_my_version>=0.19.0",
-        "ipython",
-        "setuptools>=38.6.0",
-        "tqdm>4.32",
-        "twine>=1.13",
-        "wheel",
-    ],
+    "dev": read_requirements("requirements-dev.txt"),
     "docs": [
         "sphinx>=6.0.0",
         "sphinx-autobuild>=2021.3.14",
