@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_INTERNAL_909239aaf4f10b4a0b69_H
-#define MYPYC_NATIVE_INTERNAL_909239aaf4f10b4a0b69_H
+#ifndef MYPYC_LIBRT_INTERNAL_909239aaf4f10b4a0b69_H
+#define MYPYC_LIBRT_INTERNAL_909239aaf4f10b4a0b69_H
 #include <Python.h>
 #include <CPy.h>
 #include "__native_909239aaf4f10b4a0b69.h"

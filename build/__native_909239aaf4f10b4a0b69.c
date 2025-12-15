@@ -71,6 +71,7 @@ node___GethBenchmarkFixture_dealloc(faster_web3___tools___benchmark___node___Get
     node___GethBenchmarkFixture_clear(self);
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
+    done: ;
 }
 
 static CPyVTableItem node___GethBenchmarkFixture_vtable[7];
@@ -124,6 +125,7 @@ static PyGetSetDef node___GethBenchmarkFixture_getseters[] = {
 };
 
 static PyMethodDef node___GethBenchmarkFixture_methods[] = {
+    {"__internal_mypyc_setup", (PyCFunction)CPyDef_node_____mypyc__GethBenchmarkFixture_setup, METH_O, NULL},
     {"__init__",
      (PyCFunction)CPyPy_node___GethBenchmarkFixture_____init__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__init__($self)\n--\n\n")},
@@ -433,6 +435,7 @@ node___build_GethBenchmarkFixture_gen_dealloc(faster_web3___tools___benchmark___
     node___build_GethBenchmarkFixture_gen_clear(self);
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
+    done: ;
 }
 
 static CPyVTableItem node___build_GethBenchmarkFixture_gen_vtable[6];
@@ -452,6 +455,7 @@ CPyDef_node___build_GethBenchmarkFixture_gen_trait_vtable_setup(void)
 }
 
 static PyMethodDef node___build_GethBenchmarkFixture_gen_methods[] = {
+    {"__internal_mypyc_setup", (PyCFunction)CPyDef_node_____mypyc__build_GethBenchmarkFixture_gen_setup, METH_O, NULL},
     {"__next__",
      (PyCFunction)CPyPy_node___build_GethBenchmarkFixture_gen_____next__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__next__()\n--\n\n")},
@@ -591,6 +595,7 @@ node____geth_process_GethBenchmarkFixture_gen_dealloc(faster_web3___tools___benc
     node____geth_process_GethBenchmarkFixture_gen_clear(self);
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
+    done: ;
 }
 
 static CPyVTableItem node____geth_process_GethBenchmarkFixture_gen_vtable[6];
@@ -610,6 +615,7 @@ CPyDef_node____geth_process_GethBenchmarkFixture_gen_trait_vtable_setup(void)
 }
 
 static PyMethodDef node____geth_process_GethBenchmarkFixture_gen_methods[] = {
+    {"__internal_mypyc_setup", (PyCFunction)CPyDef_node_____mypyc___3_geth_process_GethBenchmarkFixture_gen_setup, METH_O, NULL},
     {"__next__",
      (PyCFunction)CPyPy_node____geth_process_GethBenchmarkFixture_gen_____next__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__next__()\n--\n\n")},
@@ -688,9 +694,11 @@ int CPyExec_faster_web3___tools___benchmark___node(PyObject *module)
     CPyType_node___build_GethBenchmarkFixture_gen = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_node___build_GethBenchmarkFixture_gen_template, NULL, modname);
     if (unlikely(!CPyType_node___build_GethBenchmarkFixture_gen))
         goto fail;
+    CPyDef_node___build_GethBenchmarkFixture_gen_trait_vtable_setup();
     CPyType_node____geth_process_GethBenchmarkFixture_gen = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_node____geth_process_GethBenchmarkFixture_gen_template, NULL, modname);
     if (unlikely(!CPyType_node____geth_process_GethBenchmarkFixture_gen))
         goto fail;
+    CPyDef_node____geth_process_GethBenchmarkFixture_gen_trait_vtable_setup();
     if (CPyGlobalsInit() < 0)
         goto fail;
     char result = CPyDef_node_____top_level__();
@@ -4607,6 +4615,7 @@ utils___wait_for_aiohttp_gen_dealloc(faster_web3___tools___benchmark___utils___w
     utils___wait_for_aiohttp_gen_clear(self);
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
+    done: ;
 }
 
 static CPyVTableItem utils___wait_for_aiohttp_gen_vtable[7];
@@ -4627,6 +4636,7 @@ CPyDef_utils___wait_for_aiohttp_gen_trait_vtable_setup(void)
 }
 
 static PyMethodDef utils___wait_for_aiohttp_gen_methods[] = {
+    {"__internal_mypyc_setup", (PyCFunction)CPyDef_utils_____mypyc__wait_for_aiohttp_gen_setup, METH_O, NULL},
     {"__next__",
      (PyCFunction)CPyPy_utils___wait_for_aiohttp_gen_____next__,
      METH_FASTCALL | METH_KEYWORDS, PyDoc_STR("__next__()\n--\n\n")},
@@ -4724,6 +4734,7 @@ int CPyExec_faster_web3___tools___benchmark___utils(PyObject *module)
     CPyType_utils___wait_for_aiohttp_gen = (PyTypeObject *)CPyType_FromTemplate((PyObject *)CPyType_utils___wait_for_aiohttp_gen_template, NULL, modname);
     if (unlikely(!CPyType_utils___wait_for_aiohttp_gen))
         goto fail;
+    CPyDef_utils___wait_for_aiohttp_gen_trait_vtable_setup();
     if (CPyGlobalsInit() < 0)
         goto fail;
     char result = CPyDef_utils_____top_level__();
