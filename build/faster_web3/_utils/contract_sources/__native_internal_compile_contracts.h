@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_INTERNAL_faster_web3____utils___contract_sources___compile_contracts_H
-#define MYPYC_NATIVE_INTERNAL_faster_web3____utils___contract_sources___compile_contracts_H
+#ifndef MYPYC_LIBRT_INTERNAL_faster_web3____utils___contract_sources___compile_contracts_H
+#define MYPYC_LIBRT_INTERNAL_faster_web3____utils___contract_sources___compile_contracts_H
 #include <Python.h>
 #include <CPy.h>
 #include "__native_compile_contracts.h"

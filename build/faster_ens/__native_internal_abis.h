@@ -1,5 +1,5 @@
-#ifndef MYPYC_NATIVE_INTERNAL_faster_ens___abis_H
-#define MYPYC_NATIVE_INTERNAL_faster_ens___abis_H
+#ifndef MYPYC_LIBRT_INTERNAL_faster_ens___abis_H
+#define MYPYC_LIBRT_INTERNAL_faster_ens___abis_H
 #include <Python.h>
 #include <CPy.h>
 #include "__native_abis.h"
