@@ -1,12 +1,12 @@
-#ifndef MYPYC_NATIVE_INTERNAL_5f8b22f5f815a3776376_H
-#define MYPYC_NATIVE_INTERNAL_5f8b22f5f815a3776376_H
+#ifndef MYPYC_LIBRT_INTERNAL_5f8b22f5f815a3776376_H
+#define MYPYC_LIBRT_INTERNAL_5f8b22f5f815a3776376_H
 #include <Python.h>
 #include <CPy.h>
 #include "__native_5f8b22f5f815a3776376.h"
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[2326];
+extern PyObject *CPyStatics[2325];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];

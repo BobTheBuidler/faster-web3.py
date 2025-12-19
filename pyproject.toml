@@ -2,7 +2,7 @@
 requires = [
     "setuptools", 
     "wheel", 
-    "mypy[mypyc]==1.18.2",
+    "mypy[mypyc]==1.19.1",
 	"types-requests",
     "eth-typing==5.2.1",
 	# eth-tester's dependencies don't install propersly on 32-bit systems
