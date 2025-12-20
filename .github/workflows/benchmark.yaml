@@ -234,7 +234,7 @@ jobs:
         if: github.event_name == 'pull_request'
       
       - name: Save ccache cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/.cache/ccache
           key: ccache-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('**/*.h', '**/*.c', '**/*.py') }}
