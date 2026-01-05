@@ -38,7 +38,7 @@ extras_require = {
         "towncrier>=25,<26",
     ],
     "test": [
-        "pytest-asyncio>=1.2,<1.3",
+        "pytest-asyncio>=1.3,<1.4",
         "pytest-mock>=1.10",
         "pytest-xdist>=2.4.0",
         "pytest>=7.0.0",
