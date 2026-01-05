@@ -279,7 +279,7 @@ class HTTPSessionManager:
                     # if `ClientTimeout.total` is `None`, don't wait forever for the
                     # closing session to finish the request. Instead, use the default
                     # timeout.
-                    request_timeout.total or DEFAULT_HTTP_TIMEOUT + 0.1,
+                    getattr(request_timeout, "total", None) or DEFAULT_HTTP_TIMEOUT + 0.1,
                     evicted_sessions,
                 )
             )
