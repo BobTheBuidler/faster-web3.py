@@ -72,6 +72,9 @@ TRACE = {"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "tra
 
 TRACE_RESPONSE = {"trace": [TRACE] * 50, "output": "0x", "transactionHash": HASH32}
 
+# trace_replayBlockTransactions returns one entry per transaction in the block
+TRACE_RESPONSE_LIST = [TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE]
+
 RESULT_DATA = {
     "eth_accounts": [
         "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
@@ -179,7 +182,7 @@ RESULT_DATA = {
     "trace_filter": [TRACE] * 2000,
     "trace_rawTransaction": TRACE_RESPONSE,
     "trace_replayTransaction": TRACE_RESPONSE,
-    "trace_replayBlockTransactions": TRACE_RESPONSE,
+    "trace_replayBlockTransactions": TRACE_RESPONSE_LIST,
     "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
 }
 
