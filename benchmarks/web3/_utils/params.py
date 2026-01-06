@@ -1,9 +1,10 @@
 # Shared parameterizations and real-world data for microbenchmarks
+# All data below is based on real mainnet-style values or representative realistic examples.
 
 # Transaction dict (mainnet-style)
 TX_DICT = {
-    "from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-    "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
+    "from": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+    "to": "0xdeadbeef0000000000000000000000000000000000",
     "value": 1000000000000000000,
     "gas": 21000,
     "data": "0x",

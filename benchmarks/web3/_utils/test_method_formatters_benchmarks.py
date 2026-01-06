@@ -9,6 +9,8 @@ import faster_web3._utils.method_formatters
 from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
+from benchmarks.web3._utils.params import BLOCK_DICT, FEE_HISTORY_DICT, LOG_ENTRY, RECEIPT_DICT, TX_DICT
+
 
 def run_1000(fn, *args):
     for _ in range(1000):
@@ -18,21 +20,6 @@ def run_1000(fn, *args):
 # --- SYSTEMATIC BENCHMARKS FOR PYTHONIC_RESULT_FORMATTERS ---
 
 # NOTE: These are explicit, non-parameterized, one-per-key test stubs for both web3 and faster_web3.
-# All data below is based on real mainnet-style values or representative realistic examples.
-
-TX_DATA = {
-    "hash": "0xfaceb00c1234567890b00b7be2feedbeefcafe1234567890deadbeefcafebaba",
-    "nonce": "0x42",
-    "blockHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c",
-    "blockNumber": "0x1337",
-    "transactionIndex": "0x0",
-    "from": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
-    "to": "0xdeadbeef0000000000000000000000000000000000",
-    "value": "0x1234",
-    "gas": "0x5208",
-    "gasPrice": "0x3b9aca00",
-    "input": "0x",
-}
 
 
 # PYTHONIC_REQUEST_FORMATTERS
@@ -125,7 +112,7 @@ RESULT_DATA = {
     "eth_sendTransaction": "0xfeedbabe1234567890cafebabe1234567890feedbabe1234567890cafebabe12",
     "eth_signTypedData": "0x1c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
     "eth_getRawTransactionByHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
-    "eth_getTransactionByHash": TX_DATA,
+    "eth_getTransactionByHash": TX_DICT,
     "eth_getUncleCountByBlockHash": "0x2",
     "eth_getUncleCountByBlockNumber": "0x2",
     "eth_getStorageAt": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -139,8 +126,8 @@ RESULT_DATA = {
         "storageHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1",
         "storageProof": [],
     },
-    "eth_getTransactionByBlockHashAndIndex": TX_DATA,
-    "eth_getTransactionByBlockNumberAndIndex": TX_DATA,
+    "eth_getTransactionByBlockHashAndIndex": TX_DICT,
+    "eth_getTransactionByBlockNumberAndIndex": TX_DICT,
     "eth_subscribe": {
         "result": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1"
     },
