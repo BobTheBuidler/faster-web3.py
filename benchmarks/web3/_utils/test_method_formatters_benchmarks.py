@@ -180,6 +180,22 @@ RESULT_DATA = {
         "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
         "value": "0x8ac7230489e80000",
     },
+    "eth_feeHistory": FEE_HISTORY_DICT,
+    "eth_getBlockByHash": BLOCK_DICT,
+    "eth_getBlockByNumber": BLOCK_DICT,
+    "eth_getBlockReceipts": [RECEIPT_DICT],
+    "eth_getFilterChanges": [LOG_ENTRY],
+    "eth_getFilterLogs": [LOG_ENTRY],
+    "eth_getLogs": [LOG_ENTRY],
+    "eth_getTransactionReceipt": RECEIPT_DICT,
+    "eth_signTransaction": TX_DICT,
+    "trace_block": [{"action": {}, "result": {}, "blockHash": "0xabc", "blockNumber": 1, "transactionHash": "0xdef"}],
+    "trace_transaction": [{"action": {}, "result": {}, "blockHash": "0xabc", "blockNumber": 1, "transactionHash": "0xdef"}],
+    "trace_filter": [{"action": {}, "result": {}, "blockHash": "0xabc", "blockNumber": 1, "transactionHash": "0xdef"}],
+    "trace_rawTransaction": {"trace": [], "output": "0x", "transactionHash": "0xabc"},
+    "trace_replayTransaction": {"trace": [], "output": "0x", "transactionHash": "0xabc"},
+    "trace_replayBlockTransactions": {"trace": [], "output": "0x", "transactionHash": "0xabc"},
+    "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
 }
 
 
