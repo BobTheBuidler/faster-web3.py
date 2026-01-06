@@ -9,12 +9,14 @@ import subprocess
 import time
 
 import common
-from faster_eth_utils.curried import (
-    apply_formatter_if,
+from faster_eth_utils import (
     is_bytes,
     is_dict,
     to_hex,
     to_text,
+)
+from faster_eth_utils.curried import (
+    apply_formatter_if,
 )
 from faster_eth_utils.toolz import (
     merge,
