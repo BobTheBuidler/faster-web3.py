@@ -9,31 +9,15 @@ import faster_web3._utils.method_formatters
 from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
+from benchmarks.web3._utils.params import BLOCK_DICT, FEE_HISTORY_DICT, HASH32, LOG_ENTRY, RECEIPT_DICT, TX_DICT
 
 def run_1000(fn, *args):
     for _ in range(1000):
         fn(*args)
 
-
 # --- SYSTEMATIC BENCHMARKS FOR PYTHONIC_RESULT_FORMATTERS ---
 
 # NOTE: These are explicit, non-parameterized, one-per-key test stubs for both web3 and faster_web3.
-# All data below is based on real mainnet-style values or representative realistic examples.
-
-TX_DATA = {
-    "hash": "0xfaceb00c1234567890b00b7be2feedbeefcafe1234567890deadbeefcafebaba",
-    "nonce": "0x42",
-    "blockHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c",
-    "blockNumber": "0x1337",
-    "transactionIndex": "0x0",
-    "from": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
-    "to": "0xdeadbeef0000000000000000000000000000000000",
-    "value": "0x1234",
-    "gas": "0x5208",
-    "gasPrice": "0x3b9aca00",
-    "input": "0x",
-}
-
 
 # PYTHONIC_REQUEST_FORMATTERS
 
@@ -46,8 +30,8 @@ REQUEST_DATA = {
     "eth_getTransactionByBlockNumberAndIndex": ("latest", "0x0"),
     "eth_getRawTransactionByBlockNumberAndIndex": ("latest", "0x0"),
     "eth_getUncleByBlockNumberAndIndex": ("latest", "0x0"),
-    "eth_getRawTransactionByBlockHashAndIndex": ("0xabc", "0x0"),
-    "eth_getUncleByBlockHashAndIndex": ("0xabc", "0x0"),
+    "eth_getRawTransactionByBlockHashAndIndex": (HASH32, "0x0"),
+    "eth_getUncleByBlockHashAndIndex": (HASH32, "0x0"),
     "eth_getBlockByNumber": ("latest", True),
     "eth_getCode": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
     "eth_getTransactionCount": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
@@ -56,7 +40,6 @@ REQUEST_DATA = {
     "eth_newFilter": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
 }
 
-
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
 def test_PYTHONIC_REQUEST_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
@@ -64,14 +47,12 @@ def test_PYTHONIC_REQUEST_FORMATTERS(
     f = web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
 
-
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
 def test_faster_PYTHONIC_REQUEST_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = faster_web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
-
 
 # Realistic RLP-encoded proof nodes (hex, plausible structure)
 PROOF_NODE_1 = (
@@ -86,6 +67,13 @@ PROOF_NODE_2 = (
     "a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1"
     "f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6"
 )
+
+TRACE = {"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}
+
+TRACE_RESPONSE = {"trace": [TRACE] * 50, "output": "0x", "transactionHash": HASH32}
+
+# trace_replayBlockTransactions returns one entry per transaction in the block
+TRACE_RESPONSE_LIST = [TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE]
 
 RESULT_DATA = {
     "eth_accounts": [
@@ -124,8 +112,8 @@ RESULT_DATA = {
     "eth_sign": "0x2c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
     "eth_sendTransaction": "0xfeedbabe1234567890cafebabe1234567890feedbabe1234567890cafebabe12",
     "eth_signTypedData": "0x1c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
-    "eth_getRawTransactionByHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
-    "eth_getTransactionByHash": TX_DATA,
+    "eth_getRawTransactionByHash": HASH32,
+    "eth_getTransactionByHash": TX_DICT,
     "eth_getUncleCountByBlockHash": "0x2",
     "eth_getUncleCountByBlockNumber": "0x2",
     "eth_getStorageAt": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -139,10 +127,10 @@ RESULT_DATA = {
         "storageHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1",
         "storageProof": [],
     },
-    "eth_getTransactionByBlockHashAndIndex": TX_DATA,
-    "eth_getTransactionByBlockNumberAndIndex": TX_DATA,
+    "eth_getTransactionByBlockHashAndIndex": TX_DICT,
+    "eth_getTransactionByBlockNumberAndIndex": TX_DICT,
     "eth_subscribe": {
-        "result": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1"
+        "result": HASH32
     },
     "eth_simulateV1": [
         {
@@ -180,8 +168,23 @@ RESULT_DATA = {
         "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
         "value": "0x8ac7230489e80000",
     },
+    "eth_feeHistory": FEE_HISTORY_DICT,
+    "eth_getBlockByHash": BLOCK_DICT,
+    "eth_getBlockByNumber": BLOCK_DICT,
+    "eth_getBlockReceipts": [RECEIPT_DICT],
+    "eth_getFilterChanges": [LOG_ENTRY],
+    "eth_getFilterLogs": [LOG_ENTRY],
+    "eth_getLogs": [LOG_ENTRY],
+    "eth_getTransactionReceipt": RECEIPT_DICT,
+    "eth_signTransaction": TX_DICT,
+    "trace_block": [TRACE] * 1000,
+    "trace_transaction": [TRACE] * 50,
+    "trace_filter": [TRACE] * 2000,
+    "trace_rawTransaction": TRACE_RESPONSE,
+    "trace_replayTransaction": TRACE_RESPONSE,
+    "trace_replayBlockTransactions": TRACE_RESPONSE_LIST,
+    "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
 }
-
 
 @pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_PYTHONIC_RESULT_FORMATTERS(
@@ -189,7 +192,6 @@ def test_PYTHONIC_RESULT_FORMATTERS(
 ) -> None:
     f = web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
     benchmark(run_1000, f, RESULT_DATA[endpoint])
-
 
 @pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_faster_PYTHONIC_RESULT_FORMATTERS(

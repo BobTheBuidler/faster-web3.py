@@ -1,9 +1,13 @@
 # Shared parameterizations and real-world data for microbenchmarks
+# All data below is based on real mainnet-style values or representative realistic examples.
+
+# Shared 32-byte hash
+HASH32 = "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e"
 
 # Transaction dict (mainnet-style)
 TX_DICT = {
-    "from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-    "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
+    "from": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+    "to": "0xdeadbeef0000000000000000000000000000000000",
     "value": 1000000000000000000,
     "gas": 21000,
     "data": "0x",
@@ -21,14 +25,14 @@ LOG_ENTRY = {
     ],
     "data": "0x00000000000000000000000000000000000000000000000000000000000003e8",
     "blockNumber": 12345678,
-    "transactionHash": "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1",
+    "transactionHash": HASH32,
     "logIndex": 0,
 }
 
 # Block dict (mainnet-style, minimal for formatter)
 BLOCK_DICT = {
     "number": 12345678,
-    "hash": "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1",
+    "hash": HASH32,
     "transactions": [TX_DICT, TX_DICT],
     "logs": [LOG_ENTRY, LOG_ENTRY],
     "miner": "0x829BD824B016326A401d083B33D092293333A830",
@@ -41,7 +45,7 @@ RECEIPT_DICT = {
     "blockHash": BLOCK_DICT["hash"],
     "blockNumber": BLOCK_DICT["number"],
     "transactionIndex": 0,
-    "transactionHash": TX_DICT["from"],
+    "transactionHash": HASH32,
     "cumulativeGasUsed": 21000,
     "status": 1,
     "gasUsed": 21000,

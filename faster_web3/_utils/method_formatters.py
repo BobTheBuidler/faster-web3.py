@@ -9,8 +9,8 @@ from typing import (
     Iterable,
     Literal,
     NoReturn,
+    Sequence,
     Tuple,
-    TypeVar,
     Union,
     cast,
 )
@@ -110,6 +110,7 @@ from faster_web3.types import (
     SimulateV1Payload,
     StateOverrideParams,
     TReturn,
+    TValue,
     TxParams,
     _Hash32,
 )
@@ -119,8 +120,8 @@ if TYPE_CHECKING:
     from faster_web3.eth import Eth  # noqa: F401
     from faster_web3.module import Module  # noqa: F401
 
-TValue = TypeVar("TValue")
-
+Trace = Dict[str, Any]
+Traces = Sequence[Trace]
 
 
 def bytes_to_ascii(value: bytes) -> str:
@@ -963,14 +964,17 @@ TRACE_FORMATTERS: Final[Callable[[TValue], Union[Any, TValue]]] = apply_formatte
 )
 
 # trace formatter for a list of traces
-trace_list_result_formatter: Final[Callable[[Formatters], Any]] = (
-    apply_formatter_to_array(
-        TRACE_FORMATTERS,
-    )
+trace_list_result_formatter: Final[Callable[[Traces], Any]] = (
+    apply_formatter_to_array(TRACE_FORMATTERS)
 )
 
 # shared formatter for common `tracing` module rpc responses
-common_tracing_result_formatter: Final = type_aware_apply_formatters_to_dict(
+common_tracing_result_formatter: Final[
+    Callable[
+        [Union[Dict[str, Any], AttributeDict[str, Any]]],
+        Union[Dict[str, Any], ReadableAttributeDict[str, Any]],
+    ]
+] = type_aware_apply_formatters_to_dict(
     {
         "trace": apply_formatter_if(is_not_null, trace_list_result_formatter),
         "output": HexBytes,
