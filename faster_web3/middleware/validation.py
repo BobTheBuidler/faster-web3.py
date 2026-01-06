@@ -6,11 +6,13 @@ from typing import (
     Final,
 )
 
+from faster_eth_utils import (
+    is_string,
+)
 from faster_eth_utils.curried import (
     apply_formatter_at_index,
     apply_formatter_if,
     apply_formatters_to_dict,
-    is_string,
 )
 from faster_eth_utils.toolz import (
     compose,

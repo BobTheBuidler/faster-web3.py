@@ -19,7 +19,14 @@ from eth_typing import (
     HexStr,
 )
 from faster_eth_utils import (
+    is_0x_prefixed,
+    is_address,
+    is_bytes,
     is_hexstr,
+    is_integer,
+    is_string,
+    to_checksum_address,
+    to_list,
 )
 from faster_eth_utils.curried import (
     apply_formatter_at_index,
@@ -28,13 +35,6 @@ from faster_eth_utils.curried import (
     apply_formatters_to_dict,
     apply_formatters_to_sequence,
     apply_one_of_formatters,
-    is_0x_prefixed,
-    is_address,
-    is_bytes,
-    is_integer,
-    is_string,
-    to_checksum_address,
-    to_list,
 )
 from faster_eth_utils.toolz import (
     compose,
