@@ -68,6 +68,11 @@ PROOF_NODE_2 = (
     "f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6"
 )
 
+TRACE = {"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}
+
+RAW_TRACE = {"trace": [], "output": "0x", "transactionHash": HASH32}
+# i dont think this name is right but idk what it actually represents
+
 RESULT_DATA = {
     "eth_accounts": [
         "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
@@ -170,12 +175,12 @@ RESULT_DATA = {
     "eth_getLogs": [LOG_ENTRY],
     "eth_getTransactionReceipt": RECEIPT_DICT,
     "eth_signTransaction": TX_DICT,
-    "trace_block": [{"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}],
-    "trace_transaction": [{"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}],
-    "trace_filter": [{"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}],
-    "trace_rawTransaction": {"trace": [], "output": "0x", "transactionHash": HASH32},
-    "trace_replayTransaction": {"trace": [], "output": "0x", "transactionHash": HASH32},
-    "trace_replayBlockTransactions": {"trace": [], "output": "0x", "transactionHash": HASH32},
+    "trace_block": [TRACE] * 1000,
+    "trace_transaction": [TRACE] * 50,
+    "trace_filter": [TRACE] * 2000,
+    "trace_rawTransaction": [RAW_TRACE] * 50,
+    "trace_replayTransaction": [RAW_TRACE] * 50,
+    "trace_replayBlockTransactions": [RAW_TRACE] * 1000,
     "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
 }
 
