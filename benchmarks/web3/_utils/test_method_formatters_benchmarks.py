@@ -70,8 +70,7 @@ PROOF_NODE_2 = (
 
 TRACE = {"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}
 
-RAW_TRACE = {"trace": [], "output": "0x", "transactionHash": HASH32}
-# i dont think this name is right but idk what it actually represents
+TRACE_RESPONSE = {"trace": [TRACE] * 50, "output": "0x", "transactionHash": HASH32}
 
 RESULT_DATA = {
     "eth_accounts": [
@@ -178,9 +177,9 @@ RESULT_DATA = {
     "trace_block": [TRACE] * 1000,
     "trace_transaction": [TRACE] * 50,
     "trace_filter": [TRACE] * 2000,
-    "trace_rawTransaction": [RAW_TRACE] * 50,
-    "trace_replayTransaction": [RAW_TRACE] * 50,
-    "trace_replayBlockTransactions": [RAW_TRACE] * 1000,
+    "trace_rawTransaction": TRACE_RESPONSE,
+    "trace_replayTransaction": TRACE_RESPONSE,
+    "trace_replayBlockTransactions": TRACE_RESPONSE,
     "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
 }
 
