@@ -4,15 +4,16 @@ from pathlib import (
     Path,
 )
 from setuptools import (
+    Extension,
     find_packages,
     setup,
 )
 from mypyc.build import mypycify
 
 
-def read_requirements(path):
-    with open(path) as f:
-        reqs = set()
+def read_requirements(path: str | Path) -> list[str]:
+    with open(path, encoding="utf-8") as f:
+        reqs: set[str] = set()
         for line in f:
             if stripped := line.strip():
                 if not stripped.startswith("#"):
@@ -70,10 +71,12 @@ skip_mypyc = any(
     for cmd in ("sdist", "egg_info", "--name", "--version", "--help", "--help-commands")
 )
 
+ext_modules: list[Extension] = []
+
 if skip_mypyc:
     ext_modules = []
 else:
-    main_files = [
+    main_files: list[str] = [
         "faster_ens/__init__.py",
         "faster_ens/_normalization.py",
         # "faster_ens/async_ens.py",  figure out `default`
@@ -122,16 +125,16 @@ else:
 
     # benchmark tooling and data files do not need to be part of the same
     # compilation unit as the rest of the library
-    benchmark_tooling_files = [
+    benchmark_tooling_files: list[str] = [
         "faster_web3/tools/benchmark/node.py",
         "faster_web3/tools/benchmark/reporting.py",
         "faster_web3/tools/benchmark/utils.py",
     ]
-    web3_data_files = sorted(
+    web3_data_files: list[str] = sorted(
         str(p.as_posix())
         for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
     )
-    ens_data_files = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
+    ens_data_files: list[str] = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
 
     if sys.platform.startswith("win"):
         # error C2026: string too big, trailing characters truncated
@@ -140,7 +143,7 @@ else:
         )
         ens_data_files.remove("faster_ens/contract_data.py")
 
-    flags = [
+    flags: list[str] = [
         "--pretty",
         "--disable-error-code=return-value",
         "--disable-error-code=arg-type",
@@ -155,8 +158,6 @@ else:
         "--disable-error-code=misc",
         "--disable-error-code=unused-ignore",
     ]
-
-    ext_modules = []
 
     main_unit = mypycify(main_files + flags)
     ext_modules.extend(main_unit)
