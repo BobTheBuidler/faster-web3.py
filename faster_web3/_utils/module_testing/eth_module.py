@@ -1545,10 +1545,10 @@ class AsyncEthModuleTest:
             mocked_request_url=f"https://web3.py/gateway/{normalized_contract_address}/{OFFCHAIN_LOOKUP_TEST_DATA}.json",  # noqa: E501
             mocked_json_data=WEB3PY_AS_HEXBYTES,
         )
-        response_caller = await async_offchain_lookup_contract.caller().testOffchainLookup(  # noqa: E501 type: ignore
+        response_caller = await async_offchain_lookup_contract.caller().testOffchainLookup(  # type: ignore[misc]  # noqa: E501
             OFFCHAIN_LOOKUP_TEST_DATA
         )
-        response_function_call = await async_offchain_lookup_contract.functions.testOffchainLookup(  # noqa: E501 type: ignore
+        response_function_call = await async_offchain_lookup_contract.functions.testOffchainLookup(  # type: ignore[union-attr]  # noqa: E501
             OFFCHAIN_LOOKUP_TEST_DATA
         ).call()
         assert async_w3.codec.decode(["string"], response_caller)[0] == "web3py"
@@ -1585,7 +1585,7 @@ class AsyncEthModuleTest:
         async_w3.provider.global_ccip_read_enabled = False
 
         with pytest.raises(OffchainLookup) as exc_info:
-            await async_offchain_lookup_contract.functions.testOffchainLookup(  # noqa: E501 type: ignore
+            await async_offchain_lookup_contract.functions.testOffchainLookup(  # type: ignore[union-attr]  # noqa: E501
                 OFFCHAIN_LOOKUP_TEST_DATA
             ).call()
         assert exc_info.value.data == return_data
@@ -1750,7 +1750,7 @@ class AsyncEthModuleTest:
             mocked_request_url=f"https://web3.py/gateway/{normalized_contract_address}/0x.json",  # noqa: E501
         )
         with pytest.raises(TooManyRequests, match="Too many CCIP read redirects"):
-            await async_offchain_lookup_contract.caller().continuousOffchainLookup()  # noqa: E501 type: ignore
+            await async_offchain_lookup_contract.caller().continuousOffchainLookup()  # type: ignore[misc]  # noqa: E501
 
     @pytest.mark.asyncio
     async def test_eth_simulate_v1(self, async_w3: "AsyncWeb3[Any]") -> None:
