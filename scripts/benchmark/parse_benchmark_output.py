@@ -27,11 +27,12 @@ Troubleshooting:
 import json
 import sys
 import re
-from collections import defaultdict
-from typing import Dict, Any
+from typing import Any, TypeAlias
+
+BenchmarkResults: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 
 
-def get_module_path(bench: dict) -> str:
+def get_module_path(bench: dict[str, Any]) -> str:
     """
     Extracts the relative module path from the test file path.
     Handles various patterns, including nested directories and underscores.
@@ -83,19 +84,21 @@ def get_group_name(test_name: str) -> str:
     return test_name
 
 
-def parse_pytest_benchmark_json(data: dict) -> Dict[str, Dict[str, Dict[str, Any]]]:
+def parse_pytest_benchmark_json(data: dict[str, Any]) -> BenchmarkResults:
     """
     Parses pytest-benchmark's benchmark.json and extracts per-function timings,
     grouped by module path and group name.
     Returns a dict: {module_path: {group: {function_name: {...}}}}
     """
-    results = defaultdict(lambda: defaultdict(dict))
+    results: BenchmarkResults = {}
     for bench in data.get("benchmarks", []):
         name = bench["name"]
         module_path = get_module_path(bench)
         group = get_group_name(name)
         stats = bench["stats"]
-        results[module_path][group][name] = {
+        module_results = results.setdefault(module_path, {})
+        group_results = module_results.setdefault(group, {})
+        group_results[name] = {
             "mean": stats.get("mean"),
             "stddev": stats.get("stddev", None),
             "iqr": stats.get("iqr", None),
