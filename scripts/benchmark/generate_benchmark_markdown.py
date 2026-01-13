@@ -1,8 +1,9 @@
 import os
 import json
+from typing import Any
 
 
-def main():
+def main() -> None:
     diff_path = "pytest_benchmark_diff.json"
     results_dir = os.path.join("benchmarks", "results")
     os.makedirs(results_dir, exist_ok=True)
@@ -14,7 +15,7 @@ def main():
     ).replace("refs/heads/", "")
 
     with open(diff_path, "r", encoding="utf-8") as f:
-        diff = json.load(f)
+        diff: dict[str, dict[str, dict[str, Any]]] = json.load(f)
 
     for module_path, groupDiffs in diff.items():
         # module_path is like "ens/base_ens" or "web3/foo"
