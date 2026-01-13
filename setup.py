@@ -11,9 +11,9 @@ from setuptools import (
 from mypyc.build import mypycify
 
 
-def read_requirements(path: str | Path) -> list[str]:
+def read_requirements(path: str) -> list[str]:
+    reqs: set[str] = set()
     with open(path, encoding="utf-8") as f:
-        reqs: set[str] = set()
         for line in f:
             if stripped := line.strip():
                 if not stripped.startswith("#"):
@@ -73,9 +73,7 @@ skip_mypyc = any(
 
 ext_modules: list[Extension] = []
 
-if skip_mypyc:
-    ext_modules = []
-else:
+if not skip_mypyc:
     main_files: list[str] = [
         "faster_ens/__init__.py",
         "faster_ens/_normalization.py",
