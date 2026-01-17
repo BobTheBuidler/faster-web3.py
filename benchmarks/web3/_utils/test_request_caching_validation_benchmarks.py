@@ -15,19 +15,19 @@ import faster_web3._utils.rpc_abi
 
 
 def run_100(func, *args, **kwargs):
-    for _ in range(100):
+    for _ in range(1000):
         func(*args, **kwargs)
 
 
-async def _run_100_async(func, *args, **kwargs):
+async def _run_1000_async(func, *args, **kwargs):
     for _ in range(100):
         await func(*args, **kwargs)
 
 
-def run_100_async(func, *args, **kwargs):
+def run_1000_async(func, *args, **kwargs):
     loop = asyncio.new_event_loop()
     try:
-        return loop.run_until_complete(_run_100_async(func, *args, **kwargs))
+        return loop.run_until_complete(_run_1000_async(func, *args, **kwargs))
     finally:
         loop.close()
 
@@ -175,7 +175,7 @@ def test_faster_validate_from_blockhash_in_params(
 @pytest.mark.parametrize("params", block_id_cases, ids=block_id_ids)
 def test_async_validate_from_block_id_in_params(benchmark: BenchmarkFixture, params):
     benchmark(
-        run_100_async,
+        run_1000_async,
         web3._utils.caching.request_caching_validation.async_validate_from_block_id_in_params,
         FakeAsyncProvider(),
         params,
@@ -190,7 +190,7 @@ def test_faster_async_validate_from_block_id_in_params(
     benchmark: BenchmarkFixture, params
 ):
     benchmark(
-        run_100_async,
+        run_1000_async,
         faster_web3._utils.caching.request_caching_validation.async_validate_from_block_id_in_params,
         FakeAsyncProvider(),
         params,
@@ -203,7 +203,7 @@ def test_faster_async_validate_from_block_id_in_params(
 @pytest.mark.parametrize("result", blocknum_result_cases, ids=blocknum_result_ids)
 def test_async_validate_from_blocknum_in_result(benchmark: BenchmarkFixture, result):
     benchmark(
-        run_100_async,
+        run_1000_async,
         web3._utils.caching.request_caching_validation.async_validate_from_blocknum_in_result,
         FakeAsyncProvider(),
         [],
@@ -218,7 +218,7 @@ def test_faster_async_validate_from_blocknum_in_result(
     benchmark: BenchmarkFixture, result
 ):
     benchmark(
-        run_100_async,
+        run_1000_async,
         faster_web3._utils.caching.request_caching_validation.async_validate_from_blocknum_in_result,
         FakeAsyncProvider(),
         [],
@@ -231,7 +231,7 @@ def test_faster_async_validate_from_blocknum_in_result(
 @pytest.mark.parametrize("params", blockhash_params_cases, ids=blockhash_params_ids)
 def test_async_validate_from_blockhash_in_params(benchmark: BenchmarkFixture, params):
     benchmark(
-        run_100_async,
+        run_1000_async,
         web3._utils.caching.request_caching_validation.async_validate_from_blockhash_in_params,
         FakeAsyncProvider(),
         params,
@@ -246,7 +246,7 @@ def test_faster_async_validate_from_blockhash_in_params(
     benchmark: BenchmarkFixture, params
 ):
     benchmark(
-        run_100_async,
+        run_1000_async,
         faster_web3._utils.caching.request_caching_validation.async_validate_from_blockhash_in_params,
         FakeAsyncProvider(),
         params,
