@@ -41,37 +41,37 @@ dict_ids = [
 @pytest.mark.benchmark(group="all_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_all_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, web3._utils.utility_methods.all_in_dict, values, d)
+    benchmark(run_5000, web3._utils.utility_methods.all_in_dict, values, d)
 
 
 @pytest.mark.benchmark(group="all_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_faster_all_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, faster_web3._utils.utility_methods.all_in_dict, values, d)
+    benchmark(run_5000, faster_web3._utils.utility_methods.all_in_dict, values, d)
 
 
 @pytest.mark.benchmark(group="any_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_any_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, web3._utils.utility_methods.any_in_dict, values, d)
+    benchmark(run_5000, web3._utils.utility_methods.any_in_dict, values, d)
 
 
 @pytest.mark.benchmark(group="any_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_faster_any_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, faster_web3._utils.utility_methods.any_in_dict, values, d)
+    benchmark(run_5000, faster_web3._utils.utility_methods.any_in_dict, values, d)
 
 
 @pytest.mark.benchmark(group="none_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_none_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, web3._utils.utility_methods.none_in_dict, values, d)
+    benchmark(run_5000, web3._utils.utility_methods.none_in_dict, values, d)
 
 
 @pytest.mark.benchmark(group="none_in_dict")
 @pytest.mark.parametrize("values,d", dict_cases, ids=dict_ids)
 def test_faster_none_in_dict(benchmark: BenchmarkFixture, values, d):
-    benchmark(run_500, faster_web3._utils.utility_methods.none_in_dict, values, d)
+    benchmark(run_5000, faster_web3._utils.utility_methods.none_in_dict, values, d)
 
 
 # Expanded parameterization for set-based function
@@ -102,12 +102,12 @@ set_ids = [
 @pytest.mark.benchmark(group="either_set_is_a_subset")
 @pytest.mark.parametrize("set1,set2", set_cases, ids=set_ids)
 def test_either_set_is_a_subset(benchmark: BenchmarkFixture, set1, set2):
-    benchmark(run_500, web3._utils.utility_methods.either_set_is_a_subset, set1, set2)
+    benchmark(run_5000, web3._utils.utility_methods.either_set_is_a_subset, set1, set2)
 
 
 @pytest.mark.benchmark(group="either_set_is_a_subset")
 @pytest.mark.parametrize("set1,set2", set_cases, ids=set_ids)
 def test_faster_either_set_is_a_subset(benchmark: BenchmarkFixture, set1, set2):
     benchmark(
-        run_500, faster_web3._utils.utility_methods.either_set_is_a_subset, set1, set2
+        run_5000, faster_web3._utils.utility_methods.either_set_is_a_subset, set1, set2
     )
