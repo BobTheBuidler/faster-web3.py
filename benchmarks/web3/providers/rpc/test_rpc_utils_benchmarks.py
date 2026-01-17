@@ -9,8 +9,8 @@ except ImportError:
 import faster_web3.providers.rpc.utils
 
 
-def run_1000(func, *args, **kwargs):
-    for _ in range(1000):
+def run_5000(func, *args, **kwargs):
+    for _ in range(5000):
         func(*args, **kwargs)
 
 
@@ -30,13 +30,13 @@ retry_ids = ["blockNumber", "getBalance", "net_version", "admin_peers", "persona
 @pytest.mark.benchmark(group="check_if_retry_on_failure")
 @pytest.mark.parametrize("method", retry_cases, ids=retry_ids)
 def test_check_if_retry_on_failure(benchmark: BenchmarkFixture, method):
-    benchmark(run_1000, web3.providers.rpc.utils.check_if_retry_on_failure, method)
+    benchmark(run_5000, web3.providers.rpc.utils.check_if_retry_on_failure, method)
 
 
 @pytest.mark.benchmark(group="check_if_retry_on_failure")
 @pytest.mark.parametrize("method", retry_cases, ids=retry_ids)
 def test_faster_check_if_retry_on_failure(benchmark: BenchmarkFixture, method):
-    benchmark(run_1000, faster_web3.providers.rpc.utils.check_if_retry_on_failure, method)
+    benchmark(run_5000, faster_web3.providers.rpc.utils.check_if_retry_on_failure, method)
 
 
 # --- ExceptionRetryConfiguration ---
@@ -57,12 +57,12 @@ retry_config_ids = ["defaults", "custom-allowlist"]
 @pytest.mark.benchmark(group="ExceptionRetryConfiguration")
 @pytest.mark.parametrize("kwargs", retry_config_cases, ids=retry_config_ids)
 def test_exception_retry_configuration(benchmark: BenchmarkFixture, kwargs):
-    benchmark(run_1000, web3.providers.rpc.utils.ExceptionRetryConfiguration, **kwargs)
+    benchmark(run_5000, web3.providers.rpc.utils.ExceptionRetryConfiguration, **kwargs)
 
 
 @pytest.mark.benchmark(group="ExceptionRetryConfiguration")
 @pytest.mark.parametrize("kwargs", retry_config_cases, ids=retry_config_ids)
 def test_faster_exception_retry_configuration(benchmark: BenchmarkFixture, kwargs):
     benchmark(
-        run_1000, faster_web3.providers.rpc.utils.ExceptionRetryConfiguration, **kwargs
+        run_5000, faster_web3.providers.rpc.utils.ExceptionRetryConfiguration, **kwargs
     )
