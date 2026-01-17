@@ -9,8 +9,8 @@ except ImportError:
 import faster_web3._utils.utility_methods
 
 
-def run_500(func, *args, **kwargs):
-    for _ in range(500):
+def run_5000(func, *args, **kwargs):
+    for _ in range(5000):
         func(*args, **kwargs)
 
 
