@@ -199,7 +199,7 @@ setup(
         "eth-typing>=5.0.0",
         "faster-eth-abi==5.2.23",
         "faster-eth-utils==5.3.20",
-        "faster-hexbytes==1.2.6",
+        "faster-hexbytes==1.3.6",
         "aiohttp>=3.7.4.post0",
         "pydantic>=2.4.0",
         "pywin32>=223;platform_system=='Windows'",
