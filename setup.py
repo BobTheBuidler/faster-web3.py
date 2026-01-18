@@ -209,7 +209,7 @@ setup(
         "websockets>=10.0.0,<16.0.0",
         "pyunormalize>=15.0.0",
     ],
-    python_requires=">=3.9, <4",
+    python_requires=">=3.10, <4",
     extras_require=extras_require,
     py_modules=["faster_web3", "faster_ens"],
     license="MIT",
