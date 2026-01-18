@@ -12,6 +12,7 @@ All agents must follow these rules:
 6) Follow formatting/linting configured in pyproject.toml, setup.cfg, tox.ini, or ruff.toml.
 7) Update dependency lockfiles when adding or removing Python dependencies.
 8) If the repo uses mypyc, verify tests run against compiled extensions (not interpreted Python) and note how you confirmed.
-9) Keep base image tags pinned.
+9) The mypy configuration should go in pyproject.toml.
+10) Keep base image tags pinned.
 
 Reference: https://www.conventionalcommits.org/en/v1.0.0/
