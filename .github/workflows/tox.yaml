@@ -8,6 +8,7 @@ on:
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
       - 'benchmarks/**'
+      - '.gitignore'
   pull_request:
     branches: [main, master]
     paths-ignore:
@@ -15,6 +16,7 @@ on:
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
       - 'benchmarks/**'
+      - '.gitignore'
   schedule:
     - cron: '0 9 * * *'  # Daily 9:00 UTC
 
