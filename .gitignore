@@ -105,7 +105,7 @@ logs
 
 ## General
 .idea/*
-.worktrees
+.worktrees/
 .idea_modules/*
 
 ## File-based project format:
@@ -122,7 +122,7 @@ atlassian-ide-plugin.xml
 ### Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
-crashlytics-build.properties
+crashlytics-build-properties
 fabric.properties
 
 # END JetBrains section
