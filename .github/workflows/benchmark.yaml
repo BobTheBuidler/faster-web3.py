@@ -12,6 +12,7 @@ on:
       - 'tests/**'
       - 'tox.ini'
       - '.gitignore'
+      - '*.md'
   push:
     branches: [main, master]
     paths-ignore:
@@ -23,6 +24,7 @@ on:
       - 'tests/**'
       - 'tox.ini'
       - '.gitignore'
+      - '*.md'
   workflow_dispatch:
     inputs:
       run-type:
