@@ -4,7 +4,7 @@ requires = [
     "wheel", 
     "mypy[mypyc]==1.19.1",
 	"types-requests",
-	"cchecksum==0.3.9",
+	"cchecksum==0.4.1",
     "eth-typing==5.2.1",
 	# eth-tester's dependencies don't install propersly on 32-bit systems
 	"eth-tester[py-evm]>=0.13.0b1,<0.14.0b1; platform_system != 'Windows' and platform_machine != 'i686'",
