@@ -15,5 +15,6 @@ All agents must follow these rules:
 9) Keep base image tags pinned.
 10) If the branch you're assigned to work on is from a remote (ie origin/master or upstream/awesome-feature) you must ensure you fetch and pull from the remote before you begin your work.
 11) Maximize the use of caching in GitHub workflow files to minimize run duration.
+12) Use one of `paths` or `paths-ignore` in every workflow file to make sure workflows only run when required.
 
 Reference: https://www.conventionalcommits.org/en/v1.0.0/
