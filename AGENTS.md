@@ -19,5 +19,6 @@ All agents must follow these rules:
 13) Local pip install . generates build/; clean up before closing a worktree to avoid dirty state.
 14) All mypy configuration (flags, overrides, per-module ignores, and file targets) should go in pyproject.toml. Do not split config across CLI args, mypy.ini, setup.cfg, or workflow steps.
 15) Centralize pytest settings (flags, markers, ignore patterns, and targets) in pyproject.toml, pytest.ini, setup.cfg, or tox.ini; workflows/hooks should call pytest without inline args.
+16) Replace them with ruff IF possible while ensuring behavior parity.
 
 Reference: https://www.conventionalcommits.org/en/v1.0.0/
