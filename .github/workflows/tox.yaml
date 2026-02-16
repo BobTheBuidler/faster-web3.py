@@ -63,6 +63,38 @@ jobs:
           normalize-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
           trigger-pr-number: ${{ github.event.pull_request.number }}
           trigger-branch-name: ${{ github.head_ref || github.ref_name }}
+
+  build-ubuntu-x86:
+    name: Build wheel (ubuntu-latest, x86, ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+      # limit parallelism for cronjob, otherwise blast it
+      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build x86 wheel in i386 container
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p wheelhouse
+          docker run --rm \
+            -v "${{ github.workspace }}:/workspace" \
+            -w /workspace \
+            i386/python:${{ matrix.python-version }} \
+            bash -lc '
+              python -m pip install --upgrade pip
+              python -m pip install build
+              python -m build --wheel --outdir /workspace/wheelhouse
+            '
+      - name: Upload wheel
+        uses: actions/upload-artifact@v7
+        with:
+          name: wheel-ubuntu-x86-py${{ matrix.python-version }}
+          path: wheelhouse/*.whl
+
   build-macos:
     name: Build wheel (macos-latest, ${{ matrix.python-version }})
     runs-on: macos-latest
@@ -86,6 +118,7 @@ jobs:
           pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
           trigger-pr-number: ${{ github.event.pull_request.number }}
           trigger-branch-name: ${{ github.head_ref || github.ref_name }}
+
   build-windows:
     name: Build wheel (windows-latest, ${{ matrix.python-version }})
     runs-on: windows-latest
@@ -110,8 +143,35 @@ jobs:
           trigger-pr-number: ${{ github.event.pull_request.number }}
           trigger-branch-name: ${{ github.head_ref || github.ref_name }}
 
+  build-windows-x86:
+    name: Build wheel (windows-latest, x86, ${{ matrix.python-version }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+      # limit parallelism for cronjob, otherwise blast it
+      max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x86
+          cache: pip
+          cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
+      - name: Build wheel
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build --wheel --outdir wheelhouse
+      - name: Upload wheel
+        uses: actions/upload-artifact@v7
+        with:
+          name: wheel-windows-x86-py${{ matrix.python-version }}
+          path: wheelhouse/*.whl
+
   tox:
-    needs: [build-ubuntu, build-macos, build-windows]
+    needs: [build-ubuntu, build-ubuntu-x86, build-macos, build-windows, build-windows-x86]
     name: Test (${{ matrix.jobtype }}, ${{ matrix.python-version }}, ${{ matrix.os }}, ${{ matrix.architecture }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -124,6 +184,18 @@ jobs:
         exclude:
           - os: macos-latest
             architecture: x86
+          - os: ubuntu-latest
+            architecture: x86
+            python-version: "3.13t"
+          - os: ubuntu-latest
+            architecture: x86
+            python-version: "3.14t"
+          - os: windows-latest
+            architecture: x86
+            python-version: "3.13t"
+          - os: windows-latest
+            architecture: x86
+            python-version: "3.14t"
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
     env:
@@ -132,6 +204,13 @@ jobs:
       IS_UBUNTU_32BIT: ${{ matrix.os == 'ubuntu-latest' && matrix.architecture == 'x86' }}
     steps:
       - uses: actions/checkout@v6
+
+      - name: Download wheel (ubuntu x86)
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.architecture == 'x86' }}
+        uses: actions/download-artifact@v7
+        with:
+          name: wheel-ubuntu-x86-py${{ matrix.python-version }}
+          path: wheelhouse
 
       # Use i386/python Docker for all 32-bit Ubuntu jobs
       - name: Run job in 32-bit Ubuntu Docker container
@@ -148,7 +227,7 @@ jobs:
             bash -lc '
               python -m pip install --upgrade pip
               python -m pip install tox
-              python -m tox run $TOX_RECREATE_FLAG
+              python -m tox run --installpkg=$(ls /workspace/wheelhouse/*.whl) $TOX_RECREATE_FLAG
             '
         # There are no prebuilt 32-bit freethreaded Python containers at the time of this commit,
         # but we will keep these runners so they will activate on their own whenever such containers exist
@@ -192,6 +271,13 @@ jobs:
           key: ${{ runner.os }}-tox-${{ matrix.architecture }}-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-${{ matrix.python-version }}-${{ matrix.jobtype }}
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
 
+      - name: Download wheel (windows x86)
+        if: ${{ matrix.os == 'windows-latest' && matrix.architecture == 'x86' }}
+        uses: actions/download-artifact@v7
+        with:
+          name: wheel-windows-x86-py${{ matrix.python-version }}
+          path: wheelhouse
+
       # Download the correct wheel artifact for this OS and Python version using only the pattern
       - name: Download wheel
         if: ${{ env.IS_UBUNTU_32BIT != 'true' && matrix.architecture == 'x64' }}
@@ -201,9 +287,5 @@ jobs:
           pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-*
 
       - name: Run tox
-        if: ${{ env.IS_UBUNTU_32BIT != 'true' && matrix.architecture == 'x64' }}
+        if: ${{ env.IS_UBUNTU_32BIT != 'true' }}
         run: python -m tox run --installpkg=$(find . -name '*.whl') ${{ env.TOX_RECREATE_FLAG }}
-
-      - name: Run tox (32-bit)
-        if: ${{ env.IS_UBUNTU_32BIT != 'true' && matrix.architecture == 'x86' }}
-        run: python -m tox run ${{ env.TOX_RECREATE_FLAG }}
