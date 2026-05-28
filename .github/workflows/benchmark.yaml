@@ -11,6 +11,8 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'tox.ini'
+      - '.gitignore'
+      - '*.md'
   push:
     branches: [main, master]
     paths-ignore:
@@ -21,6 +23,8 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'tox.ini'
+      - '.gitignore'
+      - '*.md'
   workflow_dispatch:
     inputs:
       run-type:
@@ -85,7 +89,7 @@ jobs:
             tox.ini
 
       - name: Download wheel
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: ${{ needs.build-wheel.outputs.artifact-name }}
           path: .
@@ -123,7 +127,7 @@ jobs:
             tox.ini
 
       - name: Download built wheel artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: ${{ needs.build-wheel.outputs.artifact-name }}
           path: .
@@ -143,7 +147,7 @@ jobs:
         run: pytest --benchmark-only --benchmark-json=benchmark.json benchmarks/
         
       - name: Upload Pytest Benchmark Results
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pytest-benchmark-results
           path: benchmark.json
@@ -175,19 +179,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Upload Markdown Benchmark Results
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: markdown-benchmark-results
           path: benchmarks/results/*.md
           
       - name: Upload Pytest Benchmark Diff
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pytest-benchmark-diff
           path: pytest_benchmark_diff.json
           
       - name: Post Pytest Benchmark Diff as PR Comment
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');

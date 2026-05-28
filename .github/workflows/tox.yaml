@@ -8,6 +8,7 @@ on:
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
       - 'benchmarks/**'
+      - '.gitignore'
   pull_request:
     branches: [main, master]
     paths-ignore:
@@ -15,6 +16,7 @@ on:
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
       - 'benchmarks/**'
+      - '.gitignore'
   schedule:
     - cron: '0 9 * * *'  # Daily 9:00 UTC
 
@@ -35,73 +37,73 @@ env:
 
 jobs:
   build-ubuntu:
-    name: Build wheel (ubuntu-latest, ${{ matrix.python-version }})
+    name: Build wheel (ubuntu-latest, 3.${{ matrix.pyminor }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+        pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
       wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v6
-      - name: Build wheel for Python${{ matrix.python-version }}
+      - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
         uses: BobTheBuidler/mypycify@master
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
           ccache: true
           pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
           # Only enable commit/PR and normalization for Python 3.14 on Linux
-          push-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
-          commit-message: "${{ matrix.python-version == '3.14' && 'chore: compile C files for source control' || '' }}"
-          normalize-source: ${{ matrix.python-version == '3.14' && 'true' || 'false' }}
+          push-source: ${{ matrix.pyminor == '14' && 'true' || 'false' }}
+          commit-message: "${{ matrix.pyminor == '14' && 'chore: compile C files for source control' || '' }}"
+          normalize-source: ${{ matrix.pyminor == '14' && 'true' || 'false' }}
           trigger-pr-number: ${{ github.event.pull_request.number }}
           trigger-branch-name: ${{ github.head_ref || github.ref_name }}
   build-macos:
-    name: Build wheel (macos-latest, ${{ matrix.python-version }})
+    name: Build wheel (macos-latest, 3.${{ matrix.pyminor }})
     runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+        pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
       wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v6
-      - name: Build wheel for Python${{ matrix.python-version }}
+      - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
         uses: BobTheBuidler/mypycify@master
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
           ccache: true
           pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
           trigger-pr-number: ${{ github.event.pull_request.number }}
           trigger-branch-name: ${{ github.head_ref || github.ref_name }}
   build-windows:
-    name: Build wheel (windows-latest, ${{ matrix.python-version }})
+    name: Build wheel (windows-latest, 3.${{ matrix.pyminor }})
     runs-on: windows-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+        pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
       wheel-artifact-names: ${{ steps.wheel.outputs.artifact-name }}
     steps:
       - uses: actions/checkout@v6
-      - name: Build wheel for Python${{ matrix.python-version }}
+      - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
         uses: BobTheBuidler/mypycify@master
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
           ccache: true
           pip-cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
@@ -110,18 +112,18 @@ jobs:
 
   tox:
     needs: [build-ubuntu, build-macos, build-windows]
-    name: Test (${{ matrix.jobtype }}, ${{ matrix.python-version}}, ${{ matrix.os }})
+    name: Test (${{ matrix.jobtype }}, 3.${{ matrix.pyminor }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         jobtype: [core, ens, integration-ethtester, lint, wheel]
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.13t", "3.14", "3.14t"]
+        pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
     env:
-      TOXENV: py${{ matrix.python-version }}-${{ matrix.jobtype }}
+      TOXENV: py3${{ matrix.pyminor }}-${{ matrix.jobtype }}
       TOX_RECREATE_FLAG: ${{ github.event_name == 'schedule' && '-r' || '' }}
     steps:
       - uses: actions/checkout@v6
@@ -129,7 +131,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.${{ matrix.pyminor }}
           cache: pip
           cache-dependency-path: ${{ env.PIP_CACHE_DEPENDENCY_PATH }}
 
@@ -148,15 +150,15 @@ jobs:
           path: |
             .tox
             .hypothesis
-          key: ${{ runner.os }}-tox-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-${{ matrix.python-version }}-${{ matrix.jobtype }}
+          key: ${{ runner.os }}-tox-${{ hashFiles('pyproject.toml', 'setup.py', 'tox.ini') }}-3.${{ matrix.pyminor }}-${{ matrix.jobtype }}
           save-always: ${{ env.TOX_RECREATE_FLAG == '-r' }}
 
       # Download the correct wheel artifact for this OS and Python version using only the pattern
       - name: Download wheel
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           path: .
-          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py${{ matrix.python-version }}-*
+          pattern: BobTheBuidler_mypycified_wheel-${{ runner.os }}-py3.${{ matrix.pyminor }}-*
 
       - name: Run tox
         run: python -m tox run --installpkg=$(find . -name '*.whl') ${{ env.TOX_RECREATE_FLAG }}
