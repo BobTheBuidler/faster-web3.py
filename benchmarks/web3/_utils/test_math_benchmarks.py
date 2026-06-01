@@ -1,17 +1,10 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.math
-except ImportError:
-    pass
+import web3._utils.math
 
 import faster_web3._utils.math
-
-
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        func(*args, **kwargs)
+from benchmarks.batching import run_100
 
 
 percentile_cases = [

@@ -1,19 +1,12 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.blocks
-except ImportError:
-    pass
+import web3._utils.blocks
 
 import faster_web3._utils.blocks
+from benchmarks.batching import run_100
 
 _object = object()
-
-
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        func(*args, **kwargs)
 
 
 def run_100_exc(func, expected_exc, *args, **kwargs):

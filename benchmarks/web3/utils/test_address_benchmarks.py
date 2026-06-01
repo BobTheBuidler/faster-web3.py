@@ -1,10 +1,7 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3.utils.address
-except ImportError:
-    pass
+import web3.utils.address
 
 import faster_web3.utils.address
 

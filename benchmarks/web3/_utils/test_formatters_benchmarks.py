@@ -1,13 +1,11 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.formatters
-except ImportError:
-    pass
+import web3._utils.formatters
 
 import faster_web3._utils.formatters
 
+from benchmarks.batching import run_5000, run_5000_exc
 from benchmarks.web3._utils.params import (
     TX_DICT,
     LOG_ENTRY,
@@ -16,17 +14,6 @@ from benchmarks.web3._utils.params import (
 
 
 # --- Helpers ---
-def run_5000(func, *args, **kwargs):
-    for _ in range(5000):
-        func(*args, **kwargs)
-
-
-def run_5000_exc(exc, func, *args, **kwargs):
-    for _ in range(5000):
-        try:
-            func(*args, **kwargs)
-        except exc:
-            pass
 
 
 def noop(x):

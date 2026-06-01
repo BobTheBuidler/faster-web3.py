@@ -1,12 +1,10 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3.datastructures
-except ImportError:
-    pass
+import web3.datastructures
 
 import faster_web3.datastructures
+from benchmarks.batching import run_100, run_500
 
 # --- Shared parameter sets ---
 init_dicts = [
@@ -56,14 +54,6 @@ onion_ids = ["empty", "callables2", "callables3"]
 
 
 # --- Helpers ---
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        func(*args, **kwargs)
-
-
-def run_500(func, *args, **kwargs):
-    for _ in range(500):
-        func(*args, **kwargs)
 
 
 # --- Benchmarks for ReadableAttributeDict ---

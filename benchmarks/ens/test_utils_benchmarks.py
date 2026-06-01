@@ -1,12 +1,10 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import ens.utils
-except ImportError:
-    pass
+import ens.utils
 
 import faster_ens.utils
+from benchmarks.batching import run_10, run_10_exc, run_500
 from benchmarks.ens.params import (
     NAMES,
     LABELS,
@@ -14,24 +12,6 @@ from benchmarks.ens.params import (
     LABEL_LISTS,
     parametrize_names_full_coverage,
 )
-
-
-def run_10(func, *args, **kwargs):
-    for _ in range(10):
-        func(*args, **kwargs)
-
-
-def run_10_exc(exc, func, *args, **kwargs):
-    for _ in range(10):
-        try:
-            func(*args, **kwargs)
-        except exc:
-            pass
-
-
-def run_500(func, *args, **kwargs):
-    for _ in range(500):
-        func(*args, **kwargs)
 
 
 @pytest.mark.benchmark(group="normalize_name")

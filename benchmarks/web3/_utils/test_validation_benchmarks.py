@@ -1,11 +1,8 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.validation
-    import web3.exceptions
-except ImportError:
-    pass
+import web3._utils.validation
+import web3.exceptions
 
 import faster_web3._utils.validation
 import faster_web3.exceptions
@@ -13,20 +10,10 @@ from eth_utils.abi import function_abi_to_4byte_selector
 from eth_utils.hexadecimal import encode_hex
 
 from benchmarks.web3._utils import abis
+from benchmarks.batching import run_1000, run_1000_exc
 
 
 # --- Helpers ---
-def run_1000(func, *args, **kwargs):
-    for _ in range(1000):
-        func(*args, **kwargs)
-
-
-def run_1000_exc(exc, func, *args, **kwargs):
-    for _ in range(1000):
-        try:
-            func(*args, **kwargs)
-        except exc:
-            pass
 
 
 # Real selector collision example: two functions with the same signature

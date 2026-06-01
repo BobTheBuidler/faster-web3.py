@@ -3,30 +3,10 @@ import asyncio
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3.providers.eth_tester.middleware
-except ImportError:
-    pass
+import web3.providers.eth_tester.middleware
 
 import faster_web3.providers.eth_tester.middleware
-
-
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        func(*args, **kwargs)
-
-
-async def _run_100_async(func, *args, **kwargs):
-    for _ in range(100):
-        await func(*args, **kwargs)
-
-
-def run_100_async(func, *args, **kwargs):
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(_run_100_async(func, *args, **kwargs))
-    finally:
-        loop.close()
+from benchmarks.batching import run_100, run_100_async
 
 
 ADDRESS = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"

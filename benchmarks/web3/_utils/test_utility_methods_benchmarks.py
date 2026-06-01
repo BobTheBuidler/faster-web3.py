@@ -1,17 +1,10 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.utility_methods
-except ImportError:
-    pass
+import web3._utils.utility_methods
 
 import faster_web3._utils.utility_methods
-
-
-def run_5000(func, *args, **kwargs):
-    for _ in range(5000):
-        func(*args, **kwargs)
+from benchmarks.batching import run_5000
 
 
 dict_cases = [

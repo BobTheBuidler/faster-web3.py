@@ -1,23 +1,13 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.abi
-except ImportError:
-    pass
+import web3._utils.abi
 
 import faster_web3._utils.abi
+from benchmarks.batching import run_100, run_500
 
 
 # --- Helpers ---
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        func(*args, **kwargs)
-
-
-def run_500(func, *args, **kwargs):
-    for _ in range(500):
-        func(*args, **kwargs)
 
 
 # --- Type Checkers ---
