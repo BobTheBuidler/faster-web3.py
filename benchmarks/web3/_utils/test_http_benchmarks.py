@@ -1,17 +1,10 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.http
-except ImportError:
-    pass
+import web3._utils.http
 
 import faster_web3._utils.http
-
-
-def run_1000(func, *args, **kwargs):
-    for _ in range(1000):
-        func(*args, **kwargs)
+from benchmarks.batching import run_1000
 
 
 MODULE = "some_module"

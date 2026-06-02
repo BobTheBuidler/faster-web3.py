@@ -4,12 +4,9 @@ import pytest
 from pytest_codspeed import BenchmarkFixture
 from unittest.mock import patch
 
-try:
-    import ens.ens
-    import ens.exceptions
-    import web3
-except ImportError:
-    pass
+import ens.ens
+import ens.exceptions
+import web3
 
 import faster_ens.ens
 import faster_ens.exceptions
@@ -17,14 +14,7 @@ import faster_web3
 
 from benchmarks.ens.params import parametrize_names_full_coverage
 from benchmarks.ens.fake_rpc import fake_json_rpc_response, FAKE_ENS_REGISTRY
-
-
-def run_100(func, exc, *args, **kwargs):
-    for _ in range(100):
-        try:
-            func(*args, **kwargs)
-        except exc:
-            pass
+from benchmarks.batching import run_100_exc
 
 
 class FakeResponse:
@@ -50,7 +40,7 @@ def test_address(benchmark: BenchmarkFixture, name):
         provider = web3.HTTPProvider("http://localhost:8545")
         # Patch the ENS registry address to our fake one
         ns = ens.ens.ENS(provider=provider, addr=FAKE_ENS_REGISTRY)
-        benchmark(run_100, ens.exceptions.ENSException, ns.address, name)
+        benchmark(run_100_exc, ens.exceptions.ENSException, ns.address, name)
 
 
 @pytest.mark.benchmark(group="ENS.address")
@@ -59,4 +49,4 @@ def test_faster_address(benchmark: BenchmarkFixture, name):
     with patch("requests.Session.send", side_effect=fake_send):
         provider = faster_web3.HTTPProvider("http://localhost:8545")
         ns = faster_ens.ens.ENS(provider=provider, addr=FAKE_ENS_REGISTRY)
-        benchmark(run_100, faster_ens.exceptions.ENSException, ns.address, name)
+        benchmark(run_100_exc, faster_ens.exceptions.ENSException, ns.address, name)

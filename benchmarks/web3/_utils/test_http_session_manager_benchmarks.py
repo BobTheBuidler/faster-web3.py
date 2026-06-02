@@ -1,15 +1,12 @@
-import asyncio
 from unittest.mock import patch
 
 import pytest
 
-try:
-    import web3._utils.http_session_manager
-except ImportError:
-    pass
+import web3._utils.http_session_manager
 
 import faster_web3._utils.http_session_manager
 
+from benchmarks.batching import run_10000, run_10000_async
 from benchmarks.mocking import (
     fake_requests_get,
     fake_requests_post,
@@ -28,24 +25,6 @@ JSON_RPC_PAYLOAD = {
     "params": [],
     "id": 1,
 }
-
-
-def run_10000(fn, *args, **kwargs):
-    for _ in range(10000):
-        fn(*args, **kwargs)
-
-
-async def _run_10000_async(fn, *args, **kwargs):
-    for _ in range(10000):
-        await fn(*args, **kwargs)
-
-
-def run_10000_async(fn, *args, **kwargs):
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(_run_10000_async(fn, *args, **kwargs))
-    finally:
-        loop.close()
 
 
 parametrize_endpoints = pytest.mark.parametrize(

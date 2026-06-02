@@ -3,17 +3,10 @@ import warnings
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.decorators
-except ImportError:
-    pass
+import web3._utils.decorators
 
 import faster_web3._utils.decorators
-
-
-def run_10000(fn, *args, **kwargs):
-    for _ in range(10000):
-        fn(*args, **kwargs)
+from benchmarks.batching import run_10000
 
 
 def _noop(value):

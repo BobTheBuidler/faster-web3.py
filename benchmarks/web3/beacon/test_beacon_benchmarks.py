@@ -2,10 +2,7 @@ import pytest
 from pytest_codspeed import BenchmarkFixture
 from unittest.mock import patch
 
-try:
-    import web3.beacon
-except ImportError:
-    pass
+import web3.beacon
 
 import faster_web3.beacon
 
@@ -44,24 +41,6 @@ validator_indices_cases = [[], ["0"], ["1", "2", "3", "4", "5"]]
 indices_cases = [None, [0], [0, 1, 2, 3, 4]]
 block_roots = ["0xabc123", "0x0"]
 peer_ids = ["peer1", "peer2", "0xdeadbeef"]
-
-# --- Benchmarks for All Beacon Methods ---
-
-
-def run_1000(fn, *args, **kwargs):
-    if kwargs and args:
-        for _ in range(1000):
-            fn(*args, **kwargs)
-    elif args:
-        for _ in range(1000):
-            fn(*args)
-    elif kwargs:
-        for _ in range(1000):
-            fn(**kwargs)
-    else:
-        for i in range(1000):
-            fn()
-
 
 @pytest.mark.benchmark(group="beacon-get_genesis")
 def test_get_genesis(benchmark: BenchmarkFixture):

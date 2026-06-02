@@ -3,10 +3,7 @@ import pytest
 from pytest_codspeed import BenchmarkFixture
 from unittest.mock import patch, AsyncMock
 
-try:
-    import web3.utils.async_exception_handling
-except ImportError:
-    pass
+import web3.utils.async_exception_handling
 
 import faster_web3.utils.async_exception_handling
 

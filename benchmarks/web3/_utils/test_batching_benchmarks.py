@@ -1,35 +1,14 @@
-import asyncio
 import contextvars
 
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.batching
-    import web3.types
-except ImportError:
-    pass
+import web3._utils.batching
+import web3.types
 
 import faster_web3._utils.batching
 import faster_web3.types
-
-
-def run_1000(func, *args, **kwargs):
-    for _ in range(1000):
-        func(*args, **kwargs)
-
-
-async def _run_1000_async(func, *args, **kwargs):
-    for _ in range(1000):
-        await func(*args, **kwargs)
-
-
-def run_1000_async(func, *args, **kwargs):
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(_run_1000_async(func, *args, **kwargs))
-    finally:
-        loop.close()
+from benchmarks.batching import run_1000, run_1000_async
 
 
 def noop(value):

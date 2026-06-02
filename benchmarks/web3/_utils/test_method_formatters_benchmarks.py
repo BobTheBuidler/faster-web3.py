@@ -1,19 +1,20 @@
 import pytest
 
-try:
-    import web3._utils.method_formatters
-except ImportError:
-    pass
+import web3._utils.method_formatters
 
 import faster_web3._utils.method_formatters
 from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
-from benchmarks.web3._utils.params import BLOCK_DICT, FEE_HISTORY_DICT, HASH32, LOG_ENTRY, RECEIPT_DICT, TX_DICT
-
-def run_1000(fn, *args):
-    for _ in range(1000):
-        fn(*args)
+from benchmarks.batching import run_1000
+from benchmarks.web3._utils.params import (
+    BLOCK_DICT,
+    FEE_HISTORY_DICT,
+    HASH32,
+    LOG_ENTRY,
+    RECEIPT_DICT,
+    TX_DICT,
+)
 
 # --- SYSTEMATIC BENCHMARKS FOR PYTHONIC_RESULT_FORMATTERS ---
 

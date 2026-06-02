@@ -4,11 +4,8 @@ import time
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-try:
-    import web3._utils.caching.request_caching_validation
-    import web3._utils.rpc_abi
-except ImportError:
-    pass
+import web3._utils.caching.request_caching_validation
+import web3._utils.rpc_abi
 
 import faster_web3._utils.caching.request_caching_validation
 import faster_web3._utils.rpc_abi
