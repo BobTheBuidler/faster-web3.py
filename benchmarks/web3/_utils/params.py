@@ -15,6 +15,34 @@ TX_DICT = {
     "gasPrice": 50000000000,
 }
 
+RAW_TX_DICT = {
+    "blockHash": HASH32,
+    "blockNumber": "0xbc614e",
+    "transactionIndex": "0x0",
+    "hash": HASH32,
+    "from": TX_DICT["from"],
+    "to": TX_DICT["to"],
+    "value": "0xde0b6b3a7640000",
+    "gas": "0x5208",
+    "input": "0x",
+    "nonce": "0xc",
+    "gasPrice": "0xba43b7400",
+    "type": "0x2",
+    "chainId": "0x1",
+    "accessList": [],
+    "maxFeePerGas": "0x12a05f200",
+    "maxPriorityFeePerGas": "0x77359400",
+}
+
+RAW_SIGNED_TX_DICT = {
+    "raw": (
+        "0xf86c808504a817c80082520894bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        "880de0b6b3a76400008025a0b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1b1e1"
+        "a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1a06e1"
+    ),
+    "tx": RAW_TX_DICT,
+}
+
 # Log entry (mainnet-style)
 LOG_ENTRY = {
     "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
@@ -29,6 +57,14 @@ LOG_ENTRY = {
     "logIndex": 0,
 }
 
+RAW_LOG_ENTRY = {
+    **LOG_ENTRY,
+    "blockHash": HASH32,
+    "blockNumber": "0xbc614e",
+    "transactionIndex": "0x0",
+    "logIndex": "0x0",
+}
+
 # Block dict (mainnet-style, minimal for formatter)
 BLOCK_DICT = {
     "number": 12345678,
@@ -38,6 +74,22 @@ BLOCK_DICT = {
     "miner": "0x829BD824B016326A401d083B33D092293333A830",
     "gasLimit": 15000000,
     "gasUsed": 12000000,
+}
+
+RAW_BLOCK_DICT = {
+    **BLOCK_DICT,
+    "number": "0xbc614e",
+    "transactions": [RAW_TX_DICT, RAW_TX_DICT],
+    "logs": [RAW_LOG_ENTRY, RAW_LOG_ENTRY],
+    "gasLimit": "0xe4e1c0",
+    "gasUsed": "0xb71b00",
+    "baseFeePerGas": "0x77359400",
+    "timestamp": "0x65000000",
+    "parentHash": HASH32,
+    "sha3Uncles": HASH32,
+    "uncles": [],
+    "difficulty": "0x0",
+    "totalDifficulty": "0x0",
 }
 
 # Receipt dict (minimal)
@@ -58,12 +110,31 @@ RECEIPT_DICT = {
     "type": 2,
 }
 
+RAW_RECEIPT_DICT = {
+    **RECEIPT_DICT,
+    "blockNumber": RAW_BLOCK_DICT["number"],
+    "transactionIndex": "0x0",
+    "cumulativeGasUsed": "0x5208",
+    "status": "0x1",
+    "gasUsed": "0x5208",
+    "logs": [RAW_LOG_ENTRY],
+    "effectiveGasPrice": "0xba43b7400",
+    "type": "0x2",
+}
+
 # Fee history dict (minimal)
 FEE_HISTORY_DICT = {
     "baseFeePerGas": ["0x1", "0x2"],
     "gasUsedRatio": [0.5, 0.7],
     "oldestBlock": "0x5e1d3a76",
     "reward": [[1, 2], [3, 4]],
+}
+
+RAW_FEE_HISTORY_DICT = {
+    "baseFeePerGas": ["0x1", "0x2"],
+    "gasUsedRatio": [0.5, 0.7],
+    "oldestBlock": "0x5e1d3",
+    "reward": [["0x1", "0x2"], ["0x3", "0x4"]],
 }
 
 # Storage key cases for storage_key_to_hexstr
