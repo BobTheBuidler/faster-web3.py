@@ -109875,7 +109875,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -236840,19 +236840,22 @@ PyObject *CPyDef_persistent_connection___PersistentConnection___subscriptions(Py
         cpy_r_r3 = cpy_r_r2;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", 50, CPyStatic_persistent_connection___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r2);
-        goto CPyL4;
+        goto CPyL5;
     }
     cpy_r_r4 = CPyDef_request_processor___RequestProcessor___active_subscriptions(cpy_r_r3);
-    CPy_DECREF_NO_IMM(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_persistent_connection___globals);
-        goto CPyL4;
+        goto CPyL5;
     }
 CPyL3: ;
+    CPy_DECREF(cpy_r_r2);
     return cpy_r_r4;
 CPyL4: ;
     cpy_r_r5 = NULL;
     return cpy_r_r5;
+CPyL5: ;
+    CPy_DecRef(cpy_r_r2);
+    goto CPyL4;
 }
 
 PyObject *CPyPy_persistent_connection___PersistentConnection___subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -290722,7 +290725,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\004\016RequestBatcher\ais_text\bis_bytes\alatin-1",
-    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\bearliest\004safe",
+    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\004safe\tfinalized",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
@@ -290885,7 +290888,7 @@ const char * const CPyLit_Str[] = {
     "\002)Storage key must be a 32-byte value, got \017variable_length",
     "\005\023to_checksum_address\abalance\astorage\nis_address\022apply_formatter_if",
     "\003\021has_pretrace_keys#type_aware_apply_formatters_to_dict\tis_hexstr",
-    "\005\asyncing\006status\017Block with id: \v not found.\nIndexError",
+    "\005\006status\asyncing\017Block with id: \v not found.\nIndexError",
     "\003\030Unknown block identifier\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
     "\003\030Unknown transaction hash\023TransactionNotFound\023Transaction index: ",
@@ -291371,8 +291374,8 @@ const int CPyLit_Tuple[] = {
     72, 73, 365, 75, 77, 79, 521, 81, 1, 802
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 393, 394, 295, 307, 395, 3, 19, 1944, 0, 2, 896, 897, 4, 1092,
-    1095, 1094, 378
+    4, 5, 295, 393, 394, 395, 307, 3, 19, 1944, 0, 2, 896, 897, 4, 378,
+    1092, 1094, 1095
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
