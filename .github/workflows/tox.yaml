@@ -7,6 +7,7 @@ on:
       - '.circleci/**'
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
+      - '.agents/**'
       - 'benchmarks/**'
       - '.gitignore'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - '.circleci/**'
       - '.github/workflows/**'
       - '!.github/workflows/tox.yaml'
+      - '.agents/**'
       - 'benchmarks/**'
       - '.gitignore'
   schedule:
