@@ -8,12 +8,13 @@ from pytest_codspeed import BenchmarkFixture
 
 from benchmarks.batching import run_1000
 from benchmarks.web3._utils.params import (
-    BLOCK_DICT,
-    FEE_HISTORY_DICT,
     HASH32,
-    LOG_ENTRY,
-    RECEIPT_DICT,
-    TX_DICT,
+    RAW_BLOCK_DICT,
+    RAW_FEE_HISTORY_DICT,
+    RAW_LOG_ENTRY,
+    RAW_RECEIPT_DICT,
+    RAW_SIGNED_TX_DICT,
+    RAW_TX_DICT,
 )
 
 # --- SYSTEMATIC BENCHMARKS FOR PYTHONIC_RESULT_FORMATTERS ---
@@ -114,7 +115,7 @@ RESULT_DATA = {
     "eth_sendTransaction": "0xfeedbabe1234567890cafebabe1234567890feedbabe1234567890cafebabe12",
     "eth_signTypedData": "0x1c6401ff0c2b6a1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1",
     "eth_getRawTransactionByHash": HASH32,
-    "eth_getTransactionByHash": TX_DICT,
+    "eth_getTransactionByHash": RAW_TX_DICT,
     "eth_getUncleCountByBlockHash": "0x2",
     "eth_getUncleCountByBlockNumber": "0x2",
     "eth_getStorageAt": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -128,8 +129,8 @@ RESULT_DATA = {
         "storageHash": "0x5e1d3a76fbf824220e3d1e4b8b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1c1b6b1",
         "storageProof": [],
     },
-    "eth_getTransactionByBlockHashAndIndex": TX_DICT,
-    "eth_getTransactionByBlockNumberAndIndex": TX_DICT,
+    "eth_getTransactionByBlockHashAndIndex": RAW_TX_DICT,
+    "eth_getTransactionByBlockNumberAndIndex": RAW_TX_DICT,
     "eth_subscribe": {
         "result": HASH32
     },
@@ -169,15 +170,15 @@ RESULT_DATA = {
         "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
         "value": "0x8ac7230489e80000",
     },
-    "eth_feeHistory": FEE_HISTORY_DICT,
-    "eth_getBlockByHash": BLOCK_DICT,
-    "eth_getBlockByNumber": BLOCK_DICT,
-    "eth_getBlockReceipts": [RECEIPT_DICT],
-    "eth_getFilterChanges": [LOG_ENTRY],
-    "eth_getFilterLogs": [LOG_ENTRY],
-    "eth_getLogs": [LOG_ENTRY],
-    "eth_getTransactionReceipt": RECEIPT_DICT,
-    "eth_signTransaction": TX_DICT,
+    "eth_feeHistory": RAW_FEE_HISTORY_DICT,
+    "eth_getBlockByHash": RAW_BLOCK_DICT,
+    "eth_getBlockByNumber": RAW_BLOCK_DICT,
+    "eth_getBlockReceipts": [RAW_RECEIPT_DICT],
+    "eth_getFilterChanges": [RAW_LOG_ENTRY],
+    "eth_getFilterLogs": [RAW_LOG_ENTRY],
+    "eth_getLogs": [RAW_LOG_ENTRY],
+    "eth_getTransactionReceipt": RAW_RECEIPT_DICT,
+    "eth_signTransaction": RAW_SIGNED_TX_DICT,
     "trace_block": [TRACE] * 1000,
     "trace_transaction": [TRACE] * 50,
     "trace_filter": [TRACE] * 2000,
