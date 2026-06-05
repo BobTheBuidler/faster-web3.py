@@ -123,7 +123,7 @@ class RequestInformation:
         self.method: Final = method
         self.params: Final = params
         # for debugging, remove later
-        assert all(map(callable, response_formatters)), response_formatters
+        assert callable(response_formatters[0]), response_formatters
         self.response_formatters: Final = response_formatters
         self.subscription_id: Final = subscription_id
         self.middleware_response_processors: Final[List[Callable[[Any], Any]]] = []
