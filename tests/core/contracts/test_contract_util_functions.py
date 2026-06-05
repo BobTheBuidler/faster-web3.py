@@ -42,15 +42,15 @@ def test_parse_block_identifier_bytes_and_hex(w3):
 
 
 @pytest.mark.parametrize(
-    "block_identifier,exception",
+    "block_identifier",
     (
-        (1.5, TypeError),
-        ("cats", BlockNumberOutOfRange),
-        (-70, BlockNumberOutOfRange),
+        1.5,
+        "cats",
+        -70,
     ),
 )
-def test_parse_block_identifier_error(w3, block_identifier, exception):
-    with pytest.raises(exception):
+def test_parse_block_identifier_error(w3, block_identifier):
+    with pytest.raises(BlockNumberOutOfRange):
         parse_block_identifier(w3, block_identifier)
 
 
@@ -109,17 +109,15 @@ async def test_async_parse_block_identifier_bytes_and_hex(async_w3):
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    "block_identifier,expected_exc",
+    "block_identifier",
     (
-        (1.5, TypeError),
-        ("cats", BlockNumberOutOfRange),
-        (-70, BlockNumberOutOfRange),
+        1.5,
+        "cats",
+        -70,
     ),
 )
-async def test_async_parse_block_identifier_error(
-    async_w3, block_identifier, expected_exc
-):
-    with pytest.raises(expected_exc):
+async def test_async_parse_block_identifier_error(async_w3, block_identifier):
+    with pytest.raises(BlockNumberOutOfRange):
         await async_parse_block_identifier(async_w3, block_identifier)
 
 
