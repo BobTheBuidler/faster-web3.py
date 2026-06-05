@@ -60,6 +60,18 @@ def _rpc_response(result):
     return b'{"jsonrpc":"2.0","id":1,"result":' + result + b"}"
 
 
+def _address_result(address):
+    return (
+        b'"0x000000000000000000000000'
+        + address[2:].lower().encode("ascii")
+        + b'"'
+    )
+
+
+def _address_response(address):
+    return _rpc_response(_address_result(address))
+
+
 BLOCK_RESPONSE = _rpc_response(LATEST_BLOCK_RESULT)
 CHAIN_ID_RESPONSE = _rpc_response(CHAIN_ID_RESULT)
 RESOLVER_RESPONSE = _rpc_response(RESOLVER_RESULT)
@@ -249,11 +261,30 @@ ENS_ASYNC_RESPONSE_SEQUENCES = {
 }
 
 
+def _async_name_response_sequences(address):
+    addr_response = _address_response(address)
+    return (
+        (
+            BLOCK_RESPONSE,
+            RESOLVER_RESPONSE,
+            REVERSE_NAME_RESPONSE,
+            RESOLVER_RESPONSE,
+            SUPPORTS_FALSE_RESPONSE,
+            addr_response,
+        ),
+        (
+            RESOLVER_RESPONSE,
+            REVERSE_NAME_RESPONSE,
+            RESOLVER_RESPONSE,
+            SUPPORTS_FALSE_RESPONSE,
+            addr_response,
+        ),
+    )
+
+
 class StaticRPCSequence:
-    def __init__(self, operation, sequences):
-        first, repeat = sequences[operation]
-        self._first = first
-        self._repeat = repeat
+    def __init__(self, response_sequences):
+        self._first, self._repeat = response_sequences
         self._index = 0
 
     def response_bytes(self):
@@ -297,7 +328,7 @@ class StaticAiohttpResponse:
 
 
 def make_requests_post(operation):
-    sequence = StaticRPCSequence(operation, ENS_RESPONSE_SEQUENCES)
+    sequence = StaticRPCSequence(ENS_RESPONSE_SEQUENCES[operation])
 
     def post(_self, _url, *args, **kwargs):
         return StaticRequestsResponse(sequence.response_bytes())
@@ -305,8 +336,12 @@ def make_requests_post(operation):
     return post
 
 
-def make_aiohttp_post(operation):
-    sequence = StaticRPCSequence(operation, ENS_ASYNC_RESPONSE_SEQUENCES)
+def make_aiohttp_post(operation, result_address=FAKE_RESULT_ADDR):
+    if operation == "name":
+        response_sequences = _async_name_response_sequences(result_address)
+    else:
+        response_sequences = ENS_ASYNC_RESPONSE_SEQUENCES[operation]
+    sequence = StaticRPCSequence(response_sequences)
 
     async def post(_self, _url, *args, **kwargs):
         return StaticAiohttpResponse(sequence.response_bytes())

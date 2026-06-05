@@ -1,33 +1,13 @@
+import atexit
 import asyncio
 
 
+_ASYNC_LOOP = asyncio.new_event_loop()
+atexit.register(_ASYNC_LOOP.close)
+
+
 def _run_async(coro):
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(coro)
-    finally:
-        loop.close()
-
-
-def run_1(fn, *args, **kwargs):
-    for _ in range(1):
-        fn(*args, **kwargs)
-
-
-def run_1_exc(exc, fn, *args, **kwargs):
-    for _ in range(1):
-        try:
-            fn(*args, **kwargs)
-        except exc:
-            pass
-
-
-def run_1_async(fn, *args, **kwargs):
-    async def runner():
-        for _ in range(1):
-            await fn(*args, **kwargs)
-
-    return _run_async(runner())
+    return _ASYNC_LOOP.run_until_complete(coro)
 
 
 def run_10(fn, *args, **kwargs):
@@ -112,6 +92,17 @@ def run_10_async(fn, *args, **kwargs):
     async def runner():
         for _ in range(10):
             await fn(*args, **kwargs)
+
+    return _run_async(runner())
+
+
+def run_10_async_exc(exc, fn, *args, **kwargs):
+    async def runner():
+        for _ in range(10):
+            try:
+                await fn(*args, **kwargs)
+            except exc:
+                pass
 
     return _run_async(runner())
 
