@@ -1,13 +1,16 @@
 ---
 name: canonical-benchmarking
-description: Use when adding, reviewing, rebasing, or realigning microbenchmark-grade benchmark PRs in this repo, especially benchmark suites comparing web3/ens against faster_web3/faster_ens where hot-path purity matters.
+description: Use when adding, reviewing, rebasing, or realigning microbenchmark-grade benchmark PRs in this repo, especially benchmark suites comparing reference libraries against faster implementations.
 ---
 
 # Canonical Benchmarking
 
 Use this skill for benchmark work in `faster-web3.py`. Benchmarks in this repo
-must be microbenchmark-grade: the timed callable may include only the target
-library path plus the irreducible external edge needed to produce a result.
+must be microbenchmark-grade. That means the measured callable stays as small as
+the real user/library path allows, and the benchmark preserves the established
+input surface of the API being measured. Runtime pressure is handled by choosing
+appropriate fixed-count helpers or redesigning benchmark structure, not by
+reducing canonical inputs.
 
 ## Benchmark Shape
 
@@ -15,11 +18,18 @@ library path plus the irreducible external edge needed to produce a result.
 - Broken benchmark fixtures use `fix(benchmark): ...`.
 - Benchmark workflow changes use `fix(cicd): ...`.
 - PR descriptions must include `Summary`, `Rationale`, and `Details`.
-- Keep benchmark pairs symmetric: one reference `test_...` and one optimized `test_faster_...` in the same `@pytest.mark.benchmark(group=...)`.
+- Keep benchmark pairs symmetric: one reference `test_...` and one optimized
+  `test_faster_...` in the same `@pytest.mark.benchmark(group=...)`, with the
+  same operation and inputs.
+- Treat shared parametrizers and fixtures as part of the benchmark contract. New
+  variants of an existing public API benchmark preserve the suite's meaningful
+  input matrix unless the API surface differs.
 - Import benchmark reference dependencies directly. Do not hide missing benchmark dependencies with `try/except ImportError`.
-- Use shared helpers from `benchmarks.batching`: fixed literal `run_N`, async,
-  and exception variants.
-- Do not add local batching helpers.
+- Use shared benchmark structure: shared parametrizers/fixtures for established
+  input matrices, and shared helpers from `benchmarks.batching`: fixed literal
+  `run_N`, async, and exception variants.
+- Do not add local batching helpers or local ad hoc parameter lists that replace
+  established shared fixtures.
 
 ## Timed Path Purity
 
@@ -39,7 +49,9 @@ library path plus the irreducible external edge needed to produce a result.
 - Exception benchmarks must use `run_N_exc`; do not catch-and-ignore exceptions
   inside custom benchmark helpers.
 - If purity cannot be achieved for a path, drop or redesign the benchmark
-  instead of measuring polluted work.
+  instead of measuring polluted work. If established input coverage is
+  expensive, use a smaller fixed helper or redesign the benchmark; do not
+  replace it with a single happy-path input for runtime convenience.
 
 ## Mock Boundary
 
@@ -86,7 +98,8 @@ Before calling a benchmark branch clean, inspect its diff for:
   selector construction, `time()`, assertions, object construction, patch
   setup, cache clearing, or state mutation inside timed callables;
 - benchmark symmetry: same group, same operation, same inputs, reference/faster
-  pair;
+  pair, preserved meaningful input matrix for API variants, and no local ad hoc
+  parameter lists replacing shared parametrizers/fixtures;
 - realistic fixture layer: raw JSON-RPC at provider edges, Pythonic values only
   for post-formatter targets;
 - branch hygiene: one payload only, no inherited unrelated diff.
