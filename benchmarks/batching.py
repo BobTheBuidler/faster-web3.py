@@ -9,6 +9,27 @@ def _run_async(coro):
         loop.close()
 
 
+def run_1(fn, *args, **kwargs):
+    for _ in range(1):
+        fn(*args, **kwargs)
+
+
+def run_1_exc(exc, fn, *args, **kwargs):
+    for _ in range(1):
+        try:
+            fn(*args, **kwargs)
+        except exc:
+            pass
+
+
+def run_1_async(fn, *args, **kwargs):
+    async def runner():
+        for _ in range(1):
+            await fn(*args, **kwargs)
+
+    return _run_async(runner())
+
+
 def run_10(fn, *args, **kwargs):
     for _ in range(10):
         fn(*args, **kwargs)
