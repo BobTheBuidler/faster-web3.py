@@ -10,6 +10,8 @@ from benchmarks.batching import run_1000
 from benchmarks.web3.params import (
     EXAMPLE_ADDRESS,
     HASH32,
+)
+from benchmarks.web3._utils.params import (
     RAW_BLOCK_DICT,
     RAW_FEE_HISTORY_DICT,
     RAW_LOG_ENTRY,
