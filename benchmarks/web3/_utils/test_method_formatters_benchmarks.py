@@ -7,7 +7,7 @@ from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
 from benchmarks.batching import run_1000
-from benchmarks.web3._utils.params import (
+from benchmarks.web3.params import (
     EXAMPLE_ADDRESS,
     HASH32,
     RAW_BLOCK_DICT,

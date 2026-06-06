@@ -11,7 +11,7 @@ from benchmarks.web3._utils.params import (
     LOG_ENTRY,
     BLOCK_DICT,
 )
-from benchmarks.web3._utils.rpc_fixtures import (
+from benchmarks.web3.rpc_fixtures import (
     RPC_ERROR_REVERTED_MINUS_32000,
     RPC_NULL_RESULT,
 )
@@ -42,9 +42,6 @@ MIXED_ARRAY = ["foo", 123, {"a": 1}]
 REMOVE_IF_TRUE = lambda d: d.get("remove_me", False)
 DICT_WITH_REMOVAL = {**TX_DICT, "remove_me": True}
 DICT_WITHOUT_REMOVAL = {**TX_DICT, "remove_me": False}
-ERROR_RESPONSE = RPC_ERROR_REVERTED_MINUS_32000
-NULL_RESULT_RESPONSE = RPC_NULL_RESULT
-
 # --- Shared parameterization constants for deduplication ---
 HEX_TO_INTEGER_CASES = [
     HEX_STR,
@@ -319,7 +316,7 @@ def test_faster_remove_key_if(benchmark: BenchmarkFixture, d):
 @pytest.mark.parametrize(
     "response",
     [
-        ERROR_RESPONSE,
+        RPC_ERROR_REVERTED_MINUS_32000,
         {},
     ],
     ids=["real_error", "empty_response"],
@@ -332,7 +329,7 @@ def test_apply_error_formatters(benchmark: BenchmarkFixture, response):
 @pytest.mark.parametrize(
     "response",
     [
-        ERROR_RESPONSE,
+        RPC_ERROR_REVERTED_MINUS_32000,
         {},
     ],
     ids=["real_error", "empty_response"],
@@ -347,7 +344,7 @@ def test_faster_apply_error_formatters(benchmark: BenchmarkFixture, response):
 @pytest.mark.parametrize(
     "response",
     [
-        NULL_RESULT_RESPONSE,
+        RPC_NULL_RESULT,
         {},
     ],
     ids=["null_result", "empty_response"],
@@ -362,7 +359,7 @@ def test_apply_null_result_formatters(benchmark: BenchmarkFixture, response):
 @pytest.mark.parametrize(
     "response",
     [
-        NULL_RESULT_RESPONSE,
+        RPC_NULL_RESULT,
         {},
     ],
     ids=["null_result", "empty_response"],

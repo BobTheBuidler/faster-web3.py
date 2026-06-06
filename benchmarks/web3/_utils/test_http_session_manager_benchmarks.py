@@ -13,7 +13,7 @@ from benchmarks.mocking import (
     fake_aiohttp_get,
     fake_aiohttp_post,
 )
-from benchmarks.web3._utils.params import (
+from benchmarks.web3.params import (
     LOCALHOST_HTTP_ENDPOINT,
 )
 

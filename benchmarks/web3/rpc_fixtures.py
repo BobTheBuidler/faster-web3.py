@@ -1,4 +1,4 @@
-from benchmarks.web3._utils.params import (
+from benchmarks.web3.params import (
     HEX_1,
     HEX_2,
 )
@@ -42,7 +42,7 @@ BATCH_JSONRPC_RESPONSES_ORDERED = [
     {"jsonrpc": JSONRPC_VERSION, "id": 2, "result": HEX_2},
 ]
 
-SUBSCRIPTION_ID_1 = HEX_1
+SUBSCRIPTION_ID_1 = "0x1"
 SUBSCRIPTION_NOTIFICATION = {
     "jsonrpc": JSONRPC_VERSION,
     "method": "eth_subscription",

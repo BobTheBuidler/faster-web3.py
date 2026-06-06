@@ -9,7 +9,7 @@ import web3.types
 import faster_web3._utils.batching
 import faster_web3.types
 from benchmarks.batching import run_1000, run_1000_async
-from benchmarks.web3._utils.rpc_fixtures import (
+from benchmarks.web3.rpc_fixtures import (
     BATCH_RESPONSES_MISSING_ID,
     BATCH_RESPONSES_ORDERED,
     BATCH_RESPONSES_UNORDERED,
