@@ -8,11 +8,14 @@ import web3._utils.async_transactions
 import faster_web3._utils.async_transactions
 import faster_hexbytes
 from benchmarks.batching import run_1000, run_1000_async
+from benchmarks.web3._utils.params import (
+    EXAMPLE_ADDRESS,
+)
 
 
 # --- Realistic transactions and blocks ---
 
-ADDRESS = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+ADDRESS = EXAMPLE_ADDRESS
 
 LEGACY_TX = {
     "from": ADDRESS,

@@ -11,6 +11,10 @@ from benchmarks.web3._utils.params import (
     LOG_ENTRY,
     BLOCK_DICT,
 )
+from benchmarks.web3._utils.rpc_fixtures import (
+    RPC_ERROR_REVERTED_MINUS_32000,
+    RPC_NULL_RESULT,
+)
 
 
 # --- Helpers ---
@@ -38,12 +42,8 @@ MIXED_ARRAY = ["foo", 123, {"a": 1}]
 REMOVE_IF_TRUE = lambda d: d.get("remove_me", False)
 DICT_WITH_REMOVAL = {**TX_DICT, "remove_me": True}
 DICT_WITHOUT_REMOVAL = {**TX_DICT, "remove_me": False}
-ERROR_RESPONSE = {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {"code": -32000, "message": "execution reverted"},
-}
-NULL_RESULT_RESPONSE = {"jsonrpc": "2.0", "id": 1, "result": None}
+ERROR_RESPONSE = RPC_ERROR_REVERTED_MINUS_32000
+NULL_RESULT_RESPONSE = RPC_NULL_RESULT
 
 # --- Shared parameterization constants for deduplication ---
 HEX_TO_INTEGER_CASES = [

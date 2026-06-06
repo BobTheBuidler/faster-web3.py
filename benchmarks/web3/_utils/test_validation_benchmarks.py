@@ -11,6 +11,9 @@ from eth_utils.hexadecimal import encode_hex
 
 from benchmarks.web3._utils import abis
 from benchmarks.batching import run_1000, run_1000_exc
+from benchmarks.web3._utils.rpc_fixtures import (
+    RPC_NULL_RESULT,
+)
 
 
 # --- Helpers ---
@@ -38,7 +41,7 @@ VALID_SUBSCRIPTION_RESPONSE = {
         "result": {"foo": "bar"},
     },
 }
-BAD_RESPONSE = {"jsonrpc": "2.0", "id": 1, "result": None}
+BAD_RESPONSE = RPC_NULL_RESULT
 VALID_RPC_RESPONSE = {"jsonrpc": "2.0", "id": 1, "result": 42}
 ERROR_RPC_RESPONSE = {
     "jsonrpc": "2.0",

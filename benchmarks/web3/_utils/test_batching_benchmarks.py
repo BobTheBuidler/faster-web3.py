@@ -9,6 +9,11 @@ import web3.types
 import faster_web3._utils.batching
 import faster_web3.types
 from benchmarks.batching import run_1000, run_1000_async
+from benchmarks.web3._utils.rpc_fixtures import (
+    BATCH_RESPONSES_MISSING_ID,
+    BATCH_RESPONSES_ORDERED,
+    BATCH_RESPONSES_UNORDERED,
+)
 
 
 def noop(value):
@@ -98,9 +103,9 @@ async def _async_execute_batch_once(batcher_cls, provider_cls):
 
 # Responses with ids, shuffled ids, and missing ids cover expected batching patterns.
 sort_cases = [
-    [{"id": 1, "result": "0x1"}, {"id": 2, "result": "0x2"}],
-    [{"id": 2, "result": "0x2"}, {"id": 1, "result": "0x1"}],
-    [{"result": "0x1"}, {"id": 2, "result": "0x2"}],
+    BATCH_RESPONSES_ORDERED,
+    BATCH_RESPONSES_UNORDERED,
+    BATCH_RESPONSES_MISSING_ID,
 ]
 sort_ids = ["ordered", "unordered", "missing-id"]
 
