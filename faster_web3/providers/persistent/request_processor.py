@@ -52,6 +52,10 @@ T = TypeVar("T")
 _get_next: Final = asyncio.Queue.get
 
 
+def _identity_result_formatter(response: RPCResponse) -> RPCResponse:
+    return response
+
+
 @final
 class TaskReliantQueue(asyncio.Queue[T]):
     """
@@ -135,6 +139,14 @@ class RequestProcessor:
             )
 
         cache_key = generate_cache_key(request_id)
+        result_formatters = response_formatters[0]
+        if not callable(result_formatters):
+            result_formatters = _identity_result_formatter
+        response_formatters = (
+            result_formatters,
+            response_formatters[1],
+            response_formatters[2],
+        )
         request_info = RequestInformation(
             method,
             params,
