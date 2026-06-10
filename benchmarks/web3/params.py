@@ -11,7 +11,7 @@ HEX_0 = "0x0"
 HEX_1 = "0x1"
 HEX_2 = "0x2"
 
-HASH32 = "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e"
+HASH32 = "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e"
 ZERO_HASH32 = "0x" + "0" * 64
 
 GAS_21000_HEX = "0x5208"
