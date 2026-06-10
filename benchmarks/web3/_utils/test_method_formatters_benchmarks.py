@@ -7,8 +7,11 @@ from faster_web3.types import RPCEndpoint
 from pytest_codspeed import BenchmarkFixture
 
 from benchmarks.batching import run_1000
-from benchmarks.web3._utils.params import (
+from benchmarks.web3.params import (
+    EXAMPLE_ADDRESS,
     HASH32,
+)
+from benchmarks.web3._utils.params import (
     RAW_BLOCK_DICT,
     RAW_FEE_HISTORY_DICT,
     RAW_LOG_ENTRY,
@@ -25,7 +28,7 @@ from benchmarks.web3._utils.params import (
 
 REQUEST_DATA = {
     "eth_feeHistory": ("0x10", "latest", [10, 20]),
-    "eth_getBalance": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
+    "eth_getBalance": (EXAMPLE_ADDRESS, "latest"),
     "eth_getBlockReceipts": ("latest",),
     "eth_getBlockTransactionCountByNumber": ("latest",),
     "eth_getUncleCountByBlockNumber": ("latest",),
@@ -35,11 +38,11 @@ REQUEST_DATA = {
     "eth_getRawTransactionByBlockHashAndIndex": (HASH32, "0x0"),
     "eth_getUncleByBlockHashAndIndex": (HASH32, "0x0"),
     "eth_getBlockByNumber": ("latest", True),
-    "eth_getCode": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
-    "eth_getTransactionCount": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "latest"),
-    "eth_getStorageAt": ("0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "0x0", "latest"),
-    "eth_getLogs": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
-    "eth_newFilter": ({"address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},),
+    "eth_getCode": (EXAMPLE_ADDRESS, "latest"),
+    "eth_getTransactionCount": (EXAMPLE_ADDRESS, "latest"),
+    "eth_getStorageAt": (EXAMPLE_ADDRESS, "0x0", "latest"),
+    "eth_getLogs": ({"address": EXAMPLE_ADDRESS},),
+    "eth_newFilter": ({"address": EXAMPLE_ADDRESS},),
 }
 
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
@@ -79,7 +82,7 @@ TRACE_RESPONSE_LIST = [TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RES
 
 RESULT_DATA = {
     "eth_accounts": [
-        "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        EXAMPLE_ADDRESS,
         "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
         "0xFE9e8709d3215310075d67E3ed32A380CCf451C8",
     ],
@@ -90,7 +93,7 @@ RESULT_DATA = {
     "eth_createAccessList": {
         "accessList": [
             {
-                "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+                "address": EXAMPLE_ADDRESS,
                 "storageKeys": [
                     "0x0000000000000000000000000000000000000000000000000000000000000000"
                 ],
@@ -151,7 +154,7 @@ RESULT_DATA = {
     },
     "txpool_content": {
         "pending": {
-            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e": {
+            EXAMPLE_ADDRESS: {
                 "0": {
                     "nonce": "0x10",
                     "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
@@ -162,11 +165,11 @@ RESULT_DATA = {
         "queued": {},
     },
     "txpool_inspect": {
-        "pending": {"0x742d35Cc6634C0532925a3b844Bc454e4438f44e": ["0x10"]},
+        "pending": {EXAMPLE_ADDRESS: ["0x10"]},
         "queued": {},
     },
     "debug_traceTransaction": {
-        "from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        "from": EXAMPLE_ADDRESS,
         "to": "0x53d284357ec70cE289D6D64134DfAc8E511c8a3D",
         "value": "0x8ac7230489e80000",
     },
@@ -185,7 +188,7 @@ RESULT_DATA = {
     "trace_rawTransaction": TRACE_RESPONSE,
     "trace_replayTransaction": TRACE_RESPONSE,
     "trace_replayBlockTransactions": TRACE_RESPONSE_LIST,
-    "trace_call": {"from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"},
+    "trace_call": {"from": EXAMPLE_ADDRESS},
 }
 
 @pytest.mark.parametrize("endpoint", list(RESULT_DATA))

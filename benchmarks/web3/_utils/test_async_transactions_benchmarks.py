@@ -8,22 +8,23 @@ import web3._utils.async_transactions
 import faster_web3._utils.async_transactions
 import faster_hexbytes
 from benchmarks.batching import run_1000, run_1000_async
+from benchmarks.web3.params import (
+    EXAMPLE_ADDRESS,
+)
 
 
 # --- Realistic transactions and blocks ---
 
-ADDRESS = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
-
 LEGACY_TX = {
-    "from": ADDRESS,
-    "to": ADDRESS,
+    "from": EXAMPLE_ADDRESS,
+    "to": EXAMPLE_ADDRESS,
     "value": 1,
     "gasPrice": 50_000_000_000,
 }
 
 DYNAMIC_TX = {
-    "from": ADDRESS,
-    "to": ADDRESS,
+    "from": EXAMPLE_ADDRESS,
+    "to": EXAMPLE_ADDRESS,
     "value": 1,
     "maxFeePerGas": 60_000_000_000,
     "maxPriorityFeePerGas": 2_000_000_000,
@@ -81,7 +82,7 @@ class FakeAsyncWeb3:
 
 @pytest.mark.benchmark(group="async_transactions-_estimate_gas")
 def test_estimate_gas_helper(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS, "to": ADDRESS, "value": 1}
+    tx = {"from": EXAMPLE_ADDRESS, "to": EXAMPLE_ADDRESS, "value": 1}
     benchmark(
         run_1000_async,
         web3._utils.async_transactions._estimate_gas,
@@ -93,7 +94,7 @@ def test_estimate_gas_helper(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="async_transactions-_estimate_gas")
 def test_faster_estimate_gas_helper(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS, "to": ADDRESS, "value": 1}
+    tx = {"from": EXAMPLE_ADDRESS, "to": EXAMPLE_ADDRESS, "value": 1}
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions._estimate_gas,
@@ -197,7 +198,7 @@ def test_faster_get_block_gas_limit(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="async_fill_nonce")
 def test_async_fill_nonce(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS}
+    tx = {"from": EXAMPLE_ADDRESS}
     benchmark(
         run_1000_async, web3._utils.async_transactions.async_fill_nonce, FakeAsyncWeb3(), tx
     )
@@ -205,7 +206,7 @@ def test_async_fill_nonce(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="async_fill_nonce")
 def test_faster_async_fill_nonce(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS}
+    tx = {"from": EXAMPLE_ADDRESS}
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.async_fill_nonce,
@@ -252,7 +253,7 @@ def test_faster_async_fill_transaction_defaults(
 
 @pytest.mark.benchmark(group="get_buffered_gas_estimate")
 def test_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS, "to": ADDRESS, "value": 1}
+    tx = {"from": EXAMPLE_ADDRESS, "to": EXAMPLE_ADDRESS, "value": 1}
     benchmark(
         run_1000_async,
         web3._utils.async_transactions.get_buffered_gas_estimate,
@@ -263,7 +264,7 @@ def test_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
 
 @pytest.mark.benchmark(group="get_buffered_gas_estimate")
 def test_faster_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
-    tx = {"from": ADDRESS, "to": ADDRESS, "value": 1}
+    tx = {"from": EXAMPLE_ADDRESS, "to": EXAMPLE_ADDRESS, "value": 1}
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.get_buffered_gas_estimate,

@@ -11,6 +11,9 @@ from eth_utils.hexadecimal import encode_hex
 
 from benchmarks.web3._utils import abis
 from benchmarks.batching import run_1000, run_1000_exc
+from benchmarks.web3.rpc_fixtures import (
+    RPC_NULL_RESULT,
+)
 
 
 # --- Helpers ---
@@ -38,7 +41,6 @@ VALID_SUBSCRIPTION_RESPONSE = {
         "result": {"foo": "bar"},
     },
 }
-BAD_RESPONSE = {"jsonrpc": "2.0", "id": 1, "result": None}
 VALID_RPC_RESPONSE = {"jsonrpc": "2.0", "id": 1, "result": 42}
 ERROR_RPC_RESPONSE = {
     "jsonrpc": "2.0",
@@ -177,7 +179,7 @@ def test_raise_bad_response_format(benchmark: BenchmarkFixture):
         run_1000_exc,
         web3.exceptions.BadResponseFormat,
         web3._utils.validation._raise_bad_response_format,
-        BAD_RESPONSE,
+        RPC_NULL_RESULT,
     )
 
 
@@ -187,7 +189,7 @@ def test_faster_raise_bad_response_format(benchmark: BenchmarkFixture):
         run_1000_exc,
         faster_web3.exceptions.BadResponseFormat,
         faster_web3._utils.validation._raise_bad_response_format,
-        BAD_RESPONSE,
+        RPC_NULL_RESULT,
     )
 
 

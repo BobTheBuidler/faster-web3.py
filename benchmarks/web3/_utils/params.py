@@ -1,8 +1,10 @@
 # Shared parameterizations and real-world data for microbenchmarks
 # All data below is based on real mainnet-style values or representative realistic examples.
 
-# Shared 32-byte hash
-HASH32 = "0x5e1d3a76fbf824220e1c5e0c2e5e7e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e"
+from benchmarks.web3.params import (
+    EXAMPLE_ADDRESS as _EXAMPLE_ADDRESS,
+    HASH32 as _HASH32,
+)
 
 # Transaction dict (mainnet-style)
 TX_DICT = {
@@ -16,10 +18,10 @@ TX_DICT = {
 }
 
 RAW_TX_DICT = {
-    "blockHash": HASH32,
+    "blockHash": _HASH32,
     "blockNumber": "0xbc614e",
     "transactionIndex": "0x0",
-    "hash": HASH32,
+    "hash": _HASH32,
     "from": TX_DICT["from"],
     "to": TX_DICT["to"],
     "value": "0xde0b6b3a7640000",
@@ -45,7 +47,7 @@ RAW_SIGNED_TX_DICT = {
 
 # Log entry (mainnet-style)
 LOG_ENTRY = {
-    "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "address": _EXAMPLE_ADDRESS,
     "topics": [
         "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
         "0x00000000000000000000000053d284357ec70ce289d6d64134dfac8e511c8a3d",
@@ -53,13 +55,13 @@ LOG_ENTRY = {
     ],
     "data": "0x00000000000000000000000000000000000000000000000000000000000003e8",
     "blockNumber": 12345678,
-    "transactionHash": HASH32,
+    "transactionHash": _HASH32,
     "logIndex": 0,
 }
 
 RAW_LOG_ENTRY = {
     **LOG_ENTRY,
-    "blockHash": HASH32,
+    "blockHash": _HASH32,
     "blockNumber": "0xbc614e",
     "transactionIndex": "0x0",
     "logIndex": "0x0",
@@ -68,7 +70,7 @@ RAW_LOG_ENTRY = {
 # Block dict (mainnet-style, minimal for formatter)
 BLOCK_DICT = {
     "number": 12345678,
-    "hash": HASH32,
+    "hash": _HASH32,
     "transactions": [TX_DICT, TX_DICT],
     "logs": [LOG_ENTRY, LOG_ENTRY],
     "miner": "0x829BD824B016326A401d083B33D092293333A830",
@@ -85,8 +87,8 @@ RAW_BLOCK_DICT = {
     "gasUsed": "0xb71b00",
     "baseFeePerGas": "0x77359400",
     "timestamp": "0x65000000",
-    "parentHash": HASH32,
-    "sha3Uncles": HASH32,
+    "parentHash": _HASH32,
+    "sha3Uncles": _HASH32,
     "uncles": [],
     "difficulty": "0x0",
     "totalDifficulty": "0x0",
@@ -97,7 +99,7 @@ RECEIPT_DICT = {
     "blockHash": BLOCK_DICT["hash"],
     "blockNumber": BLOCK_DICT["number"],
     "transactionIndex": 0,
-    "transactionHash": HASH32,
+    "transactionHash": _HASH32,
     "cumulativeGasUsed": 21000,
     "status": 1,
     "gasUsed": 21000,

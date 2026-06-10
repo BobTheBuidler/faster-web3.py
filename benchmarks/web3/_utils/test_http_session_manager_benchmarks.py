@@ -13,11 +13,14 @@ from benchmarks.mocking import (
     fake_aiohttp_get,
     fake_aiohttp_post,
 )
+from benchmarks.web3.params import (
+    LOCALHOST_HTTP_ENDPOINT,
+)
 
 # Realistic, mainnet-style endpoint and payloads
 ENDPOINT_URIS = [
     "https://mainnet.infura.io/v3/0123456789abcdef0123456789abcdef",
-    "http://localhost:8545",
+    LOCALHOST_HTTP_ENDPOINT,
 ]
 JSON_RPC_PAYLOAD = {
     "jsonrpc": "2.0",

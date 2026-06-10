@@ -7,9 +7,12 @@ import web3.providers.eth_tester.middleware
 
 import faster_web3.providers.eth_tester.middleware
 from benchmarks.batching import run_100, run_100_async
+from benchmarks.web3.params import (
+    EXAMPLE_ADDRESS,
+)
 
 
-ADDRESS = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+ADDRESS = EXAMPLE_ADDRESS
 
 TX_REQUEST = {
     "from": ADDRESS,
