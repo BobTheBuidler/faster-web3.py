@@ -8,7 +8,7 @@ import web3._utils.async_transactions
 import faster_web3._utils.async_transactions
 import faster_hexbytes
 from benchmarks.batching import run_1000, run_1000_async
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
 )
 

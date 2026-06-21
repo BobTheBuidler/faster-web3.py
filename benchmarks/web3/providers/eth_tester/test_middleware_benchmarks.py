@@ -7,7 +7,7 @@ import web3.providers.eth_tester.middleware
 
 import faster_web3.providers.eth_tester.middleware
 from benchmarks.batching import run_100, run_100_async
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
 )
 

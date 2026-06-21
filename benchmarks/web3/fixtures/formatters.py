@@ -1,9 +1,12 @@
 # Shared parameterizations and real-world data for microbenchmarks
 # All data below is based on real mainnet-style values or representative realistic examples.
 
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS as _EXAMPLE_ADDRESS,
     HASH32 as _HASH32,
+)
+from benchmarks.web3.fixtures.rpc import (
+    rpc_success,
 )
 
 # Transaction dict (mainnet-style)
@@ -152,3 +155,6 @@ STORAGE_KEY_IDS = [
     "hexstr_prefixed",
     "hexstr_unprefixed",
 ]
+
+RAW_TX_RPC_RESPONSE = rpc_success(RAW_TX_DICT)
+RAW_BLOCK_RPC_RESPONSE = rpc_success(RAW_BLOCK_DICT)

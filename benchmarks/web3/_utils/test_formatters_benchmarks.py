@@ -6,12 +6,12 @@ import web3._utils.formatters
 import faster_web3._utils.formatters
 
 from benchmarks.batching import run_5000, run_5000_exc
-from benchmarks.web3._utils.params import (
+from benchmarks.web3.fixtures.formatters import (
     TX_DICT,
     LOG_ENTRY,
     BLOCK_DICT,
 )
-from benchmarks.web3.rpc_fixtures import (
+from benchmarks.web3.fixtures.rpc import (
     RPC_ERROR_REVERTED_MINUS_32000,
     RPC_NULL_RESULT,
 )
