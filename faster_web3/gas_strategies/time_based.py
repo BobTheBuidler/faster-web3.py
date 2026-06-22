@@ -2,6 +2,7 @@ import collections
 import math
 import operator
 from typing import (
+    Any,
     Final,
     Iterable,
     Optional,
@@ -37,7 +38,6 @@ from faster_web3.exceptions import (
 from faster_web3.types import (
     BlockNumber,
     GasPriceStrategy,
-    TxData,
     TxParams,
     Wei,
 )
@@ -84,7 +84,7 @@ def _get_weighted_avg_block_time(w3: Web3, sample_size: int) -> float:
 def _get_raw_miner_data(
     w3: Web3, sample_size: int
 ) -> Iterable[Tuple[ChecksumAddress, HexBytes, Wei]]:
-    transaction: TxData
+    transaction: Any
 
     latest = w3.eth.get_block("latest", full_transactions=True)
 
