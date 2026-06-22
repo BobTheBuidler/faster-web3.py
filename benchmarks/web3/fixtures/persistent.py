@@ -1,3 +1,5 @@
+import json
+
 import web3
 import web3._utils.caching
 import web3.providers.persistent.request_processor
@@ -17,6 +19,7 @@ from benchmarks.web3.fixtures.core import (
     LOCALHOST_WS_ENDPOINT,
 )
 from benchmarks.web3.fixtures.rpc import (
+    DEFAULT_RPC_ID,
     SUBSCRIPTION_ID_1,
 )
 
@@ -26,6 +29,45 @@ RESPONSE_FORMATTERS = (
     lambda response: response,
     lambda *_args: None,
 )
+
+
+def _decode_cache_response(response):
+    if isinstance(response, bytes):
+        response = response.decode("utf-8")
+    if isinstance(response, str):
+        return json.loads(response)
+    return response
+
+
+def _copy_cache_response(response):
+    if isinstance(response, dict):
+        return dict(response)
+    if isinstance(response, list):
+        return [dict(item) if isinstance(item, dict) else item for item in response]
+    return response
+
+
+def _request_id_from_data(request_data):
+    if isinstance(request_data, bytes):
+        request_data = request_data.decode("utf-8")
+    if isinstance(request_data, str):
+        request_data = json.loads(request_data)
+    if isinstance(request_data, dict):
+        return request_data.get("id")
+    return None
+
+
+def _cache_response_for_request(response, request_data):
+    response = _copy_cache_response(response)
+    if isinstance(response, dict) and response.get("id") == DEFAULT_RPC_ID:
+        request_id = _request_id_from_data(request_data)
+        if request_id is not None:
+            response["id"] = request_id
+    return response
+
+
+def _cache_response_sequence(responses):
+    return CyclicSequence(_decode_cache_response(response) for response in responses)
 
 
 class SocketAdapter:
@@ -77,11 +119,14 @@ class Web3CachingSendProvider(PersistentConnectionProvider):
     def __init__(self, responses):
         super().__init__()
         self.responses = CyclicSequence(responses)
+        self.cache_responses = _cache_response_sequence(responses)
         self.sent = []
 
     async def socket_send(self, request_data):
         self.sent.append(request_data)
-        await self._request_processor.cache_raw_response(self.responses.next())
+        await self._request_processor.cache_raw_response(
+            _cache_response_for_request(self.cache_responses.next(), request_data)
+        )
 
     async def socket_recv(self):
         return self.responses.next()
@@ -94,11 +139,14 @@ class FasterCachingSendProvider(FasterPersistentConnectionProvider):
     def __init__(self, responses):
         super().__init__()
         self.responses = CyclicSequence(responses)
+        self.cache_responses = _cache_response_sequence(responses)
         self.sent = []
 
     async def socket_send(self, request_data):
         self.sent.append(request_data)
-        await self._request_processor.cache_raw_response(self.responses.next())
+        await self._request_processor.cache_raw_response(
+            _cache_response_for_request(self.cache_responses.next(), request_data)
+        )
 
     async def socket_recv(self):
         return self.responses.next()
