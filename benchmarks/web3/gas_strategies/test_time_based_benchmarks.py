@@ -1,6 +1,9 @@
 from unittest.mock import (
     patch,
 )
+from typing import (
+    Final,
+)
 
 import pytest
 from pytest_codspeed import (
@@ -24,21 +27,11 @@ from benchmarks.web3.fixtures.http import (
     StaticResponse,
     make_sequence_requests_post,
 )
-from benchmarks.web3.fixtures.providers import (
-    faster_http_w3,
-    web3_http_w3,
-)
 
 
-UNWEIGHTED_HTTP_RESPONSES = tuple(
-    StaticResponse(response) for response in UNWEIGHTED_RESPONSES
-)
-WEIGHTED_HTTP_RESPONSES = tuple(
-    StaticResponse(response) for response in WEIGHTED_RESPONSES
-)
-FALLBACK_HTTP_RESPONSES = tuple(
-    StaticResponse(response) for response in FALLBACK_RESPONSES
-)
+UNWEIGHTED_HTTP_RESPONSES: Final = tuple(map(StaticResponse, UNWEIGHTED_RESPONSES))
+WEIGHTED_HTTP_RESPONSES: Final = tuple(map(StaticResponse, WEIGHTED_RESPONSES))
+FALLBACK_HTTP_RESPONSES: Final = tuple(map(StaticResponse, FALLBACK_RESPONSES))
 
 
 WAIT_DATA = (
@@ -99,22 +92,23 @@ def test_faster_compute_gas_price(
 
 @pytest.mark.benchmark(group="construct_time_based_gas_price_strategy")
 @pytest.mark.parametrize("weighted,responses", STRATEGY_CASES)
-def test_time_based_strategy(benchmark: BenchmarkFixture, weighted, responses):
+def test_time_based_strategy(
+    benchmark: BenchmarkFixture, web3_w3, weighted, responses
+):
     strategy = web3.gas_strategies.time_based.construct_time_based_gas_price_strategy(
         60,
         sample_size=5,
         probability=98,
         weighted=weighted,
     )
-    w3 = web3_http_w3()
     with patch("requests.Session.post", new=make_sequence_requests_post(responses)):
-        benchmark(run_100, strategy, w3, {})
+        benchmark(run_100, strategy, web3_w3, {})
 
 
 @pytest.mark.benchmark(group="construct_time_based_gas_price_strategy")
 @pytest.mark.parametrize("weighted,responses", STRATEGY_CASES)
 def test_faster_time_based_strategy(
-    benchmark: BenchmarkFixture, weighted, responses
+    benchmark: BenchmarkFixture, faster_w3, weighted, responses
 ):
     strategy = (
         faster_web3.gas_strategies.time_based.construct_time_based_gas_price_strategy(
@@ -124,28 +118,30 @@ def test_faster_time_based_strategy(
             weighted=weighted,
         )
     )
-    w3 = faster_http_w3()
     with patch("requests.Session.post", new=make_sequence_requests_post(responses)):
-        benchmark(run_100, strategy, w3, {})
+        benchmark(run_100, strategy, faster_w3, {})
 
 
 @pytest.mark.benchmark(group="construct_time_based_gas_price_strategy_fallback")
-def test_time_based_strategy_genesis_fallback(benchmark: BenchmarkFixture):
+def test_time_based_strategy_genesis_fallback(
+    benchmark: BenchmarkFixture, web3_w3
+):
     strategy = web3.gas_strategies.time_based.construct_time_based_gas_price_strategy(
         60,
         sample_size=5,
         probability=98,
     )
-    w3 = web3_http_w3()
     with patch(
         "requests.Session.post",
         new=make_sequence_requests_post(FALLBACK_HTTP_RESPONSES),
     ):
-        benchmark(run_100, strategy, w3, {})
+        benchmark(run_100, strategy, web3_w3, {})
 
 
 @pytest.mark.benchmark(group="construct_time_based_gas_price_strategy_fallback")
-def test_faster_time_based_strategy_genesis_fallback(benchmark: BenchmarkFixture):
+def test_faster_time_based_strategy_genesis_fallback(
+    benchmark: BenchmarkFixture, faster_w3
+):
     strategy = (
         faster_web3.gas_strategies.time_based.construct_time_based_gas_price_strategy(
             60,
@@ -153,9 +149,8 @@ def test_faster_time_based_strategy_genesis_fallback(benchmark: BenchmarkFixture
             probability=98,
         )
     )
-    w3 = faster_http_w3()
     with patch(
         "requests.Session.post",
         new=make_sequence_requests_post(FALLBACK_HTTP_RESPONSES),
     ):
-        benchmark(run_100, strategy, w3, {})
+        benchmark(run_100, strategy, faster_w3, {})
