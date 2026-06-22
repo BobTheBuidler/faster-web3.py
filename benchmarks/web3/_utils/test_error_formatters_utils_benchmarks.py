@@ -31,10 +31,10 @@ from benchmarks.batching import (
     run_100,
     run_100_exc,
 )
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS_LOWER,
 )
-from benchmarks.web3.rpc_fixtures import (
+from benchmarks.web3.fixtures.rpc import (
     RPC_NULL_RESULT,
     RPC_SUCCESS_0X1,
 )

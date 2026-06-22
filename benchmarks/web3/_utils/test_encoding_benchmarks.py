@@ -29,7 +29,7 @@ from benchmarks.batching import (
     run_100_exc,
     run_1000,
 )
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
 )
 

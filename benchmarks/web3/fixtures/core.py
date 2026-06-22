@@ -17,3 +17,14 @@ ZERO_HASH32 = "0x" + "0" * 64
 GAS_21000_HEX = "0x5208"
 GWEI_HEX = "0x3b9aca00"
 PRIORITY_FEE_HEX = "0x77359400"
+
+
+class CyclicSequence:
+    def __init__(self, values):
+        self._values = tuple(values)
+        self._index = 0
+
+    def next(self):
+        value = self._values[self._index % len(self._values)]
+        self._index += 1
+        return value

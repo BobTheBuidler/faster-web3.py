@@ -27,7 +27,7 @@ from benchmarks.batching import (  # noqa: E402
     run_100_exc,
     run_1000,
 )
-from benchmarks.web3.params import (  # noqa: E402
+from benchmarks.web3.fixtures.core import (  # noqa: E402
     EXAMPLE_ADDRESS_LOWER,
     HASH32,
 )

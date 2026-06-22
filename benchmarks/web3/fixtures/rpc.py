@@ -1,4 +1,7 @@
-from benchmarks.web3.params import (
+from benchmarks.web3.fixtures.core import (
+    GAS_21000_HEX,
+    GWEI_HEX,
+    HASH32,
     HEX_1,
     HEX_2,
 )
@@ -56,3 +59,13 @@ SUBSCRIPTION_NOTIFICATION_TEXT = (
 
 def rpc_success(result, rpc_id=DEFAULT_RPC_ID):
     return {"jsonrpc": JSONRPC_VERSION, "id": rpc_id, "result": result}
+
+
+def rpc_result_response_bytes(result):
+    return b'{"jsonrpc":"2.0","id":1,"result":"' + result.encode("ascii") + b'"}'
+
+
+GWEI_RESPONSE_BYTES = rpc_result_response_bytes(GWEI_HEX)
+GAS_21000_RESPONSE_BYTES = rpc_result_response_bytes(GAS_21000_HEX)
+HEX_1_RESPONSE_BYTES = rpc_result_response_bytes(HEX_1)
+HASH32_RESPONSE_BYTES = rpc_result_response_bytes(HASH32)
