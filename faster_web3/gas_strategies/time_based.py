@@ -8,6 +8,7 @@ from typing import (
     Optional,
     Sequence,
     Tuple,
+    Union,
 )
 
 from eth_typing import (
@@ -31,6 +32,9 @@ from faster_web3 import (
 from faster_web3._utils.math import (
     percentile,
 )
+from faster_web3.datastructures import (
+    AttributeDict,
+)
 from faster_web3.exceptions import (
     InsufficientData,
     Web3ValidationError,
@@ -38,6 +42,7 @@ from faster_web3.exceptions import (
 from faster_web3.types import (
     BlockNumber,
     GasPriceStrategy,
+    TxData,
     TxParams,
     Wei,
 )
@@ -84,7 +89,7 @@ def _get_weighted_avg_block_time(w3: Web3, sample_size: int) -> float:
 def _get_raw_miner_data(
     w3: Web3, sample_size: int
 ) -> Iterable[Tuple[ChecksumAddress, HexBytes, Wei]]:
-    transaction: Any
+    transaction: Union[TxData, AttributeDict[str, Any]]
 
     latest = w3.eth.get_block("latest", full_transactions=True)
 
