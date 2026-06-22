@@ -204306,8 +204306,8 @@ PyObject *CPyDef_time_based____get_raw_miner_data_gen_____mypyc_generator_helper
     char cpy_r_r20;
     PyObject *cpy_r_r21;
     PyObject *cpy_r_r22;
-    PyObject *cpy_r_r23;
-    char cpy_r_r24;
+    char cpy_r_r23;
+    PyObject *cpy_r_r24;
     PyObject *cpy_r_r25;
     PyObject *cpy_r_r26;
     PyObject *cpy_r_r27;
@@ -204320,8 +204320,8 @@ PyObject *CPyDef_time_based____get_raw_miner_data_gen_____mypyc_generator_helper
     PyObject *cpy_r_r34;
     PyObject *cpy_r_r35;
     PyObject *cpy_r_r36;
-    CPyTagged cpy_r_r37;
-    tuple_T3OOI cpy_r_r38;
+    PyObject *cpy_r_r37;
+    tuple_T3OOO cpy_r_r38;
     PyObject *cpy_r_r39;
     char cpy_r_r40;
     PyObject *cpy_r_r41;
@@ -204390,15 +204390,15 @@ PyObject *CPyDef_time_based____get_raw_miner_data_gen_____mypyc_generator_helper
     char cpy_r_r105;
     PyObject *cpy_r_r106;
     PyObject *cpy_r_r107;
-    PyObject *cpy_r_r108;
-    char cpy_r_r109;
+    char cpy_r_r108;
+    PyObject *cpy_r_r109;
     PyObject *cpy_r_r110;
     PyObject *cpy_r_r111;
     PyObject *cpy_r_r112;
     PyObject *cpy_r_r113;
     PyObject *cpy_r_r114;
-    CPyTagged cpy_r_r115;
-    tuple_T3OOI cpy_r_r116;
+    PyObject *cpy_r_r115;
+    tuple_T3OOO cpy_r_r116;
     PyObject *cpy_r_r117;
     char cpy_r_r118;
     PyObject *cpy_r_r119;
@@ -204417,7 +204417,7 @@ PyObject *CPyDef_time_based____get_raw_miner_data_gen_____mypyc_generator_helper
     char cpy_r_r132;
     PyObject *cpy_r_r133;
     cpy_r_r0 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__;
-    goto CPyL96;
+    goto CPyL94;
 CPyL1: ;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_type != cpy_r_r1;
@@ -204425,14 +204425,14 @@ CPyL1: ;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     CPy_Unreachable();
 CPyL4: ;
     cpy_r_r3 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__w3;
     if (unlikely(cpy_r_r3 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "w3", 89, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "w3", 94, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r3);
 CPyL5: ;
@@ -204441,7 +204441,7 @@ CPyL5: ;
     CPy_DECREF(cpy_r_r3);
     if (unlikely(cpy_r_r5 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r6 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'latest' */
     cpy_r_r7 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'get_block' */
@@ -204452,7 +204452,7 @@ CPyL5: ;
     cpy_r_r12 = PyObject_VectorcallMethod(cpy_r_r7, cpy_r_r10, 9223372036854775810ULL, cpy_r_r11);
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL102;
+        goto CPyL100;
     }
     CPy_DECREF(cpy_r_r5);
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest != NULL) {
@@ -204462,12 +204462,12 @@ CPyL5: ;
     cpy_r_r13 = 1;
     if (unlikely(!cpy_r_r13)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r14 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
     if (unlikely(cpy_r_r14 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 91, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 96, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r14);
 CPyL9: ;
@@ -204477,12 +204477,12 @@ CPyL9: ;
     CPy_DECREF(cpy_r_r16);
     if (unlikely(cpy_r_r17 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r18 = PyObject_GetIter(cpy_r_r17);
     if (unlikely(cpy_r_r18 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL103;
+        goto CPyL101;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0 != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__0);
@@ -204491,7 +204491,7 @@ CPyL9: ;
     cpy_r_r19 = 1;
     if (unlikely(!cpy_r_r19)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL104;
+        goto CPyL102;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1 != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1);
@@ -204500,91 +204500,77 @@ CPyL9: ;
     cpy_r_r20 = 1;
     if (unlikely(!cpy_r_r20)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
 CPyL14: ;
     cpy_r_r21 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__1;
     if (unlikely(cpy_r_r21 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__1", 91, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__1", 96, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r21);
 CPyL15: ;
     cpy_r_r22 = PyIter_Next(cpy_r_r21);
     CPy_DECREF(cpy_r_r21);
-    if (cpy_r_r22 == NULL) goto CPyL31;
-    if (likely(PyDict_Check(cpy_r_r22)))
-        cpy_r_r23 = cpy_r_r22;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", 91, CPyStatic_time_based___globals, "dict", cpy_r_r22);
-        goto CPyL101;
-    }
+    if (cpy_r_r22 == NULL) goto CPyL30;
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction);
     }
-    ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r23;
-    cpy_r_r24 = 1;
-    if (unlikely(!cpy_r_r24)) {
+    ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r22;
+    cpy_r_r23 = 1;
+    if (unlikely(!cpy_r_r23)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
-    cpy_r_r25 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
-    if (unlikely(cpy_r_r25 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 92, CPyStatic_time_based___globals);
-        goto CPyL101;
+    cpy_r_r24 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
+    if (unlikely(cpy_r_r24 == NULL)) {
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 97, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
-    CPy_INCREF(cpy_r_r25);
-CPyL19: ;
-    cpy_r_r26 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'miner' */
-    cpy_r_r27 = cpy_r_r25;
-    cpy_r_r28 = PyObject_GetItem(cpy_r_r27, cpy_r_r26);
-    CPy_DECREF(cpy_r_r27);
-    if (unlikely(cpy_r_r28 == NULL)) {
+    CPy_INCREF(cpy_r_r24);
+CPyL18: ;
+    cpy_r_r25 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'miner' */
+    cpy_r_r26 = cpy_r_r24;
+    cpy_r_r27 = PyObject_GetItem(cpy_r_r26, cpy_r_r25);
+    CPy_DECREF(cpy_r_r26);
+    if (unlikely(cpy_r_r27 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
-    cpy_r_r29 = cpy_r_r28;
-    cpy_r_r30 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
-    if (unlikely(cpy_r_r30 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 92, CPyStatic_time_based___globals);
-        goto CPyL105;
+    cpy_r_r28 = cpy_r_r27;
+    cpy_r_r29 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
+    if (unlikely(cpy_r_r29 == NULL)) {
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 97, CPyStatic_time_based___globals);
+        goto CPyL103;
     }
-    CPy_INCREF(cpy_r_r30);
-CPyL22: ;
-    cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
-    cpy_r_r32 = cpy_r_r30;
-    cpy_r_r33 = PyObject_GetItem(cpy_r_r32, cpy_r_r31);
-    CPy_DECREF(cpy_r_r32);
+    CPy_INCREF(cpy_r_r29);
+CPyL21: ;
+    cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
+    cpy_r_r31 = cpy_r_r29;
+    cpy_r_r32 = PyObject_GetItem(cpy_r_r31, cpy_r_r30);
+    CPy_DECREF(cpy_r_r31);
+    if (unlikely(cpy_r_r32 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL103;
+    }
+    cpy_r_r33 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r33 == NULL)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL105;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "transaction", 97, CPyStatic_time_based___globals);
+        goto CPyL104;
     }
-    cpy_r_r34 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
-    if (unlikely(cpy_r_r34 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "transaction", 92, CPyStatic_time_based___globals);
-        goto CPyL106;
-    }
-    CPy_INCREF(cpy_r_r34);
-CPyL25: ;
-    cpy_r_r35 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
-    cpy_r_r36 = CPyDict_GetItem(cpy_r_r34, cpy_r_r35);
-    CPy_DECREF(cpy_r_r34);
+    CPy_INCREF(cpy_r_r33);
+CPyL24: ;
+    cpy_r_r34 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
+    cpy_r_r35 = cpy_r_r33;
+    cpy_r_r36 = PyObject_GetItem(cpy_r_r35, cpy_r_r34);
+    CPy_DECREF(cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL106;
+        goto CPyL104;
     }
-    if (likely(PyLong_Check(cpy_r_r36)))
-        cpy_r_r37 = CPyTagged_FromObject(cpy_r_r36);
-    else {
-        CPy_TypeError("int", cpy_r_r36); cpy_r_r37 = CPY_INT_TAG;
-    }
-    CPy_DECREF(cpy_r_r36);
-    if (unlikely(cpy_r_r37 == CPY_INT_TAG)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL106;
-    }
-    cpy_r_r38.f0 = cpy_r_r29;
-    cpy_r_r38.f1 = cpy_r_r33;
+    cpy_r_r37 = cpy_r_r36;
+    cpy_r_r38.f0 = cpy_r_r28;
+    cpy_r_r38.f1 = cpy_r_r32;
     cpy_r_r38.f2 = cpy_r_r37;
     cpy_r_r39 = PyTuple_New(3);
     if (unlikely(cpy_r_r39 == NULL))
@@ -204593,33 +204579,33 @@ CPyL25: ;
     PyTuple_SET_ITEM(cpy_r_r39, 0, __tmp714);
     PyObject *__tmp715 = cpy_r_r38.f1;
     PyTuple_SET_ITEM(cpy_r_r39, 1, __tmp715);
-    PyObject *__tmp716 = CPyTagged_StealAsObject(cpy_r_r38.f2);
+    PyObject *__tmp716 = cpy_r_r38.f2;
     PyTuple_SET_ITEM(cpy_r_r39, 2, __tmp716);
     ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
     return cpy_r_r39;
-CPyL28: ;
+CPyL27: ;
     cpy_r_r41 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r42 = cpy_r_type != cpy_r_r41;
     if (!cpy_r_r42) goto CPyL14;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     CPy_Unreachable();
-CPyL31: ;
+CPyL30: ;
     cpy_r_r43 = CPy_NoErrOccurred();
     if (unlikely(!cpy_r_r43)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r44 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__latest;
     if (unlikely(cpy_r_r44 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 94, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "latest", 99, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r44);
-CPyL33: ;
+CPyL32: ;
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block);
     }
@@ -204627,15 +204613,15 @@ CPyL33: ;
     cpy_r_r45 = 1;
     if (unlikely(!cpy_r_r45)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r46 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sample_size;
     if (unlikely(cpy_r_r46 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "sample_size", 96, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "sample_size", 101, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPyTagged_INCREF(cpy_r_r46);
-CPyL35: ;
+CPyL34: ;
     cpy_r_r47 = CPyTagged_Subtract(cpy_r_r46, 2);
     CPyTagged_DECREF(cpy_r_r46);
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2 != CPY_INT_TAG) {
@@ -204645,7 +204631,7 @@ CPyL35: ;
     cpy_r_r48 = 1;
     if (unlikely(!cpy_r_r48)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r49 = 0;
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3 != CPY_INT_TAG) {
@@ -204655,15 +204641,15 @@ CPyL35: ;
     cpy_r_r50 = 1;
     if (unlikely(!cpy_r_r50)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r51 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r51 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 96, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 101, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPyTagged_INCREF(cpy_r_r51);
-CPyL38: ;
+CPyL37: ;
     cpy_r_r52 = CPyTagged_StealAsObject(cpy_r_r51);
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute___ != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute___);
@@ -204672,54 +204658,54 @@ CPyL38: ;
     cpy_r_r53 = 1;
     if (unlikely(!cpy_r_r53)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
-CPyL39: ;
+CPyL38: ;
     cpy_r_r54 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r54 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 96, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 101, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPyTagged_INCREF(cpy_r_r54);
-CPyL40: ;
+CPyL39: ;
     cpy_r_r55 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2;
     if (unlikely(cpy_r_r55 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__2", 96, CPyStatic_time_based___globals);
-        goto CPyL107;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__2", 101, CPyStatic_time_based___globals);
+        goto CPyL105;
     }
     CPyTagged_INCREF(cpy_r_r55);
-CPyL41: ;
+CPyL40: ;
     cpy_r_r56 = cpy_r_r54 & 1;
     cpy_r_r57 = cpy_r_r56 != 0;
-    if (cpy_r_r57) goto CPyL43;
+    if (cpy_r_r57) goto CPyL42;
     cpy_r_r58 = cpy_r_r55 & 1;
     cpy_r_r59 = cpy_r_r58 != 0;
-    if (!cpy_r_r59) goto CPyL44;
-CPyL43: ;
+    if (!cpy_r_r59) goto CPyL43;
+CPyL42: ;
     cpy_r_r60 = CPyTagged_IsLt_(cpy_r_r54, cpy_r_r55);
     cpy_r_r61 = cpy_r_r60;
-    goto CPyL45;
-CPyL44: ;
+    goto CPyL44;
+CPyL43: ;
     cpy_r_r62 = (Py_ssize_t)cpy_r_r54 < (Py_ssize_t)cpy_r_r55;
     cpy_r_r61 = cpy_r_r62;
-CPyL45: ;
+CPyL44: ;
     CPyTagged_DECREF(cpy_r_r54);
     CPyTagged_DECREF(cpy_r_r55);
-    if (!cpy_r_r61) goto CPyL91;
+    if (!cpy_r_r61) goto CPyL89;
     cpy_r_r63 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r63 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 97, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 102, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r63);
-CPyL47: ;
+CPyL46: ;
     cpy_r_r64 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'number' */
     cpy_r_r65 = cpy_r_r63;
     cpy_r_r66 = PyObject_GetItem(cpy_r_r65, cpy_r_r64);
     CPy_DECREF(cpy_r_r65);
     if (unlikely(cpy_r_r66 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r67 = cpy_r_r66;
     cpy_r_r68 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 0 */
@@ -204727,45 +204713,45 @@ CPyL47: ;
     CPy_DECREF(cpy_r_r67);
     if (unlikely(cpy_r_r69 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r70 = PyObject_IsTrue(cpy_r_r69);
     CPy_DECREF(cpy_r_r69);
     cpy_r_r71 = cpy_r_r70 >= 0;
     if (unlikely(!cpy_r_r71)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r72 = cpy_r_r70;
-    if (cpy_r_r72) goto CPyL91;
+    if (cpy_r_r72) goto CPyL89;
     cpy_r_r73 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__w3;
     if (unlikely(cpy_r_r73 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "w3", 102, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "w3", 107, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r73);
-CPyL53: ;
+CPyL52: ;
     cpy_r_r74 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'eth' */
     cpy_r_r75 = CPyObject_GetAttr(cpy_r_r73, cpy_r_r74);
     CPy_DECREF(cpy_r_r73);
     if (unlikely(cpy_r_r75 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r76 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r76 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 102, CPyStatic_time_based___globals);
-        goto CPyL108;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 107, CPyStatic_time_based___globals);
+        goto CPyL106;
     }
     CPy_INCREF(cpy_r_r76);
-CPyL55: ;
+CPyL54: ;
     cpy_r_r77 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'parentHash' */
     cpy_r_r78 = cpy_r_r76;
     cpy_r_r79 = PyObject_GetItem(cpy_r_r78, cpy_r_r77);
     CPy_DECREF(cpy_r_r78);
     if (unlikely(cpy_r_r79 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL108;
+        goto CPyL106;
     }
     cpy_r_r80 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'get_block' */
     cpy_r_r81 = 1 ? Py_True : Py_False;
@@ -204775,7 +204761,7 @@ CPyL55: ;
     cpy_r_r85 = PyObject_VectorcallMethod(cpy_r_r80, cpy_r_r83, 9223372036854775810ULL, cpy_r_r84);
     if (unlikely(cpy_r_r85 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL109;
+        goto CPyL107;
     }
     CPy_DECREF(cpy_r_r75);
     CPy_DECREF(cpy_r_r79);
@@ -204786,29 +204772,29 @@ CPyL55: ;
     cpy_r_r86 = 1;
     if (unlikely(!cpy_r_r86)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r87 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r87 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 103, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 108, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r87);
-CPyL60: ;
+CPyL59: ;
     cpy_r_r88 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'miner' */
     cpy_r_r89 = cpy_r_r87;
     cpy_r_r90 = PyObject_GetItem(cpy_r_r89, cpy_r_r88);
     CPy_DECREF(cpy_r_r89);
     if (unlikely(cpy_r_r90 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r91 = cpy_r_r90;
     if (likely(PyUnicode_Check(cpy_r_r91)))
         cpy_r_r92 = cpy_r_r91;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", 103, CPyStatic_time_based___globals, "str", cpy_r_r91);
-        goto CPyL101;
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", 108, CPyStatic_time_based___globals, "str", cpy_r_r91);
+        goto CPyL99;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner);
@@ -204817,22 +204803,22 @@ CPyL60: ;
     cpy_r_r93 = 1;
     if (unlikely(!cpy_r_r93)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r94 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r94 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 104, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 109, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r94);
-CPyL65: ;
+CPyL64: ;
     cpy_r_r95 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'hash' */
     cpy_r_r96 = cpy_r_r94;
     cpy_r_r97 = PyObject_GetItem(cpy_r_r96, cpy_r_r95);
     CPy_DECREF(cpy_r_r96);
     if (unlikely(cpy_r_r97 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hash != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hash);
@@ -204841,27 +204827,27 @@ CPyL65: ;
     cpy_r_r98 = 1;
     if (unlikely(!cpy_r_r98)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r99 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block;
     if (unlikely(cpy_r_r99 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 105, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block", 110, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r99);
-CPyL69: ;
+CPyL68: ;
     cpy_r_r100 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'transactions' */
     cpy_r_r101 = cpy_r_r99;
     cpy_r_r102 = PyObject_GetItem(cpy_r_r101, cpy_r_r100);
     CPy_DECREF(cpy_r_r101);
     if (unlikely(cpy_r_r102 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r103 = PyObject_GetIter(cpy_r_r102);
     if (unlikely(cpy_r_r103 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL110;
+        goto CPyL108;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4 != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__4);
@@ -204870,7 +204856,7 @@ CPyL69: ;
     cpy_r_r104 = 1;
     if (unlikely(!cpy_r_r104)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL111;
+        goto CPyL109;
     }
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5 != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5);
@@ -204879,74 +204865,60 @@ CPyL69: ;
     cpy_r_r105 = 1;
     if (unlikely(!cpy_r_r105)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", -1, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
-CPyL74: ;
+CPyL73: ;
     cpy_r_r106 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__5;
     if (unlikely(cpy_r_r106 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__5", 105, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__5", 110, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPy_INCREF(cpy_r_r106);
-CPyL75: ;
+CPyL74: ;
     cpy_r_r107 = PyIter_Next(cpy_r_r106);
     CPy_DECREF(cpy_r_r106);
-    if (cpy_r_r107 == NULL) goto CPyL87;
-    if (likely(PyDict_Check(cpy_r_r107)))
-        cpy_r_r108 = cpy_r_r107;
-    else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", 105, CPyStatic_time_based___globals, "dict", cpy_r_r107);
-        goto CPyL101;
-    }
+    if (cpy_r_r107 == NULL) goto CPyL85;
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction != NULL) {
         CPy_DECREF(((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction);
     }
-    ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r108;
-    cpy_r_r109 = 1;
-    if (unlikely(!cpy_r_r109)) {
+    ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction = cpy_r_r107;
+    cpy_r_r108 = 1;
+    if (unlikely(!cpy_r_r108)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
-    cpy_r_r110 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner;
+    cpy_r_r109 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner;
+    if (unlikely(cpy_r_r109 == NULL)) {
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "miner", 111, CPyStatic_time_based___globals);
+        goto CPyL99;
+    }
+    CPy_INCREF(cpy_r_r109);
+CPyL77: ;
+    cpy_r_r110 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hash;
     if (unlikely(cpy_r_r110 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "miner", 106, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block_hash", 111, CPyStatic_time_based___globals);
+        goto CPyL110;
     }
     CPy_INCREF(cpy_r_r110);
-CPyL79: ;
-    cpy_r_r111 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hash;
+CPyL78: ;
+    cpy_r_r111 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
     if (unlikely(cpy_r_r111 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "block_hash", 106, CPyStatic_time_based___globals);
-        goto CPyL112;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "transaction", 111, CPyStatic_time_based___globals);
+        goto CPyL111;
     }
     CPy_INCREF(cpy_r_r111);
-CPyL80: ;
-    cpy_r_r112 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__transaction;
-    if (unlikely(cpy_r_r112 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "transaction", 106, CPyStatic_time_based___globals);
-        goto CPyL113;
-    }
-    CPy_INCREF(cpy_r_r112);
-CPyL81: ;
-    cpy_r_r113 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
-    cpy_r_r114 = CPyDict_GetItem(cpy_r_r112, cpy_r_r113);
-    CPy_DECREF(cpy_r_r112);
+CPyL79: ;
+    cpy_r_r112 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gasPrice' */
+    cpy_r_r113 = cpy_r_r111;
+    cpy_r_r114 = PyObject_GetItem(cpy_r_r113, cpy_r_r112);
+    CPy_DECREF(cpy_r_r113);
     if (unlikely(cpy_r_r114 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL113;
+        goto CPyL111;
     }
-    if (likely(PyLong_Check(cpy_r_r114)))
-        cpy_r_r115 = CPyTagged_FromObject(cpy_r_r114);
-    else {
-        CPy_TypeError("int", cpy_r_r114); cpy_r_r115 = CPY_INT_TAG;
-    }
-    CPy_DECREF(cpy_r_r114);
-    if (unlikely(cpy_r_r115 == CPY_INT_TAG)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL113;
-    }
-    cpy_r_r116.f0 = cpy_r_r110;
-    cpy_r_r116.f1 = cpy_r_r111;
+    cpy_r_r115 = cpy_r_r114;
+    cpy_r_r116.f0 = cpy_r_r109;
+    cpy_r_r116.f1 = cpy_r_r110;
     cpy_r_r116.f2 = cpy_r_r115;
     cpy_r_r117 = PyTuple_New(3);
     if (unlikely(cpy_r_r117 == NULL))
@@ -204955,33 +204927,33 @@ CPyL81: ;
     PyTuple_SET_ITEM(cpy_r_r117, 0, __tmp717);
     PyObject *__tmp718 = cpy_r_r116.f1;
     PyTuple_SET_ITEM(cpy_r_r117, 1, __tmp718);
-    PyObject *__tmp719 = CPyTagged_StealAsObject(cpy_r_r116.f2);
+    PyObject *__tmp719 = cpy_r_r116.f2;
     PyTuple_SET_ITEM(cpy_r_r117, 2, __tmp719);
     ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 2;
     return cpy_r_r117;
-CPyL84: ;
+CPyL82: ;
     cpy_r_r119 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r120 = cpy_r_type != cpy_r_r119;
-    if (!cpy_r_r120) goto CPyL74;
+    if (!cpy_r_r120) goto CPyL73;
     CPyErr_SetObjectAndTraceback(cpy_r_type, cpy_r_value, cpy_r_traceback);
     if (unlikely(!0)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     CPy_Unreachable();
-CPyL87: ;
+CPyL85: ;
     cpy_r_r121 = CPy_NoErrOccurred();
     if (unlikely(!cpy_r_r121)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     cpy_r_r122 = ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__3;
     if (unlikely(cpy_r_r122 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 96, CPyStatic_time_based___globals);
-        goto CPyL101;
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", "_get_raw_miner_data_gen", "__mypyc_temp__3", 101, CPyStatic_time_based___globals);
+        goto CPyL99;
     }
     CPyTagged_INCREF(cpy_r_r122);
-CPyL89: ;
+CPyL87: ;
     cpy_r_r123 = CPyTagged_Add(cpy_r_r122, 2);
     CPyTagged_DECREF(cpy_r_r122);
     CPyTagged_INCREF(cpy_r_r123);
@@ -204992,7 +204964,7 @@ CPyL89: ;
     cpy_r_r124 = 1;
     if (unlikely(!cpy_r_r124)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL114;
+        goto CPyL112;
     }
     cpy_r_r125 = CPyTagged_StealAsObject(cpy_r_r123);
     if (((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute___ != NULL) {
@@ -205002,78 +204974,78 @@ CPyL89: ;
     cpy_r_r126 = 1;
     if (unlikely(!cpy_r_r126)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     } else
-        goto CPyL39;
-CPyL91: ;
+        goto CPyL38;
+CPyL89: ;
     cpy_r_r127 = Py_None;
     ((faster_web3___gas_strategies___time_based____get_raw_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = -1;
-    if (cpy_r_stop_iter_ptr != NULL) goto CPyL95;
+    if (cpy_r_stop_iter_ptr != NULL) goto CPyL93;
     CPyGen_SetStopIterationValue(cpy_r_r127);
-    if (!0) goto CPyL101;
+    if (!0) goto CPyL99;
     CPy_Unreachable();
-CPyL95: ;
+CPyL93: ;
     *(PyObject * *)cpy_r_stop_iter_ptr = cpy_r_r127;
     return 0;
-CPyL96: ;
+CPyL94: ;
     cpy_r_r129 = cpy_r_r0 == 0;
     if (cpy_r_r129) goto CPyL1;
     cpy_r_r130 = cpy_r_r0 == 1;
-    if (cpy_r_r130) goto CPyL28;
+    if (cpy_r_r130) goto CPyL27;
     cpy_r_r131 = cpy_r_r0 == 2;
-    if (cpy_r_r131) goto CPyL84;
+    if (cpy_r_r131) goto CPyL82;
     PyErr_SetNone(PyExc_StopIteration);
     cpy_r_r132 = 0;
     if (unlikely(!cpy_r_r132)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "_get_raw_miner_data", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL101;
+        goto CPyL99;
     }
     CPy_Unreachable();
-CPyL101: ;
+CPyL99: ;
     cpy_r_r133 = NULL;
     return cpy_r_r133;
-CPyL102: ;
+CPyL100: ;
     CPy_DecRef(cpy_r_r5);
-    goto CPyL101;
-CPyL103: ;
+    goto CPyL99;
+CPyL101: ;
     CPy_DecRef(cpy_r_r17);
-    goto CPyL101;
-CPyL104: ;
+    goto CPyL99;
+CPyL102: ;
     CPy_DecRef(cpy_r_r18);
-    goto CPyL101;
+    goto CPyL99;
+CPyL103: ;
+    CPy_DecRef(cpy_r_r28);
+    goto CPyL99;
+CPyL104: ;
+    CPy_DecRef(cpy_r_r28);
+    CPy_DecRef(cpy_r_r32);
+    goto CPyL99;
 CPyL105: ;
-    CPy_DecRef(cpy_r_r29);
-    goto CPyL101;
-CPyL106: ;
-    CPy_DecRef(cpy_r_r29);
-    CPy_DecRef(cpy_r_r33);
-    goto CPyL101;
-CPyL107: ;
     CPyTagged_DecRef(cpy_r_r54);
-    goto CPyL101;
-CPyL108: ;
+    goto CPyL99;
+CPyL106: ;
     CPy_DecRef(cpy_r_r75);
-    goto CPyL101;
-CPyL109: ;
+    goto CPyL99;
+CPyL107: ;
     CPy_DecRef(cpy_r_r75);
     CPy_DecRef(cpy_r_r79);
-    goto CPyL101;
-CPyL110: ;
+    goto CPyL99;
+CPyL108: ;
     CPy_DecRef(cpy_r_r102);
-    goto CPyL101;
-CPyL111: ;
+    goto CPyL99;
+CPyL109: ;
     CPy_DecRef(cpy_r_r103);
-    goto CPyL101;
+    goto CPyL99;
+CPyL110: ;
+    CPy_DecRef(cpy_r_r109);
+    goto CPyL99;
+CPyL111: ;
+    CPy_DecRef(cpy_r_r109);
+    CPy_DecRef(cpy_r_r110);
+    goto CPyL99;
 CPyL112: ;
-    CPy_DecRef(cpy_r_r110);
-    goto CPyL101;
-CPyL113: ;
-    CPy_DecRef(cpy_r_r110);
-    CPy_DecRef(cpy_r_r111);
-    goto CPyL101;
-CPyL114: ;
     CPyTagged_DecRef(cpy_r_r123);
-    goto CPyL101;
+    goto CPyL99;
 }
 
 PyObject *CPyDef_time_based____get_raw_miner_data_gen_____next__(PyObject *cpy_r___mypyc_self__) {
@@ -205529,7 +205501,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r3 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__raw_data;
     if (unlikely(cpy_r_r3 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "raw_data", 112, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "raw_data", 117, CPyStatic_time_based___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r3);
@@ -205562,7 +205534,7 @@ CPyL5: ;
     }
     cpy_r_r12 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__data_by_miner;
     if (unlikely(cpy_r_r12 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "data_by_miner", 114, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "data_by_miner", 119, CPyStatic_time_based___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r12);
@@ -205602,7 +205574,7 @@ CPyL9: ;
 CPyL13: ;
     cpy_r_r20 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__7;
     if (unlikely(cpy_r_r20 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "__mypyc_temp__7", 114, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "__mypyc_temp__7", 119, CPyStatic_time_based___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r20);
@@ -205680,7 +205652,7 @@ CPyL27: ;
     cpy_r_r31 = (PyObject *)&PySet_Type;
     cpy_r_r32 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner_data;
     if (unlikely(cpy_r_r32 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "miner_data", 115, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "miner_data", 120, CPyStatic_time_based___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r32);
@@ -205767,7 +205739,7 @@ CPyL41: ;
     if (likely(PySet_Check(cpy_r_r48)))
         cpy_r_r50 = cpy_r_r48;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 115, CPyStatic_time_based___globals, "set", cpy_r_r48);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 120, CPyStatic_time_based___globals, "set", cpy_r_r48);
         goto CPyL109;
     }
     if (((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hashes != NULL) {
@@ -205796,7 +205768,7 @@ CPyL46: ;
     if (likely(PySet_Check(cpy_r_r52)))
         cpy_r_r54 = cpy_r_r52;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 115, CPyStatic_time_based___globals, "set", cpy_r_r52);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 120, CPyStatic_time_based___globals, "set", cpy_r_r52);
         goto CPyL109;
     }
     if (((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_prices != NULL) {
@@ -205825,7 +205797,7 @@ CPyL49: ;
 CPyL51: ;
     cpy_r_r58 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_prices;
     if (unlikely(cpy_r_r58 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 118, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 123, CPyStatic_time_based___globals);
         goto CPyL55;
     }
     CPy_INCREF(cpy_r_r58);
@@ -205876,7 +205848,7 @@ CPyL55: ;
     if (!cpy_r_r68) goto CPyL64;
     cpy_r_r69 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_prices;
     if (unlikely(cpy_r_r69 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 120, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 125, CPyStatic_time_based___globals);
         goto CPyL68;
     }
     CPy_INCREF(cpy_r_r69);
@@ -205961,14 +205933,14 @@ CPyL69: ;
 CPyL71: ;
     cpy_r_r83 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner;
     if (unlikely(cpy_r_r83 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "miner", 122, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "miner", 127, CPyStatic_time_based___globals);
         goto CPyL96;
     }
     CPy_INCREF(cpy_r_r83);
 CPyL72: ;
     cpy_r_r84 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__block_hashes;
     if (unlikely(cpy_r_r84 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "block_hashes", 123, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "block_hashes", 128, CPyStatic_time_based___globals);
         goto CPyL114;
     }
     CPy_INCREF(cpy_r_r84);
@@ -205985,7 +205957,7 @@ CPyL73: ;
     cpy_r_r88 = cpy_r_r87 << 1;
     cpy_r_r89 = ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__gas_prices;
     if (unlikely(cpy_r_r89 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 124, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", "_aggregate_miner_data_gen", "gas_prices", 129, CPyStatic_time_based___globals);
         goto CPyL114;
     }
     CPy_INCREF(cpy_r_r89);
@@ -206046,7 +206018,7 @@ CPyL80: ;
     if (likely(PyTuple_Check(cpy_r_r106)))
         cpy_r_r107 = cpy_r_r106;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 121, CPyStatic_time_based___globals, "tuple", cpy_r_r106);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_aggregate_miner_data", 126, CPyStatic_time_based___globals, "tuple", cpy_r_r106);
         goto CPyL96;
     }
     ((faster_web3___gas_strategies___time_based____aggregate_miner_data_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
@@ -206584,7 +206556,7 @@ CPyL1: ;
 CPyL4: ;
     cpy_r_r3 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner_data;
     if (unlikely(cpy_r_r3 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data", 139, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data", 144, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPy_INCREF(cpy_r_r3);
@@ -206627,7 +206599,7 @@ CPyL5: ;
     if (likely(PyList_Check(cpy_r_r18)))
         cpy_r_r19 = cpy_r_r18;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 138, CPyStatic_time_based___globals, "list", cpy_r_r18);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 143, CPyStatic_time_based___globals, "list", cpy_r_r18);
         goto CPyL80;
     }
     cpy_r_r20 = PyList_AsTuple(cpy_r_r19);
@@ -206647,7 +206619,7 @@ CPyL5: ;
     }
     cpy_r_r22 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner_data_by_price;
     if (unlikely(cpy_r_r22 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 144, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 149, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPy_INCREF(cpy_r_r22);
@@ -206670,7 +206642,7 @@ CPyL13: ;
     }
     cpy_r_r28 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r28 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 144, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 149, CPyStatic_time_based___globals);
         goto CPyL80;
     }
 CPyL16: ;
@@ -206686,13 +206658,13 @@ CPyL16: ;
 CPyL17: ;
     cpy_r_r30 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r30 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 144, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 149, CPyStatic_time_based___globals);
         goto CPyL80;
     }
 CPyL18: ;
     cpy_r_r31 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__9;
     if (unlikely(cpy_r_r31 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__9", 144, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__9", 149, CPyStatic_time_based___globals);
         goto CPyL80;
     }
 CPyL19: ;
@@ -206700,14 +206672,14 @@ CPyL19: ;
     if (!cpy_r_r32) goto CPyL71;
     cpy_r_r33 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner_data_by_price;
     if (unlikely(cpy_r_r33 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 145, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 150, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPy_INCREF(cpy_r_r33);
 CPyL21: ;
     cpy_r_r34 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__idx;
     if (unlikely(cpy_r_r34 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "idx", 145, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "idx", 150, CPyStatic_time_based___globals);
         goto CPyL83;
     }
     CPyTagged_INCREF(cpy_r_r34);
@@ -206722,7 +206694,7 @@ CPyL22: ;
     if (likely(PyTuple_Check(cpy_r_r35)))
         cpy_r_r36 = cpy_r_r35;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 145, CPyStatic_time_based___globals, "tuple", cpy_r_r35);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 150, CPyStatic_time_based___globals, "tuple", cpy_r_r35);
         goto CPyL80;
     }
     cpy_r_r37 = CPySequenceTuple_GetItem(cpy_r_r36, 6);
@@ -206744,14 +206716,14 @@ CPyL22: ;
     cpy_r_r40 = cpy_r_r39;
     cpy_r_r41 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__miner_data_by_price;
     if (unlikely(cpy_r_r41 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 147, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "miner_data_by_price", 152, CPyStatic_time_based___globals);
         goto CPyL84;
     }
     CPy_INCREF(cpy_r_r41);
 CPyL27: ;
     cpy_r_r42 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__idx;
     if (unlikely(cpy_r_r42 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "idx", 147, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "idx", 152, CPyStatic_time_based___globals);
         goto CPyL85;
     }
     CPyTagged_INCREF(cpy_r_r42);
@@ -206766,7 +206738,7 @@ CPyL28: ;
     if (likely(PyTuple_Check(cpy_r_r43)))
         cpy_r_r44 = cpy_r_r43;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 147, CPyStatic_time_based___globals, "tuple", cpy_r_r43);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 152, CPyStatic_time_based___globals, "tuple", cpy_r_r43);
         goto CPyL84;
     }
     if (((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11 != NULL) {
@@ -206780,7 +206752,7 @@ CPyL28: ;
     }
     cpy_r_r46 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
     if (unlikely(cpy_r_r46 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__11", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__11", 151, CPyStatic_time_based___globals);
         goto CPyL84;
     }
     CPy_INCREF(cpy_r_r46);
@@ -206803,13 +206775,13 @@ CPyL32: ;
 CPyL34: ;
     cpy_r_r51 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__12;
     if (unlikely(cpy_r_r51 == -113)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__12", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__12", 151, CPyStatic_time_based___globals);
         goto CPyL84;
     }
 CPyL35: ;
     cpy_r_r52 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
     if (unlikely(cpy_r_r52 == -113)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 151, CPyStatic_time_based___globals);
         goto CPyL84;
     }
 CPyL36: ;
@@ -206817,14 +206789,14 @@ CPyL36: ;
     if (!cpy_r_r53) goto CPyL47;
     cpy_r_r54 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__11;
     if (unlikely(cpy_r_r54 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__11", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__11", 151, CPyStatic_time_based___globals);
         goto CPyL84;
     }
     CPy_INCREF(cpy_r_r54);
 CPyL38: ;
     cpy_r_r55 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
     if (unlikely(cpy_r_r55 == -113)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 151, CPyStatic_time_based___globals);
         goto CPyL86;
     }
 CPyL39: ;
@@ -206833,7 +206805,7 @@ CPyL39: ;
     if (likely(PyTuple_Check(cpy_r_r56)))
         cpy_r_r57 = cpy_r_r56;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 146, CPyStatic_time_based___globals, "tuple", cpy_r_r56);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 151, CPyStatic_time_based___globals, "tuple", cpy_r_r56);
         goto CPyL84;
     }
     if (((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__m != NULL) {
@@ -206847,7 +206819,7 @@ CPyL39: ;
     }
     cpy_r_r59 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__m;
     if (unlikely(cpy_r_r59 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "m", 147, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "m", 152, CPyStatic_time_based___globals);
         goto CPyL84;
     }
     CPy_INCREF(cpy_r_r59);
@@ -206868,7 +206840,7 @@ CPyL42: ;
     cpy_r_r40 = cpy_r_r61;
     cpy_r_r62 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__13;
     if (unlikely(cpy_r_r62 == -113)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 146, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__13", 151, CPyStatic_time_based___globals);
         goto CPyL84;
     }
 CPyL46: ;
@@ -206892,14 +206864,14 @@ CPyL47: ;
     }
     cpy_r_r66 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sample_size;
     if (unlikely(cpy_r_r66 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "sample_size", 149, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "sample_size", 154, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPyTagged_INCREF(cpy_r_r66);
 CPyL49: ;
     cpy_r_r67 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__num_blocks_accepting_price;
     if (unlikely(cpy_r_r67 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "num_blocks_accepting_price", 149, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "num_blocks_accepting_price", 154, CPyStatic_time_based___globals);
         goto CPyL87;
     }
     CPy_INCREF(cpy_r_r67);
@@ -206914,7 +206886,7 @@ CPyL50: ;
     }
     cpy_r_r70 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__sample_size;
     if (unlikely(cpy_r_r70 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "sample_size", 149, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "sample_size", 154, CPyStatic_time_based___globals);
         goto CPyL88;
     }
     CPyTagged_INCREF(cpy_r_r70);
@@ -206938,14 +206910,14 @@ CPyL52: ;
     }
     cpy_r_r74 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__inv_prob_per_block;
     if (unlikely(cpy_r_r74 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "inv_prob_per_block", 150, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "inv_prob_per_block", 155, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPy_INCREF(cpy_r_r74);
 CPyL55: ;
     cpy_r_r75 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__wait_blocks;
     if (unlikely(cpy_r_r75 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "wait_blocks", 150, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "wait_blocks", 155, CPyStatic_time_based___globals);
         goto CPyL89;
     }
     CPyTagged_INCREF(cpy_r_r75);
@@ -206976,14 +206948,14 @@ CPyL56: ;
     }
     cpy_r_r81 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__low_percentile_gas_price;
     if (unlikely(cpy_r_r81 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "low_percentile_gas_price", 151, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "low_percentile_gas_price", 156, CPyStatic_time_based___globals);
         goto CPyL80;
     }
     CPy_INCREF(cpy_r_r81);
 CPyL60: ;
     cpy_r_r82 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__probability_accepted;
     if (unlikely(cpy_r_r82 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "probability_accepted", 151, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "probability_accepted", 156, CPyStatic_time_based___globals);
         goto CPyL90;
     }
     CPy_INCREF(cpy_r_r82);
@@ -207008,7 +206980,7 @@ CPyL61: ;
     if (likely(PyTuple_Check(cpy_r_r88)))
         cpy_r_r89 = cpy_r_r88;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 151, CPyStatic_time_based___globals, "tuple", cpy_r_r88);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", 156, CPyStatic_time_based___globals, "tuple", cpy_r_r88);
         goto CPyL80;
     }
     ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_next_label__ = 1;
@@ -207026,7 +206998,7 @@ CPyL65: ;
 CPyL68: ;
     cpy_r_r93 = ((faster_web3___gas_strategies___time_based____compute_probabilities_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__10;
     if (unlikely(cpy_r_r93 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 144, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "_compute_probabilities", "_compute_probabilities_gen", "__mypyc_temp__10", 149, CPyStatic_time_based___globals);
         goto CPyL80;
     }
 CPyL69: ;
@@ -207563,7 +207535,7 @@ CPyTagged CPyDef_time_based____compute_gas_price(PyObject *cpy_r_probabilities, 
     if (likely(PyTuple_Check(cpy_r_r1)))
         cpy_r_r2 = cpy_r_r1;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_gas_price", 167, CPyStatic_time_based___globals, "tuple", cpy_r_r1);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_gas_price", 172, CPyStatic_time_based___globals, "tuple", cpy_r_r1);
         goto CPyL68;
     }
     cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* -1 */
@@ -207575,7 +207547,7 @@ CPyTagged CPyDef_time_based____compute_gas_price(PyObject *cpy_r_probabilities, 
     if (likely(PyTuple_Check(cpy_r_r4)))
         cpy_r_r5 = cpy_r_r4;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_gas_price", 168, CPyStatic_time_based___globals, "tuple", cpy_r_r4);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "_compute_gas_price", 173, CPyStatic_time_based___globals, "tuple", cpy_r_r4);
         goto CPyL69;
     }
     cpy_r_r6 = CPySequenceTuple_GetItem(cpy_r_r2, 2);
@@ -208206,7 +208178,7 @@ CPyTagged CPyDef_time_based___time_based_gas_price_strategy_construct_time_based
     CPyTagged cpy_r_r56;
     cpy_r_r0 = ((faster_web3___gas_strategies___time_based___time_based_gas_price_strategy_construct_time_based_gas_price_strategy_objObject *)cpy_r___mypyc_self__)->___mypyc_env__;
     if (unlikely(cpy_r_r0 == NULL)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj", "__mypyc_env__", 223, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "time_based_gas_price_strategy_construct_time_based_gas_price_strategy_obj", "__mypyc_env__", 228, CPyStatic_time_based___globals);
         goto CPyL40;
     }
     CPy_INCREF_NO_IMM(cpy_r_r0);
@@ -208281,7 +208253,7 @@ CPyL7: ;
 CPyL11: ;
     cpy_r_r20 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_weighted;
     if (unlikely(cpy_r_r20 == 2)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "weighted", 230, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "weighted", 235, CPyStatic_time_based___globals);
         goto CPyL41;
     }
 CPyL12: ;
@@ -208289,7 +208261,7 @@ CPyL12: ;
 CPyL13: ;
     cpy_r_r21 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_sample_size;
     if (unlikely(cpy_r_r21 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 231, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 236, CPyStatic_time_based___globals);
         goto CPyL41;
     }
     CPyTagged_INCREF(cpy_r_r21);
@@ -208311,7 +208283,7 @@ CPyL16: ;
 CPyL17: ;
     cpy_r_r25 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_sample_size;
     if (unlikely(cpy_r_r25 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 233, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 238, CPyStatic_time_based___globals);
         goto CPyL41;
     }
     CPyTagged_INCREF(cpy_r_r25);
@@ -208333,7 +208305,7 @@ CPyL20: ;
 CPyL21: ;
     cpy_r_r29 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_max_wait_seconds;
     if (unlikely(cpy_r_r29 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "max_wait_seconds", 235, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "max_wait_seconds", 240, CPyStatic_time_based___globals);
         goto CPyL41;
     }
     CPyTagged_INCREF(cpy_r_r29);
@@ -208372,7 +208344,7 @@ CPyL27: ;
     }
     cpy_r_r37 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_sample_size;
     if (unlikely(cpy_r_r37 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 236, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 241, CPyStatic_time_based___globals);
         goto CPyL45;
     }
     CPyTagged_INCREF(cpy_r_r37);
@@ -208393,7 +208365,7 @@ CPyL29: ;
     cpy_r_miner_data = cpy_r_r39;
     cpy_r_r40 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_sample_size;
     if (unlikely(cpy_r_r40 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 242, CPyStatic_time_based___globals);
+        CPy_AttributeError("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", "construct_time_based_gas_price_strategy_env", "sample_size", 247, CPyStatic_time_based___globals);
         goto CPyL46;
     }
     CPyTagged_INCREF(cpy_r_r40);
@@ -208422,7 +208394,7 @@ CPyL32: ;
     if (likely(PyTuple_Check(cpy_r_r49)))
         cpy_r_r50 = cpy_r_r49;
     else {
-        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", 239, CPyStatic_time_based___globals, "tuple", cpy_r_r49);
+        CPy_TypeErrorTraceback("faster_web3/gas_strategies/time_based.py", "time_based_gas_price_strategy", 244, CPyStatic_time_based___globals, "tuple", cpy_r_r49);
         goto CPyL41;
     }
     cpy_r_r51 = ((faster_web3___gas_strategies___time_based___construct_time_based_gas_price_strategy_envObject *)cpy_r_r0)->_probability;
@@ -208746,109 +208718,113 @@ char CPyDef_time_based_____top_level__(void) {
     PyObject *cpy_r_r56;
     PyObject *cpy_r_r57;
     PyObject *cpy_r_r58;
-    CPyPtr cpy_r_r59;
-    CPyPtr cpy_r_r60;
-    CPyPtr cpy_r_r61;
-    CPyPtr cpy_r_r62;
+    PyObject *cpy_r_r59;
+    PyObject *cpy_r_r60;
+    PyObject *cpy_r_r61;
+    PyObject *cpy_r_r62;
     CPyPtr cpy_r_r63;
-    PyObject *cpy_r_r64;
-    PyObject *cpy_r_r65;
-    PyObject *cpy_r_r66;
-    PyObject **cpy_r_r68;
+    CPyPtr cpy_r_r64;
+    CPyPtr cpy_r_r65;
+    CPyPtr cpy_r_r66;
+    CPyPtr cpy_r_r67;
+    PyObject *cpy_r_r68;
     PyObject *cpy_r_r69;
     PyObject *cpy_r_r70;
-    PyObject *cpy_r_r71;
-    int32_t cpy_r_r72;
-    char cpy_r_r73;
+    PyObject **cpy_r_r72;
+    PyObject *cpy_r_r73;
     PyObject *cpy_r_r74;
     PyObject *cpy_r_r75;
-    PyObject *cpy_r_r76;
-    PyObject *cpy_r_r77;
-    CPyPtr cpy_r_r78;
-    CPyPtr cpy_r_r79;
-    CPyPtr cpy_r_r80;
+    int32_t cpy_r_r76;
+    char cpy_r_r77;
+    PyObject *cpy_r_r78;
+    PyObject *cpy_r_r79;
+    PyObject *cpy_r_r80;
     PyObject *cpy_r_r81;
-    PyObject *cpy_r_r82;
-    PyObject *cpy_r_r83;
-    PyObject **cpy_r_r85;
+    CPyPtr cpy_r_r82;
+    CPyPtr cpy_r_r83;
+    CPyPtr cpy_r_r84;
+    PyObject *cpy_r_r85;
     PyObject *cpy_r_r86;
     PyObject *cpy_r_r87;
-    PyObject *cpy_r_r88;
-    int32_t cpy_r_r89;
-    char cpy_r_r90;
+    PyObject **cpy_r_r89;
+    PyObject *cpy_r_r90;
     PyObject *cpy_r_r91;
     PyObject *cpy_r_r92;
-    PyObject *cpy_r_r93;
-    PyObject *cpy_r_r94;
+    int32_t cpy_r_r93;
+    char cpy_r_r94;
     PyObject *cpy_r_r95;
     PyObject *cpy_r_r96;
-    PyObject **cpy_r_r98;
+    PyObject *cpy_r_r97;
+    PyObject *cpy_r_r98;
     PyObject *cpy_r_r99;
     PyObject *cpy_r_r100;
-    PyObject *cpy_r_r101;
-    int32_t cpy_r_r102;
-    char cpy_r_r103;
+    PyObject **cpy_r_r102;
+    PyObject *cpy_r_r103;
     PyObject *cpy_r_r104;
     PyObject *cpy_r_r105;
-    PyObject *cpy_r_r106;
-    PyObject *cpy_r_r107;
+    int32_t cpy_r_r106;
+    char cpy_r_r107;
     PyObject *cpy_r_r108;
     PyObject *cpy_r_r109;
-    PyObject **cpy_r_r111;
+    PyObject *cpy_r_r110;
+    PyObject *cpy_r_r111;
     PyObject *cpy_r_r112;
     PyObject *cpy_r_r113;
-    PyObject *cpy_r_r114;
-    int32_t cpy_r_r115;
-    char cpy_r_r116;
+    PyObject **cpy_r_r115;
+    PyObject *cpy_r_r116;
     PyObject *cpy_r_r117;
     PyObject *cpy_r_r118;
-    PyObject *cpy_r_r119;
-    PyObject *cpy_r_r120;
+    int32_t cpy_r_r119;
+    char cpy_r_r120;
     PyObject *cpy_r_r121;
-    PyObject **cpy_r_r123;
+    PyObject *cpy_r_r122;
+    PyObject *cpy_r_r123;
     PyObject *cpy_r_r124;
     PyObject *cpy_r_r125;
-    PyObject *cpy_r_r126;
-    PyObject *cpy_r_r127;
-    int32_t cpy_r_r128;
-    char cpy_r_r129;
+    PyObject **cpy_r_r127;
+    PyObject *cpy_r_r128;
+    PyObject *cpy_r_r129;
     PyObject *cpy_r_r130;
     PyObject *cpy_r_r131;
-    PyObject *cpy_r_r132;
-    PyObject *cpy_r_r133;
+    int32_t cpy_r_r132;
+    char cpy_r_r133;
     PyObject *cpy_r_r134;
-    PyObject **cpy_r_r136;
+    PyObject *cpy_r_r135;
+    PyObject *cpy_r_r136;
     PyObject *cpy_r_r137;
     PyObject *cpy_r_r138;
-    PyObject *cpy_r_r139;
-    PyObject *cpy_r_r140;
-    int32_t cpy_r_r141;
-    char cpy_r_r142;
+    PyObject **cpy_r_r140;
+    PyObject *cpy_r_r141;
+    PyObject *cpy_r_r142;
     PyObject *cpy_r_r143;
     PyObject *cpy_r_r144;
-    PyObject *cpy_r_r145;
-    PyObject *cpy_r_r146;
+    int32_t cpy_r_r145;
+    char cpy_r_r146;
     PyObject *cpy_r_r147;
-    PyObject **cpy_r_r149;
+    PyObject *cpy_r_r148;
+    PyObject *cpy_r_r149;
     PyObject *cpy_r_r150;
     PyObject *cpy_r_r151;
-    PyObject *cpy_r_r152;
-    PyObject *cpy_r_r153;
-    int32_t cpy_r_r154;
-    char cpy_r_r155;
+    PyObject **cpy_r_r153;
+    PyObject *cpy_r_r154;
+    PyObject *cpy_r_r155;
     PyObject *cpy_r_r156;
     PyObject *cpy_r_r157;
-    PyObject *cpy_r_r158;
-    PyObject *cpy_r_r159;
+    int32_t cpy_r_r158;
+    char cpy_r_r159;
     PyObject *cpy_r_r160;
-    PyObject **cpy_r_r162;
+    PyObject *cpy_r_r161;
+    PyObject *cpy_r_r162;
     PyObject *cpy_r_r163;
     PyObject *cpy_r_r164;
-    PyObject *cpy_r_r165;
-    PyObject *cpy_r_r166;
-    int32_t cpy_r_r167;
-    char cpy_r_r168;
-    char cpy_r_r169;
+    PyObject **cpy_r_r166;
+    PyObject *cpy_r_r167;
+    PyObject *cpy_r_r168;
+    PyObject *cpy_r_r169;
+    PyObject *cpy_r_r170;
+    int32_t cpy_r_r171;
+    char cpy_r_r172;
+    char cpy_r_r173;
     cpy_r_r0 = CPyModule_builtins;
     cpy_r_r1 = (PyObject *)&_Py_NoneStruct;
     cpy_r_r2 = cpy_r_r0 != cpy_r_r1;
@@ -208857,7 +208833,7 @@ char CPyDef_time_based_____top_level__(void) {
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", -1, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_builtins = cpy_r_r4;
     CPy_INCREF(CPyModule_builtins);
@@ -208877,14 +208853,15 @@ CPyL3: ;
     cpy_r_r14 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3/gas_strategies/time_based.py' */
     cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '<module>' */
     cpy_r_r16 = CPyImport_ImportMany(cpy_r_r12, cpy_r_r9, cpy_r_r13, cpy_r_r14, cpy_r_r15, cpy_r_r11);
-    if (!cpy_r_r16) goto CPyL42;
-    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Final', 'Iterable', 'Optional', 'Sequence', 'Tuple') */
+    if (!cpy_r_r16) goto CPyL43;
+    cpy_r_r17 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('Any', 'Final', 'Iterable', 'Optional', 'Sequence',
+                                     'Tuple', 'Union') */
     cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'typing' */
     cpy_r_r19 = CPyStatic_time_based___globals;
     cpy_r_r20 = CPyImport_ImportFromMany(cpy_r_r18, cpy_r_r17, cpy_r_r17, cpy_r_r19);
     if (unlikely(cpy_r_r20 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_typing = cpy_r_r20;
     CPy_INCREF(CPyModule_typing);
@@ -208895,7 +208872,7 @@ CPyL3: ;
     cpy_r_r24 = CPyImport_ImportFromMany(cpy_r_r22, cpy_r_r21, cpy_r_r21, cpy_r_r23);
     if (unlikely(cpy_r_r24 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_eth_typing = cpy_r_r24;
     CPy_INCREF(CPyModule_eth_typing);
@@ -208906,7 +208883,7 @@ CPyL3: ;
     cpy_r_r28 = CPyImport_ImportFromMany(cpy_r_r26, cpy_r_r25, cpy_r_r25, cpy_r_r27);
     if (unlikely(cpy_r_r28 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_faster_eth_utils = cpy_r_r28;
     CPy_INCREF(CPyModule_faster_eth_utils);
@@ -208917,7 +208894,7 @@ CPyL3: ;
     cpy_r_r32 = CPyImport_ImportFromMany(cpy_r_r30, cpy_r_r29, cpy_r_r29, cpy_r_r31);
     if (unlikely(cpy_r_r32 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_faster_eth_utils___toolz = cpy_r_r32;
     CPy_INCREF(CPyModule_faster_eth_utils___toolz);
@@ -208928,7 +208905,7 @@ CPyL3: ;
     cpy_r_r36 = CPyImport_ImportFromMany(cpy_r_r34, cpy_r_r33, cpy_r_r33, cpy_r_r35);
     if (unlikely(cpy_r_r36 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_faster_hexbytes = cpy_r_r36;
     CPy_INCREF(CPyModule_faster_hexbytes);
@@ -208939,7 +208916,7 @@ CPyL3: ;
     cpy_r_r40 = CPyImport_ImportFromMany(cpy_r_r38, cpy_r_r37, cpy_r_r37, cpy_r_r39);
     if (unlikely(cpy_r_r40 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_faster_web3 = cpy_r_r40;
     CPy_INCREF(CPyModule_faster_web3);
@@ -208950,318 +208927,329 @@ CPyL3: ;
     cpy_r_r44 = CPyImport_ImportFromMany(cpy_r_r42, cpy_r_r41, cpy_r_r41, cpy_r_r43);
     if (unlikely(cpy_r_r44 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     CPyModule_faster_web3____utils___math = cpy_r_r44;
     CPy_INCREF(CPyModule_faster_web3____utils___math);
     CPy_DECREF(cpy_r_r44);
-    cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('InsufficientData', 'Web3ValidationError') */
-    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
+    cpy_r_r45 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('AttributeDict',) */
+    cpy_r_r46 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.datastructures' */
     cpy_r_r47 = CPyStatic_time_based___globals;
     cpy_r_r48 = CPyImport_ImportFromMany(cpy_r_r46, cpy_r_r45, cpy_r_r45, cpy_r_r47);
     if (unlikely(cpy_r_r48 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyModule_faster_web3___exceptions = cpy_r_r48;
-    CPy_INCREF(CPyModule_faster_web3___exceptions);
+    CPyModule_faster_web3___datastructures = cpy_r_r48;
+    CPy_INCREF(CPyModule_faster_web3___datastructures);
     CPy_DECREF(cpy_r_r48);
-    cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BlockNumber', 'GasPriceStrategy', 'TxData', 'TxParams',
-                                     'Wei') */
-    cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
+    cpy_r_r49 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('InsufficientData', 'Web3ValidationError') */
+    cpy_r_r50 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.exceptions' */
     cpy_r_r51 = CPyStatic_time_based___globals;
     cpy_r_r52 = CPyImport_ImportFromMany(cpy_r_r50, cpy_r_r49, cpy_r_r49, cpy_r_r51);
     if (unlikely(cpy_r_r52 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyModule_faster_web3___types = cpy_r_r52;
-    CPy_INCREF(CPyModule_faster_web3___types);
+    CPyModule_faster_web3___exceptions = cpy_r_r52;
+    CPy_INCREF(CPyModule_faster_web3___exceptions);
     CPy_DECREF(cpy_r_r52);
-    cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MinerData' */
-    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'miner' */
-    cpy_r_r55 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'num_blocks' */
-    cpy_r_r56 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'min_gas_price' */
-    cpy_r_r57 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'low_percentile_gas_price' */
-    cpy_r_r58 = PyList_New(4);
-    if (unlikely(cpy_r_r58 == NULL)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
-    cpy_r_r59 = (CPyPtr)&((PyListObject *)cpy_r_r58)->ob_item;
-    cpy_r_r60 = *(CPyPtr *)cpy_r_r59;
-    CPy_INCREF(cpy_r_r54);
-    *(PyObject * *)cpy_r_r60 = cpy_r_r54;
-    CPy_INCREF(cpy_r_r55);
-    cpy_r_r61 = cpy_r_r60 + 8;
-    *(PyObject * *)cpy_r_r61 = cpy_r_r55;
-    CPy_INCREF(cpy_r_r56);
-    cpy_r_r62 = cpy_r_r60 + 16;
-    *(PyObject * *)cpy_r_r62 = cpy_r_r56;
-    CPy_INCREF(cpy_r_r57);
-    cpy_r_r63 = cpy_r_r60 + 24;
-    *(PyObject * *)cpy_r_r63 = cpy_r_r57;
-    cpy_r_r64 = CPyModule_collections;
-    cpy_r_r65 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'namedtuple' */
-    cpy_r_r66 = CPyObject_GetAttr(cpy_r_r64, cpy_r_r65);
-    if (unlikely(cpy_r_r66 == NULL)) {
+    cpy_r_r53 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('BlockNumber', 'GasPriceStrategy', 'TxData', 'TxParams',
+                                     'Wei') */
+    cpy_r_r54 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3.types' */
+    cpy_r_r55 = CPyStatic_time_based___globals;
+    cpy_r_r56 = CPyImport_ImportFromMany(cpy_r_r54, cpy_r_r53, cpy_r_r53, cpy_r_r55);
+    if (unlikely(cpy_r_r56 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
         goto CPyL43;
     }
-    PyObject *cpy_r_r67[2] = {cpy_r_r53, cpy_r_r58};
-    cpy_r_r68 = (PyObject **)&cpy_r_r67;
-    cpy_r_r69 = PyObject_Vectorcall(cpy_r_r66, cpy_r_r68, 2, 0);
-    CPy_DECREF(cpy_r_r66);
-    if (unlikely(cpy_r_r69 == NULL)) {
+    CPyModule_faster_web3___types = cpy_r_r56;
+    CPy_INCREF(CPyModule_faster_web3___types);
+    CPy_DECREF(cpy_r_r56);
+    cpy_r_r57 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MinerData' */
+    cpy_r_r58 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'miner' */
+    cpy_r_r59 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'num_blocks' */
+    cpy_r_r60 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'min_gas_price' */
+    cpy_r_r61 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'low_percentile_gas_price' */
+    cpy_r_r62 = PyList_New(4);
+    if (unlikely(cpy_r_r62 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
         goto CPyL43;
     }
-    CPy_DECREF_NO_IMM(cpy_r_r58);
-    cpy_r_r70 = CPyStatic_time_based___globals;
-    cpy_r_r71 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MinerData' */
-    cpy_r_r72 = CPyDict_SetItem(cpy_r_r70, cpy_r_r71, cpy_r_r69);
-    CPy_DECREF(cpy_r_r69);
-    cpy_r_r73 = cpy_r_r72 >= 0;
-    if (unlikely(!cpy_r_r73)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
-    cpy_r_r74 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Probability' */
-    cpy_r_r75 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gas_price' */
-    cpy_r_r76 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'prob' */
-    cpy_r_r77 = PyList_New(2);
-    if (unlikely(cpy_r_r77 == NULL)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
-    cpy_r_r78 = (CPyPtr)&((PyListObject *)cpy_r_r77)->ob_item;
-    cpy_r_r79 = *(CPyPtr *)cpy_r_r78;
-    CPy_INCREF(cpy_r_r75);
-    *(PyObject * *)cpy_r_r79 = cpy_r_r75;
-    CPy_INCREF(cpy_r_r76);
-    cpy_r_r80 = cpy_r_r79 + 8;
-    *(PyObject * *)cpy_r_r80 = cpy_r_r76;
-    cpy_r_r81 = CPyModule_collections;
-    cpy_r_r82 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'namedtuple' */
-    cpy_r_r83 = CPyObject_GetAttr(cpy_r_r81, cpy_r_r82);
-    if (unlikely(cpy_r_r83 == NULL)) {
+    cpy_r_r63 = (CPyPtr)&((PyListObject *)cpy_r_r62)->ob_item;
+    cpy_r_r64 = *(CPyPtr *)cpy_r_r63;
+    CPy_INCREF(cpy_r_r58);
+    *(PyObject * *)cpy_r_r64 = cpy_r_r58;
+    CPy_INCREF(cpy_r_r59);
+    cpy_r_r65 = cpy_r_r64 + 8;
+    *(PyObject * *)cpy_r_r65 = cpy_r_r59;
+    CPy_INCREF(cpy_r_r60);
+    cpy_r_r66 = cpy_r_r64 + 16;
+    *(PyObject * *)cpy_r_r66 = cpy_r_r60;
+    CPy_INCREF(cpy_r_r61);
+    cpy_r_r67 = cpy_r_r64 + 24;
+    *(PyObject * *)cpy_r_r67 = cpy_r_r61;
+    cpy_r_r68 = CPyModule_collections;
+    cpy_r_r69 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'namedtuple' */
+    cpy_r_r70 = CPyObject_GetAttr(cpy_r_r68, cpy_r_r69);
+    if (unlikely(cpy_r_r70 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
         goto CPyL44;
     }
-    PyObject *cpy_r_r84[2] = {cpy_r_r74, cpy_r_r77};
-    cpy_r_r85 = (PyObject **)&cpy_r_r84;
-    cpy_r_r86 = PyObject_Vectorcall(cpy_r_r83, cpy_r_r85, 2, 0);
-    CPy_DECREF(cpy_r_r83);
-    if (unlikely(cpy_r_r86 == NULL)) {
+    PyObject *cpy_r_r71[2] = {cpy_r_r57, cpy_r_r62};
+    cpy_r_r72 = (PyObject **)&cpy_r_r71;
+    cpy_r_r73 = PyObject_Vectorcall(cpy_r_r70, cpy_r_r72, 2, 0);
+    CPy_DECREF(cpy_r_r70);
+    if (unlikely(cpy_r_r73 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
         goto CPyL44;
     }
-    CPy_DECREF_NO_IMM(cpy_r_r77);
-    cpy_r_r87 = CPyStatic_time_based___globals;
-    cpy_r_r88 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Probability' */
-    cpy_r_r89 = CPyDict_SetItem(cpy_r_r87, cpy_r_r88, cpy_r_r86);
-    CPy_DECREF(cpy_r_r86);
-    cpy_r_r90 = cpy_r_r89 >= 0;
-    if (unlikely(!cpy_r_r90)) {
+    CPy_DECREF_NO_IMM(cpy_r_r62);
+    cpy_r_r74 = CPyStatic_time_based___globals;
+    cpy_r_r75 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'MinerData' */
+    cpy_r_r76 = CPyDict_SetItem(cpy_r_r74, cpy_r_r75, cpy_r_r73);
+    CPy_DECREF(cpy_r_r73);
+    cpy_r_r77 = cpy_r_r76 >= 0;
+    if (unlikely(!cpy_r_r77)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
+    cpy_r_r78 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Probability' */
+    cpy_r_r79 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'gas_price' */
+    cpy_r_r80 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'prob' */
+    cpy_r_r81 = PyList_New(2);
+    if (unlikely(cpy_r_r81 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL43;
+    }
+    cpy_r_r82 = (CPyPtr)&((PyListObject *)cpy_r_r81)->ob_item;
+    cpy_r_r83 = *(CPyPtr *)cpy_r_r82;
+    CPy_INCREF(cpy_r_r79);
+    *(PyObject * *)cpy_r_r83 = cpy_r_r79;
+    CPy_INCREF(cpy_r_r80);
+    cpy_r_r84 = cpy_r_r83 + 8;
+    *(PyObject * *)cpy_r_r84 = cpy_r_r80;
+    cpy_r_r85 = CPyModule_collections;
+    cpy_r_r86 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'namedtuple' */
+    cpy_r_r87 = CPyObject_GetAttr(cpy_r_r85, cpy_r_r86);
+    if (unlikely(cpy_r_r87 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL45;
+    }
+    PyObject *cpy_r_r88[2] = {cpy_r_r78, cpy_r_r81};
+    cpy_r_r89 = (PyObject **)&cpy_r_r88;
+    cpy_r_r90 = PyObject_Vectorcall(cpy_r_r87, cpy_r_r89, 2, 0);
+    CPy_DECREF(cpy_r_r87);
+    if (unlikely(cpy_r_r90 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL45;
+    }
+    CPy_DECREF_NO_IMM(cpy_r_r81);
     cpy_r_r91 = CPyStatic_time_based___globals;
-    cpy_r_r92 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_compute_probabilities' */
-    cpy_r_r93 = CPyDict_GetItem(cpy_r_r91, cpy_r_r92);
-    if (unlikely(cpy_r_r93 == NULL)) {
+    cpy_r_r92 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Probability' */
+    cpy_r_r93 = CPyDict_SetItem(cpy_r_r91, cpy_r_r92, cpy_r_r90);
+    CPy_DECREF(cpy_r_r90);
+    cpy_r_r94 = cpy_r_r93 >= 0;
+    if (unlikely(!cpy_r_r94)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r94 = CPyStatic_time_based___globals;
-    cpy_r_r95 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to_tuple' */
-    cpy_r_r96 = CPyDict_GetItem(cpy_r_r94, cpy_r_r95);
-    if (unlikely(cpy_r_r96 == NULL)) {
+    cpy_r_r95 = CPyStatic_time_based___globals;
+    cpy_r_r96 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_compute_probabilities' */
+    cpy_r_r97 = CPyDict_GetItem(cpy_r_r95, cpy_r_r96);
+    if (unlikely(cpy_r_r97 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL45;
+        goto CPyL43;
     }
-    PyObject *cpy_r_r97[1] = {cpy_r_r93};
-    cpy_r_r98 = (PyObject **)&cpy_r_r97;
-    cpy_r_r99 = PyObject_Vectorcall(cpy_r_r96, cpy_r_r98, 1, 0);
-    CPy_DECREF(cpy_r_r96);
-    if (unlikely(cpy_r_r99 == NULL)) {
+    cpy_r_r98 = CPyStatic_time_based___globals;
+    cpy_r_r99 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'to_tuple' */
+    cpy_r_r100 = CPyDict_GetItem(cpy_r_r98, cpy_r_r99);
+    if (unlikely(cpy_r_r100 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL45;
+        goto CPyL46;
     }
-    CPy_DECREF(cpy_r_r93);
-    cpy_r_r100 = CPyStatic_time_based___globals;
-    cpy_r_r101 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_compute_probabilities' */
-    cpy_r_r102 = PyDict_SetItem(cpy_r_r100, cpy_r_r101, cpy_r_r99);
-    CPy_DECREF(cpy_r_r99);
-    cpy_r_r103 = cpy_r_r102 >= 0;
-    if (unlikely(!cpy_r_r103)) {
+    PyObject *cpy_r_r101[1] = {cpy_r_r97};
+    cpy_r_r102 = (PyObject **)&cpy_r_r101;
+    cpy_r_r103 = PyObject_Vectorcall(cpy_r_r100, cpy_r_r102, 1, 0);
+    CPy_DECREF(cpy_r_r100);
+    if (unlikely(cpy_r_r103 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL46;
     }
+    CPy_DECREF(cpy_r_r97);
     cpy_r_r104 = CPyStatic_time_based___globals;
-    cpy_r_r105 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r106 = CPyDict_GetItem(cpy_r_r104, cpy_r_r105);
-    if (unlikely(cpy_r_r106 == NULL)) {
+    cpy_r_r105 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '_compute_probabilities' */
+    cpy_r_r106 = PyDict_SetItem(cpy_r_r104, cpy_r_r105, cpy_r_r103);
+    CPy_DECREF(cpy_r_r103);
+    cpy_r_r107 = cpy_r_r106 >= 0;
+    if (unlikely(!cpy_r_r107)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r107 = CPyStatic_time_based___globals;
-    cpy_r_r108 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'curry' */
-    cpy_r_r109 = CPyDict_GetItem(cpy_r_r107, cpy_r_r108);
-    if (unlikely(cpy_r_r109 == NULL)) {
+    cpy_r_r108 = CPyStatic_time_based___globals;
+    cpy_r_r109 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
+    cpy_r_r110 = CPyDict_GetItem(cpy_r_r108, cpy_r_r109);
+    if (unlikely(cpy_r_r110 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL46;
+        goto CPyL43;
     }
-    PyObject *cpy_r_r110[1] = {cpy_r_r106};
-    cpy_r_r111 = (PyObject **)&cpy_r_r110;
-    cpy_r_r112 = PyObject_Vectorcall(cpy_r_r109, cpy_r_r111, 1, 0);
-    CPy_DECREF(cpy_r_r109);
-    if (unlikely(cpy_r_r112 == NULL)) {
+    cpy_r_r111 = CPyStatic_time_based___globals;
+    cpy_r_r112 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'curry' */
+    cpy_r_r113 = CPyDict_GetItem(cpy_r_r111, cpy_r_r112);
+    if (unlikely(cpy_r_r113 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL46;
+        goto CPyL47;
     }
-    CPy_DECREF(cpy_r_r106);
-    cpy_r_r113 = CPyStatic_time_based___globals;
-    cpy_r_r114 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r115 = PyDict_SetItem(cpy_r_r113, cpy_r_r114, cpy_r_r112);
-    CPy_DECREF(cpy_r_r112);
-    cpy_r_r116 = cpy_r_r115 >= 0;
-    if (unlikely(!cpy_r_r116)) {
+    PyObject *cpy_r_r114[1] = {cpy_r_r110};
+    cpy_r_r115 = (PyObject **)&cpy_r_r114;
+    cpy_r_r116 = PyObject_Vectorcall(cpy_r_r113, cpy_r_r115, 1, 0);
+    CPy_DECREF(cpy_r_r113);
+    if (unlikely(cpy_r_r116 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL47;
     }
+    CPy_DECREF(cpy_r_r110);
     cpy_r_r117 = CPyStatic_time_based___globals;
     cpy_r_r118 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r119 = CPyDict_GetItem(cpy_r_r117, cpy_r_r118);
-    if (unlikely(cpy_r_r119 == NULL)) {
+    cpy_r_r119 = PyDict_SetItem(cpy_r_r117, cpy_r_r118, cpy_r_r116);
+    CPy_DECREF(cpy_r_r116);
+    cpy_r_r120 = cpy_r_r119 >= 0;
+    if (unlikely(!cpy_r_r120)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r120 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 60 */
-    cpy_r_r121 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
-    PyObject *cpy_r_r122[2] = {cpy_r_r120, cpy_r_r121};
-    cpy_r_r123 = (PyObject **)&cpy_r_r122;
-    cpy_r_r124 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
-    cpy_r_r125 = PyObject_Vectorcall(cpy_r_r119, cpy_r_r123, 0, cpy_r_r124);
-    CPy_DECREF(cpy_r_r119);
-    if (unlikely(cpy_r_r125 == NULL)) {
+    cpy_r_r121 = CPyStatic_time_based___globals;
+    cpy_r_r122 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
+    cpy_r_r123 = CPyDict_GetItem(cpy_r_r121, cpy_r_r122);
+    if (unlikely(cpy_r_r123 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyStatic_time_based___fast_gas_price_strategy = cpy_r_r125;
+    cpy_r_r124 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 60 */
+    cpy_r_r125 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
+    PyObject *cpy_r_r126[2] = {cpy_r_r124, cpy_r_r125};
+    cpy_r_r127 = (PyObject **)&cpy_r_r126;
+    cpy_r_r128 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
+    cpy_r_r129 = PyObject_Vectorcall(cpy_r_r123, cpy_r_r127, 0, cpy_r_r128);
+    CPy_DECREF(cpy_r_r123);
+    if (unlikely(cpy_r_r129 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL43;
+    }
+    CPyStatic_time_based___fast_gas_price_strategy = cpy_r_r129;
     CPy_INCREF(CPyStatic_time_based___fast_gas_price_strategy);
-    cpy_r_r126 = CPyStatic_time_based___globals;
-    cpy_r_r127 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'fast_gas_price_strategy' */
-    cpy_r_r128 = CPyDict_SetItem(cpy_r_r126, cpy_r_r127, cpy_r_r125);
-    CPy_DECREF(cpy_r_r125);
-    cpy_r_r129 = cpy_r_r128 >= 0;
-    if (unlikely(!cpy_r_r129)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
     cpy_r_r130 = CPyStatic_time_based___globals;
-    cpy_r_r131 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r132 = CPyDict_GetItem(cpy_r_r130, cpy_r_r131);
-    if (unlikely(cpy_r_r132 == NULL)) {
+    cpy_r_r131 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'fast_gas_price_strategy' */
+    cpy_r_r132 = CPyDict_SetItem(cpy_r_r130, cpy_r_r131, cpy_r_r129);
+    CPy_DECREF(cpy_r_r129);
+    cpy_r_r133 = cpy_r_r132 >= 0;
+    if (unlikely(!cpy_r_r133)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r133 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 600 */
-    cpy_r_r134 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
-    PyObject *cpy_r_r135[2] = {cpy_r_r133, cpy_r_r134};
-    cpy_r_r136 = (PyObject **)&cpy_r_r135;
-    cpy_r_r137 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
-    cpy_r_r138 = PyObject_Vectorcall(cpy_r_r132, cpy_r_r136, 0, cpy_r_r137);
-    CPy_DECREF(cpy_r_r132);
-    if (unlikely(cpy_r_r138 == NULL)) {
+    cpy_r_r134 = CPyStatic_time_based___globals;
+    cpy_r_r135 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
+    cpy_r_r136 = CPyDict_GetItem(cpy_r_r134, cpy_r_r135);
+    if (unlikely(cpy_r_r136 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyStatic_time_based___medium_gas_price_strategy = cpy_r_r138;
+    cpy_r_r137 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 600 */
+    cpy_r_r138 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
+    PyObject *cpy_r_r139[2] = {cpy_r_r137, cpy_r_r138};
+    cpy_r_r140 = (PyObject **)&cpy_r_r139;
+    cpy_r_r141 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
+    cpy_r_r142 = PyObject_Vectorcall(cpy_r_r136, cpy_r_r140, 0, cpy_r_r141);
+    CPy_DECREF(cpy_r_r136);
+    if (unlikely(cpy_r_r142 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL43;
+    }
+    CPyStatic_time_based___medium_gas_price_strategy = cpy_r_r142;
     CPy_INCREF(CPyStatic_time_based___medium_gas_price_strategy);
-    cpy_r_r139 = CPyStatic_time_based___globals;
-    cpy_r_r140 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'medium_gas_price_strategy' */
-    cpy_r_r141 = CPyDict_SetItem(cpy_r_r139, cpy_r_r140, cpy_r_r138);
-    CPy_DECREF(cpy_r_r138);
-    cpy_r_r142 = cpy_r_r141 >= 0;
-    if (unlikely(!cpy_r_r142)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
     cpy_r_r143 = CPyStatic_time_based___globals;
-    cpy_r_r144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r145 = CPyDict_GetItem(cpy_r_r143, cpy_r_r144);
-    if (unlikely(cpy_r_r145 == NULL)) {
+    cpy_r_r144 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'medium_gas_price_strategy' */
+    cpy_r_r145 = CPyDict_SetItem(cpy_r_r143, cpy_r_r144, cpy_r_r142);
+    CPy_DECREF(cpy_r_r142);
+    cpy_r_r146 = cpy_r_r145 >= 0;
+    if (unlikely(!cpy_r_r146)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r146 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 3600 */
-    cpy_r_r147 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
-    PyObject *cpy_r_r148[2] = {cpy_r_r146, cpy_r_r147};
-    cpy_r_r149 = (PyObject **)&cpy_r_r148;
-    cpy_r_r150 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
-    cpy_r_r151 = PyObject_Vectorcall(cpy_r_r145, cpy_r_r149, 0, cpy_r_r150);
-    CPy_DECREF(cpy_r_r145);
-    if (unlikely(cpy_r_r151 == NULL)) {
+    cpy_r_r147 = CPyStatic_time_based___globals;
+    cpy_r_r148 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
+    cpy_r_r149 = CPyDict_GetItem(cpy_r_r147, cpy_r_r148);
+    if (unlikely(cpy_r_r149 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyStatic_time_based___slow_gas_price_strategy = cpy_r_r151;
+    cpy_r_r150 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 3600 */
+    cpy_r_r151 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 120 */
+    PyObject *cpy_r_r152[2] = {cpy_r_r150, cpy_r_r151};
+    cpy_r_r153 = (PyObject **)&cpy_r_r152;
+    cpy_r_r154 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
+    cpy_r_r155 = PyObject_Vectorcall(cpy_r_r149, cpy_r_r153, 0, cpy_r_r154);
+    CPy_DECREF(cpy_r_r149);
+    if (unlikely(cpy_r_r155 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL43;
+    }
+    CPyStatic_time_based___slow_gas_price_strategy = cpy_r_r155;
     CPy_INCREF(CPyStatic_time_based___slow_gas_price_strategy);
-    cpy_r_r152 = CPyStatic_time_based___globals;
-    cpy_r_r153 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'slow_gas_price_strategy' */
-    cpy_r_r154 = CPyDict_SetItem(cpy_r_r152, cpy_r_r153, cpy_r_r151);
-    CPy_DECREF(cpy_r_r151);
-    cpy_r_r155 = cpy_r_r154 >= 0;
-    if (unlikely(!cpy_r_r155)) {
-        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
-    }
     cpy_r_r156 = CPyStatic_time_based___globals;
-    cpy_r_r157 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
-    cpy_r_r158 = CPyDict_GetItem(cpy_r_r156, cpy_r_r157);
-    if (unlikely(cpy_r_r158 == NULL)) {
+    cpy_r_r157 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'slow_gas_price_strategy' */
+    cpy_r_r158 = CPyDict_SetItem(cpy_r_r156, cpy_r_r157, cpy_r_r155);
+    CPy_DECREF(cpy_r_r155);
+    cpy_r_r159 = cpy_r_r158 >= 0;
+    if (unlikely(!cpy_r_r159)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    cpy_r_r159 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 86400 */
-    cpy_r_r160 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 720 */
-    PyObject *cpy_r_r161[2] = {cpy_r_r159, cpy_r_r160};
-    cpy_r_r162 = (PyObject **)&cpy_r_r161;
-    cpy_r_r163 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
-    cpy_r_r164 = PyObject_Vectorcall(cpy_r_r158, cpy_r_r162, 0, cpy_r_r163);
-    CPy_DECREF(cpy_r_r158);
-    if (unlikely(cpy_r_r164 == NULL)) {
+    cpy_r_r160 = CPyStatic_time_based___globals;
+    cpy_r_r161 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'construct_time_based_gas_price_strategy' */
+    cpy_r_r162 = CPyDict_GetItem(cpy_r_r160, cpy_r_r161);
+    if (unlikely(cpy_r_r162 == NULL)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
-    CPyStatic_time_based___glacial_gas_price_strategy = cpy_r_r164;
+    cpy_r_r163 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 86400 */
+    cpy_r_r164 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 720 */
+    PyObject *cpy_r_r165[2] = {cpy_r_r163, cpy_r_r164};
+    cpy_r_r166 = (PyObject **)&cpy_r_r165;
+    cpy_r_r167 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* ('max_wait_seconds', 'sample_size') */
+    cpy_r_r168 = PyObject_Vectorcall(cpy_r_r162, cpy_r_r166, 0, cpy_r_r167);
+    CPy_DECREF(cpy_r_r162);
+    if (unlikely(cpy_r_r168 == NULL)) {
+        CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
+        goto CPyL43;
+    }
+    CPyStatic_time_based___glacial_gas_price_strategy = cpy_r_r168;
     CPy_INCREF(CPyStatic_time_based___glacial_gas_price_strategy);
-    cpy_r_r165 = CPyStatic_time_based___globals;
-    cpy_r_r166 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'glacial_gas_price_strategy' */
-    cpy_r_r167 = CPyDict_SetItem(cpy_r_r165, cpy_r_r166, cpy_r_r164);
-    CPy_DECREF(cpy_r_r164);
-    cpy_r_r168 = cpy_r_r167 >= 0;
-    if (unlikely(!cpy_r_r168)) {
+    cpy_r_r169 = CPyStatic_time_based___globals;
+    cpy_r_r170 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'glacial_gas_price_strategy' */
+    cpy_r_r171 = CPyDict_SetItem(cpy_r_r169, cpy_r_r170, cpy_r_r168);
+    CPy_DECREF(cpy_r_r168);
+    cpy_r_r172 = cpy_r_r171 >= 0;
+    if (unlikely(!cpy_r_r172)) {
         CPy_AddTraceback("faster_web3/gas_strategies/time_based.py", "<module>", DIFFCHECK_PLACEHOLDER, CPyStatic_time_based___globals);
-        goto CPyL42;
+        goto CPyL43;
     }
     return 1;
-CPyL42: ;
-    cpy_r_r169 = 2;
-    return cpy_r_r169;
 CPyL43: ;
-    CPy_DecRef(cpy_r_r58);
-    goto CPyL42;
+    cpy_r_r173 = 2;
+    return cpy_r_r173;
 CPyL44: ;
-    CPy_DecRef(cpy_r_r77);
-    goto CPyL42;
+    CPy_DecRef(cpy_r_r62);
+    goto CPyL43;
 CPyL45: ;
-    CPy_DecRef(cpy_r_r93);
-    goto CPyL42;
+    CPy_DecRef(cpy_r_r81);
+    goto CPyL43;
 CPyL46: ;
-    CPy_DecRef(cpy_r_r106);
-    goto CPyL42;
+    CPy_DecRef(cpy_r_r97);
+    goto CPyL43;
+CPyL47: ;
+    CPy_DecRef(cpy_r_r110);
+    goto CPyL43;
 }
 static PyMethodDef eth_testermodule_methods[] = {
     {NULL, NULL, 0, NULL}
@@ -236695,19 +236683,22 @@ PyObject *CPyDef_persistent_connection___PersistentConnection___subscriptions(Py
         cpy_r_r3 = cpy_r_r2;
     else {
         CPy_TypeErrorTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", 50, CPyStatic_persistent_connection___globals, "faster_web3.providers.persistent.request_processor.RequestProcessor", cpy_r_r2);
-        goto CPyL4;
+        goto CPyL5;
     }
     cpy_r_r4 = CPyDef_request_processor___RequestProcessor___active_subscriptions(cpy_r_r3);
-    CPy_DECREF_NO_IMM(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/persistent_connection.py", "subscriptions", DIFFCHECK_PLACEHOLDER, CPyStatic_persistent_connection___globals);
-        goto CPyL4;
+        goto CPyL5;
     }
 CPyL3: ;
+    CPy_DECREF(cpy_r_r2);
     return cpy_r_r4;
 CPyL4: ;
     cpy_r_r5 = NULL;
     return cpy_r_r5;
+CPyL5: ;
+    CPy_DecRef(cpy_r_r2);
+    goto CPyL4;
 }
 
 PyObject *CPyPy_persistent_connection___PersistentConnection___subscriptions(PyObject *self, PyObject *const *args, size_t nargs, PyObject *kwnames) {
@@ -248828,7 +248819,7 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_traverse(faster_w
     Py_VISIT(self->___mypyc_temp__19.f1);
     Py_VISIT(self->___mypyc_temp__19.f2);
     Py_VISIT(self->___mypyc_generator_attribute__unsubscribed);
-    Py_VISIT(self->___mypyc_temp__2_0);
+    Py_VISIT(self->___mypyc_temp__2_1);
     return 0;
 }
 
@@ -248843,7 +248834,7 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_clear(faster_web3
     Py_CLEAR(self->___mypyc_temp__19.f1);
     Py_CLEAR(self->___mypyc_temp__19.f2);
     Py_CLEAR(self->___mypyc_generator_attribute__unsubscribed);
-    Py_CLEAR(self->___mypyc_temp__2_0);
+    Py_CLEAR(self->___mypyc_temp__2_1);
     return 0;
 }
 
@@ -248863,8 +248854,8 @@ subscription_manager___unsubscribe_all_SubscriptionManager_gen_dealloc(faster_we
         Py_CLEAR(self->___mypyc_temp__19.f1);
         Py_CLEAR(self->___mypyc_temp__19.f2);
         Py_CLEAR(self->___mypyc_generator_attribute__unsubscribed);
-        Py_CLEAR(self->___mypyc_temp__2_0);
-        self->___mypyc_temp__2_1 = -113;
+        self->___mypyc_temp__2_0 = -113;
+        Py_CLEAR(self->___mypyc_temp__2_1);
         return;
     }
     CPy_TRASHCAN_BEGIN(self, subscription_manager___unsubscribe_all_SubscriptionManager_gen_dealloc)
@@ -248951,7 +248942,7 @@ PyObject *CPyDef_subscription_manager_____mypyc__unsubscribe_all_SubscriptionMan
     self->___mypyc_next_label__ = -113;
     self->___mypyc_temp__17 = -113;
     self->___mypyc_temp__19 = (tuple_T3OOO) { NULL, NULL, NULL };
-    self->___mypyc_temp__2_1 = -113;
+    self->___mypyc_temp__2_0 = -113;
     return (PyObject *)self;
 }
 
@@ -254688,10 +254679,10 @@ CPyL6: ;
     cpy_r_r10 = (CPyPtr)&((PyVarObject *)cpy_r_r9)->ob_size;
     cpy_r_r11 = *(int64_t *)cpy_r_r10;
     cpy_r_r12 = PyList_New(cpy_r_r11);
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r12;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r12;
     cpy_r_r13 = 1;
     if (unlikely(cpy_r_r12 == NULL)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe_all", DIFFCHECK_PLACEHOLDER, CPyStatic_subscription_manager___globals);
@@ -254764,7 +254755,7 @@ CPyL15: ;
     if (unlikely(cpy_r_r29 == -113)) {
         PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__17' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r29;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r29;
     cpy_r_r30 = 1;
     if (unlikely(cpy_r_r29 == -113)) {
         CPy_AddTraceback("faster_web3/providers/persistent/subscription_manager.py", "unsubscribe_all", -1, CPyStatic_subscription_manager___globals);
@@ -254968,15 +254959,15 @@ CPyL47: ;
         goto CPyL83;
     }
     cpy_r_r61 = cpy_r_r60 ? Py_True : Py_False;
-    cpy_r_r62 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
+    cpy_r_r62 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
     if (unlikely(cpy_r_r62 == NULL)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     } else {
         CPy_INCREF_NO_IMM(cpy_r_r62);
     }
-    cpy_r_r63 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
+    cpy_r_r63 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
     if (unlikely(cpy_r_r63 == -113)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     }
     CPyList_SetItemUnsafe(cpy_r_r62, cpy_r_r63, cpy_r_r61);
     CPy_DECREF_NO_IMM(cpy_r_r62);
@@ -254995,9 +254986,9 @@ CPyL50: ;
     } else
         goto CPyL10;
 CPyL51: ;
-    cpy_r_r67 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0;
+    cpy_r_r67 = ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1;
     if (unlikely(cpy_r_r67 == NULL)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_0' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
+        PyErr_SetString(PyExc_AttributeError, "attribute '__mypyc_temp__2_1' of 'unsubscribe_all_SubscriptionManager_gen' undefined");
     } else {
         CPy_INCREF_NO_IMM(cpy_r_r67);
     }
@@ -255192,10 +255183,10 @@ CPyL90: ;
 CPyL91: ;
     CPy_XDecRef(cpy_r_r3);
     cpy_r_r107 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r107;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r107;
     cpy_r_r108 = 1;
     goto CPyL39;
 CPyL92: ;
@@ -255205,10 +255196,10 @@ CPyL93: ;
     goto CPyL39;
 CPyL94: ;
     cpy_r_r109 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r109;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r109;
     cpy_r_r110 = 1;
     CPy_DecRef(cpy_r_r41);
     goto CPyL39;
@@ -255239,10 +255230,10 @@ CPyL102: ;
 CPyL103: ;
     CPy_XDECREF(cpy_r_r3);
     cpy_r_r111 = NULL;
-    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 != NULL) {
-        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0);
+    if (((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 != NULL) {
+        CPy_DECREF_NO_IMM(((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1);
     }
-    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_0 = cpy_r_r111;
+    ((faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject *)cpy_r___mypyc_self__)->___mypyc_temp__2_1 = cpy_r_r111;
     cpy_r_r112 = 1;
     goto CPyL1;
 CPyL104: ;
@@ -290437,6 +290428,7 @@ int CPyGlobalsInit(void)
     CPyModule_faster_hexbytes = Py_None;
     CPyModule_faster_web3 = Py_None;
     CPyModule_faster_web3____utils___math = Py_None;
+    CPyModule_faster_web3___datastructures = Py_None;
     CPyModule_faster_web3___exceptions = Py_None;
     CPyModule_faster_web3___types = Py_None;
     CPyModule_faster_web3___providers___eth_tester = Py_None;
@@ -290676,7 +290668,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\004\016RequestBatcher\ais_text\bis_bytes\alatin-1",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\tfinalized\004safe",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
@@ -291299,15 +291291,15 @@ const int CPyLit_Tuple[] = {
     1375, 1, 374, 1, 1377, 1, 1356, 1, 1364, 2, 1355, 305, 6, 596, 328,
     1379, 598, 599, 330, 1, 548, 1, 77, 2, 330, 331, 1, 1383, 2, 358,
     1388, 2, 1395, 1396, 3, 1397, 1397, 1397, 3, 1398, 1398, 1398, 3,
-    1399, 1399, 1399, 3, 2228, 2229, 2230, 5, 73, 691, 77, 283, 79, 1,
-    1401, 3, 698, 1173, 1390, 1, 1402, 2, 874, 567, 5, 597, 1404, 329,
-    330, 331, 2, 1409, 1396, 2, 1414, 1415, 3, 1437, 1437, 1437, 3, 1438,
-    1438, 1438, 4, 2240, 2230, 2241, 1992, 10, 171, 70, 363, 73, 75, 444,
-    77, 79, 172, 521, 1, 165, 4, 738, 1440, 1418, 907, 2, 190, 191, 4,
-    1442, 542, 467, 263, 1, 892, 3, 786, 698, 1430, 1, 1443, 2, 753, 775,
-    2, 725, 723, 5, 1444, 1445, 371, 793, 1446, 1, 1474, 1, 1576, 1, 1574,
-    3, 281, 1244, 1581, 1, 1582, 3, 281, 186, 1581, 1, 1418, 9, 171, 70,
-    363, 72, 73, 76, 77, 80, 284, 1, 389, 1, 469, 1, 505, 4, 369, 741,
+    1399, 1399, 1399, 3, 2228, 2229, 2230, 7, 70, 73, 691, 77, 283, 79,
+    80, 1, 1401, 3, 698, 1173, 1390, 1, 1402, 2, 874, 567, 5, 597, 1404,
+    329, 330, 331, 2, 1409, 1396, 2, 1414, 1415, 3, 1437, 1437, 1437, 3,
+    1438, 1438, 1438, 4, 2240, 2230, 2241, 1992, 10, 171, 70, 363, 73, 75,
+    444, 77, 79, 172, 521, 1, 165, 4, 738, 1440, 1418, 907, 2, 190, 191,
+    4, 1442, 542, 467, 263, 1, 892, 3, 786, 698, 1430, 1, 1443, 2, 753,
+    775, 2, 725, 723, 5, 1444, 1445, 371, 793, 1446, 1, 1474, 1, 1576, 1,
+    1574, 3, 281, 1244, 1581, 1, 1582, 3, 281, 186, 1581, 1, 1418, 9, 171,
+    70, 363, 72, 73, 76, 77, 80, 284, 1, 389, 1, 469, 1, 505, 4, 369, 741,
     458, 459, 2, 1580, 1586, 2, 1592, 1593, 1, 2230, 7, 171, 70, 363, 72,
     73, 77, 81, 2, 174, 191, 3, 465, 397, 396, 2, 892, 611, 5, 310, 786,
     698, 1605, 923, 6, 1606, 1607, 936, 794, 937, 1608, 1, 1609, 1, 1610,
@@ -291326,8 +291318,8 @@ const int CPyLit_Tuple[] = {
     72, 73, 365, 75, 77, 79, 521, 81, 1, 802
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 393, 307, 295, 394, 395, 3, 19, 1945, 0, 2, 896, 897, 4, 1092,
-    378, 1095, 1094
+    4, 5, 393, 295, 394, 307, 395, 3, 19, 1945, 0, 2, 896, 897, 4, 1092,
+    1094, 378, 1095
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;

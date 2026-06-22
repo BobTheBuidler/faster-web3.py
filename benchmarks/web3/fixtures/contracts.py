@@ -18,12 +18,6 @@ from benchmarks.web3.fixtures.core import (
 from benchmarks.web3.fixtures.blocks import (
     CONTRACT_BUILD_LATEST_BLOCK_RESPONSE_BYTES,
 )
-from benchmarks.web3.fixtures.providers import (
-    faster_async_http_w3,
-    faster_http_w3,
-    web3_async_http_w3,
-    web3_http_w3,
-)
 from benchmarks.web3.fixtures.rpc import (
     GAS_21000_RESPONSE_BYTES,
     HASH32_RESPONSE_BYTES,
@@ -86,19 +80,3 @@ SEND_TRANSACTION_RESPONSES = (
     TX_HASH_RESPONSE_BYTES,
     HEX_1_RESPONSE_BYTES,
 )
-
-
-def web3_erc20_contract():
-    return web3_http_w3().eth.contract(address=ADDRESS, abi=ERC20_ABI)
-
-
-def faster_erc20_contract():
-    return faster_http_w3().eth.contract(address=ADDRESS, abi=ERC20_ABI)
-
-
-def web3_async_erc20_contract():
-    return web3_async_http_w3().eth.contract(address=ADDRESS, abi=ERC20_ABI)
-
-
-def faster_async_erc20_contract():
-    return faster_async_http_w3().eth.contract(address=ADDRESS, abi=ERC20_ABI)

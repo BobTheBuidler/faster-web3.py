@@ -123,15 +123,6 @@ typedef struct tuple_T4OOOO {
 } tuple_T4OOOO;
 #endif
 
-#ifndef MYPYC_DECLARED_tuple_T3OOI
-#define MYPYC_DECLARED_tuple_T3OOI
-typedef struct tuple_T3OOI {
-    PyObject *f0;
-    PyObject *f1;
-    CPyTagged f2;
-} tuple_T3OOI;
-#endif
-
 #ifndef MYPYC_DECLARED_tuple_T6OOOOOO
 #define MYPYC_DECLARED_tuple_T6OOOOOO
 typedef struct tuple_T6OOOOOO {
@@ -2144,8 +2135,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    PyObject *___mypyc_temp__2_0;
-    int64_t ___mypyc_temp__2_1;
+    int64_t ___mypyc_temp__2_0;
+    PyObject *___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {

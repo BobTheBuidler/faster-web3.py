@@ -2,11 +2,13 @@ import collections
 import math
 import operator
 from typing import (
+    Any,
     Final,
     Iterable,
     Optional,
     Sequence,
     Tuple,
+    Union,
 )
 
 from eth_typing import (
@@ -29,6 +31,9 @@ from faster_web3 import (
 )
 from faster_web3._utils.math import (
     percentile,
+)
+from faster_web3.datastructures import (
+    AttributeDict,
 )
 from faster_web3.exceptions import (
     InsufficientData,
@@ -84,7 +89,7 @@ def _get_weighted_avg_block_time(w3: Web3, sample_size: int) -> float:
 def _get_raw_miner_data(
     w3: Web3, sample_size: int
 ) -> Iterable[Tuple[ChecksumAddress, HexBytes, Wei]]:
-    transaction: TxData
+    transaction: Union[TxData, AttributeDict[str, Any]]
 
     latest = w3.eth.get_block("latest", full_transactions=True)
 
