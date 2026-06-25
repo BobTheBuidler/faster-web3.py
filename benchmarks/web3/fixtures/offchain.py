@@ -1,20 +1,38 @@
 import pytest
 
+from benchmarks.web3.fixtures.http import (
+    AIOHTTP_CLIENT_SESSION_GET,
+    AIOHTTP_CLIENT_SESSION_POST,
+    REQUESTS_SESSION_GET,
+    REQUESTS_SESSION_POST,
+    StaticAiohttpResponse,
+    StaticResponse,
+)
+
+
 OFFCHAIN_LOOKUP_PAYLOAD_BYTES = {
     "sender": b"\x00" * 20,
     "callData": b"\x01\x02\x03",
     "callbackFunction": b"\x12\x34\x56\x78",
     "extraData": b"\x04\x05",
 }
-
 OFFCHAIN_LOOKUP_PAYLOAD_HEX = {
     "sender": "0x" + "00" * 20,
     "callData": "0x010203",
     "callbackFunction": "0x12345678",
     "extraData": "0x0405",
 }
-
-TX_PARAMS = {"to": b"\x00" * 20}
+OFFCHAIN_LOOKUP_TX_PARAMS = {"to": b"\x00" * 20}
+OFFCHAIN_LOOKUP_RESPONSE = {"data": "0xdeadbeef"}
+OFFCHAIN_LOOKUP_RESPONSE_OBJECT = StaticResponse(b"", OFFCHAIN_LOOKUP_RESPONSE)
+OFFCHAIN_LOOKUP_AIOHTTP_RESPONSE_OBJECT = StaticAiohttpResponse(
+    b"",
+    OFFCHAIN_LOOKUP_RESPONSE,
+)
+OFFCHAIN_LOOKUP_PATCH_TARGETS = {
+    "get": (REQUESTS_SESSION_GET, AIOHTTP_CLIENT_SESSION_GET),
+    "post": (REQUESTS_SESSION_POST, AIOHTTP_CLIENT_SESSION_POST),
+}
 
 
 cases = []
@@ -26,35 +44,40 @@ for payload, payload_name in [
         ("https://fake.node/", "post"),
         ("https://fake.node/{sender}/{data}", "get"),
     ]:
+        requests_patch_target, aiohttp_patch_target = OFFCHAIN_LOOKUP_PATCH_TARGETS[
+            patch_method
+        ]
         cases.extend(
             (
-                # Case 1: Single URL, always succeeds
                 pytest.param(
                     payload,
                     [url],
-                    patch_method,
+                    requests_patch_target,
+                    aiohttp_patch_target,
                     [],
                     id=f"{patch_method}-single-{payload_name}",
                 ),
-                # Case 2: Two URLs, first fails, second succeeds
                 pytest.param(
                     payload,
                     [f"fail-{url}", url],
-                    patch_method,
+                    requests_patch_target,
+                    aiohttp_patch_target,
                     [0],
                     id=f"{patch_method}-try2-{payload_name}",
                 ),
-                # Case 3: Three URLs, first and second fail, third succeeds
                 pytest.param(
                     payload,
                     [f"fail-{url}", f"try3-{url}", url],
-                    patch_method,
+                    requests_patch_target,
+                    aiohttp_patch_target,
                     [0, 1],
                     id=f"{patch_method}-try3-{payload_name}",
                 ),
             )
         )
 
+
 parametrize_offchain_lookup = pytest.mark.parametrize(
-    "payload,urls,patch_method,fail_indices", cases
+    "payload,urls,requests_patch_target,aiohttp_patch_target,fail_indices",
+    cases,
 )

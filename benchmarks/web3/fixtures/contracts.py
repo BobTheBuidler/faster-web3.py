@@ -1,6 +1,4 @@
-from eth_abi import (
-    encode,
-)
+import eth_abi
 from eth_utils import (
     to_checksum_address,
 )
@@ -34,10 +32,10 @@ BALANCE_ABI = next(entry for entry in ERC20_ABI if entry.get("name") == "balance
 FALLBACK_ABI = [{"type": "fallback", "stateMutability": "payable"}]
 RECEIVE_ABI = [{"type": "receive", "stateMutability": "payable"}]
 
-BALANCE_RESULT = "0x" + encode(["uint256"], [123]).hex()
-TRANSFER_RESULT = "0x" + encode(["bool"], [True]).hex()
-MULTI_RESULT = encode(["uint256", "bool"], [123, True])
-TUPLE_RESULT = encode(["(uint256,bool)"], [(123, True)])
+BALANCE_RESULT = "0x" + eth_abi.encode(["uint256"], [123]).hex()
+TRANSFER_RESULT = "0x" + eth_abi.encode(["bool"], [True]).hex()
+MULTI_RESULT = eth_abi.encode(["uint256", "bool"], [123, True])
+TUPLE_RESULT = eth_abi.encode(["(uint256,bool)"], [(123, True)])
 MULTI_OUTPUT_ABI = {
     "type": "function",
     "name": "multi",

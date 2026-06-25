@@ -20,7 +20,7 @@ def noop(value):
     return value
 
 
-class FakeProvider:
+class BatchingProviderHarness:
     is_async = False
     has_persistent_connection = False
 
@@ -32,12 +32,12 @@ class FakeProvider:
         return self._batching_context.get() is not None
 
 
-class FakeAsyncProvider(FakeProvider):
+class AsyncBatchingProviderHarness(BatchingProviderHarness):
     is_async = True
     has_persistent_connection = False
 
 
-class FakeManager:
+class BatchingManagerHarness:
     def _make_batch_request(self, requests_info):
         responses = []
         for i, _info in enumerate(requests_info):
@@ -51,13 +51,13 @@ class FakeManager:
         return responses
 
 
-class FakeWeb3:
+class BatchingWeb3Harness:
     def __init__(self, provider):
         self.provider = provider
-        self.manager = FakeManager()
+        self.manager = BatchingManagerHarness()
 
 
-class FakeBatchPayload:
+class BatchingPayloadHarness:
     def __init__(self, method, params):
         self._method = method
         self._params = params
@@ -69,7 +69,7 @@ class FakeBatchPayload:
         )
 
 
-class FakeMethod:
+class BatchingMethodHarness:
     def __init__(self, method):
         self._method = method
 
@@ -84,16 +84,16 @@ RPC_METHOD = faster_web3.types.RPCEndpoint("eth_blockNumber")
 
 
 def _execute_batch_once(batcher_cls, provider_cls):
-    batcher = batcher_cls(FakeWeb3(provider_cls()))
-    payload = FakeBatchPayload(RPC_METHOD, [])
+    batcher = batcher_cls(BatchingWeb3Harness(provider_cls()))
+    payload = BatchingPayloadHarness(RPC_METHOD, [])
     for _ in range(10):
         batcher.add(payload)
     return batcher.execute()
 
 
 async def _async_execute_batch_once(batcher_cls, provider_cls):
-    batcher = batcher_cls(FakeWeb3(provider_cls()))
-    payload = FakeBatchPayload(RPC_METHOD, [])
+    batcher = batcher_cls(BatchingWeb3Harness(provider_cls()))
+    payload = BatchingPayloadHarness(RPC_METHOD, [])
     for _ in range(10):
         batcher.add(payload)
     return await batcher.async_execute()
@@ -132,29 +132,37 @@ def test_faster_sort_batch_response_by_response_ids(
 
 @pytest.mark.benchmark(group="RequestBatcher-add")
 def test_request_batcher_add(benchmark: BenchmarkFixture):
-    batcher = web3._utils.batching.RequestBatcher(FakeWeb3(FakeProvider()))
-    payload = FakeBatchPayload(RPC_METHOD, [])
+    batcher = web3._utils.batching.RequestBatcher(
+        BatchingWeb3Harness(BatchingProviderHarness())
+    )
+    payload = BatchingPayloadHarness(RPC_METHOD, [])
     benchmark(run_1000, batcher.add, payload)
 
 
 @pytest.mark.benchmark(group="RequestBatcher-add")
 def test_faster_request_batcher_add(benchmark: BenchmarkFixture):
-    batcher = faster_web3._utils.batching.RequestBatcher(FakeWeb3(FakeProvider()))
-    payload = FakeBatchPayload(RPC_METHOD, [])
+    batcher = faster_web3._utils.batching.RequestBatcher(
+        BatchingWeb3Harness(BatchingProviderHarness())
+    )
+    payload = BatchingPayloadHarness(RPC_METHOD, [])
     benchmark(run_1000, batcher.add, payload)
 
 
 @pytest.mark.benchmark(group="RequestBatcher-add_mapping")
 def test_request_batcher_add_mapping(benchmark: BenchmarkFixture):
-    batcher = web3._utils.batching.RequestBatcher(FakeWeb3(FakeProvider()))
-    payload = {FakeMethod(RPC_METHOD): [[], []]}
+    batcher = web3._utils.batching.RequestBatcher(
+        BatchingWeb3Harness(BatchingProviderHarness())
+    )
+    payload = {BatchingMethodHarness(RPC_METHOD): [[], []]}
     benchmark(run_1000, batcher.add_mapping, payload)
 
 
 @pytest.mark.benchmark(group="RequestBatcher-add_mapping")
 def test_faster_request_batcher_add_mapping(benchmark: BenchmarkFixture):
-    batcher = faster_web3._utils.batching.RequestBatcher(FakeWeb3(FakeProvider()))
-    payload = {FakeMethod(RPC_METHOD): [[], []]}
+    batcher = faster_web3._utils.batching.RequestBatcher(
+        BatchingWeb3Harness(BatchingProviderHarness())
+    )
+    payload = {BatchingMethodHarness(RPC_METHOD): [[], []]}
     benchmark(run_1000, batcher.add_mapping, payload)
 
 
@@ -164,7 +172,7 @@ def test_request_batcher_execute(benchmark: BenchmarkFixture):
         run_1000,
         _execute_batch_once,
         web3._utils.batching.RequestBatcher,
-        FakeProvider,
+        BatchingProviderHarness,
     )
 
 
@@ -174,7 +182,7 @@ def test_faster_request_batcher_execute(benchmark: BenchmarkFixture):
         run_1000,
         _execute_batch_once,
         faster_web3._utils.batching.RequestBatcher,
-        FakeProvider,
+        BatchingProviderHarness,
     )
 
 
@@ -186,7 +194,7 @@ def test_request_batcher_async_execute(benchmark: BenchmarkFixture):
         run_1000_async,
         _async_execute_batch_once,
         web3._utils.batching.RequestBatcher,
-        FakeAsyncProvider,
+        AsyncBatchingProviderHarness,
     )
 
 
@@ -196,5 +204,5 @@ def test_faster_request_batcher_async_execute(benchmark: BenchmarkFixture):
         run_1000_async,
         _async_execute_batch_once,
         faster_web3._utils.batching.RequestBatcher,
-        FakeAsyncProvider,
+        AsyncBatchingProviderHarness,
     )
