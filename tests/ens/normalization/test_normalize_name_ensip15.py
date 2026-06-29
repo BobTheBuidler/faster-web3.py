@@ -12,7 +12,8 @@ from faster_ens._normalization import (
 NORMALIZATION_TESTS_PATH = os.path.join(
     os.path.dirname(__file__), "normalization_tests.json"
 )
-with open(NORMALIZATION_TESTS_PATH) as f:
+# ENSIP-15 fixture is UTF-8; Windows may otherwise default to cp1252.
+with open(NORMALIZATION_TESTS_PATH, encoding="utf-8") as f:
     normalization_tests = json.load(f)
 
 POSITIVE_TEST_CASES = [test for test in normalization_tests if "error" not in test]
