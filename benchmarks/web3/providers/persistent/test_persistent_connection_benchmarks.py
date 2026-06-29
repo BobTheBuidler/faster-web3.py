@@ -8,8 +8,8 @@ import web3._utils.caching
 import faster_web3._utils.caching
 
 from benchmarks.batching import (
-    run_100_async,
     run_1000,
+    run_1000_async,
 )
 from benchmarks.web3.fixtures.persistent import (
     faster_persistent_w3,
@@ -36,14 +36,14 @@ def active_subscriptions(provider):
 @pytest.mark.parametrize("response", (RPC_SUCCESS_0X1, SUBSCRIPTION_NOTIFICATION))
 def test_socket_recv(benchmark: BenchmarkFixture, response):
     provider = web3_socket_provider(response)
-    benchmark(run_100_async, provider.socket_recv)
+    benchmark(run_1000_async, provider.socket_recv)
 
 
 @pytest.mark.benchmark(group="PersistentConnectionProvider.socket_recv")
 @pytest.mark.parametrize("response", (RPC_SUCCESS_0X1, SUBSCRIPTION_NOTIFICATION))
 def test_faster_socket_recv(benchmark: BenchmarkFixture, response):
     provider = faster_socket_provider(response)
-    benchmark(run_100_async, provider.socket_recv)
+    benchmark(run_1000_async, provider.socket_recv)
 
 
 @pytest.mark.benchmark(group="PersistentConnectionProvider.subscriptions")
