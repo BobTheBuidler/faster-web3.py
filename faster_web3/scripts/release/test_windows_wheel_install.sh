@@ -5,7 +5,24 @@ set -euo pipefail
 python --version
 
 repo_dir="$(pwd)"
-wheel_path="$(find "$repo_dir/dist" -name 'faster_web3-*.whl' -print -quit)"
+
+find_wheel() {
+    if [ ! -d "$repo_dir/dist" ]; then
+        return 0
+    fi
+
+    find "$repo_dir/dist" -name 'faster_web3-*.whl' -print -quit
+}
+
+wheel_path="$(find_wheel)"
+
+# GitHub Actions downloads the mypycified wheel into dist before tox runs, while
+# CircleCI starts from a checkout with no wheel artifact, so only build locally
+# when the artifact branch is not available.
+if [ -z "$wheel_path" ]; then
+    python -m build --wheel
+    wheel_path="$(find_wheel)"
+fi
 
 if [ -z "$wheel_path" ]; then
     echo "No faster_web3 wheel found in $repo_dir/dist" >&2
@@ -17,6 +34,7 @@ python -m venv "$temp_dir/venv-test"
 source "$temp_dir/venv-test/Scripts/activate"
 python -m pip install --upgrade pip
 python -m pip install --upgrade "$wheel_path" --progress-bar off
+cd "$temp_dir"
 python - <<'PY'
 from faster_web3 import Web3
 import faster_web3._utils.method_formatters as method_formatters
