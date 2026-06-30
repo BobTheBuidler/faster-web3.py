@@ -1,4 +1,5 @@
 import pytest
+import hashlib
 import json
 import os
 
@@ -24,10 +25,22 @@ if not len(POSITIVE_TEST_CASES) + len(NEGATIVE_TEST_CASES) == len(normalization_
     raise AssertionError("Not all normalization tests are accounted for.")
 
 
+def _case_ids(prefix, test_cases):
+    # Keep pytest node IDs compact: some ENSIP-15 names are longer than Windows'
+    # environment variable limit once pytest/flaky mirrors node IDs during setup.
+    return [
+        (
+            f"{prefix}-{index:05d}-"
+            f"{hashlib.sha1(test_case['name'].encode('utf-8')).hexdigest()[:8]}"
+        )
+        for index, test_case in enumerate(test_cases)
+    ]
+
+
 @pytest.mark.parametrize(
     "positive_test_case",
     POSITIVE_TEST_CASES,
-    ids=lambda t: t["name"],
+    ids=_case_ids("positive", POSITIVE_TEST_CASES),
 )
 def test_normalize_name_ensip15_positive_test_cases(positive_test_case):
     name = positive_test_case["name"]
@@ -39,7 +52,7 @@ def test_normalize_name_ensip15_positive_test_cases(positive_test_case):
 @pytest.mark.parametrize(
     "negative_test_case",
     NEGATIVE_TEST_CASES,
-    ids=lambda t: t["name"],
+    ids=_case_ids("negative", NEGATIVE_TEST_CASES),
 )
 def test_normalize_name_ensip15_negative_test_cases(negative_test_case):
     name = negative_test_case["name"]
