@@ -1,10 +1,44 @@
 #!/bin/bash
 
-set -e
-rm -rf build dist
-python -m build
-cd $(mktemp -d)
-python -m venv venv-test
-source venv-test/bin/activate
-pip install --upgrade "$(ls ~/repo/dist/web3-*-py3-none-any.whl)"
-python -c "import web3"
+set -euo pipefail
+
+repo_dir="$(pwd)"
+
+find_wheel() {
+    if [ ! -d "$repo_dir/dist" ]; then
+        return 0
+    fi
+
+    find "$repo_dir/dist" -name 'faster_web3-*.whl' -print -quit
+}
+
+wheel_path="$(find_wheel)"
+
+# GitHub Actions downloads the mypycified wheel into dist before tox runs, while
+# CircleCI starts from a checkout with no wheel artifact, so only build locally
+# when the artifact branch is not available.
+if [ -z "$wheel_path" ]; then
+    python -m build --wheel
+    wheel_path="$(find_wheel)"
+fi
+
+if [ -z "$wheel_path" ]; then
+    echo "No faster_web3 wheel found in $repo_dir/dist" >&2
+    exit 1
+fi
+
+temp_dir="$(mktemp -d)"
+python -m venv "$temp_dir/venv-test"
+source "$temp_dir/venv-test/bin/activate"
+python -m pip install --upgrade pip
+python -m pip install --upgrade "$wheel_path"
+cd "$temp_dir"
+python - <<'PY'
+from faster_web3 import Web3
+import faster_web3._utils.method_formatters as method_formatters
+
+compiled_path = method_formatters.__file__
+assert compiled_path.endswith((".so", ".pyd")), compiled_path
+print(Web3)
+print(compiled_path)
+PY

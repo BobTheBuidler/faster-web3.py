@@ -33,7 +33,7 @@ common: &common
         command: |
           python -m pip install --upgrade pip
           python -m pip install tox
-          python web3/scripts/install_pre_releases.py
+          python faster_web3/scripts/install_pre_releases.py
     - run:
         name: run tox
         command: python -m tox run -r
@@ -75,7 +75,7 @@ geth_steps: &geth_steps
               sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
               sudo apt-get update
               sudo apt-get install -y build-essential
-              pygeth_version=$(python web3/scripts/parse_pygeth_version.py)
+              pygeth_version=$(python faster_web3/scripts/parse_pygeth_version.py)
               echo "installing py-geth$pygeth_version"
               pip install -U --user "py-geth$pygeth_version"
               python -m geth.install v<< pipeline.parameters.geth_version >>
