@@ -96,7 +96,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
+        pyminor: ["10", "11", "12", "13", "14"]
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 2 || 1000 }}
     outputs:
@@ -124,6 +124,11 @@ jobs:
         jobtype: [core, ens, integration-ethtester, lint, wheel]
         os: [ubuntu-latest, macos-latest, windows-latest]
         pyminor: ["10", "11", "12", "13", "13t", "14", "14t"]
+        exclude:
+          - os: windows-latest
+            pyminor: "13t"
+          - os: windows-latest
+            pyminor: "14t"
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
     env:
