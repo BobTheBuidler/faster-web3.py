@@ -132,7 +132,7 @@ jobs:
       # limit parallelism for cronjob, otherwise blast it
       max-parallel: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 4 || 1000 }}
     env:
-      TOXENV: py3${{ matrix.pyminor }}-${{ matrix.jobtype }}
+      TOXENV: ${{ matrix.os == 'windows-latest' && matrix.jobtype == 'wheel' && 'windows-wheel' || format('py3{0}-{1}', matrix.pyminor, matrix.jobtype) }}
       TOX_RECREATE_FLAG: ${{ github.event_name == 'schedule' && '-r' || '' }}
     steps:
       - uses: actions/checkout@v7
