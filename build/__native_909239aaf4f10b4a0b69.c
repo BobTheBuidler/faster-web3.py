@@ -5738,7 +5738,7 @@ CPyL7: ;
 CPyL9: ;
     cpy_r_r20 = ((faster_web3___tools___benchmark___utils___wait_for_aiohttp_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__timeout;
     if (unlikely(cpy_r_r20 == CPY_INT_TAG)) {
-        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "timeout", 49, CPyStatic_utils___globals);
+        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "timeout", 48, CPyStatic_utils___globals);
         goto CPyL232;
     }
     CPyTagged_INCREF(cpy_r_r20);
@@ -6061,14 +6061,14 @@ CPyL59: ;
     }
     cpy_r_r80 = ((faster_web3___tools___benchmark___utils___wait_for_aiohttp_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__session;
     if (unlikely(cpy_r_r80 == NULL)) {
-        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "session", 53, CPyStatic_utils___globals);
+        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "session", 52, CPyStatic_utils___globals);
         goto CPyL91;
     }
     CPy_INCREF(cpy_r_r80);
 CPyL61: ;
     cpy_r_r81 = ((faster_web3___tools___benchmark___utils___wait_for_aiohttp_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__endpoint_uri;
     if (unlikely(cpy_r_r81 == NULL)) {
-        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "endpoint_uri", 53, CPyStatic_utils___globals);
+        CPy_AttributeError("faster_web3/tools/benchmark/utils.py", "wait_for_aiohttp", "wait_for_aiohttp_gen", "endpoint_uri", 52, CPyStatic_utils___globals);
         goto CPyL244;
     }
     CPy_INCREF(cpy_r_r81);
