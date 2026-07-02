@@ -1,7 +1,6 @@
----
-name: canonical-benchmarking
-description: Use when adding, reviewing, rebasing, or realigning microbenchmark-grade benchmark PRs in this repo, especially benchmark suites comparing reference libraries against faster implementations.
----
+______________________________________________________________________
+
+## name: canonical-benchmarking description: Use when adding, reviewing, rebasing, or realigning microbenchmark-grade benchmark PRs in this repo, especially benchmark suites comparing reference libraries against faster implementations.
 
 # Canonical Benchmarking
 
@@ -81,11 +80,14 @@ reducing canonical inputs.
 
 - Active benchmark PRs are review stacks only when explicitly requested; do not
   infer semantic dependency without checking.
+
 - Each branch must contain exactly one scoped benchmark payload relative to the
   previous branch.
 
 - Do not commit `build/`, benchmark JSON output, or accidental `benchmarks/results/*` churn.
+
 - If branch work starts from a remote branch, fetch and update from the remote before editing.
+
 - After local `pip install .`, remove generated `build/` before closing the worktree.
 
 ## Audit Checklist

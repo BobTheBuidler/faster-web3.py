@@ -17,10 +17,6 @@ from faster_hexbytes import (
 )
 import pytest_asyncio
 
-from tests.core.contracts.utils import (
-    async_deploy,
-    deploy,
-)
 from faster_web3._utils.abi import (
     recursive_dict_to_namedtuple,
 )
@@ -47,6 +43,10 @@ from faster_web3.exceptions import (
     NoABIFound,
     NoABIFunctionsFound,
     Web3ValidationError,
+)
+from tests.core.contracts.utils import (
+    async_deploy,
+    deploy,
 )
 
 MULTIPLE_FUNCTIONS = json.loads(

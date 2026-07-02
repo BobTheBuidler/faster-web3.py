@@ -17,7 +17,6 @@ from typing import (
     final,
 )
 
-
 T = TypeVar("T")
 
 TimeoutError: Final = asyncio.TimeoutError

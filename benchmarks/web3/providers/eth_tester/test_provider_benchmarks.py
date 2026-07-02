@@ -1,7 +1,10 @@
 import pytest
+
 from pytest_codspeed import (
     BenchmarkFixture,
 )
+import web3.providers.eth_tester.defaults  # noqa: E402
+import web3.providers.eth_tester.main  # noqa: E402
 
 from benchmarks.batching import (  # noqa: E402
     run_10_async,
@@ -20,17 +23,15 @@ from benchmarks.web3.fixtures.eth_tester import (  # noqa: E402
     web3_error_provider,
     web3_provider,
 )
-
-import web3.providers.eth_tester.defaults  # noqa: E402
-import web3.providers.eth_tester.main  # noqa: E402
-
 import faster_web3.providers.eth_tester.defaults  # noqa: E402
 import faster_web3.providers.eth_tester.main  # noqa: E402
 
 
 @pytest.mark.benchmark(group="EthereumTesterProvider.make_request")
 @pytest.mark.parametrize("method,params", ETH_TESTER_REQUEST_CASES)
-def test_EthereumTesterProvider_make_request(benchmark: BenchmarkFixture, method, params):
+def test_EthereumTesterProvider_make_request(
+    benchmark: BenchmarkFixture, method, params
+):
     make_request = web3_provider().make_request
     benchmark(run_100, make_request, method, params)
 

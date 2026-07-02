@@ -1,14 +1,17 @@
 #!/usr/bin/env python
-import sys
 from pathlib import (
     Path,
+)
+import sys
+
+from mypyc.build import (
+    mypycify,
 )
 from setuptools import (
     Extension,
     find_packages,
     setup,
 )
-from mypyc.build import mypycify
 
 
 def read_requirements(path: str) -> list[str]:

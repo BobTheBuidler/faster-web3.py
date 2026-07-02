@@ -4,12 +4,8 @@ eth_tester = pytest.importorskip("eth_tester")
 from eth_tester.exceptions import (  # noqa: E402
     TransactionFailed,
 )
-
 import web3  # noqa: E402
 import web3.providers.eth_tester.defaults  # noqa: E402
-
-import faster_web3  # noqa: E402
-import faster_web3.providers.eth_tester.defaults  # noqa: E402
 
 from benchmarks.web3.fixtures.core import (  # noqa: E402
     EXAMPLE_ADDRESS,
@@ -27,7 +23,8 @@ from benchmarks.web3.fixtures.errors import (  # noqa: E402
     PANIC_BYTES,
     REVERT_REASON_BYTES,
 )
-
+import faster_web3  # noqa: E402
+import faster_web3.providers.eth_tester.defaults  # noqa: E402
 
 ETH_TESTER = eth_tester.EthereumTester()
 ETH_TESTER_UNKNOWN_ENDPOINT = "eth_notReal"

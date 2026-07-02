@@ -3,13 +3,6 @@ import functools
 
 import pytest_asyncio
 
-from tests.core.contracts.utils import (
-    async_deploy,
-    deploy,
-)
-from tests.utils import (
-    async_partial,
-)
 from faster_web3._utils.abi import (
     get_abi_element_signature,
 )
@@ -71,6 +64,13 @@ from faster_web3.exceptions import (
 from faster_web3.utils.abi import (
     abi_to_signature,
     get_abi_element,
+)
+from tests.core.contracts.utils import (
+    async_deploy,
+    deploy,
+)
+from tests.utils import (
+    async_partial,
 )
 
 # --- function name tester contract --- #

@@ -15,9 +15,6 @@ from typing import (
     TypeVar,
 )
 
-from faster_eth_abi import (
-    abi,
-)
 from eth_tester.exceptions import (
     BlockNotFound,
     FilterNotFound,
@@ -27,6 +24,9 @@ from eth_tester.exceptions import (
 from eth_typing import (
     HexAddress,
     HexStr,
+)
+from faster_eth_abi import (
+    abi,
 )
 from faster_eth_utils import (
     decode_hex,

@@ -242,7 +242,6 @@ async def test_unsubscribe_with_subscriptions_reference_does_not_mutate_the_list
 async def test_high_throughput_subscription_with_parallelize(
     subscription_manager: SubscriptionManager,
 ) -> None:
-
     provider = subscription_manager._w3.provider
     num_msgs = 5_000
 

@@ -1,11 +1,11 @@
-import json
-import sys
 from enum import (
     Enum,
 )
+import json
 from pathlib import (
     Path,
 )
+import sys
 from typing import (
     Any,
     ClassVar,

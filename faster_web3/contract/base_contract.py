@@ -17,9 +17,6 @@ from typing import (
 )
 import warnings
 
-from faster_eth_abi.exceptions import (
-    InsufficientDataBytes,
-)
 from eth_typing import (
     ABI,
     ABIElement,
@@ -28,6 +25,9 @@ from eth_typing import (
     Address,
     ChecksumAddress,
     HexStr,
+)
+from faster_eth_abi.exceptions import (
+    InsufficientDataBytes,
 )
 from faster_eth_utils import (
     abi_to_signature,

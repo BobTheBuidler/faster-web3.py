@@ -1,10 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.utils.caching
 
+from benchmarks.batching import (
+    run_100,
+)
 import faster_web3.utils.caching
-from benchmarks.batching import run_100
 
 
 def insert_items(cls, size, keys, values):

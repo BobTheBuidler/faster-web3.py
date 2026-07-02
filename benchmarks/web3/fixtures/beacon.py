@@ -3,7 +3,6 @@ from benchmarks.web3.fixtures.http import (
     StaticResponse,
 )
 
-
 BEACON_BASE_URL = "http://localhost:5052"
 BEACON_DEFAULT_RESPONSE = {"data": "mocked"}
 BEACON_STATE_IDS = ["head", "finalized", "justified", "12345"]

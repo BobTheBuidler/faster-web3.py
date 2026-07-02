@@ -1,10 +1,9 @@
 import web3
 
-import faster_web3
-
 from benchmarks.web3.fixtures.core import (
     LOCALHOST_HTTP_ENDPOINT,
 )
+import faster_web3
 
 
 def web3_http_provider(cache_allowed=True, threshold=3600):

@@ -1,20 +1,29 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from eth_utils.abi import (
+    function_abi_to_4byte_selector,
+)
+from eth_utils.hexadecimal import (
+    encode_hex,
+)
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.validation
 import web3.exceptions
 
-import faster_web3._utils.validation
-import faster_web3.exceptions
-from eth_utils.abi import function_abi_to_4byte_selector
-from eth_utils.hexadecimal import encode_hex
-
-from benchmarks.batching import run_1000, run_1000_exc
-from benchmarks.web3.fixtures import abis
+from benchmarks.batching import (
+    run_1000,
+    run_1000_exc,
+)
+from benchmarks.web3.fixtures import (
+    abis,
+)
 from benchmarks.web3.fixtures.rpc import (
     RPC_NULL_RESULT,
 )
-
+import faster_web3._utils.validation
+import faster_web3.exceptions
 
 # --- Helpers ---
 

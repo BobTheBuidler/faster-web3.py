@@ -3,7 +3,6 @@ from typing import (
     Any,
     Callable,
     Dict,
-    List,
     Optional,
     Sequence,
     Tuple,

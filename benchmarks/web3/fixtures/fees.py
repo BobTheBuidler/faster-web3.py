@@ -3,7 +3,6 @@ from benchmarks.web3.fixtures.core import (
     PRIORITY_FEE_HEX,
 )
 
-
 PYTHONIC_FEE_HISTORY = {
     "oldestBlock": 1,
     "baseFeePerGas": [1_000_000_000, 1_000_000_000],
@@ -39,11 +38,7 @@ _GWEI_HEX_BYTES = GWEI_HEX.encode("ascii")
 _PRIORITY_FEE_HEX_BYTES = PRIORITY_FEE_HEX.encode("ascii")
 FEE_HISTORY_RESPONSE_BYTES = (
     b'{"jsonrpc":"2.0","id":1,"result":{"oldestBlock":"0x1",'
-    b'"baseFeePerGas":["'
-    + _GWEI_HEX_BYTES
-    + b'","'
-    + _GWEI_HEX_BYTES
-    + b'"],'
+    b'"baseFeePerGas":["' + _GWEI_HEX_BYTES + b'","' + _GWEI_HEX_BYTES + b'"],'
     b'"gasUsedRatio":[0.5],'
     b'"reward":[["'
     + _GWEI_HEX_BYTES

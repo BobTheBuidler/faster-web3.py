@@ -20,6 +20,16 @@ repos:
     rev: 6.1.0
     hooks:
     -   id: flake8
+        args:
+        -   --per-file-ignores=__init__.py:F401 benchmarks/**/*.py:E501,E731,F401
+            faster_web3/_utils/batching.py:F811
+            faster_web3/_utils/contract_sources/contract_data/tuple_contracts.py:E501
+            faster_web3/contract/base_contract.py:E501
+            faster_web3/providers/eth_tester/middleware.py:E501
+            scripts/benchmark/*.py:E501,F541
+            tests/conftest.py:E501
+            tests/core/contracts/conftest.py:E501
+            tests/core/providers/test_async_http_provider.py:E501
         additional_dependencies:
         -   flake8-bugbear==23.9.16
         exclude: setup.py
@@ -55,7 +65,9 @@ repos:
     rev: v0.2.5
     hooks:
     -   id: blocklint
-        exclude: 'normalization_tests.json|docs/(Makefile|release_notes.rst|faster_web3.eth.rst|ens_overview.rst|troubleshooting.rst|transactions.rst|faster_web3.contract.rst)'
+        args:
+        -   --skip-files=.github/workflows/benchmark.yaml,.github/workflows/release.yaml,.github/workflows/tox.yaml,AGENTS.md,README.md,setup.py,benchmarks/results/unknown.md,docs/Makefile,docs/release_notes.rst,docs/web3.eth.rst,docs/faster_web3.eth.rst,docs/ens_overview.rst,docs/troubleshooting.rst,docs/transactions.rst,docs/web3.contract.rst,docs/faster_web3.contract.rst
+        exclude: 'normalization_tests.json|\.github/workflows/(benchmark|release|tox)\.yaml|AGENTS.md|README.md|setup.py|benchmarks/results/unknown.md|docs/(Makefile|release_notes.rst|web3.eth.rst|faster_web3.eth.rst|ens_overview.rst|troubleshooting.rst|transactions.rst|web3.contract.rst|faster_web3.contract.rst)'
 -   repo: local
     hooks:
     -   id: check-rst-files

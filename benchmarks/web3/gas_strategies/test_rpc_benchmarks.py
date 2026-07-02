@@ -1,15 +1,12 @@
+import pytest
 from unittest.mock import (
     patch,
 )
 
-import pytest
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 import web3.gas_strategies.rpc
-
-import faster_web3.gas_strategies.rpc
 
 from benchmarks.batching import (
     run_10000,
@@ -25,7 +22,7 @@ from benchmarks.web3.fixtures.http import (
 from benchmarks.web3.fixtures.rpc import (
     GWEI_RESPONSE_BYTES,
 )
-
+import faster_web3.gas_strategies.rpc
 
 TX_CASES = (
     None,

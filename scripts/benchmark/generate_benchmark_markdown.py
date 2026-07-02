@@ -1,6 +1,8 @@
-import os
 import json
-from typing import Any
+import os
+from typing import (
+    Any,
+)
 
 
 def main() -> None:
@@ -14,7 +16,7 @@ def main() -> None:
         "GITHUB_REF", "main"
     ).replace("refs/heads/", "")
 
-    with open(diff_path, "r", encoding="utf-8") as f:
+    with open(diff_path, encoding="utf-8") as f:
         diff: dict[str, dict[str, dict[str, Any]]] = json.load(f)
 
     for module_path, groupDiffs in diff.items():

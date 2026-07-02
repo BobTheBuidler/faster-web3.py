@@ -17,9 +17,6 @@ from typing import (
     final,
 )
 
-from faster_eth_abi.encoding import (
-    BaseArrayEncoder,
-)
 from eth_typing import (
     HexStr,
     Primitives,
@@ -27,6 +24,9 @@ from eth_typing import (
 )
 from faster_eth_abi._grammar import (
     BasicType,
+)
+from faster_eth_abi.encoding import (
+    BaseArrayEncoder,
 )
 from faster_eth_utils import (
     add_0x_prefix,
@@ -70,7 +70,6 @@ from faster_web3.exceptions import (
     Web3TypeError,
     Web3ValueError,
 )
-
 
 TReturn = TypeVar("TReturn")
 

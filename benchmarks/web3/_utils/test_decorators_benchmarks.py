@@ -1,12 +1,15 @@
+import pytest
 import warnings
 
-import pytest
-from pytest_codspeed import BenchmarkFixture
-
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.decorators
 
+from benchmarks.batching import (
+    run_10000,
+)
 import faster_web3._utils.decorators
-from benchmarks.batching import run_10000
 
 
 def _noop(value):

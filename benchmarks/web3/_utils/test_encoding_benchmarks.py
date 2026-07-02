@@ -1,4 +1,5 @@
 import pytest
+
 from eth_utils import (
     to_bytes,
 )
@@ -11,18 +12,11 @@ from pydantic import (
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 import web3._utils.encoding
-import web3.exceptions
 from web3.datastructures import (
     AttributeDict,
 )
-
-import faster_web3._utils.encoding
-import faster_web3.exceptions
-from faster_web3.datastructures import (
-    AttributeDict as FasterAttributeDict,
-)
+import web3.exceptions
 
 from benchmarks.batching import (
     run_100,
@@ -32,6 +26,11 @@ from benchmarks.batching import (
 from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
 )
+import faster_web3._utils.encoding
+from faster_web3.datastructures import (
+    AttributeDict as FasterAttributeDict,
+)
+import faster_web3.exceptions
 
 
 class Payload(BaseModel):

@@ -1,19 +1,19 @@
 import pytest as pytest
 
+from eth_tester.exceptions import (
+    TransactionFailed,
+)
 from faster_eth_abi.exceptions import (
     DecodingError,
     InsufficientDataBytes,
     NonEmptyPaddingBytes,
 )
-from eth_tester.exceptions import (
-    TransactionFailed,
-)
 
-from faster_web3._utils.rpc_abi import (
-    RPC,
-)
 from faster_web3 import (
     EthereumTesterProvider,
+)
+from faster_web3._utils.rpc_abi import (
+    RPC,
 )
 
 

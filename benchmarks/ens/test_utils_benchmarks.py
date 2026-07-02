@@ -1,17 +1,23 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
 import ens.utils
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 
-import faster_ens.utils
-from benchmarks.batching import run_10, run_10_exc, run_500
+from benchmarks.batching import (
+    run_10,
+    run_10_exc,
+    run_500,
+)
 from benchmarks.ens.params import (
-    NAMES,
-    LABELS,
     ADDRESSES,
     LABEL_LISTS,
+    LABELS,
+    NAMES,
     parametrize_names_full_coverage,
 )
+import faster_ens.utils
 
 
 @pytest.mark.benchmark(group="normalize_name")

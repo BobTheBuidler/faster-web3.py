@@ -12,9 +12,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi.exceptions import (
-    DecodingError,
-)
 from eth_typing import (
     ABI,
     ABICallable,
@@ -23,6 +20,9 @@ from eth_typing import (
     Address,
     ChecksumAddress,
     TypeStr,
+)
+from faster_eth_abi.exceptions import (
+    DecodingError,
 )
 from faster_eth_utils.abi import (
     abi_to_signature,

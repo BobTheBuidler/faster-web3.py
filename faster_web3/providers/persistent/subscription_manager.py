@@ -132,12 +132,14 @@ class SubscriptionManager:
         return self._subscription_container.get_by_label(label)
 
     @overload
-    async def subscribe(self, subscriptions: EthSubscription[Any]) -> HexStr: ...
+    async def subscribe(self, subscriptions: EthSubscription[Any]) -> HexStr:
+        ...
 
     @overload
     async def subscribe(
         self, subscriptions: Sequence[EthSubscription[Any]]
-    ) -> List[HexStr]: ...
+    ) -> List[HexStr]:
+        ...
 
     async def subscribe(
         self, subscriptions: Union[EthSubscription[Any], Sequence[EthSubscription[Any]]]
@@ -172,16 +174,19 @@ class SubscriptionManager:
         raise Web3TypeError("Expected a Subscription or a sequence of Subscriptions.")
 
     @overload
-    async def unsubscribe(self, subscriptions: EthSubscription[Any]) -> bool: ...
+    async def unsubscribe(self, subscriptions: EthSubscription[Any]) -> bool:
+        ...
 
     @overload
-    async def unsubscribe(self, subscriptions: HexStr) -> bool: ...
+    async def unsubscribe(self, subscriptions: HexStr) -> bool:
+        ...
 
     @overload
     async def unsubscribe(
         self,
         subscriptions: Sequence[Union[EthSubscription[Any], HexStr]],
-    ) -> bool: ...
+    ) -> bool:
+        ...
 
     async def unsubscribe(
         self,

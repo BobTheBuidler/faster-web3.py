@@ -1,21 +1,28 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
-from unittest.mock import patch
+from unittest.mock import (
+    patch,
+)
 
 import ens.ens
 import ens.exceptions
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3
 
-import faster_ens.ens
-import faster_ens.exceptions
-import faster_web3
-
-from benchmarks.ens.params import parametrize_names_full_coverage
+from benchmarks.batching import (
+    run_100_exc,
+)
 from benchmarks.ens.fake_rpc import (
     FAKE_ENS_REGISTRY,
     make_requests_post,
 )
-from benchmarks.batching import run_100_exc
+from benchmarks.ens.params import (
+    parametrize_names_full_coverage,
+)
+import faster_ens.ens
+import faster_ens.exceptions
+import faster_web3
 
 
 @pytest.mark.benchmark(group="ENS.address")

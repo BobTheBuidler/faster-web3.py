@@ -3,7 +3,6 @@ from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
-    Dict,
     Generic,
     Iterable,
     List,
@@ -183,7 +182,9 @@ class Method(Generic[TFunc]):
             lambda args, munger: munger(module, *args, **kwargs), self.mungers, args
         )
 
-    def process_params(self, module: "Module", *args: Any, **kwargs: Any) -> Tuple[
+    def process_params(
+        self, module: "Module", *args: Any, **kwargs: Any
+    ) -> Tuple[
         Tuple[Union[RPCEndpoint, Callable[..., RPCEndpoint]], Tuple[RPCEndpoint, ...]],
         Tuple[
             Union[TReturn, Callable[[RPCResponse], RPCResponse]],

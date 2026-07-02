@@ -2,7 +2,6 @@ from benchmarks.web3.fixtures.core import (
     CyclicSequence,
 )
 
-
 REQUESTS_SESSION_GET = "requests.Session.get"
 REQUESTS_SESSION_POST = "requests.Session.post"
 AIOHTTP_CLIENT_SESSION_GET = "aiohttp.ClientSession.get"

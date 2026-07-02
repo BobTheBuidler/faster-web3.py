@@ -1,12 +1,20 @@
+import pytest
 from unittest.mock import (
     patch,
 )
 
-import pytest
 from pytest_codspeed import (
     BenchmarkFixture,
 )
+import web3.exceptions  # noqa: E402
+import web3.providers.eth_tester.defaults  # noqa: E402
 
+from benchmarks.batching import (  # noqa: E402
+    run_10,
+    run_100,
+    run_100_exc,
+    run_1000,
+)
 from benchmarks.web3.fixtures.eth_tester import (
     ETH_TESTER,
     ETH_TESTER_DEFAULT_ENDPOINT_CASES,
@@ -15,19 +23,8 @@ from benchmarks.web3.fixtures.eth_tester import (
     transaction_failed_offchain_lookup,
     transaction_failed_panic,
 )
-
-import web3.exceptions  # noqa: E402
-import web3.providers.eth_tester.defaults  # noqa: E402
-
 import faster_web3.exceptions  # noqa: E402
 import faster_web3.providers.eth_tester.defaults  # noqa: E402
-
-from benchmarks.batching import (  # noqa: E402
-    run_10,
-    run_100,
-    run_100_exc,
-    run_1000,
-)
 
 
 @pytest.mark.benchmark(group="call_eth_tester")

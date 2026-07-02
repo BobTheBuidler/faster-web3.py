@@ -1,21 +1,23 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.formatters
 
-import faster_web3._utils.formatters
-
-from benchmarks.batching import run_5000, run_5000_exc
+from benchmarks.batching import (
+    run_5000,
+)
 from benchmarks.web3.fixtures.formatters import (
-    TX_DICT,
-    LOG_ENTRY,
     BLOCK_DICT,
+    LOG_ENTRY,
+    TX_DICT,
 )
 from benchmarks.web3.fixtures.rpc import (
     RPC_ERROR_REVERTED_MINUS_32000,
     RPC_NULL_RESULT,
 )
-
+import faster_web3._utils.formatters
 
 # --- Helpers ---
 

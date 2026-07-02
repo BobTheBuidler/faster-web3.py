@@ -1,10 +1,13 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
-from unittest.mock import patch
+from unittest.mock import (
+    patch,
+)
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.beacon
 
-import faster_web3.beacon
 from benchmarks.web3.fixtures.beacon import (
     BEACON_BASE_URL,
     BEACON_BLOCK_IDS,
@@ -22,19 +25,24 @@ from benchmarks.web3.fixtures.http import (
     REQUESTS_SESSION_GET,
     REQUESTS_SESSION_POST,
 )
+import faster_web3.beacon
 
 
 @pytest.mark.benchmark(group="beacon-get_genesis")
 def test_get_genesis(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"genesis": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"genesis": True})
+    ):
         benchmark(beacon.get_genesis)
 
 
 @pytest.mark.benchmark(group="beacon-get_genesis")
 def test_faster_get_genesis(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"genesis": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"genesis": True})
+    ):
         benchmark(beacon.get_genesis)
 
 
@@ -43,7 +51,8 @@ def test_faster_get_genesis(benchmark: BenchmarkFixture):
 def test_get_hash_root(benchmark: BenchmarkFixture, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"hash_root": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"hash_root": state_id}),
     ):
         benchmark(beacon.get_hash_root, state_id)
 
@@ -53,7 +62,8 @@ def test_get_hash_root(benchmark: BenchmarkFixture, state_id):
 def test_faster_get_hash_root(benchmark: BenchmarkFixture, state_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"hash_root": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"hash_root": state_id}),
     ):
         benchmark(beacon.get_hash_root, state_id)
 
@@ -63,7 +73,8 @@ def test_faster_get_hash_root(benchmark: BenchmarkFixture, state_id):
 def test_get_fork_data(benchmark: BenchmarkFixture, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"fork_data": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"fork_data": state_id}),
     ):
         benchmark(beacon.get_fork_data, state_id)
 
@@ -73,7 +84,8 @@ def test_get_fork_data(benchmark: BenchmarkFixture, state_id):
 def test_faster_get_fork_data(benchmark: BenchmarkFixture, state_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"fork_data": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"fork_data": state_id}),
     ):
         benchmark(beacon.get_fork_data, state_id)
 
@@ -105,7 +117,8 @@ def test_faster_get_finality_checkpoint(benchmark: BenchmarkFixture, state_id):
 def test_get_validators(benchmark: BenchmarkFixture, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"validators": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"validators": state_id}),
     ):
         benchmark(beacon.get_validators, state_id)
 
@@ -115,7 +128,8 @@ def test_get_validators(benchmark: BenchmarkFixture, state_id):
 def test_faster_get_validators(benchmark: BenchmarkFixture, state_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"validators": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"validators": state_id}),
     ):
         benchmark(beacon.get_validators, state_id)
 
@@ -127,7 +141,9 @@ def test_get_validator(benchmark: BenchmarkFixture, validator_id, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
         REQUESTS_SESSION_GET,
-        side_effect=make_beacon_requests_get({"validator": validator_id, "state": state_id}),
+        side_effect=make_beacon_requests_get(
+            {"validator": validator_id, "state": state_id}
+        ),
     ):
         benchmark(beacon.get_validator, validator_id, state_id)
 
@@ -139,7 +155,9 @@ def test_faster_get_validator(benchmark: BenchmarkFixture, validator_id, state_i
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
         REQUESTS_SESSION_GET,
-        side_effect=make_beacon_requests_get({"validator": validator_id, "state": state_id}),
+        side_effect=make_beacon_requests_get(
+            {"validator": validator_id, "state": state_id}
+        ),
     ):
         benchmark(beacon.get_validator, validator_id, state_id)
 
@@ -215,7 +233,8 @@ def test_faster_get_epoch_sync_committees(benchmark: BenchmarkFixture, state_id)
 def test_get_epoch_randao(benchmark: BenchmarkFixture, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"epoch_randao": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"epoch_randao": state_id}),
     ):
         benchmark(beacon.get_epoch_randao, state_id)
 
@@ -225,7 +244,8 @@ def test_get_epoch_randao(benchmark: BenchmarkFixture, state_id):
 def test_faster_get_epoch_randao(benchmark: BenchmarkFixture, state_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"epoch_randao": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"epoch_randao": state_id}),
     ):
         benchmark(beacon.get_epoch_randao, state_id)
 
@@ -234,7 +254,8 @@ def test_faster_get_epoch_randao(benchmark: BenchmarkFixture, state_id):
 def test_get_block_headers(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_headers": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_headers": True}),
     ):
         benchmark(beacon.get_block_headers)
 
@@ -243,7 +264,8 @@ def test_get_block_headers(benchmark: BenchmarkFixture):
 def test_faster_get_block_headers(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_headers": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_headers": True}),
     ):
         benchmark(beacon.get_block_headers)
 
@@ -253,7 +275,8 @@ def test_faster_get_block_headers(benchmark: BenchmarkFixture):
 def test_get_block_header(benchmark: BenchmarkFixture, block_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_header": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_header": block_id}),
     ):
         benchmark(beacon.get_block_header, block_id)
 
@@ -263,7 +286,8 @@ def test_get_block_header(benchmark: BenchmarkFixture, block_id):
 def test_faster_get_block_header(benchmark: BenchmarkFixture, block_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_header": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_header": block_id}),
     ):
         benchmark(beacon.get_block_header, block_id)
 
@@ -272,7 +296,9 @@ def test_faster_get_block_header(benchmark: BenchmarkFixture, block_id):
 @pytest.mark.parametrize("block_id", BEACON_BLOCK_IDS)
 def test_get_block(benchmark: BenchmarkFixture, block_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block": block_id})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block": block_id})
+    ):
         benchmark(beacon.get_block, block_id)
 
 
@@ -280,7 +306,9 @@ def test_get_block(benchmark: BenchmarkFixture, block_id):
 @pytest.mark.parametrize("block_id", BEACON_BLOCK_IDS)
 def test_faster_get_block(benchmark: BenchmarkFixture, block_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block": block_id})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block": block_id})
+    ):
         benchmark(beacon.get_block, block_id)
 
 
@@ -289,7 +317,8 @@ def test_faster_get_block(benchmark: BenchmarkFixture, block_id):
 def test_get_block_root(benchmark: BenchmarkFixture, block_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_root": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_root": block_id}),
     ):
         benchmark(beacon.get_block_root, block_id)
 
@@ -299,7 +328,8 @@ def test_get_block_root(benchmark: BenchmarkFixture, block_id):
 def test_faster_get_block_root(benchmark: BenchmarkFixture, block_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"block_root": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"block_root": block_id}),
     ):
         benchmark(beacon.get_block_root, block_id)
 
@@ -331,7 +361,8 @@ def test_faster_get_block_attestations(benchmark: BenchmarkFixture, block_id):
 def test_get_blinded_blocks(benchmark: BenchmarkFixture, block_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"blinded_blocks": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"blinded_blocks": block_id}),
     ):
         benchmark(beacon.get_blinded_blocks, block_id)
 
@@ -341,7 +372,8 @@ def test_get_blinded_blocks(benchmark: BenchmarkFixture, block_id):
 def test_faster_get_blinded_blocks(benchmark: BenchmarkFixture, block_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"blinded_blocks": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"blinded_blocks": block_id}),
     ):
         benchmark(beacon.get_blinded_blocks, block_id)
 
@@ -351,7 +383,8 @@ def test_faster_get_blinded_blocks(benchmark: BenchmarkFixture, block_id):
 def test_get_rewards(benchmark: BenchmarkFixture, block_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"rewards": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"rewards": block_id}),
     ):
         benchmark(beacon.get_rewards, block_id)
 
@@ -361,7 +394,8 @@ def test_get_rewards(benchmark: BenchmarkFixture, block_id):
 def test_faster_get_rewards(benchmark: BenchmarkFixture, block_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"rewards": block_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"rewards": block_id}),
     ):
         benchmark(beacon.get_rewards, block_id)
 
@@ -372,7 +406,9 @@ def test_get_light_client_bootstrap_structure(benchmark: BenchmarkFixture, block
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
         REQUESTS_SESSION_GET,
-        side_effect=make_beacon_requests_get({"light_client_bootstrap_structure": block_root}),
+        side_effect=make_beacon_requests_get(
+            {"light_client_bootstrap_structure": block_root}
+        ),
     ):
         benchmark(beacon.get_light_client_bootstrap_structure, block_root)
 
@@ -385,7 +421,9 @@ def test_faster_get_light_client_bootstrap_structure(
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
         REQUESTS_SESSION_GET,
-        side_effect=make_beacon_requests_get({"light_client_bootstrap_structure": block_root}),
+        side_effect=make_beacon_requests_get(
+            {"light_client_bootstrap_structure": block_root}
+        ),
     ):
         benchmark(beacon.get_light_client_bootstrap_structure, block_root)
 
@@ -454,7 +492,8 @@ def test_faster_get_light_client_optimistic_update(benchmark: BenchmarkFixture):
 def test_get_attestations(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"attestations": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"attestations": True}),
     ):
         benchmark(beacon.get_attestations)
 
@@ -463,7 +502,8 @@ def test_get_attestations(benchmark: BenchmarkFixture):
 def test_faster_get_attestations(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"attestations": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"attestations": True}),
     ):
         benchmark(beacon.get_attestations)
 
@@ -472,7 +512,8 @@ def test_faster_get_attestations(benchmark: BenchmarkFixture):
 def test_get_attester_slashings(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"attester_slashings": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"attester_slashings": True}),
     ):
         benchmark(beacon.get_attester_slashings)
 
@@ -481,7 +522,8 @@ def test_get_attester_slashings(benchmark: BenchmarkFixture):
 def test_faster_get_attester_slashings(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"attester_slashings": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"attester_slashings": True}),
     ):
         benchmark(beacon.get_attester_slashings)
 
@@ -490,7 +532,8 @@ def test_faster_get_attester_slashings(benchmark: BenchmarkFixture):
 def test_get_proposer_slashings(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"proposer_slashings": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"proposer_slashings": True}),
     ):
         benchmark(beacon.get_proposer_slashings)
 
@@ -499,7 +542,8 @@ def test_get_proposer_slashings(benchmark: BenchmarkFixture):
 def test_faster_get_proposer_slashings(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"proposer_slashings": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"proposer_slashings": True}),
     ):
         benchmark(beacon.get_proposer_slashings)
 
@@ -508,7 +552,8 @@ def test_faster_get_proposer_slashings(benchmark: BenchmarkFixture):
 def test_get_voluntary_exits(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"voluntary_exits": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"voluntary_exits": True}),
     ):
         benchmark(beacon.get_voluntary_exits)
 
@@ -517,7 +562,8 @@ def test_get_voluntary_exits(benchmark: BenchmarkFixture):
 def test_faster_get_voluntary_exits(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"voluntary_exits": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"voluntary_exits": True}),
     ):
         benchmark(beacon.get_voluntary_exits)
 
@@ -546,7 +592,8 @@ def test_faster_get_bls_to_execution_changes(benchmark: BenchmarkFixture):
 def test_get_fork_schedule(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"fork_schedule": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"fork_schedule": True}),
     ):
         benchmark(beacon.get_fork_schedule)
 
@@ -555,7 +602,8 @@ def test_get_fork_schedule(benchmark: BenchmarkFixture):
 def test_faster_get_fork_schedule(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"fork_schedule": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"fork_schedule": True}),
     ):
         benchmark(beacon.get_fork_schedule)
 
@@ -563,14 +611,18 @@ def test_faster_get_fork_schedule(benchmark: BenchmarkFixture):
 @pytest.mark.benchmark(group="beacon-get_spec")
 def test_get_spec(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"spec": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"spec": True})
+    ):
         benchmark(beacon.get_spec)
 
 
 @pytest.mark.benchmark(group="beacon-get_spec")
 def test_faster_get_spec(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"spec": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"spec": True})
+    ):
         benchmark(beacon.get_spec)
 
 
@@ -578,7 +630,8 @@ def test_faster_get_spec(benchmark: BenchmarkFixture):
 def test_get_deposit_contract(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"deposit_contract": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"deposit_contract": True}),
     ):
         benchmark(beacon.get_deposit_contract)
 
@@ -587,7 +640,8 @@ def test_get_deposit_contract(benchmark: BenchmarkFixture):
 def test_faster_get_deposit_contract(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"deposit_contract": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"deposit_contract": True}),
     ):
         benchmark(beacon.get_deposit_contract)
 
@@ -597,7 +651,8 @@ def test_faster_get_deposit_contract(benchmark: BenchmarkFixture):
 def test_get_beacon_state(benchmark: BenchmarkFixture, state_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"beacon_state": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"beacon_state": state_id}),
     ):
         benchmark(beacon.get_beacon_state, state_id)
 
@@ -607,7 +662,8 @@ def test_get_beacon_state(benchmark: BenchmarkFixture, state_id):
 def test_faster_get_beacon_state(benchmark: BenchmarkFixture, state_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"beacon_state": state_id})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"beacon_state": state_id}),
     ):
         benchmark(beacon.get_beacon_state, state_id)
 
@@ -616,7 +672,8 @@ def test_faster_get_beacon_state(benchmark: BenchmarkFixture, state_id):
 def test_get_beacon_heads(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"beacon_heads": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"beacon_heads": True}),
     ):
         benchmark(beacon.get_beacon_heads)
 
@@ -625,7 +682,8 @@ def test_get_beacon_heads(benchmark: BenchmarkFixture):
 def test_faster_get_beacon_heads(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"beacon_heads": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"beacon_heads": True}),
     ):
         benchmark(beacon.get_beacon_heads)
 
@@ -634,7 +692,8 @@ def test_faster_get_beacon_heads(benchmark: BenchmarkFixture):
 def test_get_node_identity(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"node_identity": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"node_identity": True}),
     ):
         benchmark(beacon.get_node_identity)
 
@@ -643,7 +702,8 @@ def test_get_node_identity(benchmark: BenchmarkFixture):
 def test_faster_get_node_identity(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
     with patch(
-        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"node_identity": True})
+        REQUESTS_SESSION_GET,
+        side_effect=make_beacon_requests_get({"node_identity": True}),
     ):
         benchmark(beacon.get_node_identity)
 
@@ -651,14 +711,18 @@ def test_faster_get_node_identity(benchmark: BenchmarkFixture):
 @pytest.mark.benchmark(group="beacon-get_peers")
 def test_get_peers(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peers": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peers": True})
+    ):
         benchmark(beacon.get_peers)
 
 
 @pytest.mark.benchmark(group="beacon-get_peers")
 def test_faster_get_peers(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peers": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peers": True})
+    ):
         benchmark(beacon.get_peers)
 
 
@@ -666,7 +730,9 @@ def test_faster_get_peers(benchmark: BenchmarkFixture):
 @pytest.mark.parametrize("peer_id", BEACON_PEER_IDS)
 def test_get_peer(benchmark: BenchmarkFixture, peer_id):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peer": peer_id})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peer": peer_id})
+    ):
         benchmark(beacon.get_peer, peer_id)
 
 
@@ -674,7 +740,9 @@ def test_get_peer(benchmark: BenchmarkFixture, peer_id):
 @pytest.mark.parametrize("peer_id", BEACON_PEER_IDS)
 def test_faster_get_peer(benchmark: BenchmarkFixture, peer_id):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peer": peer_id})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"peer": peer_id})
+    ):
         benchmark(beacon.get_peer, peer_id)
 
 
@@ -699,42 +767,54 @@ def test_faster_get_peer_count(benchmark: BenchmarkFixture):
 @pytest.mark.benchmark(group="beacon-get_health")
 def test_get_health(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"health": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"health": True})
+    ):
         benchmark(beacon.get_health)
 
 
 @pytest.mark.benchmark(group="beacon-get_health")
 def test_faster_get_health(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"health": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"health": True})
+    ):
         benchmark(beacon.get_health)
 
 
 @pytest.mark.benchmark(group="beacon-get_version")
 def test_get_version(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"version": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"version": True})
+    ):
         benchmark(beacon.get_version)
 
 
 @pytest.mark.benchmark(group="beacon-get_version")
 def test_faster_get_version(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"version": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"version": True})
+    ):
         benchmark(beacon.get_version)
 
 
 @pytest.mark.benchmark(group="beacon-get_syncing")
 def test_get_syncing(benchmark: BenchmarkFixture):
     beacon = web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"syncing": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"syncing": True})
+    ):
         benchmark(beacon.get_syncing)
 
 
 @pytest.mark.benchmark(group="beacon-get_syncing")
 def test_faster_get_syncing(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.Beacon(base_url=BEACON_BASE_URL)
-    with patch(REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"syncing": True})):
+    with patch(
+        REQUESTS_SESSION_GET, side_effect=make_beacon_requests_get({"syncing": True})
+    ):
         benchmark(beacon.get_syncing)
 
 

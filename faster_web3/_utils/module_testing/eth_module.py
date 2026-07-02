@@ -16,13 +16,13 @@ from typing import (
     cast,
 )
 
-import faster_eth_abi as abi
 from eth_typing import (
     BlockNumber,
     ChecksumAddress,
     HexAddress,
     HexStr,
 )
+import faster_eth_abi as abi
 from faster_eth_utils import (
     is_boolean,
     is_bytes,
@@ -95,7 +95,6 @@ from faster_web3.types import (
     BlockData,
     FilterParams,
     Nonce,
-    RPCEndpoint,
     StateOverrideParams,
     SyncStatus,
     TxData,

@@ -1,11 +1,15 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.abi
 
+from benchmarks.batching import (
+    run_100,
+    run_500,
+)
 import faster_web3._utils.abi
-from benchmarks.batching import run_100, run_500
-
 
 # --- Helpers ---
 

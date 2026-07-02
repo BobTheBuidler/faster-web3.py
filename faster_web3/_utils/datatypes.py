@@ -17,7 +17,6 @@ from faster_web3.exceptions import (
     Web3AttributeError,
 )
 
-
 apply_formatters_to_dict: Final = faster_eth_utils.apply_formatters_to_dict
 
 
@@ -51,8 +50,8 @@ class PropertyCheckingFactory(type):
         namespace: Dict[str, Any],
         normalizers: Optional[Dict[str, Any]] = None,
     ) -> "PropertyCheckingFactory":
-        all_bases = set(cls for base in bases for cls in base.__mro__)
-        all_keys = set(key for base in all_bases for key in base.__dict__.keys())
+        all_bases = {cls for base in bases for cls in base.__mro__}
+        all_keys = {key for base in all_bases for key in base.__dict__.keys()}
 
         for key in namespace:
             verify_attr(name, key, all_keys)

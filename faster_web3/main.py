@@ -1,37 +1,9 @@
 import decimal
-from types import (
-    TracebackType,
-)
-from typing import (
-    Mapping,
-)
-
-from faster_ens import (
-    AsyncENS,
-    ENS,
-)
-from faster_eth_abi.codec import (
-    ABICodec,
-)
-from faster_eth_utils import (
-    add_0x_prefix,
-    apply_to_return_value,
-    from_wei,
-    is_address,
-    is_checksum_address,
-    keccak as faster_eth_utils_keccak,
-    remove_0x_prefix,
-    to_bytes,
-    to_checksum_address,
-    to_int,
-    to_text,
-    to_wei,
-)
 from functools import (
     wraps,
 )
-from faster_hexbytes import (
-    HexBytes,
+from types import (
+    TracebackType,
 )
 from typing import (
     TYPE_CHECKING,
@@ -42,6 +14,7 @@ from typing import (
     Generator,
     Generic,
     List,
+    Mapping,
     Optional,
     Sequence,
     Type,
@@ -56,14 +29,38 @@ from eth_typing import (
     HexStr,
     Primitives,
 )
-from eth_typing.abi import TypeStr
+from eth_typing.abi import (
+    TypeStr,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
+)
 from faster_eth_utils import (
+    add_0x_prefix,
+    apply_to_return_value,
     combomethod,
+    from_wei,
+    is_address,
+    is_checksum_address,
+    keccak as faster_eth_utils_keccak,
+    remove_0x_prefix,
+    to_bytes,
+    to_checksum_address,
+    to_int,
+    to_text,
+    to_wei,
+)
+from faster_hexbytes import (
+    HexBytes,
 )
 from typing_extensions import (
     TypeGuard,
 )
 
+from faster_ens import (
+    ENS,
+    AsyncENS,
+)
 from faster_web3._utils.abi import (
     build_non_strict_registry,
     build_strict_registry,
@@ -80,14 +77,14 @@ from faster_web3._utils.encoding import (
     to_hex,
     to_json,
 )
-from faster_web3._utils.rpc_abi import (
-    RPC,
-)
 from faster_web3._utils.module import (
     attach_modules as _attach_modules,
 )
 from faster_web3._utils.normalizers import (
     abi_ens_resolver,
+)
+from faster_web3._utils.rpc_abi import (
+    RPC,
 )
 from faster_web3.eth import (
     AsyncEth,
@@ -111,9 +108,11 @@ from faster_web3.geth import (
 from faster_web3.manager import (
     RequestManager as DefaultRequestManager,
 )
-from faster_web3.middleware.base import MiddlewareOnion
 from faster_web3.method import (
     Method,
+)
+from faster_web3.middleware.base import (
+    MiddlewareOnion,
 )
 from faster_web3.module import (
     Module,
@@ -125,6 +124,8 @@ from faster_web3.net import (
 from faster_web3.providers import (
     AsyncBaseProvider,
     BaseProvider,
+    LegacyWebSocketProvider,
+    WebSocketProvider,
 )
 from faster_web3.providers.eth_tester import (
     AsyncEthereumTesterProvider,
@@ -133,19 +134,18 @@ from faster_web3.providers.eth_tester import (
 from faster_web3.providers.ipc import (
     IPCProvider,
 )
+from faster_web3.providers.persistent import (
+    PersistentConnection,
+)
+from faster_web3.providers.persistent.subscription_manager import (
+    SubscriptionManager,
+)
 from faster_web3.providers.persistent.utils import (
     persistent_connection_provider_method,
 )
 from faster_web3.providers.rpc import (
     AsyncHTTPProvider,
     HTTPProvider,
-)
-from faster_web3.providers import (
-    LegacyWebSocketProvider,
-    WebSocketProvider,
-)
-from faster_web3.providers.persistent import (
-    PersistentConnection,
 )
 from faster_web3.testing import (
     Testing,
@@ -156,16 +156,13 @@ from faster_web3.tracing import (
 from faster_web3.types import (
     Wei,
 )
-from faster_web3.providers.persistent.subscription_manager import (
-    SubscriptionManager,
-)
 
 if TYPE_CHECKING:
     from faster_web3._utils.batching import RequestBatcher  # noqa: F401
     from faster_web3._utils.empty import Empty  # noqa: F401
-    from faster_web3.providers.persistent import (
+    from faster_web3.providers.persistent import (  # noqa: F401
         PersistentConnectionProvider,
-    )  # noqa: F401
+    )
 
 
 def get_async_default_modules() -> Dict[str, Union[Type[Module], Sequence[Any]]]:
@@ -287,7 +284,9 @@ class BaseWeb3:
 
     @property
     def api(self) -> str:
-        from faster_web3 import __version__
+        from faster_web3 import (
+            __version__,
+        )
 
         return __version__
 

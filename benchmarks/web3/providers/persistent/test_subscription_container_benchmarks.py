@@ -1,11 +1,9 @@
 import pytest
+
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 import web3.providers.persistent.subscription_container
-
-import faster_web3.providers.persistent.subscription_container
 
 from benchmarks.batching import (
     run_100,
@@ -28,6 +26,7 @@ from benchmarks.web3.fixtures.subscriptions import (
     web3_subscription,
     web3_subscription_set,
 )
+import faster_web3.providers.persistent.subscription_container
 
 
 def web3_container():
@@ -139,9 +138,7 @@ def test_subscription_container_get_by_label(benchmark: BenchmarkFixture, label)
 
 @pytest.mark.benchmark(group="SubscriptionContainer.get_by_label")
 @pytest.mark.parametrize("label", ("heads", "logs", "txs"))
-def test_faster_subscription_container_get_by_label(
-    benchmark: BenchmarkFixture, label
-):
+def test_faster_subscription_container_get_by_label(benchmark: BenchmarkFixture, label):
     container = faster_container()
     benchmark(run_1000, container.get_by_label, label)
 

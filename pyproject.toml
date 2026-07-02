@@ -1,7 +1,7 @@
 [build-system]
 requires = [
-    "setuptools", 
-    "wheel", 
+    "setuptools",
+    "wheel",
     "mypy[mypyc]==1.19.1",
 	"types-requests",
 	"cchecksum==0.4.4; platform_system == 'Linux' and python_version == '3.14' and platform_machine == 'i686'",

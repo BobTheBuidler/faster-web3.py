@@ -14,12 +14,6 @@ from typing import (
     Type,
 )
 
-from faster_eth_abi.codec import (
-    ABICodec,
-)
-from faster_eth_abi.registry import (
-    registry as default_registry,
-)
 from eth_typing import (
     ABI,
     ABIComponent,
@@ -31,6 +25,12 @@ from eth_typing import (
     ABIFallback,
     ABIFunction,
     ABIReceive,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
+)
+from faster_eth_abi.registry import (
+    registry as default_registry,
 )
 from faster_hexbytes import (
     HexBytes,
