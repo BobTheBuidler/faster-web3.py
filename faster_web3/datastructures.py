@@ -62,9 +62,9 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         __arg: Optional[DictPosArg[TKey, TValue]] = None,
         **__kwargs: TValue
     ) -> None:
-        dictionary = dictionary.copy()
+        dictionary = dict(dictionary)
         if __arg is not None:
-            dictionary |= __arg
+            dictionary.update(dict(__arg))
         if __kwargs:
             dictionary |= __kwargs
         self.__dict__ = dictionary
@@ -171,20 +171,21 @@ def tupleize_lists_nested(d: Mapping[TKey, TValue]) -> AttributeDict[TKey, TValu
     Other unhashable types found will raise a TypeError
     """
 
-    def _to_tuple(value: Union[List[Any], Tuple[Any, ...]]) -> Any:
-        return tuple(_to_tuple(i) if isinstance(i, (list, tuple)) else i for i in value)
+    def _make_hashable(value: Any) -> Any:
+        if isinstance(value, (list, tuple)):
+            return tuple(_make_hashable(i) for i in value)
+        # dict check is fast, Mapping check is slow
+        elif isinstance(value, dict) or isinstance(value, Mapping):
+            return tupleize_lists_nested(value)
+        elif not isinstance(value, Hashable):
+            raise Web3TypeError(
+                f"Found unhashable type '{type(value).__name__}': {value}"
+            )
+        return value
 
     ret = {}
     for k, v in d.items():
-        if isinstance(v, (list, tuple)):
-            ret[k] = _to_tuple(v)
-        # dict check is fast, Mapping check is slow
-        elif isinstance(v, dict) or isinstance(v, Mapping):
-            ret[k] = tupleize_lists_nested(v)
-        elif not isinstance(v, Hashable):
-            raise Web3TypeError(f"Found unhashable type '{type(v).__name__}': {v}")
-        else:
-            ret[k] = v
+        ret[k] = _make_hashable(v)
     return AttributeDict(ret)
 
 
