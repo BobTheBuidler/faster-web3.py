@@ -225,7 +225,7 @@ def apply_list_to_array_formatter(formatter: Any) -> Callable[..., Any]:
 
 def storage_key_to_hexstr(value: Union[bytes, int, str]) -> HexStr:
     if not isinstance(value, (bytes, int, str)):
-        raise Web3ValueError(
+        raise TypeError(
             f"Storage key must be one of bytes, int, str, got {type(value)}"
         )
     if isinstance(value, str):
