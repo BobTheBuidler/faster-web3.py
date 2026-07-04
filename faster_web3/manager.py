@@ -592,6 +592,8 @@ class RequestManager:
                 error_formatters,
                 null_formatters,
             )
+            if not callable(result_formatters):
+                return partly_formatted_response
             return result_formatters(partly_formatted_response)
 
 
