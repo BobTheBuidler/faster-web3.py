@@ -62,7 +62,7 @@ class EthSubscriptionContext(Generic[TSubscription, TSubscriptionResult]):
         self.async_w3: Final = async_w3
         self.subscription: Final = subscription
         self.result: Final = result
-        self.__dict__: Final = kwargs
+        self.__dict__.update(kwargs)
 
     def __getattr__(self, item: str) -> Any:
         if item in self.__dict__:

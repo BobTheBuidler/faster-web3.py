@@ -3,36 +3,20 @@ import binascii
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
+import web3._utils.type_conversion
 import faster_web3._utils.type_conversion
+from web3.exceptions import Web3ValueError
 from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
-
-try:
-    import web3._utils.type_conversion
-    from web3.exceptions import Web3ValueError
-
-    excs = (
-        UnicodeDecodeError,
-        UnicodeEncodeError,
-        binascii.Error,
-        Web3ValueError,
-        FasterWeb3ValueError,
-    )
-
-except ImportError:
-    excs = (
-        UnicodeDecodeError,
-        UnicodeEncodeError,
-        binascii.Error,
-        FasterWeb3ValueError,
-    )
+from benchmarks.batching import run_100_exc
 
 
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        try:
-            func(*args, **kwargs)
-        except excs:
-            pass
+excs = (
+    UnicodeDecodeError,
+    UnicodeEncodeError,
+    binascii.Error,
+    Web3ValueError,
+    FasterWeb3ValueError,
+)
 
 
 to_hex_if_bytes_cases = {
@@ -52,7 +36,7 @@ to_hex_if_bytes_cases = {
     "val", list(to_hex_if_bytes_cases.values()), ids=list(to_hex_if_bytes_cases.keys())
 )
 def test_to_hex_if_bytes(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, web3._utils.type_conversion.to_hex_if_bytes, val)
+    benchmark(run_100_exc, excs, web3._utils.type_conversion.to_hex_if_bytes, val)
 
 
 @pytest.mark.benchmark(group="to_hex_if_bytes")
@@ -60,7 +44,7 @@ def test_to_hex_if_bytes(benchmark: BenchmarkFixture, val):
     "val", list(to_hex_if_bytes_cases.values()), ids=list(to_hex_if_bytes_cases.keys())
 )
 def test_faster_to_hex_if_bytes(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, faster_web3._utils.type_conversion.to_hex_if_bytes, val)
+    benchmark(run_100_exc, excs, faster_web3._utils.type_conversion.to_hex_if_bytes, val)
 
 
 to_bytes_if_hex_cases = {
@@ -80,7 +64,7 @@ to_bytes_if_hex_cases = {
     "val", list(to_bytes_if_hex_cases.values()), ids=list(to_bytes_if_hex_cases.keys())
 )
 def test_to_bytes_if_hex(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, web3._utils.type_conversion.to_bytes_if_hex, val)
+    benchmark(run_100_exc, excs, web3._utils.type_conversion.to_bytes_if_hex, val)
 
 
 @pytest.mark.benchmark(group="to_bytes_if_hex")
@@ -88,4 +72,4 @@ def test_to_bytes_if_hex(benchmark: BenchmarkFixture, val):
     "val", list(to_bytes_if_hex_cases.values()), ids=list(to_bytes_if_hex_cases.keys())
 )
 def test_faster_to_bytes_if_hex(benchmark: BenchmarkFixture, val):
-    benchmark(run_100, faster_web3._utils.type_conversion.to_bytes_if_hex, val)
+    benchmark(run_100_exc, excs, faster_web3._utils.type_conversion.to_bytes_if_hex, val)

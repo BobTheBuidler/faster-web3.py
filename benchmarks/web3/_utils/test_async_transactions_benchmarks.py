@@ -40,7 +40,7 @@ CURRENT_TX = {
 }
 
 
-class FakeAsyncEth:
+class AsyncTransactionsEthHarness:
     def __init__(self, gas_price=None, max_priority_fee=2_000_000_000, chain_id=1):
         self._gas_price = gas_price
         self._max_priority_fee = max_priority_fee
@@ -73,9 +73,9 @@ class FakeAsyncEth:
         return faster_hexbytes.HexBytes(b"\x22" * 32)
 
 
-class FakeAsyncWeb3:
+class AsyncTransactionsWeb3Harness:
     def __init__(self, gas_price=None):
-        self.eth = FakeAsyncEth(gas_price=gas_price)
+        self.eth = AsyncTransactionsEthHarness(gas_price=gas_price)
 
 
 # --- internal helpers ---
@@ -86,7 +86,7 @@ def test_estimate_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions._estimate_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
         {},
     )
@@ -98,7 +98,7 @@ def test_faster_estimate_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions._estimate_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
         {},
     )
@@ -110,7 +110,7 @@ def test_max_fee_per_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions._max_fee_per_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
         {},
     )
@@ -122,7 +122,7 @@ def test_faster_max_fee_per_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions._max_fee_per_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
         {},
     )
@@ -133,7 +133,7 @@ def test_max_priority_fee_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions._max_priority_fee_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         {},
         {},
     )
@@ -144,7 +144,7 @@ def test_faster_max_priority_fee_gas_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions._max_priority_fee_gas,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         {},
         {},
     )
@@ -155,7 +155,7 @@ def test_chain_id_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions._chain_id,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         {},
         {},
     )
@@ -166,7 +166,7 @@ def test_faster_chain_id_helper(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions._chain_id,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         {},
         {},
     )
@@ -179,7 +179,7 @@ def test_get_block_gas_limit(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions.get_block_gas_limit,
-        FakeAsyncWeb3().eth,
+        AsyncTransactionsWeb3Harness().eth,
         None,
     )
 
@@ -189,7 +189,7 @@ def test_faster_get_block_gas_limit(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.get_block_gas_limit,
-        FakeAsyncWeb3().eth,
+        AsyncTransactionsWeb3Harness().eth,
         None,
     )
 
@@ -200,7 +200,10 @@ def test_faster_get_block_gas_limit(benchmark: BenchmarkFixture):
 def test_async_fill_nonce(benchmark: BenchmarkFixture):
     tx = {"from": EXAMPLE_ADDRESS}
     benchmark(
-        run_1000_async, web3._utils.async_transactions.async_fill_nonce, FakeAsyncWeb3(), tx
+        run_1000_async,
+        web3._utils.async_transactions.async_fill_nonce,
+        AsyncTransactionsWeb3Harness(),
+        tx,
     )
 
 
@@ -210,7 +213,7 @@ def test_faster_async_fill_nonce(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.async_fill_nonce,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
     )
 
@@ -219,8 +222,8 @@ def test_faster_async_fill_nonce(benchmark: BenchmarkFixture):
 
 # Cover legacy gas price and dynamic fee paths.
 fill_defaults_cases = [
-    (FakeAsyncWeb3(gas_price=50_000_000_000), LEGACY_TX),
-    (FakeAsyncWeb3(gas_price=None), DYNAMIC_TX),
+    (AsyncTransactionsWeb3Harness(gas_price=50_000_000_000), LEGACY_TX),
+    (AsyncTransactionsWeb3Harness(gas_price=None), DYNAMIC_TX),
 ]
 fill_defaults_ids = ["legacy", "dynamic"]
 
@@ -257,7 +260,7 @@ def test_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions.get_buffered_gas_estimate,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
     )
 
@@ -268,7 +271,7 @@ def test_faster_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.get_buffered_gas_estimate,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         tx,
     )
 
@@ -280,7 +283,7 @@ def test_async_get_required_transaction(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions.async_get_required_transaction,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         b"\x11" * 32,
     )
 
@@ -290,7 +293,7 @@ def test_faster_async_get_required_transaction(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.async_get_required_transaction,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         b"\x11" * 32,
     )
 
@@ -303,7 +306,7 @@ def test_async_replace_transaction(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         web3._utils.async_transactions.async_replace_transaction,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         CURRENT_TX,
         new_tx,
     )
@@ -315,7 +318,7 @@ def test_faster_async_replace_transaction(benchmark: BenchmarkFixture):
     benchmark(
         run_1000_async,
         faster_web3._utils.async_transactions.async_replace_transaction,
-        FakeAsyncWeb3(),
+        AsyncTransactionsWeb3Harness(),
         CURRENT_TX,
         new_tx,
     )

@@ -1,27 +1,19 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
+import web3._utils.datatypes
+import web3.exceptions
 import faster_web3._utils.datatypes
 import faster_web3.exceptions
+from benchmarks.batching import (
+    run_100,
+    run_100_exc,
+)
 
-try:
-    import web3._utils.datatypes
-    import web3.exceptions
-
-    Web3AttributeError = (
-        web3.exceptions.Web3AttributeError,
-        faster_web3.exceptions.Web3AttributeError,
-    )
-except ImportError:
-    Web3AttributeError = (faster_web3.exceptions.Web3AttributeError,)
-
-
-def run_100(func, *args, **kwargs):
-    for _ in range(100):
-        try:
-            func(*args, **kwargs)
-        except Web3AttributeError:
-            pass  # ignore expected attribute errors for invalid cases
+Web3AttributeError = (
+    web3.exceptions.Web3AttributeError,
+    faster_web3.exceptions.Web3AttributeError,
+)
 
 
 verify_attr_cases = [
@@ -51,7 +43,14 @@ verify_attr_ids = [
     "class_name,key,namespace", verify_attr_cases, ids=verify_attr_ids
 )
 def test_verify_attr(benchmark: BenchmarkFixture, class_name, key, namespace):
-    benchmark(run_100, web3._utils.datatypes.verify_attr, class_name, key, namespace)
+    benchmark(
+        run_100_exc,
+        Web3AttributeError,
+        web3._utils.datatypes.verify_attr,
+        class_name,
+        key,
+        namespace,
+    )
 
 
 @pytest.mark.benchmark(group="verify_attr")
@@ -60,7 +59,12 @@ def test_verify_attr(benchmark: BenchmarkFixture, class_name, key, namespace):
 )
 def test_faster_verify_attr(benchmark: BenchmarkFixture, class_name, key, namespace):
     benchmark(
-        run_100, faster_web3._utils.datatypes.verify_attr, class_name, key, namespace
+        run_100_exc,
+        Web3AttributeError,
+        faster_web3._utils.datatypes.verify_attr,
+        class_name,
+        key,
+        namespace,
     )
 
 
@@ -122,7 +126,15 @@ property_factory_ids = [
 def test_PropertyCheckingFactory(
     benchmark: BenchmarkFixture, name, bases, namespace, normalizers
 ):
-    benchmark(run_100, make_class_with_factory, name, bases, namespace, normalizers)
+    benchmark(
+        run_100_exc,
+        Web3AttributeError,
+        make_class_with_factory,
+        name,
+        bases,
+        namespace,
+        normalizers,
+    )
 
 
 @pytest.mark.benchmark(group="PropertyCheckingFactory")
@@ -133,5 +145,11 @@ def test_faster_PropertyCheckingFactory(
     benchmark: BenchmarkFixture, name, bases, namespace, normalizers
 ):
     benchmark(
-        run_100, faster_make_class_with_factory, name, bases, namespace, normalizers
+        run_100_exc,
+        Web3AttributeError,
+        faster_make_class_with_factory,
+        name,
+        bases,
+        namespace,
+        normalizers,
     )
