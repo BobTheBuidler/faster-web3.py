@@ -107844,9 +107844,9 @@ CPyL5: ;
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "storage_key_to_hexstr", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
         goto CPyL51;
     }
-    cpy_r_r17 = CPyStatic_method_formatters___globals;
-    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'Web3ValueError' */
-    cpy_r_r19 = CPyDict_GetItem(cpy_r_r17, cpy_r_r18);
+    cpy_r_r17 = CPyModule_builtins;
+    cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'TypeError' */
+    cpy_r_r19 = CPyObject_GetAttr(cpy_r_r17, cpy_r_r18);
     if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "storage_key_to_hexstr", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
         goto CPyL54;
@@ -290670,7 +290670,7 @@ const char * const CPyLit_Str[] = {
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\004\016RequestBatcher\ais_text\bis_bytes\alatin-1",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\tfinalized\bearliest",
+    "\005\036unrecognized block reference: \rWeb3TypeError\bearliest\tfinalized\004safe",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\004\tTypeGuard\021typing_extensions\023ASYNC_PROVIDER_TYPE\022SYNC_PROVIDER_TYPE",
@@ -291320,8 +291320,8 @@ const int CPyLit_Tuple[] = {
     72, 73, 365, 75, 77, 79, 521, 81, 1, 802
 };
 const int CPyLit_FrozenSet[] = {
-    4, 5, 393, 307, 394, 395, 295, 3, 19, 1945, 0, 2, 896, 897, 4, 1094,
-    1092, 378, 1095
+    4, 5, 393, 394, 307, 395, 295, 3, 19, 1945, 0, 2, 896, 897, 4, 1092,
+    1095, 1094, 378
 };
 CPyModule *CPyModule_faster_ens__internal = NULL;
 CPyModule *CPyModule_faster_ens;
