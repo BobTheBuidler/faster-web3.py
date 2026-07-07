@@ -25,27 +25,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi import (
-    decoding,
-    encoding,
-)
-from faster_eth_abi.from_type_str import (
-    parse_type_str,
-)
-from faster_eth_abi.exceptions import (
-    ValueOutOfBounds,
-)
-from faster_eth_abi.grammar import (
-    ABIType,
-    BasicType,
-    TupleType,
-    parse,
-)
-from faster_eth_abi.registry import (
-    ABIRegistry,
-    BaseEquals,
-    registry as default_registry,
-)
 from eth_typing import (
     ABI,
     ABIComponent,
@@ -58,6 +37,27 @@ from eth_typing import (
     ABIReceive,
     HexStr,
     TypeStr,
+)
+from faster_eth_abi import (
+    decoding,
+    encoding,
+)
+from faster_eth_abi.exceptions import (
+    ValueOutOfBounds,
+)
+from faster_eth_abi.from_type_str import (
+    parse_type_str,
+)
+from faster_eth_abi.grammar import (
+    ABIType,
+    BasicType,
+    TupleType,
+    parse,
+)
+from faster_eth_abi.registry import (
+    ABIRegistry,
+    BaseEquals,
+    registry as default_registry,
 )
 from faster_eth_utils import (
     collapse_if_tuple,

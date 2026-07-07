@@ -2,7 +2,6 @@ from collections.abc import (
     Mapping,
 )
 from typing import (
-    TYPE_CHECKING,
     Any,
     Callable,
     Dict,

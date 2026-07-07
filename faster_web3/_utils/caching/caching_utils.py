@@ -1,6 +1,8 @@
 import hashlib
+from inspect import (
+    isawaitable,
+)
 import threading
-from inspect import isawaitable
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -18,10 +20,10 @@ from typing import (
     final,
 )
 
-import faster_eth_utils
 from eth_typing import (
     ChainId,
 )
+import faster_eth_utils
 
 from faster_web3._utils.caching import (
     ASYNC_PROVIDER_TYPE,

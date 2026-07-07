@@ -4,13 +4,13 @@ from typing import (
     Final,
 )
 
-import requests
-from faster_eth_abi import (
-    abi,
-)
 from eth_typing import (
     URI,
 )
+from faster_eth_abi import (
+    abi,
+)
+import requests
 
 from faster_web3._utils.http import (
     DEFAULT_HTTP_TIMEOUT,
@@ -26,7 +26,6 @@ from faster_web3.exceptions import (
 from faster_web3.types import (
     TxParams,
 )
-
 
 Session: Final = requests.Session
 

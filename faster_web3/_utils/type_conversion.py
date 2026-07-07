@@ -3,15 +3,14 @@ from typing import (
     Union,
 )
 
-import faster_eth_utils
 from eth_typing import (
     HexStr,
 )
+import faster_eth_utils
 
 from faster_web3.exceptions import (
     Web3ValueError,
 )
-
 
 to_bytes: Final = faster_eth_utils.to_bytes
 to_hex: Final = faster_eth_utils.to_hex

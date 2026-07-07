@@ -6,15 +6,12 @@ from eth_utils import (
 from benchmarks.web3.fixtures.abis import (
     ERC20_ABI,
 )
+from benchmarks.web3.fixtures.blocks import (
+    CONTRACT_BUILD_LATEST_BLOCK_RESPONSE_BYTES,
+)
 from benchmarks.web3.fixtures.core import (
     DAI_ADDRESS,
     EXAMPLE_ADDRESS,
-    GAS_21000_HEX,
-    HASH32,
-    HEX_1,
-)
-from benchmarks.web3.fixtures.blocks import (
-    CONTRACT_BUILD_LATEST_BLOCK_RESPONSE_BYTES,
 )
 from benchmarks.web3.fixtures.rpc import (
     GAS_21000_RESPONSE_BYTES,
@@ -22,7 +19,6 @@ from benchmarks.web3.fixtures.rpc import (
     HEX_1_RESPONSE_BYTES,
     rpc_result_response_bytes,
 )
-
 
 ADDRESS = to_checksum_address(EXAMPLE_ADDRESS)
 TOKEN_ADDRESS = to_checksum_address(DAI_ADDRESS)

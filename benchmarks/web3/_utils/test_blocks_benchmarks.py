@@ -1,10 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.blocks
 
+from benchmarks.batching import (
+    run_100,
+)
 import faster_web3._utils.blocks
-from benchmarks.batching import run_100
 
 _object = object()
 

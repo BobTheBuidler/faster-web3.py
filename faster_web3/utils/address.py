@@ -2,12 +2,12 @@ from typing import (
     Final,
 )
 
-import faster_eth_utils
-import rlp
 from eth_typing import (
     ChecksumAddress,
     HexAddress,
 )
+import faster_eth_utils
+import rlp
 
 from faster_web3.exceptions import (
     Web3ValidationError,
@@ -16,7 +16,6 @@ from faster_web3.types import (
     HexStr,
     Nonce,
 )
-
 
 keccak: Final = faster_eth_utils.keccak
 to_bytes: Final = faster_eth_utils.to_bytes

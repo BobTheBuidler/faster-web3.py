@@ -4,19 +4,17 @@ from web3.utils.subscriptions import (
     PendingTxSubscription,
 )
 
-from faster_web3.utils.subscriptions import (
-    LogsSubscription as FasterLogsSubscription,
-    NewHeadsSubscription as FasterNewHeadsSubscription,
-    PendingTxSubscription as FasterPendingTxSubscription,
-)
-
 from benchmarks.web3.fixtures.core import (
     HEX_2,
 )
 from benchmarks.web3.fixtures.rpc import (
     SUBSCRIPTION_ID_1,
 )
-
+from faster_web3.utils.subscriptions import (
+    LogsSubscription as FasterLogsSubscription,
+    NewHeadsSubscription as FasterNewHeadsSubscription,
+    PendingTxSubscription as FasterPendingTxSubscription,
+)
 
 SUBSCRIPTION_ID_3 = "0x3"
 HANDLED_SUBSCRIPTION_ID = "0x4"

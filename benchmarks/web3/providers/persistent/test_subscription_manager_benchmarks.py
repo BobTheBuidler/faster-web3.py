@@ -1,17 +1,12 @@
-import atexit
-import asyncio
-
 import pytest
+import asyncio
+import atexit
+
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 from web3.exceptions import (
     Web3ValueError,
-)
-
-from faster_web3.exceptions import (
-    Web3ValueError as FasterWeb3ValueError,
 )
 
 from benchmarks.batching import (
@@ -36,16 +31,12 @@ from benchmarks.web3.fixtures.subscriptions import (
     web3_subscription,
     web3_subscription_sequence,
 )
-
-
-SUBSCRIBE_RESPONSES = tuple(
-    rpc_success(hex(index + 1), index)
-    for index in range(100)
+from faster_web3.exceptions import (
+    Web3ValueError as FasterWeb3ValueError,
 )
-UNSUBSCRIBE_RESPONSES = tuple(
-    rpc_success(True, index)
-    for index in range(100)
-)
+
+SUBSCRIBE_RESPONSES = tuple(rpc_success(hex(index + 1), index) for index in range(100))
+UNSUBSCRIBE_RESPONSES = tuple(rpc_success(True, index) for index in range(100))
 TASK_LOOP = asyncio.new_event_loop()
 atexit.register(TASK_LOOP.close)
 
@@ -192,7 +183,9 @@ class UnsubscribeSequenceState:
             manager = self.manager_factory(UNSUBSCRIBE_RESPONSES)
             subscriptions = self.sequence_factory(f"sub-{index}")
             for offset, subscription in enumerate(subscriptions):
-                assign_subscription(manager, subscription, hex((index * 3) + offset + 1))
+                assign_subscription(
+                    manager, subscription, hex((index * 3) + offset + 1)
+                )
             managers.append(manager)
             targets.append(subscriptions)
         self.managers = tuple(managers)

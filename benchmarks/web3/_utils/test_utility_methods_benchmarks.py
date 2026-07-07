@@ -1,11 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.utility_methods
 
+from benchmarks.batching import (
+    run_5000,
+)
 import faster_web3._utils.utility_methods
-from benchmarks.batching import run_5000
-
 
 dict_cases = [
     (["a", "b"], {"a": 1, "b": 2, "c": 3}),  # all in

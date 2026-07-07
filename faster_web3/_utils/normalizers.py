@@ -12,18 +12,18 @@ from typing import (
     cast,
 )
 
+from eth_typing import (
+    ABI,
+    ChecksumAddress,
+    HexStr,
+    TypeStr,
+)
 from faster_eth_abi.exceptions import (
     ParseError,
 )
 from faster_eth_abi.grammar import (
     BasicType,
     parse,
-)
-from eth_typing import (
-    ABI,
-    ChecksumAddress,
-    HexStr,
-    TypeStr,
 )
 from faster_eth_utils import (
     to_bytes,

@@ -1,11 +1,9 @@
 import copy
-import functools
 from typing import (
     TYPE_CHECKING,
     Any,
     Callable,
     Dict,
-    List,
     Optional,
     Sequence,
     Tuple,
@@ -98,7 +96,6 @@ def find_matching_event_abi(
     event_name: Optional[str] = None,
     argument_names: Optional[Sequence[str]] = None,
 ) -> ABIEvent:
-
     event_abi_candidates: Sequence[ABIEvent] = filter_abi_by_type("event", abi)
 
     if event_name is not None:

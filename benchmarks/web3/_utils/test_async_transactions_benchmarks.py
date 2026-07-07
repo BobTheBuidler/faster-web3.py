@@ -1,17 +1,19 @@
+import pytest
 import asyncio
 
-import pytest
-from pytest_codspeed import BenchmarkFixture
-
+import faster_hexbytes
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.async_transactions
 
-import faster_web3._utils.async_transactions
-import faster_hexbytes
-from benchmarks.batching import run_1000, run_1000_async
+from benchmarks.batching import (
+    run_1000_async,
+)
 from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
 )
-
+import faster_web3._utils.async_transactions
 
 # --- Realistic transactions and blocks ---
 
@@ -79,6 +81,7 @@ class AsyncTransactionsWeb3Harness:
 
 
 # --- internal helpers ---
+
 
 @pytest.mark.benchmark(group="async_transactions-_estimate_gas")
 def test_estimate_gas_helper(benchmark: BenchmarkFixture):
@@ -174,6 +177,7 @@ def test_faster_chain_id_helper(benchmark: BenchmarkFixture):
 
 # --- get_block_gas_limit ---
 
+
 @pytest.mark.benchmark(group="get_block_gas_limit")
 def test_get_block_gas_limit(benchmark: BenchmarkFixture):
     benchmark(
@@ -195,6 +199,7 @@ def test_faster_get_block_gas_limit(benchmark: BenchmarkFixture):
 
 
 # --- async_fill_nonce ---
+
 
 @pytest.mark.benchmark(group="async_fill_nonce")
 def test_async_fill_nonce(benchmark: BenchmarkFixture):
@@ -254,6 +259,7 @@ def test_faster_async_fill_transaction_defaults(
 
 # --- get_buffered_gas_estimate ---
 
+
 @pytest.mark.benchmark(group="get_buffered_gas_estimate")
 def test_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
     tx = {"from": EXAMPLE_ADDRESS, "to": EXAMPLE_ADDRESS, "value": 1}
@@ -278,6 +284,7 @@ def test_faster_get_buffered_gas_estimate(benchmark: BenchmarkFixture):
 
 # --- async_get_required_transaction ---
 
+
 @pytest.mark.benchmark(group="async_get_required_transaction")
 def test_async_get_required_transaction(benchmark: BenchmarkFixture):
     benchmark(
@@ -299,6 +306,7 @@ def test_faster_async_get_required_transaction(benchmark: BenchmarkFixture):
 
 
 # --- async_replace_transaction ---
+
 
 @pytest.mark.benchmark(group="async_replace_transaction")
 def test_async_replace_transaction(benchmark: BenchmarkFixture):

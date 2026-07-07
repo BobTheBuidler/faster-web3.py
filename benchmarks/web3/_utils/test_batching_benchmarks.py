@@ -1,19 +1,23 @@
+import pytest
 import contextvars
 
-import pytest
-from pytest_codspeed import BenchmarkFixture
-
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.batching
 import web3.types
 
-import faster_web3._utils.batching
-import faster_web3.types
-from benchmarks.batching import run_1000, run_1000_async
+from benchmarks.batching import (
+    run_1000,
+    run_1000_async,
+)
 from benchmarks.web3.fixtures.rpc import (
     BATCH_RESPONSES_MISSING_ID,
     BATCH_RESPONSES_ORDERED,
     BATCH_RESPONSES_UNORDERED,
 )
+import faster_web3._utils.batching
+import faster_web3.types
 
 
 def noop(value):
@@ -25,7 +29,9 @@ class BatchingProviderHarness:
     has_persistent_connection = False
 
     def __init__(self):
-        self._batching_context = contextvars.ContextVar("batching_context", default=None)
+        self._batching_context = contextvars.ContextVar(
+            "batching_context", default=None
+        )
 
     @property
     def _is_batching(self):
@@ -113,7 +119,9 @@ sort_ids = ["ordered", "unordered", "missing-id"]
 @pytest.mark.benchmark(group="sort_batch_response_by_response_ids")
 @pytest.mark.parametrize("responses", sort_cases, ids=sort_ids)
 def test_sort_batch_response_by_response_ids(benchmark: BenchmarkFixture, responses):
-    benchmark(run_1000, web3._utils.batching.sort_batch_response_by_response_ids, responses)
+    benchmark(
+        run_1000, web3._utils.batching.sort_batch_response_by_response_ids, responses
+    )
 
 
 @pytest.mark.benchmark(group="sort_batch_response_by_response_ids")
@@ -129,6 +137,7 @@ def test_faster_sort_batch_response_by_response_ids(
 
 
 # --- RequestBatcher.add / add_mapping / execute ---
+
 
 @pytest.mark.benchmark(group="RequestBatcher-add")
 def test_request_batcher_add(benchmark: BenchmarkFixture):
@@ -187,6 +196,7 @@ def test_faster_request_batcher_execute(benchmark: BenchmarkFixture):
 
 
 # --- RequestBatcher.async_execute ---
+
 
 @pytest.mark.benchmark(group="RequestBatcher-async_execute")
 def test_request_batcher_async_execute(benchmark: BenchmarkFixture):

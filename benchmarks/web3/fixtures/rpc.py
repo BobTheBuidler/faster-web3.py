@@ -6,7 +6,6 @@ from benchmarks.web3.fixtures.core import (
     HEX_2,
 )
 
-
 JSONRPC_VERSION = "2.0"
 DEFAULT_RPC_ID = 1
 

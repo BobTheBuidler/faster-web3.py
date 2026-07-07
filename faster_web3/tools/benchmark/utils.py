@@ -10,7 +10,6 @@ from typing import (
 import aiohttp
 import requests
 
-
 aiosleep: Final = asyncio.sleep
 
 socket: Final = builtinssocket.socket

@@ -14,6 +14,12 @@ from typing import (
     cast,
 )
 
+from eth_typing import (
+    ABIEvent,
+    ChecksumAddress,
+    HexStr,
+    TypeStr,
+)
 from faster_eth_abi._grammar import (
     BasicType,
 )
@@ -22,12 +28,6 @@ from faster_eth_abi.codec import (
 )
 from faster_eth_abi.grammar import (
     parse as parse_type_string,
-)
-from eth_typing import (
-    ABIEvent,
-    ChecksumAddress,
-    HexStr,
-    TypeStr,
 )
 from faster_eth_utils import (
     is_hex,

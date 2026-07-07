@@ -556,7 +556,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_363Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_365Object;
 
 typedef struct {
     PyObject_HEAD
@@ -598,7 +598,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_393Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_395Object;
 
 typedef struct {
     PyObject_HEAD
@@ -656,7 +656,7 @@ typedef struct {
     PyObject_HEAD
     CPyVTableItem *vtable;
     PyObject *___mypyc_env__;
-} faster_web3____utils___caching___caching_utils___wrapper_gen___3_419Object;
+} faster_web3____utils___caching___caching_utils___wrapper_gen___3_421Object;
 
 typedef struct {
     PyObject_HEAD
@@ -2135,8 +2135,8 @@ typedef struct {
     PyObject *___mypyc_temp__18;
     tuple_T3OOO ___mypyc_temp__19;
     PyObject *___mypyc_generator_attribute__unsubscribed;
-    int64_t ___mypyc_temp__2_0;
-    PyObject *___mypyc_temp__2_1;
+    PyObject *___mypyc_temp__2_0;
+    int64_t ___mypyc_temp__2_1;
 } faster_web3___providers___persistent___subscription_manager___unsubscribe_all_SubscriptionManager_genObject;
 
 typedef struct {

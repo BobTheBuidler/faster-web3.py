@@ -44,7 +44,6 @@ from faster_web3.utils.caching import (
     SimpleCache,
 )
 
-
 create_task: Final = asyncio.create_task
 get_event_loop: Final = asyncio.get_event_loop
 sleep: Final = asyncio.sleep

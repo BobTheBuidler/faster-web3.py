@@ -1,19 +1,24 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
 import ens.base_ens
 import ens.exceptions
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 
-import faster_ens.base_ens
-import faster_ens.exceptions
-from benchmarks.batching import run_10, run_10_exc
+from benchmarks.batching import (
+    run_10,
+    run_10_exc,
+)
 from benchmarks.ens.params import (
+    ADDRESSES,
     LABELS,
     NAMES_VALIDITY,
-    ADDRESSES,
     PARENT_NAMES,
     parametrize_names_full_coverage,
 )
+import faster_ens.base_ens
+import faster_ens.exceptions
 
 
 @pytest.mark.benchmark(group="BaseENS.labelhash")

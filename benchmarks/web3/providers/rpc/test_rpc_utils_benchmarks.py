@@ -1,11 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.providers.rpc.utils
 
+from benchmarks.batching import (
+    run_5000,
+)
 import faster_web3.providers.rpc.utils
-from benchmarks.batching import run_5000
-
 
 # --- check_if_retry_on_failure ---
 
@@ -29,7 +32,9 @@ def test_check_if_retry_on_failure(benchmark: BenchmarkFixture, method):
 @pytest.mark.benchmark(group="check_if_retry_on_failure")
 @pytest.mark.parametrize("method", retry_cases, ids=retry_ids)
 def test_faster_check_if_retry_on_failure(benchmark: BenchmarkFixture, method):
-    benchmark(run_5000, faster_web3.providers.rpc.utils.check_if_retry_on_failure, method)
+    benchmark(
+        run_5000, faster_web3.providers.rpc.utils.check_if_retry_on_failure, method
+    )
 
 
 # --- ExceptionRetryConfiguration ---

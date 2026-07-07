@@ -20,12 +20,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi import (
-    grammar,
-)
-from faster_eth_abi.codec import (
-    ABICodec,
-)
 from eth_typing import (
     ABIComponent,
     ABIComponentIndexed,
@@ -34,6 +28,12 @@ from eth_typing import (
     HexStr,
     Primitives,
     TypeStr,
+)
+from faster_eth_abi import (
+    grammar,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
 )
 from faster_eth_utils import (
     encode_hex,

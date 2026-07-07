@@ -1,4 +1,7 @@
-from typing import Final
+from typing import (
+    Final,
+)
+
 from eth_typing import (
     ChecksumAddress,
     HexAddress,

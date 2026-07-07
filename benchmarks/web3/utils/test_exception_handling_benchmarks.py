@@ -1,10 +1,12 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
-from unittest.mock import patch
+from unittest.mock import (
+    patch,
+)
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.utils.exception_handling
-
-import faster_web3.utils.exception_handling
 
 from benchmarks.web3.fixtures.http import (
     make_indexed_failure_requests_request,
@@ -14,6 +16,7 @@ from benchmarks.web3.fixtures.offchain import (
     OFFCHAIN_LOOKUP_TX_PARAMS,
     parametrize_offchain_lookup,
 )
+import faster_web3.utils.exception_handling
 
 
 @pytest.mark.benchmark(group="handle_offchain_lookup")

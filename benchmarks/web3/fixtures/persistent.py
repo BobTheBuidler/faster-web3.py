@@ -2,27 +2,25 @@ import json
 
 import web3
 import web3._utils.caching
-import web3.providers.persistent.request_processor
 from web3.providers.persistent import (
     PersistentConnectionProvider,
 )
-
-import faster_web3
-import faster_web3._utils.caching
-import faster_web3.providers.persistent.request_processor
-from faster_web3.providers.persistent import (
-    PersistentConnectionProvider as FasterPersistentConnectionProvider,
-)
+import web3.providers.persistent.request_processor
 
 from benchmarks.web3.fixtures.core import (
-    CyclicSequence,
     LOCALHOST_WS_ENDPOINT,
+    CyclicSequence,
 )
 from benchmarks.web3.fixtures.rpc import (
     DEFAULT_RPC_ID,
     SUBSCRIPTION_ID_1,
 )
-
+import faster_web3
+import faster_web3._utils.caching
+from faster_web3.providers.persistent import (
+    PersistentConnectionProvider as FasterPersistentConnectionProvider,
+)
+import faster_web3.providers.persistent.request_processor
 
 RESPONSE_FORMATTERS = (
     lambda response: response,
@@ -183,9 +181,7 @@ def web3_request_processor():
 
 def faster_request_processor():
     provider = faster_web3.WebSocketProvider(LOCALHOST_WS_ENDPOINT)
-    return faster_web3.providers.persistent.request_processor.RequestProcessor(
-        provider
-    )
+    return faster_web3.providers.persistent.request_processor.RequestProcessor(provider)
 
 
 def cache_request_info(processor):

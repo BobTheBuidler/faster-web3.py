@@ -36,7 +36,9 @@ from faster_web3.exceptions import (
 )
 
 if TYPE_CHECKING:
-    from _typeshed import SupportsKeysAndGetItem
+    from _typeshed import (
+        SupportsKeysAndGetItem,
+    )
 
 # Hashable must be immutable:
 # "the implementation of hashable collections requires that a
@@ -48,8 +50,10 @@ TKey = TypeVar("TKey", bound=Hashable)
 TValue = TypeVar("TValue")
 
 DictPosArg = Union[
-    "SupportsKeysAndGetItem[TKey, TValue]", Iterable[Tuple[TKey, TValue]],
+    "SupportsKeysAndGetItem[TKey, TValue]",
+    Iterable[Tuple[TKey, TValue]],
 ]
+
 
 class ReadableAttributeDict(Mapping[TKey, TValue]):
     """
@@ -60,7 +64,7 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
         self,
         dictionary: Dict[TKey, TValue],
         __arg: Optional[DictPosArg[TKey, TValue]] = None,
-        **__kwargs: TValue
+        **__kwargs: TValue,
     ) -> None:
         dictionary = dictionary.copy()
         if __arg is not None:
@@ -95,19 +99,23 @@ class ReadableAttributeDict(Mapping[TKey, TValue]):
 
     @overload
     @classmethod
-    def recursive(cls, value: List[Any]) -> List[Any]: ...
+    def recursive(cls, value: List[Any]) -> List[Any]:
+        ...
 
     @overload
     @classmethod
-    def recursive(cls, value: Tuple[Any, ...]) -> Tuple[Any, ...]: ...
+    def recursive(cls, value: Tuple[Any, ...]) -> Tuple[Any, ...]:
+        ...
 
     @overload
     @classmethod
-    def recursive(cls, value: Mapping[str, Any]) -> Self: ...
+    def recursive(cls, value: Mapping[str, Any]) -> Self:
+        ...
 
     @overload
     @classmethod
-    def recursive(cls, value: Set[Any]) -> Set[Any]: ...
+    def recursive(cls, value: Set[Any]) -> Set[Any]:
+        ...
 
     @classmethod
     def recursive(cls, value: TValue) -> Any:

@@ -1,7 +1,6 @@
 import pytest
-import web3
 
-import faster_web3
+import web3
 
 from benchmarks.web3.fixtures.abis import (
     ERC20_ABI,
@@ -12,6 +11,7 @@ from benchmarks.web3.fixtures.contracts import (
 from benchmarks.web3.fixtures.core import (
     LOCALHOST_HTTP_ENDPOINT,
 )
+import faster_web3
 
 
 @pytest.fixture
@@ -31,9 +31,7 @@ def web3_async_w3():
 
 @pytest.fixture
 def faster_async_w3():
-    return faster_web3.AsyncWeb3(
-        faster_web3.AsyncHTTPProvider(LOCALHOST_HTTP_ENDPOINT)
-    )
+    return faster_web3.AsyncWeb3(faster_web3.AsyncHTTPProvider(LOCALHOST_HTTP_ENDPOINT))
 
 
 @pytest.fixture

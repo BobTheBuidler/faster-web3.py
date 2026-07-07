@@ -1,11 +1,11 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.caching.request_caching_validation
 import web3._utils.rpc_abi
 
-import faster_web3._utils.caching.request_caching_validation
-import faster_web3._utils.rpc_abi
 from benchmarks.batching import (
     run_1000,
     run_1000_async,
@@ -13,7 +13,8 @@ from benchmarks.batching import (
 from benchmarks.web3.fixtures.core import (
     HASH32,
 )
-
+import faster_web3._utils.caching.request_caching_validation
+import faster_web3._utils.rpc_abi
 
 OLD_BLOCK_TS = 1_700_000_000
 BLOCK_NUM = "0x1234"
@@ -69,9 +70,7 @@ def test_validate_from_block_id_in_params(benchmark: BenchmarkFixture, params):
 
 @pytest.mark.benchmark(group="validate_from_block_id_in_params")
 @pytest.mark.parametrize("params", block_id_cases, ids=block_id_ids)
-def test_faster_validate_from_block_id_in_params(
-    benchmark: BenchmarkFixture, params
-):
+def test_faster_validate_from_block_id_in_params(benchmark: BenchmarkFixture, params):
     benchmark(
         run_1000,
         faster_web3._utils.caching.request_caching_validation.validate_from_block_id_in_params,
@@ -105,9 +104,7 @@ def test_validate_from_blocknum_in_result(benchmark: BenchmarkFixture, result):
 
 @pytest.mark.benchmark(group="validate_from_blocknum_in_result")
 @pytest.mark.parametrize("result", blocknum_result_cases, ids=blocknum_result_ids)
-def test_faster_validate_from_blocknum_in_result(
-    benchmark: BenchmarkFixture, result
-):
+def test_faster_validate_from_blocknum_in_result(benchmark: BenchmarkFixture, result):
     benchmark(
         run_1000,
         faster_web3._utils.caching.request_caching_validation.validate_from_blocknum_in_result,
@@ -138,9 +135,7 @@ def test_validate_from_blockhash_in_params(benchmark: BenchmarkFixture, params):
 
 @pytest.mark.benchmark(group="validate_from_blockhash_in_params")
 @pytest.mark.parametrize("params", blockhash_params_cases, ids=blockhash_params_ids)
-def test_faster_validate_from_blockhash_in_params(
-    benchmark: BenchmarkFixture, params
-):
+def test_faster_validate_from_blockhash_in_params(benchmark: BenchmarkFixture, params):
     benchmark(
         run_1000,
         faster_web3._utils.caching.request_caching_validation.validate_from_blockhash_in_params,
@@ -151,6 +146,7 @@ def test_faster_validate_from_blockhash_in_params(
 
 
 # --- async_* validators ---
+
 
 # Async variants mirror the sync validator behavior for block ids.
 @pytest.mark.benchmark(group="async_validate_from_block_id_in_params")

@@ -1,14 +1,19 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
 import ens._normalization
 import ens.exceptions
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 
+from benchmarks.batching import (
+    run_1000_exc,
+)
+from benchmarks.ens.params import (
+    parametrize_names_full_coverage,
+)
 import faster_ens._normalization
 import faster_ens.exceptions
-
-from benchmarks.ens.params import parametrize_names_full_coverage
-from benchmarks.batching import run_1000_exc
 
 
 @pytest.mark.benchmark(group="normalize_name_ensip15")

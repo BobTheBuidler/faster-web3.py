@@ -9,7 +9,6 @@ from benchmarks.web3.fixtures.http import (
     StaticResponse,
 )
 
-
 OFFCHAIN_LOOKUP_PAYLOAD_BYTES = {
     "sender": b"\x00" * 20,
     "callData": b"\x01\x02\x03",

@@ -1,14 +1,21 @@
+import pytest
 import binascii
 
-import pytest
-from pytest_codspeed import BenchmarkFixture
-
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.type_conversion
-import faster_web3._utils.type_conversion
-from web3.exceptions import Web3ValueError
-from faster_web3.exceptions import Web3ValueError as FasterWeb3ValueError
-from benchmarks.batching import run_100_exc
+from web3.exceptions import (
+    Web3ValueError,
+)
 
+from benchmarks.batching import (
+    run_100_exc,
+)
+import faster_web3._utils.type_conversion
+from faster_web3.exceptions import (
+    Web3ValueError as FasterWeb3ValueError,
+)
 
 excs = (
     UnicodeDecodeError,
@@ -44,7 +51,9 @@ def test_to_hex_if_bytes(benchmark: BenchmarkFixture, val):
     "val", list(to_hex_if_bytes_cases.values()), ids=list(to_hex_if_bytes_cases.keys())
 )
 def test_faster_to_hex_if_bytes(benchmark: BenchmarkFixture, val):
-    benchmark(run_100_exc, excs, faster_web3._utils.type_conversion.to_hex_if_bytes, val)
+    benchmark(
+        run_100_exc, excs, faster_web3._utils.type_conversion.to_hex_if_bytes, val
+    )
 
 
 to_bytes_if_hex_cases = {
@@ -72,4 +81,6 @@ def test_to_bytes_if_hex(benchmark: BenchmarkFixture, val):
     "val", list(to_bytes_if_hex_cases.values()), ids=list(to_bytes_if_hex_cases.keys())
 )
 def test_faster_to_bytes_if_hex(benchmark: BenchmarkFixture, val):
-    benchmark(run_100_exc, excs, faster_web3._utils.type_conversion.to_bytes_if_hex, val)
+    benchmark(
+        run_100_exc, excs, faster_web3._utils.type_conversion.to_bytes_if_hex, val
+    )

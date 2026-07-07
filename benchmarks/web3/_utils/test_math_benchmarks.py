@@ -1,11 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.math
 
+from benchmarks.batching import (
+    run_100,
+)
 import faster_web3._utils.math
-from benchmarks.batching import run_100
-
 
 percentile_cases = [
     (list(range(10)), 50),  # 10 elements, median

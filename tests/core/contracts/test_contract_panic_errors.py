@@ -1,9 +1,6 @@
 import pytest
 import re
 
-from tests.core.contracts.utils import (
-    deploy,
-)
 from faster_web3._utils.contract_sources.contract_data.panic_errors_contract import (
     PANIC_ERRORS_CONTRACT_DATA,
 )
@@ -12,6 +9,9 @@ from faster_web3._utils.error_formatters_utils import (
 )
 from faster_web3.exceptions import (
     ContractPanicError,
+)
+from tests.core.contracts.utils import (
+    deploy,
 )
 
 

@@ -1,10 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.datastructures
 
+from benchmarks.batching import (
+    run_100,
+)
 import faster_web3.datastructures
-from benchmarks.batching import run_100, run_500
 
 # --- Shared parameter sets ---
 init_dicts = [
@@ -23,7 +27,7 @@ getitem_ids = ["small", "large"]
 recursive_vals = [
     {"a": {"b": [1, 2, {"c": 3}]}},
     [1, 2, {"a": [3, 4]}],
-    set([1, 2, 3]),
+    {1, 2, 3},
 ]
 recursive_ids = ["nested-dict", "list-in-dict", "set"]
 

@@ -631,9 +631,9 @@ call_with_override: Final[
 )
 
 
-estimate_gas_without_block_id: Final[Callable[[Dict[str, Any]], Dict[str, Any]]] = (
-    apply_formatter_at_index(transaction_param_formatter, 0)
-)
+estimate_gas_without_block_id: Final[
+    Callable[[Dict[str, Any]], Dict[str, Any]]
+] = apply_formatter_at_index(transaction_param_formatter, 0)
 
 estimate_gas_with_block_id: Final[
     Callable[
@@ -666,22 +666,22 @@ estimate_gas_with_override: Final[
 
 # -- eth_simulateV1 -- #
 
-block_state_calls_formatter: Final[Callable[[Dict[str, Any]], Dict[str, Any]]] = (
-    apply_formatter_to_array(
-        apply_formatters_to_dict(
-            {
-                "blockOverrides": block_request_formatter,
-                "stateOverrides": (
-                    lambda val: type_aware_apply_formatters_to_dict_keys_and_values(
-                        to_checksum_address,
-                        state_override_formatter,
-                        val,
-                    )
-                ),
-                "calls": apply_formatter_to_array(transaction_request_formatter),
-            },
-        ),
-    )
+block_state_calls_formatter: Final[
+    Callable[[Dict[str, Any]], Dict[str, Any]]
+] = apply_formatter_to_array(
+    apply_formatters_to_dict(
+        {
+            "blockOverrides": block_request_formatter,
+            "stateOverrides": (
+                lambda val: type_aware_apply_formatters_to_dict_keys_and_values(
+                    to_checksum_address,
+                    state_override_formatter,
+                    val,
+                )
+            ),
+            "calls": apply_formatter_to_array(transaction_request_formatter),
+        },
+    ),
 )
 
 simulate_v1_request_formatter: Final[
@@ -827,9 +827,9 @@ DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS: Final = apply_formatter_if(
 )
 
 
-debug_calltrace_log_list_result_formatter: Final[Callable[[Formatters], Any]] = (
-    apply_formatter_to_array(DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS)
-)
+debug_calltrace_log_list_result_formatter: Final[
+    Callable[[Formatters], Any]
+] = apply_formatter_to_array(DEBUG_CALLTRACE_LOG_ENTRY_FORMATTERS)
 
 
 PRETRACE_INNER_FORMATTERS: Final = {
@@ -907,9 +907,9 @@ debug_calltrace_result_formatter: Final = type_aware_apply_formatters_to_dict(
 )
 
 
-debug_calltrace_list_result_formatter: Final[Callable[[Formatters], Any]] = (
-    apply_formatter_to_array(debug_calltrace_result_formatter)
-)
+debug_calltrace_list_result_formatter: Final[
+    Callable[[Formatters], Any]
+] = apply_formatter_to_array(debug_calltrace_result_formatter)
 
 
 # -- tracing -- #
@@ -964,8 +964,8 @@ TRACE_FORMATTERS: Final[Callable[[TValue], Union[Any, TValue]]] = apply_formatte
 )
 
 # trace formatter for a list of traces
-trace_list_result_formatter: Final[Callable[[Traces], Any]] = (
-    apply_formatter_to_array(TRACE_FORMATTERS)
+trace_list_result_formatter: Final[Callable[[Traces], Any]] = apply_formatter_to_array(
+    TRACE_FORMATTERS
 )
 
 # shared formatter for common `tracing` module rpc responses

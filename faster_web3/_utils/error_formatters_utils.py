@@ -1,4 +1,3 @@
-import warnings
 from typing import (
     Any,
     Dict,
@@ -7,6 +6,7 @@ from typing import (
     Union,
     cast,
 )
+import warnings
 
 import faster_eth_abi.abi
 import faster_eth_utils

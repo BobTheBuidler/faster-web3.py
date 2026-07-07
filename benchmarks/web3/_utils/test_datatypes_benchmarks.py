@@ -1,14 +1,16 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.datatypes
 import web3.exceptions
-import faster_web3._utils.datatypes
-import faster_web3.exceptions
+
 from benchmarks.batching import (
-    run_100,
     run_100_exc,
 )
+import faster_web3._utils.datatypes
+import faster_web3.exceptions
 
 Web3AttributeError = (
     web3.exceptions.Web3AttributeError,

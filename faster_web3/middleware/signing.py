@@ -52,8 +52,8 @@ from faster_web3._utils.method_formatters import (
     STANDARD_NORMALIZERS,
 )
 from faster_web3._utils.rpc_abi import (
-    TRANSACTION_PARAMS_ABIS,
     RPC,
+    TRANSACTION_PARAMS_ABIS,
     apply_abi_formatters_to_dict,
 )
 from faster_web3._utils.transactions import (

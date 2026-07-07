@@ -25,9 +25,12 @@ Troubleshooting:
 """
 
 import json
-import sys
 import re
-from typing import Any, TypeAlias
+import sys
+from typing import (
+    Any,
+    TypeAlias,
+)
 
 BenchmarkResults: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 
@@ -115,7 +118,7 @@ def main() -> None:
         sys.exit(1)
     infile = sys.argv[1]
     outfile = sys.argv[2] if len(sys.argv) > 2 else "benchmark_results.json"
-    with open(infile, "r") as f:
+    with open(infile) as f:
         data = json.load(f)
     results = parse_pytest_benchmark_json(data)
     with open(outfile, "w") as f:

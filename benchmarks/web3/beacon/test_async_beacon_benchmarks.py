@@ -1,10 +1,13 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
-from unittest.mock import patch
+from unittest.mock import (
+    patch,
+)
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3.beacon
 
-import faster_web3.beacon
 from benchmarks.batching import (
     run_1000_async,
 )
@@ -25,6 +28,7 @@ from benchmarks.web3.fixtures.http import (
     AIOHTTP_CLIENT_SESSION_GET,
     AIOHTTP_CLIENT_SESSION_POST,
 )
+import faster_web3.beacon
 
 # --- Benchmarks for All AsyncBeacon Methods ---
 
@@ -144,9 +148,7 @@ def test_get_validator(benchmark: BenchmarkFixture, validator_id, state_id):
     beacon = web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"validator": validator_id, "state": state_id}
-            ),
+        new=make_beacon_aiohttp_get({"validator": validator_id, "state": state_id}),
     ):
         benchmark(run_1000_async, beacon.get_validator, validator_id, state_id)
 
@@ -158,9 +160,7 @@ def test_faster_get_validator(benchmark: BenchmarkFixture, validator_id, state_i
     beacon = faster_web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"validator": validator_id, "state": state_id}
-            ),
+        new=make_beacon_aiohttp_get({"validator": validator_id, "state": state_id}),
     ):
         benchmark(run_1000_async, beacon.get_validator, validator_id, state_id)
 
@@ -411,9 +411,7 @@ def test_get_light_client_bootstrap_structure(benchmark: BenchmarkFixture, block
     beacon = web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_bootstrap_structure": block_root}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_bootstrap_structure": block_root}),
     ):
         benchmark(
             run_1000_async,
@@ -430,9 +428,7 @@ def test_faster_get_light_client_bootstrap_structure(
     beacon = faster_web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_bootstrap_structure": block_root}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_bootstrap_structure": block_root}),
     ):
         benchmark(
             run_1000_async,
@@ -466,9 +462,7 @@ def test_get_light_client_finality_update(benchmark: BenchmarkFixture):
     beacon = web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_finality_update": True}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_finality_update": True}),
     ):
         benchmark(run_1000_async, beacon.get_light_client_finality_update)
 
@@ -478,9 +472,7 @@ def test_faster_get_light_client_finality_update(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_finality_update": True}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_finality_update": True}),
     ):
         benchmark(run_1000_async, beacon.get_light_client_finality_update)
 
@@ -490,9 +482,7 @@ def test_get_light_client_optimistic_update(benchmark: BenchmarkFixture):
     beacon = web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_optimistic_update": True}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_optimistic_update": True}),
     ):
         benchmark(run_1000_async, beacon.get_light_client_optimistic_update)
 
@@ -502,9 +492,7 @@ def test_faster_get_light_client_optimistic_update(benchmark: BenchmarkFixture):
     beacon = faster_web3.beacon.AsyncBeacon(base_url=BEACON_BASE_URL)
     with patch(
         AIOHTTP_CLIENT_SESSION_GET,
-        new=make_beacon_aiohttp_get(
-                {"light_client_optimistic_update": True}
-            ),
+        new=make_beacon_aiohttp_get({"light_client_optimistic_update": True}),
     ):
         benchmark(run_1000_async, beacon.get_light_client_optimistic_update)
 

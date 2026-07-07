@@ -1,11 +1,11 @@
 import pytest
 
+from faster_web3 import (
+    Web3,
+)
 from tests.integration.common import (
     COINBASE,
     MiscWebSocketTest,
-)
-from faster_web3 import (
-    Web3,
 )
 
 from .common import (

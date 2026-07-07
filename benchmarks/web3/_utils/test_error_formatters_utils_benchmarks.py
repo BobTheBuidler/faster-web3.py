@@ -1,8 +1,8 @@
 import pytest
+
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 import web3._utils.error_formatters_utils
 import web3._utils.method_formatters
 from web3.exceptions import (
@@ -13,18 +13,7 @@ from web3.exceptions import (
     Web3ValueError,
 )
 
-import faster_web3._utils.error_formatters_utils
-import faster_web3._utils.method_formatters
-from faster_web3.exceptions import (
-    BlockNotFound as FasterBlockNotFound,
-    ContractLogicError as FasterContractLogicError,
-    OffchainLookup as FasterOffchainLookup,
-    TransactionIndexingInProgress as FasterTransactionIndexingInProgress,
-    Web3ValueError as FasterWeb3ValueError,
-)
-
 from benchmarks.batching import (
-    run_100,
     run_100_exc,
 )
 from benchmarks.web3.fixtures.errors import (
@@ -35,7 +24,15 @@ from benchmarks.web3.fixtures.rpc import (
     RPC_NULL_RESULT,
     RPC_SUCCESS_0X1,
 )
-
+import faster_web3._utils.error_formatters_utils
+import faster_web3._utils.method_formatters
+from faster_web3.exceptions import (
+    BlockNotFound as FasterBlockNotFound,
+    ContractLogicError as FasterContractLogicError,
+    OffchainLookup as FasterOffchainLookup,
+    TransactionIndexingInProgress as FasterTransactionIndexingInProgress,
+    Web3ValueError as FasterWeb3ValueError,
+)
 
 REVERT_RESPONSE_CASES = tuple(
     (

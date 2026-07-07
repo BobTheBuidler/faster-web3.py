@@ -1,6 +1,5 @@
-import atexit
 import asyncio
-
+import atexit
 
 _ASYNC_LOOP = asyncio.new_event_loop()
 atexit.register(_ASYNC_LOOP.close)

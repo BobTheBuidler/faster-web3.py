@@ -1,10 +1,9 @@
+import pytest
 import sys
 from typing import (
     Type,
 )
 
-import pytest
-import pytest_asyncio
 from faster_eth_utils import (
     event_signature_to_log_topic,
     to_bytes,
@@ -12,6 +11,7 @@ from faster_eth_utils import (
 from faster_eth_utils.toolz import (
     identity,
 )
+import pytest_asyncio
 
 from faster_web3._utils.contract_sources.contract_data.emitter_contract import (
     EMITTER_CONTRACT_DATA,

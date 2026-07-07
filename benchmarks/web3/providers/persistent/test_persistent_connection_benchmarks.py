@@ -1,11 +1,9 @@
 import pytest
+
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
 import web3._utils.caching
-
-import faster_web3._utils.caching
 
 from benchmarks.batching import (
     run_1000,
@@ -26,6 +24,7 @@ from benchmarks.web3.fixtures.subscriptions import (
     faster_subscription,
     web3_subscription,
 )
+import faster_web3._utils.caching
 
 
 def active_subscriptions(provider):

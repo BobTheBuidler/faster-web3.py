@@ -125,7 +125,7 @@ def test_get_default_ipc_path(platform, expected_result, expected_error):
         ("linux", "/var/path/to/tmp/T/geth.ipc", None),
         (
             "freebsd",
-            "/tmp\geth.ipc" if sys.platform.startswith("win") else "/tmp/geth.ipc",
+            r"/tmp\geth.ipc" if sys.platform.startswith("win") else "/tmp/geth.ipc",
             None,
         ),
         ("win32", r"\\.\pipe\geth.ipc", None),

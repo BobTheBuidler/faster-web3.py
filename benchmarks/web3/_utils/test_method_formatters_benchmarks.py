@@ -1,12 +1,13 @@
 import pytest
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.method_formatters
 
-import faster_web3._utils.method_formatters
-from faster_web3.types import RPCEndpoint
-from pytest_codspeed import BenchmarkFixture
-
-from benchmarks.batching import run_1000
+from benchmarks.batching import (
+    run_1000,
+)
 from benchmarks.web3.fixtures.core import (
     EXAMPLE_ADDRESS,
     HASH32,
@@ -18,6 +19,10 @@ from benchmarks.web3.fixtures.formatters import (
     RAW_RECEIPT_DICT,
     RAW_SIGNED_TX_DICT,
     RAW_TX_DICT,
+)
+import faster_web3._utils.method_formatters
+from faster_web3.types import (
+    RPCEndpoint,
 )
 
 # --- SYSTEMATIC BENCHMARKS FOR PYTHONIC_RESULT_FORMATTERS ---
@@ -45,6 +50,7 @@ REQUEST_DATA = {
     "eth_newFilter": ({"address": EXAMPLE_ADDRESS},),
 }
 
+
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
 def test_PYTHONIC_REQUEST_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
@@ -52,12 +58,14 @@ def test_PYTHONIC_REQUEST_FORMATTERS(
     f = web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
 
+
 @pytest.mark.parametrize("endpoint", list(REQUEST_DATA))
 def test_faster_PYTHONIC_REQUEST_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = faster_web3._utils.method_formatters.PYTHONIC_REQUEST_FORMATTERS[endpoint]
     benchmark(run_1000, f, REQUEST_DATA[endpoint])
+
 
 # Realistic RLP-encoded proof nodes (hex, plausible structure)
 PROOF_NODE_1 = (
@@ -73,12 +81,24 @@ PROOF_NODE_2 = (
     "f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6"
 )
 
-TRACE = {"action": {}, "result": {}, "blockHash": HASH32, "blockNumber": 1, "transactionHash": HASH32}
+TRACE = {
+    "action": {},
+    "result": {},
+    "blockHash": HASH32,
+    "blockNumber": 1,
+    "transactionHash": HASH32,
+}
 
 TRACE_RESPONSE = {"trace": [TRACE] * 50, "output": "0x", "transactionHash": HASH32}
 
 # trace_replayBlockTransactions returns one entry per transaction in the block
-TRACE_RESPONSE_LIST = [TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE, TRACE_RESPONSE]
+TRACE_RESPONSE_LIST = [
+    TRACE_RESPONSE,
+    TRACE_RESPONSE,
+    TRACE_RESPONSE,
+    TRACE_RESPONSE,
+    TRACE_RESPONSE,
+]
 
 RESULT_DATA = {
     "eth_accounts": [
@@ -134,9 +154,7 @@ RESULT_DATA = {
     },
     "eth_getTransactionByBlockHashAndIndex": RAW_TX_DICT,
     "eth_getTransactionByBlockNumberAndIndex": RAW_TX_DICT,
-    "eth_subscribe": {
-        "result": HASH32
-    },
+    "eth_subscribe": {"result": HASH32},
     "eth_simulateV1": [
         {
             "blockStateCalls": [
@@ -191,12 +209,14 @@ RESULT_DATA = {
     "trace_call": {"from": EXAMPLE_ADDRESS},
 }
 
+
 @pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_PYTHONIC_RESULT_FORMATTERS(
     benchmark: BenchmarkFixture, endpoint: RPCEndpoint
 ) -> None:
     f = web3._utils.method_formatters.PYTHONIC_RESULT_FORMATTERS[endpoint]
     benchmark(run_1000, f, RESULT_DATA[endpoint])
+
 
 @pytest.mark.parametrize("endpoint", list(RESULT_DATA))
 def test_faster_PYTHONIC_RESULT_FORMATTERS(

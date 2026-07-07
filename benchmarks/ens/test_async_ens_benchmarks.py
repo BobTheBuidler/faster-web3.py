@@ -1,19 +1,14 @@
+import pytest
 from unittest.mock import (
     patch,
 )
 
-import pytest
+import ens.async_ens
+import ens.exceptions
 from pytest_codspeed import (
     BenchmarkFixture,
 )
-
-import ens.async_ens
-import ens.exceptions
 import web3
-
-import faster_ens.async_ens
-import faster_ens.exceptions
-import faster_web3
 
 from benchmarks.batching import (
     _run_async,
@@ -28,6 +23,9 @@ from benchmarks.ens.params import (
     ADDRESSES,
     parametrize_names_full_coverage,
 )
+import faster_ens.async_ens
+import faster_ens.exceptions
+import faster_web3
 
 
 def web3_async_ens():

@@ -14,10 +14,6 @@ from faster_hexbytes import (
 )
 import pytest_asyncio
 
-from tests.core.contracts.utils import (
-    async_deploy,
-    deploy,
-)
 from faster_web3._utils.contract_sources.contract_data.math_contract import (
     MATH_CONTRACT_DATA,
 )
@@ -35,6 +31,10 @@ from faster_web3.exceptions import (
     TimeExhausted,
     TransactionNotFound,
     Web3ValidationError,
+)
+from tests.core.contracts.utils import (
+    async_deploy,
+    deploy,
 )
 
 RECEIPT_TIMEOUT = 0.2

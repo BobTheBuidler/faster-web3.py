@@ -11,15 +11,6 @@ from typing import (
     cast,
 )
 
-from faster_eth_abi import (
-    codec,
-)
-from faster_eth_abi.codec import (
-    ABICodec,
-)
-from faster_eth_abi.registry import (
-    registry as default_registry,
-)
 from eth_typing import (
     ABI,
     ABICallable,
@@ -31,6 +22,15 @@ from eth_typing import (
     ABIReceive,
     HexStr,
     Primitives,
+)
+from faster_eth_abi import (
+    codec,
+)
+from faster_eth_abi.codec import (
+    ABICodec,
+)
+from faster_eth_abi.registry import (
+    registry as default_registry,
 )
 from faster_eth_utils.abi import (
     abi_to_signature,

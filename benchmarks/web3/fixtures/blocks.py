@@ -11,7 +11,6 @@ from benchmarks.web3.fixtures.rpc import (
     GWEI_RESPONSE_BYTES,
 )
 
-
 _CACHE_BLOCK_NUMBER_BYTES = RAW_BLOCK_DICT["number"].encode("ascii")
 _CACHE_BLOCK_HASH_BYTES = RAW_BLOCK_DICT["hash"].encode("ascii")
 _CACHE_BLOCK_TIMESTAMP_BYTES = RAW_BLOCK_DICT["timestamp"].encode("ascii")

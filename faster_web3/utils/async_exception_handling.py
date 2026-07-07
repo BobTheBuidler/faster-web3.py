@@ -5,11 +5,11 @@ from typing import (
 )
 
 import aiohttp
-from faster_eth_abi import (
-    abi,
-)
 from eth_typing import (
     URI,
+)
+from faster_eth_abi import (
+    abi,
 )
 
 from faster_web3._utils.http import (
@@ -26,7 +26,6 @@ from faster_web3.exceptions import (
 from faster_web3.types import (
     TxParams,
 )
-
 
 ClientSession: Final = aiohttp.ClientSession
 

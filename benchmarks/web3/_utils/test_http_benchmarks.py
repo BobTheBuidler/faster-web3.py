@@ -1,11 +1,14 @@
 import pytest
-from pytest_codspeed import BenchmarkFixture
 
+from pytest_codspeed import (
+    BenchmarkFixture,
+)
 import web3._utils.http
 
+from benchmarks.batching import (
+    run_1000,
+)
 import faster_web3._utils.http
-from benchmarks.batching import run_1000
-
 
 MODULE = "some_module"
 CLASS_NAME = "SomeClass"
