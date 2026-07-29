@@ -6,7 +6,7 @@
 
 int CPyGlobalsInit(void);
 
-extern PyObject *CPyStatics[143];
+extern PyObject *CPyStatics[145];
 extern const char * const CPyLit_Str[];
 extern const char * const CPyLit_Bytes[];
 extern const char * const CPyLit_Int[];
@@ -27,16 +27,25 @@ extern CPyModule *CPyModule_zipfile;
 extern CPyModule *CPyModule_geth___install;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___utils__internal;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___utils;
+extern int CPyExec_faster_web3___tools___benchmark___node(PyObject *module);
+extern PyObject *CPyInit_faster_web3___tools___benchmark___node(void);
+extern PyObject *CPyInitOnly_faster_web3___tools___benchmark___node(void);
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___reporting__internal;
 extern CPyModule *CPyModule_faster_web3___tools___benchmark___reporting;
 extern PyObject *CPyStatic_reporting___globals;
 extern CPyModule *CPyModule_logging;
+extern int CPyExec_faster_web3___tools___benchmark___reporting(PyObject *module);
+extern PyObject *CPyInit_faster_web3___tools___benchmark___reporting(void);
+extern PyObject *CPyInitOnly_faster_web3___tools___benchmark___reporting(void);
 extern PyObject *CPyStatic_utils___globals;
 extern CPyModule *CPyModule_asyncio;
 extern CPyModule *CPyModule_signal;
 extern CPyModule *CPyModule_time;
 extern CPyModule *CPyModule_aiohttp;
 extern CPyModule *CPyModule_requests;
+extern int CPyExec_faster_web3___tools___benchmark___utils(PyObject *module);
+extern PyObject *CPyInit_faster_web3___tools___benchmark___utils(void);
+extern PyObject *CPyInitOnly_faster_web3___tools___benchmark___utils(void);
 extern PyTypeObject *CPyType_node___GethBenchmarkFixture;
 extern PyObject *CPyDef_node___GethBenchmarkFixture(void);
 extern PyTypeObject *CPyType_node___build_GethBenchmarkFixture_gen;

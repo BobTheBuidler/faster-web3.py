@@ -506,7 +506,7 @@ typedef struct {
     CPyVTableItem *vtable;
     PyObject *___mypyc_self__;
     PyObject *_func;
-    PyObject *_wrapper;
+    PyObject *___mypyc_generator_attribute__wrapper;
 } faster_web3____utils___caching___caching_utils___async_handle_request_caching_envObject;
 
 typedef struct {
@@ -550,6 +550,7 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
     PyObject *___mypyc_env__;
+    PyObject *___cpyfunction__;
 } faster_web3____utils___caching___caching_utils___wrapper_async_handle_request_caching_objObject;
 
 typedef struct {
@@ -563,7 +564,7 @@ typedef struct {
     CPyVTableItem *vtable;
     PyObject *___mypyc_self__;
     PyObject *_func;
-    PyObject *_wrapper;
+    PyObject *___mypyc_generator_attribute__wrapper;
 } faster_web3____utils___caching___caching_utils___async_handle_send_caching_envObject;
 
 typedef struct {
@@ -592,6 +593,7 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
     PyObject *___mypyc_env__;
+    PyObject *___cpyfunction__;
 } faster_web3____utils___caching___caching_utils___wrapper_async_handle_send_caching_objObject;
 
 typedef struct {
@@ -605,7 +607,7 @@ typedef struct {
     CPyVTableItem *vtable;
     PyObject *___mypyc_self__;
     PyObject *_func;
-    PyObject *_wrapper;
+    PyObject *___mypyc_generator_attribute__wrapper;
 } faster_web3____utils___caching___caching_utils___async_handle_recv_caching_envObject;
 
 typedef struct {
@@ -650,6 +652,7 @@ typedef struct {
     CPyVTableItem *vtable;
     vectorcallfunc vectorcall;
     PyObject *___mypyc_env__;
+    PyObject *___cpyfunction__;
 } faster_web3____utils___caching___caching_utils___wrapper_async_handle_recv_caching_objObject;
 
 typedef struct {

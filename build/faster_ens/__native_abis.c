@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_abis.h"
 #include "__native_internal_abis.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_ens___abis(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_ens___abis__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_ens___abis__internal);
@@ -63,8 +65,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_ens___abis(void)
+{
+    if (CPyModule_faster_ens___abis__internal) {
+        Py_INCREF(CPyModule_faster_ens___abis__internal);
+        return CPyModule_faster_ens___abis__internal;
+    }
+    CPyModule_faster_ens___abis__internal = PyModule_Create(&module);
+    return CPyModule_faster_ens___abis__internal;
+}
+
 PyObject *CPyInit_faster_ens___abis(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_ens___abis__internal) {
         Py_INCREF(CPyModule_faster_ens___abis__internal);
         return CPyModule_faster_ens___abis__internal;
@@ -72,13 +85,45 @@ PyObject *CPyInit_faster_ens___abis(void)
     CPyModule_faster_ens___abis__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_ens___abis__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_ens.abis");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_ens.abis__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_ens___abis__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_ens___abis__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_ens___abis(CPyModule_faster_ens___abis__internal) != 0)
         goto fail;
     return CPyModule_faster_ens___abis__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_ens.abis");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_ens___abis__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -3320,7 +3365,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_ens/abis.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_ens/abis.py", "<module>", 1, CPyStatic_globals);
         goto CPyL547;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -3365,7 +3410,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 15, CPyStatic_globals);
         goto CPyL548;
     }
-    cpy_r_r21 = (CPyPtr)&((PyListObject *)cpy_r_r20)->ob_item;
+    cpy_r_r21 = (CPyPtr)((CPyPtr)cpy_r_r20 + offsetof(PyListObject, ob_item));
     cpy_r_r22 = *(CPyPtr *)cpy_r_r21;
     *(PyObject * *)cpy_r_r22 = cpy_r_r19;
     cpy_r_r23 = CPyStatics[11]; /* 'name' */
@@ -3385,7 +3430,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 17, CPyStatic_globals);
         goto CPyL550;
     }
-    cpy_r_r32 = (CPyPtr)&((PyListObject *)cpy_r_r31)->ob_item;
+    cpy_r_r32 = (CPyPtr)((CPyPtr)cpy_r_r31 + offsetof(PyListObject, ob_item));
     cpy_r_r33 = *(CPyPtr *)cpy_r_r32;
     *(PyObject * *)cpy_r_r33 = cpy_r_r30;
     cpy_r_r34 = CPyStatics[19]; /* 'payable' */
@@ -3416,7 +3461,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 23, CPyStatic_globals);
         goto CPyL552;
     }
-    cpy_r_r48 = (CPyPtr)&((PyListObject *)cpy_r_r47)->ob_item;
+    cpy_r_r48 = (CPyPtr)((CPyPtr)cpy_r_r47 + offsetof(PyListObject, ob_item));
     cpy_r_r49 = *(CPyPtr *)cpy_r_r48;
     *(PyObject * *)cpy_r_r49 = cpy_r_r46;
     cpy_r_r50 = CPyStatics[11]; /* 'name' */
@@ -3436,7 +3481,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 25, CPyStatic_globals);
         goto CPyL554;
     }
-    cpy_r_r59 = (CPyPtr)&((PyListObject *)cpy_r_r58)->ob_item;
+    cpy_r_r59 = (CPyPtr)((CPyPtr)cpy_r_r58 + offsetof(PyListObject, ob_item));
     cpy_r_r60 = *(CPyPtr *)cpy_r_r59;
     *(PyObject * *)cpy_r_r60 = cpy_r_r57;
     cpy_r_r61 = CPyStatics[19]; /* 'payable' */
@@ -3485,7 +3530,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 31, CPyStatic_globals);
         goto CPyL558;
     }
-    cpy_r_r85 = (CPyPtr)&((PyListObject *)cpy_r_r84)->ob_item;
+    cpy_r_r85 = (CPyPtr)((CPyPtr)cpy_r_r84 + offsetof(PyListObject, ob_item));
     cpy_r_r86 = *(CPyPtr *)cpy_r_r85;
     *(PyObject * *)cpy_r_r86 = cpy_r_r73;
     cpy_r_r87 = cpy_r_r86 + 8;
@@ -3537,7 +3582,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 43, CPyStatic_globals);
         goto CPyL562;
     }
-    cpy_r_r112 = (CPyPtr)&((PyListObject *)cpy_r_r111)->ob_item;
+    cpy_r_r112 = (CPyPtr)((CPyPtr)cpy_r_r111 + offsetof(PyListObject, ob_item));
     cpy_r_r113 = *(CPyPtr *)cpy_r_r112;
     *(PyObject * *)cpy_r_r113 = cpy_r_r105;
     cpy_r_r114 = cpy_r_r113 + 8;
@@ -3578,7 +3623,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 54, CPyStatic_globals);
         goto CPyL565;
     }
-    cpy_r_r133 = (CPyPtr)&((PyListObject *)cpy_r_r132)->ob_item;
+    cpy_r_r133 = (CPyPtr)((CPyPtr)cpy_r_r132 + offsetof(PyListObject, ob_item));
     cpy_r_r134 = *(CPyPtr *)cpy_r_r133;
     *(PyObject * *)cpy_r_r134 = cpy_r_r131;
     cpy_r_r135 = CPyStatics[11]; /* 'name' */
@@ -3598,7 +3643,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 56, CPyStatic_globals);
         goto CPyL567;
     }
-    cpy_r_r144 = (CPyPtr)&((PyListObject *)cpy_r_r143)->ob_item;
+    cpy_r_r144 = (CPyPtr)((CPyPtr)cpy_r_r143 + offsetof(PyListObject, ob_item));
     cpy_r_r145 = *(CPyPtr *)cpy_r_r144;
     *(PyObject * *)cpy_r_r145 = cpy_r_r142;
     cpy_r_r146 = CPyStatics[19]; /* 'payable' */
@@ -3638,7 +3683,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 62, CPyStatic_globals);
         goto CPyL570;
     }
-    cpy_r_r165 = (CPyPtr)&((PyListObject *)cpy_r_r164)->ob_item;
+    cpy_r_r165 = (CPyPtr)((CPyPtr)cpy_r_r164 + offsetof(PyListObject, ob_item));
     cpy_r_r166 = *(CPyPtr *)cpy_r_r165;
     *(PyObject * *)cpy_r_r166 = cpy_r_r158;
     cpy_r_r167 = cpy_r_r166 + 8;
@@ -3688,7 +3733,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 73, CPyStatic_globals);
         goto CPyL574;
     }
-    cpy_r_r191 = (CPyPtr)&((PyListObject *)cpy_r_r190)->ob_item;
+    cpy_r_r191 = (CPyPtr)((CPyPtr)cpy_r_r190 + offsetof(PyListObject, ob_item));
     cpy_r_r192 = *(CPyPtr *)cpy_r_r191;
     *(PyObject * *)cpy_r_r192 = cpy_r_r184;
     cpy_r_r193 = cpy_r_r192 + 8;
@@ -3742,7 +3787,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 84, CPyStatic_globals);
         goto CPyL578;
     }
-    cpy_r_r221 = (CPyPtr)&((PyListObject *)cpy_r_r220)->ob_item;
+    cpy_r_r221 = (CPyPtr)((CPyPtr)cpy_r_r220 + offsetof(PyListObject, ob_item));
     cpy_r_r222 = *(CPyPtr *)cpy_r_r221;
     *(PyObject * *)cpy_r_r222 = cpy_r_r212;
     cpy_r_r223 = cpy_r_r222 + 8;
@@ -3798,7 +3843,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 93, CPyStatic_globals);
         goto CPyL582;
     }
-    cpy_r_r254 = (CPyPtr)&((PyListObject *)cpy_r_r253)->ob_item;
+    cpy_r_r254 = (CPyPtr)((CPyPtr)cpy_r_r253 + offsetof(PyListObject, ob_item));
     cpy_r_r255 = *(CPyPtr *)cpy_r_r254;
     *(PyObject * *)cpy_r_r255 = cpy_r_r238;
     cpy_r_r256 = cpy_r_r255 + 8;
@@ -3845,7 +3890,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 103, CPyStatic_globals);
         goto CPyL585;
     }
-    cpy_r_r281 = (CPyPtr)&((PyListObject *)cpy_r_r280)->ob_item;
+    cpy_r_r281 = (CPyPtr)((CPyPtr)cpy_r_r280 + offsetof(PyListObject, ob_item));
     cpy_r_r282 = *(CPyPtr *)cpy_r_r281;
     *(PyObject * *)cpy_r_r282 = cpy_r_r272;
     cpy_r_r283 = cpy_r_r282 + 8;
@@ -3890,7 +3935,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 112, CPyStatic_globals);
         goto CPyL588;
     }
-    cpy_r_r307 = (CPyPtr)&((PyListObject *)cpy_r_r306)->ob_item;
+    cpy_r_r307 = (CPyPtr)((CPyPtr)cpy_r_r306 + offsetof(PyListObject, ob_item));
     cpy_r_r308 = *(CPyPtr *)cpy_r_r307;
     *(PyObject * *)cpy_r_r308 = cpy_r_r298;
     cpy_r_r309 = cpy_r_r308 + 8;
@@ -3938,7 +3983,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 124, CPyStatic_globals);
         goto CPyL589;
     }
-    cpy_r_r329 = (CPyPtr)&((PyListObject *)cpy_r_r328)->ob_item;
+    cpy_r_r329 = (CPyPtr)((CPyPtr)cpy_r_r328 + offsetof(PyListObject, ob_item));
     cpy_r_r330 = *(CPyPtr *)cpy_r_r329;
     *(PyObject * *)cpy_r_r330 = cpy_r_r327;
     cpy_r_r331 = CPyStatics[11]; /* 'name' */
@@ -3977,7 +4022,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 132, CPyStatic_globals);
         goto CPyL592;
     }
-    cpy_r_r349 = (CPyPtr)&((PyListObject *)cpy_r_r348)->ob_item;
+    cpy_r_r349 = (CPyPtr)((CPyPtr)cpy_r_r348 + offsetof(PyListObject, ob_item));
     cpy_r_r350 = *(CPyPtr *)cpy_r_r349;
     *(PyObject * *)cpy_r_r350 = cpy_r_r347;
     cpy_r_r351 = CPyStatics[11]; /* 'name' */
@@ -3997,7 +4042,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 134, CPyStatic_globals);
         goto CPyL594;
     }
-    cpy_r_r360 = (CPyPtr)&((PyListObject *)cpy_r_r359)->ob_item;
+    cpy_r_r360 = (CPyPtr)((CPyPtr)cpy_r_r359 + offsetof(PyListObject, ob_item));
     cpy_r_r361 = *(CPyPtr *)cpy_r_r360;
     *(PyObject * *)cpy_r_r361 = cpy_r_r358;
     cpy_r_r362 = CPyStatics[19]; /* 'payable' */
@@ -4028,7 +4073,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 140, CPyStatic_globals);
         goto CPyL596;
     }
-    cpy_r_r376 = (CPyPtr)&((PyListObject *)cpy_r_r375)->ob_item;
+    cpy_r_r376 = (CPyPtr)((CPyPtr)cpy_r_r375 + offsetof(PyListObject, ob_item));
     cpy_r_r377 = *(CPyPtr *)cpy_r_r376;
     *(PyObject * *)cpy_r_r377 = cpy_r_r374;
     cpy_r_r378 = CPyStatics[11]; /* 'name' */
@@ -4094,7 +4139,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 148, CPyStatic_globals);
         goto CPyL602;
     }
-    cpy_r_r411 = (CPyPtr)&((PyListObject *)cpy_r_r410)->ob_item;
+    cpy_r_r411 = (CPyPtr)((CPyPtr)cpy_r_r410 + offsetof(PyListObject, ob_item));
     cpy_r_r412 = *(CPyPtr *)cpy_r_r411;
     *(PyObject * *)cpy_r_r412 = cpy_r_r394;
     cpy_r_r413 = cpy_r_r412 + 8;
@@ -4120,7 +4165,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 155, CPyStatic_globals);
         goto CPyL604;
     }
-    cpy_r_r425 = (CPyPtr)&((PyListObject *)cpy_r_r424)->ob_item;
+    cpy_r_r425 = (CPyPtr)((CPyPtr)cpy_r_r424 + offsetof(PyListObject, ob_item));
     cpy_r_r426 = *(CPyPtr *)cpy_r_r425;
     *(PyObject * *)cpy_r_r426 = cpy_r_r423;
     cpy_r_r427 = CPyStatics[19]; /* 'payable' */
@@ -4160,7 +4205,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 161, CPyStatic_globals);
         goto CPyL607;
     }
-    cpy_r_r446 = (CPyPtr)&((PyListObject *)cpy_r_r445)->ob_item;
+    cpy_r_r446 = (CPyPtr)((CPyPtr)cpy_r_r445 + offsetof(PyListObject, ob_item));
     cpy_r_r447 = *(CPyPtr *)cpy_r_r446;
     *(PyObject * *)cpy_r_r447 = cpy_r_r439;
     cpy_r_r448 = cpy_r_r447 + 8;
@@ -4201,7 +4246,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 172, CPyStatic_globals);
         goto CPyL610;
     }
-    cpy_r_r467 = (CPyPtr)&((PyListObject *)cpy_r_r466)->ob_item;
+    cpy_r_r467 = (CPyPtr)((CPyPtr)cpy_r_r466 + offsetof(PyListObject, ob_item));
     cpy_r_r468 = *(CPyPtr *)cpy_r_r467;
     *(PyObject * *)cpy_r_r468 = cpy_r_r465;
     cpy_r_r469 = CPyStatics[11]; /* 'name' */
@@ -4257,7 +4302,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 174, CPyStatic_globals);
         goto CPyL616;
     }
-    cpy_r_r498 = (CPyPtr)&((PyListObject *)cpy_r_r497)->ob_item;
+    cpy_r_r498 = (CPyPtr)((CPyPtr)cpy_r_r497 + offsetof(PyListObject, ob_item));
     cpy_r_r499 = *(CPyPtr *)cpy_r_r498;
     *(PyObject * *)cpy_r_r499 = cpy_r_r476;
     cpy_r_r500 = cpy_r_r499 + 8;
@@ -4304,7 +4349,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 188, CPyStatic_globals);
         goto CPyL619;
     }
-    cpy_r_r522 = (CPyPtr)&((PyListObject *)cpy_r_r521)->ob_item;
+    cpy_r_r522 = (CPyPtr)((CPyPtr)cpy_r_r521 + offsetof(PyListObject, ob_item));
     cpy_r_r523 = *(CPyPtr *)cpy_r_r522;
     *(PyObject * *)cpy_r_r523 = cpy_r_r520;
     cpy_r_r524 = CPyStatics[19]; /* 'payable' */
@@ -4353,7 +4398,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 194, CPyStatic_globals);
         goto CPyL623;
     }
-    cpy_r_r548 = (CPyPtr)&((PyListObject *)cpy_r_r547)->ob_item;
+    cpy_r_r548 = (CPyPtr)((CPyPtr)cpy_r_r547 + offsetof(PyListObject, ob_item));
     cpy_r_r549 = *(CPyPtr *)cpy_r_r548;
     *(PyObject * *)cpy_r_r549 = cpy_r_r536;
     cpy_r_r550 = cpy_r_r549 + 8;
@@ -4396,7 +4441,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 206, CPyStatic_globals);
         goto CPyL626;
     }
-    cpy_r_r570 = (CPyPtr)&((PyListObject *)cpy_r_r569)->ob_item;
+    cpy_r_r570 = (CPyPtr)((CPyPtr)cpy_r_r569 + offsetof(PyListObject, ob_item));
     cpy_r_r571 = *(CPyPtr *)cpy_r_r570;
     *(PyObject * *)cpy_r_r571 = cpy_r_r568;
     cpy_r_r572 = CPyStatics[11]; /* 'name' */
@@ -4444,7 +4489,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 214, CPyStatic_globals);
         goto CPyL630;
     }
-    cpy_r_r595 = (CPyPtr)&((PyListObject *)cpy_r_r594)->ob_item;
+    cpy_r_r595 = (CPyPtr)((CPyPtr)cpy_r_r594 + offsetof(PyListObject, ob_item));
     cpy_r_r596 = *(CPyPtr *)cpy_r_r595;
     *(PyObject * *)cpy_r_r596 = cpy_r_r588;
     cpy_r_r597 = cpy_r_r596 + 8;
@@ -4466,7 +4511,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 216, CPyStatic_globals);
         goto CPyL632;
     }
-    cpy_r_r607 = (CPyPtr)&((PyListObject *)cpy_r_r606)->ob_item;
+    cpy_r_r607 = (CPyPtr)((CPyPtr)cpy_r_r606 + offsetof(PyListObject, ob_item));
     cpy_r_r608 = *(CPyPtr *)cpy_r_r607;
     *(PyObject * *)cpy_r_r608 = cpy_r_r605;
     cpy_r_r609 = CPyStatics[19]; /* 'payable' */
@@ -4497,7 +4542,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 222, CPyStatic_globals);
         goto CPyL634;
     }
-    cpy_r_r623 = (CPyPtr)&((PyListObject *)cpy_r_r622)->ob_item;
+    cpy_r_r623 = (CPyPtr)((CPyPtr)cpy_r_r622 + offsetof(PyListObject, ob_item));
     cpy_r_r624 = *(CPyPtr *)cpy_r_r623;
     *(PyObject * *)cpy_r_r624 = cpy_r_r621;
     cpy_r_r625 = CPyStatics[11]; /* 'name' */
@@ -4517,7 +4562,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 224, CPyStatic_globals);
         goto CPyL636;
     }
-    cpy_r_r634 = (CPyPtr)&((PyListObject *)cpy_r_r633)->ob_item;
+    cpy_r_r634 = (CPyPtr)((CPyPtr)cpy_r_r633 + offsetof(PyListObject, ob_item));
     cpy_r_r635 = *(CPyPtr *)cpy_r_r634;
     *(PyObject * *)cpy_r_r635 = cpy_r_r632;
     cpy_r_r636 = CPyStatics[19]; /* 'payable' */
@@ -4557,7 +4602,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 230, CPyStatic_globals);
         goto CPyL639;
     }
-    cpy_r_r655 = (CPyPtr)&((PyListObject *)cpy_r_r654)->ob_item;
+    cpy_r_r655 = (CPyPtr)((CPyPtr)cpy_r_r654 + offsetof(PyListObject, ob_item));
     cpy_r_r656 = *(CPyPtr *)cpy_r_r655;
     *(PyObject * *)cpy_r_r656 = cpy_r_r648;
     cpy_r_r657 = cpy_r_r656 + 8;
@@ -4607,7 +4652,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 241, CPyStatic_globals);
         goto CPyL643;
     }
-    cpy_r_r681 = (CPyPtr)&((PyListObject *)cpy_r_r680)->ob_item;
+    cpy_r_r681 = (CPyPtr)((CPyPtr)cpy_r_r680 + offsetof(PyListObject, ob_item));
     cpy_r_r682 = *(CPyPtr *)cpy_r_r681;
     *(PyObject * *)cpy_r_r682 = cpy_r_r674;
     cpy_r_r683 = cpy_r_r682 + 8;
@@ -4629,7 +4674,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 246, CPyStatic_globals);
         goto CPyL645;
     }
-    cpy_r_r693 = (CPyPtr)&((PyListObject *)cpy_r_r692)->ob_item;
+    cpy_r_r693 = (CPyPtr)((CPyPtr)cpy_r_r692 + offsetof(PyListObject, ob_item));
     cpy_r_r694 = *(CPyPtr *)cpy_r_r693;
     *(PyObject * *)cpy_r_r694 = cpy_r_r691;
     cpy_r_r695 = CPyStatics[19]; /* 'payable' */
@@ -4660,7 +4705,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 252, CPyStatic_globals);
         goto CPyL647;
     }
-    cpy_r_r709 = (CPyPtr)&((PyListObject *)cpy_r_r708)->ob_item;
+    cpy_r_r709 = (CPyPtr)((CPyPtr)cpy_r_r708 + offsetof(PyListObject, ob_item));
     cpy_r_r710 = *(CPyPtr *)cpy_r_r709;
     *(PyObject * *)cpy_r_r710 = cpy_r_r707;
     cpy_r_r711 = CPyStatics[11]; /* 'name' */
@@ -4707,7 +4752,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 262, CPyStatic_globals);
         goto CPyL651;
     }
-    cpy_r_r733 = (CPyPtr)&((PyListObject *)cpy_r_r732)->ob_item;
+    cpy_r_r733 = (CPyPtr)((CPyPtr)cpy_r_r732 + offsetof(PyListObject, ob_item));
     cpy_r_r734 = *(CPyPtr *)cpy_r_r733;
     *(PyObject * *)cpy_r_r734 = cpy_r_r731;
     cpy_r_r735 = CPyStatics[19]; /* 'payable' */
@@ -4746,7 +4791,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 270, CPyStatic_globals);
         goto CPyL654;
     }
-    cpy_r_r753 = (CPyPtr)&((PyListObject *)cpy_r_r752)->ob_item;
+    cpy_r_r753 = (CPyPtr)((CPyPtr)cpy_r_r752 + offsetof(PyListObject, ob_item));
     cpy_r_r754 = *(CPyPtr *)cpy_r_r753;
     *(PyObject * *)cpy_r_r754 = cpy_r_r751;
     cpy_r_r755 = CPyStatics[19]; /* 'payable' */
@@ -4777,7 +4822,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 276, CPyStatic_globals);
         goto CPyL656;
     }
-    cpy_r_r769 = (CPyPtr)&((PyListObject *)cpy_r_r768)->ob_item;
+    cpy_r_r769 = (CPyPtr)((CPyPtr)cpy_r_r768 + offsetof(PyListObject, ob_item));
     cpy_r_r770 = *(CPyPtr *)cpy_r_r769;
     *(PyObject * *)cpy_r_r770 = cpy_r_r767;
     cpy_r_r771 = CPyStatics[11]; /* 'name' */
@@ -4816,7 +4861,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 284, CPyStatic_globals);
         goto CPyL659;
     }
-    cpy_r_r789 = (CPyPtr)&((PyListObject *)cpy_r_r788)->ob_item;
+    cpy_r_r789 = (CPyPtr)((CPyPtr)cpy_r_r788 + offsetof(PyListObject, ob_item));
     cpy_r_r790 = *(CPyPtr *)cpy_r_r789;
     *(PyObject * *)cpy_r_r790 = cpy_r_r787;
     cpy_r_r791 = CPyStatics[11]; /* 'name' */
@@ -4855,7 +4900,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 292, CPyStatic_globals);
         goto CPyL662;
     }
-    cpy_r_r809 = (CPyPtr)&((PyListObject *)cpy_r_r808)->ob_item;
+    cpy_r_r809 = (CPyPtr)((CPyPtr)cpy_r_r808 + offsetof(PyListObject, ob_item));
     cpy_r_r810 = *(CPyPtr *)cpy_r_r809;
     *(PyObject * *)cpy_r_r810 = cpy_r_r807;
     cpy_r_r811 = CPyStatics[11]; /* 'name' */
@@ -4912,7 +4957,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 300, CPyStatic_globals);
         goto CPyL667;
     }
-    cpy_r_r839 = (CPyPtr)&((PyListObject *)cpy_r_r838)->ob_item;
+    cpy_r_r839 = (CPyPtr)((CPyPtr)cpy_r_r838 + offsetof(PyListObject, ob_item));
     cpy_r_r840 = *(CPyPtr *)cpy_r_r839;
     *(PyObject * *)cpy_r_r840 = cpy_r_r827;
     cpy_r_r841 = cpy_r_r840 + 8;
@@ -4955,7 +5000,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 312, CPyStatic_globals);
         goto CPyL670;
     }
-    cpy_r_r861 = (CPyPtr)&((PyListObject *)cpy_r_r860)->ob_item;
+    cpy_r_r861 = (CPyPtr)((CPyPtr)cpy_r_r860 + offsetof(PyListObject, ob_item));
     cpy_r_r862 = *(CPyPtr *)cpy_r_r861;
     *(PyObject * *)cpy_r_r862 = cpy_r_r859;
     cpy_r_r863 = CPyStatics[11]; /* 'name' */
@@ -5002,7 +5047,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 322, CPyStatic_globals);
         goto CPyL674;
     }
-    cpy_r_r885 = (CPyPtr)&((PyListObject *)cpy_r_r884)->ob_item;
+    cpy_r_r885 = (CPyPtr)((CPyPtr)cpy_r_r884 + offsetof(PyListObject, ob_item));
     cpy_r_r886 = *(CPyPtr *)cpy_r_r885;
     *(PyObject * *)cpy_r_r886 = cpy_r_r883;
     cpy_r_r887 = CPyStatics[19]; /* 'payable' */
@@ -5042,7 +5087,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 328, CPyStatic_globals);
         goto CPyL677;
     }
-    cpy_r_r906 = (CPyPtr)&((PyListObject *)cpy_r_r905)->ob_item;
+    cpy_r_r906 = (CPyPtr)((CPyPtr)cpy_r_r905 + offsetof(PyListObject, ob_item));
     cpy_r_r907 = *(CPyPtr *)cpy_r_r906;
     *(PyObject * *)cpy_r_r907 = cpy_r_r899;
     cpy_r_r908 = cpy_r_r907 + 8;
@@ -5100,7 +5145,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 338, CPyStatic_globals);
         goto CPyL682;
     }
-    cpy_r_r936 = (CPyPtr)&((PyListObject *)cpy_r_r935)->ob_item;
+    cpy_r_r936 = (CPyPtr)((CPyPtr)cpy_r_r935 + offsetof(PyListObject, ob_item));
     cpy_r_r937 = *(CPyPtr *)cpy_r_r936;
     *(PyObject * *)cpy_r_r937 = cpy_r_r924;
     cpy_r_r938 = cpy_r_r937 + 8;
@@ -5146,7 +5191,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 348, CPyStatic_globals);
         goto CPyL685;
     }
-    cpy_r_r962 = (CPyPtr)&((PyListObject *)cpy_r_r961)->ob_item;
+    cpy_r_r962 = (CPyPtr)((CPyPtr)cpy_r_r961 + offsetof(PyListObject, ob_item));
     cpy_r_r963 = *(CPyPtr *)cpy_r_r962;
     *(PyObject * *)cpy_r_r963 = cpy_r_r953;
     cpy_r_r964 = cpy_r_r963 + 8;
@@ -5202,7 +5247,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 357, CPyStatic_globals);
         goto CPyL689;
     }
-    cpy_r_r995 = (CPyPtr)&((PyListObject *)cpy_r_r994)->ob_item;
+    cpy_r_r995 = (CPyPtr)((CPyPtr)cpy_r_r994 + offsetof(PyListObject, ob_item));
     cpy_r_r996 = *(CPyPtr *)cpy_r_r995;
     *(PyObject * *)cpy_r_r996 = cpy_r_r979;
     cpy_r_r997 = cpy_r_r996 + 8;
@@ -5271,7 +5316,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 367, CPyStatic_globals);
         goto CPyL694;
     }
-    cpy_r_r1036 = (CPyPtr)&((PyListObject *)cpy_r_r1035)->ob_item;
+    cpy_r_r1036 = (CPyPtr)((CPyPtr)cpy_r_r1035 + offsetof(PyListObject, ob_item));
     cpy_r_r1037 = *(CPyPtr *)cpy_r_r1036;
     *(PyObject * *)cpy_r_r1037 = cpy_r_r1013;
     cpy_r_r1038 = cpy_r_r1037 + 8;
@@ -5342,7 +5387,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 378, CPyStatic_globals);
         goto CPyL699;
     }
-    cpy_r_r1078 = (CPyPtr)&((PyListObject *)cpy_r_r1077)->ob_item;
+    cpy_r_r1078 = (CPyPtr)((CPyPtr)cpy_r_r1077 + offsetof(PyListObject, ob_item));
     cpy_r_r1079 = *(CPyPtr *)cpy_r_r1078;
     *(PyObject * *)cpy_r_r1079 = cpy_r_r1055;
     cpy_r_r1080 = cpy_r_r1079 + 8;
@@ -5391,7 +5436,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 389, CPyStatic_globals);
         goto CPyL702;
     }
-    cpy_r_r1106 = (CPyPtr)&((PyListObject *)cpy_r_r1105)->ob_item;
+    cpy_r_r1106 = (CPyPtr)((CPyPtr)cpy_r_r1105 + offsetof(PyListObject, ob_item));
     cpy_r_r1107 = *(CPyPtr *)cpy_r_r1106;
     *(PyObject * *)cpy_r_r1107 = cpy_r_r1097;
     cpy_r_r1108 = cpy_r_r1107 + 8;
@@ -5458,7 +5503,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 398, CPyStatic_globals);
         goto CPyL707;
     }
-    cpy_r_r1146 = (CPyPtr)&((PyListObject *)cpy_r_r1145)->ob_item;
+    cpy_r_r1146 = (CPyPtr)((CPyPtr)cpy_r_r1145 + offsetof(PyListObject, ob_item));
     cpy_r_r1147 = *(CPyPtr *)cpy_r_r1146;
     *(PyObject * *)cpy_r_r1147 = cpy_r_r1123;
     cpy_r_r1148 = cpy_r_r1147 + 8;
@@ -5518,7 +5563,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 414, CPyStatic_globals);
         goto CPyL709;
     }
-    cpy_r_r1174 = (CPyPtr)&((PyListObject *)cpy_r_r1173)->ob_item;
+    cpy_r_r1174 = (CPyPtr)((CPyPtr)cpy_r_r1173 + offsetof(PyListObject, ob_item));
     cpy_r_r1175 = *(CPyPtr *)cpy_r_r1174;
     *(PyObject * *)cpy_r_r1175 = cpy_r_r1172;
     cpy_r_r1176 = CPyStatics[19]; /* 'payable' */
@@ -5576,7 +5621,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 428, CPyStatic_globals);
         goto CPyL713;
     }
-    cpy_r_r1203 = (CPyPtr)&((PyListObject *)cpy_r_r1202)->ob_item;
+    cpy_r_r1203 = (CPyPtr)((CPyPtr)cpy_r_r1202 + offsetof(PyListObject, ob_item));
     cpy_r_r1204 = *(CPyPtr *)cpy_r_r1203;
     *(PyObject * *)cpy_r_r1204 = cpy_r_r1201;
     cpy_r_r1205 = CPyStatics[11]; /* 'name' */
@@ -5623,7 +5668,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 438, CPyStatic_globals);
         goto CPyL717;
     }
-    cpy_r_r1227 = (CPyPtr)&((PyListObject *)cpy_r_r1226)->ob_item;
+    cpy_r_r1227 = (CPyPtr)((CPyPtr)cpy_r_r1226 + offsetof(PyListObject, ob_item));
     cpy_r_r1228 = *(CPyPtr *)cpy_r_r1227;
     *(PyObject * *)cpy_r_r1228 = cpy_r_r1225;
     cpy_r_r1229 = CPyStatics[19]; /* 'payable' */
@@ -5662,7 +5707,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 446, CPyStatic_globals);
         goto CPyL720;
     }
-    cpy_r_r1247 = (CPyPtr)&((PyListObject *)cpy_r_r1246)->ob_item;
+    cpy_r_r1247 = (CPyPtr)((CPyPtr)cpy_r_r1246 + offsetof(PyListObject, ob_item));
     cpy_r_r1248 = *(CPyPtr *)cpy_r_r1247;
     *(PyObject * *)cpy_r_r1248 = cpy_r_r1245;
     cpy_r_r1249 = CPyStatics[19]; /* 'payable' */
@@ -5693,7 +5738,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 452, CPyStatic_globals);
         goto CPyL722;
     }
-    cpy_r_r1263 = (CPyPtr)&((PyListObject *)cpy_r_r1262)->ob_item;
+    cpy_r_r1263 = (CPyPtr)((CPyPtr)cpy_r_r1262 + offsetof(PyListObject, ob_item));
     cpy_r_r1264 = *(CPyPtr *)cpy_r_r1263;
     *(PyObject * *)cpy_r_r1264 = cpy_r_r1261;
     cpy_r_r1265 = CPyStatics[11]; /* 'name' */
@@ -5732,7 +5777,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 460, CPyStatic_globals);
         goto CPyL725;
     }
-    cpy_r_r1283 = (CPyPtr)&((PyListObject *)cpy_r_r1282)->ob_item;
+    cpy_r_r1283 = (CPyPtr)((CPyPtr)cpy_r_r1282 + offsetof(PyListObject, ob_item));
     cpy_r_r1284 = *(CPyPtr *)cpy_r_r1283;
     *(PyObject * *)cpy_r_r1284 = cpy_r_r1281;
     cpy_r_r1285 = CPyStatics[11]; /* 'name' */
@@ -5771,7 +5816,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 468, CPyStatic_globals);
         goto CPyL728;
     }
-    cpy_r_r1303 = (CPyPtr)&((PyListObject *)cpy_r_r1302)->ob_item;
+    cpy_r_r1303 = (CPyPtr)((CPyPtr)cpy_r_r1302 + offsetof(PyListObject, ob_item));
     cpy_r_r1304 = *(CPyPtr *)cpy_r_r1303;
     *(PyObject * *)cpy_r_r1304 = cpy_r_r1301;
     cpy_r_r1305 = CPyStatics[11]; /* 'name' */
@@ -5835,7 +5880,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 478, CPyStatic_globals);
         goto CPyL733;
     }
-    cpy_r_r1335 = (CPyPtr)&((PyListObject *)cpy_r_r1334)->ob_item;
+    cpy_r_r1335 = (CPyPtr)((CPyPtr)cpy_r_r1334 + offsetof(PyListObject, ob_item));
     cpy_r_r1336 = *(CPyPtr *)cpy_r_r1335;
     *(PyObject * *)cpy_r_r1336 = cpy_r_r1333;
     cpy_r_r1337 = CPyStatics[11]; /* 'name' */
@@ -5907,7 +5952,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 490, CPyStatic_globals);
         goto CPyL736;
     }
-    cpy_r_r1369 = (CPyPtr)&((PyListObject *)cpy_r_r1368)->ob_item;
+    cpy_r_r1369 = (CPyPtr)((CPyPtr)cpy_r_r1368 + offsetof(PyListObject, ob_item));
     cpy_r_r1370 = *(CPyPtr *)cpy_r_r1369;
     *(PyObject * *)cpy_r_r1370 = cpy_r_r1367;
     cpy_r_r1371 = CPyStatics[19]; /* 'payable' */
@@ -5938,7 +5983,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 496, CPyStatic_globals);
         goto CPyL738;
     }
-    cpy_r_r1385 = (CPyPtr)&((PyListObject *)cpy_r_r1384)->ob_item;
+    cpy_r_r1385 = (CPyPtr)((CPyPtr)cpy_r_r1384 + offsetof(PyListObject, ob_item));
     cpy_r_r1386 = *(CPyPtr *)cpy_r_r1385;
     *(PyObject * *)cpy_r_r1386 = cpy_r_r1383;
     cpy_r_r1387 = CPyStatics[11]; /* 'name' */
@@ -5958,7 +6003,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 498, CPyStatic_globals);
         goto CPyL740;
     }
-    cpy_r_r1396 = (CPyPtr)&((PyListObject *)cpy_r_r1395)->ob_item;
+    cpy_r_r1396 = (CPyPtr)((CPyPtr)cpy_r_r1395 + offsetof(PyListObject, ob_item));
     cpy_r_r1397 = *(CPyPtr *)cpy_r_r1396;
     *(PyObject * *)cpy_r_r1397 = cpy_r_r1394;
     cpy_r_r1398 = CPyStatics[19]; /* 'payable' */
@@ -5998,7 +6043,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 504, CPyStatic_globals);
         goto CPyL743;
     }
-    cpy_r_r1417 = (CPyPtr)&((PyListObject *)cpy_r_r1416)->ob_item;
+    cpy_r_r1417 = (CPyPtr)((CPyPtr)cpy_r_r1416 + offsetof(PyListObject, ob_item));
     cpy_r_r1418 = *(CPyPtr *)cpy_r_r1417;
     *(PyObject * *)cpy_r_r1418 = cpy_r_r1410;
     cpy_r_r1419 = cpy_r_r1418 + 8;
@@ -6047,7 +6092,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 517, CPyStatic_globals);
         goto CPyL747;
     }
-    cpy_r_r1442 = (CPyPtr)&((PyListObject *)cpy_r_r1441)->ob_item;
+    cpy_r_r1442 = (CPyPtr)((CPyPtr)cpy_r_r1441 + offsetof(PyListObject, ob_item));
     cpy_r_r1443 = *(CPyPtr *)cpy_r_r1442;
     *(PyObject * *)cpy_r_r1443 = cpy_r_r1440;
     cpy_r_r1444 = CPyStatics[19]; /* 'payable' */
@@ -6086,7 +6131,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 522, CPyStatic_globals);
         goto CPyL750;
     }
-    cpy_r_r1462 = (CPyPtr)&((PyListObject *)cpy_r_r1461)->ob_item;
+    cpy_r_r1462 = (CPyPtr)((CPyPtr)cpy_r_r1461 + offsetof(PyListObject, ob_item));
     cpy_r_r1463 = *(CPyPtr *)cpy_r_r1462;
     *(PyObject * *)cpy_r_r1463 = cpy_r_r1455;
     cpy_r_r1464 = cpy_r_r1463 + 8;
@@ -6104,7 +6149,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 485, CPyStatic_globals);
         goto CPyL751;
     }
-    cpy_r_r1469 = (CPyPtr)&((PyListObject *)cpy_r_r1468)->ob_item;
+    cpy_r_r1469 = (CPyPtr)((CPyPtr)cpy_r_r1468 + offsetof(PyListObject, ob_item));
     cpy_r_r1470 = *(CPyPtr *)cpy_r_r1469;
     *(PyObject * *)cpy_r_r1470 = cpy_r_r1376;
     cpy_r_r1471 = cpy_r_r1470 + 8;
@@ -6143,7 +6188,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 532, CPyStatic_globals);
         goto CPyL752;
     }
-    cpy_r_r1488 = (CPyPtr)&((PyListObject *)cpy_r_r1487)->ob_item;
+    cpy_r_r1488 = (CPyPtr)((CPyPtr)cpy_r_r1487 + offsetof(PyListObject, ob_item));
     cpy_r_r1489 = *(CPyPtr *)cpy_r_r1488;
     *(PyObject * *)cpy_r_r1489 = cpy_r_r1486;
     cpy_r_r1490 = CPyStatics[19]; /* 'payable' */
@@ -6191,7 +6236,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 539, CPyStatic_globals);
         goto CPyL755;
     }
-    cpy_r_r1518 = (CPyPtr)&((PyListObject *)cpy_r_r1517)->ob_item;
+    cpy_r_r1518 = (CPyPtr)((CPyPtr)cpy_r_r1517 + offsetof(PyListObject, ob_item));
     cpy_r_r1519 = *(CPyPtr *)cpy_r_r1518;
     *(PyObject * *)cpy_r_r1519 = cpy_r_r1507;
     cpy_r_r1520 = cpy_r_r1519 + 8;
@@ -6240,7 +6285,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 558, CPyStatic_globals);
         goto CPyL758;
     }
-    cpy_r_r1548 = (CPyPtr)&((PyListObject *)cpy_r_r1547)->ob_item;
+    cpy_r_r1548 = (CPyPtr)((CPyPtr)cpy_r_r1547 + offsetof(PyListObject, ob_item));
     cpy_r_r1549 = *(CPyPtr *)cpy_r_r1548;
     *(PyObject * *)cpy_r_r1549 = cpy_r_r1537;
     cpy_r_r1550 = cpy_r_r1549 + 8;
@@ -6302,7 +6347,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 577, CPyStatic_globals);
         goto CPyL762;
     }
-    cpy_r_r1587 = (CPyPtr)&((PyListObject *)cpy_r_r1586)->ob_item;
+    cpy_r_r1587 = (CPyPtr)((CPyPtr)cpy_r_r1586 + offsetof(PyListObject, ob_item));
     cpy_r_r1588 = *(CPyPtr *)cpy_r_r1587;
     *(PyObject * *)cpy_r_r1588 = cpy_r_r1567;
     cpy_r_r1589 = cpy_r_r1588 + 8;
@@ -6379,7 +6424,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 602, CPyStatic_globals);
         goto CPyL767;
     }
-    cpy_r_r1636 = (CPyPtr)&((PyListObject *)cpy_r_r1635)->ob_item;
+    cpy_r_r1636 = (CPyPtr)((CPyPtr)cpy_r_r1635 + offsetof(PyListObject, ob_item));
     cpy_r_r1637 = *(CPyPtr *)cpy_r_r1636;
     *(PyObject * *)cpy_r_r1637 = cpy_r_r1607;
     cpy_r_r1638 = cpy_r_r1637 + 8;
@@ -6432,7 +6477,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 633, CPyStatic_globals);
         goto CPyL770;
     }
-    cpy_r_r1668 = (CPyPtr)&((PyListObject *)cpy_r_r1667)->ob_item;
+    cpy_r_r1668 = (CPyPtr)((CPyPtr)cpy_r_r1667 + offsetof(PyListObject, ob_item));
     cpy_r_r1669 = *(CPyPtr *)cpy_r_r1668;
     *(PyObject * *)cpy_r_r1669 = cpy_r_r1657;
     cpy_r_r1670 = cpy_r_r1669 + 8;
@@ -6507,7 +6552,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 652, CPyStatic_globals);
         goto CPyL775;
     }
-    cpy_r_r1716 = (CPyPtr)&((PyListObject *)cpy_r_r1715)->ob_item;
+    cpy_r_r1716 = (CPyPtr)((CPyPtr)cpy_r_r1715 + offsetof(PyListObject, ob_item));
     cpy_r_r1717 = *(CPyPtr *)cpy_r_r1716;
     *(PyObject * *)cpy_r_r1717 = cpy_r_r1687;
     cpy_r_r1718 = cpy_r_r1717 + 8;
@@ -6573,7 +6618,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 683, CPyStatic_globals);
         goto CPyL779;
     }
-    cpy_r_r1757 = (CPyPtr)&((PyListObject *)cpy_r_r1756)->ob_item;
+    cpy_r_r1757 = (CPyPtr)((CPyPtr)cpy_r_r1756 + offsetof(PyListObject, ob_item));
     cpy_r_r1758 = *(CPyPtr *)cpy_r_r1757;
     *(PyObject * *)cpy_r_r1758 = cpy_r_r1737;
     cpy_r_r1759 = cpy_r_r1758 + 8;
@@ -6611,7 +6656,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 708, CPyStatic_globals);
         goto CPyL781;
     }
-    cpy_r_r1779 = (CPyPtr)&((PyListObject *)cpy_r_r1778)->ob_item;
+    cpy_r_r1779 = (CPyPtr)((CPyPtr)cpy_r_r1778 + offsetof(PyListObject, ob_item));
     cpy_r_r1780 = *(CPyPtr *)cpy_r_r1779;
     *(PyObject * *)cpy_r_r1780 = cpy_r_r1777;
     cpy_r_r1781 = CPyStatics[11]; /* 'name' */
@@ -6671,7 +6716,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 721, CPyStatic_globals);
         goto CPyL785;
     }
-    cpy_r_r1817 = (CPyPtr)&((PyListObject *)cpy_r_r1816)->ob_item;
+    cpy_r_r1817 = (CPyPtr)((CPyPtr)cpy_r_r1816 + offsetof(PyListObject, ob_item));
     cpy_r_r1818 = *(CPyPtr *)cpy_r_r1817;
     *(PyObject * *)cpy_r_r1818 = cpy_r_r1797;
     cpy_r_r1819 = cpy_r_r1818 + 8;
@@ -6722,7 +6767,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 746, CPyStatic_globals);
         goto CPyL788;
     }
-    cpy_r_r1848 = (CPyPtr)&((PyListObject *)cpy_r_r1847)->ob_item;
+    cpy_r_r1848 = (CPyPtr)((CPyPtr)cpy_r_r1847 + offsetof(PyListObject, ob_item));
     cpy_r_r1849 = *(CPyPtr *)cpy_r_r1848;
     *(PyObject * *)cpy_r_r1849 = cpy_r_r1837;
     cpy_r_r1850 = cpy_r_r1849 + 8;
@@ -6784,7 +6829,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 765, CPyStatic_globals);
         goto CPyL792;
     }
-    cpy_r_r1887 = (CPyPtr)&((PyListObject *)cpy_r_r1886)->ob_item;
+    cpy_r_r1887 = (CPyPtr)((CPyPtr)cpy_r_r1886 + offsetof(PyListObject, ob_item));
     cpy_r_r1888 = *(CPyPtr *)cpy_r_r1887;
     *(PyObject * *)cpy_r_r1888 = cpy_r_r1867;
     cpy_r_r1889 = cpy_r_r1888 + 8;
@@ -6848,7 +6893,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 790, CPyStatic_globals);
         goto CPyL796;
     }
-    cpy_r_r1927 = (CPyPtr)&((PyListObject *)cpy_r_r1926)->ob_item;
+    cpy_r_r1927 = (CPyPtr)((CPyPtr)cpy_r_r1926 + offsetof(PyListObject, ob_item));
     cpy_r_r1928 = *(CPyPtr *)cpy_r_r1927;
     *(PyObject * *)cpy_r_r1928 = cpy_r_r1907;
     cpy_r_r1929 = cpy_r_r1928 + 8;
@@ -6895,7 +6940,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 815, CPyStatic_globals);
         goto CPyL799;
     }
-    cpy_r_r1954 = (CPyPtr)&((PyListObject *)cpy_r_r1953)->ob_item;
+    cpy_r_r1954 = (CPyPtr)((CPyPtr)cpy_r_r1953 + offsetof(PyListObject, ob_item));
     cpy_r_r1955 = *(CPyPtr *)cpy_r_r1954;
     *(PyObject * *)cpy_r_r1955 = cpy_r_r1945;
     cpy_r_r1956 = cpy_r_r1955 + 8;
@@ -6930,7 +6975,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 820, CPyStatic_globals);
         goto CPyL802;
     }
-    cpy_r_r1975 = (CPyPtr)&((PyListObject *)cpy_r_r1974)->ob_item;
+    cpy_r_r1975 = (CPyPtr)((CPyPtr)cpy_r_r1974 + offsetof(PyListObject, ob_item));
     cpy_r_r1976 = *(CPyPtr *)cpy_r_r1975;
     *(PyObject * *)cpy_r_r1976 = cpy_r_r1966;
     cpy_r_r1977 = cpy_r_r1976 + 8;
@@ -6967,7 +7012,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 830, CPyStatic_globals);
         goto CPyL804;
     }
-    cpy_r_r1996 = (CPyPtr)&((PyListObject *)cpy_r_r1995)->ob_item;
+    cpy_r_r1996 = (CPyPtr)((CPyPtr)cpy_r_r1995 + offsetof(PyListObject, ob_item));
     cpy_r_r1997 = *(CPyPtr *)cpy_r_r1996;
     *(PyObject * *)cpy_r_r1997 = cpy_r_r1994;
     cpy_r_r1998 = CPyStatics[11]; /* 'name' */
@@ -6989,7 +7034,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 832, CPyStatic_globals);
         goto CPyL806;
     }
-    cpy_r_r2009 = (CPyPtr)&((PyListObject *)cpy_r_r2008)->ob_item;
+    cpy_r_r2009 = (CPyPtr)((CPyPtr)cpy_r_r2008 + offsetof(PyListObject, ob_item));
     cpy_r_r2010 = *(CPyPtr *)cpy_r_r2009;
     *(PyObject * *)cpy_r_r2010 = cpy_r_r2007;
     cpy_r_r2011 = CPyStatics[19]; /* 'payable' */
@@ -7035,7 +7080,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 839, CPyStatic_globals);
         goto CPyL809;
     }
-    cpy_r_r2036 = (CPyPtr)&((PyListObject *)cpy_r_r2035)->ob_item;
+    cpy_r_r2036 = (CPyPtr)((CPyPtr)cpy_r_r2035 + offsetof(PyListObject, ob_item));
     cpy_r_r2037 = *(CPyPtr *)cpy_r_r2036;
     *(PyObject * *)cpy_r_r2037 = cpy_r_r2027;
     cpy_r_r2038 = cpy_r_r2037 + 8;
@@ -7059,7 +7104,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 844, CPyStatic_globals);
         goto CPyL811;
     }
-    cpy_r_r2050 = (CPyPtr)&((PyListObject *)cpy_r_r2049)->ob_item;
+    cpy_r_r2050 = (CPyPtr)((CPyPtr)cpy_r_r2049 + offsetof(PyListObject, ob_item));
     cpy_r_r2051 = *(CPyPtr *)cpy_r_r2050;
     *(PyObject * *)cpy_r_r2051 = cpy_r_r2048;
     cpy_r_r2052 = CPyStatics[19]; /* 'payable' */
@@ -7116,7 +7161,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 851, CPyStatic_globals);
         goto CPyL815;
     }
-    cpy_r_r2084 = (CPyPtr)&((PyListObject *)cpy_r_r2083)->ob_item;
+    cpy_r_r2084 = (CPyPtr)((CPyPtr)cpy_r_r2083 + offsetof(PyListObject, ob_item));
     cpy_r_r2085 = *(CPyPtr *)cpy_r_r2084;
     *(PyObject * *)cpy_r_r2085 = cpy_r_r2068;
     cpy_r_r2086 = cpy_r_r2085 + 8;
@@ -7142,7 +7187,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 857, CPyStatic_globals);
         goto CPyL817;
     }
-    cpy_r_r2099 = (CPyPtr)&((PyListObject *)cpy_r_r2098)->ob_item;
+    cpy_r_r2099 = (CPyPtr)((CPyPtr)cpy_r_r2098 + offsetof(PyListObject, ob_item));
     cpy_r_r2100 = *(CPyPtr *)cpy_r_r2099;
     *(PyObject * *)cpy_r_r2100 = cpy_r_r2097;
     cpy_r_r2101 = CPyStatics[19]; /* 'payable' */
@@ -7177,7 +7222,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 864, CPyStatic_globals);
         goto CPyL819;
     }
-    cpy_r_r2119 = (CPyPtr)&((PyListObject *)cpy_r_r2118)->ob_item;
+    cpy_r_r2119 = (CPyPtr)((CPyPtr)cpy_r_r2118 + offsetof(PyListObject, ob_item));
     cpy_r_r2120 = *(CPyPtr *)cpy_r_r2119;
     *(PyObject * *)cpy_r_r2120 = cpy_r_r2117;
     cpy_r_r2121 = CPyStatics[11]; /* 'name' */
@@ -7220,7 +7265,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 873, CPyStatic_globals);
         goto CPyL822;
     }
-    cpy_r_r2143 = (CPyPtr)&((PyListObject *)cpy_r_r2142)->ob_item;
+    cpy_r_r2143 = (CPyPtr)((CPyPtr)cpy_r_r2142 + offsetof(PyListObject, ob_item));
     cpy_r_r2144 = *(CPyPtr *)cpy_r_r2143;
     *(PyObject * *)cpy_r_r2144 = cpy_r_r2141;
     cpy_r_r2145 = CPyStatics[11]; /* 'name' */
@@ -7242,7 +7287,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 875, CPyStatic_globals);
         goto CPyL824;
     }
-    cpy_r_r2156 = (CPyPtr)&((PyListObject *)cpy_r_r2155)->ob_item;
+    cpy_r_r2156 = (CPyPtr)((CPyPtr)cpy_r_r2155 + offsetof(PyListObject, ob_item));
     cpy_r_r2157 = *(CPyPtr *)cpy_r_r2156;
     *(PyObject * *)cpy_r_r2157 = cpy_r_r2154;
     cpy_r_r2158 = CPyStatics[19]; /* 'payable' */
@@ -7299,7 +7344,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 882, CPyStatic_globals);
         goto CPyL828;
     }
-    cpy_r_r2190 = (CPyPtr)&((PyListObject *)cpy_r_r2189)->ob_item;
+    cpy_r_r2190 = (CPyPtr)((CPyPtr)cpy_r_r2189 + offsetof(PyListObject, ob_item));
     cpy_r_r2191 = *(CPyPtr *)cpy_r_r2190;
     *(PyObject * *)cpy_r_r2191 = cpy_r_r2174;
     cpy_r_r2192 = cpy_r_r2191 + 8;
@@ -7325,7 +7370,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 888, CPyStatic_globals);
         goto CPyL830;
     }
-    cpy_r_r2205 = (CPyPtr)&((PyListObject *)cpy_r_r2204)->ob_item;
+    cpy_r_r2205 = (CPyPtr)((CPyPtr)cpy_r_r2204 + offsetof(PyListObject, ob_item));
     cpy_r_r2206 = *(CPyPtr *)cpy_r_r2205;
     *(PyObject * *)cpy_r_r2206 = cpy_r_r2203;
     cpy_r_r2207 = CPyStatics[19]; /* 'payable' */
@@ -7371,7 +7416,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 895, CPyStatic_globals);
         goto CPyL833;
     }
-    cpy_r_r2232 = (CPyPtr)&((PyListObject *)cpy_r_r2231)->ob_item;
+    cpy_r_r2232 = (CPyPtr)((CPyPtr)cpy_r_r2231 + offsetof(PyListObject, ob_item));
     cpy_r_r2233 = *(CPyPtr *)cpy_r_r2232;
     *(PyObject * *)cpy_r_r2233 = cpy_r_r2223;
     cpy_r_r2234 = cpy_r_r2233 + 8;
@@ -7395,7 +7440,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 900, CPyStatic_globals);
         goto CPyL835;
     }
-    cpy_r_r2246 = (CPyPtr)&((PyListObject *)cpy_r_r2245)->ob_item;
+    cpy_r_r2246 = (CPyPtr)((CPyPtr)cpy_r_r2245 + offsetof(PyListObject, ob_item));
     cpy_r_r2247 = *(CPyPtr *)cpy_r_r2246;
     *(PyObject * *)cpy_r_r2247 = cpy_r_r2244;
     cpy_r_r2248 = CPyStatics[19]; /* 'payable' */
@@ -7441,7 +7486,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 907, CPyStatic_globals);
         goto CPyL838;
     }
-    cpy_r_r2273 = (CPyPtr)&((PyListObject *)cpy_r_r2272)->ob_item;
+    cpy_r_r2273 = (CPyPtr)((CPyPtr)cpy_r_r2272 + offsetof(PyListObject, ob_item));
     cpy_r_r2274 = *(CPyPtr *)cpy_r_r2273;
     *(PyObject * *)cpy_r_r2274 = cpy_r_r2264;
     cpy_r_r2275 = cpy_r_r2274 + 8;
@@ -7465,7 +7510,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 912, CPyStatic_globals);
         goto CPyL840;
     }
-    cpy_r_r2287 = (CPyPtr)&((PyListObject *)cpy_r_r2286)->ob_item;
+    cpy_r_r2287 = (CPyPtr)((CPyPtr)cpy_r_r2286 + offsetof(PyListObject, ob_item));
     cpy_r_r2288 = *(CPyPtr *)cpy_r_r2287;
     *(PyObject * *)cpy_r_r2288 = cpy_r_r2285;
     cpy_r_r2289 = CPyStatics[19]; /* 'payable' */
@@ -7500,7 +7545,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 919, CPyStatic_globals);
         goto CPyL842;
     }
-    cpy_r_r2307 = (CPyPtr)&((PyListObject *)cpy_r_r2306)->ob_item;
+    cpy_r_r2307 = (CPyPtr)((CPyPtr)cpy_r_r2306 + offsetof(PyListObject, ob_item));
     cpy_r_r2308 = *(CPyPtr *)cpy_r_r2307;
     *(PyObject * *)cpy_r_r2308 = cpy_r_r2305;
     cpy_r_r2309 = CPyStatics[11]; /* 'name' */
@@ -7522,7 +7567,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 921, CPyStatic_globals);
         goto CPyL844;
     }
-    cpy_r_r2320 = (CPyPtr)&((PyListObject *)cpy_r_r2319)->ob_item;
+    cpy_r_r2320 = (CPyPtr)((CPyPtr)cpy_r_r2319 + offsetof(PyListObject, ob_item));
     cpy_r_r2321 = *(CPyPtr *)cpy_r_r2320;
     *(PyObject * *)cpy_r_r2321 = cpy_r_r2318;
     cpy_r_r2322 = CPyStatics[19]; /* 'payable' */
@@ -7557,7 +7602,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 928, CPyStatic_globals);
         goto CPyL846;
     }
-    cpy_r_r2340 = (CPyPtr)&((PyListObject *)cpy_r_r2339)->ob_item;
+    cpy_r_r2340 = (CPyPtr)((CPyPtr)cpy_r_r2339 + offsetof(PyListObject, ob_item));
     cpy_r_r2341 = *(CPyPtr *)cpy_r_r2340;
     *(PyObject * *)cpy_r_r2341 = cpy_r_r2338;
     cpy_r_r2342 = CPyStatics[11]; /* 'name' */
@@ -7579,7 +7624,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 930, CPyStatic_globals);
         goto CPyL848;
     }
-    cpy_r_r2353 = (CPyPtr)&((PyListObject *)cpy_r_r2352)->ob_item;
+    cpy_r_r2353 = (CPyPtr)((CPyPtr)cpy_r_r2352 + offsetof(PyListObject, ob_item));
     cpy_r_r2354 = *(CPyPtr *)cpy_r_r2353;
     *(PyObject * *)cpy_r_r2354 = cpy_r_r2351;
     cpy_r_r2355 = CPyStatics[19]; /* 'payable' */
@@ -7614,7 +7659,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 937, CPyStatic_globals);
         goto CPyL850;
     }
-    cpy_r_r2373 = (CPyPtr)&((PyListObject *)cpy_r_r2372)->ob_item;
+    cpy_r_r2373 = (CPyPtr)((CPyPtr)cpy_r_r2372 + offsetof(PyListObject, ob_item));
     cpy_r_r2374 = *(CPyPtr *)cpy_r_r2373;
     *(PyObject * *)cpy_r_r2374 = cpy_r_r2371;
     cpy_r_r2375 = CPyStatics[11]; /* 'name' */
@@ -7647,7 +7692,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 939, CPyStatic_globals);
         goto CPyL853;
     }
-    cpy_r_r2393 = (CPyPtr)&((PyListObject *)cpy_r_r2392)->ob_item;
+    cpy_r_r2393 = (CPyPtr)((CPyPtr)cpy_r_r2392 + offsetof(PyListObject, ob_item));
     cpy_r_r2394 = *(CPyPtr *)cpy_r_r2393;
     *(PyObject * *)cpy_r_r2394 = cpy_r_r2384;
     cpy_r_r2395 = cpy_r_r2394 + 8;
@@ -7706,7 +7751,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 949, CPyStatic_globals);
         goto CPyL857;
     }
-    cpy_r_r2428 = (CPyPtr)&((PyListObject *)cpy_r_r2427)->ob_item;
+    cpy_r_r2428 = (CPyPtr)((CPyPtr)cpy_r_r2427 + offsetof(PyListObject, ob_item));
     cpy_r_r2429 = *(CPyPtr *)cpy_r_r2428;
     *(PyObject * *)cpy_r_r2429 = cpy_r_r2412;
     cpy_r_r2430 = cpy_r_r2429 + 8;
@@ -7775,7 +7820,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 962, CPyStatic_globals);
         goto CPyL862;
     }
-    cpy_r_r2468 = (CPyPtr)&((PyListObject *)cpy_r_r2467)->ob_item;
+    cpy_r_r2468 = (CPyPtr)((CPyPtr)cpy_r_r2467 + offsetof(PyListObject, ob_item));
     cpy_r_r2469 = *(CPyPtr *)cpy_r_r2468;
     *(PyObject * *)cpy_r_r2469 = cpy_r_r2452;
     cpy_r_r2470 = cpy_r_r2469 + 8;
@@ -7833,7 +7878,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 975, CPyStatic_globals);
         goto CPyL866;
     }
-    cpy_r_r2501 = (CPyPtr)&((PyListObject *)cpy_r_r2500)->ob_item;
+    cpy_r_r2501 = (CPyPtr)((CPyPtr)cpy_r_r2500 + offsetof(PyListObject, ob_item));
     cpy_r_r2502 = *(CPyPtr *)cpy_r_r2501;
     *(PyObject * *)cpy_r_r2502 = cpy_r_r2492;
     cpy_r_r2503 = cpy_r_r2502 + 8;
@@ -7900,7 +7945,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 987, CPyStatic_globals);
         goto CPyL871;
     }
-    cpy_r_r2540 = (CPyPtr)&((PyListObject *)cpy_r_r2539)->ob_item;
+    cpy_r_r2540 = (CPyPtr)((CPyPtr)cpy_r_r2539 + offsetof(PyListObject, ob_item));
     cpy_r_r2541 = *(CPyPtr *)cpy_r_r2540;
     *(PyObject * *)cpy_r_r2541 = cpy_r_r2524;
     cpy_r_r2542 = cpy_r_r2541 + 8;
@@ -7958,7 +8003,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1000, CPyStatic_globals);
         goto CPyL875;
     }
-    cpy_r_r2573 = (CPyPtr)&((PyListObject *)cpy_r_r2572)->ob_item;
+    cpy_r_r2573 = (CPyPtr)((CPyPtr)cpy_r_r2572 + offsetof(PyListObject, ob_item));
     cpy_r_r2574 = *(CPyPtr *)cpy_r_r2573;
     *(PyObject * *)cpy_r_r2574 = cpy_r_r2564;
     cpy_r_r2575 = cpy_r_r2574 + 8;
@@ -8014,7 +8059,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1012, CPyStatic_globals);
         goto CPyL879;
     }
-    cpy_r_r2605 = (CPyPtr)&((PyListObject *)cpy_r_r2604)->ob_item;
+    cpy_r_r2605 = (CPyPtr)((CPyPtr)cpy_r_r2604 + offsetof(PyListObject, ob_item));
     cpy_r_r2606 = *(CPyPtr *)cpy_r_r2605;
     *(PyObject * *)cpy_r_r2606 = cpy_r_r2596;
     cpy_r_r2607 = cpy_r_r2606 + 8;
@@ -8081,7 +8126,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1024, CPyStatic_globals);
         goto CPyL884;
     }
-    cpy_r_r2644 = (CPyPtr)&((PyListObject *)cpy_r_r2643)->ob_item;
+    cpy_r_r2644 = (CPyPtr)((CPyPtr)cpy_r_r2643 + offsetof(PyListObject, ob_item));
     cpy_r_r2645 = *(CPyPtr *)cpy_r_r2644;
     *(PyObject * *)cpy_r_r2645 = cpy_r_r2628;
     cpy_r_r2646 = cpy_r_r2645 + 8;
@@ -8139,7 +8184,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1037, CPyStatic_globals);
         goto CPyL888;
     }
-    cpy_r_r2677 = (CPyPtr)&((PyListObject *)cpy_r_r2676)->ob_item;
+    cpy_r_r2677 = (CPyPtr)((CPyPtr)cpy_r_r2676 + offsetof(PyListObject, ob_item));
     cpy_r_r2678 = *(CPyPtr *)cpy_r_r2677;
     *(PyObject * *)cpy_r_r2678 = cpy_r_r2668;
     cpy_r_r2679 = cpy_r_r2678 + 8;
@@ -8206,7 +8251,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1049, CPyStatic_globals);
         goto CPyL893;
     }
-    cpy_r_r2716 = (CPyPtr)&((PyListObject *)cpy_r_r2715)->ob_item;
+    cpy_r_r2716 = (CPyPtr)((CPyPtr)cpy_r_r2715 + offsetof(PyListObject, ob_item));
     cpy_r_r2717 = *(CPyPtr *)cpy_r_r2716;
     *(PyObject * *)cpy_r_r2717 = cpy_r_r2700;
     cpy_r_r2718 = cpy_r_r2717 + 8;
@@ -8275,7 +8320,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1062, CPyStatic_globals);
         goto CPyL898;
     }
-    cpy_r_r2756 = (CPyPtr)&((PyListObject *)cpy_r_r2755)->ob_item;
+    cpy_r_r2756 = (CPyPtr)((CPyPtr)cpy_r_r2755 + offsetof(PyListObject, ob_item));
     cpy_r_r2757 = *(CPyPtr *)cpy_r_r2756;
     *(PyObject * *)cpy_r_r2757 = cpy_r_r2740;
     cpy_r_r2758 = cpy_r_r2757 + 8;
@@ -8322,7 +8367,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1075, CPyStatic_globals);
         goto CPyL901;
     }
-    cpy_r_r2782 = (CPyPtr)&((PyListObject *)cpy_r_r2781)->ob_item;
+    cpy_r_r2782 = (CPyPtr)((CPyPtr)cpy_r_r2781 + offsetof(PyListObject, ob_item));
     cpy_r_r2783 = *(CPyPtr *)cpy_r_r2782;
     *(PyObject * *)cpy_r_r2783 = cpy_r_r2780;
     cpy_r_r2784 = CPyStatics[11]; /* 'name' */
@@ -8344,7 +8389,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1077, CPyStatic_globals);
         goto CPyL903;
     }
-    cpy_r_r2795 = (CPyPtr)&((PyListObject *)cpy_r_r2794)->ob_item;
+    cpy_r_r2795 = (CPyPtr)((CPyPtr)cpy_r_r2794 + offsetof(PyListObject, ob_item));
     cpy_r_r2796 = *(CPyPtr *)cpy_r_r2795;
     *(PyObject * *)cpy_r_r2796 = cpy_r_r2793;
     cpy_r_r2797 = CPyStatics[19]; /* 'payable' */
@@ -8390,7 +8435,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1084, CPyStatic_globals);
         goto CPyL906;
     }
-    cpy_r_r2822 = (CPyPtr)&((PyListObject *)cpy_r_r2821)->ob_item;
+    cpy_r_r2822 = (CPyPtr)((CPyPtr)cpy_r_r2821 + offsetof(PyListObject, ob_item));
     cpy_r_r2823 = *(CPyPtr *)cpy_r_r2822;
     *(PyObject * *)cpy_r_r2823 = cpy_r_r2813;
     cpy_r_r2824 = cpy_r_r2823 + 8;
@@ -8414,7 +8459,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1089, CPyStatic_globals);
         goto CPyL908;
     }
-    cpy_r_r2836 = (CPyPtr)&((PyListObject *)cpy_r_r2835)->ob_item;
+    cpy_r_r2836 = (CPyPtr)((CPyPtr)cpy_r_r2835 + offsetof(PyListObject, ob_item));
     cpy_r_r2837 = *(CPyPtr *)cpy_r_r2836;
     *(PyObject * *)cpy_r_r2837 = cpy_r_r2834;
     cpy_r_r2838 = CPyStatics[19]; /* 'payable' */
@@ -8486,7 +8531,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1099, CPyStatic_globals);
         goto CPyL910;
     }
-    cpy_r_r2870 = (CPyPtr)&((PyListObject *)cpy_r_r2869)->ob_item;
+    cpy_r_r2870 = (CPyPtr)((CPyPtr)cpy_r_r2869 + offsetof(PyListObject, ob_item));
     cpy_r_r2871 = *(CPyPtr *)cpy_r_r2870;
     *(PyObject * *)cpy_r_r2871 = cpy_r_r2861;
     cpy_r_r2872 = cpy_r_r2871 + 8;
@@ -8510,7 +8555,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1104, CPyStatic_globals);
         goto CPyL912;
     }
-    cpy_r_r2884 = (CPyPtr)&((PyListObject *)cpy_r_r2883)->ob_item;
+    cpy_r_r2884 = (CPyPtr)((CPyPtr)cpy_r_r2883 + offsetof(PyListObject, ob_item));
     cpy_r_r2885 = *(CPyPtr *)cpy_r_r2884;
     *(PyObject * *)cpy_r_r2885 = cpy_r_r2882;
     cpy_r_r2886 = CPyStatics[118]; /* 'stateMutability' */
@@ -8554,7 +8599,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1110, CPyStatic_globals);
         goto CPyL915;
     }
-    cpy_r_r2909 = (CPyPtr)&((PyListObject *)cpy_r_r2908)->ob_item;
+    cpy_r_r2909 = (CPyPtr)((CPyPtr)cpy_r_r2908 + offsetof(PyListObject, ob_item));
     cpy_r_r2910 = *(CPyPtr *)cpy_r_r2909;
     *(PyObject * *)cpy_r_r2910 = cpy_r_r2900;
     cpy_r_r2911 = cpy_r_r2910 + 8;
@@ -8578,7 +8623,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1115, CPyStatic_globals);
         goto CPyL917;
     }
-    cpy_r_r2923 = (CPyPtr)&((PyListObject *)cpy_r_r2922)->ob_item;
+    cpy_r_r2923 = (CPyPtr)((CPyPtr)cpy_r_r2922 + offsetof(PyListObject, ob_item));
     cpy_r_r2924 = *(CPyPtr *)cpy_r_r2923;
     *(PyObject * *)cpy_r_r2924 = cpy_r_r2921;
     cpy_r_r2925 = CPyStatics[118]; /* 'stateMutability' */
@@ -8598,7 +8643,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1096, CPyStatic_globals);
         goto CPyL918;
     }
-    cpy_r_r2932 = (CPyPtr)&((PyListObject *)cpy_r_r2931)->ob_item;
+    cpy_r_r2932 = (CPyPtr)((CPyPtr)cpy_r_r2931 + offsetof(PyListObject, ob_item));
     cpy_r_r2933 = *(CPyPtr *)cpy_r_r2932;
     *(PyObject * *)cpy_r_r2933 = cpy_r_r2891;
     cpy_r_r2934 = cpy_r_r2933 + 8;
@@ -8644,7 +8689,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1126, CPyStatic_globals);
         goto CPyL920;
     }
-    cpy_r_r2952 = (CPyPtr)&((PyListObject *)cpy_r_r2951)->ob_item;
+    cpy_r_r2952 = (CPyPtr)((CPyPtr)cpy_r_r2951 + offsetof(PyListObject, ob_item));
     cpy_r_r2953 = *(CPyPtr *)cpy_r_r2952;
     *(PyObject * *)cpy_r_r2953 = cpy_r_r2950;
     cpy_r_r2954 = CPyStatics[19]; /* 'payable' */
@@ -8677,7 +8722,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1133, CPyStatic_globals);
         goto CPyL922;
     }
-    cpy_r_r2970 = (CPyPtr)&((PyListObject *)cpy_r_r2969)->ob_item;
+    cpy_r_r2970 = (CPyPtr)((CPyPtr)cpy_r_r2969 + offsetof(PyListObject, ob_item));
     cpy_r_r2971 = *(CPyPtr *)cpy_r_r2970;
     *(PyObject * *)cpy_r_r2971 = cpy_r_r2968;
     cpy_r_r2972 = CPyStatics[11]; /* 'name' */
@@ -8697,7 +8742,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1135, CPyStatic_globals);
         goto CPyL924;
     }
-    cpy_r_r2981 = (CPyPtr)&((PyListObject *)cpy_r_r2980)->ob_item;
+    cpy_r_r2981 = (CPyPtr)((CPyPtr)cpy_r_r2980 + offsetof(PyListObject, ob_item));
     cpy_r_r2982 = *(CPyPtr *)cpy_r_r2981;
     *(PyObject * *)cpy_r_r2982 = cpy_r_r2979;
     cpy_r_r2983 = CPyStatics[19]; /* 'payable' */
@@ -8739,7 +8784,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1142, CPyStatic_globals);
         goto CPyL927;
     }
-    cpy_r_r3004 = (CPyPtr)&((PyListObject *)cpy_r_r3003)->ob_item;
+    cpy_r_r3004 = (CPyPtr)((CPyPtr)cpy_r_r3003 + offsetof(PyListObject, ob_item));
     cpy_r_r3005 = *(CPyPtr *)cpy_r_r3004;
     *(PyObject * *)cpy_r_r3005 = cpy_r_r2997;
     cpy_r_r3006 = cpy_r_r3005 + 8;
@@ -8781,7 +8826,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1153, CPyStatic_globals);
         goto CPyL930;
     }
-    cpy_r_r3026 = (CPyPtr)&((PyListObject *)cpy_r_r3025)->ob_item;
+    cpy_r_r3026 = (CPyPtr)((CPyPtr)cpy_r_r3025 + offsetof(PyListObject, ob_item));
     cpy_r_r3027 = *(CPyPtr *)cpy_r_r3026;
     *(PyObject * *)cpy_r_r3027 = cpy_r_r3024;
     cpy_r_r3028 = CPyStatics[19]; /* 'payable' */
@@ -8801,7 +8846,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1121, CPyStatic_globals);
         goto CPyL931;
     }
-    cpy_r_r3036 = (CPyPtr)&((PyListObject *)cpy_r_r3035)->ob_item;
+    cpy_r_r3036 = (CPyPtr)((CPyPtr)cpy_r_r3035 + offsetof(PyListObject, ob_item));
     cpy_r_r3037 = *(CPyPtr *)cpy_r_r3036;
     *(PyObject * *)cpy_r_r3037 = cpy_r_r2961;
     cpy_r_r3038 = cpy_r_r3037 + 8;
@@ -8846,7 +8891,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1163, CPyStatic_globals);
         goto CPyL933;
     }
-    cpy_r_r3058 = (CPyPtr)&((PyListObject *)cpy_r_r3057)->ob_item;
+    cpy_r_r3058 = (CPyPtr)((CPyPtr)cpy_r_r3057 + offsetof(PyListObject, ob_item));
     cpy_r_r3059 = *(CPyPtr *)cpy_r_r3058;
     *(PyObject * *)cpy_r_r3059 = cpy_r_r3051;
     cpy_r_r3060 = cpy_r_r3059 + 8;
@@ -8868,7 +8913,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1168, CPyStatic_globals);
         goto CPyL935;
     }
-    cpy_r_r3070 = (CPyPtr)&((PyListObject *)cpy_r_r3069)->ob_item;
+    cpy_r_r3070 = (CPyPtr)((CPyPtr)cpy_r_r3069 + offsetof(PyListObject, ob_item));
     cpy_r_r3071 = *(CPyPtr *)cpy_r_r3070;
     *(PyObject * *)cpy_r_r3071 = cpy_r_r3068;
     cpy_r_r3072 = CPyStatics[19]; /* 'payable' */
@@ -8899,7 +8944,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1174, CPyStatic_globals);
         goto CPyL937;
     }
-    cpy_r_r3086 = (CPyPtr)&((PyListObject *)cpy_r_r3085)->ob_item;
+    cpy_r_r3086 = (CPyPtr)((CPyPtr)cpy_r_r3085 + offsetof(PyListObject, ob_item));
     cpy_r_r3087 = *(CPyPtr *)cpy_r_r3086;
     *(PyObject * *)cpy_r_r3087 = cpy_r_r3084;
     cpy_r_r3088 = CPyStatics[11]; /* 'name' */
@@ -8919,7 +8964,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1176, CPyStatic_globals);
         goto CPyL939;
     }
-    cpy_r_r3097 = (CPyPtr)&((PyListObject *)cpy_r_r3096)->ob_item;
+    cpy_r_r3097 = (CPyPtr)((CPyPtr)cpy_r_r3096 + offsetof(PyListObject, ob_item));
     cpy_r_r3098 = *(CPyPtr *)cpy_r_r3097;
     *(PyObject * *)cpy_r_r3098 = cpy_r_r3095;
     cpy_r_r3099 = CPyStatics[19]; /* 'payable' */
@@ -8958,7 +9003,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1184, CPyStatic_globals);
         goto CPyL942;
     }
-    cpy_r_r3117 = (CPyPtr)&((PyListObject *)cpy_r_r3116)->ob_item;
+    cpy_r_r3117 = (CPyPtr)((CPyPtr)cpy_r_r3116 + offsetof(PyListObject, ob_item));
     cpy_r_r3118 = *(CPyPtr *)cpy_r_r3117;
     *(PyObject * *)cpy_r_r3118 = cpy_r_r3115;
     cpy_r_r3119 = CPyStatics[19]; /* 'payable' */
@@ -8997,7 +9042,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1192, CPyStatic_globals);
         goto CPyL945;
     }
-    cpy_r_r3137 = (CPyPtr)&((PyListObject *)cpy_r_r3136)->ob_item;
+    cpy_r_r3137 = (CPyPtr)((CPyPtr)cpy_r_r3136 + offsetof(PyListObject, ob_item));
     cpy_r_r3138 = *(CPyPtr *)cpy_r_r3137;
     *(PyObject * *)cpy_r_r3138 = cpy_r_r3135;
     cpy_r_r3139 = CPyStatics[19]; /* 'payable' */
@@ -9028,7 +9073,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1198, CPyStatic_globals);
         goto CPyL947;
     }
-    cpy_r_r3153 = (CPyPtr)&((PyListObject *)cpy_r_r3152)->ob_item;
+    cpy_r_r3153 = (CPyPtr)((CPyPtr)cpy_r_r3152 + offsetof(PyListObject, ob_item));
     cpy_r_r3154 = *(CPyPtr *)cpy_r_r3153;
     *(PyObject * *)cpy_r_r3154 = cpy_r_r3151;
     cpy_r_r3155 = CPyStatics[11]; /* 'name' */
@@ -9048,7 +9093,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1200, CPyStatic_globals);
         goto CPyL949;
     }
-    cpy_r_r3164 = (CPyPtr)&((PyListObject *)cpy_r_r3163)->ob_item;
+    cpy_r_r3164 = (CPyPtr)((CPyPtr)cpy_r_r3163 + offsetof(PyListObject, ob_item));
     cpy_r_r3165 = *(CPyPtr *)cpy_r_r3164;
     *(PyObject * *)cpy_r_r3165 = cpy_r_r3162;
     cpy_r_r3166 = CPyStatics[19]; /* 'payable' */
@@ -9079,7 +9124,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1206, CPyStatic_globals);
         goto CPyL951;
     }
-    cpy_r_r3180 = (CPyPtr)&((PyListObject *)cpy_r_r3179)->ob_item;
+    cpy_r_r3180 = (CPyPtr)((CPyPtr)cpy_r_r3179 + offsetof(PyListObject, ob_item));
     cpy_r_r3181 = *(CPyPtr *)cpy_r_r3180;
     *(PyObject * *)cpy_r_r3181 = cpy_r_r3178;
     cpy_r_r3182 = CPyStatics[11]; /* 'name' */
@@ -9099,7 +9144,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1208, CPyStatic_globals);
         goto CPyL953;
     }
-    cpy_r_r3191 = (CPyPtr)&((PyListObject *)cpy_r_r3190)->ob_item;
+    cpy_r_r3191 = (CPyPtr)((CPyPtr)cpy_r_r3190 + offsetof(PyListObject, ob_item));
     cpy_r_r3192 = *(CPyPtr *)cpy_r_r3191;
     *(PyObject * *)cpy_r_r3192 = cpy_r_r3189;
     cpy_r_r3193 = CPyStatics[19]; /* 'payable' */
@@ -9138,7 +9183,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1213, CPyStatic_globals);
         goto CPyL956;
     }
-    cpy_r_r3211 = (CPyPtr)&((PyListObject *)cpy_r_r3210)->ob_item;
+    cpy_r_r3211 = (CPyPtr)((CPyPtr)cpy_r_r3210 + offsetof(PyListObject, ob_item));
     cpy_r_r3212 = *(CPyPtr *)cpy_r_r3211;
     *(PyObject * *)cpy_r_r3212 = cpy_r_r3204;
     cpy_r_r3213 = cpy_r_r3212 + 8;
@@ -9158,7 +9203,7 @@ CPyL477: ;
         CPy_AddTraceback("faster_ens/abis.py", "<module>", 1160, CPyStatic_globals);
         goto CPyL957;
     }
-    cpy_r_r3220 = (CPyPtr)&((PyListObject *)cpy_r_r3219)->ob_item;
+    cpy_r_r3220 = (CPyPtr)((CPyPtr)cpy_r_r3219 + offsetof(PyListObject, ob_item));
     cpy_r_r3221 = *(CPyPtr *)cpy_r_r3220;
     *(PyObject * *)cpy_r_r3221 = cpy_r_r3077;
     cpy_r_r3222 = cpy_r_r3221 + 8;
@@ -15683,26 +15728,26 @@ CPyL957: ;
     CPy_DecRef(cpy_r_r3218);
     goto CPyL547;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_ens___abis = Py_None;
-    CPyModule_builtins = Py_None;
-    CPyModule_typing = Py_None;
-    CPyModule_eth_typing = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_ens___abis = Py_None;
+        CPyModule_builtins = Py_None;
+        CPyModule_typing = Py_None;
+        CPyModule_eth_typing = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[193];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[193];
+    const char * const CPyLit_Str[] = {
     "\t\bbuiltins\005Final\004List\006typing\nABIElement\neth_typing\bconstant\006inputs\004name",
     "\n\004node\004type\abytes32\bresolver\aoutputs\000\aaddress\apayable\bfunction\005owner",
     "\a\005label\017setSubnodeOwner\003ttl\006uint64\006setTTL\vsetResolver\bsetOwner",
@@ -15735,73 +15780,76 @@ const char * const CPyLit_Str[] = {
     "\005\005claim\017defaultResolver\003ret\fresolverAddr\021REVERSE_REGISTRAR",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {2, 2, 4, 5, 1, 7};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_ens___abis__internal = NULL;
-CPyModule *CPyModule_faster_ens___abis;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-CPyModule *CPyModule_typing;
-CPyModule *CPyModule_eth_typing;
-PyObject *CPyStatic_ENS = NULL;
-PyObject *CPyStatic_AUCTION_REGISTRAR = NULL;
-PyObject *CPyStatic_DEED = NULL;
-PyObject *CPyStatic_FIFS_REGISTRAR = NULL;
-PyObject *CPyStatic_PUBLIC_RESOLVER_2 = NULL;
-PyObject *CPyStatic_PUBLIC_RESOLVER_2_EXTENDED = NULL;
-PyObject *CPyStatic_REVERSE_RESOLVER = NULL;
-PyObject *CPyStatic_REVERSE_REGISTRAR = NULL;
-char CPyDef___top_level__(void);
-
-static int exec_abis__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {2, 2, 4, 5, 1, 7};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_ens___abis__internal = NULL;
+    CPyModule *CPyModule_faster_ens___abis;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    CPyModule *CPyModule_typing;
+    CPyModule *CPyModule_eth_typing;
+    int CPyExec_faster_ens___abis(PyObject *module);
+    PyObject *CPyInit_faster_ens___abis(void);
+    PyObject *CPyInitOnly_faster_ens___abis(void);
+    PyObject *CPyStatic_ENS = NULL;
+    PyObject *CPyStatic_AUCTION_REGISTRAR = NULL;
+    PyObject *CPyStatic_DEED = NULL;
+    PyObject *CPyStatic_FIFS_REGISTRAR = NULL;
+    PyObject *CPyStatic_PUBLIC_RESOLVER_2 = NULL;
+    PyObject *CPyStatic_PUBLIC_RESOLVER_2_EXTENDED = NULL;
+    PyObject *CPyStatic_REVERSE_RESOLVER = NULL;
+    PyObject *CPyStatic_REVERSE_REGISTRAR = NULL;
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_ens___abis(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_ens___abis, "faster_ens.abis__mypyc.init_faster_ens___abis", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_abis__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_ens___abis(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_ens___abis, "faster_ens.abis__mypyc.init_faster_ens___abis", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_ens___abis", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_ens___abis", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_abis__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_ens.abis__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_abis__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_abis__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_ens.abis__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_abis__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_abis__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_abis__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_abis__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_abis__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

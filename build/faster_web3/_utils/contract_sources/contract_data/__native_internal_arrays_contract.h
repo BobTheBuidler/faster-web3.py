@@ -18,5 +18,8 @@ extern CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_d
 extern CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___arrays_contract;
 extern PyObject *CPyStatic_globals;
 extern CPyModule *CPyModule_builtins;
+extern int CPyExec_faster_web3____utils___contract_sources___contract_data___arrays_contract(PyObject *module);
+extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___arrays_contract(void);
+extern PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___arrays_contract(void);
 extern char CPyDef___top_level__(void);
 #endif

@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_event_contracts.h"
 #include "__native_internal_event_contracts.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___event_contracts(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___event_contracts(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___even
     CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.event_contracts");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.event_contracts__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___event_contracts(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.event_contracts");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -374,7 +419,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 1, CPyStatic_globals);
         goto CPyL70;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -419,7 +464,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 12, CPyStatic_globals);
         goto CPyL71;
     }
-    cpy_r_r27 = (CPyPtr)&((PyListObject *)cpy_r_r26)->ob_item;
+    cpy_r_r27 = (CPyPtr)((CPyPtr)cpy_r_r26 + offsetof(PyListObject, ob_item));
     cpy_r_r28 = *(CPyPtr *)cpy_r_r27;
     *(PyObject * *)cpy_r_r28 = cpy_r_r25;
     cpy_r_r29 = CPyStatics[13]; /* 'name' */
@@ -453,7 +498,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 25, CPyStatic_globals);
         goto CPyL73;
     }
-    cpy_r_r47 = (CPyPtr)&((PyListObject *)cpy_r_r46)->ob_item;
+    cpy_r_r47 = (CPyPtr)((CPyPtr)cpy_r_r46 + offsetof(PyListObject, ob_item));
     cpy_r_r48 = *(CPyPtr *)cpy_r_r47;
     *(PyObject * *)cpy_r_r48 = cpy_r_r45;
     cpy_r_r49 = CPyStatics[13]; /* 'name' */
@@ -484,7 +529,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 37, CPyStatic_globals);
         goto CPyL75;
     }
-    cpy_r_r64 = (CPyPtr)&((PyListObject *)cpy_r_r63)->ob_item;
+    cpy_r_r64 = (CPyPtr)((CPyPtr)cpy_r_r63 + offsetof(PyListObject, ob_item));
     cpy_r_r65 = *(CPyPtr *)cpy_r_r64;
     *(PyObject * *)cpy_r_r65 = cpy_r_r62;
     cpy_r_r66 = CPyStatics[13]; /* 'name' */
@@ -511,7 +556,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 9, CPyStatic_globals);
         goto CPyL77;
     }
-    cpy_r_r76 = (CPyPtr)&((PyListObject *)cpy_r_r75)->ob_item;
+    cpy_r_r76 = (CPyPtr)((CPyPtr)cpy_r_r75 + offsetof(PyListObject, ob_item));
     cpy_r_r77 = *(CPyPtr *)cpy_r_r76;
     *(PyObject * *)cpy_r_r77 = cpy_r_r34;
     cpy_r_r78 = cpy_r_r77 + 8;
@@ -624,7 +669,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 57, CPyStatic_globals);
         goto CPyL80;
     }
-    cpy_r_r126 = (CPyPtr)&((PyListObject *)cpy_r_r125)->ob_item;
+    cpy_r_r126 = (CPyPtr)((CPyPtr)cpy_r_r125 + offsetof(PyListObject, ob_item));
     cpy_r_r127 = *(CPyPtr *)cpy_r_r126;
     *(PyObject * *)cpy_r_r127 = cpy_r_r124;
     cpy_r_r128 = CPyStatics[13]; /* 'name' */
@@ -658,7 +703,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 70, CPyStatic_globals);
         goto CPyL82;
     }
-    cpy_r_r146 = (CPyPtr)&((PyListObject *)cpy_r_r145)->ob_item;
+    cpy_r_r146 = (CPyPtr)((CPyPtr)cpy_r_r145 + offsetof(PyListObject, ob_item));
     cpy_r_r147 = *(CPyPtr *)cpy_r_r146;
     *(PyObject * *)cpy_r_r147 = cpy_r_r144;
     cpy_r_r148 = CPyStatics[13]; /* 'name' */
@@ -689,7 +734,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 82, CPyStatic_globals);
         goto CPyL84;
     }
-    cpy_r_r163 = (CPyPtr)&((PyListObject *)cpy_r_r162)->ob_item;
+    cpy_r_r163 = (CPyPtr)((CPyPtr)cpy_r_r162 + offsetof(PyListObject, ob_item));
     cpy_r_r164 = *(CPyPtr *)cpy_r_r163;
     *(PyObject * *)cpy_r_r164 = cpy_r_r161;
     cpy_r_r165 = CPyStatics[13]; /* 'name' */
@@ -716,7 +761,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 54, CPyStatic_globals);
         goto CPyL86;
     }
-    cpy_r_r175 = (CPyPtr)&((PyListObject *)cpy_r_r174)->ob_item;
+    cpy_r_r175 = (CPyPtr)((CPyPtr)cpy_r_r174 + offsetof(PyListObject, ob_item));
     cpy_r_r176 = *(CPyPtr *)cpy_r_r175;
     *(PyObject * *)cpy_r_r176 = cpy_r_r133;
     cpy_r_r177 = cpy_r_r176 + 8;
@@ -829,7 +874,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 102, CPyStatic_globals);
         goto CPyL89;
     }
-    cpy_r_r225 = (CPyPtr)&((PyListObject *)cpy_r_r224)->ob_item;
+    cpy_r_r225 = (CPyPtr)((CPyPtr)cpy_r_r224 + offsetof(PyListObject, ob_item));
     cpy_r_r226 = *(CPyPtr *)cpy_r_r225;
     *(PyObject * *)cpy_r_r226 = cpy_r_r223;
     cpy_r_r227 = CPyStatics[13]; /* 'name' */
@@ -863,7 +908,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 115, CPyStatic_globals);
         goto CPyL91;
     }
-    cpy_r_r245 = (CPyPtr)&((PyListObject *)cpy_r_r244)->ob_item;
+    cpy_r_r245 = (CPyPtr)((CPyPtr)cpy_r_r244 + offsetof(PyListObject, ob_item));
     cpy_r_r246 = *(CPyPtr *)cpy_r_r245;
     *(PyObject * *)cpy_r_r246 = cpy_r_r243;
     cpy_r_r247 = CPyStatics[13]; /* 'name' */
@@ -894,7 +939,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 127, CPyStatic_globals);
         goto CPyL93;
     }
-    cpy_r_r262 = (CPyPtr)&((PyListObject *)cpy_r_r261)->ob_item;
+    cpy_r_r262 = (CPyPtr)((CPyPtr)cpy_r_r261 + offsetof(PyListObject, ob_item));
     cpy_r_r263 = *(CPyPtr *)cpy_r_r262;
     *(PyObject * *)cpy_r_r263 = cpy_r_r260;
     cpy_r_r264 = CPyStatics[13]; /* 'name' */
@@ -921,7 +966,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/event_contracts.py", "<module>", 99, CPyStatic_globals);
         goto CPyL95;
     }
-    cpy_r_r274 = (CPyPtr)&((PyListObject *)cpy_r_r273)->ob_item;
+    cpy_r_r274 = (CPyPtr)((CPyPtr)cpy_r_r273 + offsetof(PyListObject, ob_item));
     cpy_r_r275 = *(CPyPtr *)cpy_r_r274;
     *(PyObject * *)cpy_r_r275 = cpy_r_r232;
     cpy_r_r276 = cpy_r_r275 + 8;
@@ -1109,24 +1154,24 @@ CPyL97: ;
     CPy_DecRef(cpy_r_r291);
     goto CPyL70;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[43];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[43];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\206.0x6080604052348015600e575f5ffd5b5061017a8061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610029575f3560e01c80635818fad71461002d575b5f5ffd5b610047600480360381019061004291906100f1565b610049565b005b7ff70fe689e290d8ce2b2a388ac28db36fbb0e16a6d89c6804c461f65a1b40bb1581604051610078919061012b565b60405180910390a17f56d2ef3c5228bf5d88573621e325a4672ab50e033749a601e4f4a5e1dce905d4816040516100af919061012b565b60405180910390a150565b5f5ffd5b5f819050919050565b6100d0816100be565b81146100da575f5ffd5b50565b5f813590506100eb816100c7565b92915050565b5f60208284031215610106576101056100ba565b5b5f610113848285016100dd565b91505092915050565b610125816100be565b82525050565b5f60208201905061013e5f83018461011c565b9291505056fea264697066735822122024dd83d4ed45a24e04cc3847bf220951b8e223a67484b966cda4cedca6223a0564736f6c634300081e0033",
     "\001\027EVENT_CONTRACT_BYTECODE",
@@ -1147,63 +1192,66 @@ const char * const CPyLit_Str[] = {
     "\002!AMBIGUOUS_EVENT_NAME_CONTRACT_ABI\"AMBIGUOUS_EVENT_NAME_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_event_contracts__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___event_contracts;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___event_contracts(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___event_contracts(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts, "faster_web3._utils.contract_sources.contract_data.event_contracts__mypyc.init_faster_web3____utils___contract_sources___contract_data___event_contracts", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_event_contracts__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___event_contracts, "faster_web3._utils.contract_sources.contract_data.event_contracts__mypyc.init_faster_web3____utils___contract_sources___contract_data___event_contracts", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___event_contracts", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___event_contracts", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_event_contracts__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.event_contracts__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_event_contracts__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_event_contracts__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.event_contracts__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_event_contracts__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_event_contracts__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_event_contracts__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_event_contracts__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_event_contracts__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}
