@@ -122,6 +122,7 @@ if TYPE_CHECKING:
 
 Trace = Dict[str, Any]
 Traces = Sequence[Trace]
+FieldFormatters = Dict[str, Callable[..., Any]]
 
 
 def bytes_to_ascii(value: bytes) -> str:
@@ -178,7 +179,7 @@ def is_attrdict(val: Any) -> TypeGuard[AttributeDict]:
 
 @curry
 def type_aware_apply_formatters_to_dict(
-    formatters: Formatters,
+    formatters: FieldFormatters,
     value: Union[AttributeDict[str, Any], Dict[str, Any]],
 ) -> Union[ReadableAttributeDict[str, Any], Dict[str, Any]]:
     """
@@ -334,7 +335,7 @@ withdrawal_result_formatter: Final = type_aware_apply_formatters_to_dict(
 )
 
 
-LOG_ENTRY_FORMATTERS: Final = {
+LOG_ENTRY_FORMATTERS: Final[FieldFormatters] = {
     "blockHash": to_hexbytes32_if_not_null,
     "blockNumber": to_integer_if_hex,
     "transactionIndex": to_integer_if_hex,
@@ -702,16 +703,16 @@ simulate_v1_request_formatter: Final[
     ]
 )
 
+SIMULATE_V1_CALL_RESULT_FORMATTERS: Final[FieldFormatters] = {
+    "returnData": HexBytes,
+    "logs": apply_list_to_array_formatter(log_entry_formatter),
+    "gasUsed": to_integer_if_hex,
+    "status": to_integer_if_hex,
+}
+
 block_result_formatters_copy: Final = BLOCK_RESULT_FORMATTERS.copy()
 block_result_formatters_copy["calls"] = apply_list_to_array_formatter(
-    type_aware_apply_formatters_to_dict(
-        {
-            "returnData": HexBytes,
-            "logs": apply_list_to_array_formatter(log_entry_formatter),
-            "gasUsed": to_integer_if_hex,
-            "status": to_integer_if_hex,
-        }
-    )
+    type_aware_apply_formatters_to_dict(SIMULATE_V1_CALL_RESULT_FORMATTERS)
 )
 simulate_v1_result_formatter: Final = apply_formatter_if(
     is_not_null,
