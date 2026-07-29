@@ -206,7 +206,7 @@ setup(
         "requests>=2.23.0",
         "typing-extensions>=4.0.1",
         "types-requests>=2.0.0",
-        "websockets>=10.0.0,<16.0.0",
+        "websockets>=17.0,<17.1.0",
         "pyunormalize>=15.0.0",
     ],
     python_requires=">=3.10, <4",
