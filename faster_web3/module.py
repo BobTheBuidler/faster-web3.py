@@ -44,11 +44,21 @@ if TYPE_CHECKING:
     )
 
 
+ResultFormatter = Callable[[RPCResponse], RPCResponse]
+ResultFormatters = Union[ResultFormatter, Sequence[ResultFormatter], None]
+
+
 @curry
 def apply_result_formatters(
-    result_formatters: Callable[[RPCResponse], RPCResponse], result: RPCResponse
+    result_formatters: ResultFormatters, result: RPCResponse
 ) -> RPCResponse:
-    return result_formatters(result)
+    if callable(result_formatters):
+        return result_formatters(result)
+    elif not result_formatters:
+        return result
+    for result_formatter in result_formatters:
+        result = result_formatter(result)
+    return result
 
 
 TReturn = TypeVar("TReturn")
