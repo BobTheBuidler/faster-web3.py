@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_fallback_function_contract.h"
 #include "__native_internal_fallback_function_contract.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___fall
     CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.fallback_function_contract");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.fallback_function_contract__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.fallback_function_contract");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -148,7 +193,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py", "<module>", 1, CPyStatic_globals);
         goto CPyL23;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -223,7 +268,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py", "<module>", 15, CPyStatic_globals);
         goto CPyL27;
     }
-    cpy_r_r40 = (CPyPtr)&((PyListObject *)cpy_r_r39)->ob_item;
+    cpy_r_r40 = (CPyPtr)((CPyPtr)cpy_r_r39 + offsetof(PyListObject, ob_item));
     cpy_r_r41 = *(CPyPtr *)cpy_r_r40;
     *(PyObject * *)cpy_r_r41 = cpy_r_r38;
     cpy_r_r42 = CPyStatics[9]; /* 'stateMutability' */
@@ -242,7 +287,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py", "<module>", 9, CPyStatic_globals);
         goto CPyL28;
     }
-    cpy_r_r48 = (CPyPtr)&((PyListObject *)cpy_r_r47)->ob_item;
+    cpy_r_r48 = (CPyPtr)((CPyPtr)cpy_r_r47 + offsetof(PyListObject, ob_item));
     cpy_r_r49 = *(CPyPtr *)cpy_r_r48;
     *(PyObject * *)cpy_r_r49 = cpy_r_r21;
     cpy_r_r50 = cpy_r_r49 + 8;
@@ -352,24 +397,24 @@ CPyL30: ;
     CPy_DecRef(cpy_r_r65);
     goto CPyL23;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[28];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[28];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\203\0320x60806040525f5f8190555060b78060155f395ff3fe6080604052348015600e575f5ffd5b50600436106029575f3560e01c80633bc5de3014603257602a565b5b60015f819055005b6038604c565b60405160439190606a565b60405180910390f35b5f5f54905090565b5f819050919050565b6064816054565b82525050565b5f602082019050607b5f830184605d565b9291505056fea264697066735822122046c6693c62c80acbe96048ed262cd69dc31f380a491d7c6dcd21dab372b0f49f64736f6c634300081e0033",
     "\001#FALLBACK_FUNCTION_CONTRACT_BYTECODE",
@@ -380,63 +425,66 @@ const char * const CPyLit_Str[] = {
     "\004\bbytecode\020bytecode_runtime\003abi\037FALLBACK_FUNCTION_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_fallback_function_contract__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___fallback_function_contract;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract, "faster_web3._utils.contract_sources.contract_data.fallback_function_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___fallback_function_contract", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_fallback_function_contract__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___fallback_function_contract, "faster_web3._utils.contract_sources.contract_data.fallback_function_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___fallback_function_contract", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___fallback_function_contract", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___fallback_function_contract", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_fallback_function_contract__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.fallback_function_contract__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_fallback_function_contract__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_fallback_function_contract__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.fallback_function_contract__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_fallback_function_contract__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_fallback_function_contract__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_fallback_function_contract__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_fallback_function_contract__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_fallback_function_contract__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

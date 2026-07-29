@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_revert_contract.h"
 #include "__native_internal_revert_contract.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___revert_contract(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___revert_contract(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___reve
     CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.revert_contract");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.revert_contract__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___revert_contract(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.revert_contract");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -207,7 +252,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/revert_contract.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/revert_contract.py", "<module>", 1, CPyStatic_globals);
         goto CPyL37;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -265,7 +310,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/revert_contract.py", "<module>", 12, CPyStatic_globals);
         goto CPyL39;
     }
-    cpy_r_r31 = (CPyPtr)&((PyListObject *)cpy_r_r30)->ob_item;
+    cpy_r_r31 = (CPyPtr)((CPyPtr)cpy_r_r30 + offsetof(PyListObject, ob_item));
     cpy_r_r32 = *(CPyPtr *)cpy_r_r31;
     *(PyObject * *)cpy_r_r32 = cpy_r_r29;
     cpy_r_r33 = CPyStatics[9]; /* 'name' */
@@ -353,7 +398,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/revert_contract.py", "<module>", 35, CPyStatic_globals);
         goto CPyL46;
     }
-    cpy_r_r73 = (CPyPtr)&((PyListObject *)cpy_r_r72)->ob_item;
+    cpy_r_r73 = (CPyPtr)((CPyPtr)cpy_r_r72 + offsetof(PyListObject, ob_item));
     cpy_r_r74 = *(CPyPtr *)cpy_r_r73;
     *(PyObject * *)cpy_r_r74 = cpy_r_r71;
     cpy_r_r75 = CPyStatics[19]; /* 'stateMutability' */
@@ -422,7 +467,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/revert_contract.py", "<module>", 9, CPyStatic_globals);
         goto CPyL51;
     }
-    cpy_r_r103 = (CPyPtr)&((PyListObject *)cpy_r_r102)->ob_item;
+    cpy_r_r103 = (CPyPtr)((CPyPtr)cpy_r_r102 + offsetof(PyListObject, ob_item));
     cpy_r_r104 = *(CPyPtr *)cpy_r_r103;
     *(PyObject * *)cpy_r_r104 = cpy_r_r21;
     cpy_r_r105 = cpy_r_r104 + 8;
@@ -606,24 +651,24 @@ CPyL53: ;
     CPy_DecRef(cpy_r_r124);
     goto CPyL37;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[33];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[33];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\212r0x6080604052348015600e575f5ffd5b5061029c8061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610055575f3560e01c8063185c38a414610059578063bc53eca814610063578063c06a97cb1461006d578063d67e4b8414610077578063e766d49814610095575b5f5ffd5b61006161009f565b005b61006b6100da565b005b610075610115565b005b61007f610119565b60405161008c919061016d565b60405180910390f35b61009d610121565b005b6040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100d1906101e0565b60405180910390fd5b6040517f9553947a00000000000000000000000000000000000000000000000000000000815260040161010c90610248565b60405180910390fd5b5f5ffd5b5f6001905090565b6040517f82b4290000000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f8115159050919050565b61016781610153565b82525050565b5f6020820190506101805f83018461015e565b92915050565b5f82825260208201905092915050565b7f46756e6374696f6e20686173206265656e2072657665727465642e00000000005f82015250565b5f6101ca601b83610186565b91506101d582610196565b602082019050919050565b5f6020820190508181035f8301526101f7816101be565b9050919050565b7f596f7520617265206e6f7420617574686f72697a6564000000000000000000005f82015250565b5f610232601683610186565b915061023d826101fe565b602082019050919050565b5f6020820190508181035f83015261025f81610226565b905091905056fea26469706673582212202d8ccc055c01870a6d80c5aa5526a92e31b542448b7077752700fe921dea786864736f6c634300081e0033",
     "\001\030REVERT_CONTRACT_BYTECODE",
@@ -636,63 +681,66 @@ const char * const CPyLit_Str[] = {
     "\002\003abi\024REVERT_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_revert_contract__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___revert_contract;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___revert_contract(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___revert_contract(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract, "faster_web3._utils.contract_sources.contract_data.revert_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___revert_contract", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_revert_contract__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___revert_contract, "faster_web3._utils.contract_sources.contract_data.revert_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___revert_contract", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___revert_contract", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___revert_contract", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_revert_contract__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.revert_contract__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_revert_contract__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_revert_contract__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.revert_contract__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_revert_contract__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_revert_contract__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_revert_contract__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_revert_contract__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_revert_contract__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

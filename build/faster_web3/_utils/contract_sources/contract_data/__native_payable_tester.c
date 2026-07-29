@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_payable_tester.h"
 #include "__native_internal_payable_tester.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___payable_tester(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___payable_tester(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___paya
     CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.payable_tester");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.payable_tester__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___payable_tester(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.payable_tester");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -146,7 +191,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/payable_tester.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/payable_tester.py", "<module>", 1, CPyStatic_globals);
         goto CPyL23;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -221,7 +266,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/payable_tester.py", "<module>", 20, CPyStatic_globals);
         goto CPyL27;
     }
-    cpy_r_r39 = (CPyPtr)&((PyListObject *)cpy_r_r38)->ob_item;
+    cpy_r_r39 = (CPyPtr)((CPyPtr)cpy_r_r38 + offsetof(PyListObject, ob_item));
     cpy_r_r40 = *(CPyPtr *)cpy_r_r39;
     *(PyObject * *)cpy_r_r40 = cpy_r_r37;
     cpy_r_r41 = CPyStatics[12]; /* 'stateMutability' */
@@ -240,7 +285,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/payable_tester.py", "<module>", 9, CPyStatic_globals);
         goto CPyL28;
     }
-    cpy_r_r47 = (CPyPtr)&((PyListObject *)cpy_r_r46)->ob_item;
+    cpy_r_r47 = (CPyPtr)((CPyPtr)cpy_r_r46 + offsetof(PyListObject, ob_item));
     cpy_r_r48 = *(CPyPtr *)cpy_r_r47;
     *(PyObject * *)cpy_r_r48 = cpy_r_r25;
     cpy_r_r49 = cpy_r_r48 + 8;
@@ -344,24 +389,24 @@ CPyL30: ;
     CPy_DecRef(cpy_r_r63);
     goto CPyL23;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[26];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[26];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\204\0060x6080604052348015600e575f5ffd5b5060e78061001b5f395ff3fe6080604052348015600e575f5ffd5b50600436106030575f3560e01c8063c6803622146034578063e4cb8f5c14604e575b5f5ffd5b603a6056565b60405160459190609a565b60405180910390f35b60546067565b005b5f5f9054906101000a900460ff1681565b60015f5f6101000a81548160ff021916908315150217905550565b5f8115159050919050565b6094816082565b82525050565b5f60208201905060ab5f830184608d565b9291505056fea2646970667358221220a9b00e8591f184642b3b3dfbbe6465e7a6ad284ba74537a9e2445f737666c8a364736f6c634300081e0033",
     "\001 PAYABLE_TESTER_CONTRACT_BYTECODE",
@@ -372,63 +417,66 @@ const char * const CPyLit_Str[] = {
     "\001\034PAYABLE_TESTER_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_payable_tester__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___payable_tester;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___payable_tester(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___payable_tester(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester, "faster_web3._utils.contract_sources.contract_data.payable_tester__mypyc.init_faster_web3____utils___contract_sources___contract_data___payable_tester", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_payable_tester__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___payable_tester, "faster_web3._utils.contract_sources.contract_data.payable_tester__mypyc.init_faster_web3____utils___contract_sources___contract_data___payable_tester", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___payable_tester", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___payable_tester", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_payable_tester__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.payable_tester__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_payable_tester__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_payable_tester__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.payable_tester__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_payable_tester__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_payable_tester__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_payable_tester__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_payable_tester__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_payable_tester__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

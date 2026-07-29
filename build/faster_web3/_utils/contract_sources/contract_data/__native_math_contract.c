@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_math_contract.h"
 #include "__native_internal_math_contract.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___math_contract(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___math_contract(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___math
     CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.math_contract");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.math_contract__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___math_contract(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.math_contract");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -295,7 +340,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 1, CPyStatic_globals);
         goto CPyL47;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -340,7 +385,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 12, CPyStatic_globals);
         goto CPyL48;
     }
-    cpy_r_r27 = (CPyPtr)&((PyListObject *)cpy_r_r26)->ob_item;
+    cpy_r_r27 = (CPyPtr)((CPyPtr)cpy_r_r26 + offsetof(PyListObject, ob_item));
     cpy_r_r28 = *(CPyPtr *)cpy_r_r27;
     *(PyObject * *)cpy_r_r28 = cpy_r_r25;
     cpy_r_r29 = CPyStatics[13]; /* 'name' */
@@ -382,7 +427,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 24, CPyStatic_globals);
         goto CPyL51;
     }
-    cpy_r_r51 = (CPyPtr)&((PyListObject *)cpy_r_r50)->ob_item;
+    cpy_r_r51 = (CPyPtr)((CPyPtr)cpy_r_r50 + offsetof(PyListObject, ob_item));
     cpy_r_r52 = *(CPyPtr *)cpy_r_r51;
     *(PyObject * *)cpy_r_r52 = cpy_r_r42;
     cpy_r_r53 = cpy_r_r52 + 8;
@@ -406,7 +451,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 29, CPyStatic_globals);
         goto CPyL53;
     }
-    cpy_r_r65 = (CPyPtr)&((PyListObject *)cpy_r_r64)->ob_item;
+    cpy_r_r65 = (CPyPtr)((CPyPtr)cpy_r_r64 + offsetof(PyListObject, ob_item));
     cpy_r_r66 = *(CPyPtr *)cpy_r_r65;
     *(PyObject * *)cpy_r_r66 = cpy_r_r63;
     cpy_r_r67 = CPyStatics[24]; /* 'stateMutability' */
@@ -445,7 +490,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 36, CPyStatic_globals);
         goto CPyL56;
     }
-    cpy_r_r85 = (CPyPtr)&((PyListObject *)cpy_r_r84)->ob_item;
+    cpy_r_r85 = (CPyPtr)((CPyPtr)cpy_r_r84 + offsetof(PyListObject, ob_item));
     cpy_r_r86 = *(CPyPtr *)cpy_r_r85;
     *(PyObject * *)cpy_r_r86 = cpy_r_r83;
     cpy_r_r87 = CPyStatics[24]; /* 'stateMutability' */
@@ -484,7 +529,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 43, CPyStatic_globals);
         goto CPyL59;
     }
-    cpy_r_r105 = (CPyPtr)&((PyListObject *)cpy_r_r104)->ob_item;
+    cpy_r_r105 = (CPyPtr)((CPyPtr)cpy_r_r104 + offsetof(PyListObject, ob_item));
     cpy_r_r106 = *(CPyPtr *)cpy_r_r105;
     *(PyObject * *)cpy_r_r106 = cpy_r_r103;
     cpy_r_r107 = CPyStatics[24]; /* 'stateMutability' */
@@ -515,7 +560,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 48, CPyStatic_globals);
         goto CPyL61;
     }
-    cpy_r_r121 = (CPyPtr)&((PyListObject *)cpy_r_r120)->ob_item;
+    cpy_r_r121 = (CPyPtr)((CPyPtr)cpy_r_r120 + offsetof(PyListObject, ob_item));
     cpy_r_r122 = *(CPyPtr *)cpy_r_r121;
     *(PyObject * *)cpy_r_r122 = cpy_r_r119;
     cpy_r_r123 = CPyStatics[13]; /* 'name' */
@@ -537,7 +582,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 50, CPyStatic_globals);
         goto CPyL63;
     }
-    cpy_r_r134 = (CPyPtr)&((PyListObject *)cpy_r_r133)->ob_item;
+    cpy_r_r134 = (CPyPtr)((CPyPtr)cpy_r_r133 + offsetof(PyListObject, ob_item));
     cpy_r_r135 = *(CPyPtr *)cpy_r_r134;
     *(PyObject * *)cpy_r_r135 = cpy_r_r132;
     cpy_r_r136 = CPyStatics[24]; /* 'stateMutability' */
@@ -568,7 +613,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 55, CPyStatic_globals);
         goto CPyL65;
     }
-    cpy_r_r150 = (CPyPtr)&((PyListObject *)cpy_r_r149)->ob_item;
+    cpy_r_r150 = (CPyPtr)((CPyPtr)cpy_r_r149 + offsetof(PyListObject, ob_item));
     cpy_r_r151 = *(CPyPtr *)cpy_r_r150;
     *(PyObject * *)cpy_r_r151 = cpy_r_r148;
     cpy_r_r152 = CPyStatics[13]; /* 'name' */
@@ -590,7 +635,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 57, CPyStatic_globals);
         goto CPyL67;
     }
-    cpy_r_r163 = (CPyPtr)&((PyListObject *)cpy_r_r162)->ob_item;
+    cpy_r_r163 = (CPyPtr)((CPyPtr)cpy_r_r162 + offsetof(PyListObject, ob_item));
     cpy_r_r164 = *(CPyPtr *)cpy_r_r163;
     *(PyObject * *)cpy_r_r164 = cpy_r_r161;
     cpy_r_r165 = CPyStatics[24]; /* 'stateMutability' */
@@ -629,7 +674,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 64, CPyStatic_globals);
         goto CPyL70;
     }
-    cpy_r_r183 = (CPyPtr)&((PyListObject *)cpy_r_r182)->ob_item;
+    cpy_r_r183 = (CPyPtr)((CPyPtr)cpy_r_r182 + offsetof(PyListObject, ob_item));
     cpy_r_r184 = *(CPyPtr *)cpy_r_r183;
     *(PyObject * *)cpy_r_r184 = cpy_r_r181;
     cpy_r_r185 = CPyStatics[24]; /* 'stateMutability' */
@@ -648,7 +693,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/math_contract.py", "<module>", 9, CPyStatic_globals);
         goto CPyL71;
     }
-    cpy_r_r191 = (CPyPtr)&((PyListObject *)cpy_r_r190)->ob_item;
+    cpy_r_r191 = (CPyPtr)((CPyPtr)cpy_r_r190 + offsetof(PyListObject, ob_item));
     cpy_r_r192 = *(CPyPtr *)cpy_r_r191;
     *(PyObject * *)cpy_r_r192 = cpy_r_r34;
     cpy_r_r193 = cpy_r_r192 + 8;
@@ -896,24 +941,24 @@ CPyL73: ;
     CPy_DecRef(cpy_r_r212);
     goto CPyL47;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[40];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[40];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\225\0320x60806040525f5f553480156011575f5ffd5b5061052d8061001f5f395ff3fe608060405260043610610054575f3560e01c806316216f39146100585780635b34b9661461008257806361bc221a146100a05780636abbb3b4146100ca578063a5f3c23b146100fa578063dcf537b11461012a575b5f5ffd5b348015610063575f5ffd5b5061006c61015a565b604051610079919061024f565b60405180910390f35b61008a610162565b6040516100979190610280565b60405180910390f35b3480156100ab575f5ffd5b506100b46101b5565b6040516100c19190610280565b60405180910390f35b6100e460048036038101906100df91906102c7565b6101ba565b6040516100f19190610280565b60405180910390f35b610114600480360381019061010f919061031c565b61020d565b604051610121919061024f565b60405180910390f35b610144600480360381019061013f919061035a565b610222565b604051610151919061024f565b60405180910390f35b5f600d905090565b5f60015f5461017191906103b2565b5f819055507f3496c3ede4ec3ab3686712aa1c238593ea6a42df83f98a5ec7df9834cfa577c560016040516101a69190610427565b60405180910390a15f54905090565b5f5481565b5f815f546101c891906103b2565b5f819055507f3496c3ede4ec3ab3686712aa1c238593ea6a42df83f98a5ec7df9834cfa577c5826040516101fc9190610280565b60405180910390a15f549050919050565b5f818361021a9190610440565b905092915050565b5f6007826102309190610481565b9050919050565b5f819050919050565b61024981610237565b82525050565b5f6020820190506102625f830184610240565b92915050565b5f819050919050565b61027a81610268565b82525050565b5f6020820190506102935f830184610271565b92915050565b5f5ffd5b6102a681610268565b81146102b0575f5ffd5b50565b5f813590506102c18161029d565b92915050565b5f602082840312156102dc576102db610299565b5b5f6102e9848285016102b3565b91505092915050565b6102fb81610237565b8114610305575f5ffd5b50565b5f81359050610316816102f2565b92915050565b5f5f6040838503121561033257610331610299565b5b5f61033f85828601610308565b925050602061035085828601610308565b9150509250929050565b5f6020828403121561036f5761036e610299565b5b5f61037c84828501610308565b91505092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f6103bc82610268565b91506103c783610268565b92508282019050808211156103df576103de610385565b5b92915050565b5f819050919050565b5f819050919050565b5f61041161040c610407846103e5565b6103ee565b610268565b9050919050565b610421816103f7565b82525050565b5f60208201905061043a5f830184610418565b92915050565b5f61044a82610237565b915061045583610237565b92508282019050828112155f8312168382125f84121516171561047b5761047a610385565b5b92915050565b5f61048b82610237565b915061049683610237565b92508282026104a481610237565b91507f800000000000000000000000000000000000000000000000000000000000000084145f841216156104db576104da610385565b5b82820584148315176104f0576104ef610385565b5b509291505056fea264697066735822122011a65cebc9a2456d3d12ae6d239cb90e576295a155544d2515af1db2cdc5c71a64736f6c634300081e0033",
     "\001\026MATH_CONTRACT_BYTECODE",
@@ -925,63 +970,66 @@ const char * const CPyLit_Str[] = {
     "\003\020bytecode_runtime\003abi\022MATH_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_math_contract__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___math_contract;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___math_contract(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___math_contract(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract, "faster_web3._utils.contract_sources.contract_data.math_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___math_contract", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_math_contract__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___math_contract, "faster_web3._utils.contract_sources.contract_data.math_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___math_contract", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___math_contract", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___math_contract", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_math_contract__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.math_contract__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_math_contract__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_math_contract__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.math_contract__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_math_contract__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_math_contract__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_math_contract__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_math_contract__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_math_contract__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

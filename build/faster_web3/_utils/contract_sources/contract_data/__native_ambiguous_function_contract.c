@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_ambiguous_function_contract.h"
 #include "__native_internal_ambiguous_function_contract.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___ambi
     CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -210,7 +255,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 1, CPyStatic_globals);
         goto CPyL32;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -263,7 +308,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 11, CPyStatic_globals);
         goto CPyL34;
     }
-    cpy_r_r31 = (CPyPtr)&((PyListObject *)cpy_r_r30)->ob_item;
+    cpy_r_r31 = (CPyPtr)((CPyPtr)cpy_r_r30 + offsetof(PyListObject, ob_item));
     cpy_r_r32 = *(CPyPtr *)cpy_r_r31;
     *(PyObject * *)cpy_r_r32 = cpy_r_r22;
     cpy_r_r33 = cpy_r_r32 + 8;
@@ -287,7 +332,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 16, CPyStatic_globals);
         goto CPyL36;
     }
-    cpy_r_r45 = (CPyPtr)&((PyListObject *)cpy_r_r44)->ob_item;
+    cpy_r_r45 = (CPyPtr)((CPyPtr)cpy_r_r44 + offsetof(PyListObject, ob_item));
     cpy_r_r46 = *(CPyPtr *)cpy_r_r45;
     *(PyObject * *)cpy_r_r46 = cpy_r_r43;
     cpy_r_r47 = CPyStatics[20]; /* 'stateMutability' */
@@ -329,7 +374,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 21, CPyStatic_globals);
         goto CPyL39;
     }
-    cpy_r_r68 = (CPyPtr)&((PyListObject *)cpy_r_r67)->ob_item;
+    cpy_r_r68 = (CPyPtr)((CPyPtr)cpy_r_r67 + offsetof(PyListObject, ob_item));
     cpy_r_r69 = *(CPyPtr *)cpy_r_r68;
     *(PyObject * *)cpy_r_r69 = cpy_r_r59;
     cpy_r_r70 = cpy_r_r69 + 8;
@@ -353,7 +398,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 26, CPyStatic_globals);
         goto CPyL41;
     }
-    cpy_r_r82 = (CPyPtr)&((PyListObject *)cpy_r_r81)->ob_item;
+    cpy_r_r82 = (CPyPtr)((CPyPtr)cpy_r_r81 + offsetof(PyListObject, ob_item));
     cpy_r_r83 = *(CPyPtr *)cpy_r_r82;
     *(PyObject * *)cpy_r_r83 = cpy_r_r80;
     cpy_r_r84 = CPyStatics[20]; /* 'stateMutability' */
@@ -392,7 +437,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 33, CPyStatic_globals);
         goto CPyL44;
     }
-    cpy_r_r102 = (CPyPtr)&((PyListObject *)cpy_r_r101)->ob_item;
+    cpy_r_r102 = (CPyPtr)((CPyPtr)cpy_r_r101 + offsetof(PyListObject, ob_item));
     cpy_r_r103 = *(CPyPtr *)cpy_r_r102;
     *(PyObject * *)cpy_r_r103 = cpy_r_r100;
     cpy_r_r104 = CPyStatics[20]; /* 'stateMutability' */
@@ -411,7 +456,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/ambiguous_function_contract.py", "<module>", 9, CPyStatic_globals);
         goto CPyL45;
     }
-    cpy_r_r110 = (CPyPtr)&((PyListObject *)cpy_r_r109)->ob_item;
+    cpy_r_r110 = (CPyPtr)((CPyPtr)cpy_r_r109 + offsetof(PyListObject, ob_item));
     cpy_r_r111 = *(CPyPtr *)cpy_r_r110;
     *(PyObject * *)cpy_r_r111 = cpy_r_r51;
     cpy_r_r112 = cpy_r_r111 + 8;
@@ -553,24 +598,24 @@ CPyL47: ;
     CPy_DecRef(cpy_r_r127);
     goto CPyL32;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[29];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[29];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\221N0x6080604052348015600e575f5ffd5b5061044a8061001c5f395ff3fe608060405234801561000f575f5ffd5b506004361061003f575f3560e01c80631626ba7e1461004357806320c13b0b14610073578063d482bb47146100a3575b5f5ffd5b61005d60048036038101906100589190610293565b6100c1565b60405161006a9190610305565b60405180910390f35b61008d6004803603810190610088919061031e565b6100cb565b60405161009a9190610305565b60405180910390f35b6100ab6100d6565b6040516100b891906103f4565b60405180910390f35b5f5f905092915050565b5f6001905092915050565b60606040518060400160405280600581526020017f76616c6964000000000000000000000000000000000000000000000000000000815250905090565b5f604051905090565b5f5ffd5b5f5ffd5b5f819050919050565b61013681610124565b8114610140575f5ffd5b50565b5f813590506101518161012d565b92915050565b5f5ffd5b5f5ffd5b5f601f19601f8301169050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6101a58261015f565b810181811067ffffffffffffffff821117156101c4576101c361016f565b5b80604052505050565b5f6101d6610113565b90506101e2828261019c565b919050565b5f67ffffffffffffffff8211156102015761020061016f565b5b61020a8261015f565b9050602081019050919050565b828183375f83830152505050565b5f610237610232846101e7565b6101cd565b9050828152602081018484840111156102535761025261015b565b5b61025e848285610217565b509392505050565b5f82601f83011261027a57610279610157565b5b813561028a848260208601610225565b91505092915050565b5f5f604083850312156102a9576102a861011c565b5b5f6102b685828601610143565b925050602083013567ffffffffffffffff8111156102d7576102d6610120565b5b6102e385828601610266565b9150509250929050565b5f819050919050565b6102ff816102ed565b82525050565b5f6020820190506103185f8301846102f6565b92915050565b5f5f604083850312156103345761033361011c565b5b5f83013567ffffffffffffffff81111561035157610350610120565b5b61035d85828601610266565b925050602083013567ffffffffffffffff81111561037e5761037d610120565b5b61038a85828601610266565b9150509250929050565b5f81519050919050565b5f82825260208201905092915050565b8281835e5f83830152505050565b5f6103c682610394565b6103d0818561039e565b93506103e08185602086016103ae565b6103e98161015f565b840191505092915050565b5f6020820190508181035f83015261040c81846103bc565b90509291505056fea26469706673582212207771e80e03817222551c15a244685f02dd958991f78b46e6373f839b286c0be264736f6c634300081e0033",
     "\001$AMBIGUOUS_FUNCTION_CONTRACT_BYTECODE",
@@ -581,63 +626,66 @@ const char * const CPyLit_Str[] = {
     "\004\bbytecode\020bytecode_runtime\003abi AMBIGUOUS_FUNCTION_CONTRACT_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_ambiguous_function_contract__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract, "faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_ambiguous_function_contract__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract, "faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract__mypyc.init_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___ambiguous_function_contract", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_ambiguous_function_contract__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_ambiguous_function_contract__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_ambiguous_function_contract__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.ambiguous_function_contract__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_ambiguous_function_contract__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_ambiguous_function_contract__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_ambiguous_function_contract__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_ambiguous_function_contract__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_ambiguous_function_contract__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}

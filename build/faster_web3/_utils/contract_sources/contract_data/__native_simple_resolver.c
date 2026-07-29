@@ -13,6 +13,7 @@
 #include "misc_ops.c"
 #include "generic_ops.c"
 #include "pythonsupport.c"
+#include "function_wrapper.c"
 #include "__native_simple_resolver.h"
 #include "__native_internal_simple_resolver.h"
 static PyMethodDef module_methods[] = {
@@ -21,6 +22,7 @@ static PyMethodDef module_methods[] = {
 
 int CPyExec_faster_web3____utils___contract_sources___contract_data___simple_resolver(PyObject *module)
 {
+    intern_strings();
     PyObject* modname = NULL;
     modname = PyObject_GetAttrString((PyObject *)CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal, "__name__");
     CPyStatic_globals = PyModule_GetDict(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal);
@@ -47,8 +49,19 @@ static struct PyModuleDef module = {
     NULL,
 };
 
+PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___simple_resolver(void)
+{
+    if (CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal) {
+        Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal);
+        return CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal;
+    }
+    CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal = PyModule_Create(&module);
+    return CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal;
+}
+
 PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver(void)
 {
+    PyObject* modname = NULL;
     if (CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal) {
         Py_INCREF(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal);
         return CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal;
@@ -56,13 +69,45 @@ PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___simp
     CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal = PyModule_Create(&module);
     if (unlikely(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal == NULL))
         goto fail;
+    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.simple_resolver");
+    if (modname == NULL) CPyError_OutOfMemory();
+    int rv = 0;
+    PyObject *mod_dict = PyImport_GetModuleDict();
+    PyObject *shared_lib = NULL;
+    rv = PyDict_GetItemStringRef(mod_dict, "faster_web3._utils.contract_sources.contract_data.simple_resolver__mypyc", &shared_lib);
+    if (rv < 0) goto fail;
+    PyObject *shared_lib_file = PyObject_GetAttrString(shared_lib, "__file__");
+    if (shared_lib_file == NULL) goto fail;
+    PyObject *ext_suffix = PyUnicode_FromString(".cpython-314-x86_64-linux-gnu.so");
+    if (ext_suffix == NULL) CPyError_OutOfMemory();
+    Py_ssize_t is_pkg = 0;
+    rv = CPyImport_SetDunderAttrs(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal, modname, shared_lib_file, ext_suffix, is_pkg);
+    Py_DECREF(ext_suffix);
+    Py_DECREF(shared_lib_file);
+    if (rv < 0) goto fail;
+    if (PyObject_SetItem(PyImport_GetModuleDict(), modname, CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal) < 0)
+        goto fail;
+    Py_CLEAR(modname);
     if (CPyExec_faster_web3____utils___contract_sources___contract_data___simple_resolver(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal) != 0)
         goto fail;
     return CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal;
     fail:
-    return NULL;
-}
-
+    {
+            PyObject *exc_type, *exc_val, *exc_tb;
+            PyErr_Fetch(&exc_type, &exc_val, &exc_tb);
+            if (modname == NULL) {
+                    modname = PyUnicode_FromString("faster_web3._utils.contract_sources.contract_data.simple_resolver");
+                    if (modname == NULL) CPyError_OutOfMemory();
+                }
+                PyObject_DelItem(PyImport_GetModuleDict(), modname);
+                PyErr_Clear();
+                Py_DECREF(modname);
+                Py_CLEAR(CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal);
+                PyErr_Restore(exc_type, exc_val, exc_tb);
+        }
+        return NULL;
+    }
+    
 char CPyDef___top_level__(void) {
     PyObject *cpy_r_r0;
     PyObject *cpy_r_r1;
@@ -173,7 +218,7 @@ char CPyDef___top_level__(void) {
     cpy_r_r3 = CPyStatics[3]; /* 'builtins' */
     cpy_r_r4 = PyImport_Import(cpy_r_r3);
     if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", -1, CPyStatic_globals);
+        CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 1, CPyStatic_globals);
         goto CPyL26;
     }
     CPyModule_builtins = cpy_r_r4;
@@ -215,7 +260,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 11, CPyStatic_globals);
         goto CPyL27;
     }
-    cpy_r_r24 = (CPyPtr)&((PyListObject *)cpy_r_r23)->ob_item;
+    cpy_r_r24 = (CPyPtr)((CPyPtr)cpy_r_r23 + offsetof(PyListObject, ob_item));
     cpy_r_r25 = *(CPyPtr *)cpy_r_r24;
     *(PyObject * *)cpy_r_r25 = cpy_r_r22;
     cpy_r_r26 = CPyStatics[11]; /* 'name' */
@@ -237,7 +282,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 13, CPyStatic_globals);
         goto CPyL29;
     }
-    cpy_r_r37 = (CPyPtr)&((PyListObject *)cpy_r_r36)->ob_item;
+    cpy_r_r37 = (CPyPtr)((CPyPtr)cpy_r_r36 + offsetof(PyListObject, ob_item));
     cpy_r_r38 = *(CPyPtr *)cpy_r_r37;
     *(PyObject * *)cpy_r_r38 = cpy_r_r35;
     cpy_r_r39 = CPyStatics[18]; /* 'stateMutability' */
@@ -268,7 +313,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 18, CPyStatic_globals);
         goto CPyL31;
     }
-    cpy_r_r53 = (CPyPtr)&((PyListObject *)cpy_r_r52)->ob_item;
+    cpy_r_r53 = (CPyPtr)((CPyPtr)cpy_r_r52 + offsetof(PyListObject, ob_item));
     cpy_r_r54 = *(CPyPtr *)cpy_r_r53;
     *(PyObject * *)cpy_r_r54 = cpy_r_r51;
     cpy_r_r55 = CPyStatics[11]; /* 'name' */
@@ -290,7 +335,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 20, CPyStatic_globals);
         goto CPyL33;
     }
-    cpy_r_r66 = (CPyPtr)&((PyListObject *)cpy_r_r65)->ob_item;
+    cpy_r_r66 = (CPyPtr)((CPyPtr)cpy_r_r65 + offsetof(PyListObject, ob_item));
     cpy_r_r67 = *(CPyPtr *)cpy_r_r66;
     *(PyObject * *)cpy_r_r67 = cpy_r_r64;
     cpy_r_r68 = CPyStatics[18]; /* 'stateMutability' */
@@ -309,7 +354,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/simple_resolver.py", "<module>", 9, CPyStatic_globals);
         goto CPyL34;
     }
-    cpy_r_r74 = (CPyPtr)&((PyListObject *)cpy_r_r73)->ob_item;
+    cpy_r_r74 = (CPyPtr)((CPyPtr)cpy_r_r73 + offsetof(PyListObject, ob_item));
     cpy_r_r75 = *(CPyPtr *)cpy_r_r74;
     *(PyObject * *)cpy_r_r75 = cpy_r_r43;
     cpy_r_r76 = cpy_r_r75 + 8;
@@ -424,24 +469,24 @@ CPyL36: ;
     CPy_DecRef(cpy_r_r90);
     goto CPyL26;
 }
-
-int CPyGlobalsInit(void)
-{
-    static int is_initialized = 0;
-    if (is_initialized) return 0;
     
-    CPy_Init();
-    CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver = Py_None;
-    CPyModule_builtins = Py_None;
-    if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
-        return -1;
+    int CPyGlobalsInit(void)
+    {
+        static int is_initialized = 0;
+        if (is_initialized) return 0;
+        
+        CPy_Init();
+        CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver = Py_None;
+        CPyModule_builtins = Py_None;
+        if (CPyStatics_Initialize(CPyStatics, CPyLit_Str, CPyLit_Bytes, CPyLit_Int, CPyLit_Float, CPyLit_Complex, CPyLit_Tuple, CPyLit_FrozenSet) < 0) {
+            return -1;
+        }
+        is_initialized = 1;
+        return 0;
     }
-    is_initialized = 1;
-    return 0;
-}
-
-PyObject *CPyStatics[30];
-const char * const CPyLit_Str[] = {
+    
+    PyObject *CPyStatics[30];
+    const char * const CPyLit_Str[] = {
     "\001\bbuiltins",
     "\001\212$0x6080604052348015600e575f5ffd5b506102758061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610034575f3560e01c806301ffc9a7146100385780633b3b57de14610068575b5f5ffd5b610052600480360381019061004d919061012b565b610098565b60405161005f9190610170565b60405180910390f35b610082600480360381019061007d91906101bc565b6100c9565b60405161008f9190610226565b60405180910390f35b5f633b3b57de60e01b827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916149050919050565b5f309050919050565b5f5ffd5b5f7fffffffff0000000000000000000000000000000000000000000000000000000082169050919050565b61010a816100d6565b8114610114575f5ffd5b50565b5f8135905061012581610101565b92915050565b5f602082840312156101405761013f6100d2565b5b5f61014d84828501610117565b91505092915050565b5f8115159050919050565b61016a81610156565b82525050565b5f6020820190506101835f830184610161565b92915050565b5f819050919050565b61019b81610189565b81146101a5575f5ffd5b50565b5f813590506101b681610192565b92915050565b5f602082840312156101d1576101d06100d2565b5b5f6101de848285016101a8565b91505092915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f610210826101e7565b9050919050565b61022081610206565b82525050565b5f6020820190506102395f830184610217565b9291505056fea26469706673582212205cf7ee37a56d482fe0f5c4387f62bcd4ba469c14d8f69485c72014a1fa02f2e464736f6c634300081e0033",
     "\001\030SIMPLE_RESOLVER_BYTECODE",
@@ -452,63 +497,66 @@ const char * const CPyLit_Str[] = {
     "\003\020bytecode_runtime\003abi\024SIMPLE_RESOLVER_DATA",
     "",
 };
-const char * const CPyLit_Bytes[] = {
+    const char * const CPyLit_Bytes[] = {
     "",
 };
-const char * const CPyLit_Int[] = {
+    const char * const CPyLit_Int[] = {
     "",
 };
-const double CPyLit_Float[] = {0};
-const double CPyLit_Complex[] = {0};
-const int CPyLit_Tuple[] = {0};
-const int CPyLit_FrozenSet[] = {0};
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal = NULL;
-CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver;
-PyObject *CPyStatic_globals;
-CPyModule *CPyModule_builtins;
-char CPyDef___top_level__(void);
-
-static int exec_simple_resolver__mypyc(PyObject *module)
-{
-    int res;
-    PyObject *capsule;
-    PyObject *tmp;
+    const double CPyLit_Float[] = {0};
+    const double CPyLit_Complex[] = {0};
+    const int CPyLit_Tuple[] = {0};
+    const int CPyLit_FrozenSet[] = {0};
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver__internal = NULL;
+    CPyModule *CPyModule_faster_web3____utils___contract_sources___contract_data___simple_resolver;
+    PyObject *CPyStatic_globals;
+    CPyModule *CPyModule_builtins;
+    int CPyExec_faster_web3____utils___contract_sources___contract_data___simple_resolver(PyObject *module);
+    PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver(void);
+    PyObject *CPyInitOnly_faster_web3____utils___contract_sources___contract_data___simple_resolver(void);
+    char CPyDef___top_level__(void);
     
-    extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver(void);
-    capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver, "faster_web3._utils.contract_sources.contract_data.simple_resolver__mypyc.init_faster_web3____utils___contract_sources___contract_data___simple_resolver", NULL);
-    if (!capsule) {
-        goto fail;
+    static int exec_simple_resolver__mypyc(PyObject *module)
+    {
+        int res;
+        PyObject *capsule;
+        PyObject *tmp;
+        
+        extern PyObject *CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver(void);
+        capsule = PyCapsule_New((void *)CPyInit_faster_web3____utils___contract_sources___contract_data___simple_resolver, "faster_web3._utils.contract_sources.contract_data.simple_resolver__mypyc.init_faster_web3____utils___contract_sources___contract_data___simple_resolver", NULL);
+        if (!capsule) {
+            goto fail;
+        }
+        res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___simple_resolver", capsule);
+        Py_DECREF(capsule);
+        if (res < 0) {
+            goto fail;
+        }
+        
+        return 0;
+        fail:
+        return -1;
     }
-    res = PyObject_SetAttrString(module, "init_faster_web3____utils___contract_sources___contract_data___simple_resolver", capsule);
-    Py_DECREF(capsule);
-    if (res < 0) {
-        goto fail;
-    }
-    
-    return 0;
-    fail:
-    return -1;
-}
-static PyModuleDef module_def_simple_resolver__mypyc = {
-    PyModuleDef_HEAD_INIT,
-    .m_name = "faster_web3._utils.contract_sources.contract_data.simple_resolver__mypyc",
-    .m_doc = NULL,
-    .m_size = -1,
-    .m_methods = NULL,
-};
-PyMODINIT_FUNC PyInit_simple_resolver__mypyc(void) {
-    static PyObject *module = NULL;
-    if (module) {
-        Py_INCREF(module);
+    static PyModuleDef module_def_simple_resolver__mypyc = {
+        PyModuleDef_HEAD_INIT,
+        .m_name = "faster_web3._utils.contract_sources.contract_data.simple_resolver__mypyc",
+        .m_doc = NULL,
+        .m_size = -1,
+        .m_methods = NULL,
+    };
+    PyMODINIT_FUNC PyInit_simple_resolver__mypyc(void) {
+        static PyObject *module = NULL;
+        if (module) {
+            Py_INCREF(module);
+            return module;
+        }
+        module = PyModule_Create(&module_def_simple_resolver__mypyc);
+        if (!module) {
+            return NULL;
+        }
+        if (exec_simple_resolver__mypyc(module) < 0) {
+            Py_DECREF(module);
+            return NULL;
+        }
         return module;
     }
-    module = PyModule_Create(&module_def_simple_resolver__mypyc);
-    if (!module) {
-        return NULL;
-    }
-    if (exec_simple_resolver__mypyc(module) < 0) {
-        Py_DECREF(module);
-        return NULL;
-    }
-    return module;
-}
