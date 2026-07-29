@@ -1,14 +1,17 @@
 #!/usr/bin/env python
-import sys
 from pathlib import (
     Path,
 )
+import sys
+
+from mypyc.build import (
+    mypycify,
+)
 from setuptools import (
     Extension,
-    find_packages,
+    find_namespace_packages,
     setup,
 )
-from mypyc.build import mypycify
 
 
 def read_requirements(path: str) -> list[str]:
@@ -215,7 +218,8 @@ setup(
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
-    packages=find_packages(
+    packages=find_namespace_packages(
+        include=["faster_web3*", "faster_ens*"],
         exclude=[
             "scripts",
             "scripts.*",
@@ -223,7 +227,7 @@ setup(
             "tests.*",
             "benchmarks",
             "benchmarks.*",
-        ]
+        ],
     ),
     ext_modules=ext_modules,
     package_data={"faster_web3": ["py.typed"], "faster_ens": ["py.typed"]},
