@@ -55,7 +55,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
-        uses: BobTheBuidler/mypycify@v0.5.0
+        uses: BobTheBuidler/mypycify@v0.5.1
         with:
           python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
@@ -82,7 +82,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
-        uses: BobTheBuidler/mypycify@v0.5.0
+        uses: BobTheBuidler/mypycify@v0.5.1
         with:
           python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
@@ -105,7 +105,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Build wheel for Python3.${{ matrix.pyminor }}
         id: wheel
-        uses: BobTheBuidler/mypycify@v0.5.0
+        uses: BobTheBuidler/mypycify@v0.5.1
         with:
           python-version: 3.${{ matrix.pyminor }}
           hash-key: ${{ env.HASH_KEY }}
