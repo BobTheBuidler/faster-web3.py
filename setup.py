@@ -136,6 +136,10 @@ if not skip_mypyc:
         for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
         if p.name != "__init__.py"
     )
+    contract_source_package_files: list[str] = sorted(
+        str(p.as_posix())
+        for p in Path("faster_web3/_utils/contract_sources").rglob("__init__.py")
+    )
     ens_data_files: list[str] = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
 
     if sys.platform.startswith("win"):
@@ -167,6 +171,12 @@ if not skip_mypyc:
     if not sys.platform.startswith("win"):
         benchmark_tooling_unit = mypycify(benchmark_tooling_files + flags)
         ext_modules.extend(benchmark_tooling_unit)
+
+    contract_source_package_unit = mypycify(
+        contract_source_package_files + flags,
+        group_name="faster_web3_contract_source_packages",
+    )
+    ext_modules.extend(contract_source_package_unit)
 
     # these do not need to be part of the same compilation unit as the rest of the library
     for data_file in web3_data_files + ens_data_files:

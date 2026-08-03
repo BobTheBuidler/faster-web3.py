@@ -36,13 +36,24 @@ python -m pip install --upgrade pip
 python -m pip install --upgrade "$wheel_path" --progress-bar off
 cd "$temp_dir"
 python - <<'PY'
+from pathlib import Path
+
 from faster_web3 import Web3
+import faster_web3._utils.contract_sources as contract_sources
+import faster_web3._utils.contract_sources.contract_data as contract_data
 import faster_web3._utils.contract_sources.contract_data.emitter_contract as emitter_contract
 import faster_web3._utils.method_formatters as method_formatters
 
-for compiled_module in (method_formatters, emitter_contract):
+for compiled_module in (
+    method_formatters,
+    contract_sources,
+    contract_data,
+    emitter_contract,
+):
     compiled_path = compiled_module.__file__
     assert compiled_path.endswith(".pyd"), compiled_path
+    if hasattr(compiled_module, "__path__"):
+        assert list(compiled_module.__path__) == [str(Path(compiled_path).parent)]
     print(compiled_path)
 
 print(Web3)
