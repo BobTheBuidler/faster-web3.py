@@ -4,11 +4,11 @@ PyMODINIT_FUNC
 PyInit_contract_sources(void)
 {
     PyObject *tmp;
-    if (!(tmp = PyImport_ImportModule("faster_web3._utils.contract_sources__mypyc"))) return NULL;
+    if (!(tmp = PyImport_ImportModule("faster_web3_contract_source_packages__mypyc"))) return NULL;
     PyObject *capsule = PyObject_GetAttrString(tmp, "init_faster_web3____utils___contract_sources");
     Py_DECREF(tmp);
     if (capsule == NULL) return NULL;
-    void *init_func = PyCapsule_GetPointer(capsule, "faster_web3._utils.contract_sources__mypyc.init_faster_web3____utils___contract_sources");
+    void *init_func = PyCapsule_GetPointer(capsule, "faster_web3_contract_source_packages__mypyc.init_faster_web3____utils___contract_sources");
     Py_DECREF(capsule);
     if (!init_func) {
         return NULL;
