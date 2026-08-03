@@ -5,9 +5,13 @@ import importlib.machinery
 import pathlib
 import sys
 
-
 DEFAULT_PACKAGES = ("faster_web3", "faster_ens")
-DEFAULT_COMPILED_MODULES = ("faster_web3._utils.method_formatters",)
+DEFAULT_COMPILED_MODULES = (
+    "faster_web3._utils.method_formatters",
+    "faster_web3._utils.contract_sources",
+    "faster_web3._utils.contract_sources.contract_data",
+    "faster_web3._utils.contract_sources.contract_data.emitter_contract",
+)
 
 
 def _resolve_path_entry(path_entry: str) -> pathlib.Path:
@@ -63,6 +67,18 @@ def _assert_compiled(module_name: str, repo_root: pathlib.Path) -> None:
         raise RuntimeError(
             f"{module_name} imported from {module_path}; expected a compiled extension"
         )
+    module = sys.modules[module_name]
+    module_search_locations = getattr(module, "__path__", None)
+    if module_search_locations is not None:
+        expected_path = module_path.parent.resolve(strict=False)
+        actual_paths = [
+            pathlib.Path(path_entry).resolve(strict=False)
+            for path_entry in module_search_locations
+        ]
+        if actual_paths != [expected_path]:
+            raise RuntimeError(
+                f"{module_name} has __path__ {actual_paths}; expected {[expected_path]}"
+            )
 
 
 def _parse_args(argv: list[str]) -> argparse.Namespace:
