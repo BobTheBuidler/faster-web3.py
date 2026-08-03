@@ -1,14 +1,17 @@
 #!/usr/bin/env python
-import sys
 from pathlib import (
     Path,
+)
+import sys
+
+from mypyc.build import (
+    mypycify,
 )
 from setuptools import (
     Extension,
     find_packages,
     setup,
 )
-from mypyc.build import mypycify
 
 
 def read_requirements(path: str) -> list[str]:
@@ -131,6 +134,7 @@ if not skip_mypyc:
     web3_data_files: list[str] = sorted(
         str(p.as_posix())
         for p in Path("faster_web3/_utils/contract_sources").rglob("*.py")
+        if p.name != "__init__.py"
     )
     ens_data_files: list[str] = ["faster_ens/abis.py", "faster_ens/contract_data.py"]
 

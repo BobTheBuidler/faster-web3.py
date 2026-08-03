@@ -35,10 +35,13 @@ python -m pip install --upgrade "$wheel_path"
 cd "$temp_dir"
 python - <<'PY'
 from faster_web3 import Web3
+import faster_web3._utils.contract_sources.contract_data.emitter_contract as emitter_contract
 import faster_web3._utils.method_formatters as method_formatters
 
-compiled_path = method_formatters.__file__
-assert compiled_path.endswith((".so", ".pyd")), compiled_path
+for compiled_module in (method_formatters, emitter_contract):
+    compiled_path = compiled_module.__file__
+    assert compiled_path.endswith((".so", ".pyd")), compiled_path
+    print(compiled_path)
+
 print(Web3)
-print(compiled_path)
 PY

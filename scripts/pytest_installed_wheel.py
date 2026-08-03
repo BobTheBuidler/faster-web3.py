@@ -5,9 +5,11 @@ import importlib.machinery
 import pathlib
 import sys
 
-
 DEFAULT_PACKAGES = ("faster_web3", "faster_ens")
-DEFAULT_COMPILED_MODULES = ("faster_web3._utils.method_formatters",)
+DEFAULT_COMPILED_MODULES = (
+    "faster_web3._utils.method_formatters",
+    "faster_web3._utils.contract_sources.contract_data.emitter_contract",
+)
 
 
 def _resolve_path_entry(path_entry: str) -> pathlib.Path:
