@@ -112,7 +112,7 @@ def _get_compiled_contract_data(
     return contract_data
 
 
-contracts_in_file = {}
+contracts_in_file: Dict[str, List[str]] = {}
 
 
 def compile_files(file_list: List[str]) -> None:
