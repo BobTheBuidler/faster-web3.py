@@ -1,19 +1,19 @@
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_fallback_function_contract.h"
 #include "__native_internal_fallback_function_contract.h"
 static PyMethodDef module_methods[] = {
@@ -200,7 +200,7 @@ char CPyDef___top_level__(void) {
     CPy_INCREF(CPyModule_builtins);
     CPy_DECREF(cpy_r_r4);
 CPyL3: ;
-    cpy_r_r5 = CPyStatics[4]; /* '0x60806040525f5f8190555060b78060155f395ff3fe6080604052348015600e575f5ffd5b50600436106029575f3560e01c80633bc5de3014603257602a565b5b60015f819055005b6038604c565b60405160439190606a565b60405180910390f35b5f5f54905090565b5f819050919050565b6064816054565b82525050565b5f602082019050607b5f830184605d565b9291505056fea264697066735822122046c6693c62c80acbe96048ed262cd69dc31f380a491d7c6dcd21dab372b0f49f64736f6c634300081e0033' */
+    cpy_r_r5 = CPyStatics[4];
     cpy_r_r6 = CPyStatic_globals;
     cpy_r_r7 = CPyStatics[5]; /* 'FALLBACK_FUNCTION_CONTRACT_BYTECODE' */
     cpy_r_r8 = CPyDict_SetItem(cpy_r_r6, cpy_r_r7, cpy_r_r5);
@@ -209,7 +209,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/fallback_function_contract.py", "<module>", 7, CPyStatic_globals);
         goto CPyL23;
     }
-    cpy_r_r10 = CPyStatics[6]; /* '0x6080604052348015600e575f5ffd5b50600436106029575f3560e01c80633bc5de3014603257602a565b5b60015f819055005b6038604c565b60405160439190606a565b60405180910390f35b5f5f54905090565b5f819050919050565b6064816054565b82525050565b5f602082019050607b5f830184605d565b9291505056fea264697066735822122046c6693c62c80acbe96048ed262cd69dc31f380a491d7c6dcd21dab372b0f49f64736f6c634300081e0033' */
+    cpy_r_r10 = CPyStatics[6];
     cpy_r_r11 = CPyStatic_globals;
     cpy_r_r12 = CPyStatics[7]; /* 'FALLBACK_FUNCTION_CONTRACT_RUNTIME' */
     cpy_r_r13 = CPyDict_SetItem(cpy_r_r11, cpy_r_r12, cpy_r_r10);
@@ -484,6 +484,7 @@ CPyL30: ;
         }
         if (exec_fallback_function_contract__mypyc(module) < 0) {
             Py_DECREF(module);
+            module = NULL;
             return NULL;
         }
         return module;

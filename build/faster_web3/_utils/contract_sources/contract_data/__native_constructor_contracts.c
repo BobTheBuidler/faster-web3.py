@@ -1,19 +1,19 @@
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_constructor_contracts.h"
 #include "__native_internal_constructor_contracts.h"
 static PyMethodDef module_methods[] = {
@@ -460,7 +460,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py", "<module>", 12, CPyStatic_globals);
         goto CPyL61;
     }
-    cpy_r_r49 = CPyStatics[18]; /* '0x6080604052348015600e575f5ffd5b506040516101e83803806101e88339818101604052810190602e919060a1565b815f8190555080600181905550505060d8565b5f5ffd5b5f819050919050565b6055816045565b8114605e575f5ffd5b50565b5f81519050606d81604e565b92915050565b5f819050919050565b6083816073565b8114608c575f5ffd5b50565b5f81519050609b81607c565b92915050565b5f5f6040838503121560b45760b36041565b5b5f60bf858286016061565b925050602060ce85828601608f565b9150509250929050565b610103806100e55f395ff3fe6080604052348015600e575f5ffd5b50600436106030575f3560e01c806388ec1346146034578063d4c46c7614604e575b5f5ffd5b603a6068565b604051604591906089565b60405180910390f35b6054606d565b604051605f919060b6565b60405180910390f35b5f5481565b60015481565b5f819050919050565b6083816073565b82525050565b5f602082019050609a5f830184607c565b92915050565b5f819050919050565b60b08160a0565b82525050565b5f60208201905060c75f83018460a9565b9291505056fea26469706673582212207d403d1908a2cf17f2230e67186cf271a4264a5fa23cebf6bb111ac4ff68fb4964736f6c634300081e0033' */
+    cpy_r_r49 = CPyStatics[18];
     cpy_r_r50 = CPyStatic_globals;
     cpy_r_r51 = CPyStatics[19]; /* 'CONSTRUCTOR_WITH_ARGUMENTS_CONTRACT_BYTECODE' */
     cpy_r_r52 = CPyDict_SetItem(cpy_r_r50, cpy_r_r51, cpy_r_r49);
@@ -469,7 +469,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py", "<module>", 20, CPyStatic_globals);
         goto CPyL61;
     }
-    cpy_r_r54 = CPyStatics[20]; /* '0x6080604052348015600e575f5ffd5b50600436106030575f3560e01c806388ec1346146034578063d4c46c7614604e575b5f5ffd5b603a6068565b604051604591906089565b60405180910390f35b6054606d565b604051605f919060b6565b60405180910390f35b5f5481565b60015481565b5f819050919050565b6083816073565b82525050565b5f602082019050609a5f830184607c565b92915050565b5f819050919050565b60b08160a0565b82525050565b5f60208201905060c75f83018460a9565b9291505056fea26469706673582212207d403d1908a2cf17f2230e67186cf271a4264a5fa23cebf6bb111ac4ff68fb4964736f6c634300081e0033' */
+    cpy_r_r54 = CPyStatics[20];
     cpy_r_r55 = CPyStatic_globals;
     cpy_r_r56 = CPyStatics[21]; /* 'CONSTRUCTOR_WITH_ARGUMENTS_CONTRACT_RUNTIME' */
     cpy_r_r57 = CPyDict_SetItem(cpy_r_r55, cpy_r_r56, cpy_r_r54);
@@ -679,7 +679,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py", "<module>", 46, CPyStatic_globals);
         goto CPyL61;
     }
-    cpy_r_r152 = CPyStatics[36]; /* '0x608060405234801561000f575f5ffd5b506040516101fb3803806101fb833981810160405281019061003191906100d4565b805f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506100ff565b5f5ffd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6100a38261007a565b9050919050565b6100b381610099565b81146100bd575f5ffd5b50565b5f815190506100ce816100aa565b92915050565b5f602082840312156100e9576100e8610076565b5b5f6100f6848285016100c0565b91505092915050565b60f08061010b5f395ff3fe6080604052348015600e575f5ffd5b50600436106026575f3560e01c806334664e3a14602a575b5f5ffd5b60306044565b604051603b919060a3565b60405180910390f35b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f608f826068565b9050919050565b609d816087565b82525050565b5f60208201905060b45f8301846096565b9291505056fea2646970667358221220d29806ab73246c53e77ade19f47279948e66b8efb71c14084c98c3d059ea35ee64736f6c634300081e0033' */
+    cpy_r_r152 = CPyStatics[36];
     cpy_r_r153 = CPyStatic_globals;
     cpy_r_r154 = CPyStatics[37]; /* 'CONSTRUCTOR_WITH_ADDRESS_ARGUMENT_CONTRACT_BYTECODE' */
     cpy_r_r155 = CPyDict_SetItem(cpy_r_r153, cpy_r_r154, cpy_r_r152);
@@ -688,7 +688,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/constructor_contracts.py", "<module>", 54, CPyStatic_globals);
         goto CPyL61;
     }
-    cpy_r_r157 = CPyStatics[38]; /* '0x6080604052348015600e575f5ffd5b50600436106026575f3560e01c806334664e3a14602a575b5f5ffd5b60306044565b604051603b919060a3565b60405180910390f35b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f608f826068565b9050919050565b609d816087565b82525050565b5f60208201905060b45f8301846096565b9291505056fea2646970667358221220d29806ab73246c53e77ade19f47279948e66b8efb71c14084c98c3d059ea35ee64736f6c634300081e0033' */
+    cpy_r_r157 = CPyStatics[38];
     cpy_r_r158 = CPyStatic_globals;
     cpy_r_r159 = CPyStatics[39]; /* 'CONSTRUCTOR_WITH_ADDRESS_ARGUMENT_CONTRACT_RUNTIME' */
     cpy_r_r160 = CPyDict_SetItem(cpy_r_r158, cpy_r_r159, cpy_r_r157);
@@ -1030,6 +1030,7 @@ CPyL82: ;
         }
         if (exec_constructor_contracts__mypyc(module) < 0) {
             Py_DECREF(module);
+            module = NULL;
             return NULL;
         }
         return module;

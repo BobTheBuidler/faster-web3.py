@@ -1,19 +1,19 @@
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_compile_contracts.h"
 #include "__native_internal_compile_contracts.h"
 static PyMethodDef module_methods[] = {
@@ -3122,8 +3122,7 @@ CPyL3: ;
     cpy_r_r9 = (void *)&cpy_r_r8;
     int64_t cpy_r_r10[3] = {45, 46, 47};
     cpy_r_r11 = (void *)&cpy_r_r10;
-    cpy_r_r12 = CPyStatics[105]; /* (('argparse', 'argparse', 'argparse'), ('os', 'os', 'os'),
-                                    ('re', 're', 're')) */
+    cpy_r_r12 = CPyStatics[105]; /* (('argparse', 'argparse', 'argparse'), ('os', 'os', 'os'), ('re', 're', 're')) */
     cpy_r_r13 = CPyStatic_globals;
     cpy_r_r14 = CPyStatics[69]; /* 'faster_web3/_utils/contract_sources/compile_contracts.py' */
     cpy_r_r15 = CPyStatics[70]; /* '<module>' */
@@ -3204,9 +3203,7 @@ CPyL11: ;
     }
     cpy_r_r53 = CPyStatics[83]; /* '-f' */
     cpy_r_r54 = CPyStatics[84]; /* '--filename' */
-    cpy_r_r55 = CPyStatics[85]; /* ('(optional) The filename if only one file is to be '
-                                   'compiled - otherwise all .sol files will be compiled at '
-                                   'once.') */
+    cpy_r_r55 = CPyStatics[85]; /* '(optional) The filename if only one file is to be compiled - otherwise all .sol files will be compiled at once.' */
     cpy_r_r56 = CPyStatics[81]; /* 'add_argument' */
     PyObject *cpy_r_r57[4] = {cpy_r_r52, cpy_r_r53, cpy_r_r54, cpy_r_r55};
     cpy_r_r58 = (PyObject **)&cpy_r_r57;
@@ -3834,6 +3831,7 @@ CPyL97: ;
         }
         if (exec_compile_contracts__mypyc(module) < 0) {
             Py_DECREF(module);
+            module = NULL;
             return NULL;
         }
         return module;

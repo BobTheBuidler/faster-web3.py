@@ -1,22 +1,22 @@
 #ifndef DIFFCHECK_PLACEHOLDER
 #define DIFFCHECK_PLACEHOLDER 0
 #endif
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_909239aaf4f10b4a0b69.h"
 #include "__native_internal_909239aaf4f10b4a0b69.h"
 
@@ -25,25 +25,6 @@ node___GethBenchmarkFixture_init(PyObject *self, PyObject *args, PyObject *kwds)
 {
     return 0;
 }
-PyObject *CPyDef_node_____mypyc__GethBenchmarkFixture_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_node___GethBenchmarkFixture(void);
-
-static PyObject *
-node___GethBenchmarkFixture_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_node___GethBenchmarkFixture) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_node_____mypyc__GethBenchmarkFixture_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    PyObject *ret = CPyPy_node___GethBenchmarkFixture_____init__(self, args, kwds);
-    if (ret == NULL)
-        return NULL;
-    return self;
-}
-
 static int
 node___GethBenchmarkFixture_traverse(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, visitproc visit, void *arg)
 {
@@ -51,7 +32,8 @@ node___GethBenchmarkFixture_traverse(faster_web3___tools___benchmark___node___Ge
     Py_VISIT(self->_endpoint_uri);
     Py_VISIT(self->_geth_binary);
     Py_VISIT(self->_datadir);
-    return 0;
+    int rv = 0;
+    return rv;
 }
 
 static int
@@ -73,6 +55,28 @@ node___GethBenchmarkFixture_dealloc(faster_web3___tools___benchmark___node___Get
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
     done: ;
+}
+
+PyObject *CPyDef_node_____mypyc__GethBenchmarkFixture_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_node___GethBenchmarkFixture(void);
+
+static PyObject *
+node___GethBenchmarkFixture_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    if (type != CPyType_node___GethBenchmarkFixture) {
+        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+        return NULL;
+    }
+    PyObject *self = CPyDef_node_____mypyc__GethBenchmarkFixture_setup((PyObject*)type);
+    if (self == NULL)
+        return NULL;
+    PyObject *ret = CPyPy_node___GethBenchmarkFixture_____init__(self, args, kwds);
+    if (ret == NULL) {
+            Py_DECREF(self);
+            return NULL;
+    }
+    Py_DECREF(ret);
+    return self;
 }
 
 static CPyVTableItem node___GethBenchmarkFixture_vtable[7];
@@ -100,16 +104,10 @@ CPyDef_node___GethBenchmarkFixture_coroutine_setup(PyObject *type)
 
 static PyObject *
 node___GethBenchmarkFixture_get_rpc_port(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure);
-static int
-node___GethBenchmarkFixture_set_rpc_port(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure);
 static PyObject *
 node___GethBenchmarkFixture_get_endpoint_uri(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure);
-static int
-node___GethBenchmarkFixture_set_endpoint_uri(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure);
 static PyObject *
 node___GethBenchmarkFixture_get_geth_binary(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure);
-static int
-node___GethBenchmarkFixture_set_geth_binary(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure);
 static PyObject *
 node___GethBenchmarkFixture_get_datadir(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure);
 static int
@@ -117,13 +115,13 @@ node___GethBenchmarkFixture_set_datadir(faster_web3___tools___benchmark___node__
 
 static PyGetSetDef node___GethBenchmarkFixture_getseters[] = {
     {"rpc_port",
-     (getter)node___GethBenchmarkFixture_get_rpc_port, (setter)node___GethBenchmarkFixture_set_rpc_port,
+     (getter)node___GethBenchmarkFixture_get_rpc_port, NULL,
      NULL, NULL},
     {"endpoint_uri",
-     (getter)node___GethBenchmarkFixture_get_endpoint_uri, (setter)node___GethBenchmarkFixture_set_endpoint_uri,
+     (getter)node___GethBenchmarkFixture_get_endpoint_uri, NULL,
      NULL, NULL},
     {"geth_binary",
-     (getter)node___GethBenchmarkFixture_get_geth_binary, (setter)node___GethBenchmarkFixture_set_geth_binary,
+     (getter)node___GethBenchmarkFixture_get_geth_binary, NULL,
      NULL, NULL},
     {"datadir",
      (getter)node___GethBenchmarkFixture_get_datadir, (setter)node___GethBenchmarkFixture_set_datadir,
@@ -212,31 +210,6 @@ node___GethBenchmarkFixture_get_rpc_port(faster_web3___tools___benchmark___node_
     return retval;
 }
 
-static int
-node___GethBenchmarkFixture_set_rpc_port(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure)
-{
-    if (value == NULL) {
-        PyErr_SetString(PyExc_AttributeError,
-            "'GethBenchmarkFixture' object attribute 'rpc_port' cannot be deleted");
-        return -1;
-    }
-    if (self->_rpc_port != NULL) {
-        CPy_DECREF(self->_rpc_port);
-    }
-    PyObject *tmp;
-    if (likely(PyUnicode_Check(value)))
-        tmp = value;
-    else {
-        CPy_TypeError("str", value); 
-        tmp = NULL;
-    }
-    if (!tmp)
-        return -1;
-    CPy_INCREF(tmp);
-    self->_rpc_port = tmp;
-    return 0;
-}
-
 static PyObject *
 node___GethBenchmarkFixture_get_endpoint_uri(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure)
 {
@@ -250,31 +223,6 @@ node___GethBenchmarkFixture_get_endpoint_uri(faster_web3___tools___benchmark___n
     return retval;
 }
 
-static int
-node___GethBenchmarkFixture_set_endpoint_uri(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure)
-{
-    if (value == NULL) {
-        PyErr_SetString(PyExc_AttributeError,
-            "'GethBenchmarkFixture' object attribute 'endpoint_uri' cannot be deleted");
-        return -1;
-    }
-    if (self->_endpoint_uri != NULL) {
-        CPy_DECREF(self->_endpoint_uri);
-    }
-    PyObject *tmp;
-    if (likely(PyUnicode_Check(value)))
-        tmp = value;
-    else {
-        CPy_TypeError("str", value); 
-        tmp = NULL;
-    }
-    if (!tmp)
-        return -1;
-    CPy_INCREF(tmp);
-    self->_endpoint_uri = tmp;
-    return 0;
-}
-
 static PyObject *
 node___GethBenchmarkFixture_get_geth_binary(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, void *closure)
 {
@@ -286,31 +234,6 @@ node___GethBenchmarkFixture_get_geth_binary(faster_web3___tools___benchmark___no
     CPy_INCREF(self->_geth_binary);
     PyObject *retval = self->_geth_binary;
     return retval;
-}
-
-static int
-node___GethBenchmarkFixture_set_geth_binary(faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *self, PyObject *value, void *closure)
-{
-    if (value == NULL) {
-        PyErr_SetString(PyExc_AttributeError,
-            "'GethBenchmarkFixture' object attribute 'geth_binary' cannot be deleted");
-        return -1;
-    }
-    if (self->_geth_binary != NULL) {
-        CPy_DECREF(self->_geth_binary);
-    }
-    PyObject *tmp;
-    if (likely(PyUnicode_Check(value)))
-        tmp = value;
-    else {
-        CPy_TypeError("str", value); 
-        tmp = NULL;
-    }
-    if (!tmp)
-        return -1;
-    CPy_INCREF(tmp);
-    self->_geth_binary = tmp;
-    return 0;
 }
 
 static PyObject *
@@ -351,22 +274,6 @@ node___GethBenchmarkFixture_set_datadir(faster_web3___tools___benchmark___node__
     return 0;
 }
 
-PyObject *CPyDef_node_____mypyc__build_GethBenchmarkFixture_gen_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_node___build_GethBenchmarkFixture_gen(void);
-
-static PyObject *
-node___build_GethBenchmarkFixture_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_node___build_GethBenchmarkFixture_gen) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_node_____mypyc__build_GethBenchmarkFixture_gen_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
 static int
 node___build_GethBenchmarkFixture_gen_traverse(faster_web3___tools___benchmark___node___build_GethBenchmarkFixture_genObject *self, visitproc visit, void *arg)
 {
@@ -386,7 +293,8 @@ node___build_GethBenchmarkFixture_gen_traverse(faster_web3___tools___benchmark__
     Py_VISIT(self->___mypyc_temp__7.f0);
     Py_VISIT(self->___mypyc_temp__7.f1);
     Py_VISIT(self->___mypyc_temp__7.f2);
-    return 0;
+    int rv = 0;
+    return rv;
 }
 
 static int
@@ -443,6 +351,22 @@ node___build_GethBenchmarkFixture_gen_dealloc(faster_web3___tools___benchmark___
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
     done: ;
+}
+
+PyObject *CPyDef_node_____mypyc__build_GethBenchmarkFixture_gen_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_node___build_GethBenchmarkFixture_gen(void);
+
+static PyObject *
+node___build_GethBenchmarkFixture_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    if (type != CPyType_node___build_GethBenchmarkFixture_gen) {
+        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+        return NULL;
+    }
+    PyObject *self = CPyDef_node_____mypyc__build_GethBenchmarkFixture_gen_setup((PyObject*)type);
+    if (self == NULL)
+        return NULL;
+    return self;
 }
 
 static CPyVTableItem node___build_GethBenchmarkFixture_gen_vtable[6];
@@ -537,22 +461,6 @@ PyObject *CPyDef_node___build_GethBenchmarkFixture_gen(void)
 }
 
 
-PyObject *CPyDef_node_____mypyc___3_geth_process_GethBenchmarkFixture_gen_setup(PyObject *cpy_r_type);
-PyObject *CPyDef_node____geth_process_GethBenchmarkFixture_gen(void);
-
-static PyObject *
-node____geth_process_GethBenchmarkFixture_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-{
-    if (type != CPyType_node____geth_process_GethBenchmarkFixture_gen) {
-        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-        return NULL;
-    }
-    PyObject *self = CPyDef_node_____mypyc___3_geth_process_GethBenchmarkFixture_gen_setup((PyObject*)type);
-    if (self == NULL)
-        return NULL;
-    return self;
-}
-
 static int
 node____geth_process_GethBenchmarkFixture_gen_traverse(faster_web3___tools___benchmark___node____geth_process_GethBenchmarkFixture_genObject *self, visitproc visit, void *arg)
 {
@@ -566,7 +474,8 @@ node____geth_process_GethBenchmarkFixture_gen_traverse(faster_web3___tools___ben
     Py_VISIT(self->___mypyc_generator_attribute__init_datadir_command.f3);
     Py_VISIT(self->___mypyc_generator_attribute__init_datadir_command.f4);
     Py_VISIT(self->___mypyc_generator_attribute__proc);
-    return 0;
+    int rv = 0;
+    return rv;
 }
 
 static int
@@ -609,6 +518,22 @@ node____geth_process_GethBenchmarkFixture_gen_dealloc(faster_web3___tools___benc
     Py_TYPE(self)->tp_free((PyObject *)self);
     CPy_TRASHCAN_END(self)
     done: ;
+}
+
+PyObject *CPyDef_node_____mypyc___3_geth_process_GethBenchmarkFixture_gen_setup(PyObject *cpy_r_type);
+PyObject *CPyDef_node____geth_process_GethBenchmarkFixture_gen(void);
+
+static PyObject *
+node____geth_process_GethBenchmarkFixture_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    if (type != CPyType_node____geth_process_GethBenchmarkFixture_gen) {
+        PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+        return NULL;
+    }
+    PyObject *self = CPyDef_node_____mypyc___3_geth_process_GethBenchmarkFixture_gen_setup((PyObject*)type);
+    if (self == NULL)
+        return NULL;
+    return self;
 }
 
 static CPyVTableItem node____geth_process_GethBenchmarkFixture_gen_vtable[6];
@@ -2481,10 +2406,8 @@ PyObject *CPyDef_node___GethBenchmarkFixture____endpoint_uri(PyObject *cpy_r_sel
         CPy_AttributeError("faster_web3/tools/benchmark/node.py", "_endpoint_uri", "GethBenchmarkFixture", "rpc_port", 64, CPyStatic_node___globals);
         goto CPyL3;
     }
-    CPy_INCREF(cpy_r_r1);
 CPyL1: ;
     cpy_r_r2 = CPyStr_Build(2, cpy_r_r0, cpy_r_r1);
-    CPy_DECREF(cpy_r_r1);
     if (unlikely(cpy_r_r2 == NULL)) {
         CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_endpoint_uri", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
         goto CPyL3;
@@ -2847,12 +2770,12 @@ PyObject *CPyDef_node___GethBenchmarkFixture____geth_command_arguments(PyObject 
         CPy_AttributeError("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", "GethBenchmarkFixture", "geth_binary", 81, CPyStatic_node___globals);
         goto CPyL7;
     }
-    CPy_INCREF(cpy_r_r0);
 CPyL1: ;
     cpy_r_r1 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--dev' */
     cpy_r_r2 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--dev.period' */
     cpy_r_r3 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '100' */
     cpy_r_r4 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--datadir' */
+    CPy_INCREF(cpy_r_datadir);
     cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--nodiscover' */
     cpy_r_r6 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--http' */
     cpy_r_r7 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--http.port' */
@@ -2861,7 +2784,6 @@ CPyL1: ;
         CPy_AttributeError("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", "GethBenchmarkFixture", "rpc_port", 90, CPyStatic_node___globals);
         goto CPyL8;
     }
-    CPy_INCREF(cpy_r_r8);
 CPyL2: ;
     cpy_r_r9 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--http.api' */
     cpy_r_r10 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'admin,debug,eth,net,web3' */
@@ -2874,14 +2796,14 @@ CPyL2: ;
     cpy_r_r17 = CPyObject_GetAttr(cpy_r_r15, cpy_r_r16);
     if (unlikely(cpy_r_r17 == NULL)) {
         CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
-        goto CPyL9;
+        goto CPyL8;
     }
     cpy_r_r18 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'join' */
     cpy_r_r19 = CPyObject_GetAttr(cpy_r_r17, cpy_r_r18);
     CPy_DECREF(cpy_r_r17);
     if (unlikely(cpy_r_r19 == NULL)) {
         CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
-        goto CPyL9;
+        goto CPyL8;
     }
     PyObject *cpy_r_r20[3] = {cpy_r_datadir, cpy_r_r13, cpy_r_r14};
     cpy_r_r21 = (PyObject **)&cpy_r_r20;
@@ -2889,22 +2811,23 @@ CPyL2: ;
     CPy_DECREF(cpy_r_r19);
     if (unlikely(cpy_r_r22 == NULL)) {
         CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
-        goto CPyL9;
+        goto CPyL8;
     }
     if (likely(PyUnicode_Check(cpy_r_r22)))
         cpy_r_r23 = cpy_r_r22;
     else {
         CPy_TypeErrorTraceback("faster_web3/tools/benchmark/node.py", "_geth_command_arguments", 95, CPyStatic_node___globals, "str", cpy_r_r22);
-        goto CPyL9;
+        goto CPyL8;
     }
+    CPy_INCREF(cpy_r_r0);
     CPy_INCREF(cpy_r_r1);
     CPy_INCREF(cpy_r_r2);
     CPy_INCREF(cpy_r_r3);
     CPy_INCREF(cpy_r_r4);
-    CPy_INCREF(cpy_r_datadir);
     CPy_INCREF(cpy_r_r5);
     CPy_INCREF(cpy_r_r6);
     CPy_INCREF(cpy_r_r7);
+    CPy_INCREF(cpy_r_r8);
     CPy_INCREF(cpy_r_r9);
     CPy_INCREF(cpy_r_r10);
     CPy_INCREF(cpy_r_r11);
@@ -2962,11 +2885,7 @@ CPyL7: ;
     cpy_r_r26 = NULL;
     return cpy_r_r26;
 CPyL8: ;
-    CPy_DecRef(cpy_r_r0);
-    goto CPyL7;
-CPyL9: ;
-    CPy_DecRef(cpy_r_r0);
-    CPy_DecRef(cpy_r_r8);
+    CPy_DecRef(cpy_r_datadir);
     goto CPyL7;
 }
     
@@ -3094,14 +3013,8 @@ CPyL4: ;
 CPyL5: ;
     cpy_r_r4 = ((faster_web3___tools___benchmark___node___GethBenchmarkFixtureObject *)cpy_r_r3)->_geth_binary;
     if (unlikely(cpy_r_r4 == NULL)) {
-        PyErr_SetString(PyExc_AttributeError, "attribute 'geth_binary' of 'GethBenchmarkFixture' undefined");
-    } else {
-        CPy_INCREF(cpy_r_r4);
-    }
-    CPy_DECREF_NO_IMM(cpy_r_r3);
-    if (unlikely(cpy_r_r4 == NULL)) {
-        CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_geth_process", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
-        goto CPyL55;
+        CPy_AttributeError("faster_web3/tools/benchmark/node.py", "_geth_process", "GethBenchmarkFixture", "geth_binary", 102, CPyStatic_node___globals);
+        goto CPyL56;
     }
 CPyL6: ;
     cpy_r_r5 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '--datadir' */
@@ -3132,6 +3045,7 @@ CPyL9: ;
         CPy_AddTraceback("faster_web3/tools/benchmark/node.py", "_geth_process", DIFFCHECK_PLACEHOLDER, CPyStatic_node___globals);
         goto CPyL57;
     }
+    CPy_INCREF(cpy_r_r4);
     CPy_INCREF(cpy_r_r5);
     CPy_INCREF(cpy_r_r8);
     cpy_r_r11.f0 = cpy_r_r4;
@@ -3139,6 +3053,7 @@ CPyL9: ;
     cpy_r_r11.f2 = cpy_r_r7;
     cpy_r_r11.f3 = cpy_r_r8;
     cpy_r_r11.f4 = cpy_r_r10;
+    CPy_DECREF_NO_IMM(cpy_r_r3);
     if (((faster_web3___tools___benchmark___node____geth_process_GethBenchmarkFixture_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__init_datadir_command.f0 != NULL) {
         CPy_DECREF(((faster_web3___tools___benchmark___node____geth_process_GethBenchmarkFixture_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__init_datadir_command.f0);
         CPy_DECREF(((faster_web3___tools___benchmark___node____geth_process_GethBenchmarkFixture_genObject *)cpy_r___mypyc_self__)->___mypyc_generator_attribute__init_datadir_command.f1);
@@ -3422,10 +3337,10 @@ CPyL55: ;
     cpy_r_r73 = NULL;
     return cpy_r_r73;
 CPyL56: ;
-    CPy_DecRef(cpy_r_r4);
+    CPy_DecRef(cpy_r_r3);
     goto CPyL55;
 CPyL57: ;
-    CPy_DecRef(cpy_r_r4);
+    CPy_DecRef(cpy_r_r3);
     CPy_DecRef(cpy_r_r7);
     goto CPyL55;
 CPyL58: ;
@@ -4610,22 +4525,6 @@ CPyL6: ;
         static PyAsyncMethods utils___wait_for_aiohttp_gen_as_async = {
             .am_await = CPyDef_utils___wait_for_aiohttp_gen_____await__,
         };
-        PyObject *CPyDef_utils_____mypyc__wait_for_aiohttp_gen_setup(PyObject *cpy_r_type);
-        PyObject *CPyDef_utils___wait_for_aiohttp_gen(void);
-        
-        static PyObject *
-        utils___wait_for_aiohttp_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
-        {
-            if (type != CPyType_utils___wait_for_aiohttp_gen) {
-                PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
-                return NULL;
-            }
-            PyObject *self = CPyDef_utils_____mypyc__wait_for_aiohttp_gen_setup((PyObject*)type);
-            if (self == NULL)
-                return NULL;
-            return self;
-        }
-        
         static int
         utils___wait_for_aiohttp_gen_traverse(faster_web3___tools___benchmark___utils___wait_for_aiohttp_genObject *self, visitproc visit, void *arg)
         {
@@ -4662,7 +4561,8 @@ CPyL6: ;
             Py_VISIT(self->___mypyc_temp__14.f0);
             Py_VISIT(self->___mypyc_temp__14.f1);
             Py_VISIT(self->___mypyc_temp__14.f2);
-            return 0;
+            int rv = 0;
+            return rv;
         }
         
         static int
@@ -4760,6 +4660,22 @@ CPyL6: ;
             Py_TYPE(self)->tp_free((PyObject *)self);
             CPy_TRASHCAN_END(self)
             done: ;
+        }
+        
+        PyObject *CPyDef_utils_____mypyc__wait_for_aiohttp_gen_setup(PyObject *cpy_r_type);
+        PyObject *CPyDef_utils___wait_for_aiohttp_gen(void);
+        
+        static PyObject *
+        utils___wait_for_aiohttp_gen_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+        {
+            if (type != CPyType_utils___wait_for_aiohttp_gen) {
+                PyErr_SetString(PyExc_TypeError, "interpreted classes cannot inherit from compiled");
+                return NULL;
+            }
+            PyObject *self = CPyDef_utils_____mypyc__wait_for_aiohttp_gen_setup((PyObject*)type);
+            if (self == NULL)
+                return NULL;
+            return self;
         }
         
         static CPyVTableItem utils___wait_for_aiohttp_gen_vtable[7];
@@ -8261,10 +8177,7 @@ CPyL3: ;
     cpy_r_r10 = (void *)&cpy_r_r9;
     int64_t cpy_r_r11[4] = {1, 2, 3, 4};
     cpy_r_r12 = (void *)&cpy_r_r11;
-    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('asyncio', 'asyncio', 'asyncio'),
-                                    ('signal', 'signal', 'signal'),
-                                    ('socket', 'socket', 'builtinssocket'),
-                                    ('time', 'time', 'builtinstime')) */
+    cpy_r_r13 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('asyncio', 'asyncio', 'asyncio'), ('signal', 'signal', 'signal'), ('socket', 'socket', 'builtinssocket'), ('time', 'time', 'builtinstime')) */
     cpy_r_r14 = CPyStatic_utils___globals;
     cpy_r_r15 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3/tools/benchmark/utils.py' */
     cpy_r_r16 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '<module>' */
@@ -8287,8 +8200,7 @@ CPyL3: ;
     cpy_r_r25 = (void *)&cpy_r_r24;
     int64_t cpy_r_r26[2] = {10, 11};
     cpy_r_r27 = (void *)&cpy_r_r26;
-    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('aiohttp', 'aiohttp', 'aiohttp'),
-                                    ('requests', 'requests', 'requests')) */
+    cpy_r_r28 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* (('aiohttp', 'aiohttp', 'aiohttp'), ('requests', 'requests', 'requests')) */
     cpy_r_r29 = CPyStatic_utils___globals;
     cpy_r_r30 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* 'faster_web3/tools/benchmark/utils.py' */
     cpy_r_r31 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* '<module>' */
@@ -8670,6 +8582,7 @@ CPyL19: ;
                 }
                 if (exec_909239aaf4f10b4a0b69__mypyc(module) < 0) {
                     Py_DECREF(module);
+                    module = NULL;
                     return NULL;
                 }
                 return module;
