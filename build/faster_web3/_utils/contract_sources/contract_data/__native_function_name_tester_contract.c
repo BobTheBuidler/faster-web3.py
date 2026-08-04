@@ -1,19 +1,19 @@
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_function_name_tester_contract.h"
 #include "__native_internal_function_name_tester_contract.h"
 static PyMethodDef module_methods[] = {
@@ -207,7 +207,7 @@ char CPyDef___top_level__(void) {
     CPy_INCREF(CPyModule_builtins);
     CPy_DECREF(cpy_r_r4);
 CPyL3: ;
-    cpy_r_r5 = CPyStatics[4]; /* '0x6080604052348015600e575f5ffd5b5060dc80601a5f395ff3fe6080604052348015600e575f5ffd5b50600436106030575f3560e01c8063a044c987146034578063c5d7802e14604e575b5f5ffd5b603a6068565b60405160459190608f565b60405180910390f35b60546070565b604051605f9190608f565b60405180910390f35b5f6001905090565b5f5f905090565b5f8115159050919050565b6089816077565b82525050565b5f60208201905060a05f8301846082565b9291505056fea2646970667358221220e80d421a7d25249f02ba1ad2cb1bf575d771f76cd10c51edd44fcbfe3307088564736f6c634300081e0033' */
+    cpy_r_r5 = CPyStatics[4];
     cpy_r_r6 = CPyStatic_globals;
     cpy_r_r7 = CPyStatics[5]; /* 'FUNCTION_NAME_TESTER_CONTRACT_BYTECODE' */
     cpy_r_r8 = CPyDict_SetItem(cpy_r_r6, cpy_r_r7, cpy_r_r5);
@@ -216,7 +216,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/function_name_tester_contract.py", "<module>", 7, CPyStatic_globals);
         goto CPyL24;
     }
-    cpy_r_r10 = CPyStatics[6]; /* '0x6080604052348015600e575f5ffd5b50600436106030575f3560e01c8063a044c987146034578063c5d7802e14604e575b5f5ffd5b603a6068565b60405160459190608f565b60405180910390f35b60546070565b604051605f9190608f565b60405180910390f35b5f6001905090565b5f5f905090565b5f8115159050919050565b6089816077565b82525050565b5f60208201905060a05f8301846082565b9291505056fea2646970667358221220e80d421a7d25249f02ba1ad2cb1bf575d771f76cd10c51edd44fcbfe3307088564736f6c634300081e0033' */
+    cpy_r_r10 = CPyStatics[6];
     cpy_r_r11 = CPyStatic_globals;
     cpy_r_r12 = CPyStatics[7]; /* 'FUNCTION_NAME_TESTER_CONTRACT_RUNTIME' */
     cpy_r_r13 = CPyDict_SetItem(cpy_r_r11, cpy_r_r12, cpy_r_r10);
@@ -503,6 +503,7 @@ CPyL32: ;
         }
         if (exec_function_name_tester_contract__mypyc(module) < 0) {
             Py_DECREF(module);
+            module = NULL;
             return NULL;
         }
         return module;

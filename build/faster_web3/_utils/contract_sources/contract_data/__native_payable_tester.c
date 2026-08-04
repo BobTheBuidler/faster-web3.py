@@ -1,19 +1,19 @@
-#include "init.c"
-#include "getargs.c"
-#include "getargsfast.c"
-#include "int_ops.c"
-#include "float_ops.c"
-#include "str_ops.c"
-#include "bytes_ops.c"
-#include "list_ops.c"
-#include "dict_ops.c"
-#include "set_ops.c"
-#include "tuple_ops.c"
-#include "exc_ops.c"
-#include "misc_ops.c"
-#include "generic_ops.c"
-#include "pythonsupport.c"
-#include "function_wrapper.c"
+#include <init.c>
+#include <getargs.c>
+#include <getargsfast.c>
+#include <int_ops.c>
+#include <float_ops.c>
+#include <str_ops.c>
+#include <bytes_ops.c>
+#include <list_ops.c>
+#include <dict_ops.c>
+#include <set_ops.c>
+#include <tuple_ops.c>
+#include <exc_ops.c>
+#include <misc_ops.c>
+#include <generic_ops.c>
+#include <pythonsupport.c>
+#include <function_wrapper.c>
 #include "__native_payable_tester.h"
 #include "__native_internal_payable_tester.h"
 static PyMethodDef module_methods[] = {
@@ -198,7 +198,7 @@ char CPyDef___top_level__(void) {
     CPy_INCREF(CPyModule_builtins);
     CPy_DECREF(cpy_r_r4);
 CPyL3: ;
-    cpy_r_r5 = CPyStatics[4]; /* '0x6080604052348015600e575f5ffd5b5060e78061001b5f395ff3fe6080604052348015600e575f5ffd5b50600436106030575f3560e01c8063c6803622146034578063e4cb8f5c14604e575b5f5ffd5b603a6056565b60405160459190609a565b60405180910390f35b60546067565b005b5f5f9054906101000a900460ff1681565b60015f5f6101000a81548160ff021916908315150217905550565b5f8115159050919050565b6094816082565b82525050565b5f60208201905060ab5f830184608d565b9291505056fea2646970667358221220a9b00e8591f184642b3b3dfbbe6465e7a6ad284ba74537a9e2445f737666c8a364736f6c634300081e0033' */
+    cpy_r_r5 = CPyStatics[4];
     cpy_r_r6 = CPyStatic_globals;
     cpy_r_r7 = CPyStatics[5]; /* 'PAYABLE_TESTER_CONTRACT_BYTECODE' */
     cpy_r_r8 = CPyDict_SetItem(cpy_r_r6, cpy_r_r7, cpy_r_r5);
@@ -207,7 +207,7 @@ CPyL3: ;
         CPy_AddTraceback("faster_web3/_utils/contract_sources/contract_data/payable_tester.py", "<module>", 7, CPyStatic_globals);
         goto CPyL23;
     }
-    cpy_r_r10 = CPyStatics[6]; /* '0x6080604052348015600e575f5ffd5b50600436106030575f3560e01c8063c6803622146034578063e4cb8f5c14604e575b5f5ffd5b603a6056565b60405160459190609a565b60405180910390f35b60546067565b005b5f5f9054906101000a900460ff1681565b60015f5f6101000a81548160ff021916908315150217905550565b5f8115159050919050565b6094816082565b82525050565b5f60208201905060ab5f830184608d565b9291505056fea2646970667358221220a9b00e8591f184642b3b3dfbbe6465e7a6ad284ba74537a9e2445f737666c8a364736f6c634300081e0033' */
+    cpy_r_r10 = CPyStatics[6];
     cpy_r_r11 = CPyStatic_globals;
     cpy_r_r12 = CPyStatics[7]; /* 'PAYABLE_TESTER_CONTRACT_RUNTIME' */
     cpy_r_r13 = CPyDict_SetItem(cpy_r_r11, cpy_r_r12, cpy_r_r10);
@@ -476,6 +476,7 @@ CPyL30: ;
         }
         if (exec_payable_tester__mypyc(module) < 0) {
             Py_DECREF(module);
+            module = NULL;
             return NULL;
         }
         return module;
