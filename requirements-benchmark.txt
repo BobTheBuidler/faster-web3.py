@@ -1,4 +1,4 @@
 -r requirements-codspeed.txt
 
-pytest-benchmark==5.2.3
+pytest-benchmark==5.3.0
 web3==7.14.0
