@@ -39,7 +39,7 @@ extras_require = {
         "sphinx>=6.0.0",
         "sphinx-autobuild>=2021.3.14",
         "sphinx_rtd_theme>=1.0.0",
-        "towncrier>=25,<26",
+        "towncrier>=26,<27",
     ],
     "test": [
         "pytest-asyncio>=1.2,<1.3",
