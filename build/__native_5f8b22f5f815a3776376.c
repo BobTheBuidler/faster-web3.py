@@ -113953,7 +113953,7 @@ CPyL54: ;
     goto CPyL81;
 CPyL55: ;
     cpy_r_r61 = 0;
-    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'status', 'syncing'}) */
+    cpy_r_r62 = CPyStatics[DIFFCHECK_PLACEHOLDER]; /* frozenset({'syncing', 'status'}) */
     cpy_r_r63 = PyObject_GetIter(cpy_r_r62);
     if (unlikely(cpy_r_r63 == NULL)) {
         CPy_AddTraceback("faster_web3/_utils/method_formatters.py", "subscription_formatter", DIFFCHECK_PLACEHOLDER, CPyStatic_method_formatters___globals);
@@ -299687,7 +299687,7 @@ CPyL35: ;
     "\003\beth_sign\021eth_signTypedData$RPC_METHODS_UNSUPPORTED_DURING_BATCH",
     "\004\033faster_web3._utils.batching\004web3\016_requests_info\024_async_requests_info",
     "\004\016RequestBatcher\ais_text\bis_bytes\alatin-1",
-    "\005\036unrecognized block reference: \rWeb3TypeError\004safe\bearliest\tfinalized",
+    "\005\036unrecognized block reference: \rWeb3TypeError\tfinalized\004safe\bearliest",
     "\002\tis_string\006is_hex",
     "\001=Value did not match any of the recognized block identifiers: ",
     "\002\tTypeGuard\021typing_extensions",
@@ -299852,7 +299852,7 @@ CPyL35: ;
     "\002)Storage key must be a 32-byte value, got \017variable_length",
     "\005\023to_checksum_address\abalance\astorage\nis_address\022apply_formatter_if",
     "\003\021has_pretrace_keys#type_aware_apply_formatters_to_dict\tis_hexstr",
-    "\005\006status\asyncing\017Block with id: \v not found.\nIndexError",
+    "\005\asyncing\006status\017Block with id: \v not found.\nIndexError",
     "\003\030Unknown block identifier\020Uncle at index: \023 of block with id: ",
     "\002\'Unknown block identifier or uncle index\027Transaction with hash: ",
     "\003\030Unknown transaction hash\023TransactionNotFound\023Transaction index: ",
@@ -300339,8 +300339,8 @@ CPyL35: ;
     75, 76, 366, 78, 80, 82, 522, 84, 1, 802
 };
                                                                                                                                                                                                                 const int CPyLit_FrozenSet[] = {
-    4, 5, 308, 296, 394, 395, 396, 3, 22, 1948, 0, 2, 896, 897, 4, 1097,
-    379, 1096, 1094
+    4, 5, 394, 395, 296, 396, 308, 3, 22, 1948, 0, 2, 896, 897, 4, 1094,
+    379, 1097, 1096
 };
                                                                                                                                                                                                                 CPyModule *CPyModule_faster_ens__internal = NULL;
                                                                                                                                                                                                                 CPyModule *CPyModule_faster_ens;
